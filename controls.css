@@ -1,0 +1,23 @@
+.control.dropdown{overflow:visible}.control.dropdown>*{box-shadow:0 0 3px 0 #666}.control.dropdown .dropdown-main{border-radius:5px;background-color:white}.control.dropdown .dropdown-options{-webkit-transition:-webkit-transform 0.2s ease-out;transition:transform 0.2s ease-out;-webkit-transform:perspective(1px) scaleY(0);transform:perspective(1px) scaleY(0);position:absolute;margin:5px 0;border-radius:5px;padding:5px;background-color:white}.control.dropdown .dropdown-options.visible{-webkit-transform:perspective(1px) scaleY(1);transform:perspective(1px) scaleY(1)}.control.dropdown .dropdown-options .dropdown-option{border-radius:5px;border:1px solid #EEE;padding:5px 0;margin-bottom:2px;box-shadow:0 0 3px 0 #666}.control.dropdown .dropdown-options .dropdown-option.highlight{background-color:#567CB7;color:white}.control.dropdown .dropdown-options .dropdown-option span{padding:0 5px;overflow-wrap:break-word}.control.dropdown .dropdown-contents{float:left;padding:0 5px;overflow:hidden}textarea.control{border-radius:5px;border:none;padding:0px;box-shadow:inset 0 0 3px #666;-webkit-appearance:none;white-space:pre;word-wrap:normal;resize:none;z-index:1;-webkit-transform:perspective(1px);transform:perspective(1px)}textarea.control.reverse{text-align:right !important;direction:rtl;unicode-bidi:bidi-override}textarea.control:not(.highlight-correct):not(.highlight-incorrect):focus,textarea.control:not(.highlight-correct):not(.highlight-incorrect).focus{border-color:#567CB7;box-shadow:inset 0 1px 3px rgba(0,0,0,0.06),0 0 8px #496fab}textarea.control:not(.highlight-correct):not(.highlight-incorrect).restrict-input{-webkit-animation:qi-restrict 0.5s;animation:qi-restrict 0.3s}textarea.control.highlight-correct,textarea.control.highlight-incorrect{overflow:hidden}@-webkit-keyframes qi-restrict{50%{box-shadow:inset 0 1px 3px rgba(0,0,0,0.06),0 0 8px #999;color:#999}}@keyframes qi-restrict{50%{box-shadow:inset 0 1px 3px rgba(0,0,0,0.06),0 0 8px #999;color:#999}}div.control .fraction{font-family:monospacetypewriterregular, monospace;text-align:center;font-size:85%;line-height:1;position:relative}div.control .fraction .fractional-part{position:relative;display:inline-block;vertical-align:middle;margin:1px 3px}div.control .fraction .fractional-part .numerator{display:block;border-bottom:1px solid}div.control .fraction .fractional-part .denominator{display:block;line-height:1;margin-top:1px}.control{position:absolute;overflow:hidden;line-height:normal;pointer-events:none;color:#666;font-size:18px;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none}.control *{box-sizing:content-box}.control::-ms-clear{display:none}.control.input-control{pointer-events:all}.control.text{font-family:'Roboto', 'Open Sans', 'Calibri'}.control.number{font-family:'monospacetypewriterregular', 'monospace'}.control.highlight-correct{border-radius:5px;overflow:visible;box-shadow:-5px -5px 0 0px #8cc864,5px -5px 0 0px #8cc864,-5px 5px 0 0 #8cc864,5px 5px 0px 0px #8cc864}.control.highlight-incorrect{border-radius:5px;overflow:visible;box-shadow:-5px -5px 0 0px #d87070,5px -5px 0 0px #d87070,-5px 5px 0 0 #d87070,5px 5px 0px 0px #d87070}.control.mc-option,.control.mc-option>*{-webkit-transition:background-color 0.3s,box-shadow 0.3s;transition:background-color 0.3s,box-shadow 0.3s}.control.mc-option.mc-selected,.control.mc-option>.mc-selected{background-color:#567CB7;border-radius:10px;overflow:visible;color:white;box-shadow:-7px -7px 0 0px #567CB7, 7px -7px 0 0px #567CB7, -7px 0 0 0 #567CB7, 7px 0 0 0px #567CB7}.control.mc-option.highlight-correct,.control.mc-option>.highlight-correct{background-color:#8cc864;border-radius:10px;overflow:visible;color:white;box-shadow:-7px -7px 0 0px #8cc864,7px -7px 0 0px #8cc864,-7px 0 0 0 #8cc864,7px 0 0 0px #8cc864}.control.mc-option.highlight-incorrect,.control.mc-option>.highlight-incorrect{background-color:#d87070;border-radius:10px;overflow:visible;color:white;box-shadow:-7px -7px 0 0px #d87070,7px -7px 0 0px #d87070,-7px 0 0 0 #d87070,7px 0 0 0px #d87070}
+/*# sourceMappingURL=controls.css.map */
+
+/*
+     FILE ARCHIVED ON 16:44:36 Feb 25, 2016 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 09:06:26 May 16, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.653
+  exclusion.robots: 0.072
+  exclusion.robots.policy: 0.062
+  esindex: 0.008
+  cdx.remote: 44.03
+  LoadShardBlock: 116.442 (3)
+  PetaboxLoader3.datanode: 85.144 (4)
+  PetaboxLoader3.resolve: 91.169 (2)
+  load_resource: 103.404
+*/
