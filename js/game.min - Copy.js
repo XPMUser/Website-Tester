@@ -5380,7 +5380,7 @@ var Boss = function() {
                         this.data = {
                                 name: t,
                                 gender: e,
-                                hairStyle: Math.floor(1 + 23 * Math.random()),
+                                hairStyle: Math.floor(1 + 24 * Math.random()),
                                 hairColor: Math.floor(1 + 16 * Math.random()),
                                 skinColor: Math.floor(1 + 5 * Math.random()),
                                 eyeColor: Math.floor(1 + 15 * Math.random())
@@ -5403,7 +5403,7 @@ var Boss = function() {
                 }, e.prototype.getHairStyle = function() {
                         return this.data.hairStyle
                 }, e.prototype.setHairStyle = function(e) {
-                        e >= 1 && 23 >= e && (this.data.hairStyle = e), this.updated = !0
+                        e >= 1 && 24 >= e && (this.data.hairStyle = e), this.updated = !0
                 }, e.prototype.getHairColor = function() {
                         return this.data.hairColor
                 }, e.prototype.setHairColor = function(e) {
@@ -5423,8 +5423,8 @@ var Boss = function() {
                 }, e
         }();
 Appearance.hairNames = {
-        male: ["Prince", "Spikes", "Rock Star", "Fever", "Neat", "Slick", "Shaggy", "Bed Head", "Grace", "Spring", "Fall", "Side Swept", "Winter", "Uplift", "Blossom", "Sunshine", "Excite", "Pizzazz", "Dashing", "Summer", "Lilly", "Sweetheart", "Island Breeze"],
-        female: ["Grace", "Spring", "Fall", "Side Swept", "Winter", "Uplift", "Blossom", "Sunshine", "Excite", "Pizzazz", "Dashing", "Summer", "Lilly", "Sweetheart", "Island Breeze", "Prince", "Spikes", "Rock Star", "Fever", "Neat", "Slick", "Shaggy", "Bed Head"]
+        male: ["Prince", "Spikes", "Rock Star", "Fever", "Neat", "Slick", "Shaggy", "Bed Head", "Grace", "Spring", "Fall", "Side Swept", "Winter", "Uplift", "Blossom", "Sunshine", "Excite", "Pizzazz", "Dashing", "Summer", "Lilly", "Sweetheart", "Island Breeze", "Baldy"],
+        female: ["Grace", "Spring", "Fall", "Side Swept", "Winter", "Uplift", "Blossom", "Sunshine", "Excite", "Pizzazz", "Dashing", "Summer", "Lilly", "Sweetheart", "Island Breeze", "Prince", "Spikes", "Rock Star", "Fever", "Neat", "Slick", "Shaggy", "Bed Head", "Baldy"]
 };
 var Quests = function() {
         function e() {
@@ -7810,7 +7810,7 @@ var CharacterCreate = function() {
                 function e(e, t) {
                         Element.call(this, e, t), t.add(this), this.kill(), this.isComplete = !1, this.characterCreate = t, this.setupComplete = !1, this.alpha = 0, this.y = 50, this.title = "What's Your Wizard's Name?"
                 }
-                return e.BOY_NAMES = ["Aaron", "Abdullah", "Abraham", "Adam", "Adrian", "Ahmad", "Ahmed", "Aidan", "Aiden", "Alan", "Albert", "Alejandro", "Alex", "Alexander", "Alexis", "Ali", "Alvin", "Andres", "Andrew", "Aneesh", "Angel", "Angelo", "Anthony", "Antonio", "Arthur", "Ashton", "Austin", "Ayden", "Benjamin", "Billy", "Blake", "Bobby", "Bort", "Braden", "Bradley", "Brady", "Brandon", "Brayden", "Brendan", "Brian", "Brody", "Bruce", "Bryan", "Bryce", "Bryson", "Caden", "Caleb", "Cameron", "Carl", "Carlos", "Carson", "Carter", "Cesar", "Charles", "Chase", "Christian", "Christopher", "Cody", "Colby", "Cole", "Colin", "Collin", "Colton", "Conner", "Connor", "Cooper", "Craig", "Cristian", "Dakota", "Dalton", "Damian", "Daniel", "Darien", "David", "Dennis", "Derek", "Devin", "Devon", "Diego", "Dominic", "Donald", "Donovan", "Douglas", "Dylan", "Edgar", "Eduardo", "Edward", "Edwin", "Eli", "Elias", "Elijah", "Emmanuel", "Eric", "Erick", "Erik", "Ethan", "Eugene", "Evan", "Fernando", "Francisco", "Frank", "Gabriel", "Gage", "Garrett", "Gary", "Gavin", "George", "Gerald", "Giovanni", "Grant", "Gregory", "Hammad", "Hamza", "Harold", "Hayden", "Hector", "Henry", "Howard", "Hunter", "Ian", "Ibrahim", "Isaac", "Isaiah", "Ivan", "Jack", "Jackson", "Jacob", "Jaden", "Jake", "Jalen", "James", "Jared", "Jason", "Javier", "Jayden", "Jeffrey", "Jeremiah", "Jeremy", "Jerry", "Jesse", "Jimothy", "Joe", "Joel", "John", "Johnathan", "Johnny", "Jonah", "Jonathan", "Jordan", "Jorge", "Jose", "Joseph", "Joshua", "Josiah", "Juan", "Julian", "Justin", "Kaden", "Kaleb", "Keith", "Kenneth", "Kevin", "Kian", "Kyle", "Landon", "Larry", "Lawrence", "Leonardo", "Levi", "Liam", "Logan", "Louis", "Lucas", "Luis", "Luke", "Malachi", "Malik", "Manuel", "Marco", "Marcus", "Mario", "Mark", "Martin", "Marvin", "Mason", "Matthew", "Max", "Maxwell", "Micah", "Michael", "Miguel", "Muhammad", "Nathan", "Nathaniel", "Nicholas", "Nicolas", "Noah", "Nolan", "Oliver", "Omar", "Oscar", "Owen", "Parker", "Patrick", "Paul", "Peter", "Peyton", "Philip", "Phillip", "Preston", "Ralph", "Raymond", "Ricardo", "Richard", "Riley", "Robert", "Roger", "Rohan", "Ronald", "Rory", "Roy", "Rupy", "Russell", "Ryan", "Samuel", "Scott", "Sean", "Sebastian", "Sergio", "Seth", "Shane", "Shawn", "Solomon", "Spencer", "Stephen", "Steve", "Steven", "Tanner", "Terry", "Thomas", "Timothy", "Travis", "Trenton", "Trevor", "Tristan", "Tyler", "Van", "Victor", "Vincent", "Walter", "Wasee", "Wayne", "Wesley", "William", "Wyatt", "Xavier", "Youssef", "Zachary", "Abel", "Allen", "Amir", "Asher", "August", "Avery", "Axel", "Bart", "Beau", "Ben", "Bennett", "Bentley", "Brantley", "Braxton", "Calvin", "Camden", "Charlie", "Chris", "Corey", "Dan", "Danny", "Dawson", "Dean", "Declan", "Easton", "Elliot", "Elliott", "Emmett", "Enzo", "Everett", "Ezekiel", "Ezra", "Finn", "Geoff", "Grayson", "Greyson", "Harrison", "Hudson", "Jace", "Jameson", "Jasper", "Jax", "Jaxon", "Jaxson", "Jayce", "Jeff", "Jude", "Kai", "Kaiden", "Karter", "Kayden", "King", "Kingston", "Kyrie", "Leo", "Lincoln", "Lorenzo", "Luca", "Lui", "Lukas", "Maddox", "Mateo", "Matt", "Matteo", "Maverick", "Mike", "Miles", "Nelson", "Nick", "Rhett", "Richie", "Robin", "Roman", "Rowan", "Ryder", "Ryker", "Sam", "Sammy", "Santiago", "Sawyer", "Silas", "Theo", "Theodore", "Tom", "Tucker", "Veenay", "Waylon", "Weston", "Xander", "Zane", "Zayden", "Zion", "Francis", "Gene", "Kelsey", "Leslie", "Morgan", "Quinn", "Reese", "Sidney", "Taylor", "Aaliyah", "Abby", "Abigail", "Addison", "Adriana", "Adrianna", "Alana", "Alexa", "Alexandra", "Alexandria", "Alexia", "Alexis", "Alice", "Alicia", "Allison", "Alondra", "Alyssa", "Amanda", "Amber", "Amelia", "Amy", "Ana", "Andrea", "Angel", "Angela", "Angelica", "Angelina", "Ann", "Anna", "Ariana", "Arianna", "Ashley", "Ashlyn", "Aubrey", "Audrey", "Autumn", "Ava", "Avery", "Bailey", "Barbara", "Betty", "Beverly", "Bianca", "Breanna", "Brenda", "Briana", "Brianna", "Brittany", "Brooke", "Brooklyn", "Caitlin", "Caitlyn", "Camila", "Carol", "Caroline", "Carolyn", "Cassandra", "Cassidy", "Catherine", "Charlotte", "Chelsea", "Cheryl", "Cheyenne", "Chloe", "Christina", "Christine", "Claire", "Courtney", "Crystal", "Cynthia", "Daisy", "Daniela", "Danielle", "Deborah", "Debra", "Delaney", "Denise", "Destiny", "Diana", "Diane", "Donna", "Doris", "Dorothy", "Elizabeth", "Ella", "Ellen", "Ellie", "Emily", "Emma", "Erica", "Erin", "Eva", "Evelyn", "Faith", "Fatima", "Felicia", "Frances", "Gabriela", "Gabriella", "Gabrielle", "Genesis", "Gianna", "Giselle", "Gloria", "Grace", "Gracie", "Hailey", "Haley", "Hannah", "Heather", "Helen", "Hope", "Isabel", "Isabella", "Isabelle", "Jacqueline", "Jada", "Jade", "Jana", "Jane", "Janet", "Janice", "Jasmin", "Jasmine", "Jayla", "Jazmin", "Jean", "Jenna", "Jennifer", "Jessica", "Jillian", "Joan", "Jocelyn", "Jordan", "Jordyn", "Joyce", "Judith", "Judy", "Julia", "Juliana", "Julie", "Kaitlyn", "Karen", "Kate", "Katelyn", "Katherine", "Kathleen", "Kathryn", "Kathy", "Katie", "Kayla", "Kaylee", "Kelly", "Kelsey", "Kendall", "Kennedy", "Kiara", "Kimberly", "Kira", "Kylee", "Kylie", "Laura", "Lauren", "Layla", "Leah", "Leslie", "Liliana", "Lillian", "Lilly", "Lily", "Linda", "Lindsey", "Lisa", "Lori", "Louise", "Lucy", "Lydia", "Mackenzie", "Madeline", "Madelyn", "Madison", "Makayla", "Makenzie", "Margaret", "Maria", "Mariah", "Mariam", "Marie", "Marilyn", "Marissa", "Martha", "Mary", "Maya", "Mckenzie", "Megan", "Melanie", "Melissa", "Mia", "Michelle", "Mikayla", "Mildred", "Miranda", "Molly", "Morgan", "Mya", "Nancy", "Naomi", "Natalia", "Natalie", "Nevaeh", "Nichole", "Nicole", "Nur", "Olivia", "Paige", "Pamela", "Patricia", "Payton", "Peyton", "Rachel", "Reagan", "Rebecca", "Riley", "Rose", "Ruby", "Ruth", "Rylee", "Sabrina", "Sadie", "Salma", "Samantha", "Sandra", "Sara", "Sarah", "Savannah", "Serenity", "Sharon", "Shelby", "Shirley", "Sierra", "Skylar", "Sofia", "Sophia", "Sophie", "Stephanie", "Summer", "Susan", "Sydney", "Tammy", "Taylor", "Teresa", "Theresa", "Tiffany", "Trinity", "Valeria", "Valerie", "Vanessa", "Veronica", "Victoria", "Virginia", "Zoe", "Zoey", "Adaline", "Adalyn", "Adalynn", "Adeline", "Alaina", "Alina", "Aliyah", "Amara", "Amaya", "Anastasia", "Annabelle", "Anne", "Arabella", "Aria", "Ariel", "Arya", "Athena", "Aubree", "Aurora", "Ayla", "Bella", "Brielle", "Cadence", "Callie", "Camilla", "Camryn", "Carly", "Chantelle", "Charlie", "Clara", "Cora", "Delilah", "Eden", "Eleanor", "Elena", "Eliana", "Elise", "Eliza", "Emerson", "Emery", "Emilia", "Eve", "Everly", "Evie", "Finley", "Freya", "Gauri", "Hadley", "Harley", "Harmony", "Harper", "Hazel", "Iris", "Isla", "Ivy", "Jenn", "Josephine", "Josie", "Kaelyn", "Katrina", "Keira", "Khloe", "Kinsley", "Laila", "Leila", "Leilani", "Lila", "London", "Londyn", "Luna", "Lyla", "Maggie", "Makenna", "Marley", "Maryam", "Melody", "Mila", "Nina", "Nora", "Norah", "Nova", "Paisley", "Penelope", "Piper", "Presley", "Princess", "Quinn", "Raelynn", "Reese", "Richelle", "Ryleigh", "Scarlett", "Sienna", "Skyler", "Stella", "Sumira", "Talia", "Teagan", "Thea", "Valentina", "Violet", "Vivian", "Willow", "Zara", "Blake", "Cameron", "Jessie", "Kairi", "Robin", "Robyn", "Sam", "Teri", "Kirsten"], e.GIRL_NAMES = ["Aaliyah", "Abby", "Abigail", "Addison", "Adriana", "Adrianna", "Alana", "Alexa", "Alexandra", "Alexandria", "Alexia", "Alexis", "Alice", "Alicia", "Allison", "Alondra", "Alyssa", "Amanda", "Amber", "Amelia", "Amy", "Ana", "Andrea", "Angel", "Angela", "Angelica", "Angelina", "Ann", "Anna", "Ariana", "Arianna", "Ashley", "Ashlyn", "Aubrey", "Audrey", "Autumn", "Ava", "Avery", "Bailey", "Barbara", "Betty", "Beverly", "Bianca", "Breanna", "Brenda", "Briana", "Brianna", "Brittany", "Brooke", "Brooklyn", "Caitlin", "Caitlyn", "Camila", "Carol", "Caroline", "Carolyn", "Cassandra", "Cassidy", "Catherine", "Charlotte", "Chelsea", "Cheryl", "Cheyenne", "Chloe", "Christina", "Christine", "Claire", "Courtney", "Crystal", "Cynthia", "Daisy", "Daniela", "Danielle", "Deborah", "Debra", "Delaney", "Denise", "Destiny", "Diana", "Diane", "Donna", "Doris", "Dorothy", "Elizabeth", "Ella", "Ellen", "Ellie", "Emily", "Emma", "Erica", "Erin", "Eva", "Evelyn", "Faith", "Fatima", "Felicia", "Frances", "Gabriela", "Gabriella", "Gabrielle", "Genesis", "Gianna", "Giselle", "Gloria", "Grace", "Gracie", "Hailey", "Haley", "Hannah", "Heather", "Helen", "Hope", "Isabel", "Isabella", "Isabelle", "Jacqueline", "Jada", "Jade", "Jana", "Jane", "Janet", "Janice", "Jasmin", "Jasmine", "Jayla", "Jazmin", "Jean", "Jenna", "Jennifer", "Jessica", "Jillian", "Joan", "Jocelyn", "Jordan", "Jordyn", "Joyce", "Judith", "Judy", "Julia", "Juliana", "Julie", "Kaitlyn", "Karen", "Kate", "Katelyn", "Katherine", "Kathleen", "Kathryn", "Kathy", "Katie", "Kayla", "Kaylee", "Kelly", "Kelsey", "Kendall", "Kennedy", "Kiara", "Kimberly", "Kira", "Kylee", "Kylie", "Laura", "Lauren", "Layla", "Leah", "Leslie", "Liliana", "Lillian", "Lilly", "Lily", "Linda", "Lindsey", "Lisa", "Lori", "Louise", "Lucy", "Lydia", "Mackenzie", "Madeline", "Madelyn", "Madison", "Makayla", "Makenzie", "Margaret", "Maria", "Mariah", "Mariam", "Marie", "Marilyn", "Marissa", "Martha", "Mary", "Maya", "Mckenzie", "Megan", "Melanie", "Melissa", "Mia", "Michelle", "Mikayla", "Mildred", "Miranda", "Molly", "Morgan", "Mya", "Nancy", "Naomi", "Natalia", "Natalie", "Nevaeh", "Nichole", "Nicole", "Nur", "Olivia", "Paige", "Pamela", "Patricia", "Payton", "Peyton", "Rachel", "Reagan", "Rebecca", "Riley", "Rose", "Ruby", "Ruth", "Rylee", "Sabrina", "Sadie", "Salma", "Samantha", "Sandra", "Sara", "Sarah", "Savannah", "Serenity", "Sharon", "Shelby", "Shirley", "Sierra", "Skylar", "Sofia", "Sophia", "Sophie", "Stephanie", "Summer", "Susan", "Sydney", "Tammy", "Taylor", "Teresa", "Theresa", "Tiffany", "Trinity", "Valeria", "Valerie", "Vanessa", "Veronica", "Victoria", "Virginia", "Zoe", "Zoey", "Adaline", "Adalyn", "Adalynn", "Adeline", "Alaina", "Alina", "Aliyah", "Amara", "Amaya", "Anastasia", "Annabelle", "Anne", "Arabella", "Aria", "Ariel", "Arya", "Athena", "Aubree", "Aurora", "Ayla", "Bella", "Brielle", "Cadence", "Callie", "Camilla", "Camryn", "Carly", "Chantelle", "Charlie", "Clara", "Cora", "Delilah", "Eden", "Eleanor", "Elena", "Eliana", "Elise", "Eliza", "Emerson", "Emery", "Emilia", "Eve", "Everly", "Evie", "Finley", "Freya", "Gauri", "Hadley", "Harley", "Harmony", "Harper", "Hazel", "Iris", "Isla", "Ivy", "Jenn", "Josephine", "Josie", "Kaelyn", "Katrina", "Keira", "Khloe", "Kinsley", "Laila", "Leila", "Leilani", "Lila", "London", "Londyn", "Luna", "Lyla", "Maggie", "Makenna", "Marley", "Maryam", "Melody", "Mila", "Nina", "Nora", "Norah", "Nova", "Paisley", "Penelope", "Piper", "Presley", "Princess", "Quinn", "Raelynn", "Reese", "Richelle", "Ryleigh", "Scarlett", "Sienna", "Skyler", "Stella", "Sumira", "Talia", "Teagan", "Thea", "Valentina", "Violet", "Vivian", "Willow", "Zara", "Blake", "Cameron", "Jessie", "Kairi", "Robin", "Robyn", "Sam", "Teri", "Kirsten", "Aaron", "Abdullah", "Abraham", "Adam", "Adrian", "Ahmad", "Ahmed", "Aidan", "Aiden", "Alan", "Albert", "Alejandro", "Alex", "Alexander", "Alexis", "Ali", "Alvin", "Andres", "Andrew", "Aneesh", "Angel", "Angelo", "Anthony", "Antonio", "Arthur", "Ashton", "Austin", "Ayden", "Benjamin", "Billy", "Blake", "Bobby", "Bort", "Braden", "Bradley", "Brady", "Brandon", "Brayden", "Brendan", "Brian", "Brody", "Bruce", "Bryan", "Bryce", "Bryson", "Caden", "Caleb", "Cameron", "Carl", "Carlos", "Carson", "Carter", "Cesar", "Charles", "Chase", "Christian", "Christopher", "Cody", "Colby", "Cole", "Colin", "Collin", "Colton", "Conner", "Connor", "Cooper", "Craig", "Cristian", "Dakota", "Dalton", "Damian", "Daniel", "Darien", "David", "Dennis", "Derek", "Devin", "Devon", "Diego", "Dominic", "Donald", "Donovan", "Douglas", "Dylan", "Edgar", "Eduardo", "Edward", "Edwin", "Eli", "Elias", "Elijah", "Emmanuel", "Eric", "Erick", "Erik", "Ethan", "Eugene", "Evan", "Fernando", "Francisco", "Frank", "Gabriel", "Gage", "Garrett", "Gary", "Gavin", "George", "Gerald", "Giovanni", "Grant", "Gregory", "Hammad", "Hamza", "Harold", "Hayden", "Hector", "Henry", "Howard", "Hunter", "Ian", "Ibrahim", "Isaac", "Isaiah", "Ivan", "Jack", "Jackson", "Jacob", "Jaden", "Jake", "Jalen", "James", "Jared", "Jason", "Javier", "Jayden", "Jeffrey", "Jeremiah", "Jeremy", "Jerry", "Jesse", "Jimothy", "Joe", "Joel", "John", "Johnathan", "Johnny", "Jonah", "Jonathan", "Jordan", "Jorge", "Jose", "Joseph", "Joshua", "Josiah", "Juan", "Julian", "Justin", "Kaden", "Kaleb", "Keith", "Kenneth", "Kevin", "Kian", "Kyle", "Landon", "Larry", "Lawrence", "Leonardo", "Levi", "Liam", "Logan", "Louis", "Lucas", "Luis", "Luke", "Malachi", "Malik", "Manuel", "Marco", "Marcus", "Mario", "Mark", "Martin", "Marvin", "Mason", "Matthew", "Max", "Maxwell", "Micah", "Michael", "Miguel", "Muhammad", "Nathan", "Nathaniel", "Nicholas", "Nicolas", "Noah", "Nolan", "Oliver", "Omar", "Oscar", "Owen", "Parker", "Patrick", "Paul", "Peter", "Peyton", "Philip", "Phillip", "Preston", "Ralph", "Raymond", "Ricardo", "Richard", "Riley", "Robert", "Roger", "Rohan", "Ronald", "Rory", "Roy", "Rupy", "Russell", "Ryan", "Samuel", "Scott", "Sean", "Sebastian", "Sergio", "Seth", "Shane", "Shawn", "Solomon", "Spencer", "Stephen", "Steve", "Steven", "Tanner", "Terry", "Thomas", "Timothy", "Travis", "Trenton", "Trevor", "Tristan", "Tyler", "Van", "Victor", "Vincent", "Walter", "Wasee", "Wayne", "Wesley", "William", "Wyatt", "Xavier", "Youssef", "Zachary", "Abel", "Allen", "Amir", "Asher", "August", "Avery", "Axel", "Bart", "Beau", "Ben", "Bennett", "Bentley", "Brantley", "Braxton", "Calvin", "Camden", "Charlie", "Chris", "Corey", "Dan", "Danny", "Dawson", "Dean", "Declan", "Easton", "Elliot", "Elliott", "Emmett", "Enzo", "Everett", "Ezekiel", "Ezra", "Finn", "Geoff", "Grayson", "Greyson", "Harrison", "Hudson", "Jace", "Jameson", "Jasper", "Jax", "Jaxon", "Jaxson", "Jayce", "Jeff", "Jude", "Kai", "Kaiden", "Karter", "Kayden", "King", "Kingston", "Kyrie", "Leo", "Lincoln", "Lorenzo", "Luca", "Lui", "Lukas", "Maddox", "Mateo", "Matt", "Matteo", "Maverick", "Mike", "Miles", "Nelson", "Nick", "Rhett", "Richie", "Robin", "Roman", "Rowan", "Ryder", "Ryker", "Sam", "Sammy", "Santiago", "Sawyer", "Silas", "Theo", "Theodore", "Tom", "Tucker", "Veenay", "Waylon", "Weston", "Xander", "Zane", "Zayden", "Zion", "Francis", "Gene", "Kelsey", "Leslie", "Morgan", "Quinn", "Reese", "Sidney", "Taylor"], e.FIRST_NAMES = [], e.MIDDLE_NAMES = ["Air", "Animal", "Battle", "Blue", "Clear", "Cloud", "Coin", "Daring", "Dark", "Day", "Diamond", "Divine", "Dragon", "Dream", "Earth", "Fable", "Fairy", "Fall", "Fancy", "Far", "Fire", "Flame", "Fog", "Forge", "Frost", "Fruit", "Garden", "Gear", "Ghost", "Giant", "Glass", "Gold", "Golden", "Good", "Green", "Heavy", "Hero", "Ice", "Illusion", "Iron", "Land", "Leaf", "Legend", "Life", "Lightning", "Maelstrom", "Magic", "Metal", "Monster", "Moon", "Mountain", "Myth", "Near", "Night", "Ocean", "Plant", "Quake", "Rain", "Red", "River", "Ruby", "Silver", "Sleep", "Soft", "Spell", "Spring", "Star", "Storm", "Strong", "Summer", "Swift", "Thunder", "Water", "White", "Wild", "Wind", "Winter", "Wish", "Wonder", "Yellow"], e.LAST_NAMES = ["Blade", "Boots", "Boy", "Breath", "Brother", "Caller", "Cast", "Caster", "Catcher", "Crafter", "Dancer", "Dreamer", "Drifter", "Ear", "Eyes", "Follower", "Foot", "Friend", "Gem", "Girl", "Giver", "Hand", "Heart", "Helper", "Hunter", "Leader", "Legs", "Lemon", "Light", "Man", "Mask", "Master", "Nose", "Ore", "Pants", "Petal", "Prism", "Ring", "Runner", "Seed", "Shade", "Shadow", "Shard", "Shine", "Shirt", "Singer", "Sister", "Smith", "Song", "Spoon", "Staff", "Steel", "Strider", "Sword", "Tail", "Talon", "Tamer", "Thinker", "Torch", "Vault", "Voice", "Walker", "Wand", "Ward", "Whisper", "Winner", "Woman"], e.prototype = Object.create(Element.prototype), e.generateName = function(t) {
+                return e.BOY_NAMES = ["Aaron", "Abdullah", "Abraham", "Adam", "Adrian", "Ahmad", "Ahmed", "Aidan", "Aiden", "Alan", "Albert", "Alejandro", "Alex", "Alexander", "Alexis", "Ali", "Alvin", "Andres", "Andrew", "Aneesh", "Angel", "Angelo", "Anthony", "Antonio", "Arthur", "Ashton", "Austin", "Ayden", "Baldi", "Benjamin", "Billy", "Blake", "Bobby", "Bort", "Braden", "Bradley", "Brady", "Brandon", "Brayden", "Brendan", "Brian", "Brody", "Bruce", "Bryan", "Bryce", "Bryson", "Caden", "Caillou", "Caleb", "Cameron", "Carl", "Carlos", "Carson", "Carter", "Cesar", "Charles", "Chase", "Christian", "Christopher", "Cody", "Colby", "Cole", "Colin", "Collin", "Colton", "Conner", "Connor", "Cooper", "Craig", "Cristian", "Dakota", "Dalton", "Damian", "Daniel", "Darien", "David", "Dennis", "Derek", "Devin", "Devon", "Diego", "Dominic", "Donald", "Donovan", "Douglas", "Dylan", "Edgar", "Eduardo", "Edward", "Edwin", "Eli", "Elias", "Elijah", "Emmanuel", "Eric", "Erick", "Erik", "Ethan", "Eugene", "Evan", "Fernando", "Francisco", "Frank", "Gabriel", "Gage", "Garrett", "Gary", "Gavin", "George", "Gerald", "Giovanni", "Grant", "Gregory", "Hammad", "Hamza", "Harold", "Hayden", "Hector", "Henry", "Howard", "Hunter", "Ian", "Ibrahim", "Isaac", "Isaiah", "Ivan", "Jack", "Jackson", "Jacob", "Jaden", "Jake", "Jalen", "James", "Jared", "Jason", "Javier", "Jayden", "Jeffrey", "Jeremiah", "Jeremy", "Jerry", "Jesse", "Jimothy", "Joe", "Joel", "John", "Johnathan", "Johnny", "Jonah", "Jonathan", "Jordan", "Jorge", "Jose", "Joseph", "Joshua", "Josiah", "Juan", "Julian", "Justin", "Kaden", "Kaleb", "Keith", "Kenneth", "Kevin", "Kian", "Kyle", "Landon", "Larry", "Lawrence", "Leonardo", "Levi", "Liam", "Logan", "Louis", "Lucas", "Luis", "Luke", "Malachi", "Malik", "Manuel", "Marco", "Marcus", "Mario", "Mark", "Martin", "Marvin", "Mason", "Matthew", "Max", "Maxwell", "Micah", "Michael", "Miguel", "Muhammad", "Nathan", "Nathaniel", "Nicholas", "Nicolas", "Noah", "Nolan", "Oliver", "Omar", "Oscar", "Owen", "Parker", "Patrick", "Paul", "Peter", "Peyton", "Philip", "Phillip", "Preston", "Ralph", "Raymond", "Ricardo", "Richard", "Riley", "Robert", "Roger", "Rohan", "Ronald", "Rory", "Roy", "Rupy", "Russell", "Ryan", "Samuel", "Scott", "Sean", "Sebastian", "Sergio", "Seth", "Shane", "Shawn", "Solomon", "Spencer", "Stephen", "Steve", "Steven", "Tanner", "Terry", "Thomas", "Timothy", "Travis", "Trenton", "Trevor", "Tristan", "Tyler", "Van", "Victor", "Vincent", "Walter", "Wasee", "Wayne", "Wesley", "William", "Wyatt", "Xavier", "Youssef", "Zachary", "Abel", "Allen", "Amir", "Asher", "August", "Avery", "Axel", "Bart", "Beau", "Ben", "Bennett", "Bentley", "Brantley", "Braxton", "Calvin", "Camden", "Charlie", "Chris", "Corey", "Dan", "Danny", "Dawson", "Dean", "Declan", "Easton", "Elliot", "Elliott", "Emmett", "Enzo", "Everett", "Ezekiel", "Ezra", "Finn", "Geoff", "Grayson", "Greyson", "Harrison", "Hudson", "Jace", "Jameson", "Jasper", "Jax", "Jaxon", "Jaxson", "Jayce", "Jeff", "Jude", "Kai", "Kaiden", "Karter", "Kayden", "King", "Kingston", "Kyrie", "Leo", "Lincoln", "Lorenzo", "Luca", "Lui", "Lukas", "Maddox", "Mateo", "Matt", "Matteo", "Maverick", "Mike", "Miles", "Nelson", "Nick", "Rhett", "Richie", "Robin", "Roman", "Rowan", "Ryder", "Ryker", "Sam", "Sammy", "Santiago", "Sawyer", "Silas", "Theo", "Theodore", "Tom", "Tucker", "Veenay", "Waylon", "Weston", "Xander", "Zane", "Zayden", "Zion", "Francis", "Gene", "Kelsey", "Leslie", "Morgan", "Quinn", "Reese", "Sidney", "Taylor", "Aaliyah", "Abby", "Abigail", "Addison", "Adriana", "Adrianna", "Alana", "Alexa", "Alexandra", "Alexandria", "Alexia", "Alexis", "Alice", "Alicia", "Allison", "Alondra", "Alyssa", "Amanda", "Amber", "Amelia", "Amy", "Ana", "Andrea", "Angel", "Angela", "Angelica", "Angelina", "Ann", "Anna", "Ariana", "Arianna", "Ashley", "Ashlyn", "Aubrey", "Audrey", "Autumn", "Ava", "Avery", "Bailey", "Baldi", "Barbara", "Betty", "Beverly", "Bianca", "Breanna", "Brenda", "Briana", "Brianna", "Brittany", "Brooke", "Brooklyn", "Caillou", "Caitlin", "Caitlyn", "Camila", "Carol", "Caroline", "Carolyn", "Cassandra", "Cassidy", "Catherine", "Charlotte", "Chelsea", "Cheryl", "Cheyenne", "Chloe", "Christina", "Christine", "Claire", "Courtney", "Crystal", "Cynthia", "Daisy", "Daniela", "Danielle", "Deborah", "Debra", "Delaney", "Denise", "Destiny", "Diana", "Diane", "Donna", "Doris", "Dorothy", "Elizabeth", "Ella", "Ellen", "Ellie", "Emily", "Emma", "Erica", "Erin", "Eva", "Evelyn", "Faith", "Fatima", "Felicia", "Frances", "Gabriela", "Gabriella", "Gabrielle", "Genesis", "Gianna", "Giselle", "Gloria", "Grace", "Gracie", "Hailey", "Haley", "Hannah", "Heather", "Helen", "Hope", "Isabel", "Isabella", "Isabelle", "Jacqueline", "Jada", "Jade", "Jana", "Jane", "Janet", "Janice", "Jasmin", "Jasmine", "Jayla", "Jazmin", "Jean", "Jenna", "Jennifer", "Jessica", "Jillian", "Joan", "Jocelyn", "Jordan", "Jordyn", "Joyce", "Judith", "Judy", "Julia", "Juliana", "Julie", "Kaitlyn", "Karen", "Kate", "Katelyn", "Katherine", "Kathleen", "Kathryn", "Kathy", "Katie", "Kayla", "Kaylee", "Kelly", "Kelsey", "Kendall", "Kennedy", "Kiara", "Kimberly", "Kira", "Kylee", "Kylie", "Laura", "Lauren", "Layla", "Leah", "Leslie", "Liliana", "Lillian", "Lilly", "Lily", "Linda", "Lindsey", "Lisa", "Lori", "Louise", "Lucy", "Lydia", "Mackenzie", "Madeline", "Madelyn", "Madison", "Makayla", "Makenzie", "Margaret", "Maria", "Mariah", "Mariam", "Marie", "Marilyn", "Marissa", "Martha", "Mary", "Maya", "Mckenzie", "Megan", "Melanie", "Melissa", "Mia", "Michelle", "Mikayla", "Mildred", "Miranda", "Molly", "Morgan", "Mya", "Nancy", "Naomi", "Natalia", "Natalie", "Nevaeh", "Nichole", "Nicole", "Nur", "Olivia", "Paige", "Pamela", "Patricia", "Payton", "Peyton", "Rachel", "Reagan", "Rebecca", "Riley", "Rose", "Ruby", "Ruth", "Rylee", "Sabrina", "Sadie", "Salma", "Samantha", "Sandra", "Sara", "Sarah", "Savannah", "Serenity", "Sharon", "Shelby", "Shirley", "Sierra", "Skylar", "Sofia", "Sophia", "Sophie", "Stephanie", "Summer", "Susan", "Sydney", "Tammy", "Taylor", "Teresa", "Theresa", "Tiffany", "Trinity", "Valeria", "Valerie", "Vanessa", "Veronica", "Victoria", "Virginia", "Zoe", "Zoey", "Adaline", "Adalyn", "Adalynn", "Adeline", "Alaina", "Alina", "Aliyah", "Amara", "Amaya", "Anastasia", "Annabelle", "Anne", "Arabella", "Aria", "Ariel", "Arya", "Athena", "Aubree", "Aurora", "Ayla", "Bella", "Brielle", "Cadence", "Callie", "Camilla", "Camryn", "Carly", "Chantelle", "Charlie", "Clara", "Cora", "Delilah", "Eden", "Eleanor", "Elena", "Eliana", "Elise", "Eliza", "Emerson", "Emery", "Emilia", "Eve", "Everly", "Evie", "Finley", "Freya", "Gauri", "Hadley", "Harley", "Harmony", "Harper", "Hazel", "Iris", "Isla", "Ivy", "Jenn", "Josephine", "Josie", "Kaelyn", "Katrina", "Keira", "Khloe", "Kinsley", "Laila", "Leila", "Leilani", "Lila", "London", "Londyn", "Luna", "Lyla", "Maggie", "Makenna", "Marley", "Maryam", "Melody", "Mila", "Nina", "Nora", "Norah", "Nova", "Paisley", "Penelope", "Piper", "Presley", "Princess", "Quinn", "Raelynn", "Reese", "Richelle", "Ryleigh", "Scarlett", "Sienna", "Skyler", "Stella", "Sumira", "Talia", "Teagan", "Thea", "Valentina", "Violet", "Vivian", "Willow", "Zara", "Blake", "Cameron", "Jessie", "Kairi", "Robin", "Robyn", "Sam", "Teri", "Kirsten"], e.GIRL_NAMES = ["Aaliyah", "Abby", "Abigail", "Addison", "Adriana", "Adrianna", "Alana", "Alexa", "Alexandra", "Alexandria", "Alexia", "Alexis", "Alice", "Alicia", "Allison", "Alondra", "Alyssa", "Amanda", "Amber", "Amelia", "Amy", "Ana", "Andrea", "Angel", "Angela", "Angelica", "Angelina", "Ann", "Anna", "Ariana", "Arianna", "Ashley", "Ashlyn", "Aubrey", "Audrey", "Autumn", "Ava", "Avery", "Bailey", "Barbara", "Betty", "Beverly", "Bianca", "Breanna", "Brenda", "Briana", "Brianna", "Brittany", "Brooke", "Brooklyn", "Caitlin", "Caitlyn", "Camila", "Carol", "Caroline", "Carolyn", "Cassandra", "Cassidy", "Catherine", "Charlotte", "Chelsea", "Cheryl", "Cheyenne", "Chloe", "Christina", "Christine", "Claire", "Courtney", "Crystal", "Cynthia", "Daisy", "Daniela", "Danielle", "Deborah", "Debra", "Delaney", "Denise", "Destiny", "Diana", "Diane", "Donna", "Doris", "Dorothy", "Elizabeth", "Ella", "Ellen", "Ellie", "Emily", "Emma", "Erica", "Erin", "Eva", "Evelyn", "Faith", "Fatima", "Felicia", "Frances", "Gabriela", "Gabriella", "Gabrielle", "Genesis", "Gianna", "Giselle", "Gloria", "Grace", "Gracie", "Hailey", "Haley", "Hannah", "Heather", "Helen", "Hope", "Isabel", "Isabella", "Isabelle", "Jacqueline", "Jada", "Jade", "Jana", "Jane", "Janet", "Janice", "Jasmin", "Jasmine", "Jayla", "Jazmin", "Jean", "Jenna", "Jennifer", "Jessica", "Jillian", "Joan", "Jocelyn", "Jordan", "Jordyn", "Joyce", "Judith", "Judy", "Julia", "Juliana", "Julie", "Kaitlyn", "Karen", "Kate", "Katelyn", "Katherine", "Kathleen", "Kathryn", "Kathy", "Katie", "Kayla", "Kaylee", "Kelly", "Kelsey", "Kendall", "Kennedy", "Kiara", "Kimberly", "Kira", "Kylee", "Kylie", "Laura", "Lauren", "Layla", "Leah", "Leslie", "Liliana", "Lillian", "Lilly", "Lily", "Linda", "Lindsey", "Lisa", "Lori", "Louise", "Lucy", "Lydia", "Mackenzie", "Madeline", "Madelyn", "Madison", "Makayla", "Makenzie", "Margaret", "Maria", "Mariah", "Mariam", "Marie", "Marilyn", "Marissa", "Martha", "Mary", "Maya", "Mckenzie", "Megan", "Melanie", "Melissa", "Mia", "Michelle", "Mikayla", "Mildred", "Miranda", "Molly", "Morgan", "Mya", "Nancy", "Naomi", "Natalia", "Natalie", "Nevaeh", "Nichole", "Nicole", "Nur", "Olivia", "Paige", "Pamela", "Patricia", "Payton", "Peyton", "Rachel", "Reagan", "Rebecca", "Riley", "Rose", "Ruby", "Ruth", "Rylee", "Sabrina", "Sadie", "Salma", "Samantha", "Sandra", "Sara", "Sarah", "Savannah", "Serenity", "Sharon", "Shelby", "Shirley", "Sierra", "Skylar", "Sofia", "Sophia", "Sophie", "Stephanie", "Summer", "Susan", "Sydney", "Tammy", "Taylor", "Teresa", "Theresa", "Tiffany", "Trinity", "Valeria", "Valerie", "Vanessa", "Veronica", "Victoria", "Virginia", "Zoe", "Zoey", "Adaline", "Adalyn", "Adalynn", "Adeline", "Alaina", "Alina", "Aliyah", "Amara", "Amaya", "Anastasia", "Annabelle", "Anne", "Arabella", "Aria", "Ariel", "Arya", "Athena", "Aubree", "Aurora", "Ayla", "Bella", "Brielle", "Cadence", "Callie", "Camilla", "Camryn", "Carly", "Chantelle", "Charlie", "Clara", "Cora", "Delilah", "Eden", "Eleanor", "Elena", "Eliana", "Elise", "Eliza", "Emerson", "Emery", "Emilia", "Eve", "Everly", "Evie", "Finley", "Freya", "Gauri", "Hadley", "Harley", "Harmony", "Harper", "Hazel", "Iris", "Isla", "Ivy", "Jenn", "Josephine", "Josie", "Kaelyn", "Katrina", "Keira", "Khloe", "Kinsley", "Laila", "Leila", "Leilani", "Lila", "London", "Londyn", "Luna", "Lyla", "Maggie", "Makenna", "Marley", "Maryam", "Melody", "Mila", "Nina", "Nora", "Norah", "Nova", "Paisley", "Penelope", "Piper", "Presley", "Princess", "Quinn", "Raelynn", "Reese", "Richelle", "Ryleigh", "Scarlett", "Sienna", "Skyler", "Stella", "Sumira", "Talia", "Teagan", "Thea", "Valentina", "Violet", "Vivian", "Willow", "Zara", "Blake", "Cameron", "Jessie", "Kairi", "Robin", "Robyn", "Sam", "Teri", "Kirsten", "Aaron", "Abdullah", "Abraham", "Adam", "Adrian", "Ahmad", "Ahmed", "Aidan", "Aiden", "Alan", "Albert", "Alejandro", "Alex", "Alexander", "Alexis", "Ali", "Alvin", "Andres", "Andrew", "Aneesh", "Angel", "Angelo", "Anthony", "Antonio", "Arthur", "Ashton", "Austin", "Ayden", "Benjamin", "Billy", "Blake", "Bobby", "Bort", "Braden", "Bradley", "Brady", "Brandon", "Brayden", "Brendan", "Brian", "Brody", "Bruce", "Bryan", "Bryce", "Bryson", "Caden", "Caleb", "Cameron", "Carl", "Carlos", "Carson", "Carter", "Cesar", "Charles", "Chase", "Christian", "Christopher", "Cody", "Colby", "Cole", "Colin", "Collin", "Colton", "Conner", "Connor", "Cooper", "Craig", "Cristian", "Dakota", "Dalton", "Damian", "Daniel", "Darien", "David", "Dennis", "Derek", "Devin", "Devon", "Diego", "Dominic", "Donald", "Donovan", "Douglas", "Dylan", "Edgar", "Eduardo", "Edward", "Edwin", "Eli", "Elias", "Elijah", "Emmanuel", "Eric", "Erick", "Erik", "Ethan", "Eugene", "Evan", "Fernando", "Francisco", "Frank", "Gabriel", "Gage", "Garrett", "Gary", "Gavin", "George", "Gerald", "Giovanni", "Grant", "Gregory", "Hammad", "Hamza", "Harold", "Hayden", "Hector", "Henry", "Howard", "Hunter", "Ian", "Ibrahim", "Isaac", "Isaiah", "Ivan", "Jack", "Jackson", "Jacob", "Jaden", "Jake", "Jalen", "James", "Jared", "Jason", "Javier", "Jayden", "Jeffrey", "Jeremiah", "Jeremy", "Jerry", "Jesse", "Jimothy", "Joe", "Joel", "John", "Johnathan", "Johnny", "Jonah", "Jonathan", "Jordan", "Jorge", "Jose", "Joseph", "Joshua", "Josiah", "Juan", "Julian", "Justin", "Kaden", "Kaleb", "Keith", "Kenneth", "Kevin", "Kian", "Kyle", "Landon", "Larry", "Lawrence", "Leonardo", "Levi", "Liam", "Logan", "Louis", "Lucas", "Luis", "Luke", "Malachi", "Malik", "Manuel", "Marco", "Marcus", "Mario", "Mark", "Martin", "Marvin", "Mason", "Matthew", "Max", "Maxwell", "Micah", "Michael", "Miguel", "Muhammad", "Nathan", "Nathaniel", "Nicholas", "Nicolas", "Noah", "Nolan", "Oliver", "Omar", "Oscar", "Owen", "Parker", "Patrick", "Paul", "Peter", "Peyton", "Philip", "Phillip", "Preston", "Ralph", "Raymond", "Ricardo", "Richard", "Riley", "Robert", "Roger", "Rohan", "Ronald", "Rory", "Roy", "Rupy", "Russell", "Ryan", "Samuel", "Scott", "Sean", "Sebastian", "Sergio", "Seth", "Shane", "Shawn", "Solomon", "Spencer", "Stephen", "Steve", "Steven", "Tanner", "Terry", "Thomas", "Timothy", "Travis", "Trenton", "Trevor", "Tristan", "Tyler", "Van", "Victor", "Vincent", "Walter", "Wasee", "Wayne", "Wesley", "William", "Wyatt", "Xavier", "Youssef", "Zachary", "Abel", "Allen", "Amir", "Asher", "August", "Avery", "Axel", "Bart", "Beau", "Ben", "Bennett", "Bentley", "Brantley", "Braxton", "Calvin", "Camden", "Charlie", "Chris", "Corey", "Dan", "Danny", "Dawson", "Dean", "Declan", "Easton", "Elliot", "Elliott", "Emmett", "Enzo", "Everett", "Ezekiel", "Ezra", "Finn", "Geoff", "Grayson", "Greyson", "Harrison", "Hudson", "Jace", "Jameson", "Jasper", "Jax", "Jaxon", "Jaxson", "Jayce", "Jeff", "Jude", "Kai", "Kaiden", "Karter", "Kayden", "King", "Kingston", "Kyrie", "Leo", "Lincoln", "Lorenzo", "Luca", "Lui", "Lukas", "Maddox", "Mateo", "Matt", "Matteo", "Maverick", "Mike", "Miles", "Nelson", "Nick", "Rhett", "Richie", "Robin", "Roman", "Rowan", "Ryder", "Ryker", "Sam", "Sammy", "Santiago", "Sawyer", "Silas", "Theo", "Theodore", "Tom", "Tucker", "Veenay", "Waylon", "Weston", "Xander", "Zane", "Zayden", "Zion", "Francis", "Gene", "Kelsey", "Leslie", "Morgan", "Quinn", "Reese", "Sidney", "Taylor"], e.FIRST_NAMES = [], e.MIDDLE_NAMES = ["Air", "Animal", "Battle", "Blue", "Clear", "Cloud", "Coin", "Daring", "Dark", "Day", "Diamond", "Divine", "Dragon", "Dream", "Earth", "Fable", "Fairy", "Fall", "Fancy", "Far", "Fire", "Flame", "Fog", "Forge", "Frost", "Fruit", "Garden", "Gear", "Ghost", "Giant", "Glass", "Gold", "Golden", "Good", "Green", "Heavy", "Hero", "Ice", "Illusion", "Iron", "Land", "Leaf", "Legend", "Life", "Lightning", "Maelstrom", "Magic", "Metal", "Monster", "Moon", "Mountain", "Myth", "Near", "Night", "Ocean", "Plant", "Quake", "Rain", "Red", "River", "Ruby", "Silver", "Sleep", "Soft", "Spell", "Spring", "Star", "Storm", "Strong", "Summer", "Swift", "Thunder", "Water", "White", "Wild", "Wind", "Winter", "Wish", "Wonder", "Yellow"], e.LAST_NAMES = ["Blade", "Boots", "Boy", "Breath", "Brother", "Caller", "Cast", "Caster", "Catcher", "Crafter", "Dancer", "Dreamer", "Drifter", "Ear", "Eyes", "Follower", "Foot", "Friend", "Gem", "Girl", "Giver", "Hand", "Heart", "Helper", "Hunter", "Leader", "Legs", "Lemon", "Light", "Man", "Mask", "Master", "Nose", "Ore", "Pants", "Petal", "Prism", "Ring", "Runner", "Seed", "Shade", "Shadow", "Shard", "Shine", "Shirt", "Singer", "Sister", "Smith", "Song", "Spoon", "Staff", "Steel", "Strider", "Sword", "Tail", "Talon", "Tamer", "Thinker", "Torch", "Vault", "Voice", "Walker", "Wand", "Ward", "Whisper", "Winner", "Woman"], e.prototype = Object.create(Element.prototype), e.generateName = function(t) {
                         if ("male" === t) var a = e.BOY_NAMES[Math.floor(Math.random() * (e.BOY_NAMES.length - 1))];
                         else var a = e.GIRL_NAMES[Math.floor(Math.random() * (e.GIRL_NAMES.length - 1))];
                         var i = e.MIDDLE_NAMES[Math.floor(Math.random() * (e.MIDDLE_NAMES.length - 1))],
@@ -29579,7 +29579,7 @@ var DormMenu = function() {
                                 w: 61,
                                 h: 61
                         },
-                        "normal-hair-male-0-1": {
+                        "normal-hair-male-24-1": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -29588,7 +29588,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "normal-hair-male-0-2": {
+                        "normal-hair-male-24-2": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -29597,7 +29597,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "normal-hair-male-0-3": {
+                        "normal-hair-male-24-3": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -29606,7 +29606,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "normal-hair-male-0-4": {
+                        "normal-hair-male-24-4": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -29615,7 +29615,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "normal-hair-male-0-5": {
+                        "normal-hair-male-24-5": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -29624,7 +29624,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "normal-hair-male-0-6": {
+                        "normal-hair-male-24-6": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -29633,7 +29633,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "normal-hair-male-0-7": {
+                        "normal-hair-male-24-7": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -29642,7 +29642,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "normal-hair-male-0-8": {
+                        "normal-hair-male-24-8": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -29651,7 +29651,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "normal-hair-male-0-9": {
+                        "normal-hair-male-24-9": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -29660,7 +29660,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "normal-hair-male-0-10": {
+                        "normal-hair-male-24-10": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -29669,7 +29669,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "normal-hair-male-0-11": {
+                        "normal-hair-male-24-11": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -29678,7 +29678,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "normal-hair-male-0-12": {
+                        "normal-hair-male-24-12": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -29687,7 +29687,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "normal-hair-male-0-13": {
+                        "normal-hair-male-24-13": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -29696,7 +29696,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "normal-hair-male-0-14": {
+                        "normal-hair-male-24-14": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -29705,7 +29705,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "normal-hair-male-0-15": {
+                        "normal-hair-male-24-15": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -29714,7 +29714,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "normal-hair-male-0-16": {
+                        "normal-hair-male-24-16": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -33035,7 +33035,7 @@ var DormMenu = function() {
 					w: 125,
 					h: 111
                         },
-                        "reduced-hair-male-0-1": {
+                        "reduced-hair-male-24-1": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -33044,7 +33044,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "reduced-hair-male-0-2": {
+                        "reduced-hair-male-24-2": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -33053,7 +33053,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "reduced-hair-male-0-3": {
+                        "reduced-hair-male-24-3": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -33062,7 +33062,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "reduced-hair-male-0-4": {
+                        "reduced-hair-male-24-4": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -33071,7 +33071,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "reduced-hair-male-0-5": {
+                        "reduced-hair-male-24-5": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -33080,7 +33080,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "reduced-hair-male-0-6": {
+                        "reduced-hair-male-24-6": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -33089,7 +33089,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "reduced-hair-male-0-7": {
+                        "reduced-hair-male-24-7": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -33098,7 +33098,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "reduced-hair-male-0-8": {
+                        "reduced-hair-male-24-8": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -33107,7 +33107,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "reduced-hair-male-0-9": {
+                        "reduced-hair-male-24-9": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -33116,7 +33116,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "reduced-hair-male-0-10": {
+                        "reduced-hair-male-24-10": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -33125,7 +33125,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "reduced-hair-male-0-11": {
+                        "reduced-hair-male-24-11": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -33134,7 +33134,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "reduced-hair-male-0-12": {
+                        "reduced-hair-male-24-12": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -33143,7 +33143,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "reduced-hair-male-0-13": {
+                        "reduced-hair-male-24-13": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -33152,7 +33152,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "reduced-hair-male-0-14": {
+                        "reduced-hair-male-24-14": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -33161,7 +33161,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "reduced-hair-male-0-15": {
+                        "reduced-hair-male-24-15": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -33170,7 +33170,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "reduced-hair-male-0-16": {
+                        "reduced-hair-male-24-16": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -36491,7 +36491,7 @@ var DormMenu = function() {
                                 w: 64,
                                 h: 55
                         },
-                        "normal-hair-female-0-1": {
+                        "normal-hair-female-24-1": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -36500,7 +36500,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "normal-hair-female-0-2": {
+                        "normal-hair-female-24-2": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -36509,7 +36509,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "normal-hair-female-0-3": {
+                        "normal-hair-female-24-3": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -36518,7 +36518,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "normal-hair-female-0-4": {
+                        "normal-hair-female-24-4": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -36527,7 +36527,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "normal-hair-female-0-5": {
+                        "normal-hair-female-24-5": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -36536,7 +36536,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "normal-hair-female-0-6": {
+                        "normal-hair-female-24-6": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -36545,7 +36545,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "normal-hair-female-0-7": {
+                        "normal-hair-female-24-7": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -36554,7 +36554,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "normal-hair-female-0-8": {
+                        "normal-hair-female-24-8": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -36563,7 +36563,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "normal-hair-female-0-9": {
+                        "normal-hair-female-24-9": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -36572,7 +36572,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "normal-hair-female-0-10": {
+                        "normal-hair-female-24-10": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -36581,7 +36581,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "normal-hair-female-0-11": {
+                        "normal-hair-female-24-11": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -36590,7 +36590,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "normal-hair-female-0-12": {
+                        "normal-hair-female-24-12": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -36599,7 +36599,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "normal-hair-female-0-13": {
+                        "normal-hair-female-24-13": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -36608,7 +36608,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "normal-hair-female-0-14": {
+                        "normal-hair-female-24-14": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -36617,7 +36617,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "normal-hair-female-0-15": {
+                        "normal-hair-female-24-15": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -36626,7 +36626,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "normal-hair-female-0-16": {
+                        "normal-hair-female-24-16": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -36635,7 +36635,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "reduced-hair-female-0-1": {
+                        "reduced-hair-female-24-1": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -36644,7 +36644,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "reduced-hair-female-0-2": {
+                        "reduced-hair-female-24-2": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -36653,7 +36653,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "reduced-hair-female-0-3": {
+                        "reduced-hair-female-24-3": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -36662,7 +36662,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "reduced-hair-female-0-4": {
+                        "reduced-hair-female-24-4": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -36671,7 +36671,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "reduced-hair-female-0-5": {
+                        "reduced-hair-female-24-5": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -36680,7 +36680,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "reduced-hair-female-0-6": {
+                        "reduced-hair-female-24-6": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -36689,7 +36689,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "reduced-hair-female-0-7": {
+                        "reduced-hair-female-24-7": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -36698,7 +36698,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "reduced-hair-female-0-8": {
+                        "reduced-hair-female-24-8": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -36707,7 +36707,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "reduced-hair-female-0-9": {
+                        "reduced-hair-female-24-9": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -36716,7 +36716,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "reduced-hair-female-0-10": {
+                        "reduced-hair-female-24-10": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -36725,7 +36725,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "reduced-hair-female-0-11": {
+                        "reduced-hair-female-24-11": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -36734,7 +36734,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "reduced-hair-female-0-12": {
+                        "reduced-hair-female-24-12": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -36743,7 +36743,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "reduced-hair-female-0-13": {
+                        "reduced-hair-female-24-13": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -36752,7 +36752,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "reduced-hair-female-0-14": {
+                        "reduced-hair-female-24-14": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -36761,7 +36761,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "reduced-hair-female-0-15": {
+                        "reduced-hair-female-24-15": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
@@ -36770,7 +36770,7 @@ var DormMenu = function() {
                                 w: 90,
                                 h: 75
                         },
-                        "reduced-hair-female-0-16": {
+                        "reduced-hair-female-24-16": {
                                 type: "spritesheet",
                                 base: "images/hair/",
                                 url: "0-1.png",
