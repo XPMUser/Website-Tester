@@ -13503,6 +13503,18 @@ Forest.STORE = {
                         price: 9500,
                         mprice: 900
                 }]
+        }, {
+                maleTag: "male",
+                femaleTag: "female",
+                items: [{
+                        ID: 68,
+                        type: "hat",
+                        mprice: 600
+                }, {
+                        ID: 84,
+                        type: "weapon",
+                        mprice: 1200
+                }]
         }]
 }, Forest.AUDIO = [{
         tag: "voice-8",
@@ -14403,6 +14415,18 @@ Mountain.STORE = {
                         price: 9500,
                         mprice: 900
                 }]
+        }, {
+                maleTag: "male",
+                femaleTag: "female",
+                items: [{
+                        ID: 67,
+                        type: "hat",
+                        mprice: 600
+                }, {
+                        ID: 83,
+                        type: "weapon",
+                        mprice: 1200
+                }]
         }]
 }, Mountain.AUDIO = [{
         tag: "voice-1",
@@ -15189,6 +15213,18 @@ Volcano.STORE = {
                         type: "pet",
                         price: 9500,
                         mprice: 900
+                }]
+        }, {
+                maleTag: "male",
+                femaleTag: "female",
+                items: [{
+                        ID: 70,
+                        type: "hat",
+                        mprice: 600
+                }, {
+                        ID: 86,
+                        type: "weapon",
+                        mprice: 1200
                 }]
         }]
 }, Volcano.AUDIO = [{
@@ -16406,6 +16442,18 @@ Pirate.STORE = {
                         price: 9500,
                         mprice: 900
                 }]
+        }, {
+                maleTag: "male1",
+                femaleTag: "female1",
+                items: [{
+                        ID: 69,
+                        type: "hat",
+                        mprice: 600
+                }, {
+                        ID: 85,
+                        type: "weapon",
+                        mprice: 1200
+                }]
         }]
 }, Pirate.AUDIO = [{
         tag: "voice-5",
@@ -17443,7 +17491,7 @@ var Tower = function() {
                                 };
                         Battle.startBattle(this.game, this.mods, e, t.bind(this), a.bind(this, this.floor, this.mods.boss))
                 }, e.prototype.toFloor = function(e, t) {
-                        return e > 100 ? (this.toBase(), void 0) : (this.game.state.states.Tower.playerX = 602, this.game.state.states.Tower.playerY = 150, this.game.state.states.Tower.floor = e, this.game.state.states.Tower.team = t, this.game.state.states.Tower.cleared = !1, this.game.state.start("Tower"), void 0)
+                        return e > 105 ? (this.toBase(), void 0) : (this.game.state.states.Tower.playerX = 602, this.game.state.states.Tower.playerY = 150, this.game.state.states.Tower.floor = e, this.game.state.states.Tower.team = t, this.game.state.states.Tower.cleared = !1, this.game.state.start("Tower"), void 0)
                 }, e.prototype.toBase = function() {
                         var t = function(e) {
                                         e.state.states.TowerBase.playerX = 1200, e.state.states.TowerBase.playerY = 400, e.state.start("TowerBase")
@@ -17719,6 +17767,17 @@ Tower.AUDIO = [{
                 face: 1,
                 audio: Tower.AUDIO[0]
         }]
+}, {
+        floor: 105,
+        reward: [{
+                type: "gold",
+                N: 500
+        }],
+        text: [{
+                text: "Hey, you're doing great! Here's a little reward...",
+                face: 0,
+                audio: Tower.AUDIO[6]
+        }]
 }], Tower.DIALOGUE = [
         [{
                 text: "Here's your first boss...there is one on every fifth floor. Let's see how well you do!",
@@ -17872,6 +17931,11 @@ Tower.AUDIO = [{
                 text: "Come, wizard! It's time for you to face the strongest wizard of all time!",
                 face: 3,
                 audio: Tower.AUDIO[2]
+        }],
+        [{
+                text: "Do you really think you can beat my tower? There were a few more floors left."
+        }, {
+                text: "Wanna dance?"
         }]
 ], Tower.OPPONENTS = [{
         pets: [{
@@ -18559,6 +18623,36 @@ Tower.AUDIO = [{
                 maxHP: 240,
                 name: "Mira Shade"
         }
+}, {
+        wizards: [{
+                data: '{"level":100}',
+                appearance: '{"name":"Hot Angel Plumber", "gender":"female", "hairStyle":14, "hairColor":9, "skinColor":1, "eyeColor":13}',
+                equipment: '{"hat":78, "outfit":57, "weapon":69}'
+        }]
+}, {
+        wizards: [{
+                data: '{"level":100}',
+                appearance: '{"name":"Jeff", "gender":"male", "hairStyle":24, "hairColor":1, "skinColor":2, "eyeColor":2}',
+                equipment: '{"hat":77}'
+        }]
+}, {
+        wizards: [{
+                data: '{"level":100}',
+                appearance: '{"name":"Caillou", "gender":"male", "hairStyle":24, "hairColor":9, "skinColor":1, "eyeColor":2}',
+                equipment: '{}'
+        }]
+}, {
+        wizards: [{
+                data: '{"level":100}',
+                appearance: '{"name":"Baldi", "gender":"male", "hairStyle":24, "hairColor":7, "skinColor":2, "eyeColor":8}',
+                equipment: '{}'
+        }]
+}, {
+        wizards: [{
+                data: '{"level":100}',
+                appearance: '{"name":"Michael Jackson", "gender":"male", "hairStyle":13, "hairColor":5, "skinColor":1, "eyeColor":2}',
+                equipment: '{"outfit":50}'
+        }]
 }];
 var TowerBase = function() {
         function e(t) {
@@ -18605,7 +18699,7 @@ var TowerBase = function() {
                 WalkableScreen.prototype.create.call(this, this.playerX, this.playerY), new QuestNPC(this.game, this.content, 1155, 340, e.DATA, this.openTower.bind(this)), this.path.addCallback(3, this.toTown.bind(this))
         }, e.prototype.openTower = function() {
                 var t = this.game.prodigy.player.getTowerProgress();
-                if (t = t - t % 5 + 1, t > 100 && (t = 100), this.game.prodigy.network.sendAnalytics("Dark-Tower"), this.game.prodigy.player.isMember)
+                if (t = t - t % 5 + 1, t > 105 && (t = 105), this.game.prodigy.network.sendAnalytics("Dark-Tower"), this.game.prodigy.player.isMember)
                         if (0 === this.game.prodigy.player.getTowerProgress()) {
                                 for (var a = 1; 6 > a; a++) this.game.prodigy.dialogue.setText(e.DATA.dialogue[a]);
                                 var i = {
@@ -18615,7 +18709,7 @@ var TowerBase = function() {
                                         audio: e.AUDIO[0]
                                 };
                                 this.game.prodigy.dialogue.setText(i)
-                        } else if (this.game.prodigy.player.getTowerProgress() > 99)
+                        } else if (this.game.prodigy.player.getTowerProgress() > 104)
                         for (var a = 6; 8 > a; a++) this.game.prodigy.dialogue.setText(e.DATA.dialogue[a]);
                 else {
                         var i = {
@@ -19775,13 +19869,47 @@ Tech.STORE = {
                         price: 2e3,
                         mprice: 500
                 }]
+        }, {
+                maleTag: "male",
+                femaleTag: "female",
+                items: [{
+                        ID: 76,
+                        type: "hat",
+                        mprice: 500
+                }, {
+                        ID: 57,
+                        type: "outfit",
+                        price: 4500,
+                        mprice: 0
+                }, {
+                        ID: 82,
+                        type: "weapon",
+                        price: 2500,
+                        mprice: 0
+                }]
+        }, {
+                maleTag: "male",
+                femaleTag: "female",
+                items: [{
+                        ID: 77,
+                        type: "hat",
+                        mprice: 500
+                }, {
+                        ID: 78,
+                        type: "hat",
+                        mprice: 500
+                }, {
+                        ID: 66,
+                        type: "hat",
+                        mprice: 500
+                }]
         }]
 }, Tech.updateTechData = function(e) {
         var t = Util.getDateSeed(),
                 a = (new Date).getDay();
         e.quests.getZoneVar(Tech.DATA.ID, "day") !== a && (e.quests.clearQuestLine(Tech.DATA.ID), e.quests.setZoneVar(Tech.DATA.ID, "day", a));
-        var s = [113, 115, 118, 120, 115, 113, 118],
-                i = [113, 114, 115, 116, 117, 118, 119, 120, 121],
+        var s = [113, 115, 118, 120, 115, 113, 118, 125],
+                i = [113, 114, 115, 116, 117, 118, 119, 120, 121, 125],
                 r = ["Power", "Super", "Techno", "Bumble", "Scrappy", "Lumpy", "Metal", "Grease", "Clank", "Pocket", "Speed"],
                 o = ["bot", "tank", "gear", "byte", "bit", "dude", "-1000", "sprocket", ""],
                 n = Tech.DATA.quests[0];
@@ -19880,6 +20008,8 @@ Tech.STORE = {
                         ID: 120
                 }, {
                         ID: 121
+                }, {
+                        ID: 125
                 }]
         },
         dialogue: [{
@@ -21148,6 +21278,10 @@ var Docks = function() {
                 }), this.game.prodigy.dialogue.setText({
                         text: "If you want to change your skin color or your gender, you can edit your save.",
                         face: 3,
+                        anim: 4
+                }), this.game.prodigy.dialogue.setText({
+                        text: "Uh oh! Plumber's Cap isn't completely organized and fixed the right way in your backpack or the player menu.",
+                        face: 4,
                         anim: 4
                 }), this.game.prodigy.dialogue.start(e.DATA.atlas)
         }, e.prototype.screenSetup = function() {
