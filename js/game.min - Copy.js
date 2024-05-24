@@ -12693,11 +12693,11 @@ Tree.DATA = {
                                 WW1: 0,
                                 FH2: 1,
                                 FG1: [
-                                        [1, 1, 1, 0, 0],
-                                        [0, 1, 1, 0, 0],
-                                        [0, 0, 1, 1, 1],
-                                        [0, 0, 1, 1, 1],
-                                        [0, 0, 1, 1, 1]
+                                        [1, 1, 1, 1, 1],
+                                        [1, 1, 1, 1, 1],
+                                        [1, 1, 1, 1, 1],
+                                        [1, 1, 1, 1, 1],
+                                        [1, 1, 1, 1, 1]
                                 ]
                         },
                         objects: {
@@ -12712,31 +12712,31 @@ Tree.DATA = {
                         objects: [],
                         tiles: [
                                 ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2"],
-                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "", "", "", "", "", ""],
-                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "", "", "", "", "", ""],
-                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "", "", "", "", "", ""],
-                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "", "", "", "", "", ""],
-                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "", "", "", "", "", ""],
-                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "", "", "", "", ""],
-                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "", "", "", "", "", ""],
-                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "", "", "", "", "", ""],
-                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "", "", "", "", "", ""],
-                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "", "", "", "", "", ""],
-                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "", "", "", "", "", ""],
-                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "", "", "", "", "", ""],
-                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "", "", "", "", "", ""],
-                                ["", "", "", "FH2", "FH2", "FH2", "", "", "", "", "", "", "", "", ""],
-                                ["", "", "", "FH2", "FH2", "FH2", "", "", "", "", "", "", "", "", ""],
-                                ["", "", "", "FH2", "FH2", "", "", "", "", "", "", "", "", "", ""],
-                                ["", "", "", "FH2", "FH2", "", "", "", "", "", "", "", "", "", ""],
-                                ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
-                                ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
-                                ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
-                                ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
-                                ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
-                                ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
-                                ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
-                                ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
+                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2"],
+                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2"],
+                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2"],
+                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2"],
+                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2"],
+                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2"],
+                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2"],
+                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2"],
+                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2"],
+                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2"],
+                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2"],
+                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2"],
+                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2"],
+                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2"],
+                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2"],
+                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2"],
+                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2"],
+                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2"],
+                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2"],
+                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2"],
+                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2"],
+                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2"],
+                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2"],
+                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2"],
+                                ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2"]
                         ]
                 },
                 foyer: {
@@ -17931,6 +17931,10 @@ Tower.AUDIO = [{
                 text: "Come, wizard! It's time for you to face the strongest wizard of all time!",
                 face: 3,
                 audio: Tower.AUDIO[2]
+        }, {
+                text: "After that, there are 5 more floors left. I recommend wearing the Duelist Set."
+        }, {
+                text: "To get the Duelist Set, do some battles in the Coliseum."
         }],
         [{
                 text: "Do you really think you can beat my tower? There were a few more floors left."
@@ -18420,25 +18424,25 @@ Tower.AUDIO = [{
         }]
 }, {
         wizards: [{
-                data: '{"level":1}',
-                appearance: '{"name":"Kelly Monstertamer", "gender":"female", "hairStyle":11, "hairColor":9, "skinColor":1, "eyeColor":13}',
-                equipment: '{"hat":1, "outfit":1, "weapon":1}'
-        }, {
-                data: '{"level":1}',
-                appearance: '{"name":"Aaron Mountainsteel", "gender":"male", "hairStyle":3, "hairColor":6, "skinColor":2, "eyeColor":3}',
-                equipment: '{"hat":1, "outfit":1, "weapon":1}'
-        }, {
-                data: '{"level":1}',
-                appearance: '{"name":"Melissa Thundercaster", "gender":"female", "hairStyle":7, "hairColor":8, "skinColor":3, "eyeColor":6}',
-                equipment: '{"hat":1, "outfit":1, "weapon":1}'
-        }, {
-                data: '{"level":1}',
-                appearance: '{"name":"Jack Froststaff", "gender":"male", "hairStyle":4, "hairColor":16, "skinColor":2, "eyeColor":9}',
-                equipment: '{"hat":1, "outfit":1, "weapon":1}'
-        }, {
-                data: '{"level":1}',
-                appearance: '{"name":"David Fruitstrider", "gender":"male", "hairStyle":8, "hairColor":5, "skinColor":4, "eyeColor":14}',
-                equipment: '{"hat":1, "outfit":1, "weapon":1}'
+		data: '{"level":50}',
+		appearance: '{"name":"Frozine", "gender":"female", "hairStyle":11, "hairColor":9, "skinColor":1, "eyeColor":13}',
+		equipment: '{"hat":37, "outfit":33, "weapon":63}'
+	}, {
+		data: '{"level":50}',
+		appearance: '{"name":"Charcole", "gender":"male", "hairStyle":3, "hairColor":6, "skinColor":2, "eyeColor":3}',
+		equipment: '{"hat":11, "outfit":8, "weapon":64}'
+	}, {
+		data: '{"level":50}',
+		appearance: '{"name":"Sprout", "gender":"female", "hairStyle":7, "hairColor":8, "skinColor":3, "eyeColor":6}',
+		equipment: '{"hat":33, "outfit":29, "weapon":24}'
+	}, {
+		data: '{"level":50}',
+		appearance: '{"name":"Thundane", "gender":"male", "hairStyle":4, "hairColor":16, "skinColor":2, "eyeColor":9}',
+		equipment: '{"hat":8, "outfit":24, "weapon":23}'
+	}, {
+		data: '{"level":50}',
+		appearance: '{"name":"Pounce", "gender":"male", "hairStyle":8, "hairColor":5, "skinColor":4, "eyeColor":14}',
+		equipment: '{"hat":32, "outfit":31, "weapon":60}'
         }]
 }, {
         pets: [{
@@ -18626,7 +18630,7 @@ Tower.AUDIO = [{
 }, {
         wizards: [{
                 data: '{"level":100}',
-                appearance: '{"name":"Hot Angel Plumber", "gender":"female", "hairStyle":14, "hairColor":9, "skinColor":1, "eyeColor":13}',
+                appearance: '{"name":"Hot Party Plumber", "gender":"female", "hairStyle":14, "hairColor":9, "skinColor":1, "eyeColor":13}',
                 equipment: '{"hat":78, "outfit":57, "weapon":69}'
         }]
 }, {
@@ -18638,14 +18642,14 @@ Tower.AUDIO = [{
 }, {
         wizards: [{
                 data: '{"level":100}',
-                appearance: '{"name":"Caillou", "gender":"male", "hairStyle":24, "hairColor":9, "skinColor":1, "eyeColor":2}',
-                equipment: '{}'
+                appearance: '{"name":"Hot Party Computer", "gender":"female", "hairStyle":5, "hairColor":14, "skinColor":1, "eyeColor":13}',
+                equipment: '{"hat":76, "outfit":57, "weapon":16}'
         }]
 }, {
         wizards: [{
                 data: '{"level":100}',
                 appearance: '{"name":"Baldi", "gender":"male", "hairStyle":24, "hairColor":7, "skinColor":2, "eyeColor":8}',
-                equipment: '{}'
+                equipment: '{"outfit":3}'
         }]
 }, {
         wizards: [{
@@ -44711,7 +44715,8 @@ Items.getItemData = function(e, t) {
                 rarity: 2,
                 drop: 1,
                 flavorText: "The robes of one of the greatest wizards in the Academy.",
-                h: 20
+                h: 20,
+                d: 100
         }, {
                 name: "Shiverchill Robes",
                 member: 0,
@@ -44753,7 +44758,8 @@ Items.getItemData = function(e, t) {
                 rarity: 3,
                 drop: 1,
                 flavorText: "These robes give off immense power, and almost seem to repel the ground below you.",
-                h: 20
+                h: 20,
+                d: 20
         }, {
                 name: "Diggin Outfit",
                 member: 0,
@@ -44903,8 +44909,7 @@ Items.getItemData = function(e, t) {
                 rarity: 4,
                 drop: 1,
                 flavorText: "Celebrate Prodigy's 13th birthday.",
-                h: 10,
-                d: 10
+                h: 10
         }],
         weapon: [{
                 name: "Enchanted Stick",
@@ -45017,7 +45022,7 @@ Items.getItemData = function(e, t) {
                 rarity: 1,
                 drop: 1,
                 flavorText: "This staff was once paired with another just like it and belonged to twin wizards.",
-                d: 1
+                d: 3
         }, {
                 name: "Vita",
                 member: 0,
@@ -45339,7 +45344,8 @@ Items.getItemData = function(e, t) {
                 rarity: 2,
                 drop: 1,
                 flavorText: "Crios once swore that if anyone could beat him in a duel, he'd give them this staff. Looks like you did it!",
-                d: 100
+                d: 100,
+                h: 20
         }, {
                 name: "Hailstone",
                 member: 0,
@@ -45381,7 +45387,8 @@ Items.getItemData = function(e, t) {
                 rarity: 3,
                 drop: 1,
                 flavorText: "A gift from the great wizard Mira. Just holding this staff makes you feel stronger than ever before.",
-                d: 25
+                d: 25,
+                h: 25
         }, {
                 ID: 69,
                 name: "Wrench",
@@ -45752,7 +45759,8 @@ Items.getItemData = function(e, t) {
                 rarity: 3,
                 drop: 1,
                 flavorText: 'Official sponsors of the Annual Wizard Dueling Contest, they say "The Choice of Champions" in big letters on the side. ',
-                h: 200
+                h: 200,
+                d: 100
         }, {
                 name: "Shiverchill Boots",
                 member: 0,
@@ -46055,7 +46063,8 @@ Items.getItemData = function(e, t) {
                 rarity: 2,
                 drop: 1,
                 flavorText: "The hat of one of the greatest wizards in the Academy.",
-                h: 20
+                h: 20,
+                d: 100
         }, {
                 name: "Shiverchill Hat",
                 type: "",
@@ -46103,7 +46112,8 @@ Items.getItemData = function(e, t) {
                 rarity: 3,
                 drop: 1,
                 flavorText: "Mira's hood radiates a powerful energy...",
-                h: 20
+                h: 20,
+                d: 20
         }, {
                 name: "Desert Hat",
                 type: "",
@@ -46408,8 +46418,7 @@ Items.getItemData = function(e, t) {
                 rarity: 4,
                 drop: 1,
                 flavorText: "You aren't a computer, but this hat sure makes you look like one!",
-                h: 10,
-                d: 10
+                h: 10
         }, {
                 ID: 77,
                 name: "Jeff's Hat",
@@ -46418,8 +46427,7 @@ Items.getItemData = function(e, t) {
                 rarity: 2,
                 drop: 1,
                 flavorText: "Jeff from PVZ Mods has worn this hat before. Credits to Peridot/Starry Ciocirlan and Stefan25897 (King Raber) for PVZ 1 art style designs of this hat and credits to Peridot/Starry Ciocirlan for Jeff's hat.",
-                h: 6,
-                d: 6
+                h: 6
         }, {
             ID: 78,
             name: "Plumber's Cap",
