@@ -10205,7 +10205,7 @@ var CreatureData = function () {
 	}();
 Boot.init = function(e) {
         var t = new Phaser.Game(1280, 720, Phaser.CANVAS, "game-container");
-        t.prodigy = new Prodigy(t), t.prodigy.sso = e || {}, t.assets = new AssetManager(t), t.state.add("DungeonMaker", DungeonMaker), t.state.add("Boot", Boot), t.state.add("Login", Login), t.state.add("Battle", Battle), t.state.add("Forest", Forest), t.state.add("Mountain", Mountain), t.state.add("Volcano", Volcano), t.state.add("Arena", Arena), t.state.add("TownSquare", TownSquare), t.state.add("Pirate", Pirate), t.state.add("Academy", Academy), t.state.add("Tutorial", Tutorial), t.state.add("Tower", Tower), t.state.add("TowerBase", TowerBase), t.state.add("Cloud", Cloud), t.state.add("Plains", Plains), t.state.add("TechZone", TechZone), t.state.add("Dorm", Dorm), t.state.add("Dino", Dino), t.state.add("Museum", Museum), t.state.add("Tech", Tech), t.state.add("Tree", Tree), t.state.add("Docks", Docks), t.state.add("DinoDig", DinoDig), t.state.add("DanceDance", DanceDance);
+        t.prodigy = new Prodigy(t), t.prodigy.sso = e || {}, t.assets = new AssetManager(t), t.state.add("DungeonMaker", DungeonMaker), t.state.add("Boot", Boot), t.state.add("Login", Login), t.state.add("Battle", Battle), t.state.add("Forest", Forest), t.state.add("Mountain", Mountain), t.state.add("Volcano", Volcano), t.state.add("Arena", Arena), t.state.add("TownSquare", TownSquare), t.state.add("Pirate", Pirate), t.state.add("CharacterCreate", CharacterCreate), t.state.add("Academy", Academy), t.state.add("Tutorial", Tutorial), t.state.add("Tower", Tower), t.state.add("TowerBase", TowerBase), t.state.add("Cloud", Cloud), t.state.add("Plains", Plains), t.state.add("TechZone", TechZone), t.state.add("Dorm", Dorm), t.state.add("Intro", Intro), t.state.add("Dino", Dino), t.state.add("Museum", Museum), t.state.add("Tech", Tech), t.state.add("Tree", Tree), t.state.add("Docks", Docks), t.state.add("DinoDig", DinoDig), t.state.add("DanceDance", DanceDance);
         if (Util.isDefined(window.checkForMods)) {
                 window.checkForMods(t, window.location.search)
         } else {
@@ -11686,35 +11686,47 @@ var Forest = function () {
 Forest.STORE = {
 	name: "Firefly Outfitters",
 	atlas: "store-forest",
-	pages: [{
-		maleTag: "male",
-		femaleTag: "female",
-		items: [{
-			ID: 33,
-			type: "hat",
-			mprice: 600
-		}, {
-			ID: 24,
-			type: "weapon",
-			mprice: 1200
-		}, {
-			ID: 29,
-			type: "outfit",
-			mprice: 1e3
-		}]
-	}, {
-		tag: "pet",
-		items: [{
-			ID: 36,
-			type: "pet",
-			price: 9500,
-			mprice: 900
-		}, {
-			ID: 1,
-			type: "pet",
-			price: 0,
-			mprice: 0
-		}]
+        pages: [{
+                maleTag: "male",
+                femaleTag: "female",
+                items: [{
+                        ID: 33,
+                        type: "hat",
+                        mprice: 600
+                }, {
+                        ID: 24,
+                        type: "weapon",
+                        mprice: 1200
+                }, {
+                        ID: 29,
+                        type: "outfit",
+                        mprice: 1e3
+                }]
+        }, {
+                tag: "pet",
+                items: [{
+                        ID: 36,
+                        type: "pet",
+                        price: 9500,
+                        mprice: 900
+                }, {
+                        ID: 126,
+                        type: "pet",
+                        price: 9500,
+                        mprice: 900
+                }]
+        }, {
+                maleTag: "male",
+                femaleTag: "female",
+                items: [{
+                        ID: 68,
+                        type: "hat",
+                        mprice: 600
+                }, {
+                        ID: 84,
+                        type: "weapon",
+                        mprice: 1200
+                }]
 	}]
 }, Forest.AUDIO = [{
 	tag: "voice-8",
@@ -12537,30 +12549,47 @@ var Mountain = function () {
 Mountain.STORE = {
 	name: "Snowday Sales",
 	atlas: "store-mountain",
-	pages: [{
-		maleTag: "male",
-		femaleTag: "female",
-		items: [{
-			ID: 37,
-			type: "hat",
-			mprice: 600
-		}, {
-			ID: 63,
-			type: "weapon",
-			mprice: 1200
-		}, {
-			ID: 33,
-			type: "outfit",
-			mprice: 1e3
-		}]
-	}, {
-		tag: "pet",
-		items: [{
-			ID: 50,
-			type: "pet",
-			price: 9500,
-			mprice: 900
-		}]
+        pages: [{
+                maleTag: "male",
+                femaleTag: "female",
+                items: [{
+                        ID: 37,
+                        type: "hat",
+                        mprice: 600
+                }, {
+                        ID: 63,
+                        type: "weapon",
+                        mprice: 1200
+                }, {
+                        ID: 33,
+                        type: "outfit",
+                        mprice: 1e3
+                }]
+        }, {
+                tag: "pet",
+                items: [{
+                        ID: 50,
+                        type: "pet",
+                        price: 9500,
+                        mprice: 900
+                }, {
+                        ID: 127,
+                        type: "pet",
+                        price: 9500,
+                        mprice: 900
+                }]
+        }, {
+                maleTag: "male",
+                femaleTag: "female",
+                items: [{
+                        ID: 67,
+                        type: "hat",
+                        mprice: 600
+                }, {
+                        ID: 83,
+                        type: "weapon",
+                        mprice: 1200
+                }]
 	}]
 }, Mountain.AUDIO = [{
 	tag: "voice-1",
@@ -13284,35 +13313,47 @@ var Volcano = function () {
 Volcano.STORE = {
 	name: "Hot Hot Threads",
 	atlas: "store-volcano",
-	pages: [{
-		maleTag: "male",
-		femaleTag: "female",
-		items: [{
-			ID: 38,
-			type: "hat",
-			mprice: 600
-		}, {
-			ID: 64,
-			type: "weapon",
-			mprice: 1200
-		}, {
-			ID: 34,
-			type: "outfit",
-			mprice: 1e3
-		}]
-	}, {
-		tag: "pet",
-		items: [{
-			ID: 48,
-			type: "pet",
-			price: 9500,
-			mprice: 900
-		}, {
-			ID: 7,
-			type: "pet",
-			price: 0,
-			mprice: 0
-		}]
+        pages: [{
+                maleTag: "male",
+                femaleTag: "female",
+                items: [{
+                        ID: 38,
+                        type: "hat",
+                        mprice: 600
+                }, {
+                        ID: 64,
+                        type: "weapon",
+                        mprice: 1200
+                }, {
+                        ID: 34,
+                        type: "outfit",
+                        mprice: 1e3
+                }]
+        }, {
+                tag: "pet",
+                items: [{
+                        ID: 48,
+                        type: "pet",
+                        price: 9500,
+                        mprice: 900
+                }, {
+                        ID: 129,
+                        type: "pet",
+                        price: 9500,
+                        mprice: 900
+                }]
+        }, {
+                maleTag: "male",
+                femaleTag: "female",
+                items: [{
+                        ID: 70,
+                        type: "hat",
+                        mprice: 600
+                }, {
+                        ID: 86,
+                        type: "weapon",
+                        mprice: 1200
+                }]
 	}]
 }, Volcano.AUDIO = [{
 	tag: "voice-7",
@@ -14396,61 +14437,78 @@ var Pirate = function () {
 Pirate.STORE = {
 	name: "Plank's Tanks",
 	atlas: "store-pirate",
-	pages: [{
-		maleTag: "male1",
-		femaleTag: "female1",
-		items: [{
-			ID: 40,
-			type: "hat",
-			price: 0
-		}, {
-			ID: 66,
-			type: "weapon",
-			price: 7500,
-			mprice: 0
-		}, {
-			ID: 36,
-			type: "outfit",
-			price: 4500,
-			mprice: 0
-		}]
-	}, {
-		tag: "pet1",
-		items: [{
-			ID: 99,
-			type: "pet",
-			price: 3e3,
-			mprice: 300
-		}, {
-			ID: 10,
-			type: "pet",
-			price: 0,
-			mprice: 0
-		}]
-	}, {
-		maleTag: "male2",
-		femaleTag: "female2",
-		items: [{
-			ID: 39,
-			type: "hat",
-			price: 8500,
-			mprice: 500
-		}, {
-			ID: 65,
-			type: "weapon",
-			mprice: 1250
-		}, {
-			ID: 35,
-			type: "outfit",
-			mprice: 900
-		}]
-	}, {
-		tag: "pet2",
-		items: [{
-			ID: 102,
-			type: "pet",
-			mprice: 800
-		}]
+        pages: [{
+                maleTag: "male1",
+                femaleTag: "female1",
+                items: [{
+                        ID: 40,
+                        type: "hat",
+                        price: 0
+                }, {
+                        ID: 66,
+                        type: "weapon",
+                        price: 7500,
+                        mprice: 0
+                }, {
+                        ID: 36,
+                        type: "outfit",
+                        price: 4500,
+                        mprice: 0
+                }]
+        }, {
+                tag: "pet1",
+                items: [{
+                        ID: 99,
+                        type: "pet",
+                        price: 3e3,
+                        mprice: 300
+                }, {
+                        ID: 128,
+                        type: "pet",
+                        price: 9500,
+                        mprice: 900
+                }]
+        }, {
+                maleTag: "male2",
+                femaleTag: "female2",
+                items: [{
+                        ID: 39,
+                        type: "hat",
+                        price: 8500,
+                        mprice: 500
+                }, {
+                        ID: 65,
+                        type: "weapon",
+                        mprice: 1250
+                }, {
+                        ID: 35,
+                        type: "outfit",
+                        mprice: 900
+                }]
+        }, {
+                tag: "pet2",
+                items: [{
+                        ID: 102,
+                        type: "pet",
+                        mprice: 800
+                }, {
+                        ID: 77,
+                        type: "pet",
+                        price: 9500,
+                        mprice: 900
+                }]
+        }, {
+                maleTag: "male1",
+                femaleTag: "female1",
+                items: [{
+                        ID: 69,
+                        type: "hat",
+                        mprice: 600
+                }, {
+                        ID: 85,
+                        type: "weapon",
+                        mprice: 1200
+                }]
 	}]
 }, Pirate.AUDIO = [{
 	tag: "voice-5",
@@ -17648,32 +17706,71 @@ var Tech = function () {
 Tech.STORE = {
 	name: "The Machine Shop",
 	atlas: "store-tech",
-	pages: [{
-		maleTag: "male",
-		femaleTag: "female",
-		items: [{
-			ID: 46,
-			type: "hat",
-			mprice: 500
-		}, {
-			ID: 69,
-			type: "weapon",
-			price: 2500,
-			mprice: 0
-		}, {
-			ID: 43,
-			type: "outfit",
-			price: 4500,
-			mprice: 0
-		}]
-	}, {
-		tag: "pet",
-		items: [{
-			ID: 118,
-			type: "pet",
-			price: 2e3,
-			mprice: 500
-		}]
+        pages: [{
+                maleTag: "male",
+                femaleTag: "female",
+                items: [{
+                        ID: 46,
+                        type: "hat",
+                        mprice: 500
+                }, {
+                        ID: 69,
+                        type: "weapon",
+                        price: 2500,
+                        mprice: 0
+                }, {
+                        ID: 43,
+                        type: "outfit",
+                        price: 4500,
+                        mprice: 0
+                }]
+        }, {
+                tag: "pet",
+                items: [{
+                        ID: 118,
+                        type: "pet",
+                        price: 2e3,
+                        mprice: 500
+                }, {
+                        ID: 125,
+                        type: "pet",
+                        price: 2e3,
+                        mprice: 500
+                }]
+        }, {
+                maleTag: "male",
+                femaleTag: "female",
+                items: [{
+                        ID: 76,
+                        type: "hat",
+                        mprice: 500
+                }, {
+                        ID: 57,
+                        type: "outfit",
+                        price: 4500,
+                        mprice: 0
+                }, {
+                        ID: 82,
+                        type: "weapon",
+                        price: 2500,
+                        mprice: 0
+                }]
+        }, {
+                maleTag: "male",
+                femaleTag: "female",
+                items: [{
+                        ID: 77,
+                        type: "hat",
+                        mprice: 500
+                }, {
+                        ID: 78,
+                        type: "hat",
+                        mprice: 500
+                }, {
+                        ID: 66,
+                        type: "hat",
+                        mprice: 500
+                }]
 	}]
 }, Tech.updateTechData = function (e) {
 	var t = Util.getDateSeed(),
