@@ -5384,7 +5384,7 @@ var Boss = function () {
 			this.data = {
 				name: t,
 				gender: e,
-				hairStyle: Math.floor(1 + 8 * Math.random()),
+				hairStyle: Math.floor(1 + 24 * Math.random()),
 				hairColor: Math.floor(1 + 16 * Math.random()),
 				skinColor: Math.floor(1 + 5 * Math.random()),
 				eyeColor: Math.floor(1 + 15 * Math.random())
@@ -5407,7 +5407,7 @@ var Boss = function () {
 		}, e.prototype.getHairStyle = function () {
 			return this.data.hairStyle
 		}, e.prototype.setHairStyle = function (e) {
-			e >= 1 && 15 >= e && (this.data.hairStyle = e), this.updated = !0
+			e >= 1 && 24 >= e && (this.data.hairStyle = e), this.updated = !0
 		}, e.prototype.getHairColor = function () {
 			return this.data.hairColor
 		}, e.prototype.setHairColor = function (e) {
@@ -5427,8 +5427,8 @@ var Boss = function () {
 		}, e
 	}();
 Appearance.hairNames = {
-	male: ["Prince", "Spikes", "Rock Star", "Fever", "Neat", "Slick", "Shaggy", "Bed Head"],
-	female: ["Grace", "Spring", "Fall", "Side Swept", "Winter", "Uplift", "Blossom", "Sunshine", "Excite", "Pizzazz", "Dashing", "Summer", "Lilly", "Sweetheart", "Island Breeze"]
+	male: ["Prince", "Spikes", "Rock Star", "Fever", "Neat", "Slick", "Shaggy", "Bed Head", "Grace", "Spring", "Fall", "Side Swept", "Winter", "Uplift", "Blossom", "Sunshine", "Excite", "Pizzazz", "Dashing", "Summer", "Lilly", "Sweetheart", "Island Breeze", "Baldy"],
+	female: ["Grace", "Spring", "Fall", "Side Swept", "Winter", "Uplift", "Blossom", "Sunshine", "Excite", "Pizzazz", "Dashing", "Summer", "Lilly", "Sweetheart", "Island Breeze", "Prince", "Spikes", "Rock Star", "Fever", "Neat", "Slick", "Shaggy", "Bed Head", "Baldy"]
 };
 var Quests = function () {
 	function e() {
@@ -6903,7 +6903,7 @@ var Character = function () {
 				y: -15
 			}, 800, Phaser.Easing.Quadratic.InOut, !0, 0, Number.MAX_VALUE, !0))
 		}, e.prototype.openLeaderboard = function () {
-			this.game.prodigy.open.leaderboard()
+			this.game.prodigy.open.message("Leaderboards are disabled for now. \n\nYou still won't lose any data at any time.", null, null, "There aren't any api classes available.")
 		}, e.prototype.openStore = function () {
 			this.game.prodigy.player.tutorial.setMenuValue(1, 0, this.storeTarget), this.game.prodigy.open.store([Forest.STORE, Cloud.STORE, Volcano.STORE, Pirate.STORE, Mountain.STORE, Tech.STORE, TechZone.STORE], !0), this.parent.openNav()
 		}, e.prototype.openOptions = function () {
@@ -7402,7 +7402,7 @@ var Card = function () {
 			})
 		}
 		return e.prototype = Object.create(Menu.prototype), e.prototype.menuSetup = function () {
-			Menu.prototype.menuSetup.call(this), this.showFrame("catalogue", 1 === this.data.length ? this.data[0].name : "Prodigy Store", []), this.backButton = TextButton.createBackButton(this.game, this, 0, 0, this.setPage.bind(this, -1)), this.backButton.setInactive(), this.nextButton = TextButton.createNextButton(this.game, this, 0, 0, this.setPage.bind(this, 1)), this.nextButton.setInactive();
+			Menu.prototype.menuSetup.call(this), this.showFrame("catalogue", 1 === this.data.length ? this.data[0].name : "Prodidows Store", []), this.backButton = TextButton.createBackButton(this.game, this, 0, 0, this.setPage.bind(this, -1)), this.backButton.setInactive(), this.nextButton = TextButton.createNextButton(this.game, this, 0, 0, this.setPage.bind(this, 1)), this.nextButton.setInactive();
 			var e = new TextButton(this.game, this, 0, 0, {
 				icon: "close",
 				text: "close"
@@ -10203,40 +10203,15 @@ var CreatureData = function () {
 			})
 		}, e
 	}();
-Boot.init = function (e) {
-	var t = new Phaser.Game(1280, 720, Phaser.CANVAS, "game-container");
-	t.prodigy = new Prodigy(t),
-	t.prodigy.sso = e || {},
-	t.assets = new AssetManager(t),
-	t.state.add("DungeonMaker", DungeonMaker),
-	t.state.add("Boot", Boot),
-	t.state.add("Login", Login),
-	t.state.add("Battle", Battle),
-	t.state.add("Faint", Faint),
-	t.state.add("CharacterCreate", CharacterCreate),
-	t.state.add("Forest", Forest),
-	t.state.add("Mountain", Mountain),
-	t.state.add("Volcano", Volcano),
-	t.state.add("Arena", Arena),
-	t.state.add("TownSquare", TownSquare),
-	t.state.add("Pirate", Pirate),
-	t.state.add("Academy", Academy),
-	t.state.add("Tower", Tower),
-	t.state.add("TowerBase", TowerBase),
-	t.state.add("Cloud", Cloud),
-	t.state.add("Plains", Plains),
-	t.state.add("Dorm", Dorm),
-	t.state.add("Dino", Dino),
-	t.state.add("Museum", Museum),
-	t.state.add("Tech", Tech),
-	t.state.add("Docks", Docks),
-	t.state.add("Tree", Tree),
-	t.state.add("DinoDig", DinoDig),
-	t.state.add("DanceDance", DanceDance),
-	t.state.add("Intro", Intro),
-	t.state.add("TechZone", TechZone),
-	t.state.add("Tutorial2", Tutorial2),
-	t.state.start("Boot")
+Boot.init = function(e) {
+        var t = new Phaser.Game(1280, 720, Phaser.CANVAS, "game-container");
+        t.prodigy = new Prodigy(t), t.prodigy.sso = e || {}, t.assets = new AssetManager(t), t.state.add("DungeonMaker", DungeonMaker), t.state.add("Boot", Boot), t.state.add("Login", Login), t.state.add("Battle", Battle), t.state.add("Forest", Forest), t.state.add("Mountain", Mountain), t.state.add("Volcano", Volcano), t.state.add("Arena", Arena), t.state.add("TownSquare", TownSquare), t.state.add("Pirate", Pirate), t.state.add("Academy", Academy), t.state.add("Tutorial", Tutorial), t.state.add("Tower", Tower), t.state.add("TowerBase", TowerBase), t.state.add("Cloud", Cloud), t.state.add("Plains", Plains), t.state.add("TechZone", TechZone), t.state.add("Dorm", Dorm), t.state.add("Dino", Dino), t.state.add("Museum", Museum), t.state.add("Tech", Tech), t.state.add("Tree", Tree), t.state.add("Docks", Docks), t.state.add("DinoDig", DinoDig), t.state.add("DanceDance", DanceDance);
+        if (Util.isDefined(window.checkForMods)) {
+                window.checkForMods(t, window.location.search)
+        } else {
+                console.log("%c %c %c Found no mods to hook into. %c %c ", "background: #9bd", "background: #48a", "background: #16a; color: #FFF", "background: #48a", "background: #9bd")
+        };
+        t.state.start("Boot")
 };
 var Screen = function () {
 		function e(e, t, a, s) {
@@ -10293,7 +10268,7 @@ var Screen = function () {
 		return e.prototype = Object.create(Screen.prototype), e.prototype.preload = function () {
 			Screen.prototype.preload.call(this), this.game.assets.load(this.game.load, ["login"]), this.game.assets.load(this.game.load, ["sfx-main"])
 		}, e.prototype.create = function () {
-			Screen.prototype.create.call(this), this.game.prodigy.player = new Player, this.game.prodigy.education = new EducationSystem(this.game), this.username = null, this.password = null, this.game.prodigy.audio.pauseBGM(), this.background.add(new Sprite(this.game, 0, 0, "login", "bg")), this.loginBox = new Element(this.game, this.background), this.loginBox.y = 50, this.loginBox.alpha = 0;
+			Screen.prototype.create.call(this), this.game.prodigy.player = new Player, this.game.prodigy.education = new EducationSystem(this.game), this.username = null, this.password = null, this.game.prodigy.audio.stopBGM(), this.background.add(new Sprite(this.game, 0, 0, "login", "bg")), this.loginBox = new Element(this.game, this.background), this.loginBox.y = 50, this.loginBox.alpha = 0;
 			var e = new Sprite(this.game, this.game.world.centerX, this.game.world.centerY, "login", "login-panel");
 			e.anchor.setTo(.5, .5), this.game.add.tween(e).to({
 				angle: 360
@@ -10475,7 +10450,7 @@ var Screen = function () {
 		}, e.prototype.createBackground = function () {
 			this.bg = new Sprite(this.game, 0, 0, this.screenName, "bg"), this.bg.inputEnabled = !0, this.bg.events.onInputDown.add(this.listener.bind(this, 0, 0), this), this.background.add(this.bg)
 		}, e.prototype.screenSetup = function (e) {
-			Screen.prototype.screenSetup.call(this), this.game.prodigy.audio.playBGM(this.bgm, !0, !0), this.game.prodigy.audio.resumeBGM(), !e && this.game.prodigy.player.dataloss ? (this.game.prodigy.player.changeGold(5e3), Util.isDefined(this.game.prodigy.player.data.level) || (this.game.prodigy.player.data.level = 1), Util.isDefined(this.game.prodigy.player.data.stars) || (this.game.prodigy.player.data.stars = 0), this.game.prodigy.player.data.level = Math.min(100, this.game.prodigy.player.data.level + 5), this.game.prodigy.player.data.stars = Creature.starsToLevel(this.game.prodigy.player.data.level - 1), this.game.prodigy.open.message("You may have lost some progress which we can't recover. We're very sorry for this loss, but to help make up for it, we've added 5000 gold and 5 levels to your character.", null, null, "Uh oh!"), this.game.prodigy.player.dataloss = null) : e || (MemberPrompt.isRequired(this.game.prodigy.player) ? (this.game.prodigy.player.memberPrompt = !0, this.game.prodigy.open.memberPrompt()) : !this.game.prodigy.player.loginPrompt && Util.isSchoolHours() && (this.game.prodigy.player.loginPrompt = !0, this.game.prodigy.open.message("1. Math, Features with Prodigy's api, The Google Sign-In feature, and 1.16.5's Prodigy store can't be installed. 2. The go back up button still doesn't work on the last page of the house ui.", null, null, "Known Issues!")))
+			Screen.prototype.screenSetup.call(this), this.game.prodigy.audio.playBGM(this.bgm, !0, !0), this.game.prodigy.audio.resumeBGM(), !e && this.game.prodigy.player.dataloss ? (this.game.prodigy.player.changeGold(5e3), Util.isDefined(this.game.prodigy.player.data.level) || (this.game.prodigy.player.data.level = 1), Util.isDefined(this.game.prodigy.player.data.stars) || (this.game.prodigy.player.data.stars = 0), this.game.prodigy.player.data.level = Math.min(100, this.game.prodigy.player.data.level + 5), this.game.prodigy.player.data.stars = Creature.starsToLevel(this.game.prodigy.player.data.level - 1), this.game.prodigy.open.message("You may have lost some progress which we can't recover. We're very sorry for this loss, but to help make up for it, we've added 5000 gold and 5 levels to your character.", null, null, "Uh oh!"), this.game.prodigy.player.dataloss = null) : e || (MemberPrompt.isRequired(this.game.prodigy.player) ? (this.game.prodigy.player.memberPrompt = !0, this.game.prodigy.open.memberPrompt()) : !this.game.prodigy.player.loginPrompt && Util.isSchoolHours() && (this.game.prodigy.player.loginPrompt = !0, this.game.prodigy.open.message("1. Math, Features with Prodigy's api, and/or The Google Sign-In feature. 2. The go back up button still doesn't work on the last page of the house ui.", null, null, "Known Issues!")))
 		}, e.prototype.addPlayer = function (e) {
 			var t = new Player;
 			t.init(e);
@@ -15422,7 +15397,7 @@ var Tower = function () {
 				};
 			Battle.startBattle(this.game, this.mods, e.bind(this), t.bind(this, this.floor, this.mods.boss), null, "TowerBase")
 		}, e.prototype.toFloor = function (e) {
-			return e > 100 ? (this.toBase(), void 0) : (this.game.state.states.Tower.playerX = 602, this.game.state.states.Tower.playerY = 150, this.game.state.states.Tower.floor = e, this.game.state.states.Tower.cleared = !1, this.game.state.start("Tower"), void 0)
+			return e > 105 ? (this.toBase(), void 0) : (this.game.state.states.Tower.playerX = 602, this.game.state.states.Tower.playerY = 150, this.game.state.states.Tower.floor = e, this.game.state.states.Tower.cleared = !1, this.game.state.start("Tower"), void 0)
 		}, e.prototype.toBase = function () {
 			var t = function (e) {
 					e.state.states.TowerBase.playerX = 1200, e.state.states.TowerBase.playerY = 400, e.state.start("TowerBase")
@@ -15697,6 +15672,17 @@ Tower.AUDIO = [{
 		face: 1,
 		audio: Tower.AUDIO[0]
 	}]
+}, {
+        floor: 105,
+        reward: [{
+                type: "gold",
+                N: 500
+        }],
+        text: [{
+                text: "Hey, you're doing great! Here's a little reward...",
+                face: 0,
+                audio: Tower.AUDIO[6]
+        }]
 }], Tower.DIALOGUE = [[{
 	text: "Here's your first boss...there is one on every fifth floor. Let's see how well you do!",
 	face: 0,
@@ -15819,7 +15805,7 @@ Tower.AUDIO = [{
 	text: "And so you have earned the greatest of rewards...you must challenge the legendary wizard herself...",
 	face: 3
 }, {
-	text: "ME! THE GREAT AND POWERFUL MARA SHADE!",
+	text: "ME! THE GREAT AND POWERFUL MIRA SHADE!",
 	face: 0,
 	audio: Tower.AUDIO[7]
 }, {
@@ -15830,6 +15816,10 @@ Tower.AUDIO = [{
 	text: "Come, wizard! It's time for you to face the strongest wizard of all time!",
 	face: 3,
 	audio: Tower.AUDIO[2]
+}], [{
+        text: "Do you really think you can beat my tower? There were a few more floors left."
+}, {
+        text: "Wanna dance?"
 }]], Tower.OPPONENTS = [{
 	pets: [{
 		ID: 99,
@@ -16331,23 +16321,23 @@ Tower.AUDIO = [{
 	}]
 }, {
 	wizards: [{
-		data: '{"level":100}',
+		data: '{"level":50}',
 		appearance: '{"name":"Frozine", "gender":"female", "hairStyle":11, "hairColor":9, "skinColor":1, "eyeColor":13}',
 		equipment: '{"hat":37, "outfit":33, "weapon":63}'
 	}, {
-		data: '{"level":100}',
+		data: '{"level":50}',
 		appearance: '{"name":"Charcole", "gender":"male", "hairStyle":3, "hairColor":6, "skinColor":2, "eyeColor":3}',
 		equipment: '{"hat":11, "outfit":8, "weapon":64}'
 	}, {
-		data: '{"level":100}',
+		data: '{"level":50}',
 		appearance: '{"name":"Sprout", "gender":"female", "hairStyle":7, "hairColor":8, "skinColor":3, "eyeColor":6}',
 		equipment: '{"hat":33, "outfit":29, "weapon":24}'
 	}, {
-		data: '{"level":100}',
+		data: '{"level":50}',
 		appearance: '{"name":"Thundane", "gender":"male", "hairStyle":4, "hairColor":16, "skinColor":2, "eyeColor":9}',
 		equipment: '{"hat":8, "outfit":24, "weapon":23}'
 	}, {
-		data: '{"level":100}',
+		data: '{"level":50}',
 		appearance: '{"name":"Pounce", "gender":"male", "hairStyle":8, "hairColor":5, "skinColor":4, "eyeColor":14}',
 		equipment: '{"hat":32, "outfit":31, "weapon":60}'
 	}]
@@ -16534,6 +16524,36 @@ Tower.AUDIO = [{
 		maxHP: 240,
 		name: "Mira Shade"
 	}
+}, {
+        wizards: [{
+                data: '{"level":100}',
+                appearance: '{"name":"Hot Party Plumber", "gender":"female", "hairStyle":14, "hairColor":9, "skinColor":1, "eyeColor":13}',
+                equipment: '{"hat":78, "outfit":57, "weapon":69}'
+        }]
+}, {
+        wizards: [{
+                data: '{"level":100}',
+                appearance: '{"name":"Jeff", "gender":"male", "hairStyle":24, "hairColor":1, "skinColor":2, "eyeColor":2}',
+                equipment: '{"hat":77}'
+        }]
+}, {
+        wizards: [{
+                data: '{"level":100}',
+                appearance: '{"name":"Hot Party Computer", "gender":"female", "hairStyle":5, "hairColor":14, "skinColor":1, "eyeColor":13}',
+                equipment: '{"hat":76, "outfit":57, "weapon":16}'
+        }]
+}, {
+        wizards: [{
+                data: '{"level":100}',
+                appearance: '{"name":"Baldi", "gender":"male", "hairStyle":24, "hairColor":7, "skinColor":2, "eyeColor":8}',
+                equipment: '{"outfit":3}'
+        }]
+}, {
+        wizards: [{
+                data: '{"level":100}',
+                appearance: '{"name":"Michael Jackson", "gender":"male", "hairStyle":13, "hairColor":5, "skinColor":1, "eyeColor":2}',
+                equipment: '{"outfit":50}'
+        }]
 }];
 var TowerBase = function () {
 	function e(t) {
@@ -16581,7 +16601,7 @@ var TowerBase = function () {
 		}, this.openTower.bind(this)), this.path.addCallback(3, this.toTown.bind(this))
 	}, e.prototype.openTower = function () {
 		var t = this.game.prodigy.player.getTowerProgress();
-		if (t = t - t % 5 + 1, t > 100 && (t = 100), this.game.prodigy.network.sendAnalytics("Dark-Tower"), this.game.prodigy.player.isMember)
+		if (t = t - t % 5 + 1, t > 105 && (t = 105), this.game.prodigy.network.sendAnalytics("Dark-Tower"), this.game.prodigy.player.isMember)
 			if (0 === this.game.prodigy.player.getTowerProgress()) {
 				for (var a = 1; 6 > a; a++) this.game.prodigy.dialogue.setText(e.DATA.dialogue[a]);
 				var s = {
@@ -16591,13 +16611,13 @@ var TowerBase = function () {
 					audio: e.AUDIO[0]
 				};
 				this.game.prodigy.dialogue.setText(s)
-			} else if (this.game.prodigy.player.getTowerProgress() > 99)
+			} else if (this.game.prodigy.player.getTowerProgress() > 104)
 			for (var a = 6; 8 > a; a++) this.game.prodigy.dialogue.setText(e.DATA.dialogue[a]);
 		else {
 			var s = {
-				text: "Do you want to continue climbing the tower from floor " + t + "? \n\nIt will cost you [gold] 500.",
+				text: "Do you want to continue climbing the tower from floor " + t + "?",
 				face: 0,
-				yes: this.changeTeam.bind(this, t, 500),
+				yes: this.changeTeam.bind(this, t, 0),
 				audio: e.AUDIO[0]
 			};
 			this.game.prodigy.dialogue.setText(s)
@@ -16607,7 +16627,7 @@ var TowerBase = function () {
 		this.game.prodigy.dialogue.start("npc-face-mira")
 	}, e.prototype.changeTeam = function (t, a) {
 		var s = !0;
-		Util.isDefined(a) && (this.game.prodigy.player.getGold() >= a ? this.game.prodigy.player.changeGold(-500) : (this.game.prodigy.dialogue.setText(e.DATA.dialogue[8]), this.game.prodigy.dialogue.start("npc-face-mira"), s = !1)), s && this.toFloor(t, !0)
+		Util.isDefined(a) && (this.game.prodigy.player.getGold() >= a ? this.game.prodigy.player.changeGold(-0) : (this.game.prodigy.dialogue.setText(e.DATA.dialogue[8]), this.game.prodigy.dialogue.start("npc-face-mira"), s = !1)), s && this.toFloor(t, !0)
 	}, e.prototype.toTown = function () {
 		this.game.state.states.TownSquare.playerX = 1002, this.game.state.states.TownSquare.playerY = 601, this.game.state.start("TownSquare")
 	}, e.prototype.toFloor = function (e, t) {
@@ -20143,7 +20163,7 @@ var Docks = function () {
 			text: "Oh dear, The Puppet Master took all my starter pets away.",
 			face: 4
 		}), this.game.prodigy.dialogue.setText({
-			text: "Don't worry, you can still buy starter pets from the Prodigy Store or The Tech Store.",
+			text: "Don't worry, you can still buy starter pets from the Prodidows Store or The Tech Store.",
 			face: 3
 		}), this.game.prodigy.dialogue.setText({
 			text: "Do you want to teleport to a random zone?",
@@ -20471,7 +20491,7 @@ var DinoDig = function () {
 	}, e.prototype.preload = function () {
 		Screen.prototype.preload.call(this), this.game.assets.load(this.game.load, ["game-dinodig", "bgm-game"]), this.game.assets.load(this.game.load, ["npc-sprite-scoog"]), this.game.assets.load(this.game.load, PlayerContainer.getAssets(this.game.prodigy.player, 1, 39))
 	}, e.prototype.create = function () {
-		this.game.prodigy.audio.pauseBGM(), Screen.prototype.create.call(this), this.game.prodigy.player.saveEnabled = !1, this.path = new Pathfinder(this.area), this.bg = new Sprite(this.game, 0, 0, "game-dinodig", "bg"), this.bg.inputEnabled = !0, this.bg.events.onInputDown.add(t, this), this.background.add(this.bg), this.npc = new QuestNPC(this.game, this.content, 130, 640, null, {
+		this.game.prodigy.audio.stopBGM(), Screen.prototype.create.call(this), this.game.prodigy.player.saveEnabled = !1, this.path = new Pathfinder(this.area), this.bg = new Sprite(this.game, 0, 0, "game-dinodig", "bg"), this.bg.inputEnabled = !0, this.bg.events.onInputDown.add(t, this), this.background.add(this.bg), this.npc = new QuestNPC(this.game, this.content, 130, 640, null, {
 			atlas: "scoog",
 			name: "Scoog"
 		}), this.user = new PlayerContainer(this.game, this.content, this.game.prodigy.player, 1, 600, 350), this.user.forceOutfit(39), this.user.setup(), this.user.showName(!1), this.content.add(new Sprite(this.game, 694, 32, "game-dinodig", "platform")), this.digBtn = new Element(this.game, this.content, this.user.x - 40, this.user.y - 160);
@@ -20619,7 +20639,7 @@ var DinoDig = function () {
 			callback: e.bind(this, this.timer)
 		}), this.game.prodigy.dialogue.start("npc-face-scoog")
 	}, e.prototype.endGame = function () {
-		this.game.prodigy.audio.playSFX("bell"), this.game.prodigy.audio.pauseBGM(), this.digBtn.visible = !1, this.playGame = !1, this.game.prodigy.effects.flashText("TIME'S UP!", this.end.bind(this))
+		this.game.prodigy.audio.playSFX("bell"), this.game.prodigy.audio.stopBGM(), this.digBtn.visible = !1, this.playGame = !1, this.game.prodigy.effects.flashText("TIME'S UP!", this.end.bind(this))
 	}, e.prototype.end = function () {
 		this.rewards.length > 0 ? (this.game.prodigy.dialogue.setText({
 			text: "Time's up! Now let's see what items you dug up!",
@@ -20784,7 +20804,7 @@ var DinoDigMenu = function () {
 		}], e.prototype.preload = function () {
 			Screen.prototype.preload.call(this), this.game.assets.load(this.game.load, ["game-dancedance", "bgm-dance1", "bgm-dance2"])
 		}, e.prototype.create = function () {
-			this.game.prodigy.audio.pauseBGM(), Screen.prototype.create.call(this), this.startedSpeed = !1, this.game.prodigy.player.saveEnabled = !1, this.background.add(new Sprite(this.game, 0, 0, "game-dancedance", "bg")), this.danceBots = [], this.danceBots.push(new DanceBot(this.game, this.content, 260, 285)), this.danceBots.push(new DanceBot(this.game, this.content, 640, 420)), this.danceBots.push(new DanceBot(this.game, this.content, 1030, 285)), this.danceBots[0].scale.x = this.danceBots[0].scale.y = .5, this.danceBots[2].scale.x = this.danceBots[2].scale.y = .5, this.danceBots[0].setPose(1), this.danceBots[2].setPose(1), this.menu = new DanceMenu(this.game, this.content, this.startGame.bind(this), this.showInstructions.bind(this), this.toTech.bind(this))
+			this.game.prodigy.audio.stopBGM(), Screen.prototype.create.call(this), this.startedSpeed = !1, this.game.prodigy.player.saveEnabled = !1, this.background.add(new Sprite(this.game, 0, 0, "game-dancedance", "bg")), this.danceBots = [], this.danceBots.push(new DanceBot(this.game, this.content, 260, 285)), this.danceBots.push(new DanceBot(this.game, this.content, 640, 420)), this.danceBots.push(new DanceBot(this.game, this.content, 1030, 285)), this.danceBots[0].scale.x = this.danceBots[0].scale.y = .5, this.danceBots[2].scale.x = this.danceBots[2].scale.y = .5, this.danceBots[0].setPose(1), this.danceBots[2].setPose(1), this.menu = new DanceMenu(this.game, this.content, this.startGame.bind(this), this.showInstructions.bind(this), this.toTech.bind(this))
 		}, e.prototype.showInstructions = function () {
 			this.menu.visible = !1;
 			var e = function (e) {
@@ -20850,7 +20870,7 @@ var DinoDigMenu = function () {
 		}, e.prototype.endGame = function (e) {
 			this.timer.visible = !1;
 			for (var t = 0; t < this.poses.length; t++) this.poses[t].visible = !1;
-			this.game.prodigy.audio.pauseBGM(), e ? this.game.prodigy.audio.playSFX("victory") : this.game.prodigy.audio.playSFX("bell");
+			this.game.prodigy.audio.stopBGM(), e ? this.game.prodigy.audio.playSFX("victory") : this.game.prodigy.audio.playSFX("bell");
 			for (var t = 0; t < this.danceBots.length; t++) this.danceBots[t].setPose(e ? -3 : -1);
 			this.danceBots[1].setPose(e ? -2 : -1), this.game.prodigy.effects.flashText(e ? "Dance Complete!" : "Dance Failed", this.finalize.bind(this, e))
 		}, e.prototype.finalize = function (e) {
@@ -21185,7 +21205,7 @@ var DinoDigMenu = function () {
 	Dorm = function () {
 		function e(e) {
 			WalkableScreen.call(this, e, {
-				fullName: "Your House",
+				fullName: "Home Alone Simulator",
 				zoneName: "zone-house",
 				atlas: "zone-house"
 			}), this.area = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0], [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0], [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0], [1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]
@@ -22025,7 +22045,7 @@ var DormMenu = function () {
 				},
 				"bgm-intro": {
 					type: "bgm",
-					base: "https://xpmuser.github.io/oldprodigy/1-11-0/assets/audio/voice/",
+					base: u,
 					url: "bgm-intro.mp3"
 				},
 				"bgm-space": {
@@ -22125,7 +22145,7 @@ var DormMenu = function () {
 				},
 				icons: {
 					type: "atlas",
-					base: "https://xpmuser.github.io/oldprodigy/pde2015/assets/images/",
+					base: "https://xpmuser.github.io/prodidows/1-10-0/images/general-",
 					url: "icons.png",
 					json: "icons.json"
 				},
@@ -22597,6 +22617,118 @@ var DormMenu = function () {
 					x: 132,
 					w: 256,
 					h: 256
+                        },
+                        "monster-small-122": {
+                                type: "sprite",
+                                base: A,
+                                url: "122.png",
+                                x: 63
+                        },
+                        "monster-122": {
+                                type: "spritesheet",
+                                base: S,
+                                url: "122.png",
+                                x: 63,
+                                w: 211,
+                                h: 150
+                        },
+                        "monster-small-123": {
+                                type: "sprite",
+                                base: A,
+                                url: "123.png",
+                                x: 112
+                        },
+                        "monster-123": {
+                                type: "spritesheet",
+                                base: S,
+                                url: "123.png",
+                                x: 112,
+                                w: 301,
+                                h: 224
+                        },
+                        "monster-small-124": {
+                                type: "sprite",
+                                base: A,
+                                url: "124.png",
+                                x: 132
+                        },
+                        "monster-124": {
+                                type: "spritesheet",
+                                base: S,
+                                url: "124.png",
+                                x: 132,
+                                w: 330,
+                                h: 236
+                        },
+                        "monster-small-125": {
+                                type: "sprite",
+                                base: A,
+                                url: "125.png",
+                                x: 134
+                        },
+                        "monster-125": {
+                                type: "spritesheet",
+                                base: S,
+                                url: "125.png",
+                                x: 134,
+                                w: 384,
+                                h: 252
+                        },
+                        "monster-small-126": {
+                                type: "sprite",
+                                base: A,
+                                url: "126.png",
+                                x: 72
+                        },
+                        "monster-126": {
+                                type: "spritesheet",
+                                base: S,
+                                url: "126.png",
+                                x: 72,
+                                w: 129,
+                                h: 134
+                        },
+                        "monster-small-127": {
+                                type: "sprite",
+                                base: A,
+                                url: "127.png",
+                                x: 134
+                        },
+                        "monster-127": {
+                                type: "spritesheet",
+                                base: S,
+                                url: "127.png",
+                                x: 134,
+                                w: 379,
+                                h: 378
+                        },
+                        "monster-small-128": {
+                                type: "sprite",
+                                base: A,
+                                url: "128.png",
+                                x: 100
+                        },
+                        "monster-128": {
+                                type: "spritesheet",
+                                base: S,
+                                url: "128.png",
+                                x: 100,
+                                w: 252,
+                                h: 247
+                        },
+                        "monster-small-129": {
+                                type: "sprite",
+                                base: A,
+                                url: "129.png",
+                                x: 128
+                        },
+                        "monster-129": {
+                                type: "spritesheet",
+                                base: S,
+                                url: "129.png",
+                                x: 128,
+                                w: 292,
+                                h: 293
 				},
 				"monster-small-13": {
 					type: "sprite",
@@ -23916,7 +24048,7 @@ var DormMenu = function () {
 				},
 				heads: {
 					type: "atlas",
-					base: c,
+					base: "https://xpmuser.github.io/prodidows/1-10-0/images/",
 					url: "head.png",
 					json: "head.json"
 				},
@@ -24261,6 +24393,60 @@ var DormMenu = function () {
 					y: 151,
 					w: 95,
 					h: 86
+                        },
+                        "normal-outfit-male-44": {
+                                type: "spritesheet",
+                                base: o,
+                                url: "44.png",
+                                x: 78,
+                                y: 137,
+                                w: 96,
+                                h: 98
+                        },
+                        "normal-outfit-male-45": {
+                                type: "spritesheet",
+                                base: o,
+                                url: "45.png",
+                                x: 90,
+                                y: 153,
+                                w: 79,
+                                h: 83
+                        },
+                        "normal-outfit-male-46": {
+                                type: "spritesheet",
+                                base: o,
+                                url: "46.png",
+                                x: 84,
+                                y: 155,
+                                w: 77,
+                                h: 80
+                        },
+                        "normal-outfit-male-47": {
+                                type: "spritesheet",
+                                base: o,
+                                url: "47.png",
+                                x: 89,
+                                y: 149,
+                                w: 77,
+                                h: 88
+                        },
+                        "normal-outfit-male-48": {
+                                type: "spritesheet",
+                                base: o,
+                                url: "48.png",
+                                x: 56,
+                                y: 138,
+                                w: 110,
+                                h: 97
+                        },
+                        "normal-outfit-male-49": {
+                                type: "spritesheet",
+                                base: o,
+                                url: "49.png",
+                                x: 87,
+                                y: 152,
+                                w: 83,
+                                h: 81
 				},
 				"normal-outfit-male-5": {
 					type: "spritesheet",
@@ -24270,6 +24456,78 @@ var DormMenu = function () {
 					y: 141,
 					w: 112,
 					h: 94
+                        },
+                        "normal-outfit-male-50": {
+                                type: "spritesheet",
+                                base: o,
+                                url: "50.png",
+                                x: 74,
+                                y: 150,
+                                w: 107,
+                                h: 99
+                        },
+                        "normal-outfit-male-51": {
+                                type: "spritesheet",
+                                base: o,
+                                url: "51.png",
+                                x: 71,
+                                y: 147,
+                                w: 98,
+                                h: 87
+                        },
+                        "normal-outfit-male-52": {
+                                type: "spritesheet",
+                                base: o,
+                                url: "52.png",
+                                x: 78,
+                                y: 139,
+                                w: 90,
+                                h: 99
+                        },
+                        "normal-outfit-male-53": {
+                                type: "spritesheet",
+                                base: o,
+                                url: "53.png",
+                                x: 21,
+                                y: 75,
+                                w: 145,
+                                h: 160
+                        },
+                        "normal-outfit-male-54": {
+                                type: "spritesheet",
+                                base: o,
+                                url: "54.png",
+                                x: 51,
+                                y: 151,
+                                w: 123,
+                                h: 84
+                        },
+                        "normal-outfit-male-55": {
+                                type: "spritesheet",
+                                base: o,
+                                url: "55.png",
+                                x: 60,
+                                y: 143,
+                                w: 117,
+                                h: 92
+                        },
+                        "normal-outfit-male-56": {
+                                type: "spritesheet",
+                                base: o,
+                                url: "56.png",
+                                x: 59,
+                                y: 132,
+                                w: 118,
+                                h: 99
+                        },
+                        "normal-outfit-male-57": {
+                                type: "spritesheet",
+                                base: o,
+                                url: "24.png",
+                                x: 54,
+                                y: 141,
+                                w: 112,
+                                h: 94
 				},
 				"normal-outfit-male-6": {
 					type: "spritesheet",
@@ -24588,7 +24846,7 @@ var DormMenu = function () {
 				},
 				"reduced-outfit-male-38": {
 					type: "spritesheet",
-					base: a,
+					base: "https://xpmuser.github.io/prodidows/1-10-0/images/outfits/male/reduced/",
 					url: "38.png",
 					x: 17,
 					y: 0,
@@ -24648,6 +24906,60 @@ var DormMenu = function () {
 					y: 84,
 					w: 52,
 					h: 42
+                        },
+                        "reduced-outfit-male-44": {
+                                type: "spritesheet",
+                                base: t,
+                                url: "44.png",
+                                x: 39,
+                                y: 79,
+                                w: 48,
+                                h: 46
+                        },
+                        "reduced-outfit-male-45": {
+                                type: "spritesheet",
+                                base: t,
+                                url: "45.png",
+                                x: 42,
+                                y: 85,
+                                w: 43,
+                                h: 41
+                        },
+                        "reduced-outfit-male-46": {
+                                type: "spritesheet",
+                                base: t,
+                                url: "46.png",
+                                x: 41,
+                                y: 85,
+                                w: 38,
+                                h: 38
+                        },
+                        "reduced-outfit-male-47": {
+                                type: "spritesheet",
+                                base: t,
+                                url: "47.png",
+                                x: 45,
+                                y: 82,
+                                w: 38,
+                                h: 43
+                        },
+                        "reduced-outfit-male-48": {
+                                type: "spritesheet",
+                                base: t,
+                                url: "48.png",
+                                x: 28,
+                                y: 77,
+                                w: 55,
+                                h: 48
+                        },
+                        "reduced-outfit-male-49": {
+                                type: "spritesheet",
+                                base: t,
+                                url: "49.png",
+                                x: 40,
+                                y: 85,
+                                w: 44,
+                                h: 40
 				},
 				"reduced-outfit-male-5": {
 					type: "spritesheet",
@@ -24657,6 +24969,78 @@ var DormMenu = function () {
 					y: 78,
 					w: 56,
 					h: 47
+                        },
+                        "reduced-outfit-male-50": {
+                                type: "spritesheet",
+                                base: t,
+                                url: "50.png",
+                                x: 36,
+                                y: 82,
+                                w: 53,
+                                h: 45
+                        },
+                        "reduced-outfit-male-51": {
+                                type: "spritesheet",
+                                base: t,
+                                url: "51.png",
+                                x: 36,
+                                y: 81,
+                                w: 49,
+                                h: 44
+                        },
+                        "reduced-outfit-male-52": {
+                                type: "spritesheet",
+                                base: t,
+                                url: "52.png",
+                                x: 40,
+                                y: 78,
+                                w: 45,
+                                h: 49
+                        },
+                        "reduced-outfit-male-53": {
+                                type: "spritesheet",
+                                base: t,
+                                url: "53.png",
+                                x: 27,
+                                y: 77,
+                                w: 56,
+                                h: 48
+                        },
+                        "reduced-outfit-male-54": {
+                                type: "spritesheet",
+                                base: t,
+                                url: "54.png",
+                                x: 25,
+                                y: 83,
+                                w: 63,
+                                h: 42
+                        },
+                        "reduced-outfit-male-55": {
+                                type: "spritesheet",
+                                base: t,
+                                url: "55.png",
+                                x: 28,
+                                y: 80,
+                                w: 60,
+                                h: 45
+                        },
+                        "reduced-outfit-male-56": {
+                                type: "spritesheet",
+                                base: t,
+                                url: "56.png",
+                                x: 34,
+                                y: 76,
+                                w: 54,
+                                h: 49
+                        },
+                        "reduced-outfit-male-57": {
+                                type: "spritesheet",
+                                base: t,
+                                url: "24.png",
+                                x: 25,
+                                y: 78,
+                                w: 56,
+                                h: 47
 				},
 				"reduced-outfit-male-6": {
 					type: "spritesheet",
@@ -25035,6 +25419,60 @@ var DormMenu = function () {
 					y: 151,
 					w: 95,
 					h: 86
+                        },
+                        "normal-outfit-female-44": {
+                                type: "spritesheet",
+                                base: n,
+                                url: "44.png",
+                                x: 78,
+                                y: 135,
+                                w: 95,
+                                h: 99
+                        },
+                        "normal-outfit-female-45": {
+                                type: "spritesheet",
+                                base: n,
+                                url: "45.png",
+                                x: 94,
+                                y: 154,
+                                w: 79,
+                                h: 82
+                        },
+                        "normal-outfit-female-46": {
+                                type: "spritesheet",
+                                base: n,
+                                url: "46.png",
+                                x: 89,
+                                y: 156,
+                                w: 74,
+                                h: 77
+                        },
+                        "normal-outfit-female-47": {
+                                type: "spritesheet",
+                                base: n,
+                                url: "47.png",
+                                x: 94,
+                                y: 149,
+                                w: 68,
+                                h: 87
+                        },
+                        "normal-outfit-female-48": {
+                                type: "spritesheet",
+                                base: n,
+                                url: "48.png",
+                                x: 64,
+                                y: 138,
+                                w: 98,
+                                h: 96
+                        },
+                        "normal-outfit-female-49": {
+                                type: "spritesheet",
+                                base: n,
+                                url: "49.png",
+                                x: 87,
+                                y: 152,
+                                w: 83,
+                                h: 81
 				},
 				"normal-outfit-female-5": {
 					type: "spritesheet",
@@ -25044,6 +25482,78 @@ var DormMenu = function () {
 					y: 145,
 					w: 104,
 					h: 89
+                        },
+                        "normal-outfit-female-50": {
+                                type: "spritesheet",
+                                base: n,
+                                url: "50.png",
+                                x: 89,
+                                y: 150,
+                                w: 77,
+                                h: 84
+                        },
+                        "normal-outfit-female-51": {
+                                type: "spritesheet",
+                                base: n,
+                                url: "51.png",
+                                x: 88,
+                                y: 147,
+                                w: 76,
+                                h: 87
+                        },
+                        "normal-outfit-female-52": {
+                                type: "spritesheet",
+                                base: n,
+                                url: "52.png",
+                                x: 82,
+                                y: 139,
+                                w: 83,
+                                h: 94
+                        },
+                        "normal-outfit-female-53": {
+                                type: "spritesheet",
+                                base: n,
+                                url: "53.png",
+                                x: 76,
+                                y: 146,
+                                w: 90,
+                                h: 88
+                        },
+                        "normal-outfit-female-54": {
+                                type: "spritesheet",
+                                base: n,
+                                url: "54.png",
+                                x: 57,
+                                y: 154,
+                                w: 123,
+                                h: 80
+                        },
+                        "normal-outfit-female-55": {
+                                type: "spritesheet",
+                                base: n,
+                                url: "55.png",
+                                x: 76,
+                                y: 143,
+                                w: 101,
+                                h: 91
+                        },
+                        "normal-outfit-female-56": {
+                                type: "spritesheet",
+                                base: n,
+                                url: "56.png",
+                                x: 59,
+                                y: 132,
+                                w: 113,
+                                h: 98
+                        },
+                        "normal-outfit-female-57": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/outfits/female/normal/",
+                                url: "57.png",
+                                x: 94,
+                                y: 156,
+                                w: 68,
+                                h: 78
 				},
 				"normal-outfit-female-6": {
 					type: "spritesheet",
@@ -25422,6 +25932,60 @@ var DormMenu = function () {
 					y: 84,
 					w: 52,
 					h: 42
+                        },
+                        "reduced-outfit-female-44": {
+                                type: "spritesheet",
+                                base: a,
+                                url: "44.png",
+                                x: 37,
+                                y: 75,
+                                w: 47,
+                                h: 50
+                        },
+                        "reduced-outfit-female-45": {
+                                type: "spritesheet",
+                                base: a,
+                                url: "45.png",
+                                x: 42,
+                                y: 85,
+                                w: 43,
+                                h: 41
+                        },
+                        "reduced-outfit-female-46": {
+                                type: "spritesheet",
+                                base: a,
+                                url: "46.png",
+                                x: 43,
+                                y: 85,
+                                w: 36,
+                                h: 36
+                        },
+                        "reduced-outfit-female-47": {
+                                type: "spritesheet",
+                                base: a,
+                                url: "47.png",
+                                x: 45,
+                                y: 82,
+                                w: 35,
+                                h: 43
+                        },
+                        "reduced-outfit-female-48": {
+                                type: "spritesheet",
+                                base: a,
+                                url: "48.png",
+                                x: 31,
+                                y: 77,
+                                w: 49,
+                                h: 48
+                        },
+                        "reduced-outfit-female-49": {
+                                type: "spritesheet",
+                                base: a,
+                                url: "49.png",
+                                x: 40,
+                                y: 85,
+                                w: 44,
+                                h: 40
 				},
 				"reduced-outfit-female-5": {
 					type: "spritesheet",
@@ -25431,6 +25995,78 @@ var DormMenu = function () {
 					y: 79,
 					w: 51,
 					h: 46
+                        },
+                        "reduced-outfit-female-50": {
+                                type: "spritesheet",
+                                base: a,
+                                url: "50.png",
+                                x: 39,
+                                y: 82,
+                                w: 42,
+                                h: 44
+                        },
+                        "reduced-outfit-female-51": {
+                                type: "spritesheet",
+                                base: a,
+                                url: "51.png",
+                                x: 44,
+                                y: 83,
+                                w: 38,
+                                h: 41
+                        },
+                        "reduced-outfit-female-52": {
+                                type: "spritesheet",
+                                base: a,
+                                url: "52.png",
+                                x: 41,
+                                y: 79,
+                                w: 43,
+                                h: 45
+                        },
+                        "reduced-outfit-female-53": {
+                                type: "spritesheet",
+                                base: a,
+                                url: "53.png",
+                                x: 38,
+                                y: 80,
+                                w: 45,
+                                h: 44
+                        },
+                        "reduced-outfit-female-54": {
+                                type: "spritesheet",
+                                base: a,
+                                url: "54.png",
+                                x: 25,
+                                y: 85,
+                                w: 63,
+                                h: 39
+                        },
+                        "reduced-outfit-female-55": {
+                                type: "spritesheet",
+                                base: a,
+                                url: "55.png",
+                                x: 33,
+                                y: 80,
+                                w: 50,
+                                h: 45
+                        },
+                        "reduced-outfit-female-56": {
+                                type: "spritesheet",
+                                base: a,
+                                url: "56.png",
+                                x: 34,
+                                y: 76,
+                                w: 52,
+                                h: 46
+                        },
+                        "reduced-outfit-female-57": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/outfits/female/reduced/",
+                                url: "57.png",
+                                x: 44,
+                                y: 86,
+                                w: 35,
+                                h: 39
 				},
 				"reduced-outfit-female-6": {
 					type: "spritesheet",
@@ -25854,6 +26490,15 @@ var DormMenu = function () {
 					y: 41,
 					w: 130,
 					h: 117
+                        },
+                        "normal-hat-49": {
+                                type: "spritesheet",
+                                base: p,
+                                url: "49.png",
+                                x: 72,
+                                y: 45,
+                                w: 110,
+                                h: 117
 				},
 				"normal-hat-5": {
 					type: "spritesheet",
@@ -25863,6 +26508,96 @@ var DormMenu = function () {
 					y: 26,
 					w: 151,
 					h: 108
+                        },
+                        "normal-hat-50": {
+                                type: "spritesheet",
+                                base: p,
+                                url: "50.png",
+                                x: 27,
+                                y: 67,
+                                w: 149,
+                                h: 110
+                        },
+                        "normal-hat-51": {
+                                type: "spritesheet",
+                                base: p,
+                                url: "51.png",
+                                x: 88,
+                                y: 83,
+                                w: 91,
+                                h: 91
+                        },
+                        "normal-hat-52": {
+                                type: "spritesheet",
+                                base: p,
+                                url: "52.png",
+                                x: 104,
+                                y: 99,
+                                w: 69,
+                                h: 69
+                        },
+                        "normal-hat-53": {
+                                type: "spritesheet",
+                                base: p,
+                                url: "53.png",
+                                x: 93,
+                                y: 69,
+                                w: 80,
+                                h: 95
+                        },
+                        "normal-hat-54": {
+                                type: "spritesheet",
+                                base: p,
+                                url: "54.png",
+                                x: 80,
+                                y: 55,
+                                w: 97,
+                                h: 79
+                        },
+                        "normal-hat-55": {
+                                type: "spritesheet",
+                                base: p,
+                                url: "55.png",
+                                x: 56,
+                                y: 37,
+                                w: 118,
+                                h: 110
+                        },
+                        "normal-hat-56": {
+                                type: "spritesheet",
+                                base: p,
+                                url: "56.png",
+                                x: 75,
+                                y: 35,
+                                w: 115,
+                                h: 163
+                        },
+                        "normal-hat-57": {
+                                type: "spritesheet",
+                                base: p,
+                                url: "57.png",
+                                x: 77,
+                                y: 34,
+                                w: 102,
+                                h: 135
+                        },
+                        "normal-hat-58": {
+                                type: "spritesheet",
+                                base: p,
+                                url: "58.png",
+                                x: 79,
+                                y: 57,
+                                w: 100,
+                                h: 139
+                        },
+                        "normal-hat-59": {
+                                type: "spritesheet",
+                                base: p,
+                                url: "59.png",
+                                x: 69,
+                                y: 70,
+                                w: 107,
+                                h: 89
 				},
 				"normal-hat-6": {
 					type: "spritesheet",
@@ -25872,6 +26607,96 @@ var DormMenu = function () {
 					y: 34,
 					w: 64,
 					h: 89
+                        },
+                        "normal-hat-60": {
+                                type: "spritesheet",
+                                base: p,
+                                url: "60.png",
+                                x: 39,
+                                y: 34,
+                                w: 133,
+                                h: 124
+                        },
+                        "normal-hat-61": {
+                                type: "spritesheet",
+                                base: p,
+                                url: "61.png",
+                                x: 18,
+                                y: 40,
+                                w: 163,
+                                h: 111
+                        },
+                        "normal-hat-62": {
+                                type: "spritesheet",
+                                base: p,
+                                url: "62.png",
+                                x: 56,
+                                y: 23,
+                                w: 122,
+                                h: 149
+                        },
+                        "normal-hat-63": {
+                                type: "spritesheet",
+                                base: p,
+                                url: "63.png",
+                                x: 60,
+                                y: 55,
+                                w: 135,
+                                h: 92
+                        },
+                        "normal-hat-64": {
+                                type: "spritesheet",
+                                base: p,
+                                url: "64.png",
+                                x: 85,
+                                y: 14,
+                                w: 95,
+                                h: 144
+                        },
+                        "normal-hat-65": {
+                                type: "spritesheet",
+                                base: p,
+                                url: "65.png",
+                                x: 76,
+                                y: 12,
+                                w: 104,
+                                h: 139
+                        },
+                        "normal-hat-66": {
+                                type: "spritesheet",
+                                base: p,
+                                url: "66.png",
+                                x: 71,
+                                y: 68,
+                                w: 109,
+                                h: 70
+                        },
+                        "normal-hat-67": {
+                                type: "spritesheet",
+                                base: p,
+                                url: "67.png",
+                                x: 67,
+                                y: 39,
+                                w: 118,
+                                h: 107
+                        },
+                        "normal-hat-68": {
+                                type: "spritesheet",
+                                base: p,
+                                url: "68.png",
+                                x: 57,
+                                y: 19,
+                                w: 132,
+                                h: 128
+                        },
+                        "normal-hat-69": {
+                                type: "spritesheet",
+                                base: p,
+                                url: "69.png",
+                                x: 67,
+                                y: 45,
+                                w: 115,
+                                h: 101
 				},
 				"normal-hat-7": {
 					type: "spritesheet",
@@ -25881,6 +26706,87 @@ var DormMenu = function () {
 					y: 35,
 					w: 116,
 					h: 83
+                        },
+                        "normal-hat-70": {
+                                type: "spritesheet",
+                                base: p,
+                                url: "70.png",
+                                x: 68,
+                                y: 38,
+                                w: 123,
+                                h: 108
+                        },
+                        "normal-hat-71": {
+                                type: "spritesheet",
+                                base: p,
+                                url: "71.png",
+                                x: 63,
+                                y: 37,
+                                w: 133,
+                                h: 128
+                        },
+                        "normal-hat-72": {
+                                type: "spritesheet",
+                                base: p,
+                                url: "72.png",
+                                x: 66,
+                                y: 22,
+                                w: 109,
+                                h: 139
+                        },
+                        "normal-hat-73": {
+                                type: "spritesheet",
+                                base: p,
+                                url: "73.png",
+                                x: 49,
+                                y: 31,
+                                w: 142,
+                                h: 141
+                        },
+                        "normal-hat-74": {
+                                type: "spritesheet",
+                                base: p,
+                                url: "74.png",
+                                x: 77,
+                                y: 65,
+                                w: 59,
+                                h: 50
+                        },
+                        "normal-hat-75": {
+                                type: "spritesheet",
+                                base: p,
+                                url: "75.png",
+                                x: 68,
+                                y: 13,
+                                w: 115,
+                                h: 113
+                        },
+                        "normal-hat-76": {
+                                type: "spritesheet",
+                                base: p,
+                                url: "46.png",
+                                x: 59,
+                                y: 41,
+                                w: 130,
+                                h: 117
+                        },
+                        "normal-hat-77": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hats/normal/",
+                                url: "77.png",
+                                x: 80,
+                                y: 25,
+                                w: 80,
+                                h: 85
+                        },
+                        "normal-hat-78": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hats/normal/",
+                                url: "78.png",
+                                x: 49,
+                                y: 39,
+                                w: 131,
+                                h: 89
 				},
 				"normal-hat-8": {
 					type: "spritesheet",
@@ -26286,6 +27192,15 @@ var DormMenu = function () {
 					y: 28,
 					w: 66,
 					h: 59
+                        },
+                        "reduced-hat-49": {
+                                type: "spritesheet",
+                                base: r,
+                                url: "49.png",
+                                x: 34,
+                                y: 30,
+                                w: 55,
+                                h: 58
 				},
 				"reduced-hat-5": {
 					type: "spritesheet",
@@ -26295,6 +27210,96 @@ var DormMenu = function () {
 					y: 20,
 					w: 76,
 					h: 56
+                        },
+                        "reduced-hat-50": {
+                                type: "spritesheet",
+                                base: r,
+                                url: "50.png",
+                                x: 10,
+                                y: 41,
+                                w: 76,
+                                h: 56
+                        },
+                        "reduced-hat-51": {
+                                type: "spritesheet",
+                                base: r,
+                                url: "51.png",
+                                x: 43,
+                                y: 48,
+                                w: 46,
+                                h: 46
+                        },
+                        "reduced-hat-52": {
+                                type: "spritesheet",
+                                base: r,
+                                url: "52.png",
+                                x: 50,
+                                y: 56,
+                                w: 35,
+                                h: 35
+                        },
+                        "reduced-hat-53": {
+                                type: "spritesheet",
+                                base: r,
+                                url: "53.png",
+                                x: 46,
+                                y: 43,
+                                w: 40,
+                                h: 48
+                        },
+                        "reduced-hat-54": {
+                                type: "spritesheet",
+                                base: r,
+                                url: "54.png",
+                                x: 37,
+                                y: 31,
+                                w: 50,
+                                h: 40
+                        },
+                        "reduced-hat-55": {
+                                type: "spritesheet",
+                                base: r,
+                                url: "55.png",
+                                x: 25,
+                                y: 26,
+                                w: 60,
+                                h: 56
+                        },
+                        "reduced-hat-56": {
+                                type: "spritesheet",
+                                base: r,
+                                url: "56.png",
+                                x: 34,
+                                y: 26,
+                                w: 59,
+                                h: 81
+                        },
+                        "reduced-hat-57": {
+                                type: "spritesheet",
+                                base: r,
+                                url: "57.png",
+                                x: 38,
+                                y: 21,
+                                w: 52,
+                                h: 69
+                        },
+                        "reduced-hat-58": {
+                                type: "spritesheet",
+                                base: r,
+                                url: "58.png",
+                                x: 39,
+                                y: 32,
+                                w: 51,
+                                h: 71
+                        },
+                        "reduced-hat-59": {
+                                type: "spritesheet",
+                                base: r,
+                                url: "59.png",
+                                x: 33,
+                                y: 41,
+                                w: 54,
+                                h: 45
 				},
 				"reduced-hat-6": {
 					type: "spritesheet",
@@ -26304,6 +27309,96 @@ var DormMenu = function () {
 					y: 23,
 					w: 32,
 					h: 44
+                        },
+                        "reduced-hat-60": {
+                                type: "spritesheet",
+                                base: r,
+                                url: "60.png",
+                                x: 16,
+                                y: 25,
+                                w: 68,
+                                h: 62
+                        },
+                        "reduced-hat-61": {
+                                type: "spritesheet",
+                                base: r,
+                                url: "61.png",
+                                x: 9,
+                                y: 27,
+                                w: 81,
+                                h: 56
+                        },
+                        "reduced-hat-62": {
+                                type: "spritesheet",
+                                base: r,
+                                url: "62.png",
+                                x: 27,
+                                y: 18,
+                                w: 62,
+                                h: 74
+                        },
+                        "reduced-hat-63": {
+                                type: "spritesheet",
+                                base: r,
+                                url: "63.png",
+                                x: 26,
+                                y: 33,
+                                w: 69,
+                                h: 47
+                        },
+                        "reduced-hat-64": {
+                                type: "spritesheet",
+                                base: r,
+                                url: "64.png",
+                                x: 41,
+                                y: 13,
+                                w: 47,
+                                h: 73
+                        },
+                        "reduced-hat-65": {
+                                type: "spritesheet",
+                                base: r,
+                                url: "65.png",
+                                x: 38,
+                                y: 16,
+                                w: 52,
+                                h: 69
+                        },
+                        "reduced-hat-66": {
+                                type: "spritesheet",
+                                base: r,
+                                url: "66.png",
+                                x: 32,
+                                y: 41,
+                                w: 55,
+                                h: 35
+                        },
+                        "reduced-hat-67": {
+                                type: "spritesheet",
+                                base: r,
+                                url: "67.png",
+                                x: 33,
+                                y: 27,
+                                w: 57,
+                                h: 54
+                        },
+                        "reduced-hat-68": {
+                                type: "spritesheet",
+                                base: r,
+                                url: "68.png",
+                                x: 17,
+                                y: 11,
+                                w: 78,
+                                h: 75
+                        },
+                        "reduced-hat-69": {
+                                type: "spritesheet",
+                                base: r,
+                                url: "69.png",
+                                x: 26,
+                                y: 26,
+                                w: 64,
+                                h: 56
 				},
 				"reduced-hat-7": {
 					type: "spritesheet",
@@ -26313,6 +27408,87 @@ var DormMenu = function () {
 					y: 28,
 					w: 58,
 					h: 41
+                        },
+                        "reduced-hat-70": {
+                                type: "spritesheet",
+                                base: r,
+                                url: "70.png",
+                                x: 32,
+                                y: 26,
+                                w: 62,
+                                h: 55
+                        },
+                        "reduced-hat-71": {
+                                type: "spritesheet",
+                                base: r,
+                                url: "71.png",
+                                x: 30,
+                                y: 28,
+                                w: 67,
+                                h: 64
+                        },
+                        "reduced-hat-72": {
+                                type: "spritesheet",
+                                base: r,
+                                url: "72.png",
+                                x: 31,
+                                y: 19,
+                                w: 55,
+                                h: 71
+                        },
+                        "reduced-hat-73": {
+                                type: "spritesheet",
+                                base: r,
+                                url: "73.png",
+                                x: 22,
+                                y: 23,
+                                w: 72,
+                                h: 71
+                        },
+                        "reduced-hat-74": {
+                                type: "spritesheet",
+                                base: r,
+                                url: "74.png",
+                                x: 39,
+                                y: 40,
+                                w: 29,
+                                h: 24
+                        },
+                        "reduced-hat-75": {
+                                type: "spritesheet",
+                                base: r,
+                                url: "75.png",
+                                x: 32,
+                                y: 13,
+                                w: 59,
+                                h: 57
+                        },
+                        "reduced-hat-76": {
+                                type: "spritesheet",
+                                base: r,
+                                url: "46.png",
+                                x: 29,
+                                y: 28,
+                                w: 66,
+                                h: 59
+                        },
+                        "reduced-hat-77": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hats/reduced/",
+                                url: "77.png",
+                                x: 39,
+                                y: 23,
+                                w: 45,
+                                h: 43
+                        },
+                        "reduced-hat-78": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hats/reduced/",
+                                url: "78.png",
+                                x: 23,
+                                y: 29,
+                                w: 66,
+                                h: 45
 				},
 				"reduced-hat-8": {
 					type: "spritesheet",
@@ -26943,6 +28119,87 @@ var DormMenu = function () {
 					y: 120,
 					w: 66,
 					h: 75
+                        },
+                        "normal-weapon-71": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "71.png",
+                                x: 150,
+                                y: 131,
+                                w: 59,
+                                h: 59
+                        },
+                        "normal-weapon-72": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "72.png",
+                                x: 156,
+                                y: 143,
+                                w: 47,
+                                h: 50
+                        },
+                        "normal-weapon-73": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "73.png",
+                                x: 150,
+                                y: 119,
+                                w: 70,
+                                h: 72
+                        },
+                        "normal-weapon-74": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "74.png",
+                                x: 150,
+                                y: 139,
+                                w: 48,
+                                h: 52
+                        },
+                        "normal-weapon-75": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "75.png",
+                                x: 92,
+                                y: 150,
+                                w: 157,
+                                h: 59
+                        },
+                        "normal-weapon-76": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "76.png",
+                                x: 172,
+                                y: 131,
+                                w: 50,
+                                h: 50
+                        },
+                        "normal-weapon-77": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "77.png",
+                                x: 128,
+                                y: 6,
+                                w: 112,
+                                h: 210
+                        },
+                        "normal-weapon-78": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "78.png",
+                                x: 98,
+                                y: 113,
+                                w: 139,
+                                h: 88
+                        },
+                        "normal-weapon-79": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "79.png",
+                                x: 128,
+                                y: 99,
+                                w: 85,
+                                h: 117
 				},
 				"normal-weapon-8": {
 					type: "spritesheet",
@@ -26952,6 +28209,96 @@ var DormMenu = function () {
 					y: 61,
 					w: 104,
 					h: 162
+                        },
+                        "normal-weapon-80": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "80.png",
+                                x: 125,
+                                y: 60,
+                                w: 125,
+                                h: 115
+                        },
+                        "normal-weapon-81": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "81.png",
+                                x: 60,
+                                y: -10,
+                                w: 2048,
+                                h: 256
+                        },
+                        "normal-weapon-82": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "82.png",
+                                x: 122,
+                                y: 78,
+                                w: 113,
+                                h: 147
+                        },
+                        "normal-weapon-83": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "83.png",
+                                x: 138,
+                                y: 131,
+                                w: 68,
+                                h: 68
+                        },
+                        "normal-weapon-84": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "84.png",
+                                x: 134,
+                                y: 127,
+                                w: 77,
+                                h: 77
+                        },
+                        "normal-weapon-85": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "85.png",
+                                x: 132,
+                                y: 131,
+                                w: 75,
+                                h: 75
+                        },
+                        "normal-weapon-86": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "86.png",
+                                x: 132,
+                                y: 131,
+                                w: 74,
+                                h: 73
+                        },
+                        "normal-weapon-87": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "87.png",
+                                x: 130,
+                                y: 76,
+                                w: 95,
+                                h: 147
+                        },
+                        "normal-weapon-88": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "88.png",
+                                x: 145,
+                                y: 127,
+                                w: 65,
+                                h: 65
+                        },
+                        "normal-weapon-89": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "89.png",
+                                x: 142,
+                                y: 64,
+                                w: 95,
+                                h: 137
 				},
 				"normal-weapon-9": {
 					type: "spritesheet",
@@ -26961,6 +28308,168 @@ var DormMenu = function () {
 					y: 136,
 					w: 59,
 					h: 59
+                        },
+                        "normal-weapon-90": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "90.png",
+                                x: 148,
+                                y: 130,
+                                w: 58,
+                                h: 64
+                        },
+                        "normal-weapon-91": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "91.png",
+                                x: 145,
+                                y: 128,
+                                w: 61,
+                                h: 61
+                        },
+                        "normal-hair-male-24-1": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-male-24-2": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-male-24-3": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-male-24-4": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-male-24-5": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-male-24-6": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-male-24-7": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-male-24-8": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-male-24-9": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-male-24-10": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-male-24-11": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-male-24-12": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-male-24-13": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-male-24-14": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-male-24-15": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-male-24-16": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
 				},
 				"normal-hair-male-1-1": {
 					type: "spritesheet",
@@ -28113,6 +29622,2310 @@ var DormMenu = function () {
 					y: 73,
 					w: 104,
 					h: 81
+                        },
+                        "normal-hair-male-9-1": {
+                                type: "spritesheet",
+                                base: l,
+                                url: "1-1.png",
+                                x: 54,
+                                y: 77,
+                                w: 120,
+                                h: 107
+                        },
+                        "normal-hair-male-9-10": {
+                                type: "spritesheet",
+                                base: l,
+                                url: "1-10.png",
+                                x: 54,
+                                y: 77,
+                                w: 120,
+                                h: 107
+                        },
+                        "normal-hair-male-9-11": {
+                                type: "spritesheet",
+                                base: l,
+                                url: "1-11.png",
+                                x: 54,
+                                y: 77,
+                                w: 120,
+                                h: 107
+                        },
+                        "normal-hair-male-9-12": {
+                                type: "spritesheet",
+                                base: l,
+                                url: "1-12.png",
+                                x: 54,
+                                y: 77,
+                                w: 120,
+                                h: 107
+                        },
+                        "normal-hair-male-9-13": {
+                                type: "spritesheet",
+                                base: l,
+                                url: "1-13.png",
+                                x: 54,
+                                y: 77,
+                                w: 120,
+                                h: 107
+                        },
+                        "normal-hair-male-9-14": {
+                                type: "spritesheet",
+                                base: l,
+                                url: "1-14.png",
+                                x: 54,
+                                y: 77,
+                                w: 120,
+                                h: 107
+                        },
+                        "normal-hair-male-9-15": {
+                                type: "spritesheet",
+                                base: l,
+                                url: "1-15.png",
+                                x: 54,
+                                y: 77,
+                                w: 120,
+                                h: 107
+                        },
+                        "normal-hair-male-9-16": {
+                                type: "spritesheet",
+                                base: l,
+                                url: "1-16.png",
+                                x: 54,
+                                y: 77,
+                                w: 120,
+                                h: 107
+                        },
+                        "normal-hair-male-9-2": {
+                                type: "spritesheet",
+                                base: l,
+                                url: "1-2.png",
+                                x: 54,
+                                y: 77,
+                                w: 120,
+                                h: 107
+                        },
+                        "normal-hair-male-9-3": {
+                                type: "spritesheet",
+                                base: l,
+                                url: "1-3.png",
+                                x: 54,
+                                y: 77,
+                                w: 120,
+                                h: 107
+                        },
+                        "normal-hair-male-9-4": {
+                                type: "spritesheet",
+                                base: l,
+                                url: "1-4.png",
+                                x: 54,
+                                y: 77,
+                                w: 120,
+                                h: 107
+                        },
+                        "normal-hair-male-9-5": {
+                                type: "spritesheet",
+                                base: l,
+                                url: "1-5.png",
+                                x: 54,
+                                y: 77,
+                                w: 120,
+                                h: 107
+                        },
+                        "normal-hair-male-9-6": {
+                                type: "spritesheet",
+                                base: l,
+                                url: "1-6.png",
+                                x: 54,
+                                y: 77,
+                                w: 120,
+                                h: 107
+                        },
+                        "normal-hair-male-9-7": {
+                                type: "spritesheet",
+                                base: l,
+                                url: "1-7.png",
+                                x: 54,
+                                y: 77,
+                                w: 120,
+                                h: 107
+                        },
+                        "normal-hair-male-9-8": {
+                                type: "spritesheet",
+                                base: l,
+                                url: "1-8.png",
+                                x: 54,
+                                y: 77,
+                                w: 120,
+                                h: 107
+                        },
+                        "normal-hair-male-9-9": {
+                                type: "spritesheet",
+                                base: l,
+                                url: "1-9.png",
+                                x: 54,
+                                y: 77,
+                                w: 120,
+                                h: 107
+                        },
+                        "normal-hair-male-10-1": {
+                                type: "spritesheet",
+                                base: l,
+                                url: "2-1.png",
+                                x: 54,
+                                y: 77,
+                                w: 122,
+                                h: 107
+                        },
+                        "normal-hair-male-10-10": {
+                                type: "spritesheet",
+                                base: l,
+                                url: "2-10.png",
+                                x: 54,
+                                y: 77,
+                                w: 122,
+                                h: 107
+                        },
+                        "normal-hair-male-10-11": {
+                                type: "spritesheet",
+                                base: l,
+                                url: "2-11.png",
+                                x: 54,
+                                y: 77,
+                                w: 122,
+                                h: 107
+                        },
+                        "normal-hair-male-10-12": {
+                                type: "spritesheet",
+                                base: l,
+                                url: "2-12.png",
+                                x: 54,
+                                y: 77,
+                                w: 122,
+                                h: 107
+                        },
+                        "normal-hair-male-10-13": {
+                                type: "spritesheet",
+                                base: l,
+                                url: "2-13.png",
+                                x: 54,
+                                y: 77,
+                                w: 122,
+                                h: 107
+                        },
+                        "normal-hair-male-10-14": {
+                                type: "spritesheet",
+                                base: l,
+                                url: "2-14.png",
+                                x: 54,
+                                y: 77,
+                                w: 122,
+                                h: 107
+                        },
+                        "normal-hair-male-10-15": {
+                                type: "spritesheet",
+                                base: l,
+                                url: "2-15.png",
+                                x: 54,
+                                y: 77,
+                                w: 122,
+                                h: 107
+                        },
+                        "normal-hair-male-10-16": {
+                                type: "spritesheet",
+                                base: l,
+                                url: "2-16.png",
+                                x: 54,
+                                y: 77,
+                                w: 122,
+                                h: 107
+                        },
+                        "normal-hair-male-10-2": {
+                                type: "spritesheet",
+                                base: l,
+                                url: "2-2.png",
+                                x: 54,
+                                y: 77,
+                                w: 122,
+                                h: 107
+                        },
+                        "normal-hair-male-10-3": {
+                                type: "spritesheet",
+                                base: l,
+                                url: "2-3.png",
+                                x: 54,
+                                y: 77,
+                                w: 122,
+                                h: 107
+                        },
+                        "normal-hair-male-10-4": {
+                                type: "spritesheet",
+                                base: l,
+                                url: "2-4.png",
+                                x: 54,
+                                y: 77,
+                                w: 122,
+                                h: 107
+                        },
+                        "normal-hair-male-10-5": {
+                                type: "spritesheet",
+                                base: l,
+                                url: "2-5.png",
+                                x: 54,
+                                y: 77,
+                                w: 122,
+                                h: 107
+                        },
+                        "normal-hair-male-10-6": {
+                                type: "spritesheet",
+                                base: l,
+                                url: "2-6.png",
+                                x: 54,
+                                y: 77,
+                                w: 122,
+                                h: 107
+                        },
+                        "normal-hair-male-10-7": {
+                                type: "spritesheet",
+                                base: l,
+                                url: "2-7.png",
+                                x: 54,
+                                y: 77,
+                                w: 122,
+                                h: 107
+                        },
+                        "normal-hair-male-10-8": {
+                                type: "spritesheet",
+                                base: l,
+                                url: "2-8.png",
+                                x: 54,
+                                y: 77,
+                                w: 122,
+                                h: 107
+                        },
+                        "normal-hair-male-10-9": {
+                                type: "spritesheet",
+                                base: l,
+                                url: "2-9.png",
+                                x: 54,
+                                y: 77,
+                                w: 122,
+                                h: 107
+				},
+				"normal-hair-male-11-1": {
+					type: "spritesheet",
+					base: l,
+					url: "3-1.png",
+					x: 54,
+					y: 77,
+					w: 134,
+					h: 107
+				},
+				"normal-hair-male-11-10": {
+					type: "spritesheet",
+					base: l,
+					url: "3-10.png",
+					x: 54,
+					y: 77,
+					w: 134,
+					h: 107
+				},
+				"normal-hair-male-11-11": {
+					type: "spritesheet",
+					base: l,
+					url: "3-11.png",
+					x: 54,
+					y: 77,
+					w: 134,
+					h: 107
+				},
+				"normal-hair-male-11-12": {
+					type: "spritesheet",
+					base: l,
+					url: "3-12.png",
+					x: 54,
+					y: 77,
+					w: 134,
+					h: 107
+				},
+				"normal-hair-male-11-13": {
+					type: "spritesheet",
+					base: l,
+					url: "3-13.png",
+					x: 54,
+					y: 77,
+					w: 134,
+					h: 107
+				},
+				"normal-hair-male-11-14": {
+					type: "spritesheet",
+					base: l,
+					url: "3-14.png",
+					x: 54,
+					y: 77,
+					w: 134,
+					h: 107
+				},
+				"normal-hair-male-11-15": {
+					type: "spritesheet",
+					base: l,
+					url: "3-15.png",
+					x: 54,
+					y: 77,
+					w: 134,
+					h: 107
+				},
+				"normal-hair-male-11-16": {
+					type: "spritesheet",
+					base: l,
+					url: "3-16.png",
+					x: 54,
+					y: 77,
+					w: 134,
+					h: 107
+				},
+				"normal-hair-male-11-2": {
+					type: "spritesheet",
+					base: l,
+					url: "3-2.png",
+					x: 54,
+					y: 77,
+					w: 134,
+					h: 107
+				},
+				"normal-hair-male-11-3": {
+					type: "spritesheet",
+					base: l,
+					url: "3-3.png",
+					x: 54,
+					y: 77,
+					w: 134,
+					h: 107
+				},
+				"normal-hair-male-11-4": {
+					type: "spritesheet",
+					base: l,
+					url: "3-4.png",
+					x: 54,
+					y: 77,
+					w: 134,
+					h: 107
+				},
+				"normal-hair-male-11-5": {
+					type: "spritesheet",
+					base: l,
+					url: "3-5.png",
+					x: 54,
+					y: 77,
+					w: 134,
+					h: 107
+				},
+				"normal-hair-male-11-6": {
+					type: "spritesheet",
+					base: l,
+					url: "3-6.png",
+					x: 54,
+					y: 77,
+					w: 134,
+					h: 107
+				},
+				"normal-hair-male-11-7": {
+					type: "spritesheet",
+					base: l,
+					url: "3-7.png",
+					x: 54,
+					y: 77,
+					w: 134,
+					h: 107
+				},
+				"normal-hair-male-11-8": {
+					type: "spritesheet",
+					base: l,
+					url: "3-8.png",
+					x: 54,
+					y: 77,
+					w: 134,
+					h: 107
+				},
+				"normal-hair-male-11-9": {
+					type: "spritesheet",
+					base: l,
+					url: "3-9.png",
+					x: 54,
+					y: 77,
+					w: 134,
+					h: 107
+				},
+				"normal-hair-male-12-1": {
+					type: "spritesheet",
+					base: l,
+					url: "4-1.png",
+					x: 54,
+					y: 77,
+					w: 119,
+					h: 107
+				},
+				"normal-hair-male-12-10": {
+					type: "spritesheet",
+					base: l,
+					url: "4-10.png",
+					x: 54,
+					y: 77,
+					w: 119,
+					h: 107
+				},
+				"normal-hair-male-12-11": {
+					type: "spritesheet",
+					base: l,
+					url: "4-11.png",
+					x: 54,
+					y: 77,
+					w: 119,
+					h: 107
+				},
+				"normal-hair-male-12-12": {
+					type: "spritesheet",
+					base: l,
+					url: "4-12.png",
+					x: 54,
+					y: 77,
+					w: 119,
+					h: 107
+				},
+				"normal-hair-male-12-13": {
+					type: "spritesheet",
+					base: l,
+					url: "4-13.png",
+					x: 54,
+					y: 77,
+					w: 119,
+					h: 107
+				},
+				"normal-hair-male-12-14": {
+					type: "spritesheet",
+					base: l,
+					url: "4-14.png",
+					x: 54,
+					y: 77,
+					w: 119,
+					h: 107
+				},
+				"normal-hair-male-12-15": {
+					type: "spritesheet",
+					base: l,
+					url: "4-15.png",
+					x: 54,
+					y: 77,
+					w: 119,
+					h: 107
+				},
+				"normal-hair-male-12-16": {
+					type: "spritesheet",
+					base: l,
+					url: "4-16.png",
+					x: 54,
+					y: 77,
+					w: 119,
+					h: 107
+				},
+				"normal-hair-male-12-2": {
+					type: "spritesheet",
+					base: l,
+					url: "4-2.png",
+					x: 54,
+					y: 77,
+					w: 119,
+					h: 107
+				},
+				"normal-hair-male-12-3": {
+					type: "spritesheet",
+					base: l,
+					url: "4-3.png",
+					x: 54,
+					y: 77,
+					w: 119,
+					h: 107
+				},
+				"normal-hair-male-12-4": {
+					type: "spritesheet",
+					base: l,
+					url: "4-4.png",
+					x: 54,
+					y: 77,
+					w: 119,
+					h: 107
+				},
+				"normal-hair-male-12-5": {
+					type: "spritesheet",
+					base: l,
+					url: "4-5.png",
+					x: 54,
+					y: 77,
+					w: 119,
+					h: 107
+				},
+				"normal-hair-male-12-6": {
+					type: "spritesheet",
+					base: l,
+					url: "4-6.png",
+					x: 54,
+					y: 77,
+					w: 119,
+					h: 107
+				},
+				"normal-hair-male-12-7": {
+					type: "spritesheet",
+					base: l,
+					url: "4-7.png",
+					x: 54,
+					y: 77,
+					w: 119,
+					h: 107
+				},
+				"normal-hair-male-12-8": {
+					type: "spritesheet",
+					base: l,
+					url: "4-8.png",
+					x: 54,
+					y: 77,
+					w: 119,
+					h: 107
+				},
+				"normal-hair-male-12-9": {
+					type: "spritesheet",
+					base: l,
+					url: "4-9.png",
+					x: 54,
+					y: 77,
+					w: 119,
+					h: 107
+				},
+				"normal-hair-male-13-1": {
+					type: "spritesheet",
+					base: l,
+					url: "5-1.png",
+					x: 54,
+					y: 77,
+					w: 119,
+					h: 107
+				},
+				"normal-hair-male-13-10": {
+					type: "spritesheet",
+					base: l,
+					url: "5-10.png",
+					x: 54,
+					y: 77,
+					w: 119,
+					h: 107
+				},
+				"normal-hair-male-13-11": {
+					type: "spritesheet",
+					base: l,
+					url: "5-11.png",
+					x: 54,
+					y: 77,
+					w: 119,
+					h: 107
+				},
+				"normal-hair-male-13-12": {
+					type: "spritesheet",
+					base: l,
+					url: "5-12.png",
+					x: 54,
+					y: 77,
+					w: 119,
+					h: 107
+				},
+				"normal-hair-male-13-13": {
+					type: "spritesheet",
+					base: l,
+					url: "5-13.png",
+					x: 54,
+					y: 77,
+					w: 119,
+					h: 107
+				},
+				"normal-hair-male-13-14": {
+					type: "spritesheet",
+					base: l,
+					url: "5-14.png",
+					x: 54,
+					y: 77,
+					w: 119,
+					h: 107
+				},
+				"normal-hair-male-13-15": {
+					type: "spritesheet",
+					base: l,
+					url: "5-15.png",
+					x: 54,
+					y: 77,
+					w: 119,
+					h: 107
+				},
+				"normal-hair-male-13-16": {
+					type: "spritesheet",
+					base: l,
+					url: "5-16.png",
+					x: 54,
+					y: 77,
+					w: 119,
+					h: 107
+				},
+				"normal-hair-male-13-2": {
+					type: "spritesheet",
+					base: l,
+					url: "5-2.png",
+					x: 54,
+					y: 77,
+					w: 119,
+					h: 107
+				},
+				"normal-hair-male-13-3": {
+					type: "spritesheet",
+					base: l,
+					url: "5-3.png",
+					x: 54,
+					y: 77,
+					w: 119,
+					h: 107
+				},
+				"normal-hair-male-13-4": {
+					type: "spritesheet",
+					base: l,
+					url: "5-4.png",
+					x: 54,
+					y: 77,
+					w: 119,
+					h: 107
+				},
+				"normal-hair-male-13-5": {
+					type: "spritesheet",
+					base: l,
+					url: "5-5.png",
+					x: 54,
+					y: 77,
+					w: 119,
+					h: 107
+				},
+				"normal-hair-male-13-6": {
+					type: "spritesheet",
+					base: l,
+					url: "5-6.png",
+					x: 54,
+					y: 77,
+					w: 119,
+					h: 107
+				},
+				"normal-hair-male-13-7": {
+					type: "spritesheet",
+					base: l,
+					url: "5-7.png",
+					x: 54,
+					y: 77,
+					w: 119,
+					h: 107
+				},
+				"normal-hair-male-13-8": {
+					type: "spritesheet",
+					base: l,
+					url: "5-8.png",
+					x: 54,
+					y: 77,
+					w: 119,
+					h: 107
+				},
+				"normal-hair-male-13-9": {
+					type: "spritesheet",
+					base: l,
+					url: "5-9.png",
+					x: 54,
+					y: 77,
+					w: 119,
+					h: 107
+				},
+				"normal-hair-male-14-1": {
+					type: "spritesheet",
+					base: l,
+					url: "6-1.png",
+					x: 48,
+					y: 77,
+					w: 140,
+					h: 110
+				},
+				"normal-hair-male-14-10": {
+					type: "spritesheet",
+					base: l,
+					url: "6-10.png",
+					x: 48,
+					y: 77,
+					w: 140,
+					h: 110
+				},
+				"normal-hair-male-14-11": {
+					type: "spritesheet",
+					base: l,
+					url: "6-11.png",
+					x: 48,
+					y: 77,
+					w: 140,
+					h: 110
+				},
+				"normal-hair-male-14-12": {
+					type: "spritesheet",
+					base: l,
+					url: "6-12.png",
+					x: 48,
+					y: 77,
+					w: 140,
+					h: 110
+				},
+				"normal-hair-male-14-13": {
+					type: "spritesheet",
+					base: l,
+					url: "6-13.png",
+					x: 48,
+					y: 77,
+					w: 140,
+					h: 110
+				},
+				"normal-hair-male-14-14": {
+					type: "spritesheet",
+					base: l,
+					url: "6-14.png",
+					x: 48,
+					y: 77,
+					w: 140,
+					h: 110
+				},
+				"normal-hair-male-14-15": {
+					type: "spritesheet",
+					base: l,
+					url: "6-15.png",
+					x: 48,
+					y: 77,
+					w: 140,
+					h: 110
+				},
+				"normal-hair-male-14-16": {
+					type: "spritesheet",
+					base: l,
+					url: "6-16.png",
+					x: 48,
+					y: 77,
+					w: 140,
+					h: 110
+				},
+				"normal-hair-male-14-2": {
+					type: "spritesheet",
+					base: l,
+					url: "6-2.png",
+					x: 48,
+					y: 77,
+					w: 140,
+					h: 110
+				},
+				"normal-hair-male-14-3": {
+					type: "spritesheet",
+					base: l,
+					url: "6-3.png",
+					x: 48,
+					y: 77,
+					w: 140,
+					h: 110
+				},
+				"normal-hair-male-14-4": {
+					type: "spritesheet",
+					base: l,
+					url: "6-4.png",
+					x: 48,
+					y: 77,
+					w: 140,
+					h: 110
+				},
+				"normal-hair-male-14-5": {
+					type: "spritesheet",
+					base: l,
+					url: "6-5.png",
+					x: 48,
+					y: 77,
+					w: 140,
+					h: 110
+				},
+				"normal-hair-male-14-6": {
+					type: "spritesheet",
+					base: l,
+					url: "6-6.png",
+					x: 48,
+					y: 77,
+					w: 140,
+					h: 110
+				},
+				"normal-hair-male-14-7": {
+					type: "spritesheet",
+					base: l,
+					url: "6-7.png",
+					x: 48,
+					y: 77,
+					w: 140,
+					h: 110
+				},
+				"normal-hair-male-14-8": {
+					type: "spritesheet",
+					base: l,
+					url: "6-8.png",
+					x: 48,
+					y: 77,
+					w: 140,
+					h: 110
+				},
+				"normal-hair-male-14-9": {
+					type: "spritesheet",
+					base: l,
+					url: "6-9.png",
+					x: 48,
+					y: 77,
+					w: 140,
+					h: 110
+				},
+				"normal-hair-male-15-1": {
+					type: "spritesheet",
+					base: l,
+					url: "7-1.png",
+					x: 75,
+					y: 74,
+					w: 98,
+					h: 93
+				},
+				"normal-hair-male-15-10": {
+					type: "spritesheet",
+					base: l,
+					url: "7-10.png",
+					x: 75,
+					y: 74,
+					w: 98,
+					h: 93
+				},
+				"normal-hair-male-15-11": {
+					type: "spritesheet",
+					base: l,
+					url: "7-11.png",
+					x: 75,
+					y: 74,
+					w: 98,
+					h: 93
+				},
+				"normal-hair-male-15-12": {
+					type: "spritesheet",
+					base: l,
+					url: "7-12.png",
+					x: 75,
+					y: 74,
+					w: 98,
+					h: 93
+				},
+				"normal-hair-male-15-13": {
+					type: "spritesheet",
+					base: l,
+					url: "7-13.png",
+					x: 75,
+					y: 74,
+					w: 98,
+					h: 93
+				},
+				"normal-hair-male-15-14": {
+					type: "spritesheet",
+					base: l,
+					url: "7-14.png",
+					x: 75,
+					y: 74,
+					w: 98,
+					h: 93
+				},
+				"normal-hair-male-15-15": {
+					type: "spritesheet",
+					base: l,
+					url: "7-15.png",
+					x: 75,
+					y: 74,
+					w: 98,
+					h: 93
+				},
+				"normal-hair-male-15-16": {
+					type: "spritesheet",
+					base: l,
+					url: "7-16.png",
+					x: 75,
+					y: 74,
+					w: 98,
+					h: 93
+				},
+				"normal-hair-male-15-2": {
+					type: "spritesheet",
+					base: l,
+					url: "7-2.png",
+					x: 75,
+					y: 74,
+					w: 98,
+					h: 93
+				},
+				"normal-hair-male-15-3": {
+					type: "spritesheet",
+					base: l,
+					url: "7-3.png",
+					x: 75,
+					y: 74,
+					w: 98,
+					h: 93
+				},
+				"normal-hair-male-15-4": {
+					type: "spritesheet",
+					base: l,
+					url: "7-4.png",
+					x: 75,
+					y: 74,
+					w: 98,
+					h: 93
+				},
+				"normal-hair-male-15-5": {
+					type: "spritesheet",
+					base: l,
+					url: "7-5.png",
+					x: 75,
+					y: 74,
+					w: 98,
+					h: 93
+				},
+				"normal-hair-male-15-6": {
+					type: "spritesheet",
+					base: l,
+					url: "7-6.png",
+					x: 75,
+					y: 74,
+					w: 98,
+					h: 93
+				},
+				"normal-hair-male-15-7": {
+					type: "spritesheet",
+					base: l,
+					url: "7-7.png",
+					x: 75,
+					y: 74,
+					w: 98,
+					h: 93
+				},
+				"normal-hair-male-15-8": {
+					type: "spritesheet",
+					base: l,
+					url: "7-8.png",
+					x: 75,
+					y: 74,
+					w: 98,
+					h: 93
+				},
+				"normal-hair-male-15-9": {
+					type: "spritesheet",
+					base: l,
+					url: "7-9.png",
+					x: 75,
+					y: 74,
+					w: 98,
+					h: 93
+				},
+				"normal-hair-male-16-1": {
+					type: "spritesheet",
+					base: l,
+					url: "8-1.png",
+					x: 73,
+					y: 75,
+					w: 101,
+					h: 90
+				},
+				"normal-hair-male-16-10": {
+					type: "spritesheet",
+					base: l,
+					url: "8-10.png",
+					x: 73,
+					y: 75,
+					w: 101,
+					h: 90
+				},
+				"normal-hair-male-16-11": {
+					type: "spritesheet",
+					base: l,
+					url: "8-11.png",
+					x: 73,
+					y: 75,
+					w: 101,
+					h: 90
+				},
+				"normal-hair-male-16-12": {
+					type: "spritesheet",
+					base: l,
+					url: "8-12.png",
+					x: 73,
+					y: 75,
+					w: 101,
+					h: 90
+				},
+				"normal-hair-male-16-13": {
+					type: "spritesheet",
+					base: l,
+					url: "8-13.png",
+					x: 73,
+					y: 75,
+					w: 101,
+					h: 90
+				},
+				"normal-hair-male-16-14": {
+					type: "spritesheet",
+					base: l,
+					url: "8-14.png",
+					x: 73,
+					y: 75,
+					w: 101,
+					h: 90
+				},
+				"normal-hair-male-16-15": {
+					type: "spritesheet",
+					base: l,
+					url: "8-15.png",
+					x: 73,
+					y: 75,
+					w: 101,
+					h: 90
+				},
+				"normal-hair-male-16-16": {
+					type: "spritesheet",
+					base: l,
+					url: "8-16.png",
+					x: 73,
+					y: 75,
+					w: 101,
+					h: 90
+				},
+				"normal-hair-male-16-2": {
+					type: "spritesheet",
+					base: l,
+					url: "8-2.png",
+					x: 73,
+					y: 75,
+					w: 101,
+					h: 90
+				},
+				"normal-hair-male-16-3": {
+					type: "spritesheet",
+					base: l,
+					url: "8-3.png",
+					x: 73,
+					y: 75,
+					w: 101,
+					h: 90
+				},
+				"normal-hair-male-16-4": {
+					type: "spritesheet",
+					base: l,
+					url: "8-4.png",
+					x: 73,
+					y: 75,
+					w: 101,
+					h: 90
+				},
+				"normal-hair-male-16-5": {
+					type: "spritesheet",
+					base: l,
+					url: "8-5.png",
+					x: 73,
+					y: 75,
+					w: 101,
+					h: 90
+				},
+				"normal-hair-male-16-6": {
+					type: "spritesheet",
+					base: l,
+					url: "8-6.png",
+					x: 73,
+					y: 75,
+					w: 101,
+					h: 90
+				},
+				"normal-hair-male-16-7": {
+					type: "spritesheet",
+					base: l,
+					url: "8-7.png",
+					x: 73,
+					y: 75,
+					w: 101,
+					h: 90
+				},
+				"normal-hair-male-16-8": {
+					type: "spritesheet",
+					base: l,
+					url: "8-8.png",
+					x: 73,
+					y: 75,
+					w: 101,
+					h: 90
+				},
+				"normal-hair-male-16-9": {
+					type: "spritesheet",
+					base: l,
+					url: "8-9.png",
+					x: 73,
+					y: 75,
+					w: 101,
+					h: 90
+				},
+				"normal-hair-male-17-1": {
+					type: "spritesheet",
+					base: l,
+					url: "9-1.png",
+					x: 75,
+					y: 77,
+					w: 113,
+					h: 88
+				},
+				"normal-hair-male-17-10": {
+					type: "spritesheet",
+					base: l,
+					url: "9-10.png",
+					x: 75,
+					y: 77,
+					w: 113,
+					h: 88
+				},
+				"normal-hair-male-17-11": {
+					type: "spritesheet",
+					base: l,
+					url: "9-11.png",
+					x: 75,
+					y: 77,
+					w: 113,
+					h: 88
+				},
+				"normal-hair-male-17-12": {
+					type: "spritesheet",
+					base: l,
+					url: "9-12.png",
+					x: 75,
+					y: 77,
+					w: 113,
+					h: 88
+				},
+				"normal-hair-male-17-13": {
+					type: "spritesheet",
+					base: l,
+					url: "9-13.png",
+					x: 75,
+					y: 77,
+					w: 113,
+					h: 88
+				},
+				"normal-hair-male-17-14": {
+					type: "spritesheet",
+					base: l,
+					url: "9-14.png",
+					x: 75,
+					y: 77,
+					w: 113,
+					h: 88
+				},
+				"normal-hair-male-17-15": {
+					type: "spritesheet",
+					base: l,
+					url: "9-15.png",
+					x: 75,
+					y: 77,
+					w: 113,
+					h: 88
+				},
+				"normal-hair-male-17-16": {
+					type: "spritesheet",
+					base: l,
+					url: "9-16.png",
+					x: 75,
+					y: 77,
+					w: 113,
+					h: 88
+				},
+				"normal-hair-male-17-2": {
+					type: "spritesheet",
+					base: l,
+					url: "9-2.png",
+					x: 75,
+					y: 77,
+					w: 113,
+					h: 88
+				},
+				"normal-hair-male-17-3": {
+					type: "spritesheet",
+					base: l,
+					url: "9-3.png",
+					x: 75,
+					y: 77,
+					w: 113,
+					h: 88
+				},
+				"normal-hair-male-17-4": {
+					type: "spritesheet",
+					base: l,
+					url: "9-4.png",
+					x: 75,
+					y: 77,
+					w: 113,
+					h: 88
+				},
+				"normal-hair-male-17-5": {
+					type: "spritesheet",
+					base: l,
+					url: "9-5.png",
+					x: 75,
+					y: 77,
+					w: 113,
+					h: 88
+				},
+				"normal-hair-male-17-6": {
+					type: "spritesheet",
+					base: l,
+					url: "9-6.png",
+					x: 75,
+					y: 77,
+					w: 113,
+					h: 88
+				},
+				"normal-hair-male-17-7": {
+					type: "spritesheet",
+					base: l,
+					url: "9-7.png",
+					x: 75,
+					y: 77,
+					w: 113,
+					h: 88
+				},
+				"normal-hair-male-17-8": {
+					type: "spritesheet",
+					base: l,
+					url: "9-8.png",
+					x: 75,
+					y: 77,
+					w: 113,
+					h: 88
+				},
+				"normal-hair-male-17-9": {
+					type: "spritesheet",
+					base: l,
+					url: "9-9.png",
+					x: 75,
+					y: 77,
+					w: 113,
+					h: 88
+				},
+				"normal-hair-male-18-1": {
+					type: "spritesheet",
+					base: l,
+					url: "10-1.png",
+					x: 68,
+					y: 77,
+					w: 108,
+					h: 102
+				},
+				"normal-hair-male-18-10": {
+					type: "spritesheet",
+					base: l,
+					url: "10-10.png",
+					x: 68,
+					y: 77,
+					w: 108,
+					h: 102
+				},
+				"normal-hair-male-18-11": {
+					type: "spritesheet",
+					base: l,
+					url: "10-11.png",
+					x: 68,
+					y: 77,
+					w: 108,
+					h: 102
+				},
+				"normal-hair-male-18-12": {
+					type: "spritesheet",
+					base: l,
+					url: "10-12.png",
+					x: 68,
+					y: 77,
+					w: 108,
+					h: 102
+				},
+				"normal-hair-male-18-13": {
+					type: "spritesheet",
+					base: l,
+					url: "10-13.png",
+					x: 68,
+					y: 77,
+					w: 108,
+					h: 102
+				},
+				"normal-hair-male-18-14": {
+					type: "spritesheet",
+					base: l,
+					url: "10-14.png",
+					x: 68,
+					y: 77,
+					w: 108,
+					h: 102
+				},
+				"normal-hair-male-18-15": {
+					type: "spritesheet",
+					base: l,
+					url: "10-15.png",
+					x: 68,
+					y: 77,
+					w: 108,
+					h: 102
+				},
+				"normal-hair-male-18-16": {
+					type: "spritesheet",
+					base: l,
+					url: "10-16.png",
+					x: 68,
+					y: 77,
+					w: 108,
+					h: 102
+				},
+				"normal-hair-male-18-2": {
+					type: "spritesheet",
+					base: l,
+					url: "10-2.png",
+					x: 68,
+					y: 77,
+					w: 108,
+					h: 102
+				},
+				"normal-hair-male-18-3": {
+					type: "spritesheet",
+					base: l,
+					url: "10-3.png",
+					x: 68,
+					y: 77,
+					w: 108,
+					h: 102
+				},
+				"normal-hair-male-18-4": {
+					type: "spritesheet",
+					base: l,
+					url: "10-4.png",
+					x: 68,
+					y: 77,
+					w: 108,
+					h: 102
+				},
+				"normal-hair-male-18-5": {
+					type: "spritesheet",
+					base: l,
+					url: "10-5.png",
+					x: 68,
+					y: 77,
+					w: 108,
+					h: 102
+				},
+				"normal-hair-male-18-6": {
+					type: "spritesheet",
+					base: l,
+					url: "10-6.png",
+					x: 68,
+					y: 77,
+					w: 108,
+					h: 102
+				},
+				"normal-hair-male-18-7": {
+					type: "spritesheet",
+					base: l,
+					url: "10-7.png",
+					x: 68,
+					y: 77,
+					w: 108,
+					h: 102
+				},
+				"normal-hair-male-18-8": {
+					type: "spritesheet",
+					base: l,
+					url: "10-8.png",
+					x: 68,
+					y: 77,
+					w: 108,
+					h: 102
+				},
+				"normal-hair-male-18-9": {
+					type: "spritesheet",
+					base: l,
+					url: "10-9.png",
+					x: 68,
+					y: 77,
+					w: 108,
+					h: 102
+				},
+				"normal-hair-male-19-1": {
+					type: "spritesheet",
+					base: l,
+					url: "11-1.png",
+					x: 68,
+					y: 77,
+					w: 106,
+					h: 102
+				},
+				"normal-hair-male-19-10": {
+					type: "spritesheet",
+					base: l,
+					url: "11-10.png",
+					x: 68,
+					y: 77,
+					w: 106,
+					h: 102
+				},
+				"normal-hair-male-19-11": {
+					type: "spritesheet",
+					base: l,
+					url: "11-11.png",
+					x: 68,
+					y: 77,
+					w: 106,
+					h: 102
+				},
+				"normal-hair-male-19-12": {
+					type: "spritesheet",
+					base: l,
+					url: "11-12.png",
+					x: 68,
+					y: 77,
+					w: 106,
+					h: 102
+				},
+				"normal-hair-male-19-13": {
+					type: "spritesheet",
+					base: l,
+					url: "11-13.png",
+					x: 68,
+					y: 77,
+					w: 106,
+					h: 102
+				},
+				"normal-hair-male-19-14": {
+					type: "spritesheet",
+					base: l,
+					url: "11-14.png",
+					x: 68,
+					y: 77,
+					w: 106,
+					h: 102
+				},
+				"normal-hair-male-19-15": {
+					type: "spritesheet",
+					base: l,
+					url: "11-15.png",
+					x: 68,
+					y: 77,
+					w: 106,
+					h: 102
+				},
+				"normal-hair-male-19-16": {
+					type: "spritesheet",
+					base: l,
+					url: "11-16.png",
+					x: 68,
+					y: 77,
+					w: 106,
+					h: 102
+				},
+				"normal-hair-male-19-2": {
+					type: "spritesheet",
+					base: l,
+					url: "11-2.png",
+					x: 68,
+					y: 77,
+					w: 106,
+					h: 102
+				},
+				"normal-hair-male-19-3": {
+					type: "spritesheet",
+					base: l,
+					url: "11-3.png",
+					x: 68,
+					y: 77,
+					w: 106,
+					h: 102
+				},
+				"normal-hair-male-19-4": {
+					type: "spritesheet",
+					base: l,
+					url: "11-4.png",
+					x: 68,
+					y: 77,
+					w: 106,
+					h: 102
+				},
+				"normal-hair-male-19-5": {
+					type: "spritesheet",
+					base: l,
+					url: "11-5.png",
+					x: 68,
+					y: 77,
+					w: 106,
+					h: 102
+				},
+				"normal-hair-male-19-6": {
+					type: "spritesheet",
+					base: l,
+					url: "11-6.png",
+					x: 68,
+					y: 77,
+					w: 106,
+					h: 102
+				},
+				"normal-hair-male-19-7": {
+					type: "spritesheet",
+					base: l,
+					url: "11-7.png",
+					x: 68,
+					y: 77,
+					w: 106,
+					h: 102
+				},
+				"normal-hair-male-19-8": {
+					type: "spritesheet",
+					base: l,
+					url: "11-8.png",
+					x: 68,
+					y: 77,
+					w: 106,
+					h: 102
+				},
+				"normal-hair-male-19-9": {
+					type: "spritesheet",
+					base: l,
+					url: "11-9.png",
+					x: 68,
+					y: 77,
+					w: 106,
+					h: 102
+				},
+				"normal-hair-male-20-1": {
+					type: "spritesheet",
+					base: l,
+					url: "12-1.png",
+					x: 68,
+					y: 75,
+					w: 106,
+					h: 104
+				},
+				"normal-hair-male-20-10": {
+					type: "spritesheet",
+					base: l,
+					url: "12-10.png",
+					x: 68,
+					y: 75,
+					w: 106,
+					h: 104
+				},
+				"normal-hair-male-20-11": {
+					type: "spritesheet",
+					base: l,
+					url: "12-11.png",
+					x: 68,
+					y: 75,
+					w: 106,
+					h: 104
+				},
+				"normal-hair-male-20-12": {
+					type: "spritesheet",
+					base: l,
+					url: "12-12.png",
+					x: 68,
+					y: 75,
+					w: 106,
+					h: 104
+				},
+				"normal-hair-male-20-13": {
+					type: "spritesheet",
+					base: l,
+					url: "12-13.png",
+					x: 68,
+					y: 75,
+					w: 106,
+					h: 104
+				},
+				"normal-hair-male-20-14": {
+					type: "spritesheet",
+					base: l,
+					url: "12-14.png",
+					x: 68,
+					y: 75,
+					w: 106,
+					h: 104
+				},
+				"normal-hair-male-20-15": {
+					type: "spritesheet",
+					base: l,
+					url: "12-15.png",
+					x: 68,
+					y: 75,
+					w: 106,
+					h: 104
+				},
+				"normal-hair-male-20-16": {
+					type: "spritesheet",
+					base: l,
+					url: "12-16.png",
+					x: 68,
+					y: 75,
+					w: 106,
+					h: 104
+				},
+				"normal-hair-male-20-2": {
+					type: "spritesheet",
+					base: l,
+					url: "12-2.png",
+					x: 68,
+					y: 75,
+					w: 106,
+					h: 104
+				},
+				"normal-hair-male-20-3": {
+					type: "spritesheet",
+					base: l,
+					url: "12-3.png",
+					x: 68,
+					y: 75,
+					w: 106,
+					h: 104
+				},
+				"normal-hair-male-20-4": {
+					type: "spritesheet",
+					base: l,
+					url: "12-4.png",
+					x: 68,
+					y: 75,
+					w: 106,
+					h: 104
+				},
+				"normal-hair-male-20-5": {
+					type: "spritesheet",
+					base: l,
+					url: "12-5.png",
+					x: 68,
+					y: 75,
+					w: 106,
+					h: 104
+				},
+				"normal-hair-male-20-6": {
+					type: "spritesheet",
+					base: l,
+					url: "12-6.png",
+					x: 68,
+					y: 75,
+					w: 106,
+					h: 104
+				},
+				"normal-hair-male-20-7": {
+					type: "spritesheet",
+					base: l,
+					url: "12-7.png",
+					x: 68,
+					y: 75,
+					w: 106,
+					h: 104
+				},
+				"normal-hair-male-20-8": {
+					type: "spritesheet",
+					base: l,
+					url: "12-8.png",
+					x: 68,
+					y: 75,
+					w: 106,
+					h: 104
+				},
+				"normal-hair-male-20-9": {
+					type: "spritesheet",
+					base: l,
+					url: "12-9.png",
+					x: 68,
+					y: 75,
+					w: 106,
+					h: 104
+				},
+				"normal-hair-male-21-1": {
+					type: "spritesheet",
+					base: l,
+					url: "13-1.png",
+					x: 48,
+					y: 77,
+					w: 126,
+					h: 110
+				},
+				"normal-hair-male-21-10": {
+					type: "spritesheet",
+					base: l,
+					url: "13-10.png",
+					x: 48,
+					y: 77,
+					w: 126,
+					h: 110
+				},
+				"normal-hair-male-21-11": {
+					type: "spritesheet",
+					base: l,
+					url: "13-11.png",
+					x: 48,
+					y: 77,
+					w: 126,
+					h: 110
+				},
+				"normal-hair-male-21-12": {
+					type: "spritesheet",
+					base: l,
+					url: "13-12.png",
+					x: 48,
+					y: 77,
+					w: 126,
+					h: 110
+				},
+				"normal-hair-male-21-13": {
+					type: "spritesheet",
+					base: l,
+					url: "13-13.png",
+					x: 48,
+					y: 77,
+					w: 126,
+					h: 110
+				},
+				"normal-hair-male-21-14": {
+					type: "spritesheet",
+					base: l,
+					url: "13-14.png",
+					x: 48,
+					y: 77,
+					w: 126,
+					h: 110
+				},
+				"normal-hair-male-21-15": {
+					type: "spritesheet",
+					base: l,
+					url: "13-15.png",
+					x: 48,
+					y: 77,
+					w: 126,
+					h: 110
+				},
+				"normal-hair-male-21-16": {
+					type: "spritesheet",
+					base: l,
+					url: "13-16.png",
+					x: 48,
+					y: 77,
+					w: 126,
+					h: 110
+				},
+				"normal-hair-male-21-2": {
+					type: "spritesheet",
+					base: l,
+					url: "13-2.png",
+					x: 48,
+					y: 77,
+					w: 126,
+					h: 110
+				},
+				"normal-hair-male-21-3": {
+					type: "spritesheet",
+					base: l,
+					url: "13-3.png",
+					x: 48,
+					y: 77,
+					w: 126,
+					h: 110
+				},
+				"normal-hair-male-21-4": {
+					type: "spritesheet",
+					base: l,
+					url: "13-4.png",
+					x: 48,
+					y: 77,
+					w: 126,
+					h: 110
+				},
+				"normal-hair-male-21-5": {
+					type: "spritesheet",
+					base: l,
+					url: "13-5.png",
+					x: 48,
+					y: 77,
+					w: 126,
+					h: 110
+				},
+				"normal-hair-male-21-6": {
+					type: "spritesheet",
+					base: l,
+					url: "13-6.png",
+					x: 48,
+					y: 77,
+					w: 126,
+					h: 110
+				},
+				"normal-hair-male-21-7": {
+					type: "spritesheet",
+					base: l,
+					url: "13-7.png",
+					x: 48,
+					y: 77,
+					w: 126,
+					h: 110
+				},
+				"normal-hair-male-21-8": {
+					type: "spritesheet",
+					base: l,
+					url: "13-8.png",
+					x: 48,
+					y: 77,
+					w: 126,
+					h: 110
+				},
+				"normal-hair-male-21-9": {
+					type: "spritesheet",
+					base: l,
+					url: "13-9.png",
+					x: 48,
+					y: 77,
+					w: 126,
+					h: 110
+				},
+				"normal-hair-male-22-1": {
+					type: "spritesheet",
+					base: l,
+					url: "14-1.png",
+					x: 48,
+					y: 74,
+					w: 125,
+					h: 111
+				},
+				"normal-hair-male-22-10": {
+					type: "spritesheet",
+					base: l,
+					url: "14-10.png",
+					x: 48,
+					y: 74,
+					w: 125,
+					h: 111
+				},
+				"normal-hair-male-22-11": {
+					type: "spritesheet",
+					base: l,
+					url: "14-11.png",
+					x: 48,
+					y: 74,
+					w: 125,
+					h: 111
+				},
+				"normal-hair-male-22-12": {
+					type: "spritesheet",
+					base: l,
+					url: "14-12.png",
+					x: 48,
+					y: 74,
+					w: 125,
+					h: 111
+				},
+				"normal-hair-male-22-13": {
+					type: "spritesheet",
+					base: l,
+					url: "14-13.png",
+					x: 48,
+					y: 74,
+					w: 125,
+					h: 111
+				},
+				"normal-hair-male-22-14": {
+					type: "spritesheet",
+					base: l,
+					url: "14-14.png",
+					x: 48,
+					y: 74,
+					w: 125,
+					h: 111
+				},
+				"normal-hair-male-22-15": {
+					type: "spritesheet",
+					base: l,
+					url: "14-15.png",
+					x: 48,
+					y: 74,
+					w: 125,
+					h: 111
+				},
+				"normal-hair-male-22-16": {
+					type: "spritesheet",
+					base: l,
+					url: "14-16.png",
+					x: 48,
+					y: 74,
+					w: 125,
+					h: 111
+				},
+				"normal-hair-male-22-2": {
+					type: "spritesheet",
+					base: l,
+					url: "14-2.png",
+					x: 48,
+					y: 74,
+					w: 125,
+					h: 111
+				},
+				"normal-hair-male-22-3": {
+					type: "spritesheet",
+					base: l,
+					url: "14-3.png",
+					x: 48,
+					y: 74,
+					w: 125,
+					h: 111
+				},
+				"normal-hair-male-22-4": {
+					type: "spritesheet",
+					base: l,
+					url: "14-4.png",
+					x: 48,
+					y: 74,
+					w: 125,
+					h: 111
+				},
+				"normal-hair-male-22-5": {
+					type: "spritesheet",
+					base: l,
+					url: "14-5.png",
+					x: 48,
+					y: 74,
+					w: 125,
+					h: 111
+				},
+				"normal-hair-male-22-6": {
+					type: "spritesheet",
+					base: l,
+					url: "14-6.png",
+					x: 48,
+					y: 74,
+					w: 125,
+					h: 111
+				},
+				"normal-hair-male-22-7": {
+					type: "spritesheet",
+					base: l,
+					url: "14-7.png",
+					x: 48,
+					y: 74,
+					w: 125,
+					h: 111
+				},
+				"normal-hair-male-22-8": {
+					type: "spritesheet",
+					base: l,
+					url: "14-8.png",
+					x: 48,
+					y: 74,
+					w: 125,
+					h: 111
+				},
+				"normal-hair-male-22-9": {
+					type: "spritesheet",
+					base: l,
+					url: "14-9.png",
+					x: 48,
+					y: 74,
+					w: 125,
+					h: 111
+				},
+				"normal-hair-male-23-1": {
+					type: "spritesheet",
+					base: l,
+					url: "15-1.png",
+					x: 48,
+					y: 74,
+					w: 125,
+					h: 111
+				},
+				"normal-hair-male-23-10": {
+					type: "spritesheet",
+					base: l,
+					url: "15-10.png",
+					x: 48,
+					y: 74,
+					w: 125,
+					h: 111
+				},
+				"normal-hair-male-23-11": {
+					type: "spritesheet",
+					base: l,
+					url: "15-11.png",
+					x: 48,
+					y: 74,
+					w: 125,
+					h: 111
+				},
+				"normal-hair-male-23-12": {
+					type: "spritesheet",
+					base: l,
+					url: "15-12.png",
+					x: 48,
+					y: 74,
+					w: 125,
+					h: 111
+				},
+				"normal-hair-male-23-13": {
+					type: "spritesheet",
+					base: l,
+					url: "15-13.png",
+					x: 48,
+					y: 74,
+					w: 125,
+					h: 111
+				},
+				"normal-hair-male-23-14": {
+					type: "spritesheet",
+					base: l,
+					url: "15-14.png",
+					x: 48,
+					y: 74,
+					w: 125,
+					h: 111
+				},
+				"normal-hair-male-23-15": {
+					type: "spritesheet",
+					base: l,
+					url: "15-15.png",
+					x: 48,
+					y: 74,
+					w: 125,
+					h: 111
+				},
+				"normal-hair-male-23-16": {
+					type: "spritesheet",
+					base: l,
+					url: "15-16.png",
+					x: 48,
+					y: 74,
+					w: 125,
+					h: 111
+				},
+				"normal-hair-male-23-2": {
+					type: "spritesheet",
+					base: l,
+					url: "15-2.png",
+					x: 48,
+					y: 74,
+					w: 125,
+					h: 111
+				},
+				"normal-hair-male-23-3": {
+					type: "spritesheet",
+					base: l,
+					url: "15-3.png",
+					x: 48,
+					y: 74,
+					w: 125,
+					h: 111
+				},
+				"normal-hair-male-23-4": {
+					type: "spritesheet",
+					base: l,
+					url: "15-4.png",
+					x: 48,
+					y: 74,
+					w: 125,
+					h: 111
+				},
+				"normal-hair-male-23-5": {
+					type: "spritesheet",
+					base: l,
+					url: "15-5.png",
+					x: 48,
+					y: 74,
+					w: 125,
+					h: 111
+				},
+				"normal-hair-male-23-6": {
+					type: "spritesheet",
+					base: l,
+					url: "15-6.png",
+					x: 48,
+					y: 74,
+					w: 125,
+					h: 111
+				},
+				"normal-hair-male-23-7": {
+					type: "spritesheet",
+					base: l,
+					url: "15-7.png",
+					x: 48,
+					y: 74,
+					w: 125,
+					h: 111
+				},
+				"normal-hair-male-23-8": {
+					type: "spritesheet",
+					base: l,
+					url: "15-8.png",
+					x: 48,
+					y: 74,
+					w: 125,
+					h: 111
+				},
+				"normal-hair-male-23-9": {
+					type: "spritesheet",
+					base: l,
+					url: "15-9.png",
+					x: 48,
+					y: 74,
+					w: 125,
+					h: 111
+                        },
+                        "reduced-hair-male-24-1": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "reduced-hair-male-24-2": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "reduced-hair-male-24-3": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "reduced-hair-male-24-4": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "reduced-hair-male-24-5": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "reduced-hair-male-24-6": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "reduced-hair-male-24-7": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "reduced-hair-male-24-8": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "reduced-hair-male-24-9": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "reduced-hair-male-24-10": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "reduced-hair-male-24-11": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "reduced-hair-male-24-12": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "reduced-hair-male-24-13": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "reduced-hair-male-24-14": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "reduced-hair-male-24-15": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "reduced-hair-male-24-16": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
 				},
 				"reduced-hair-male-1-1": {
 					type: "spritesheet",
@@ -29265,6 +33078,2454 @@ var DormMenu = function () {
 					y: 44,
 					w: 50,
 					h: 40
+                        },
+                        "reduced-hair-male-9-1": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "1-1.png",
+                                x: 25,
+                                y: 46,
+                                w: 60,
+                                h: 54
+                        },
+                        "reduced-hair-male-9-10": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "1-10.png",
+                                x: 25,
+                                y: 46,
+                                w: 60,
+                                h: 54
+                        },
+                        "reduced-hair-male-9-11": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "1-11.png",
+                                x: 25,
+                                y: 46,
+                                w: 60,
+                                h: 54
+                        },
+                        "reduced-hair-male-9-12": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "1-12.png",
+                                x: 25,
+                                y: 46,
+                                w: 60,
+                                h: 54
+                        },
+                        "reduced-hair-male-9-13": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "1-13.png",
+                                x: 25,
+                                y: 46,
+                                w: 60,
+                                h: 54
+                        },
+                        "reduced-hair-male-9-14": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "1-14.png",
+                                x: 25,
+                                y: 46,
+                                w: 60,
+                                h: 54
+                        },
+                        "reduced-hair-male-9-15": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "1-15.png",
+                                x: 25,
+                                y: 46,
+                                w: 60,
+                                h: 54
+                        },
+                        "reduced-hair-male-9-16": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "1-16.png",
+                                x: 25,
+                                y: 46,
+                                w: 60,
+                                h: 54
+                        },
+                        "reduced-hair-male-9-2": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "1-2.png",
+                                x: 25,
+                                y: 46,
+                                w: 60,
+                                h: 54
+                        },
+                        "reduced-hair-male-9-3": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "1-3.png",
+                                x: 25,
+                                y: 46,
+                                w: 60,
+                                h: 54
+                        },
+                        "reduced-hair-male-9-4": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "1-4.png",
+                                x: 25,
+                                y: 46,
+                                w: 60,
+                                h: 54
+                        },
+                        "reduced-hair-male-9-5": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "1-5.png",
+                                x: 25,
+                                y: 46,
+                                w: 60,
+                                h: 54
+                        },
+                        "reduced-hair-male-9-6": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "1-6.png",
+                                x: 25,
+                                y: 46,
+                                w: 60,
+                                h: 54
+                        },
+                        "reduced-hair-male-9-7": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "1-7.png",
+                                x: 25,
+                                y: 46,
+                                w: 60,
+                                h: 54
+                        },
+                        "reduced-hair-male-9-8": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "1-8.png",
+                                x: 25,
+                                y: 46,
+                                w: 60,
+                                h: 54
+                        },
+                        "reduced-hair-male-9-9": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "1-9.png",
+                                x: 25,
+                                y: 46,
+                                w: 60,
+                                h: 54
+                        },
+                        "reduced-hair-male-10-1": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "2-1.png",
+                                x: 25,
+                                y: 46,
+                                w: 61,
+                                h: 54
+                        },
+                        "reduced-hair-male-10-10": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "2-10.png",
+                                x: 25,
+                                y: 46,
+                                w: 61,
+                                h: 54
+                        },
+                        "reduced-hair-male-10-11": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "2-11.png",
+                                x: 25,
+                                y: 46,
+                                w: 61,
+                                h: 54
+                        },
+                        "reduced-hair-male-10-12": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "2-12.png",
+                                x: 25,
+                                y: 46,
+                                w: 61,
+                                h: 54
+                        },
+                        "reduced-hair-male-10-13": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "2-13.png",
+                                x: 25,
+                                y: 46,
+                                w: 61,
+                                h: 54
+                        },
+                        "reduced-hair-male-10-14": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "2-14.png",
+                                x: 25,
+                                y: 46,
+                                w: 61,
+                                h: 54
+                        },
+                        "reduced-hair-male-10-15": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "2-15.png",
+                                x: 25,
+                                y: 46,
+                                w: 61,
+                                h: 54
+                        },
+                        "reduced-hair-male-10-16": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "2-16.png",
+                                x: 25,
+                                y: 46,
+                                w: 61,
+                                h: 54
+                        },
+                        "reduced-hair-male-10-2": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "2-2.png",
+                                x: 25,
+                                y: 46,
+                                w: 61,
+                                h: 54
+                        },
+                        "reduced-hair-male-10-3": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "2-3.png",
+                                x: 25,
+                                y: 46,
+                                w: 61,
+                                h: 54
+                        },
+                        "reduced-hair-male-10-4": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "2-4.png",
+                                x: 25,
+                                y: 46,
+                                w: 61,
+                                h: 54
+                        },
+                        "reduced-hair-male-10-5": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "2-5.png",
+                                x: 25,
+                                y: 46,
+                                w: 61,
+                                h: 54
+                        },
+                        "reduced-hair-male-10-6": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "2-6.png",
+                                x: 25,
+                                y: 46,
+                                w: 61,
+                                h: 54
+                        },
+                        "reduced-hair-male-10-7": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "2-7.png",
+                                x: 25,
+                                y: 46,
+                                w: 61,
+                                h: 54
+                        },
+                        "reduced-hair-male-10-8": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "2-8.png",
+                                x: 25,
+                                y: 46,
+                                w: 61,
+                                h: 54
+                        },
+                        "reduced-hair-male-10-9": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "2-9.png",
+                                x: 25,
+                                y: 46,
+                                w: 61,
+                                h: 54
+                        },
+                        "reduced-hair-male-11-1": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "3-1.png",
+                                x: 25,
+                                y: 46,
+                                w: 70,
+                                h: 54
+                        },
+                        "reduced-hair-male-11-10": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "3-10.png",
+                                x: 25,
+                                y: 46,
+                                w: 70,
+                                h: 54
+                        },
+                        "reduced-hair-male-11-11": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "3-11.png",
+                                x: 25,
+                                y: 46,
+                                w: 70,
+                                h: 54
+                        },
+                        "reduced-hair-male-11-12": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "3-12.png",
+                                x: 25,
+                                y: 46,
+                                w: 70,
+                                h: 54
+                        },
+                        "reduced-hair-male-11-13": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "3-13.png",
+                                x: 25,
+                                y: 46,
+                                w: 70,
+                                h: 54
+                        },
+                        "reduced-hair-male-11-14": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "3-14.png",
+                                x: 25,
+                                y: 46,
+                                w: 70,
+                                h: 54
+                        },
+                        "reduced-hair-male-11-15": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "3-15.png",
+                                x: 25,
+                                y: 46,
+                                w: 70,
+                                h: 54
+                        },
+                        "reduced-hair-male-11-16": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "3-16.png",
+                                x: 25,
+                                y: 46,
+                                w: 70,
+                                h: 54
+                        },
+                        "reduced-hair-male-11-2": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "3-2.png",
+                                x: 25,
+                                y: 46,
+                                w: 70,
+                                h: 54
+                        },
+                        "reduced-hair-male-11-3": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "3-3.png",
+                                x: 25,
+                                y: 46,
+                                w: 70,
+                                h: 54
+                        },
+                        "reduced-hair-male-11-4": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "3-4.png",
+                                x: 25,
+                                y: 46,
+                                w: 70,
+                                h: 54
+                        },
+                        "reduced-hair-male-11-5": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "3-5.png",
+                                x: 25,
+                                y: 46,
+                                w: 70,
+                                h: 54
+                        },
+                        "reduced-hair-male-11-6": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "3-6.png",
+                                x: 25,
+                                y: 46,
+                                w: 70,
+                                h: 54
+                        },
+                        "reduced-hair-male-11-7": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "3-7.png",
+                                x: 25,
+                                y: 46,
+                                w: 70,
+                                h: 54
+                        },
+                        "reduced-hair-male-11-8": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "3-8.png",
+                                x: 25,
+                                y: 46,
+                                w: 70,
+                                h: 54
+                        },
+                        "reduced-hair-male-11-9": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "3-9.png",
+                                x: 25,
+                                y: 46,
+                                w: 70,
+                                h: 54
+                        },
+                        "reduced-hair-male-12-1": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "4-1.png",
+                                x: 25,
+                                y: 46,
+                                w: 61,
+                                h: 54
+                        },
+                        "reduced-hair-male-12-10": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "4-10.png",
+                                x: 25,
+                                y: 46,
+                                w: 61,
+                                h: 54
+                        },
+                        "reduced-hair-male-12-11": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "4-11.png",
+                                x: 25,
+                                y: 46,
+                                w: 61,
+                                h: 54
+                        },
+                        "reduced-hair-male-12-12": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "4-12.png",
+                                x: 25,
+                                y: 46,
+                                w: 61,
+                                h: 54
+                        },
+                        "reduced-hair-male-12-13": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "4-13.png",
+                                x: 25,
+                                y: 46,
+                                w: 61,
+                                h: 54
+                        },
+                        "reduced-hair-male-12-14": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "4-14.png",
+                                x: 25,
+                                y: 46,
+                                w: 61,
+                                h: 54
+                        },
+                        "reduced-hair-male-12-15": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "4-15.png",
+                                x: 25,
+                                y: 46,
+                                w: 61,
+                                h: 54
+                        },
+                        "reduced-hair-male-12-16": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "4-16.png",
+                                x: 25,
+                                y: 46,
+                                w: 61,
+                                h: 54
+                        },
+                        "reduced-hair-male-12-2": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "4-2.png",
+                                x: 25,
+                                y: 46,
+                                w: 61,
+                                h: 54
+                        },
+                        "reduced-hair-male-12-3": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "4-3.png",
+                                x: 25,
+                                y: 46,
+                                w: 61,
+                                h: 54
+                        },
+                        "reduced-hair-male-12-4": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "4-4.png",
+                                x: 25,
+                                y: 46,
+                                w: 61,
+                                h: 54
+                        },
+                        "reduced-hair-male-12-5": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "4-5.png",
+                                x: 25,
+                                y: 46,
+                                w: 61,
+                                h: 54
+                        },
+                        "reduced-hair-male-12-6": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "4-6.png",
+                                x: 25,
+                                y: 46,
+                                w: 61,
+                                h: 54
+                        },
+                        "reduced-hair-male-12-7": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "4-7.png",
+                                x: 25,
+                                y: 46,
+                                w: 61,
+                                h: 54
+                        },
+                        "reduced-hair-male-12-8": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "4-8.png",
+                                x: 25,
+                                y: 46,
+                                w: 61,
+                                h: 54
+                        },
+                        "reduced-hair-male-12-9": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "4-9.png",
+                                x: 25,
+                                y: 46,
+                                w: 61,
+                                h: 54
+                        },
+                        "reduced-hair-male-13-1": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "5-1.png",
+                                x: 25,
+                                y: 46,
+                                w: 60,
+                                h: 54
+                        },
+                        "reduced-hair-male-13-10": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "5-10.png",
+                                x: 25,
+                                y: 46,
+                                w: 60,
+                                h: 54
+                        },
+                        "reduced-hair-male-13-11": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "5-11.png",
+                                x: 25,
+                                y: 46,
+                                w: 60,
+                                h: 54
+                        },
+                        "reduced-hair-male-13-12": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "5-12.png",
+                                x: 25,
+                                y: 46,
+                                w: 60,
+                                h: 54
+                        },
+                        "reduced-hair-male-13-13": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "5-13.png",
+                                x: 25,
+                                y: 46,
+                                w: 60,
+                                h: 54
+                        },
+                        "reduced-hair-male-13-14": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "5-14.png",
+                                x: 25,
+                                y: 46,
+                                w: 60,
+                                h: 54
+                        },
+                        "reduced-hair-male-13-15": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "5-15.png",
+                                x: 25,
+                                y: 46,
+                                w: 60,
+                                h: 54
+                        },
+                        "reduced-hair-male-13-16": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "5-16.png",
+                                x: 25,
+                                y: 46,
+                                w: 60,
+                                h: 54
+                        },
+                        "reduced-hair-male-13-2": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "5-2.png",
+                                x: 25,
+                                y: 46,
+                                w: 60,
+                                h: 54
+                        },
+                        "reduced-hair-male-13-3": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "5-3.png",
+                                x: 25,
+                                y: 46,
+                                w: 60,
+                                h: 54
+                        },
+                        "reduced-hair-male-13-4": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "5-4.png",
+                                x: 25,
+                                y: 46,
+                                w: 60,
+                                h: 54
+                        },
+                        "reduced-hair-male-13-5": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "5-5.png",
+                                x: 25,
+                                y: 46,
+                                w: 60,
+                                h: 54
+                        },
+                        "reduced-hair-male-13-6": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "5-6.png",
+                                x: 25,
+                                y: 46,
+                                w: 60,
+                                h: 54
+                        },
+                        "reduced-hair-male-13-7": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "5-7.png",
+                                x: 25,
+                                y: 46,
+                                w: 60,
+                                h: 54
+                        },
+                        "reduced-hair-male-13-8": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "5-8.png",
+                                x: 25,
+                                y: 46,
+                                w: 60,
+                                h: 54
+                        },
+                        "reduced-hair-male-13-9": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "5-9.png",
+                                x: 25,
+                                y: 46,
+                                w: 60,
+                                h: 54
+                        },
+                        "reduced-hair-male-14-1": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "6-1.png",
+                                x: 22,
+                                y: 46,
+                                w: 73,
+                                h: 55
+                        },
+                        "reduced-hair-male-14-10": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "6-10.png",
+                                x: 22,
+                                y: 46,
+                                w: 73,
+                                h: 55
+                        },
+                        "reduced-hair-male-14-11": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "6-11.png",
+                                x: 22,
+                                y: 46,
+                                w: 73,
+                                h: 55
+                        },
+                        "reduced-hair-male-14-12": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "6-12.png",
+                                x: 22,
+                                y: 46,
+                                w: 73,
+                                h: 55
+                        },
+                        "reduced-hair-male-14-13": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "6-13.png",
+                                x: 22,
+                                y: 46,
+                                w: 73,
+                                h: 55
+                        },
+                        "reduced-hair-male-14-14": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "6-14.png",
+                                x: 22,
+                                y: 46,
+                                w: 73,
+                                h: 55
+                        },
+                        "reduced-hair-male-14-15": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "6-15.png",
+                                x: 22,
+                                y: 46,
+                                w: 73,
+                                h: 55
+                        },
+                        "reduced-hair-male-14-16": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "6-16.png",
+                                x: 22,
+                                y: 46,
+                                w: 73,
+                                h: 55
+                        },
+                        "reduced-hair-male-14-2": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "6-2.png",
+                                x: 22,
+                                y: 46,
+                                w: 73,
+                                h: 55
+                        },
+                        "reduced-hair-male-14-3": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "6-3.png",
+                                x: 22,
+                                y: 46,
+                                w: 73,
+                                h: 55
+                        },
+                        "reduced-hair-male-14-4": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "6-4.png",
+                                x: 22,
+                                y: 46,
+                                w: 73,
+                                h: 55
+                        },
+                        "reduced-hair-male-14-5": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "6-5.png",
+                                x: 22,
+                                y: 46,
+                                w: 73,
+                                h: 55
+                        },
+                        "reduced-hair-male-14-6": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "6-6.png",
+                                x: 22,
+                                y: 46,
+                                w: 73,
+                                h: 55
+                        },
+                        "reduced-hair-male-14-7": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "6-7.png",
+                                x: 22,
+                                y: 46,
+                                w: 73,
+                                h: 55
+                        },
+                        "reduced-hair-male-14-8": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "6-8.png",
+                                x: 22,
+                                y: 46,
+                                w: 73,
+                                h: 55
+                        },
+                        "reduced-hair-male-14-9": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "6-9.png",
+                                x: 22,
+                                y: 46,
+                                w: 73,
+                                h: 55
+                        },
+                        "reduced-hair-male-15-1": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "7-1.png",
+                                x: 36,
+                                y: 44,
+                                w: 49,
+                                h: 47
+                        },
+                        "reduced-hair-male-15-10": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "7-10.png",
+                                x: 36,
+                                y: 44,
+                                w: 49,
+                                h: 47
+                        },
+                        "reduced-hair-male-15-11": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "7-11.png",
+                                x: 36,
+                                y: 44,
+                                w: 49,
+                                h: 47
+                        },
+                        "reduced-hair-male-15-12": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "7-12.png",
+                                x: 36,
+                                y: 44,
+                                w: 49,
+                                h: 47
+                        },
+                        "reduced-hair-male-15-13": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "7-13.png",
+                                x: 36,
+                                y: 44,
+                                w: 49,
+                                h: 47
+                        },
+                        "reduced-hair-male-15-14": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "7-14.png",
+                                x: 36,
+                                y: 44,
+                                w: 49,
+                                h: 47
+                        },
+                        "reduced-hair-male-15-15": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "7-15.png",
+                                x: 36,
+                                y: 44,
+                                w: 49,
+                                h: 47
+                        },
+                        "reduced-hair-male-15-16": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "7-16.png",
+                                x: 36,
+                                y: 44,
+                                w: 49,
+                                h: 47
+                        },
+                        "reduced-hair-male-15-2": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "7-2.png",
+                                x: 36,
+                                y: 44,
+                                w: 49,
+                                h: 47
+                        },
+                        "reduced-hair-male-15-3": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "7-3.png",
+                                x: 36,
+                                y: 44,
+                                w: 49,
+                                h: 47
+                        },
+                        "reduced-hair-male-15-4": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "7-4.png",
+                                x: 36,
+                                y: 44,
+                                w: 49,
+                                h: 47
+                        },
+                        "reduced-hair-male-15-5": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "7-5.png",
+                                x: 36,
+                                y: 44,
+                                w: 49,
+                                h: 47
+                        },
+                        "reduced-hair-male-15-6": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "7-6.png",
+                                x: 36,
+                                y: 44,
+                                w: 49,
+                                h: 47
+                        },
+                        "reduced-hair-male-15-7": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "7-7.png",
+                                x: 36,
+                                y: 44,
+                                w: 49,
+                                h: 47
+                        },
+                        "reduced-hair-male-15-8": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "7-8.png",
+                                x: 36,
+                                y: 44,
+                                w: 49,
+                                h: 47
+                        },
+                        "reduced-hair-male-15-9": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "7-9.png",
+                                x: 36,
+                                y: 44,
+                                w: 49,
+                                h: 47
+                        },
+                        "reduced-hair-male-16-1": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "8-1.png",
+                                x: 34,
+                                y: 44,
+                                w: 51,
+                                h: 45
+                        },
+                        "reduced-hair-male-16-10": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "8-10.png",
+                                x: 34,
+                                y: 44,
+                                w: 51,
+                                h: 45
+                        },
+                        "reduced-hair-male-16-11": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "8-11.png",
+                                x: 34,
+                                y: 44,
+                                w: 51,
+                                h: 45
+                        },
+                        "reduced-hair-male-16-12": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "8-12.png",
+                                x: 34,
+                                y: 44,
+                                w: 51,
+                                h: 45
+                        },
+                        "reduced-hair-male-16-13": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "8-13.png",
+                                x: 34,
+                                y: 44,
+                                w: 51,
+                                h: 45
+                        },
+                        "reduced-hair-male-16-14": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "8-14.png",
+                                x: 34,
+                                y: 44,
+                                w: 51,
+                                h: 45
+                        },
+                        "reduced-hair-male-16-15": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "8-15.png",
+                                x: 34,
+                                y: 44,
+                                w: 51,
+                                h: 45
+                        },
+                        "reduced-hair-male-16-16": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "8-16.png",
+                                x: 34,
+                                y: 44,
+                                w: 51,
+                                h: 45
+                        },
+                        "reduced-hair-male-16-2": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "8-2.png",
+                                x: 34,
+                                y: 44,
+                                w: 51,
+                                h: 45
+                        },
+                        "reduced-hair-male-16-3": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "8-3.png",
+                                x: 34,
+                                y: 44,
+                                w: 51,
+                                h: 45
+                        },
+                        "reduced-hair-male-16-4": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "8-4.png",
+                                x: 34,
+                                y: 44,
+                                w: 51,
+                                h: 45
+                        },
+                        "reduced-hair-male-16-5": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "8-5.png",
+                                x: 34,
+                                y: 44,
+                                w: 51,
+                                h: 45
+                        },
+                        "reduced-hair-male-16-6": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "8-6.png",
+                                x: 34,
+                                y: 44,
+                                w: 51,
+                                h: 45
+                        },
+                        "reduced-hair-male-16-7": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "8-7.png",
+                                x: 34,
+                                y: 44,
+                                w: 51,
+                                h: 45
+                        },
+                        "reduced-hair-male-16-8": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "8-8.png",
+                                x: 34,
+                                y: 44,
+                                w: 51,
+                                h: 45
+                        },
+                        "reduced-hair-male-16-9": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "8-9.png",
+                                x: 34,
+                                y: 44,
+                                w: 51,
+                                h: 45
+                        },
+                        "reduced-hair-male-17-1": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "9-1.png",
+                                x: 36,
+                                y: 46,
+                                w: 59,
+                                h: 43
+                        },
+                        "reduced-hair-male-17-10": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "9-10.png",
+                                x: 36,
+                                y: 46,
+                                w: 59,
+                                h: 43
+                        },
+                        "reduced-hair-male-17-11": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "9-11.png",
+                                x: 36,
+                                y: 46,
+                                w: 59,
+                                h: 43
+                        },
+                        "reduced-hair-male-17-12": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "9-12.png",
+                                x: 36,
+                                y: 46,
+                                w: 59,
+                                h: 43
+                        },
+                        "reduced-hair-male-17-13": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "9-13.png",
+                                x: 36,
+                                y: 46,
+                                w: 59,
+                                h: 43
+                        },
+                        "reduced-hair-male-17-14": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "9-14.png",
+                                x: 36,
+                                y: 46,
+                                w: 59,
+                                h: 43
+                        },
+                        "reduced-hair-male-17-15": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "9-15.png",
+                                x: 36,
+                                y: 46,
+                                w: 59,
+                                h: 43
+                        },
+                        "reduced-hair-male-17-16": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "9-16.png",
+                                x: 36,
+                                y: 46,
+                                w: 59,
+                                h: 43
+                        },
+                        "reduced-hair-male-17-2": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "9-2.png",
+                                x: 36,
+                                y: 46,
+                                w: 59,
+                                h: 43
+                        },
+                        "reduced-hair-male-17-3": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "9-3.png",
+                                x: 36,
+                                y: 46,
+                                w: 59,
+                                h: 43
+                        },
+                        "reduced-hair-male-17-4": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "9-4.png",
+                                x: 36,
+                                y: 46,
+                                w: 59,
+                                h: 43
+                        },
+                        "reduced-hair-male-17-5": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "9-5.png",
+                                x: 36,
+                                y: 46,
+                                w: 59,
+                                h: 43
+                        },
+                        "reduced-hair-male-17-6": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "9-6.png",
+                                x: 36,
+                                y: 46,
+                                w: 59,
+                                h: 43
+                        },
+                        "reduced-hair-male-17-7": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "9-7.png",
+                                x: 36,
+                                y: 46,
+                                w: 59,
+                                h: 43
+                        },
+                        "reduced-hair-male-17-8": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "9-8.png",
+                                x: 36,
+                                y: 46,
+                                w: 59,
+                                h: 43
+                        },
+                        "reduced-hair-male-17-9": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "9-9.png",
+                                x: 36,
+                                y: 46,
+                                w: 59,
+                                h: 43
+                        },
+                        "reduced-hair-male-18-1": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "10-1.png",
+                                x: 33,
+                                y: 46,
+                                w: 53,
+                                h: 50
+                        },
+                        "reduced-hair-male-18-10": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "10-10.png",
+                                x: 33,
+                                y: 46,
+                                w: 53,
+                                h: 50
+                        },
+                        "reduced-hair-male-18-11": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "10-11.png",
+                                x: 33,
+                                y: 46,
+                                w: 53,
+                                h: 50
+                        },
+                        "reduced-hair-male-18-12": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "10-12.png",
+                                x: 33,
+                                y: 46,
+                                w: 53,
+                                h: 50
+                        },
+                        "reduced-hair-male-18-13": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "10-13.png",
+                                x: 33,
+                                y: 46,
+                                w: 53,
+                                h: 50
+                        },
+                        "reduced-hair-male-18-14": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "10-14.png",
+                                x: 33,
+                                y: 46,
+                                w: 53,
+                                h: 50
+                        },
+                        "reduced-hair-male-18-15": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "10-15.png",
+                                x: 33,
+                                y: 46,
+                                w: 53,
+                                h: 50
+                        },
+                        "reduced-hair-male-18-16": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "10-16.png",
+                                x: 33,
+                                y: 46,
+                                w: 53,
+                                h: 50
+                        },
+                        "reduced-hair-male-18-2": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "10-2.png",
+                                x: 33,
+                                y: 46,
+                                w: 53,
+                                h: 50
+                        },
+                        "reduced-hair-male-18-3": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "10-3.png",
+                                x: 33,
+                                y: 46,
+                                w: 53,
+                                h: 50
+                        },
+                        "reduced-hair-male-18-4": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "10-4.png",
+                                x: 33,
+                                y: 46,
+                                w: 53,
+                                h: 50
+                        },
+                        "reduced-hair-male-18-5": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "10-5.png",
+                                x: 33,
+                                y: 46,
+                                w: 53,
+                                h: 50
+                        },
+                        "reduced-hair-male-18-6": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "10-6.png",
+                                x: 33,
+                                y: 46,
+                                w: 53,
+                                h: 50
+                        },
+                        "reduced-hair-male-18-7": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "10-7.png",
+                                x: 33,
+                                y: 46,
+                                w: 53,
+                                h: 50
+                        },
+                        "reduced-hair-male-18-8": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "10-8.png",
+                                x: 33,
+                                y: 46,
+                                w: 53,
+                                h: 50
+                        },
+                        "reduced-hair-male-18-9": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "10-9.png",
+                                x: 33,
+                                y: 46,
+                                w: 53,
+                                h: 50
+                        },
+                        "reduced-hair-male-19-1": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "11-1.png",
+                                x: 33,
+                                y: 46,
+                                w: 52,
+                                h: 50
+                        },
+                        "reduced-hair-male-19-10": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "11-10.png",
+                                x: 33,
+                                y: 46,
+                                w: 52,
+                                h: 50
+                        },
+                        "reduced-hair-male-19-11": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "11-11.png",
+                                x: 33,
+                                y: 46,
+                                w: 52,
+                                h: 50
+                        },
+                        "reduced-hair-male-19-12": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "11-12.png",
+                                x: 33,
+                                y: 46,
+                                w: 52,
+                                h: 50
+                        },
+                        "reduced-hair-male-19-13": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "11-13.png",
+                                x: 33,
+                                y: 46,
+                                w: 52,
+                                h: 50
+                        },
+                        "reduced-hair-male-19-14": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "11-14.png",
+                                x: 33,
+                                y: 46,
+                                w: 52,
+                                h: 50
+                        },
+                        "reduced-hair-male-19-15": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "11-15.png",
+                                x: 33,
+                                y: 46,
+                                w: 52,
+                                h: 50
+                        },
+                        "reduced-hair-male-19-16": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "11-16.png",
+                                x: 33,
+                                y: 46,
+                                w: 52,
+                                h: 50
+                        },
+                        "reduced-hair-male-19-2": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "11-2.png",
+                                x: 33,
+                                y: 46,
+                                w: 52,
+                                h: 50
+                        },
+                        "reduced-hair-male-19-3": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "11-3.png",
+                                x: 33,
+                                y: 46,
+                                w: 52,
+                                h: 50
+                        },
+                        "reduced-hair-male-19-4": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "11-4.png",
+                                x: 33,
+                                y: 46,
+                                w: 52,
+                                h: 50
+                        },
+                        "reduced-hair-male-19-5": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "11-5.png",
+                                x: 33,
+                                y: 46,
+                                w: 52,
+                                h: 50
+                        },
+                        "reduced-hair-male-19-6": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "11-6.png",
+                                x: 33,
+                                y: 46,
+                                w: 52,
+                                h: 50
+                        },
+                        "reduced-hair-male-19-7": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "11-7.png",
+                                x: 33,
+                                y: 46,
+                                w: 52,
+                                h: 50
+                        },
+                        "reduced-hair-male-19-8": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "11-8.png",
+                                x: 33,
+                                y: 46,
+                                w: 52,
+                                h: 50
+                        },
+                        "reduced-hair-male-19-9": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "11-9.png",
+                                x: 33,
+                                y: 46,
+                                w: 52,
+                                h: 50
+                        },
+                        "reduced-hair-male-20-1": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "12-1.png",
+                                x: 33,
+                                y: 44,
+                                w: 52,
+                                h: 52
+                        },
+                        "reduced-hair-male-20-10": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "12-10.png",
+                                x: 33,
+                                y: 44,
+                                w: 52,
+                                h: 52
+                        },
+                        "reduced-hair-male-20-11": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "12-11.png",
+                                x: 33,
+                                y: 44,
+                                w: 52,
+                                h: 52
+                        },
+                        "reduced-hair-male-20-12": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "12-12.png",
+                                x: 33,
+                                y: 44,
+                                w: 52,
+                                h: 52
+                        },
+                        "reduced-hair-male-20-13": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "12-13.png",
+                                x: 33,
+                                y: 44,
+                                w: 52,
+                                h: 52
+                        },
+                        "reduced-hair-male-20-14": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "12-14.png",
+                                x: 33,
+                                y: 44,
+                                w: 52,
+                                h: 52
+                        },
+                        "reduced-hair-male-20-15": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "12-15.png",
+                                x: 33,
+                                y: 44,
+                                w: 52,
+                                h: 52
+                        },
+                        "reduced-hair-male-20-16": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "12-16.png",
+                                x: 33,
+                                y: 44,
+                                w: 52,
+                                h: 52
+                        },
+                        "reduced-hair-male-20-2": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "12-2.png",
+                                x: 33,
+                                y: 44,
+                                w: 52,
+                                h: 52
+                        },
+                        "reduced-hair-male-20-3": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "12-3.png",
+                                x: 33,
+                                y: 44,
+                                w: 52,
+                                h: 52
+                        },
+                        "reduced-hair-male-20-4": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "12-4.png",
+                                x: 33,
+                                y: 44,
+                                w: 52,
+                                h: 52
+                        },
+                        "reduced-hair-male-20-5": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "12-5.png",
+                                x: 33,
+                                y: 44,
+                                w: 52,
+                                h: 52
+                        },
+                        "reduced-hair-male-20-6": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "12-6.png",
+                                x: 33,
+                                y: 44,
+                                w: 52,
+                                h: 52
+                        },
+                        "reduced-hair-male-20-7": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "12-7.png",
+                                x: 33,
+                                y: 44,
+                                w: 52,
+                                h: 52
+                        },
+                        "reduced-hair-male-20-8": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "12-8.png",
+                                x: 33,
+                                y: 44,
+                                w: 52,
+                                h: 52
+                        },
+                        "reduced-hair-male-20-9": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "12-9.png",
+                                x: 33,
+                                y: 44,
+                                w: 52,
+                                h: 52
+                        },
+                        "reduced-hair-male-21-1": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "13-1.png",
+                                x: 22,
+                                y: 46,
+                                w: 63,
+                                h: 55
+                        },
+                        "reduced-hair-male-21-10": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "13-10.png",
+                                x: 22,
+                                y: 46,
+                                w: 63,
+                                h: 55
+                        },
+                        "reduced-hair-male-21-11": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "13-11.png",
+                                x: 22,
+                                y: 46,
+                                w: 63,
+                                h: 55
+                        },
+                        "reduced-hair-male-21-12": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "13-12.png",
+                                x: 22,
+                                y: 46,
+                                w: 63,
+                                h: 55
+                        },
+                        "reduced-hair-male-21-13": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "13-13.png",
+                                x: 22,
+                                y: 46,
+                                w: 63,
+                                h: 55
+                        },
+                        "reduced-hair-male-21-14": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "13-14.png",
+                                x: 22,
+                                y: 46,
+                                w: 63,
+                                h: 55
+                        },
+                        "reduced-hair-male-21-15": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "13-15.png",
+                                x: 22,
+                                y: 46,
+                                w: 63,
+                                h: 55
+                        },
+                        "reduced-hair-male-21-16": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "13-16.png",
+                                x: 22,
+                                y: 46,
+                                w: 63,
+                                h: 55
+                        },
+                        "reduced-hair-male-21-2": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "13-2.png",
+                                x: 22,
+                                y: 46,
+                                w: 63,
+                                h: 55
+                        },
+                        "reduced-hair-male-21-3": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "13-3.png",
+                                x: 22,
+                                y: 46,
+                                w: 63,
+                                h: 55
+                        },
+                        "reduced-hair-male-21-4": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "13-4.png",
+                                x: 22,
+                                y: 46,
+                                w: 63,
+                                h: 55
+                        },
+                        "reduced-hair-male-21-5": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "13-5.png",
+                                x: 22,
+                                y: 46,
+                                w: 63,
+                                h: 55
+                        },
+                        "reduced-hair-male-21-6": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "13-6.png",
+                                x: 22,
+                                y: 46,
+                                w: 63,
+                                h: 55
+                        },
+                        "reduced-hair-male-21-7": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "13-7.png",
+                                x: 22,
+                                y: 46,
+                                w: 63,
+                                h: 55
+                        },
+                        "reduced-hair-male-21-8": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "13-8.png",
+                                x: 22,
+                                y: 46,
+                                w: 63,
+                                h: 55
+                        },
+                        "reduced-hair-male-21-9": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "13-9.png",
+                                x: 22,
+                                y: 46,
+                                w: 63,
+                                h: 55
+                        },
+                        "reduced-hair-male-22-1": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "14-1.png",
+                                x: 22,
+                                y: 46,
+                                w: 63,
+                                h: 55
+                        },
+                        "reduced-hair-male-22-10": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "14-10.png",
+                                x: 22,
+                                y: 46,
+                                w: 63,
+                                h: 55
+                        },
+                        "reduced-hair-male-22-11": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "14-11.png",
+                                x: 22,
+                                y: 46,
+                                w: 63,
+                                h: 55
+                        },
+                        "reduced-hair-male-22-12": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "14-12.png",
+                                x: 22,
+                                y: 46,
+                                w: 63,
+                                h: 55
+                        },
+                        "reduced-hair-male-22-13": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "14-13.png",
+                                x: 22,
+                                y: 46,
+                                w: 63,
+                                h: 55
+                        },
+                        "reduced-hair-male-22-14": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "14-14.png",
+                                x: 22,
+                                y: 46,
+                                w: 63,
+                                h: 55
+                        },
+                        "reduced-hair-male-22-15": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "14-15.png",
+                                x: 22,
+                                y: 46,
+                                w: 63,
+                                h: 55
+                        },
+                        "reduced-hair-male-22-16": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "14-16.png",
+                                x: 22,
+                                y: 46,
+                                w: 63,
+                                h: 55
+                        },
+                        "reduced-hair-male-22-2": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "14-2.png",
+                                x: 22,
+                                y: 46,
+                                w: 63,
+                                h: 55
+                        },
+                        "reduced-hair-male-22-3": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "14-3.png",
+                                x: 22,
+                                y: 46,
+                                w: 63,
+                                h: 55
+                        },
+                        "reduced-hair-male-22-4": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "14-4.png",
+                                x: 22,
+                                y: 46,
+                                w: 63,
+                                h: 55
+                        },
+                        "reduced-hair-male-22-5": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "14-5.png",
+                                x: 22,
+                                y: 46,
+                                w: 63,
+                                h: 55
+                        },
+                        "reduced-hair-male-22-6": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "14-6.png",
+                                x: 22,
+                                y: 46,
+                                w: 63,
+                                h: 55
+                        },
+                        "reduced-hair-male-22-7": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "14-7.png",
+                                x: 22,
+                                y: 46,
+                                w: 63,
+                                h: 55
+                        },
+                        "reduced-hair-male-22-8": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "14-8.png",
+                                x: 22,
+                                y: 46,
+                                w: 63,
+                                h: 55
+                        },
+                        "reduced-hair-male-22-9": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "14-9.png",
+                                x: 22,
+                                y: 46,
+                                w: 63,
+                                h: 55
+                        },
+                        "reduced-hair-male-23-1": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "15-1.png",
+                                x: 22,
+                                y: 46,
+                                w: 64,
+                                h: 55
+                        },
+                        "reduced-hair-male-23-10": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "15-10.png",
+                                x: 22,
+                                y: 46,
+                                w: 64,
+                                h: 55
+                        },
+                        "reduced-hair-male-23-11": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "15-11.png",
+                                x: 22,
+                                y: 46,
+                                w: 64,
+                                h: 55
+                        },
+                        "reduced-hair-male-23-12": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "15-12.png",
+                                x: 22,
+                                y: 46,
+                                w: 64,
+                                h: 55
+                        },
+                        "reduced-hair-male-23-13": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "15-13.png",
+                                x: 22,
+                                y: 46,
+                                w: 64,
+                                h: 55
+                        },
+                        "reduced-hair-male-23-14": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "15-14.png",
+                                x: 22,
+                                y: 46,
+                                w: 64,
+                                h: 55
+                        },
+                        "reduced-hair-male-23-15": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "15-15.png",
+                                x: 22,
+                                y: 46,
+                                w: 64,
+                                h: 55
+                        },
+                        "reduced-hair-male-23-16": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "15-16.png",
+                                x: 22,
+                                y: 46,
+                                w: 64,
+                                h: 55
+                        },
+                        "reduced-hair-male-23-2": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "15-2.png",
+                                x: 22,
+                                y: 46,
+                                w: 64,
+                                h: 55
+                        },
+                        "reduced-hair-male-23-3": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "15-3.png",
+                                x: 22,
+                                y: 46,
+                                w: 64,
+                                h: 55
+                        },
+                        "reduced-hair-male-23-4": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "15-4.png",
+                                x: 22,
+                                y: 46,
+                                w: 64,
+                                h: 55
+                        },
+                        "reduced-hair-male-23-5": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "15-5.png",
+                                x: 22,
+                                y: 46,
+                                w: 64,
+                                h: 55
+                        },
+                        "reduced-hair-male-23-6": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "15-6.png",
+                                x: 22,
+                                y: 46,
+                                w: 64,
+                                h: 55
+                        },
+                        "reduced-hair-male-23-7": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "15-7.png",
+                                x: 22,
+                                y: 46,
+                                w: 64,
+                                h: 55
+                        },
+                        "reduced-hair-male-23-8": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "15-8.png",
+                                x: 22,
+                                y: 46,
+                                w: 64,
+                                h: 55
+                        },
+                        "reduced-hair-male-23-9": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "15-9.png",
+                                x: 22,
+                                y: 46,
+                                w: 64,
+                                h: 55
+                        },
+                        "normal-hair-female-24-1": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-female-24-2": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-female-24-3": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-female-24-4": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-female-24-5": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-female-24-6": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-female-24-7": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-female-24-8": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-female-24-9": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-female-24-10": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-female-24-11": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-female-24-12": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-female-24-13": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-female-24-14": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-female-24-15": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-female-24-16": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "reduced-hair-female-24-1": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "reduced-hair-female-24-2": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "reduced-hair-female-24-3": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "reduced-hair-female-24-4": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "reduced-hair-female-24-5": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "reduced-hair-female-24-6": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "reduced-hair-female-24-7": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "reduced-hair-female-24-8": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "reduced-hair-female-24-9": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "reduced-hair-female-24-10": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "reduced-hair-female-24-11": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "reduced-hair-female-24-12": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "reduced-hair-female-24-13": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "reduced-hair-female-24-14": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "reduced-hair-female-24-15": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "reduced-hair-female-24-16": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
 				},
 				"normal-hair-female-1-1": {
 					type: "spritesheet",
@@ -30273,6 +36534,582 @@ var DormMenu = function () {
 					y: 74,
 					w: 125,
 					h: 111
+                        },
+                        "normal-hair-female-16-1": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "1-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-female-16-10": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "1-10.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-female-16-11": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "1-11.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-female-16-12": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "1-12.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-female-16-13": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "1-13.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-female-16-14": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "1-14.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-female-16-15": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "1-15.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-female-16-16": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "1-16.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-female-16-2": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "1-2.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-female-16-3": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "1-3.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-female-16-4": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "1-4.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-female-16-5": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "1-5.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-female-16-6": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "1-6.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-female-16-7": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "1-7.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-female-16-8": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "1-8.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-female-16-9": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "1-9.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "normal-hair-female-17-1": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "2-1.png",
+                                x: 87,
+                                y: 51,
+                                w: 94,
+                                h: 101
+                        },
+                        "normal-hair-female-17-10": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "2-10.png",
+                                x: 87,
+                                y: 51,
+                                w: 94,
+                                h: 101
+                        },
+                        "normal-hair-female-17-11": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "2-11.png",
+                                x: 87,
+                                y: 51,
+                                w: 94,
+                                h: 101
+                        },
+                        "normal-hair-female-17-12": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "2-12.png",
+                                x: 87,
+                                y: 51,
+                                w: 94,
+                                h: 101
+                        },
+                        "normal-hair-female-17-13": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "2-13.png",
+                                x: 87,
+                                y: 51,
+                                w: 94,
+                                h: 101
+                        },
+                        "normal-hair-female-17-14": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "2-14.png",
+                                x: 87,
+                                y: 51,
+                                w: 94,
+                                h: 101
+                        },
+                        "normal-hair-female-17-15": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "2-15.png",
+                                x: 87,
+                                y: 51,
+                                w: 94,
+                                h: 101
+                        },
+                        "normal-hair-female-17-16": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "2-16.png",
+                                x: 87,
+                                y: 51,
+                                w: 94,
+                                h: 101
+                        },
+                        "normal-hair-female-17-2": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "2-2.png",
+                                x: 87,
+                                y: 51,
+                                w: 94,
+                                h: 101
+                        },
+                        "normal-hair-female-17-3": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "2-3.png",
+                                x: 87,
+                                y: 51,
+                                w: 94,
+                                h: 101
+                        },
+                        "normal-hair-female-17-4": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "2-4.png",
+                                x: 87,
+                                y: 51,
+                                w: 94,
+                                h: 101
+                        },
+                        "normal-hair-female-17-5": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "2-5.png",
+                                x: 87,
+                                y: 51,
+                                w: 94,
+                                h: 101
+                        },
+                        "normal-hair-female-17-6": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "2-6.png",
+                                x: 87,
+                                y: 51,
+                                w: 94,
+                                h: 101
+                        },
+                        "normal-hair-female-17-7": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "2-7.png",
+                                x: 87,
+                                y: 51,
+                                w: 94,
+                                h: 101
+                        },
+                        "normal-hair-female-17-8": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "2-8.png",
+                                x: 87,
+                                y: 51,
+                                w: 94,
+                                h: 101
+                        },
+                        "normal-hair-female-17-9": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "2-9.png",
+                                x: 87,
+                                y: 51,
+                                w: 94,
+                                h: 101
+                        },
+                        "normal-hair-female-18-1": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "3-1.png",
+                                x: 86,
+                                y: 55,
+                                w: 100,
+                                h: 97
+                        },
+                        "normal-hair-female-18-10": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "3-10.png",
+                                x: 86,
+                                y: 55,
+                                w: 100,
+                                h: 97
+                        },
+                        "normal-hair-female-18-11": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "3-11.png",
+                                x: 86,
+                                y: 55,
+                                w: 100,
+                                h: 97
+                        },
+                        "normal-hair-female-18-12": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "3-12.png",
+                                x: 86,
+                                y: 55,
+                                w: 100,
+                                h: 97
+                        },
+                        "normal-hair-female-18-13": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "3-13.png",
+                                x: 86,
+                                y: 55,
+                                w: 100,
+                                h: 97
+                        },
+                        "normal-hair-female-18-14": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "3-14.png",
+                                x: 86,
+                                y: 55,
+                                w: 100,
+                                h: 97
+                        },
+                        "normal-hair-female-18-15": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "3-15.png",
+                                x: 86,
+                                y: 55,
+                                w: 100,
+                                h: 97
+                        },
+                        "normal-hair-female-18-16": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "3-16.png",
+                                x: 86,
+                                y: 55,
+                                w: 100,
+                                h: 97
+                        },
+                        "normal-hair-female-18-2": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "3-2.png",
+                                x: 86,
+                                y: 55,
+                                w: 100,
+                                h: 97
+                        },
+                        "normal-hair-female-18-3": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "3-3.png",
+                                x: 86,
+                                y: 55,
+                                w: 100,
+                                h: 97
+                        },
+                        "normal-hair-female-18-4": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "3-4.png",
+                                x: 86,
+                                y: 55,
+                                w: 100,
+                                h: 97
+                        },
+                        "normal-hair-female-18-5": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "3-5.png",
+                                x: 86,
+                                y: 55,
+                                w: 100,
+                                h: 97
+                        },
+                        "normal-hair-female-18-6": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "3-6.png",
+                                x: 86,
+                                y: 55,
+                                w: 100,
+                                h: 97
+                        },
+                        "normal-hair-female-18-7": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "3-7.png",
+                                x: 86,
+                                y: 55,
+                                w: 100,
+                                h: 97
+                        },
+                        "normal-hair-female-18-8": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "3-8.png",
+                                x: 86,
+                                y: 55,
+                                w: 100,
+                                h: 97
+                        },
+                        "normal-hair-female-18-9": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "3-9.png",
+                                x: 86,
+                                y: 55,
+                                w: 100,
+                                h: 97
+                        },
+                        "normal-hair-female-19-1": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "4-1.png",
+                                x: 86,
+                                y: 73,
+                                w: 92,
+                                h: 77
+                        },
+                        "normal-hair-female-19-10": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "4-10.png",
+                                x: 86,
+                                y: 73,
+                                w: 92,
+                                h: 77
+                        },
+                        "normal-hair-female-19-11": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "4-11.png",
+                                x: 86,
+                                y: 73,
+                                w: 92,
+                                h: 77
+                        },
+                        "normal-hair-female-19-12": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "4-12.png",
+                                x: 86,
+                                y: 73,
+                                w: 92,
+                                h: 77
+                        },
+                        "normal-hair-female-19-13": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "4-13.png",
+                                x: 86,
+                                y: 73,
+                                w: 92,
+                                h: 77
+                        },
+                        "normal-hair-female-19-14": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "4-14.png",
+                                x: 86,
+                                y: 73,
+                                w: 92,
+                                h: 77
+                        },
+                        "normal-hair-female-19-15": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "4-15.png",
+                                x: 86,
+                                y: 73,
+                                w: 92,
+                                h: 77
+                        },
+                        "normal-hair-female-19-16": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "4-16.png",
+                                x: 86,
+                                y: 73,
+                                w: 92,
+                                h: 77
+                        },
+                        "normal-hair-female-19-2": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "4-2.png",
+                                x: 86,
+                                y: 73,
+                                w: 92,
+                                h: 77
+                        },
+                        "normal-hair-female-19-3": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "4-3.png",
+                                x: 86,
+                                y: 73,
+                                w: 92,
+                                h: 77
+                        },
+                        "normal-hair-female-19-4": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "4-4.png",
+                                x: 86,
+                                y: 73,
+                                w: 92,
+                                h: 77
+                        },
+                        "normal-hair-female-19-5": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "4-5.png",
+                                x: 86,
+                                y: 73,
+                                w: 92,
+                                h: 77
+                        },
+                        "normal-hair-female-19-6": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "4-6.png",
+                                x: 86,
+                                y: 73,
+                                w: 92,
+                                h: 77
+                        },
+                        "normal-hair-female-19-7": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "4-7.png",
+                                x: 86,
+                                y: 73,
+                                w: 92,
+                                h: 77
+                        },
+                        "normal-hair-female-19-8": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "4-8.png",
+                                x: 86,
+                                y: 73,
+                                w: 92,
+                                h: 77
+                        },
+                        "normal-hair-female-19-9": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "4-9.png",
+                                x: 86,
+                                y: 73,
+                                w: 92,
+                                h: 77
 				},
 				"normal-hair-female-2-1": {
 					type: "spritesheet",
@@ -30417,6 +37254,582 @@ var DormMenu = function () {
 					y: 77,
 					w: 122,
 					h: 107
+                        },
+                        "normal-hair-female-20-1": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "5-1.png",
+                                x: 89,
+                                y: 75,
+                                w: 87,
+                                h: 76
+                        },
+                        "normal-hair-female-20-10": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "5-10.png",
+                                x: 89,
+                                y: 75,
+                                w: 87,
+                                h: 76
+                        },
+                        "normal-hair-female-20-11": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "5-11.png",
+                                x: 89,
+                                y: 75,
+                                w: 87,
+                                h: 76
+                        },
+                        "normal-hair-female-20-12": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "5-12.png",
+                                x: 89,
+                                y: 75,
+                                w: 87,
+                                h: 76
+                        },
+                        "normal-hair-female-20-13": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "5-13.png",
+                                x: 89,
+                                y: 75,
+                                w: 87,
+                                h: 76
+                        },
+                        "normal-hair-female-20-14": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "5-14.png",
+                                x: 89,
+                                y: 75,
+                                w: 87,
+                                h: 76
+                        },
+                        "normal-hair-female-20-15": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "5-15.png",
+                                x: 89,
+                                y: 75,
+                                w: 87,
+                                h: 76
+                        },
+                        "normal-hair-female-20-16": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "5-16.png",
+                                x: 89,
+                                y: 75,
+                                w: 87,
+                                h: 76
+                        },
+                        "normal-hair-female-20-2": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "5-2.png",
+                                x: 89,
+                                y: 75,
+                                w: 87,
+                                h: 76
+                        },
+                        "normal-hair-female-20-3": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "5-3.png",
+                                x: 89,
+                                y: 75,
+                                w: 87,
+                                h: 76
+                        },
+                        "normal-hair-female-20-4": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "5-4.png",
+                                x: 89,
+                                y: 75,
+                                w: 87,
+                                h: 76
+                        },
+                        "normal-hair-female-20-5": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "5-5.png",
+                                x: 89,
+                                y: 75,
+                                w: 87,
+                                h: 76
+                        },
+                        "normal-hair-female-20-6": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "5-6.png",
+                                x: 89,
+                                y: 75,
+                                w: 87,
+                                h: 76
+                        },
+                        "normal-hair-female-20-7": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "5-7.png",
+                                x: 89,
+                                y: 75,
+                                w: 87,
+                                h: 76
+                        },
+                        "normal-hair-female-20-8": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "5-8.png",
+                                x: 89,
+                                y: 75,
+                                w: 87,
+                                h: 76
+                        },
+                        "normal-hair-female-20-9": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "5-9.png",
+                                x: 89,
+                                y: 75,
+                                w: 87,
+                                h: 76
+                        },
+                        "normal-hair-female-21-1": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "6-1.png",
+                                x: 87,
+                                y: 75,
+                                w: 85,
+                                h: 76
+                        },
+                        "normal-hair-female-21-10": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "6-10.png",
+                                x: 87,
+                                y: 75,
+                                w: 85,
+                                h: 76
+                        },
+                        "normal-hair-female-21-11": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "6-11.png",
+                                x: 87,
+                                y: 75,
+                                w: 85,
+                                h: 76
+                        },
+                        "normal-hair-female-21-12": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "6-12.png",
+                                x: 87,
+                                y: 75,
+                                w: 85,
+                                h: 76
+                        },
+                        "normal-hair-female-21-13": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "6-13.png",
+                                x: 87,
+                                y: 75,
+                                w: 85,
+                                h: 76
+                        },
+                        "normal-hair-female-21-14": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "6-14.png",
+                                x: 87,
+                                y: 75,
+                                w: 85,
+                                h: 76
+                        },
+                        "normal-hair-female-21-15": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "6-15.png",
+                                x: 87,
+                                y: 75,
+                                w: 85,
+                                h: 76
+                        },
+                        "normal-hair-female-21-16": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "6-16.png",
+                                x: 87,
+                                y: 75,
+                                w: 85,
+                                h: 76
+                        },
+                        "normal-hair-female-21-2": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "6-2.png",
+                                x: 87,
+                                y: 75,
+                                w: 85,
+                                h: 76
+                        },
+                        "normal-hair-female-21-3": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "6-3.png",
+                                x: 87,
+                                y: 75,
+                                w: 85,
+                                h: 76
+                        },
+                        "normal-hair-female-21-4": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "6-4.png",
+                                x: 87,
+                                y: 75,
+                                w: 85,
+                                h: 76
+                        },
+                        "normal-hair-female-21-5": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "6-5.png",
+                                x: 87,
+                                y: 75,
+                                w: 85,
+                                h: 76
+                        },
+                        "normal-hair-female-21-6": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "6-6.png",
+                                x: 87,
+                                y: 75,
+                                w: 85,
+                                h: 76
+                        },
+                        "normal-hair-female-21-7": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "6-7.png",
+                                x: 87,
+                                y: 75,
+                                w: 85,
+                                h: 76
+                        },
+                        "normal-hair-female-21-8": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "6-8.png",
+                                x: 87,
+                                y: 75,
+                                w: 85,
+                                h: 76
+                        },
+                        "normal-hair-female-21-9": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "6-9.png",
+                                x: 87,
+                                y: 75,
+                                w: 85,
+                                h: 76
+                        },
+                        "normal-hair-female-22-1": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "7-1.png",
+                                x: 76,
+                                y: 73,
+                                w: 105,
+                                h: 78
+                        },
+                        "normal-hair-female-22-10": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "7-10.png",
+                                x: 76,
+                                y: 73,
+                                w: 105,
+                                h: 78
+                        },
+                        "normal-hair-female-22-11": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "7-11.png",
+                                x: 76,
+                                y: 73,
+                                w: 105,
+                                h: 78
+                        },
+                        "normal-hair-female-22-12": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "7-12.png",
+                                x: 76,
+                                y: 73,
+                                w: 105,
+                                h: 78
+                        },
+                        "normal-hair-female-22-13": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "7-13.png",
+                                x: 76,
+                                y: 73,
+                                w: 105,
+                                h: 78
+                        },
+                        "normal-hair-female-22-14": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "7-14.png",
+                                x: 76,
+                                y: 73,
+                                w: 105,
+                                h: 78
+                        },
+                        "normal-hair-female-22-15": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "7-15.png",
+                                x: 76,
+                                y: 73,
+                                w: 105,
+                                h: 78
+                        },
+                        "normal-hair-female-22-16": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "7-16.png",
+                                x: 76,
+                                y: 73,
+                                w: 105,
+                                h: 78
+                        },
+                        "normal-hair-female-22-2": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "7-2.png",
+                                x: 76,
+                                y: 73,
+                                w: 105,
+                                h: 78
+                        },
+                        "normal-hair-female-22-3": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "7-3.png",
+                                x: 76,
+                                y: 73,
+                                w: 105,
+                                h: 78
+                        },
+                        "normal-hair-female-22-4": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "7-4.png",
+                                x: 76,
+                                y: 73,
+                                w: 105,
+                                h: 78
+                        },
+                        "normal-hair-female-22-5": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "7-5.png",
+                                x: 76,
+                                y: 73,
+                                w: 105,
+                                h: 78
+                        },
+                        "normal-hair-female-22-6": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "7-6.png",
+                                x: 76,
+                                y: 73,
+                                w: 105,
+                                h: 78
+                        },
+                        "normal-hair-female-22-7": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "7-7.png",
+                                x: 76,
+                                y: 73,
+                                w: 105,
+                                h: 78
+                        },
+                        "normal-hair-female-22-8": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "7-8.png",
+                                x: 76,
+                                y: 73,
+                                w: 105,
+                                h: 78
+                        },
+                        "normal-hair-female-22-9": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "7-9.png",
+                                x: 76,
+                                y: 73,
+                                w: 105,
+                                h: 78
+                        },
+                        "normal-hair-female-23-1": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "8-1.png",
+                                x: 82,
+                                y: 73,
+                                w: 104,
+                                h: 81
+                        },
+                        "normal-hair-female-23-10": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "8-10.png",
+                                x: 82,
+                                y: 73,
+                                w: 104,
+                                h: 81
+                        },
+                        "normal-hair-female-23-11": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "8-11.png",
+                                x: 82,
+                                y: 73,
+                                w: 104,
+                                h: 81
+                        },
+                        "normal-hair-female-23-12": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "8-12.png",
+                                x: 82,
+                                y: 73,
+                                w: 104,
+                                h: 81
+                        },
+                        "normal-hair-female-23-13": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "8-13.png",
+                                x: 82,
+                                y: 73,
+                                w: 104,
+                                h: 81
+                        },
+                        "normal-hair-female-23-14": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "8-14.png",
+                                x: 82,
+                                y: 73,
+                                w: 104,
+                                h: 81
+                        },
+                        "normal-hair-female-23-15": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "8-15.png",
+                                x: 82,
+                                y: 73,
+                                w: 104,
+                                h: 81
+                        },
+                        "normal-hair-female-23-16": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "8-16.png",
+                                x: 82,
+                                y: 73,
+                                w: 104,
+                                h: 81
+                        },
+                        "normal-hair-female-23-2": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "8-2.png",
+                                x: 82,
+                                y: 73,
+                                w: 104,
+                                h: 81
+                        },
+                        "normal-hair-female-23-3": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "8-3.png",
+                                x: 82,
+                                y: 73,
+                                w: 104,
+                                h: 81
+                        },
+                        "normal-hair-female-23-4": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "8-4.png",
+                                x: 82,
+                                y: 73,
+                                w: 104,
+                                h: 81
+                        },
+                        "normal-hair-female-23-5": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "8-5.png",
+                                x: 82,
+                                y: 73,
+                                w: 104,
+                                h: 81
+                        },
+                        "normal-hair-female-23-6": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "8-6.png",
+                                x: 82,
+                                y: 73,
+                                w: 104,
+                                h: 81
+                        },
+                        "normal-hair-female-23-7": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "8-7.png",
+                                x: 82,
+                                y: 73,
+                                w: 104,
+                                h: 81
+                        },
+                        "normal-hair-female-23-8": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "8-8.png",
+                                x: 82,
+                                y: 73,
+                                w: 104,
+                                h: 81
+                        },
+                        "normal-hair-female-23-9": {
+                                type: "spritesheet",
+                                base: h,
+                                url: "8-9.png",
+                                x: 82,
+                                y: 73,
+                                w: 104,
+                                h: 81
 				},
 				"normal-hair-female-3-1": {
 					type: "spritesheet",
@@ -32433,6 +39846,1158 @@ var DormMenu = function () {
 					y: 46,
 					w: 64,
 					h: 55
+                        },
+                        "reduced-hair-female-16-1": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "1-1.png",
+                                x: 41,
+                                y: 45,
+                                w: 46,
+                                h: 38
+                        },
+                        "reduced-hair-female-16-10": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "1-10.png",
+                                x: 41,
+                                y: 44,
+                                w: 46,
+                                h: 38
+                        },
+                        "reduced-hair-female-16-11": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "1-11.png",
+                                x: 41,
+                                y: 44,
+                                w: 46,
+                                h: 38
+                        },
+                        "reduced-hair-female-16-12": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "1-12.png",
+                                x: 41,
+                                y: 44,
+                                w: 46,
+                                h: 38
+                        },
+                        "reduced-hair-female-16-13": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "1-13.png",
+                                x: 41,
+                                y: 44,
+                                w: 46,
+                                h: 38
+                        },
+                        "reduced-hair-female-16-14": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "1-14.png",
+                                x: 41,
+                                y: 44,
+                                w: 46,
+                                h: 38
+                        },
+                        "reduced-hair-female-16-15": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "1-15.png",
+                                x: 41,
+                                y: 44,
+                                w: 46,
+                                h: 38
+                        },
+                        "reduced-hair-female-16-16": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "1-16.png",
+                                x: 41,
+                                y: 44,
+                                w: 46,
+                                h: 38
+                        },
+                        "reduced-hair-female-16-2": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "1-2.png",
+                                x: 41,
+                                y: 44,
+                                w: 46,
+                                h: 38
+                        },
+                        "reduced-hair-female-16-3": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "1-3.png",
+                                x: 41,
+                                y: 44,
+                                w: 46,
+                                h: 38
+                        },
+                        "reduced-hair-female-16-4": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "1-4.png",
+                                x: 41,
+                                y: 44,
+                                w: 46,
+                                h: 38
+                        },
+                        "reduced-hair-female-16-5": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "1-5.png",
+                                x: 41,
+                                y: 44,
+                                w: 46,
+                                h: 38
+                        },
+                        "reduced-hair-female-16-6": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "1-6.png",
+                                x: 41,
+                                y: 44,
+                                w: 46,
+                                h: 38
+                        },
+                        "reduced-hair-female-16-7": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "1-7.png",
+                                x: 41,
+                                y: 44,
+                                w: 46,
+                                h: 38
+                        },
+                        "reduced-hair-female-16-8": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "1-8.png",
+                                x: 41,
+                                y: 44,
+                                w: 46,
+                                h: 38
+                        },
+                        "reduced-hair-female-16-9": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "1-9.png",
+                                x: 41,
+                                y: 44,
+                                w: 46,
+                                h: 38
+                        },
+                        "reduced-hair-female-17-1": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "2-1.png",
+                                x: 41,
+                                y: 32,
+                                w: 47,
+                                h: 52
+                        },
+                        "reduced-hair-female-17-10": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "2-10.png",
+                                x: 41,
+                                y: 32,
+                                w: 47,
+                                h: 52
+                        },
+                        "reduced-hair-female-17-11": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "2-11.png",
+                                x: 41,
+                                y: 32,
+                                w: 47,
+                                h: 52
+                        },
+                        "reduced-hair-female-17-12": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "2-12.png",
+                                x: 41,
+                                y: 32,
+                                w: 47,
+                                h: 52
+                        },
+                        "reduced-hair-female-17-13": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "2-13.png",
+                                x: 41,
+                                y: 32,
+                                w: 47,
+                                h: 52
+                        },
+                        "reduced-hair-female-17-14": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "2-14.png",
+                                x: 41,
+                                y: 32,
+                                w: 47,
+                                h: 52
+                        },
+                        "reduced-hair-female-17-15": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "2-15.png",
+                                x: 41,
+                                y: 32,
+                                w: 47,
+                                h: 52
+                        },
+                        "reduced-hair-female-17-16": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "2-16.png",
+                                x: 41,
+                                y: 32,
+                                w: 47,
+                                h: 52
+                        },
+                        "reduced-hair-female-17-2": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "2-2.png",
+                                x: 41,
+                                y: 32,
+                                w: 47,
+                                h: 52
+                        },
+                        "reduced-hair-female-17-3": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "2-3.png",
+                                x: 41,
+                                y: 32,
+                                w: 47,
+                                h: 52
+                        },
+                        "reduced-hair-female-17-4": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "2-4.png",
+                                x: 41,
+                                y: 32,
+                                w: 47,
+                                h: 52
+                        },
+                        "reduced-hair-female-17-5": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "2-5.png",
+                                x: 41,
+                                y: 32,
+                                w: 47,
+                                h: 52
+                        },
+                        "reduced-hair-female-17-6": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "2-6.png",
+                                x: 41,
+                                y: 32,
+                                w: 47,
+                                h: 52
+                        },
+                        "reduced-hair-female-17-7": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "2-7.png",
+                                x: 41,
+                                y: 32,
+                                w: 47,
+                                h: 52
+                        },
+                        "reduced-hair-female-17-8": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "2-8.png",
+                                x: 41,
+                                y: 32,
+                                w: 47,
+                                h: 52
+                        },
+                        "reduced-hair-female-17-9": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "2-9.png",
+                                x: 41,
+                                y: 32,
+                                w: 47,
+                                h: 52
+                        },
+                        "reduced-hair-female-18-1": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "3-1.png",
+                                x: 41,
+                                y: 36,
+                                w: 50,
+                                h: 48
+                        },
+                        "reduced-hair-female-18-10": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "3-10.png",
+                                x: 41,
+                                y: 36,
+                                w: 50,
+                                h: 48
+                        },
+                        "reduced-hair-female-18-11": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "3-11.png",
+                                x: 41,
+                                y: 36,
+                                w: 50,
+                                h: 48
+                        },
+                        "reduced-hair-female-18-12": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "3-12.png",
+                                x: 41,
+                                y: 36,
+                                w: 50,
+                                h: 48
+                        },
+                        "reduced-hair-female-18-13": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "3-13.png",
+                                x: 41,
+                                y: 36,
+                                w: 50,
+                                h: 48
+                        },
+                        "reduced-hair-female-18-14": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "3-14.png",
+                                x: 41,
+                                y: 36,
+                                w: 50,
+                                h: 48
+                        },
+                        "reduced-hair-female-18-15": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "3-15.png",
+                                x: 41,
+                                y: 36,
+                                w: 50,
+                                h: 48
+                        },
+                        "reduced-hair-female-18-16": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "3-16.png",
+                                x: 41,
+                                y: 36,
+                                w: 50,
+                                h: 48
+                        },
+                        "reduced-hair-female-18-2": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "3-2.png",
+                                x: 41,
+                                y: 36,
+                                w: 50,
+                                h: 48
+                        },
+                        "reduced-hair-female-18-3": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "3-3.png",
+                                x: 41,
+                                y: 36,
+                                w: 50,
+                                h: 48
+                        },
+                        "reduced-hair-female-18-4": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "3-4.png",
+                                x: 41,
+                                y: 36,
+                                w: 50,
+                                h: 48
+                        },
+                        "reduced-hair-female-18-5": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "3-5.png",
+                                x: 41,
+                                y: 36,
+                                w: 50,
+                                h: 48
+                        },
+                        "reduced-hair-female-18-6": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "3-6.png",
+                                x: 41,
+                                y: 36,
+                                w: 50,
+                                h: 48
+                        },
+                        "reduced-hair-female-18-7": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "3-7.png",
+                                x: 41,
+                                y: 36,
+                                w: 50,
+                                h: 48
+                        },
+                        "reduced-hair-female-18-8": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "3-8.png",
+                                x: 41,
+                                y: 36,
+                                w: 50,
+                                h: 48
+                        },
+                        "reduced-hair-female-18-9": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "3-9.png",
+                                x: 41,
+                                y: 36,
+                                w: 50,
+                                h: 48
+                        },
+                        "reduced-hair-female-19-1": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "4-1.png",
+                                x: 40,
+                                y: 44,
+                                w: 47,
+                                h: 39
+                        },
+                        "reduced-hair-female-19-10": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "4-10.png",
+                                x: 40,
+                                y: 44,
+                                w: 47,
+                                h: 39
+                        },
+                        "reduced-hair-female-19-11": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "4-11.png",
+                                x: 40,
+                                y: 44,
+                                w: 47,
+                                h: 39
+                        },
+                        "reduced-hair-female-19-12": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "4-12.png",
+                                x: 40,
+                                y: 44,
+                                w: 47,
+                                h: 39
+                        },
+                        "reduced-hair-female-19-13": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "4-13.png",
+                                x: 40,
+                                y: 44,
+                                w: 47,
+                                h: 39
+                        },
+                        "reduced-hair-female-19-14": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "4-14.png",
+                                x: 40,
+                                y: 44,
+                                w: 47,
+                                h: 39
+                        },
+                        "reduced-hair-female-19-15": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "4-15.png",
+                                x: 40,
+                                y: 44,
+                                w: 47,
+                                h: 39
+                        },
+                        "reduced-hair-female-19-16": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "4-16.png",
+                                x: 40,
+                                y: 44,
+                                w: 47,
+                                h: 39
+                        },
+                        "reduced-hair-female-19-2": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "4-2.png",
+                                x: 40,
+                                y: 44,
+                                w: 47,
+                                h: 39
+                        },
+                        "reduced-hair-female-19-3": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "4-3.png",
+                                x: 40,
+                                y: 44,
+                                w: 47,
+                                h: 39
+                        },
+                        "reduced-hair-female-19-4": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "4-4.png",
+                                x: 40,
+                                y: 44,
+                                w: 47,
+                                h: 39
+                        },
+                        "reduced-hair-female-19-5": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "4-5.png",
+                                x: 40,
+                                y: 44,
+                                w: 47,
+                                h: 39
+                        },
+                        "reduced-hair-female-19-6": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "4-6.png",
+                                x: 40,
+                                y: 44,
+                                w: 47,
+                                h: 39
+                        },
+                        "reduced-hair-female-19-7": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "4-7.png",
+                                x: 40,
+                                y: 44,
+                                w: 47,
+                                h: 39
+                        },
+                        "reduced-hair-female-19-8": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "4-8.png",
+                                x: 40,
+                                y: 44,
+                                w: 47,
+                                h: 39
+                        },
+                        "reduced-hair-female-19-9": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "4-9.png",
+                                x: 40,
+                                y: 44,
+                                w: 47,
+                                h: 39
+                        },
+                        "reduced-hair-female-20-1": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "5-1.png",
+                                x: 42,
+                                y: 44,
+                                w: 44,
+                                h: 39
+                        },
+                        "reduced-hair-female-20-10": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "5-10.png",
+                                x: 42,
+                                y: 44,
+                                w: 44,
+                                h: 39
+                        },
+                        "reduced-hair-female-20-11": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "5-11.png",
+                                x: 42,
+                                y: 44,
+                                w: 44,
+                                h: 39
+                        },
+                        "reduced-hair-female-20-12": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "5-12.png",
+                                x: 42,
+                                y: 44,
+                                w: 44,
+                                h: 39
+                        },
+                        "reduced-hair-female-20-13": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "5-13.png",
+                                x: 42,
+                                y: 44,
+                                w: 44,
+                                h: 39
+                        },
+                        "reduced-hair-female-20-14": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "5-14.png",
+                                x: 42,
+                                y: 44,
+                                w: 44,
+                                h: 39
+                        },
+                        "reduced-hair-female-20-15": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "5-15.png",
+                                x: 42,
+                                y: 44,
+                                w: 44,
+                                h: 39
+                        },
+                        "reduced-hair-female-20-16": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "5-16.png",
+                                x: 42,
+                                y: 44,
+                                w: 44,
+                                h: 39
+                        },
+                        "reduced-hair-female-20-2": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "5-2.png",
+                                x: 42,
+                                y: 44,
+                                w: 44,
+                                h: 39
+                        },
+                        "reduced-hair-female-20-3": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "5-3.png",
+                                x: 42,
+                                y: 44,
+                                w: 44,
+                                h: 39
+                        },
+                        "reduced-hair-female-20-4": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "5-4.png",
+                                x: 42,
+                                y: 44,
+                                w: 44,
+                                h: 39
+                        },
+                        "reduced-hair-female-20-5": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "5-5.png",
+                                x: 42,
+                                y: 44,
+                                w: 44,
+                                h: 39
+                        },
+                        "reduced-hair-female-20-6": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "5-6.png",
+                                x: 42,
+                                y: 44,
+                                w: 44,
+                                h: 39
+                        },
+                        "reduced-hair-female-20-7": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "5-7.png",
+                                x: 42,
+                                y: 44,
+                                w: 44,
+                                h: 39
+                        },
+                        "reduced-hair-female-20-8": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "5-8.png",
+                                x: 42,
+                                y: 44,
+                                w: 44,
+                                h: 39
+                        },
+                        "reduced-hair-female-20-9": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "5-9.png",
+                                x: 42,
+                                y: 44,
+                                w: 44,
+                                h: 39
+                        },
+                        "reduced-hair-female-21-1": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "6-1.png",
+                                x: 41,
+                                y: 44,
+                                w: 45,
+                                h: 38
+                        },
+                        "reduced-hair-female-21-10": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "6-10.png",
+                                x: 41,
+                                y: 44,
+                                w: 45,
+                                h: 38
+                        },
+                        "reduced-hair-female-21-11": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "6-11.png",
+                                x: 41,
+                                y: 44,
+                                w: 45,
+                                h: 38
+                        },
+                        "reduced-hair-female-21-12": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "6-12.png",
+                                x: 41,
+                                y: 44,
+                                w: 45,
+                                h: 38
+                        },
+                        "reduced-hair-female-21-13": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "6-13.png",
+                                x: 41,
+                                y: 44,
+                                w: 45,
+                                h: 38
+                        },
+                        "reduced-hair-female-21-14": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "6-14.png",
+                                x: 41,
+                                y: 44,
+                                w: 45,
+                                h: 38
+                        },
+                        "reduced-hair-female-21-15": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "6-15.png",
+                                x: 41,
+                                y: 44,
+                                w: 45,
+                                h: 38
+                        },
+                        "reduced-hair-female-21-16": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "6-16.png",
+                                x: 41,
+                                y: 44,
+                                w: 45,
+                                h: 38
+                        },
+                        "reduced-hair-female-21-2": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "6-2.png",
+                                x: 41,
+                                y: 44,
+                                w: 45,
+                                h: 38
+                        },
+                        "reduced-hair-female-21-3": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "6-3.png",
+                                x: 41,
+                                y: 44,
+                                w: 45,
+                                h: 38
+                        },
+                        "reduced-hair-female-21-4": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "6-4.png",
+                                x: 41,
+                                y: 44,
+                                w: 45,
+                                h: 38
+                        },
+                        "reduced-hair-female-21-5": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "6-5.png",
+                                x: 41,
+                                y: 44,
+                                w: 45,
+                                h: 38
+                        },
+                        "reduced-hair-female-21-6": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "6-6.png",
+                                x: 41,
+                                y: 44,
+                                w: 45,
+                                h: 38
+                        },
+                        "reduced-hair-female-21-7": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "6-7.png",
+                                x: 41,
+                                y: 44,
+                                w: 45,
+                                h: 38
+                        },
+                        "reduced-hair-female-21-8": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "6-8.png",
+                                x: 41,
+                                y: 44,
+                                w: 45,
+                                h: 38
+                        },
+                        "reduced-hair-female-21-9": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "6-9.png",
+                                x: 41,
+                                y: 44,
+                                w: 45,
+                                h: 38
+                        },
+                        "reduced-hair-female-22-1": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "7-1.png",
+                                x: 36,
+                                y: 44,
+                                w: 53,
+                                h: 38
+                        },
+                        "reduced-hair-female-22-10": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "7-10.png",
+                                x: 36,
+                                y: 44,
+                                w: 53,
+                                h: 38
+                        },
+                        "reduced-hair-female-22-11": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "7-11.png",
+                                x: 36,
+                                y: 44,
+                                w: 53,
+                                h: 38
+                        },
+                        "reduced-hair-female-22-12": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "7-12.png",
+                                x: 36,
+                                y: 44,
+                                w: 53,
+                                h: 38
+                        },
+                        "reduced-hair-female-22-13": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "7-13.png",
+                                x: 36,
+                                y: 44,
+                                w: 53,
+                                h: 38
+                        },
+                        "reduced-hair-female-22-14": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "7-14.png",
+                                x: 36,
+                                y: 44,
+                                w: 53,
+                                h: 38
+                        },
+                        "reduced-hair-female-22-15": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "7-15.png",
+                                x: 36,
+                                y: 44,
+                                w: 53,
+                                h: 38
+                        },
+                        "reduced-hair-female-22-16": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "7-16.png",
+                                x: 36,
+                                y: 44,
+                                w: 53,
+                                h: 38
+                        },
+                        "reduced-hair-female-22-2": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "7-2.png",
+                                x: 36,
+                                y: 44,
+                                w: 53,
+                                h: 38
+                        },
+                        "reduced-hair-female-22-3": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "7-3.png",
+                                x: 36,
+                                y: 44,
+                                w: 53,
+                                h: 38
+                        },
+                        "reduced-hair-female-22-4": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "7-4.png",
+                                x: 36,
+                                y: 44,
+                                w: 53,
+                                h: 38
+                        },
+                        "reduced-hair-female-22-5": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "7-5.png",
+                                x: 36,
+                                y: 44,
+                                w: 53,
+                                h: 38
+                        },
+                        "reduced-hair-female-22-6": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "7-6.png",
+                                x: 36,
+                                y: 44,
+                                w: 53,
+                                h: 38
+                        },
+                        "reduced-hair-female-22-7": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "7-7.png",
+                                x: 36,
+                                y: 44,
+                                w: 53,
+                                h: 38
+                        },
+                        "reduced-hair-female-22-8": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "7-8.png",
+                                x: 36,
+                                y: 44,
+                                w: 53,
+                                h: 38
+                        },
+                        "reduced-hair-female-22-9": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "7-9.png",
+                                x: 36,
+                                y: 44,
+                                w: 53,
+                                h: 38
+                        },
+                        "reduced-hair-female-23-1": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "8-1.png",
+                                x: 40,
+                                y: 44,
+                                w: 50,
+                                h: 40
+                        },
+                        "reduced-hair-female-23-10": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "8-10.png",
+                                x: 40,
+                                y: 44,
+                                w: 50,
+                                h: 40
+                        },
+                        "reduced-hair-female-23-11": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "8-11.png",
+                                x: 40,
+                                y: 44,
+                                w: 50,
+                                h: 40
+                        },
+                        "reduced-hair-female-23-12": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "8-12.png",
+                                x: 40,
+                                y: 44,
+                                w: 50,
+                                h: 40
+                        },
+                        "reduced-hair-female-23-13": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "8-13.png",
+                                x: 40,
+                                y: 44,
+                                w: 50,
+                                h: 40
+                        },
+                        "reduced-hair-female-23-14": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "8-14.png",
+                                x: 40,
+                                y: 44,
+                                w: 50,
+                                h: 40
+                        },
+                        "reduced-hair-female-23-15": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "8-15.png",
+                                x: 40,
+                                y: 44,
+                                w: 50,
+                                h: 40
+                        },
+                        "reduced-hair-female-23-16": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "8-16.png",
+                                x: 40,
+                                y: 44,
+                                w: 50,
+                                h: 40
+                        },
+                        "reduced-hair-female-23-2": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "8-2.png",
+                                x: 40,
+                                y: 44,
+                                w: 50,
+                                h: 40
+                        },
+                        "reduced-hair-female-23-3": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "8-3.png",
+                                x: 40,
+                                y: 44,
+                                w: 50,
+                                h: 40
+                        },
+                        "reduced-hair-female-23-4": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "8-4.png",
+                                x: 40,
+                                y: 44,
+                                w: 50,
+                                h: 40
+                        },
+                        "reduced-hair-female-23-5": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "8-5.png",
+                                x: 40,
+                                y: 44,
+                                w: 50,
+                                h: 40
+                        },
+                        "reduced-hair-female-23-6": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "8-6.png",
+                                x: 40,
+                                y: 44,
+                                w: 50,
+                                h: 40
+                        },
+                        "reduced-hair-female-23-7": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "8-7.png",
+                                x: 40,
+                                y: 44,
+                                w: 50,
+                                h: 40
+                        },
+                        "reduced-hair-female-23-8": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "8-8.png",
+                                x: 40,
+                                y: 44,
+                                w: 50,
+                                h: 40
+                        },
+                        "reduced-hair-female-23-9": {
+                                type: "spritesheet",
+                                base: i,
+                                url: "8-9.png",
+                                x: 40,
+                                y: 44,
+                                w: 50,
+                                h: 40
 				},
 				"reduced-hair-female-2-1": {
 					type: "spritesheet",
@@ -33795,6 +42360,15 @@ var AudioController = function () {
 			Util.isDefined(this.currentBgm) && (this.currentBgm.volume = e), this.bgmVolume = e
 		}, e.prototype.getBGMVolume = function () {
 			return this.bgmVolume
+		}, e.prototype.stopBGM = function() {
+			if (!Util.isDefined(this.currentBgm))
+				return;
+
+			if (this.currentBgm.isPlaying)
+				this.currentBgm.stop();
+
+			this.currentBgm.destroy();
+			this.currentBgm = null;
 		}, e.prototype.playVoice = function (e, t, a, s) {
 			this.clearOldSounds(), Util.isDefined(this.currentVoice) && this.currentVoice.stop();
 			var i = this.getVoiceVolume(),
@@ -34654,122 +43228,254 @@ Items.getItemData = function (e, t) {
 		name: "Trialmaster's Garb",
 		member: 1,
 		rarity: 4,
+                drop: 1,
 		flavorText: "Only the trial masters of past and present were given these robes and are forbidden to take them off. How did you get them?",
 		h: 10
 	}, {
 		name: "Anorak Suit",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "Need to keep warm in those winter days? It may not be a robe, but it sure is warm!",
 		h: 0
 	}, {
 		name: "Wintertide Outfit",
 		member: 1,
 		rarity: 0,
+                drop: 1,
 		flavorText: "The official outfit worn by helpers at the Wintertide Festival!",
 		h: 0
 	}, {
 		name: "Dragon Spike Robes",
 		member: 1,
 		rarity: 2,
+                drop: 1,
 		flavorText: "In close combat these spikes are dangerous indeed. Be careful when you're around your friends!",
 		h: 5
 	}, {
 		name: "Warm Robes",
 		member: 1,
 		rarity: 1,
+                drop: 1,
 		flavorText: "Commonly worn in very cold places, these robes are made from many layers of fur and pelts.",
 		h: 2
 	}, {
 		name: "Firefly Robes",
 		member: 0,
 		rarity: 2,
+                drop: 1,
 		flavorText: "A magical robe made from the leaves and materials found in Firefly Forest.",
 		h: 5
 	}, {
 		name: "Magic Robes",
 		member: 0,
 		rarity: 1,
+                drop: 1,
 		flavorText: "These robes were custom made for a wizard...but they seem to fit you just right!",
 		h: 2
 	}, {
 		name: "Frost Saber Robes",
 		member: 1,
 		rarity: 2,
+                drop: 1,
 		flavorText: "These wooly robes will keep you warm in cold weather...but don't wear them in the sun!",
 		h: 5
 	}, {
 		name: "Duelist Robes",
 		member: 0,
 		rarity: 2,
+                drop: 1,
 		flavorText: "The robes of one of the greatest wizards in the Academy.",
-		h: 10
+		h: 200
 	}, {
 		name: "Shiverchill Robes",
 		member: 0,
 		rarity: 2,
+                drop: 1,
 		flavorText: "The ceremonial robes of the Shiverchill Tribes.",
 		h: 5
 	}, {
 		name: "Bonfire Robes",
 		member: 0,
 		rarity: 1,
+                drop: 1,
 		flavorText: 'These can only be worn by those who have seen the "Bonfire of the Spire", a volcanic erruption, up close.',
 		h: 2
 	}, {
 		name: "Captain's Digs",
 		member: 0,
 		rarity: 2,
+                drop: 1,
 		flavorText: 'Don\'t these just scream "Arggg"? They even come with the optional hook attachment!',
 		h: 5
 	}, {
 		name: "Buccaneer's Digs",
 		member: 0,
 		rarity: 1,
+                drop: 1,
 		flavorText: "The choice clothes of deckhands and mates everywhere. Watch out, captains will be sure to shout orders at you.",
 		h: 2
 	}, {
 		name: "Skywatch Gear",
 		member: 0,
 		rarity: 1,
+                drop: 1,
 		flavorText: "Since the Skyfolk don't wear clothing, the humans that come up to the clouds wear this outfit to stay warm and dry.",
 		h: 2
 	}, {
 		name: "Mira's Robes",
 		member: 0,
 		rarity: 3,
+                drop: 1,
 		flavorText: "These robes give off immense power, and almost seem to repel the ground below you.",
 		h: 20
 	}, {
 		name: "Diggin Outfit",
 		member: 0,
 		rarity: 2,
+                drop: 1,
 		flavorText: "This is the outit of the Oasis Institute of Natural Creatures (OINC)",
 		h: 3
 	}, {
 		name: "Desert Robes",
 		member: 1,
 		rarity: 2,
+                drop: 1,
 		flavorText: "These robes protect the wearer from the brutal weather in the desert.",
 		h: 5
 	}, {
 		name: "Tinkerer Outfit",
 		member: 0,
 		rarity: 1,
+                drop: 1,
 		flavorText: "This outfit is very stylish, but also pretty heavy duty! The people back then sure were tough!",
 		h: 4
 	}, {
 		name: "TEK-Y4 Jumpsuit",
 		member: 0,
 		rarity: 1,
+                drop: 1,
 		flavorText: "The jumpsuit worn by the official TEK-Y4 dance instructors. Kind of sweaty...",
 		h: 2
 	}, {
 		name: "Robot Outfit",
 		member: 0,
 		rarity: 2,
+                drop: 1,
 		flavorText: "Whoever said that a wizard couldn't be a robot never had a chance to try these on...",
 		h: 3
+        }, {
+                ID: 44,
+                name: "Pumpkin Outfit",
+                member: 1,
+                rarity: 2,
+                drop: 1,
+                flavorText: "The Pumpkin Lord is said to return every year on Pumpkinfest to rule over all pumpkins.",
+                h: 6
+        }, {
+                ID: 45,
+                name: "Luminite Costume",
+                member: 1,
+                rarity: 0,
+                drop: 1,
+                flavorText: "A cute Luminite costume! It's so lifelike!",
+                h: 2
+        }, {
+                ID: 46,
+                name: "Specter Robes",
+                member: 1,
+                rarity: 0,
+                drop: 1,
+                flavorText: "The tattered robes of the legendary specter - a ghost that only shows up around Pumpkinfest.",
+                h: 2
+        }, {
+                ID: 47,
+                name: "Mountaineer's Gear",
+                member: 0,
+                rarity: 0,
+                drop: 1,
+                flavorText: "This warm, rugged coat is equipped with a standard set of climbing equipment, a must have for exploring the mountains.",
+                h: 1
+        }, {
+                ID: 48,
+                name: "Frost Beard's Clasp",
+                member: 1,
+                rarity: 2,
+                drop: 1,
+                flavorText: "The magic armor of the great Viking Frost Beard - a mystic wind constantly billows its cape.",
+                h: 6
+        }, {
+                ID: 49,
+                name: "Yeti Coat",
+                member: 1,
+                rarity: 1,
+                drop: 1,
+                flavorText: "Who knew that Yetis shed?! Whether the coat directly came from a Yeti or was crafted from loose hairs is unclear.",
+                h: 4
+        }, {
+                ID: 50,
+                name: "Red Armor",
+                member: 1,
+                rarity: 1,
+                drop: 1,
+                flavorText: "This armor is lighter than it looks, but it seems to be all for show...the metal actually seems to be plastic...",
+                h: 4
+        }, {
+                ID: 51,
+                name: "Phantom Cloak",
+                member: 1,
+                rarity: 1,
+                drop: 1,
+                flavorText: "A magic barrier seems to emanate from the cloak...protecting you from all sorts of nasty spells.",
+                h: 6
+        }, {
+                ID: 52,
+                name: "Draconyx Gear",
+                member: 1,
+                rarity: 1,
+                drop: 1,
+                flavorText: "Worn by ancient battle wizards, this gear seems to fit you perfectly, almost as if you were meant to wear it.",
+                h: 8
+        }, {
+                ID: 53,
+                name: "Black Fang Coat",
+                member: 1,
+                rarity: 3,
+                drop: 1,
+                flavorText: "This outfit is worn only by the greatest of bounty hunters. It is a testament to the skill of its wearer.",
+                h: 8
+        }, {
+                ID: 54,
+                name: "Hunter Coat",
+                member: 1,
+                rarity: 2,
+                drop: 1,
+                flavorText: "The standard-issue garb of a Bounty Hunter. It holds up in the toughest of situations.",
+                h: 6
+        }, {
+                ID: 55,
+                name: "Bee Suit",
+                member: 1,
+                rarity: 2,
+                drop: 1,
+                flavorText: "'Fly like a bee and sting like a bee'. Wait, that's not right...",
+                h: 6
+        }, {
+                ID: 56,
+                name: "Candle Knight Armor",
+                member: 1,
+                rarity: 2,
+                drop: 1,
+                flavorText: "This armor was used by Candle Knights for protection.",
+                h: 6
+        }, {
+                ID: 57,
+                name: "Trialmaster's Party Angel/Dress",
+                member: 1,
+                rarity: 4,
+                drop: 1,
+                flavorText: "Celebrate Prodigy's 13th birthday.",
+                h: 10
 	}],
 	weapon: [{
 		name: "Enchanted Stick",
@@ -35097,144 +43803,168 @@ Items.getItemData = function (e, t) {
 		name: "The Master of Trials",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		flavorText: "To be held only by the Trial Masters, its powers are the stuff of legends. How did you get it?",
 		d: 8
 	}, {
 		name: "Winter Bell",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "Used by those wizards who believe there is magic in sound and music. Its sound is beautiful but don't be lulled by its enchanting tones.",
 		d: 0
 	}, {
 		name: "Minotaur's Head",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "A prize given to those who have succesfully navigated the Labyrinth, it prevents them from ever being lost again.",
 		d: 2
 	}, {
 		name: "Sunburst Wand",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: "A ball of energy from the sun itself.",
 		d: 1
 	}, {
 		name: "Flamerose Wand",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "Designed to appear like the mythical Flamerose, a rare flower that grows only on the side of the Bonfire Spire.",
 		d: 2
 	}, {
 		name: "Crystal Wand",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "Transparent, it's easy to admire the beauty of the engergy being charged inside this wand just before a spell is cast.",
 		d: 1
 	}, {
 		name: "Batwing Wand",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "Those who hold this wand can sense what is around them even in the darkest of caves much like the bat that gives it its name.",
 		d: 2
 	}, {
 		name: "Fungoid",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "Many wizards refuse to make their wands from living trees, instead they grow this wand from the forest's soils.",
 		d: 2
 	}, {
 		name: "Sacred Flame",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: "For those who hail from the Spire, this wand that carries a flame from Bonfire is respected and admired.",
 		d: 1
 	}, {
 		name: "Sun Orb Staff",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		flavorText: "Its heat is so immense that its owner must possess great knowledge of fire magic simply to be in its presence.",
 		d: 3
 	}, {
 		name: "Staff of Winter",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "In the hands of the ice king of old, this staff was used to turn those who insulted his beard into frozen statues.",
 		d: 2
 	}, {
 		name: "Crystal Staff",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "As beatiful as it is elegant, it can be used to break light into parts that can be weaved into powerful spells.",
 		d: 2
 	}, {
 		name: "TuskTooth",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "An ancient staff from the realms of the Shiverchill tribes, it is thought to possess an animal spirit.",
 		d: 2
 	}, {
 		name: "Dragos",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		flavorText: 'Also known as the "Heart of the Dragon", the limits of this staff\'s power have never been reached.',
 		d: 4
 	}, {
 		name: "Twisted Staff",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "This staff was grown by tree whisperers from the roots of the elder trees deep in the heart of the Firefly Forest.",
 		d: 1
 	}, {
 		name: "Staff of the Duelist",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "Crios once swore that if anyone could beat him in a duel, he'd give them this staff. Looks like you did it!",
 		d: 8
 	}, {
 		name: "Hailstone",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "The central stone for this staff can only be gathered during storms on the coldest winter nights by the Shiverchill Tribes.",
 		d: 1
 	}, {
 		name: "Bonfire",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "Forged in the heat of the Bonfire Spire, it inspires both fear and awe in anyone who opposes it.",
 		d: 2
 	}, {
 		name: "Parrot",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: 'A magical parrot that sits on your shoulder. It might be too friendly because it keeps saying "hello" and asking for crackers...urgh.',
 		d: 1
 	}, {
 		name: "Shell-shocked",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: 'A daring turtle has made this its home, it gets a little nervous whenever someone says the word "fire".',
 		d: 2
 	}, {
 		name: "Remote Ship",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "This little remote may look normal, but something is awful strange about it. Maybe because it doesn't need batteries...",
 		d: 2
 	}, {
 		name: "Mira's Staff",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		flavorText: "A gift from the great wizard Mira. Just holding this staff makes you feel stronger than ever before.",
 		d: 200
 	}, {
 		name: "Wrench",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "Not a very powerful weapon, but certainly useful for tightening bolts!",
 		d: 1
 	}, {
 		name: "Gizmotron",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "A modified machine, the gizmotron stores magic inside and releases it at the user's will.",
 		d: 3
 	}],
@@ -35363,7 +44093,8 @@ Items.getItemData = function (e, t) {
 		rarity: 4,
 		drop: 1,
 		flavorText: "Worn by a former master of trials, whose feet seemed to be quite small. They're a little snug.",
-		h: 4
+		h: 10,
+		d: 10
 	}, {
 		name: "Winter Boots",
 		member: 1,
@@ -35417,8 +44148,10 @@ Items.getItemData = function (e, t) {
 		name: "Duelist Boots",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		flavorText: 'Official sponsors of the Annual Wizard Dueling Contest, they say "The Choice of Champions" in big letters on the side. ',
-		h: 10
+		h: 10,
+		d: 10
 	}, {
 		name: "Shiverchill Boots",
 		member: 0,
@@ -35430,6 +44163,7 @@ Items.getItemData = function (e, t) {
 		name: "Embers",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "Made for wizards whose feet get cold. It feels like your toes are warming up in front of the fire.",
 		h: 2
 	}],
@@ -35614,6 +44348,7 @@ Items.getItemData = function (e, t) {
 		type: "",
 		member: 1,
 		rarity: 4,
+		drop: 1,
 		flavorText: "This ceremonial circlet is exceedingly rare and grants wisdom to those who wear it. Who would give it up?",
 		h: 6
 	}, {
@@ -35693,6 +44428,7 @@ Items.getItemData = function (e, t) {
 		type: "",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "A magical hat crafted by the magical creatures in Firefly Forest.",
 		h: 1
 	}, {
@@ -35700,6 +44436,7 @@ Items.getItemData = function (e, t) {
 		type: "",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "Some say that if the correct words are spoken, this tiara will spit flames, be careful what you say while wearing it!",
 		h: 3
 	}, {
@@ -35707,6 +44444,7 @@ Items.getItemData = function (e, t) {
 		type: "",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: 'Formerly worn by Eustace Redhale "The King of Dragons" and the last ruler to ride one. It has the power of dragon\'s fire.',
 		h: 3
 	}, {
@@ -35714,6 +44452,7 @@ Items.getItemData = function (e, t) {
 		type: "",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "The hat of one of the greatest wizards in the Academy.",
 		h: 10
 	}, {
@@ -35721,6 +44460,7 @@ Items.getItemData = function (e, t) {
 		type: "",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: 'The Shiverchill Tribes wear this hat during important ceremonies like the "Welcome to Winter" and "Tobogganing Tuesdays".',
 		h: 1
 	}, {
@@ -35728,6 +44468,7 @@ Items.getItemData = function (e, t) {
 		type: "",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "A celebratory hat worn by the people of Spire on feast days. You can store a lot of food in it if you're sneaky.",
 		h: 1
 	}, {
@@ -35735,6 +44476,7 @@ Items.getItemData = function (e, t) {
 		type: "",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "The choice of pirate captain's everywhere! It smells like the sea and comes with a cool looking eye patch!",
 		h: 1
 	}, {
@@ -35742,6 +44484,7 @@ Items.getItemData = function (e, t) {
 		type: "",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "The favorite head gear of scurvy dogs because its very absorbant and pirates love polka dots.",
 		h: 1
 	}, {
@@ -35749,6 +44492,7 @@ Items.getItemData = function (e, t) {
 		type: "",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "This is the hat worn by the Skyfolk - the small creatures who live in the clouds above the Academy.",
 		h: 1
 	}, {
@@ -35756,6 +44500,7 @@ Items.getItemData = function (e, t) {
 		type: "",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		flavorText: "Mira's hood radiates a powerful energy...",
 		h: 20
 	}, {
@@ -35763,6 +44508,7 @@ Items.getItemData = function (e, t) {
 		type: "",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "A fashionable hat worn by initiates in the Oasis Institute of Natural Creatures (OINC).",
 		h: 1
 	}, {
@@ -35770,6 +44516,7 @@ Items.getItemData = function (e, t) {
 		type: "",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "This hat is rumored to have been worn by Looter Dan, the Academy's greatest explorer.",
 		h: 2
 	}, {
@@ -35777,6 +44524,7 @@ Items.getItemData = function (e, t) {
 		type: "",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: "An old hat, probably worn by the people who built the ancient city.",
 		h: 1
 	}, {
@@ -35784,6 +44532,7 @@ Items.getItemData = function (e, t) {
 		type: "",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "You aren't a robot, but this hat sure makes you look like one!",
 		h: 2
 	}, {
@@ -35791,21 +44540,295 @@ Items.getItemData = function (e, t) {
 		type: "",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: "These headphones are used to enhance the dancing skills of the TEK-Y4 dancing robots!",
 		h: 1
-	}, {
-		name: "Computer Mask",
-		type: "",
-		member: 0,
-		rarity: 4,
-		drop: 1,
-		flavorText: "You aren't a computer, but this hat sure makes you look like one!",
-		h: 12
+        }, {
+                ID: 48,
+                name: "Pumpkinhead",
+                type: "wrap",
+                member: 1,
+                rarity: 2,
+                drop: 1,
+                flavorText: "This actually smells like a pumpkin! Kind of sweaty, though.",
+                h: 6
+        }, {
+                ID: 49,
+                name: "Luminite Mask",
+                type: "mask",
+                member: 1,
+                rarity: 1,
+                drop: 1,
+                flavorText: "A plastic Luminite mask...pretty well-made, I think!",
+                h: 4
+        }, {
+                ID: 50,
+                name: "Specter Hood",
+                type: "mask",
+                member: 1,
+                rarity: 1,
+                drop: 1,
+                flavorText: "The hood of a creepy specter - a bit dingy, but that just makes it even creepier.",
+                h: 4
+        }, {
+                ID: 51,
+                name: "Franky Mask",
+                type: "mask",
+                member: 0,
+                rarity: 1,
+                drop: 1,
+                flavorText: "A plastic mask of Franky the Stein, the popular TV monster.",
+                h: 4
+        }, {
+                ID: 52,
+                name: "Skelly Mask",
+                type: "",
+                member: 0,
+                rarity: 1,
+                drop: 1,
+                flavorText: "A plastic mask of a skelly.",
+                h: 1
+        }, {
+                ID: 53,
+                name: "Wolfy Mask",
+                type: "",
+                member: 0,
+                rarity: 1,
+                drop: 1,
+                flavorText: "A plastic wolf mask... ooooo scary!",
+                h: 1
+        }, {
+                ID: 54,
+                name: "Climber's Toque",
+                type: "",
+                member: 0,
+                rarity: 1,
+                drop: 1,
+                flavorText: "A thick, durable knitted toque, perfect for braving the harsh mountain conditions.",
+                h: 1
+        }, {
+                ID: 55,
+                name: "Featherwing Helm",
+                type: "mask",
+                member: 1,
+                rarity: 1,
+                drop: 1,
+                flavorText: "A standard viking helmet, but with wings! Who cares if they don't make you fly, they're wings!",
+                h: 1
+        }, {
+                ID: 56,
+                name: "Frost Beard's Mug",
+                type: "mask",
+                member: 1,
+                rarity: 2,
+                drop: 1,
+                flavorText: "The helm of the great Frost Beard. Causes the wearer to grow a beard of ice.",
+                h: 2
+        }, {
+                ID: 57,
+                name: "Lady Yeti Mask",
+                type: "mask",
+                member: 1,
+                rarity: 1,
+                drop: 1,
+                flavorText: "A Yeti mask covered in makeup...",
+                h: 1
+        }, {
+                ID: 58,
+                name: "Male Yeti Mask",
+                type: "mask",
+                member: 1,
+                rarity: 1,
+                drop: 1,
+                flavorText: "A Yeti mask...so scary!",
+                h: 1
+        }, {
+                ID: 59,
+                name: "Red Helm",
+                type: "mask",
+                member: 1,
+                rarity: 1,
+                drop: 1,
+                flavorText: "This relic from a more technical age seems to be restored perfectly...it even has that new car smell!",
+                h: 4
+        }, {
+                ID: 60,
+                name: "Ghastly Hood",
+                type: "mask",
+                member: 1,
+                rarity: 1,
+                drop: 1,
+                flavorText: "A strange feeling overwhelms you when you put on this hood; it makes you feel...mysterious.",
+                h: 6
+        }, {
+                ID: 61,
+                name: "Draconyx Helm",
+                type: "mask",
+                member: 1,
+                rarity: 1,
+                drop: 1,
+                flavorText: "This helm was worn by the warrior wizards of legend - meant for only those who passed the toughest of tests.",
+                h: 8
+        }, {
+                ID: 62,
+                name: "Black Fang",
+                type: "mask",
+                member: 1,
+                rarity: 3,
+                drop: 1,
+                flavorText: "This helm is worn only by the greatest of Bounty Hunters. Its staring gaze strikes fear into the hearts of all who see it!",
+                h: 8
+        }, {
+                ID: 63,
+                name: "Hunter Hat",
+                type: "mask",
+                member: 1,
+                rarity: 2,
+                drop: 1,
+                flavorText: "The standard issue hat of a Bounty Hunter. It is durable enough to wear in a storm and provides excellent visibility.",
+                h: 6
+        }, {
+                ID: 64,
+                name: "Bee Hat",
+                type: "mask",
+                member: 0,
+                rarity: 2,
+                drop: 1,
+                flavorText: "The hat from a bee costume. It smells faintly of flowers.",
+                h: 6
+        }, {
+                ID: 65,
+                name: "Candle Knight Helm",
+                type: "mask",
+                member: 0,
+                rarity: 2,
+                drop: 1,
+                flavorText: "The magical flame on this helmet can never be extinguished.",
+                h: 6
+        }, {
+                ID: 66,
+                name: "Big Hex Helmet",
+                type: "mask",
+                member: 0,
+                rarity: 2,
+                drop: 1,
+                flavorText: "A helmet crafted by Big Hex's creator, the Warden who studied in Skywatch.",
+                h: 6
+        }, {
+                ID: 67,
+                name: "Arctursus Hood",
+                type: "mask",
+                member: 0,
+                rarity: 2,
+                drop: 1,
+                flavorText: "If Arctursus ever found someone lost in the mountains, he would shed some ice fur and create this hood out of it to keep them warm.",
+                h: 6
+        }, {
+                ID: 68,
+                name: "Florafox Bonnet",
+                type: "mask",
+                member: 0,
+                rarity: 2,
+                drop: 1,
+                flavorText: "This bonnet was grown in a Warden's garden in Firefly Forest.",
+                h: 6
+        }, {
+                ID: 69,
+                name: "Diveodile Toque",
+                type: "mask",
+                member: 0,
+                rarity: 2,
+                drop: 1,
+                flavorText: "Townsfolk that live on the shore crafted this diving toque in honor of the sea guardian Diveodile.",
+                h: 6
+        }, {
+                ID: 70,
+                name: "Magmischief Helm",
+                type: "mask",
+                member: 0,
+                rarity: 2,
+                drop: 1,
+                flavorText: "This helmet was crafted out of cooled lava from Bonfire Spire.",
+                h: 6
+        }, {
+                ID: 71,
+                name: "Cactus Mask",
+                type: "mask",
+                member: 0,
+                rarity: 2,
+                drop: 1,
+                flavorText: "This hat is prickly!",
+                h: 6,
+                d: 6
+        }, {
+                ID: 72,
+                name: "Chicken Hood",
+                type: "mask",
+                member: 1,
+                rarity: 1,
+                drop: 1,
+                flavorText: "It is said that this hood was once worn by the bravest of warriors!",
+                h: 6
+        }, {
+                ID: 73,
+                name: "Petal Helm",
+                type: "",
+                member: 1,
+                rarity: 1,
+                drop: 1,
+                flavorText: "It's a special springtime hat!",
+                h: 6
+        }, {
+                ID: 74,
+                name: "Star Tiara",
+                type: "",
+                member: 0,
+                rarity: 1,
+                drop: 1,
+                flavorText: "This hat is shiny!",
+                h: 6
+        }, {
+                ID: 75,
+                name: "Weather Helmet",
+                type: "",
+                member: 1,
+                rarity: 1,
+                drop: 1,
+                flavorText: "Whatever the weather, this hat's got you covered!",
+                h: 6
+        }, {
+                ID: 76,
+                name: "Computer Mask",
+                type: "mask",
+                member: 1,
+                rarity: 4,
+                drop: 1,
+                flavorText: "You aren't a computer, but this hat sure makes you look like one!",
+                h: 10
+        }, {
+                ID: 77,
+                name: "Jeff's Hat",
+                type: "",
+                member: 1,
+                rarity: 2,
+                drop: 1,
+                flavorText: "Jeff from PVZ Mods has worn this hat before. Credits to Peridot/Starry Ciocirlan and Stefan25897 (King Raber) for PVZ 1 art style designs of this hat and credits to Peridot/Starry Ciocirlan for Jeff's hat.",
+                h: 6
+        }, {
+            ID: 78,
+            name: "Plumber's Cap",
+            type: "",
+            member: 0,
+            rarity: 1,
+            drop: 1,
+            flavorText: "Credits to Craftersshaft and Mr. Intend for this hat.",
+            h: 4
 	}],
 	item: [{
 		name: "Apple",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "Looks delicious!"
 	}, {
 		name: "Tin Can",
@@ -35817,11 +44840,13 @@ Items.getItemData = function (e, t) {
 		name: "Salad",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "Looks delicious!"
 	}, {
 		name: "Croissant",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "Looks delicious!"
 	}, {
 		name: "Tooth",
@@ -35839,41 +44864,49 @@ Items.getItemData = function (e, t) {
 		name: "White Feather",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "The feather of a white bird. I've heard that some people at the Academy collect feathers..."
 	}, {
 		name: "Fish Bone",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "Fish bones? Gross! Why am I even carrying this around?!"
 	}, {
 		name: "Red Feather",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "The feather of a red bird. I've heard that some people at the Academy collect feathers..."
 	}, {
 		name: "Green Feather",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "The feather of a green bird. I've heard that some people at the Academy collect feathers..."
 	}, {
 		name: "Cake",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "A cake? I guess monsters celebrate birthday's too..."
 	}, {
 		name: "Blue Feather",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "The feather of a blue bird. I've heard that some people at the Academy collect feathers..."
 	}, {
 		name: "Gold Ring",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "A gold ring! I wonder how much it's worth?"
 	}, {
 		name: "Silver Ring",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "A silver ring! I wonder how much it's worth?"
 	}, {
 		name: "Old Sock",
@@ -35885,262 +44918,314 @@ Items.getItemData = function (e, t) {
 		name: "Purple Feather",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "The feather of a purple bird. I've heard that some people at the Academy collect feathers..."
 	}, {
 		name: "Carmine Floret",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "These flowers tend to spread quickly and are a common sight in Firefly Forest."
 	}, {
 		name: "Helio Floret",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "These flowers are only found growing in trees, making them hard to reach."
 	}, {
 		name: "Slate Floret",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "The Slate Floret can only be found growing underneath the largest rocks, far away from the sunlight."
 	}, {
 		name: "Ring of the Forest",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "This ring is made from Forest Emeralds, which are hard to find in Firefly Forest."
 	}, {
 		name: "Forest Emerald",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "The forest emerald is a bright, glowing stone found only in Firefly Forest."
 	}, {
 		name: "Chicken",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "Looks delicious!"
 	}, {
 		name: "Seedling",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "The Firefly Forest is full of roots, which can grow into all sorts of neat things!"
 	}, {
 		name: "Mandrake",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "In the Firefly Forest, sometimes roots sprout life! The result - the magical Mandrake!"
 	}, {
 		name: "Pizza",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "Looks delicious!"
 	}, {
 		name: "Lucky Coin",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "I wonder whose coin this is...? It looks like it's rare..."
 	}, {
 		name: "Icy Floret",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "Also called the Snow Flower, this plant thrives in the harsh cold of the mountains."
 	}, {
 		name: "Glacier Diamond",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "This gem looks so much like ice that students often pass it by without notice."
 	}, {
 		name: "Ring of the Glacier",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "This ring is made from Glacier Diamonds, which are hard to find in Shiverchill Mountains."
 	}, {
 		name: "Chillymoth",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "When frightened, a Chillymoth turns into ice and people often keep them as trinkets."
 	}, {
 		name: "Mountain Star",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "These mysterious gems are formed in the ice on moonlit nights, but never melt."
 	}, {
 		name: "Frozen Object",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "It looks like there's something frozen inside! I wonder what it is?"
 	}, {
 		name: "Fire Flower",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "This flower's petals look like a dancing flame, but the flower is cool to the touch."
 	}, {
 		name: "Volcanic Ruby",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "A glowing gem that can be found only in the hottest of places."
 	}, {
 		name: "Sunfire Pod",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "Nobody really knows how a sunfire pod is created, or where it comes from."
 	}, {
 		name: "Embershard",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "Not actually a gem, but instead a piece of glass or metal that has been formed in a volcano."
 	}, {
 		name: "Ring of the Volcano",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "This ring is made with Volcanic Rubies, which are hard to find in Bonfire Spire."
 	}, {
 		name: "Message in a Bottle",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "Looks like someone left a message in a bottle...I wonder what it says...?"
 	}, {
 		name: "Shark Tooth",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "This tooth is huge and sharp...it must have come from a shark."
 	}, {
 		name: "Red Shell",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "A red clam shell, found in clusters on sunny beaches."
 	}, {
 		name: "Blue Shell",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "A blue clam shell, found in clusters on sunny beaches."
 	}, {
 		name: "White Shell",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "A white clam shell, found in clusters on sunny beaches."
 	}, {
 		name: "Confused Shark",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "This little shark looks confused...better keep it in water for now."
 	}, {
 		name: "Bag of Flour",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "Flour used for baking."
 	}, {
 		name: "Bag of Spices",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "Spices used in cooking"
 	}, {
 		name: "Bottled Cloud",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: ""
 	}, {
 		name: "Gears",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "These look like they were part of a machine. I wonder what it did?"
 	}, {
 		name: "Medallion",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "Strange markings are found on this medallion."
 	}, {
 		name: "Spare Parts",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "Various metal pieces...maybe they're part of a puzzle?"
 	}, {
 		name: "Cloth Scrap",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "It looks like this cloth was torn from some larger fabric."
 	}, {
 		name: "Scrap Wood",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "A piece of scrap wood, probably useful for building."
 	}, {
 		name: "Scepter",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "This metal rod looks a little shabby..."
 	}, {
 		name: "Wrench",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "A little worn, but probably still works great."
 	}, {
 		name: "Lightning Stone",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "This stone is supposed to hold electricity...my hair is standing on end!"
 	}, {
 		name: "Doubloon",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "It's a pirate coin! I wonder if it's worth anything..."
 	}, {
 		name: "Scroll of Paper",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "A roll of paper, looks pretty important."
 	}, {
 		name: "Spyglass",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "This spyglass is in pretty good condition...someone took good care of it!"
 	}, {
 		name: "Seeds",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "A bunch of little seeds...who knows what they will grow into."
 	}, {
 		name: "Green Key",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "A strange-looking key adorned with a green jewel."
 	}, {
 		name: "Animal Tag",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "It looks like a tag for animal tracking..."
 	}, {
 		name: "Scoog's Hat",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "This must be Professor Scoog's hat...smells like dog food..."
 	}, {
 		name: "Moog's Evil Scheme",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "This appears to be a novel outlining all of Moog's plan to capture the dynos. It's very well-written."
 	}, {
 		name: "Digging Equipment",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "It looks like a machine for digging...but the batteries seem to have fallen out."
 	}, {
 		name: "Dyno Egg",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "It's a dyno egg! It looks like it's safe and intact."
 	}, {
 		name: "Prize Ribbon",
 		member: 0,
 		rarity: 0,
+                drop: 1,
 		flavorText: "Looks like a cheap prize ribbon for winning the Robolympics...I wonder what I can use it for?"
 	}],
 	key: [{
 		ID: 1,
 		name: "Shovel",
 		levels: 3,
+                drop: 1,
 		flavorText: "A shovel used for digging up fossils."
 	}, {
 		ID: 2,
 		name: "TEK-Y4",
 		levels: 5,
+                drop: 1,
 		flavorText: "A dancing robot with a neural network processor for dance move acceleration and increased groove accuracy."
 	}],
 	fossil: [{
@@ -36148,77 +45233,90 @@ Items.getItemData = function (e, t) {
 		name: "Terrosaur Bone",
 		count: 20,
 		rarity: 0,
+                drop: 1,
 		flavorText: "This bone looks like a piece from a much larger skeleton. I better find them all!"
 	}, {
 		ID: 2,
 		name: "Stampeed Bone",
 		count: 20,
 		rarity: 0,
+                drop: 1,
 		flavorText: "This bone looks like a piece from a much larger skeleton. I better find them all!"
 	}, {
 		ID: 3,
 		name: "Claustro Bone",
 		count: 10,
 		rarity: 0,
+                drop: 1,
 		flavorText: "This bone looks like a piece from a much larger skeleton. I better find them all!"
 	}, {
 		ID: 4,
 		name: "Pterrocks Bone",
 		count: 10,
 		rarity: 0,
+                drop: 1,
 		flavorText: "This bone looks like a piece from a much larger skeleton. I better find them all!"
 	}, {
 		ID: 5,
 		name: "Beetle in Amber",
 		count: 1,
 		rarity: 0,
+                drop: 1,
 		flavorText: "It appears to be a large beetle, preserved in a piece of amber. Neat!"
 	}, {
 		ID: 6,
 		name: "Trellobyte",
 		count: 1,
 		rarity: 0,
+                drop: 1,
 		flavorText: "Trellobytes once scavenged the ocean floors, looking for scraps and collectible cards."
 	}, {
 		ID: 7,
 		name: "Sharp Claw",
 		count: 1,
 		rarity: 0,
+                drop: 1,
 		flavorText: "A large claw to some carnivore...or perhaps an ill-tempered herbivore."
 	}, {
 		ID: 8,
 		name: "Dragonfly in Amber",
 		count: 1,
 		rarity: 0,
+                drop: 1,
 		flavorText: "This dragonfly must have landed on a tree, and got caught in some tree sap."
 	}, {
 		ID: 9,
 		name: "Shell",
 		count: 1,
 		rarity: 0,
+                drop: 1,
 		flavorText: "This shell was likely once a home to a large crustacean, or perhaps just a fancy-looking thermos."
 	}, {
 		ID: 10,
 		name: "Mosquito in Amber",
 		count: 1,
 		rarity: 0,
+                drop: 1,
 		flavorText: "These are often treasured as jewellry, and some old men like to place them atop their canes."
 	}, {
 		ID: 11,
 		name: "Piece of Fossilized Fish",
 		count: 5,
 		rarity: 0,
+                drop: 1,
 		flavorText: "A fragment of a fossilized fish...it looks like there are more out there!"
 	}, {
 		ID: 12,
 		name: "Piece of Fossilized Plant",
 		count: 5,
 		rarity: 0,
+                drop: 1,
 		flavorText: "A fragment of a fossilized plant...it looks like there are more out there!"
 	}, {
 		ID: 13,
 		name: "Terrosaur Skeleton",
 		rarity: 3,
+                drop: 1,
 		flavorText: "A skeleton of the awesome terrosaur, the meanest dyno in history!",
 		recipe: [{
 			ID: 1,
@@ -36229,6 +45327,7 @@ Items.getItemData = function (e, t) {
 		ID: 14,
 		name: "Stampeed Skeleton",
 		rarity: 3,
+                drop: 1,
 		flavorText: "A skeleton of a stampeed. It looks pretty cool, and boy is it heavy!",
 		recipe: [{
 			ID: 2,
@@ -36239,6 +45338,7 @@ Items.getItemData = function (e, t) {
 		ID: 15,
 		name: "Claustro Skeleton",
 		rarity: 2,
+                drop: 1,
 		flavorText: "This skeleton of a claustro is actually a combination of bone and cartilage.",
 		recipe: [{
 			ID: 3,
@@ -36249,6 +45349,7 @@ Items.getItemData = function (e, t) {
 		ID: 16,
 		name: "Pterrocks Skeleton",
 		rarity: 2,
+                drop: 1,
 		flavorText: "This pterrocks skeleton is incredibly fragile, and is held together with strong glue and wire.",
 		recipe: [{
 			ID: 4,
@@ -36259,6 +45360,7 @@ Items.getItemData = function (e, t) {
 		ID: 17,
 		name: "Beetle in Amber",
 		rarity: 1,
+                drop: 1,
 		flavorText: "It appears to be a large beetle, preserved in a piece of amber. Neat!",
 		recipe: [{
 			ID: 5,
@@ -36269,6 +45371,7 @@ Items.getItemData = function (e, t) {
 		ID: 18,
 		name: "Trellobyte",
 		rarity: 1,
+                drop: 1,
 		flavorText: "Trellobytes once scavenged the ocean floors, looking for scraps and collectible cards.",
 		recipe: [{
 			ID: 6,
@@ -36279,6 +45382,7 @@ Items.getItemData = function (e, t) {
 		ID: 19,
 		name: "Sharp Claw",
 		rarity: 1,
+                drop: 1,
 		flavorText: "A large claw to some carnivore...or perhaps an ill-tempered herbivore.",
 		recipe: [{
 			ID: 7,
@@ -36289,6 +45393,7 @@ Items.getItemData = function (e, t) {
 		ID: 20,
 		name: "Dragonfly in Amber",
 		rarity: 1,
+                drop: 1,
 		flavorText: "This dragonfly must have landed on a tree, and got caught in some tree sap.",
 		recipe: [{
 			ID: 8,
@@ -36299,6 +45404,7 @@ Items.getItemData = function (e, t) {
 		ID: 21,
 		name: "Shell",
 		rarity: 1,
+                drop: 1,
 		flavorText: "This shell was likely once a home to a large crustacean, or perhaps just a fancy-looking thermos.",
 		recipe: [{
 			ID: 9,
@@ -36309,6 +45415,7 @@ Items.getItemData = function (e, t) {
 		ID: 22,
 		name: "Mosquito in Amber",
 		rarity: 1,
+                drop: 1,
 		flavorText: "These are often treasured as jewellry, and some old men like to place them atop their canes.",
 		recipe: [{
 			ID: 10,
@@ -36319,6 +45426,7 @@ Items.getItemData = function (e, t) {
 		ID: 23,
 		name: "Fossilized Fish",
 		rarity: 2,
+                drop: 1,
 		flavorText: "This fish was likely a deep ocean dweller; perhaps a darkfish, crazyfish, or maybe the rare stinkyfish.",
 		recipe: [{
 			ID: 11,
@@ -36329,6 +45437,7 @@ Items.getItemData = function (e, t) {
 		ID: 24,
 		name: "Fossilized Plant",
 		rarity: 2,
+                drop: 1,
 		flavorText: "A small fern, fossilized over millions of years. This plant still exists on the island today.",
 		recipe: [{
 			ID: 12,
@@ -36343,6 +45452,7 @@ Items.getItemData = function (e, t) {
 		weightMax: 10,
 		str: 10,
 		spd: 10,
+                drop: 1,
 		hourMin: 1,
 		hourMax: 24,
 		rod: 1,
@@ -40669,64 +49779,166 @@ Monsters.areEqual = function (e, t) {
 			a: 24
 		}],
 		flavorText: "An Ice Creator is a rare sight, found only in the coldest, deepest dungeons. They are fiercely territorial, often claiming entire dungeons for themselves."
-	},
-	125: {
-		ID: 125,
-		name: "Big Hex",
-		R: 5,
-		element: "storm",
-		life: "A",
-		power: "A+",
-		growth: "A",
-		curve: [{
-			lvl: 1,
-			a: 25
-		}, {
-			lvl: 5,
-			a: 26
-		}, {
-			lvl: 10,
-			a: 27
-		}, {
-			lvl: 19,
-			a: 28
-		}, {
-			lvl: 31,
-			a: 29
-		}, {
-			lvl: 48,
-			a: 30
-		}],
-		flavorText: "He comes from an unknown place with an unknown name. You've decided to call him Big Hex for the large bolts that seem to hold him together."
-	},
-	126: {
-		ID: 126,
-		name: "Big Hex",
-		R: 5,
-		element: "storm",
-		life: "A",
-		power: "A+",
-		growth: "A",
-		curve: [{
-			lvl: 1,
-			a: 25
-		}, {
-			lvl: 5,
-			a: 26
-		}, {
-			lvl: 10,
-			a: 27
-		}, {
-			lvl: 19,
-			a: 28
-		}, {
-			lvl: 31,
-			a: 29
-		}, {
-			lvl: 48,
-			a: 30
-		}],
-		flavorText: "He comes from an unknown place with an unknown name. You've decided to call him Big Hex for the large bolts that seem to hold him together."
+        },
+        125: {
+                ID: 125,
+                name: "Big Hex",
+                R: 5,
+                element: "storm",
+                life: "A",
+                power: "A+",
+                growth: "A",
+                curve: [{
+                        lvl: 1,
+                        a: 25
+                }, {
+                        lvl: 5,
+                        a: 26
+                }, {
+                        lvl: 10,
+                        a: 27
+                }, {
+                        lvl: 19,
+                        a: 28
+                }, {
+                        lvl: 31,
+                        a: 29
+                }, {
+                        lvl: 48,
+                        a: 30
+                }],
+                flavorText: "He comes from an unknown place with an unknown name. You've decided to call him Big Hex for the large bolts that seem to hold him together."
+        },
+        126: {
+                ID: 126,
+                name: "Florafox",
+                unique: !0,
+                R: 5,
+                element: "earth",
+                effects: [9, 45],
+                life: "A+",
+                power: "B",
+                growth: "A+",
+                drop: 1,
+                curve: [{
+                        lvl: 1,
+                        a: 13
+                }, {
+                        lvl: 5,
+                        a: 14
+                }, {
+                        lvl: 10,
+                        a: 15
+                }, {
+                        lvl: 19,
+                        a: 16
+                }, {
+                        lvl: 31,
+                        a: 17
+                }, {
+                        lvl: 48,
+                        a: 18
+                }],
+                flavorText: "Florafox can speak with nearby plants and trees by planting itself in the soil. The bulb on Florafox’s tail produces a pollen that can heal any plant, no matter how injured or withered.",
+                adText: ""
+        },
+        127: {
+                ID: 127,
+                name: "Arctursus",
+                unique: !0,
+                R: 5,
+                element: "ice",
+                effects: [9, 45],
+                life: "B",
+                power: "A+",
+                growth: "A+",
+                drop: 1,
+                curve: [{
+                        lvl: 1,
+                        a: 19
+                }, {
+                        lvl: 5,
+                        a: 20
+                }, {
+                        lvl: 10,
+                        a: 21
+                }, {
+                        lvl: 19,
+                        a: 22
+                }, {
+                        lvl: 31,
+                        a: 23
+                }, {
+                        lvl: 48,
+                        a: 24
+                }],
+                flavorText: "The air around Arctursus is always cold. This is because the tips of his fur are made from an ice that can never melt, and so no matter where he goes he is always at a comfortable temperature.",
+                adText: ""
+        },
+        128: {
+                ID: 128,
+                name: "Diveodile",
+                unique: !0,
+                R: 5,
+                element: "water",
+                effects: [9, 45],
+                life: "A+",
+                power: "A",
+                growth: "A",
+                drop: 1,
+                curve: [{
+                        lvl: 1,
+                        a: 7
+                }, {
+                        lvl: 5,
+                        a: 8
+                }, {
+                        lvl: 10,
+                        a: 9
+                }, {
+                        lvl: 19,
+                        a: 10
+                }, {
+                        lvl: 31,
+                        a: 11
+                }, {
+                        lvl: 48,
+                        a: 12
+                }],
+                flavorText: "Diveodile's natural magic ability is boosted by the Warden pendant it wears, allowing it to cast strong water spells to generate water, or even control the water around itself!",
+                adText: ""
+        },
+        129: {
+                ID: 129,
+                name: "Magmischief",
+                unique: !0,
+                R: 5,
+                element: "fire",
+                effects: [9, 45],
+                life: "A",
+                power: "A+",
+                growth: "A",
+                drop: 1,
+                curve: [{
+                        lvl: 1,
+                        a: 1
+                }, {
+                        lvl: 5,
+                        a: 2
+                }, {
+                        lvl: 10,
+                        a: 3
+                }, {
+                        lvl: 19,
+                        a: 4
+                }, {
+                        lvl: 31,
+                        a: 5
+                }, {
+                        lvl: 48,
+                        a: 6
+                }],
+                flavorText: "While traveling underground, Magmischief can sense movement on the surface, so he knows exactly where to appear and get the biggest scare out of those who have entered Bonfire Spire."
 	}
 };
 var Tutorials = function () {
@@ -40753,7 +49965,7 @@ Names.createNameFromIndex = function (e, t, a, s) {
 	var x = Names.FIRST_NAMES[Math.floor(Math.random() * (Names.FIRST_NAMES.length - 1))], a = Names.MIDDLE_NAMES[Math.floor(Math.random() * (Names.MIDDLE_NAMES.length - 1))],
 		s = Names.LAST_NAMES[Math.floor(Math.random() * (Names.LAST_NAMES.length - 1))].toLowerCase();
 	return t + " " + a + s
-}, Names.BOY_NAMES = ["Aaron", "Adam", "Aiden", "Alan", "Albert", "Alexander", "Andrew", "Angelo", "Anthony", "Arthur", "Austin", "Benjamin", "Billy", "Bobby", "Bort", "Brandon", "Brian", "Bruce", "Bryan", "Carl", "Charles", "Christian", "Christopher", "Craig", "Daniel", "Darien", "David", "Dennis", "Donald", "Douglas", "Dylan", "Edward", "Eric", "Ethan", "Eugene", "Frank", "Gary", "George", "Gerald", "Gregory", "Harold", "Henry", "Howard", "Jack", "Jacob", "James", "Jason", "Jeffrey", "Jeremy", "Jerry", "Jesse", "Jimothy", "Joe", "John", "Johnny", "Jonathan", "Jordan", "Jose", "Joseph", "Joshua", "Juan", "Justin", "Keith", "Kenneth", "Kevin", "Kyle", "Larry", "Lawrence", "Louis", "Mark", "Mason", "Matthew", "Michael", "Nathan", "Nicholas", "Patrick", "Paul", "Peter", "Philip", "Phillip", "Ralph", "Raymond", "Richard", "Robert", "Roger", "Rohan", "Ronald", "Roy", "Russell", "Ryan", "Samuel", "Scott", "Sean", "Stephen", "Steve", "Terry", "Thomas", "Timothy", "Tyler", "Vincent", "Walter", "Wayne", "William", "Zachary"], Names.GIRL_NAMES = ["Alice", "Amanda", "Amber", "Amy", "Andrea", "Angela", "Ann", "Anna", "Ashley", "Barbara", "Betty", "Beverly", "Brenda", "Brittany", "Carol", "Carolyn", "Catherine", "Cheryl", "Christina", "Christine", "Crystal", "Cynthia", "Danielle", "Deborah", "Debra", "Denise", "Diana", "Diane", "Donna", "Doris", "Dorothy", "Elizabeth", "Ellen", "Emily", "Emma", "Evelyn", "Frances", "Gloria", "Grace", "Hannah", "Heather", "Helen", "Jacqueline", "Jane", "Janet", "Janice", "Jean", "Jennifer", "Jessica", "Joan", "Joyce", "Judith", "Judy", "Julia", "Julie", "Karen", "Katherine", "Kathleen", "Kathryn", "Kathy", "Kelly", "Kimberly", "Laura", "Lauren", "Lilly", "Linda", "Lisa", "Lori", "Madison", "Margaret", "Maria", "Marie", "Marilyn", "Martha", "Mary", "Megan", "Michelle", "Melissa", "Mildred", "Nancy", "Nichole", "Nicole", "Olivia", "Pamela", "Patricia", "Rachel", "Rebecca", "Rose", "Ruth", "Samantha", "Sandra", "Sara", "Sarah", "Sharon", "Shirley", "Stephanie", "Susan", "Tammy", "Teresa", "Theresa", "Tiffany", "Victoria", "Virginia"], Names.FIRST_NAMES = [], Names.MIDDLE_NAMES = ["Air", "Animal", "Battle", "Blue", "Clear", "Cloud", "Coin", "Daring", "Dark", "Day", "Diamond", "Divine", "Dragon", "Dream", "Earth", "Fable", "Fairy", "Fall", "Fancy", "Far", "Fire", "Flame", "Fog", "Forge", "Frost", "Fruit", "Garden", "Gear", "Ghost", "Giant", "Glass", "Gold", "Golden", "Good", "Green", "Heavy", "Hero", "Ice", "Illusion", "Iron", "Land", "Leaf", "Legend", "Life", "Lightning", "Maelstrom", "Magic", "Metal", "Monster", "Moon", "Mountain", "Myth", "Near", "Night", "Ocean", "Plant", "Quake", "Rain", "Red", "River", "Ruby", "Silver", "Sleep", "Soft", "Spell", "Spring", "Star", "Storm", "Strong", "Summer", "Swift", "Thunder", "Water", "White", "Wild", "Wind", "Winter", "Wish", "Wonder", "Yellow"], Names.LAST_NAMES = ["Blade", "Boots", "Boy", "Breath", "Brother", "Caller", "Cast", "Caster", "Catcher", "Crafter", "Dancer", "Dreamer", "Drifter", "Ear", "Eyes", "Follower", "Foot", "Friend", "Gem", "Girl", "Giver", "Hand", "Heart", "Helper", "Hunter", "Leader", "Legs", "Lemon", "Light", "Man", "Mask", "Master", "Nose", "Ore", "Pants", "Petal", "Prism", "Ring", "Runner", "Seed", "Shade", "Shadow", "Shard", "Shine", "Shirt", "Singer", "Sister", "Smith", "Song", "Spoon", "Staff", "Steel", "Strider", "Sword", "Tail", "Talon", "Tamer", "Thinker", "Torch", "Vault", "Voice", "Walker", "Wand", "Ward", "Whisper", "Winner", "Woman"];
+}, Names.BOY_NAMES = ["Aaron", "Abdullah", "Abraham", "Adam", "Adrian", "Ahmad", "Ahmed", "Aidan", "Aiden", "Alan", "Albert", "Alejandro", "Alex", "Alexander", "Alexis", "Ali", "Alvin", "Andres", "Andrew", "Aneesh", "Angel", "Angelo", "Anthony", "Antonio", "Arthur", "Ashton", "Austin", "Ayden", "Baldi", "Benjamin", "Billy", "Blake", "Bobby", "Bort", "Braden", "Bradley", "Brady", "Brandon", "Brayden", "Brendan", "Brian", "Brody", "Bruce", "Bryan", "Bryce", "Bryson", "Caden", "Caillou", "Caleb", "Cameron", "Carl", "Carlos", "Carson", "Carter", "Cesar", "Charles", "Chase", "Christian", "Christopher", "Cody", "Colby", "Cole", "Colin", "Collin", "Colton", "Conner", "Connor", "Cooper", "Craig", "Cristian", "Dakota", "Dalton", "Damian", "Daniel", "Darien", "David", "Dennis", "Derek", "Devin", "Devon", "Diego", "Dominic", "Donald", "Donovan", "Douglas", "Dylan", "Edgar", "Eduardo", "Edward", "Edwin", "Eli", "Elias", "Elijah", "Emmanuel", "Eric", "Erick", "Erik", "Ethan", "Eugene", "Evan", "Fernando", "Francisco", "Frank", "Gabriel", "Gage", "Garrett", "Gary", "Gavin", "George", "Gerald", "Giovanni", "Grant", "Gregory", "Hammad", "Hamza", "Harold", "Hayden", "Hector", "Henry", "Howard", "Hunter", "Ian", "Ibrahim", "Isaac", "Isaiah", "Ivan", "Jack", "Jackson", "Jacob", "Jaden", "Jake", "Jalen", "James", "Jared", "Jason", "Javier", "Jayden", "Jeffrey", "Jeremiah", "Jeremy", "Jerry", "Jesse", "Jimothy", "Joe", "Joel", "John", "Johnathan", "Johnny", "Jonah", "Jonathan", "Jordan", "Jorge", "Jose", "Joseph", "Joshua", "Josiah", "Juan", "Julian", "Justin", "Kaden", "Kaleb", "Keith", "Kenneth", "Kevin", "Kian", "Kyle", "Landon", "Larry", "Lawrence", "Leonardo", "Levi", "Liam", "Logan", "Louis", "Lucas", "Luis", "Luke", "Malachi", "Malik", "Manuel", "Marco", "Marcus", "Mario", "Mark", "Martin", "Marvin", "Mason", "Matthew", "Max", "Maxwell", "Micah", "Michael", "Miguel", "Muhammad", "Nathan", "Nathaniel", "Nicholas", "Nicolas", "Noah", "Nolan", "Oliver", "Omar", "Oscar", "Owen", "Parker", "Patrick", "Paul", "Peter", "Peyton", "Philip", "Phillip", "Preston", "Ralph", "Raymond", "Ricardo", "Richard", "Riley", "Robert", "Roger", "Rohan", "Ronald", "Rory", "Roy", "Rupy", "Russell", "Ryan", "Samuel", "Scott", "Sean", "Sebastian", "Sergio", "Seth", "Shane", "Shawn", "Solomon", "Spencer", "Stephen", "Steve", "Steven", "Tanner", "Terry", "Thomas", "Timothy", "Travis", "Trenton", "Trevor", "Tristan", "Tyler", "Van", "Victor", "Vincent", "Walter", "Wasee", "Wayne", "Wesley", "William", "Wyatt", "Xavier", "Youssef", "Zachary", "Abel", "Allen", "Amir", "Asher", "August", "Avery", "Axel", "Bart", "Beau", "Ben", "Bennett", "Bentley", "Brantley", "Braxton", "Calvin", "Camden", "Charlie", "Chris", "Corey", "Dan", "Danny", "Dawson", "Dean", "Declan", "Easton", "Elliot", "Elliott", "Emmett", "Enzo", "Everett", "Ezekiel", "Ezra", "Finn", "Geoff", "Grayson", "Greyson", "Harrison", "Hudson", "Jace", "Jameson", "Jasper", "Jax", "Jaxon", "Jaxson", "Jayce", "Jeff", "Jude", "Kai", "Kaiden", "Karter", "Kayden", "King", "Kingston", "Kyrie", "Leo", "Lincoln", "Lorenzo", "Luca", "Lui", "Lukas", "Maddox", "Mateo", "Matt", "Matteo", "Maverick", "Mike", "Miles", "Nelson", "Nick", "Rhett", "Richie", "Robin", "Roman", "Rowan", "Ryder", "Ryker", "Sam", "Sammy", "Santiago", "Sawyer", "Silas", "Theo", "Theodore", "Tom", "Tucker", "Veenay", "Waylon", "Weston", "Xander", "Zane", "Zayden", "Zion", "Francis", "Gene", "Kelsey", "Leslie", "Morgan", "Quinn", "Reese", "Sidney", "Taylor", "Aaliyah", "Abby", "Abigail", "Addison", "Adriana", "Adrianna", "Alana", "Alexa", "Alexandra", "Alexandria", "Alexia", "Alexis", "Alice", "Alicia", "Allison", "Alondra", "Alyssa", "Amanda", "Amber", "Amelia", "Amy", "Ana", "Andrea", "Angel", "Angela", "Angelica", "Angelina", "Ann", "Anna", "Ariana", "Arianna", "Ashley", "Ashlyn", "Aubrey", "Audrey", "Autumn", "Ava", "Avery", "Bailey", "Baldi", "Barbara", "Betty", "Beverly", "Bianca", "Breanna", "Brenda", "Briana", "Brianna", "Brittany", "Brooke", "Brooklyn", "Caillou", "Caitlin", "Caitlyn", "Camila", "Carol", "Caroline", "Carolyn", "Cassandra", "Cassidy", "Catherine", "Charlotte", "Chelsea", "Cheryl", "Cheyenne", "Chloe", "Christina", "Christine", "Claire", "Courtney", "Crystal", "Cynthia", "Daisy", "Daniela", "Danielle", "Deborah", "Debra", "Delaney", "Denise", "Destiny", "Diana", "Diane", "Donna", "Doris", "Dorothy", "Elizabeth", "Ella", "Ellen", "Ellie", "Emily", "Emma", "Erica", "Erin", "Eva", "Evelyn", "Faith", "Fatima", "Felicia", "Frances", "Gabriela", "Gabriella", "Gabrielle", "Genesis", "Gianna", "Giselle", "Gloria", "Grace", "Gracie", "Hailey", "Haley", "Hannah", "Heather", "Helen", "Hope", "Isabel", "Isabella", "Isabelle", "Jacqueline", "Jada", "Jade", "Jana", "Jane", "Janet", "Janice", "Jasmin", "Jasmine", "Jayla", "Jazmin", "Jean", "Jenna", "Jennifer", "Jessica", "Jillian", "Joan", "Jocelyn", "Jordan", "Jordyn", "Joyce", "Judith", "Judy", "Julia", "Juliana", "Julie", "Kaitlyn", "Karen", "Kate", "Katelyn", "Katherine", "Kathleen", "Kathryn", "Kathy", "Katie", "Kayla", "Kaylee", "Kelly", "Kelsey", "Kendall", "Kennedy", "Kiara", "Kimberly", "Kira", "Kylee", "Kylie", "Laura", "Lauren", "Layla", "Leah", "Leslie", "Liliana", "Lillian", "Lilly", "Lily", "Linda", "Lindsey", "Lisa", "Lori", "Louise", "Lucy", "Lydia", "Mackenzie", "Madeline", "Madelyn", "Madison", "Makayla", "Makenzie", "Margaret", "Maria", "Mariah", "Mariam", "Marie", "Marilyn", "Marissa", "Martha", "Mary", "Maya", "Mckenzie", "Megan", "Melanie", "Melissa", "Mia", "Michelle", "Mikayla", "Mildred", "Miranda", "Molly", "Morgan", "Mya", "Nancy", "Naomi", "Natalia", "Natalie", "Nevaeh", "Nichole", "Nicole", "Nur", "Olivia", "Paige", "Pamela", "Patricia", "Payton", "Peyton", "Rachel", "Reagan", "Rebecca", "Riley", "Rose", "Ruby", "Ruth", "Rylee", "Sabrina", "Sadie", "Salma", "Samantha", "Sandra", "Sara", "Sarah", "Savannah", "Serenity", "Sharon", "Shelby", "Shirley", "Sierra", "Skylar", "Sofia", "Sophia", "Sophie", "Stephanie", "Summer", "Susan", "Sydney", "Tammy", "Taylor", "Teresa", "Theresa", "Tiffany", "Trinity", "Valeria", "Valerie", "Vanessa", "Veronica", "Victoria", "Virginia", "Zoe", "Zoey", "Adaline", "Adalyn", "Adalynn", "Adeline", "Alaina", "Alina", "Aliyah", "Amara", "Amaya", "Anastasia", "Annabelle", "Anne", "Arabella", "Aria", "Ariel", "Arya", "Athena", "Aubree", "Aurora", "Ayla", "Bella", "Brielle", "Cadence", "Callie", "Camilla", "Camryn", "Carly", "Chantelle", "Charlie", "Clara", "Cora", "Delilah", "Eden", "Eleanor", "Elena", "Eliana", "Elise", "Eliza", "Emerson", "Emery", "Emilia", "Eve", "Everly", "Evie", "Finley", "Freya", "Gauri", "Hadley", "Harley", "Harmony", "Harper", "Hazel", "Iris", "Isla", "Ivy", "Jenn", "Josephine", "Josie", "Kaelyn", "Katrina", "Keira", "Khloe", "Kinsley", "Laila", "Leila", "Leilani", "Lila", "London", "Londyn", "Luna", "Lyla", "Maggie", "Makenna", "Marley", "Maryam", "Melody", "Mila", "Nina", "Nora", "Norah", "Nova", "Paisley", "Penelope", "Piper", "Presley", "Princess", "Quinn", "Raelynn", "Reese", "Richelle", "Ryleigh", "Scarlett", "Sienna", "Skyler", "Stella", "Sumira", "Talia", "Teagan", "Thea", "Valentina", "Violet", "Vivian", "Willow", "Zara", "Blake", "Cameron", "Jessie", "Kairi", "Robin", "Robyn", "Sam", "Teri", "Kirsten"], Names.GIRL_NAMES = ["Aaliyah", "Abby", "Abigail", "Addison", "Adriana", "Adrianna", "Alana", "Alexa", "Alexandra", "Alexandria", "Alexia", "Alexis", "Alice", "Alicia", "Allison", "Alondra", "Alyssa", "Amanda", "Amber", "Amelia", "Amy", "Ana", "Andrea", "Angel", "Angela", "Angelica", "Angelina", "Ann", "Anna", "Ariana", "Arianna", "Ashley", "Ashlyn", "Aubrey", "Audrey", "Autumn", "Ava", "Avery", "Bailey", "Barbara", "Betty", "Beverly", "Bianca", "Breanna", "Brenda", "Briana", "Brianna", "Brittany", "Brooke", "Brooklyn", "Caitlin", "Caitlyn", "Camila", "Carol", "Caroline", "Carolyn", "Cassandra", "Cassidy", "Catherine", "Charlotte", "Chelsea", "Cheryl", "Cheyenne", "Chloe", "Christina", "Christine", "Claire", "Courtney", "Crystal", "Cynthia", "Daisy", "Daniela", "Danielle", "Deborah", "Debra", "Delaney", "Denise", "Destiny", "Diana", "Diane", "Donna", "Doris", "Dorothy", "Elizabeth", "Ella", "Ellen", "Ellie", "Emily", "Emma", "Erica", "Erin", "Eva", "Evelyn", "Faith", "Fatima", "Felicia", "Frances", "Gabriela", "Gabriella", "Gabrielle", "Genesis", "Gianna", "Giselle", "Gloria", "Grace", "Gracie", "Hailey", "Haley", "Hannah", "Heather", "Helen", "Hope", "Isabel", "Isabella", "Isabelle", "Jacqueline", "Jada", "Jade", "Jana", "Jane", "Janet", "Janice", "Jasmin", "Jasmine", "Jayla", "Jazmin", "Jean", "Jenna", "Jennifer", "Jessica", "Jillian", "Joan", "Jocelyn", "Jordan", "Jordyn", "Joyce", "Judith", "Judy", "Julia", "Juliana", "Julie", "Kaitlyn", "Karen", "Kate", "Katelyn", "Katherine", "Kathleen", "Kathryn", "Kathy", "Katie", "Kayla", "Kaylee", "Kelly", "Kelsey", "Kendall", "Kennedy", "Kiara", "Kimberly", "Kira", "Kylee", "Kylie", "Laura", "Lauren", "Layla", "Leah", "Leslie", "Liliana", "Lillian", "Lilly", "Lily", "Linda", "Lindsey", "Lisa", "Lori", "Louise", "Lucy", "Lydia", "Mackenzie", "Madeline", "Madelyn", "Madison", "Makayla", "Makenzie", "Margaret", "Maria", "Mariah", "Mariam", "Marie", "Marilyn", "Marissa", "Martha", "Mary", "Maya", "Mckenzie", "Megan", "Melanie", "Melissa", "Mia", "Michelle", "Mikayla", "Mildred", "Miranda", "Molly", "Morgan", "Mya", "Nancy", "Naomi", "Natalia", "Natalie", "Nevaeh", "Nichole", "Nicole", "Nur", "Olivia", "Paige", "Pamela", "Patricia", "Payton", "Peyton", "Rachel", "Reagan", "Rebecca", "Riley", "Rose", "Ruby", "Ruth", "Rylee", "Sabrina", "Sadie", "Salma", "Samantha", "Sandra", "Sara", "Sarah", "Savannah", "Serenity", "Sharon", "Shelby", "Shirley", "Sierra", "Skylar", "Sofia", "Sophia", "Sophie", "Stephanie", "Summer", "Susan", "Sydney", "Tammy", "Taylor", "Teresa", "Theresa", "Tiffany", "Trinity", "Valeria", "Valerie", "Vanessa", "Veronica", "Victoria", "Virginia", "Zoe", "Zoey", "Adaline", "Adalyn", "Adalynn", "Adeline", "Alaina", "Alina", "Aliyah", "Amara", "Amaya", "Anastasia", "Annabelle", "Anne", "Arabella", "Aria", "Ariel", "Arya", "Athena", "Aubree", "Aurora", "Ayla", "Bella", "Brielle", "Cadence", "Callie", "Camilla", "Camryn", "Carly", "Chantelle", "Charlie", "Clara", "Cora", "Delilah", "Eden", "Eleanor", "Elena", "Eliana", "Elise", "Eliza", "Emerson", "Emery", "Emilia", "Eve", "Everly", "Evie", "Finley", "Freya", "Gauri", "Hadley", "Harley", "Harmony", "Harper", "Hazel", "Iris", "Isla", "Ivy", "Jenn", "Josephine", "Josie", "Kaelyn", "Katrina", "Keira", "Khloe", "Kinsley", "Laila", "Leila", "Leilani", "Lila", "London", "Londyn", "Luna", "Lyla", "Maggie", "Makenna", "Marley", "Maryam", "Melody", "Mila", "Nina", "Nora", "Norah", "Nova", "Paisley", "Penelope", "Piper", "Presley", "Princess", "Quinn", "Raelynn", "Reese", "Richelle", "Ryleigh", "Scarlett", "Sienna", "Skyler", "Stella", "Sumira", "Talia", "Teagan", "Thea", "Valentina", "Violet", "Vivian", "Willow", "Zara", "Blake", "Cameron", "Jessie", "Kairi", "Robin", "Robyn", "Sam", "Teri", "Kirsten", "Aaron", "Abdullah", "Abraham", "Adam", "Adrian", "Ahmad", "Ahmed", "Aidan", "Aiden", "Alan", "Albert", "Alejandro", "Alex", "Alexander", "Alexis", "Ali", "Alvin", "Andres", "Andrew", "Aneesh", "Angel", "Angelo", "Anthony", "Antonio", "Arthur", "Ashton", "Austin", "Ayden", "Benjamin", "Billy", "Blake", "Bobby", "Bort", "Braden", "Bradley", "Brady", "Brandon", "Brayden", "Brendan", "Brian", "Brody", "Bruce", "Bryan", "Bryce", "Bryson", "Caden", "Caleb", "Cameron", "Carl", "Carlos", "Carson", "Carter", "Cesar", "Charles", "Chase", "Christian", "Christopher", "Cody", "Colby", "Cole", "Colin", "Collin", "Colton", "Conner", "Connor", "Cooper", "Craig", "Cristian", "Dakota", "Dalton", "Damian", "Daniel", "Darien", "David", "Dennis", "Derek", "Devin", "Devon", "Diego", "Dominic", "Donald", "Donovan", "Douglas", "Dylan", "Edgar", "Eduardo", "Edward", "Edwin", "Eli", "Elias", "Elijah", "Emmanuel", "Eric", "Erick", "Erik", "Ethan", "Eugene", "Evan", "Fernando", "Francisco", "Frank", "Gabriel", "Gage", "Garrett", "Gary", "Gavin", "George", "Gerald", "Giovanni", "Grant", "Gregory", "Hammad", "Hamza", "Harold", "Hayden", "Hector", "Henry", "Howard", "Hunter", "Ian", "Ibrahim", "Isaac", "Isaiah", "Ivan", "Jack", "Jackson", "Jacob", "Jaden", "Jake", "Jalen", "James", "Jared", "Jason", "Javier", "Jayden", "Jeffrey", "Jeremiah", "Jeremy", "Jerry", "Jesse", "Jimothy", "Joe", "Joel", "John", "Johnathan", "Johnny", "Jonah", "Jonathan", "Jordan", "Jorge", "Jose", "Joseph", "Joshua", "Josiah", "Juan", "Julian", "Justin", "Kaden", "Kaleb", "Keith", "Kenneth", "Kevin", "Kian", "Kyle", "Landon", "Larry", "Lawrence", "Leonardo", "Levi", "Liam", "Logan", "Louis", "Lucas", "Luis", "Luke", "Malachi", "Malik", "Manuel", "Marco", "Marcus", "Mario", "Mark", "Martin", "Marvin", "Mason", "Matthew", "Max", "Maxwell", "Micah", "Michael", "Miguel", "Muhammad", "Nathan", "Nathaniel", "Nicholas", "Nicolas", "Noah", "Nolan", "Oliver", "Omar", "Oscar", "Owen", "Parker", "Patrick", "Paul", "Peter", "Peyton", "Philip", "Phillip", "Preston", "Ralph", "Raymond", "Ricardo", "Richard", "Riley", "Robert", "Roger", "Rohan", "Ronald", "Rory", "Roy", "Rupy", "Russell", "Ryan", "Samuel", "Scott", "Sean", "Sebastian", "Sergio", "Seth", "Shane", "Shawn", "Solomon", "Spencer", "Stephen", "Steve", "Steven", "Tanner", "Terry", "Thomas", "Timothy", "Travis", "Trenton", "Trevor", "Tristan", "Tyler", "Van", "Victor", "Vincent", "Walter", "Wasee", "Wayne", "Wesley", "William", "Wyatt", "Xavier", "Youssef", "Zachary", "Abel", "Allen", "Amir", "Asher", "August", "Avery", "Axel", "Bart", "Beau", "Ben", "Bennett", "Bentley", "Brantley", "Braxton", "Calvin", "Camden", "Charlie", "Chris", "Corey", "Dan", "Danny", "Dawson", "Dean", "Declan", "Easton", "Elliot", "Elliott", "Emmett", "Enzo", "Everett", "Ezekiel", "Ezra", "Finn", "Geoff", "Grayson", "Greyson", "Harrison", "Hudson", "Jace", "Jameson", "Jasper", "Jax", "Jaxon", "Jaxson", "Jayce", "Jeff", "Jude", "Kai", "Kaiden", "Karter", "Kayden", "King", "Kingston", "Kyrie", "Leo", "Lincoln", "Lorenzo", "Luca", "Lui", "Lukas", "Maddox", "Mateo", "Matt", "Matteo", "Maverick", "Mike", "Miles", "Nelson", "Nick", "Rhett", "Richie", "Robin", "Roman", "Rowan", "Ryder", "Ryker", "Sam", "Sammy", "Santiago", "Sawyer", "Silas", "Theo", "Theodore", "Tom", "Tucker", "Veenay", "Waylon", "Weston", "Xander", "Zane", "Zayden", "Zion", "Francis", "Gene", "Kelsey", "Leslie", "Morgan", "Quinn", "Reese", "Sidney", "Taylor"], Names.FIRST_NAMES = [], Names.MIDDLE_NAMES = ["Air", "Animal", "Battle", "Blue", "Clear", "Cloud", "Coin", "Daring", "Dark", "Day", "Diamond", "Divine", "Dragon", "Dream", "Earth", "Fable", "Fairy", "Fall", "Fancy", "Far", "Fire", "Flame", "Fog", "Forge", "Frost", "Fruit", "Garden", "Gear", "Ghost", "Giant", "Glass", "Gold", "Golden", "Good", "Green", "Heavy", "Hero", "Ice", "Illusion", "Iron", "Land", "Leaf", "Legend", "Life", "Lightning", "Maelstrom", "Magic", "Metal", "Monster", "Moon", "Mountain", "Myth", "Near", "Night", "Ocean", "Plant", "Quake", "Rain", "Red", "River", "Ruby", "Silver", "Sleep", "Soft", "Spell", "Spring", "Star", "Storm", "Strong", "Summer", "Swift", "Thunder", "Water", "White", "Wild", "Wind", "Winter", "Wish", "Wonder", "Yellow"], Names.LAST_NAMES = ["Blade", "Boots", "Boy", "Breath", "Brother", "Caller", "Cast", "Caster", "Catcher", "Crafter", "Dancer", "Dreamer", "Drifter", "Ear", "Eyes", "Follower", "Foot", "Friend", "Gem", "Girl", "Giver", "Hand", "Heart", "Helper", "Hunter", "Leader", "Legs", "Lemon", "Light", "Man", "Mask", "Master", "Nose", "Ore", "Pants", "Petal", "Prism", "Ring", "Runner", "Seed", "Shade", "Shadow", "Shard", "Shine", "Shirt", "Singer", "Sister", "Smith", "Song", "Spoon", "Staff", "Steel", "Strider", "Sword", "Tail", "Talon", "Tamer", "Thinker", "Torch", "Vault", "Voice", "Walker", "Wand", "Ward", "Whisper", "Winner", "Woman"];
 var TeamRoster = function() {
 		function e(e, t, a, i) {
 			this.lockViewRoster = i || !1, this.assets = [], Menu.call(this, e, t, e.world.centerX, e.world.centerY), this.numRows = 3, this.numCols = 6, this.pageIndex = 0, this.MAX_EQUIP = 3, this.game.prodigy.player.isMember && (this.MAX_EQUIP = 5), this.callback = a, this.selectedBattler, this.rosterPages = []
