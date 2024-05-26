@@ -9856,7 +9856,7 @@ var Chest = function () {
 		}], this.toDorm.bind(this))), this.btns.push(new StackButton(this.game, this, 609, 301, [{
 			tag: "map-all"
 		}, {
-			tag: "player",
+			tag: "hair",
 			x: 20,
 			y: 18,
 			w: 40,
