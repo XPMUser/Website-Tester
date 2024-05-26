@@ -7712,7 +7712,7 @@ var Card = function () {
 		function e(e, t, a) {
 			this.assets = [], this.panels = [], this.player = a, Menu.call(this, e, t, 21)
 		}
-		return e.prototype = Object.create(Menu.prototype), e.EYES = [11303522, 7426628, 14844965, 14860069, 14017835, 7660843, 4837077, 1657838, 8530901, 14695800, 16733628, 4025779, 10547199, 16772244, 236287], e.M_EYES = [!1, !1, !1, !1, !1, !1, !1, !1, !1, !1, !0, !0, !0, !0, !0, !0, !0], e.HAIR = [16777166, 16768906, 14466221, 11901838, 7103584, 16754058, 13762442, 10157962, 9106431, 9087743, 14650111, 16747180, 16568319, 13631487, 15925199, 15791866], e.M_HAIR = [!1, !1, !1, !1, !1, !1, !1, !1, !1, !1, !1, !0, !0, !0, !0, !0, !0, !0], e.M_STYLE = [!1, !1, !1, !1, !1, !0, !0, !0, !0, !1, !1, !0, !0, !0, !0, !0, !0, !0], e.prototype.menuSetup = function () {
+		return e.prototype = Object.create(Menu.prototype), e.EYES = [11303522, 7426628, 14844965, 14860069, 14017835, 7660843, 4837077, 1657838, 8530901, 14695800, 16733628, 4025779, 10547199, 16772244, 236287], e.M_EYES = [!1, !1, !1, !1, !1, !1, !1, !1, !1, !1, !0, !0, !0, !0, !0, !0, !0], e.SKIN = [1, 2, 3, 4, 5], e.M_SKIN = [1, 2, 3, 4, 5], e.HAIR = [16777166, 16768906, 14466221, 11901838, 7103584, 16754058, 13762442, 10157962, 9106431, 9087743, 14650111, 16747180, 16568319, 13631487, 15925199, 15791866], e.M_HAIR = [!1, !1, !1, !1, !1, !1, !1, !1, !1, !1, !1, !0, !0, !0, !0, !0, !0, !0], e.M_STYLE = [!1, !1, !1, !1, !1, !0, !0, !0, !0, !1, !1, !0, !0, !0, !0, !0, !0, !0], e.prototype.menuSetup = function () {
 			Menu.prototype.menuSetup.call(this), this.currentState = 0, this.playerCopy = new Player, this.playerCopy.appearance.setGender(this.player.appearance.getGender()), this.playerCopy.appearance.setHairStyle(this.player.appearance.getHairStyle()), this.playerCopy.appearance.setHairColor(this.player.appearance.getHairColor()), this.playerCopy.appearance.setEyeColor(this.player.appearance.getEyeColor()), this.playerCopy.appearance.setSkinColor(this.player.appearance.getSkinColor()), this.playerCopy.equipment.setEquipment({
 				outfit: this.player.equipment.getEquipment("outfit"),
 				hat: this.player.equipment.getEquipment("hat"),
@@ -7722,7 +7722,7 @@ var Card = function () {
 				width: 348,
 				align: "center"
 			}), new TextButton(this.game, this.data, 74, 310, {
-				text: "250",
+				text: "free",
 				icon: "item/26"
 			}, this.buy.bind(this)), new BitmapFont(this.game, this, 950, 20, "[gold] " + this.game.prodigy.player.getGold(), {
 				size: 40,
@@ -7770,11 +7770,25 @@ var Card = function () {
 				})
 			}
 			this.eyes.add(this.eyes.yes)
+		}, e.prototype.createSkinElement = function () {
+			this.skin = new Element(this.game, this, 75, 550), new Panel(this.game, this.skin, 25, 0, 11, 3), new BitmapFont(this.game, this.skin, 40, -25, "Skin Colors", {
+				size: 20
+			}), this.skin.yes = new Sprite(this.game, 0, 0, "icons", "yes");
+			for (var t = 0; t < e.SKIN.length; t++) {
+				var a = 50 + t % 8 * 64,
+					s = 20 + 60 * Math.floor(t / 8),
+					i = new Sprite(this.game, a, s, "icons", "empty");
+				i.tint = e.SKIN[t], i.inputEnabled = !0, i.events.onInputDown.add(this.changeAppearance.bind(this, "skin", t + 1, a, s)), this.skin.add(i), t + 1 === this.playerCopy.appearance.getSkinColor() && this.changeAppearance("skin", t + 1, a, s), e.M_SKIN[t] && new BitmapFont(this.game, this.skin, a, s, "@", {
+					size: 16
+				})
+			}
+			this.skin.add(this.skin.yes)
 		}, e.prototype.toggleStyles = function (e) {
 			var t = this.playerCopy.appearance.getHairStyle();
 			t += e, 0 >= t && (t = Appearance.hairNames[this.playerCopy.appearance.getGender()].length), t > Appearance.hairNames[this.playerCopy.appearance.getGender()].length && (t = 1), this.changeAppearance("style", t)
 		}, e.prototype.changeAppearance = function (t, a, s, i) {
 			if ("eyes" === t) this.playerCopy.appearance.setEyeColor(a);
+			else if ("skin" === t) this.playerCopy.appearance.setHairColor(a);
 			else if ("hair" === t) this.playerCopy.appearance.setHairColor(a);
 			else if ("style" === t) {
 				this.playerCopy.appearance.setHairStyle(a);
@@ -7785,10 +7799,11 @@ var Card = function () {
 			var t = this.playerCopy.appearance.getHairColor(),
 				a = this.playerCopy.appearance.getEyeColor(),
 				s = this.playerCopy.appearance.getHairStyle(),
-				i = e.M_EYES[a - 1] || e.M_HAIR[t - 1] || e.M_STYLE[s - 1];
-			i && this.game.prodigy.network.sendAnalytics("Buy-Member-Style"), !this.player.isMember && i ? this.game.prodigy.open.membership(Ad.PREMIUM_ITEM) : this.player.getGold() < 250 ? this.player.isMember ? this.game.prodigy.open.message("You need [gold]250 to style your wizard. You only have [gold]" + this.player.getGold() + ".", null, "gold", "Uh oh!") : this.game.prodigy.open.membership(Ad.MORE_GOLD) : this.game.prodigy.open.confirm("Are you sure you want to style your wizard for [gold]250? \nThis will change your wizard's appearance.", this.completePurchase.bind(this))
+				z = this.playerCopy.appearance.getSkinColor(),
+				i = e.M_EYES[a - 1] || e.M_HAIR[t - 1] || e.M_STYLE[s - 1] || e.M_SKIN[z - 1];
+			i && this.game.prodigy.network.sendAnalytics("Buy-Member-Style"), !this.player.isMember && i ? this.game.prodigy.open.membership(Ad.PREMIUM_ITEM) : this.player.getGold() < 0 ? this.player.isMember ? this.game.prodigy.open.message("You need [gold]250 to style your wizard. You only have [gold]" + this.player.getGold() + ".", null, "gold", "Uh oh!") : this.game.prodigy.open.membership(Ad.MORE_GOLD) : this.game.prodigy.open.confirm("Are you sure you want to style your wizard for [gold]250? \nThis will change your wizard's appearance.", this.completePurchase.bind(this))
 		}, e.prototype.completePurchase = function () {
-			this.player.changeGold(-250), this.player.appearance.setHairStyle(this.playerCopy.appearance.getHairStyle()), this.player.appearance.setHairColor(this.playerCopy.appearance.getHairColor()), this.player.appearance.setEyeColor(this.playerCopy.appearance.getEyeColor()), this.player.appearanceChanged = !0, this.close()
+			this.player.changeGold(-0), this.player.appearance.setHairStyle(this.playerCopy.appearance.getHairStyle()), this.player.appearance.setHairColor(this.playerCopy.appearance.getHairColor()), this.player.appearance.setEyeColor(this.playerCopy.appearance.getEyeColor()), this.player.appearance.setSkinColor(this.playerCopy.appearance.getSkinColor()), this.player.appearanceChanged = !0, this.close()
 		}, e
 	}(),
 	Coliseum = function () {
@@ -9838,7 +9853,15 @@ var Chest = function () {
 			y: 18,
 			w: 40,
 			h: 40
-		}], this.toDorm.bind(this)));
+		}], this.toDorm.bind(this))), this.btns.push(new StackButton(this.game, this, 609, 301, [{
+			tag: "map-all"
+		}, {
+			tag: "player",
+			x: 20,
+			y: 18,
+			w: 40,
+			h: 40
+		}], this.toCharacterCreate.bind(this)));
 		for (var n = 0; n < this.btns.length; n++) this.game.add.tween(this.btns[n]).to({
 			y: this.btns[n].y + 10
 		}, 1e3, Phaser.Easing.Quadratic.InOut, !0, 0, Number.MAX_VALUE, !0);
@@ -9886,6 +9909,8 @@ var Chest = function () {
 		this.game.state.states.Docks.playerX = 1167, this.game.state.states.Docks.playerY = 445, this.game.state.start("Docks")
 	}, e.prototype.toTechZone = function() {
 		this.game.state.states.TechZone.playerX = 890, this.game.state.states.TechZone.playerY = 260, this.game.state.start("TechZone")
+	}, e.prototype.toCharacterCreate = function() {
+		this.game.state.states.CharacterCreate2.playerX = 890, this.game.state.states.CharacterCreate2.playerY = 260, this.game.state.start("CharacterCreate2")
 	}, e
 }();
 MapDisplay.getAssets = function () {
@@ -10205,7 +10230,7 @@ var CreatureData = function () {
 	}();
 Boot.init = function(e) {
         var t = new Phaser.Game(1280, 720, Phaser.CANVAS, "game-container");
-        t.prodigy = new Prodigy(t), t.prodigy.sso = e || {}, t.assets = new AssetManager(t), t.state.add("DungeonMaker", DungeonMaker), t.state.add("Boot", Boot), t.state.add("Login", Login), t.state.add("Battle", Battle), t.state.add("Forest", Forest), t.state.add("Mountain", Mountain), t.state.add("Volcano", Volcano), t.state.add("Arena", Arena), t.state.add("TownSquare", TownSquare), t.state.add("Pirate", Pirate), t.state.add("CharacterCreate", CharacterCreate), t.state.add("Academy", Academy), t.state.add("Tutorial", Tutorial), t.state.add("Tower", Tower), t.state.add("TowerBase", TowerBase), t.state.add("Cloud", Cloud), t.state.add("Plains", Plains), t.state.add("TechZone", TechZone), t.state.add("Dorm", Dorm), t.state.add("Intro", Intro), t.state.add("Dino", Dino), t.state.add("Museum", Museum), t.state.add("Tech", Tech), t.state.add("Tree", Tree), t.state.add("Docks", Docks), t.state.add("DinoDig", DinoDig), t.state.add("DanceDance", DanceDance);
+        t.prodigy = new Prodigy(t), t.prodigy.sso = e || {}, t.assets = new AssetManager(t), t.state.add("DungeonMaker", DungeonMaker), t.state.add("Boot", Boot), t.state.add("Login", Login), t.state.add("Battle", Battle), t.state.add("Forest", Forest), t.state.add("Mountain", Mountain), t.state.add("Volcano", Volcano), t.state.add("Arena", Arena), t.state.add("TownSquare", TownSquare), t.state.add("Pirate", Pirate), t.state.add("CharacterCreate", CharacterCreate), t.state.add("Academy", Academy), t.state.add("CharacterCreate2", CharacterCreate2), t.state.add("Tutorial", Tutorial), t.state.add("Tower", Tower), t.state.add("TowerBase", TowerBase), t.state.add("Cloud", Cloud), t.state.add("Plains", Plains), t.state.add("TechZone", TechZone), t.state.add("Dorm", Dorm), t.state.add("Intro", Intro), t.state.add("Dino", Dino), t.state.add("Museum", Museum), t.state.add("Tech", Tech), t.state.add("Tree", Tree), t.state.add("Prodigy.MapData", Prodigy.MapData), t.state.add("Docks", Docks), t.state.add("DinoDig", DinoDig), t.state.add("DanceDance", DanceDance);
         if (Util.isDefined(window.checkForMods)) {
                 window.checkForMods(t, window.location.search)
         } else {
@@ -10711,6 +10736,210 @@ var TileScreen = function () {
 			}
 		}, e.prototype.listener = function () {}, e
 	}(),
+	CharacterCreate2 = function () {
+		function e(e) {
+			Screen.call(this, e, "Wizard Changing Simulator", "zone-create"), this.assets = ["zone-create", "voice-1"], this.showMenu = !1
+		}
+		return e.prototype = Object.create(Screen.prototype), e.SKINS = [16774620, 16772292, 15060139, 12693147, 9140843], e.HAIR = [16777166, 16768906, 14466221, 11901838, 7103584, 16754058], e.EYES = [11303522, 7426628, 14844965, 14860069, 7660843, 1657838], e.SKIN_COLORS = [1, 2, 3, 4, 5], e.EYE_COLORS = [1, 2, 3, 4, 6, 8], e.HAIR_COLORS = [1, 2, 3, 4, 5, 6], e.BOY_HAIR_STYLES = [4, 5, 6, 7], e.GIRL_HAIR_STYLES = [5, 7, 11, 13], e.HAIR_NAMES = ["Hair 1", "Hair 2", "Hair 3", "Hair 4"], e.prototype.preload = function () {
+			this.playerMale = new Player, this.playerMale.setDefault("male"), this.playerFemale = new Player, this.playerFemale.setDefault("female");
+			var e = PlayerContainer.getAssets(this.playerMale),
+				t = PlayerContainer.getAssets(this.playerFemale);
+			this.assets = this.assets.concat(e).concat(t), Screen.prototype.preload.call(this), this.game.assets.load(this.game.load, this.assets)
+		}, e.prototype.create = function () {
+			Screen.prototype.create.call(this), this.game.prodigy.player.saveEnabled = !1;
+			var e = this.background.add(new Phaser.TileSprite(this.game, 0, 50, 1280, 620, "core", "bg-tile-brown"));
+			this.game.add.tween(e.tilePosition).to({
+				x: 76,
+				y: 76
+			}, 5e3, Phaser.Easing.Linear.None).loop().start(), this.background.add(new Phaser.TileSprite(this.game, 0, 0, this.game.world.width, 50, "core", "panel-mid")), this.background.add(new Phaser.TileSprite(this.game, 0, 50, this.game.world.width, 50, "core", "panel-top2")), this.background.add(new Phaser.TileSprite(this.game, 0, 620, this.game.world.width, 50, "core", "panel-top")), this.background.add(new Phaser.TileSprite(this.game, 0, 670, this.game.world.width, 50, "core", "panel-mid")), this.title = new BitmapFont(this.game, this.background, 0, 20, "", {
+				font: "button",
+				size: 36,
+				width: 1280,
+				align: "center"
+			}),
+			this.maleBoat = new Element(this.game, this.background, 490, 430), this.maleBoat.src = new PlayerContainer(this.game, this.maleBoat, this.playerMale, 2, 0, 0), this.maleBoat.src.reload(), this.maleBoat.overlay = this.maleBoat.add(new Sprite(this.game, 0, 0, "core", "overlay")), this.femaleBoat = new Element(this.game, this.background, 790, 430), this.femaleBoat.src = new PlayerContainer(this.game, this.femaleBoat, this.playerFemale, 2, 0, 0), this.femaleBoat.src.reload(), this.femaleBoat.src.flip(), this.femaleBoat.overlay = this.femaleBoat.add(new Sprite(this.game, 0, 0, "core", "overlay")), this.maleBoat.overlay.width = this.femaleBoat.overlay.width = 100, this.maleBoat.overlay.height = this.femaleBoat.overlay.height = 160, this.maleBoat.overlay.x = this.femaleBoat.overlay.x = -50, this.maleBoat.overlay.y = this.femaleBoat.overlay.y = -160, this.maleBoat.overlay.alpha = this.femaleBoat.overlay.alpha = 0, this.maleBoat.overlay.events.onInputDown.add(this.chooseName.bind(this, this.maleBoat, this.femaleBoat), this), this.femaleBoat.overlay.events.onInputDown.add(this.chooseName.bind(this, this.femaleBoat, this.maleBoat), this), this.fname = Math.floor(Math.random() * Names.BOY_NAMES.length), this.mname = Math.floor(Math.random() * Names.MIDDLE_NAMES.length), this.lname = Math.floor(Math.random() * Names.LAST_NAMES.length), this.hairIndex = 0
+		}, e.prototype.screenSetup = function () {
+			Screen.prototype.screenSetup.call(this), this.chooseGender()
+		}, e.prototype.moveTo = function (e, t, a, s) {
+			this.game.add.tween(e).to({
+				x: t
+			}, 1e3, Phaser.Easing.Linear.None).start(), this.game.add.tween(a).to({
+				x: s
+			}, 1e3, Phaser.Easing.Linear.None).start()
+		}, e.prototype.chooseGender = function () {
+			this.content.removeAll(!0), this.title.setText("What does your wizard look like?"),
+			new TextButton(this.game, this.content, 50, 650, {
+				text: "back",
+				icon: "back"
+			}, this.close.bind(this)), this.moveTo(this.maleBoat, 490, this.femaleBoat, 790), this.maleBoat.overlay.inputEnabled = this.femaleBoat.overlay.inputEnabled = !0
+		}, e.prototype.chooseName = function (e, t) {
+			this.content.removeAll(!0), this.title.setText("What is your wizard's name?"),
+			this.moveTo(e, e.x < t.x ? 250 : 1030, t, e.x < t.x ? 1380 : -100), this.maleBoat.overlay.inputEnabled = this.femaleBoat.overlay.inputEnabled = !1, new TextButton(this.game, this.content, 1030, 650, {
+				text: "next",
+				icon: "next"
+			}, this.chooseAppearance.bind(this, e, t)), new TextButton(this.game, this.content, 50, 650, {
+				text: "back",
+				icon: "back"
+			}, this.chooseGender.bind(this, e, t));
+			var a = new Element(this.game, this.content, e.x < t.x ? 380 : 200, 200);
+			new Panel(this.game, a, 0, 105, 14, 2);
+			for (var s = [e.x < t.x ? Names.BOY_NAMES : Names.GIRL_NAMES, Names.MIDDLE_NAMES, Names.LAST_NAMES], i = ["fname", "mname", "lname"], r = [], o = 0; 3 > o; o++) {
+				r.push([]);
+				for (var n = 0; 3 > n; n++) r[o].push(new BitmapFont(this.game, a, 30 + 220 * o, 80 * n + 60, "name", {
+					size: 30
+				}));
+				new Button(this.game, a, 155 + 220 * o, 0, "icons", "back", this.setName.bind(this, r[o], s[o], i[o], -1)).angle = 90, new Button(this.game, a, 155 + 220 * o, 270, "icons", "next", this.setName.bind(this, r[o], s[o], i[o], 1)).angle = 90, this.setName(r[o], s[o], i[o], 0)
+			}
+			var h = function (e, t, a, s) {
+				e.fname = Math.floor(Math.random() * Names.BOY_NAMES.length), e.mname = Math.floor(Math.random() * Names.MIDDLE_NAMES.length), e.lname = Math.floor(Math.random() * Names.LAST_NAMES.length), t(a[0], s[0], "fname", 0), t(a[1], s[1], "mname", 1), t(a[2], s[2], "lname", 2)
+			};
+			new Button(this.game, a, 650, 116, "icons", "dice", h.bind(this, this, this.setName.bind(this), r, s))
+		}, e.prototype.setName = function (e, t, a, s) {
+			this[a] = Util.checkRange(this[a] + s, 0, t.length - 1);
+			for (var i = 0; 3 > i; i++) {
+				var r = t[this[a] - 1 + i];
+				e[i].setText(Util.isDefined(r) ? r : "")
+			}
+		}, e.prototype.chooseAppearance = function (t, a) {
+			this.content.removeAll(!0), t.src.source.appearance.setName(Names.createNameFromIndex(t.src.source.appearance.getGender(), this.fname, this.mname, this.lname)), t.src.showName(!1), this.moveTo(t, t.x < a.x ? 250 : 1030, a, t.x < a.x ? 1380 : -100);
+			var s = e.BOY_HAIR_STYLES;
+			"male" !== t.src.source.appearance.getGender() && (s = e.GIRL_HAIR_STYLES), this.title.setText("What does your prodigy look like?"),
+			new TextButton(this.game, this.content, 1030, 650, {
+				text: "next",
+				icon: "next"
+			}, this.confirm.bind(this, t, a)), new TextButton(this.game, this.content, 50, 650, {
+				text: "back",
+				icon: "back"
+			}, this.chooseName.bind(this, t, a));
+			var i = new Element(this.game, this.content, t.x < a.x ? 430 : 200, 200);
+			new Panel(this.game, i, 0, 0, 6, 3), new Panel(this.game, i, 350, 0, 6, 3), new Panel(this.game, i, 0, 200, 13, 3);
+			var r = function (e, t, a, s) {
+				t && e.source.appearance.setSkinColor(t), a && e.source.appearance.setEyeColor(a), s && e.source.appearance.setHairColor(s), e.reload()
+			};
+			i.add(new Sprite(this.game, -20, -20, "icons", "skin")), i.add(new Sprite(this.game, 330, -20, "icons", "eyes")), i.add(new Sprite(this.game, -20, 180, "icons", "hair"));
+			for (var o = 0; o < e.SKIN_COLORS.length; o++) {
+				var n = e.SKIN_COLORS[o],
+					h = new Button(this.game, i, 75 + 70 * (o % 3), 15 + 70 * Math.floor(o / 3), "icons", "empty", r.bind(this, t.src, n, null, null));
+				h.sprite.tint = e.SKINS[o]
+			}
+			for (var o = 0; o < e.EYE_COLORS.length; o++) {
+				var n = e.EYE_COLORS[o],
+					l = new Button(this.game, i, 425 + 70 * (o % 3), 15 + 70 * Math.floor(o / 3), "icons", "empty", r.bind(this, t.src, null, n, null));
+				l.sprite.tint = e.EYES[o]
+			}
+			for (var o = 0; o < e.HAIR_COLORS.length; o++) {
+				var n = e.HAIR_COLORS[o],
+					p = new Button(this.game, i, 425 + 70 * (o % 3), 215 + 70 * Math.floor(o / 3), "icons", "empty", r.bind(this, t.src, null, null, n));
+				p.sprite.tint = e.HAIR[o]
+			}
+			var d = function (t, a, s, i) {
+					this.hairIndex = Util.checkRange(this.hairIndex + i, 0, t.length - 1);
+					var r = e.HAIR_NAMES[this.hairIndex];
+					a.source.appearance.setHairStyle(t[this.hairIndex]), a.reload(), s.setText(r)
+				},
+				c = new BitmapFont(this.game, i, 85, 245, "Hair 1", {
+					size: 30,
+					width: 302,
+					align: "center"
+				});
+			new Button(this.game, i, 100, 235, "icons", "back", d.bind(this, s, t.src, c, -1)), new Button(this.game, i, 330, 235, "icons", "next", d.bind(this, s, t.src, c, 1))
+		}, e.prototype.confirm = function (e, t) {
+			this.content.removeAll(!0), e.src.showName(!0), this.moveTo(e, 640, t, e.x < t.x ? 1380 : -100), this.title.setText("Does this look correct?"),
+			new TextButton(this.game, this.content, 1030, 650, {
+				text: "yes",
+				icon: "yes"
+			}, this.getAccountInfo.bind(this, e, t)), new TextButton(this.game, this.content, 50, 650, {
+				text: "back",
+				icon: "back"
+			}, this.chooseAppearance.bind(this, e, t))
+		}, e.prototype.getAccountInfo = function (e) {
+			this.game.prodigy.player.appearance = e.src.source.appearance,
+			this.game.state.states.Login.offlineMode(),
+			this.game.prodigy.player.isMember = !0,
+			this.game.prodigy.debug.easyMode(0, 0);
+		}, e.prototype.onCreate = function (e, t) {
+			var a = function () {
+					this.game.state.states.Login.offlineMode()
+				},
+				s = function () {
+					this.game.prodigy.open.confirm("Your wizard was created, but we failed to load Prodigy. \nTry Again?", this.onCreate.bind(this, e, t), this.game.state.start.bind(this.game.state, "Dorm"))
+				};
+			Util.isDefined(this.game.prodigy.sso.externalApp) ? this.game.prodigy.network.login(this.game.prodigy.sso.userID, this.game.prodigy.sso.externalID, this.game.prodigy.player, s.bind(this), a.bind(this), "engrade") : this.game.prodigy.network.login(e, t, this.game.prodigy.player, s.bind(this), a.bind(this))
+		}, e.prototype.close = function (e, t, a) {
+			this.game.state.states.Login.offlineMode()
+		}, e
+	}(),
+	ElementModule = function() {
+		function e(e, t) {
+			Element.call(this, e, t), t.add(this), this.kill(), this.isComplete = !1, this.setupComplete = !1, this.characterCreate = t, this.title = "What Is Your Favourite Element?", this.y = 50, this.alpha = 0, this.selectedElement = ""
+		}
+		return e.prototype = Object.create(Element.prototype), e.prototype.setup = function() {
+			setTimeout(this.parent.showTitle.bind(this.parent, this.title), 500), this.setupComplete ? this.reset() : this.firstSetup(), "" === this.selectedElement && this.elementBG.kill(), this.chooseElement(""), this.parent.hideNextButton(), this.game.add.tween(this).to({
+				y: 0,
+				alpha: 1
+			}, 500, Phaser.Easing.Quadratic.Out, !0, 500)
+		}, e.prototype.firstSetup = function() {
+			this.elementBG = new Sprite(this.game, 378, 335, "core", "icon-base"), this.add(this.elementBG), this.elementBG.kill(), new BitmapFont(this.game, this, 270, 290, "Choose Your Element", {
+				size: 30,
+				align: "center",
+				width: 280
+			}), this.fireButton = new Button(this.game, this, 365, 160, "icons", "fire", this.chooseElement.bind(this, "fire")), this.waterButton = new Button(this.game, this, 165, 280, "icons", "water", this.chooseElement.bind(this, "water")), this.stormButton = new Button(this.game, this, 565, 280, "icons", "storm", this.chooseElement.bind(this, "storm")), this.earthButton = new Button(this.game, this, 365, 400, "icons", "earth", this.chooseElement.bind(this, "earth")), this.setupComplete = !0
+		}, e.prototype.chooseElement = function(e) {
+			this.equipmentID = 1;
+			var t = 378,
+				a = 335;
+			switch (this.elementBG.revive(), this.selectedElement = e, e) {
+				case "fire":
+					t = 365, a = 160, this.equipmentID = 10;
+					break;
+				case "water":
+					t = 165, a = 280, this.equipmentID = 9;
+					break;
+				case "storm":
+					t = 565, a = 280, this.equipmentID = 11;
+					break;
+				case "earth":
+					t = 365, a = 400, this.equipmentID = 12;
+					break;
+				default:
+					this.elementBG.kill()
+			}
+			if ("" !== e) {
+				this.parent.playerAvatar.source.setSchool(e), this.isComplete = !0, this.parent.showNextButton();
+				for (var i = 0; 6 > i; i++) {
+					var s = new Sprite(this.game, this.parent.playerAvatar.x, this.parent.playerAvatar.y - 80, "icons", e);
+					this.add(s), s.anchor.setTo(3, 3), s.angle = 60 * i, this.game.add.tween(s).to({
+						angle: "+200"
+					}, 1e3, Phaser.Easing.Linear.None).to({
+						alpha: 0
+					}, 500, Phaser.Easing.Linear.None).start(), this.game.add.tween(s.anchor).to({
+						x: .5,
+						y: .5
+					}, 500, Phaser.Easing.Linear.None).delay(500).to({
+						x: 5,
+						y: 5
+					}, 500, Phaser.Easing.Linear.None).start()
+				}
+				this.parent.playerAvatar.source.equipment.equip(this.equipmentID, "outfit"), this.parent.playerAvatar.reload()
+			}
+			this.game.add.tween(this.elementBG).to({
+				x: t,
+				y: a
+			}, 500, Phaser.Easing.Quadratic.Out, !0)
+		}, e.prototype.kill = function() {
+			this.game.add.tween(this).to({
+				y: 50,
+				alpha: 0
+			}, 500, Phaser.Easing.Quadratic.Out, !0), Util.isDefined(this.fireButton) && (this.fireButton.kill(), this.waterButton.kill(), this.earthButton.kill(), this.stormButton.kill(), this.elementBG.kill(), this.parent.showNextButton())
+		}, e.prototype.close = function() {
+			this.parent.hideTitle(), this.kill()
+		}, e.prototype.reset = function() {
+			this.parent.showTitle(this.title), this.fireButton.revive(), this.waterButton.revive(), this.earthButton.revive(), this.stormButton.revive(), this.parent.showNextButton(), this.game.add.tween(this).to({
+				y: 50,
+				alpha: 1
+			}, 500, Phaser.Easing.Quadratic.Out, !0, 500)
+		}, e
+	}(),
 	CharacterCreate = function () {
 		function e(e) {
 			Screen.call(this, e, "Create a Wizard", "zone-create"), this.assets = ["zone-create", "voice-1"], this.showMenu = !1
@@ -11165,8 +11394,267 @@ var TileScreen = function () {
 		}, e.prototype.end = function () {
 			this.game.state.start("Docks")
 		}, e
-	}(),
-	Tree = function () {
+	}();
+Prodigy.MapData = function (e, t, a, s, i, r, o, n, h) {
+	this.game = e, this.ID = s, this.assets = [], this._playerX = t || 0, this._playerY = a || 0, this._quests = h, this._name = o, this._className = i, this._hubClassName = r, e.state.states.TileScreen.zoneName = n, e.state.states.TileScreen.playerX = this._playerX, e.state.states.TileScreen.playerY = this._playerY
+}, Prodigy.MapData.prototype = {
+	setup: function (e) {
+		e.user.x = this._playerX, e.user.y = this._playerY
+	},
+	update: function () {},
+	cleanup: function () {},
+	init: function (e, t) {
+		for (var a = this.game.cache.getJSON(this._map.data), s = [], i = 0; 36 > i; i++) {
+			s.push([]);
+			for (var r = 0; 64 > r; r++) s[i][r] = 1
+		}
+		for (var i = 0; i < this._map.below.length; i++) {
+			var o = TileScreen.findLayer(a.layers, this._map.below[i]);
+			this.initLayer(e, o, a.tilesets, s)
+		}
+		for (var i = 0; i < this._map.above.length; i++) {
+			var o = TileScreen.findLayer(a.layers, this._map.above[i]);
+			this.initLayer(t, o, a.tilesets)
+		}
+		return s
+	},
+	initLayer: function (layer, data, tilesets, area) {
+		if (Util.isDefined(data)) {
+			for (var i = 0; 32 > i; i++)
+				for (var j = 0; 18 > j; j++) {
+					var index = 32 * j + i,
+						ID = data.data[index],
+						tileset = TileScreen.getTileset(tilesets, ID);
+					if (Util.isDefined(tileset) && Util.isDefined(ID)) {
+						var s;
+						if (s = Util.isDefined(tileset.tileproperties) && Util.isDefined(tileset.tileproperties[ID - 1]) && Util.isDefined(tileset.tileproperties[ID - 1].anim) ? new Sprite(this.game, 40 * i, 40 * j, tileset.name, ID - 1) : new Phaser.Image(this.game, 40 * i, 40 * j, tileset.name, ID - 1), layer.add(s), Util.isDefined(area) && Util.isDefined(tileset.tileproperties) && Util.isDefined(tileset.tileproperties[ID - 1])) {
+							if (Util.isDefined(tileset.tileproperties[ID - 1].x)) {
+								var val = tileset.tileproperties[ID - 1].x;
+								1 == val[0] && (area[2 * j + 0][2 * i + 0] = 0), 1 == val[1] && (area[2 * j + 1][2 * i + 0] = 0), 1 == val[2] && (area[2 * j + 1][2 * i + 1] = 0), 1 == val[3] && (area[2 * j + 0][2 * i + 1] = 0)
+							}
+							if (Util.isDefined(tileset.tileproperties[ID - 1].anim)) {
+								var t = eval("[" + tileset.tileproperties[ID - 1].anim + "]");
+								s.animations.add("ab", t, 3, !0, !0), s.animations.play("ab")
+							}
+						}
+					}
+				}
+			return layer
+		}
+	}
+}, Prodigy.MapData.prototype.constructor = Prodigy.MapData, ForestMain = function (e, t, a) {
+	Prodigy.MapData.call(this, e, t || 400, a || 200, 20, "ForestMain", "ForestMain", "Forest Hub", "zone-forest-hub", ForestMain.DATA.quests), this._map = {
+		data: "map-forest",
+		above: ["main-above"],
+		below: ["main-ground", "main-ground2"]
+	}, this.assets = ["map-forest", "tileset-forest", "tileset-core", "npc-sprite-merchant"]
+}, ForestMain.prototype = Object.create(Prodigy.MapData.prototype), ForestMain.prototype.setup = function (e) {
+	var t = !1;
+	Util.isDefined(this.game.prodigy.player.quests.data[ForestMain.DATA.ID]) || (t = !0, e.disablePopups = !0), e.addAreaEvent({
+		x: 570,
+		y: 0,
+		r: 100
+	}, e.teleport.bind(e, "ForestClearing", 210, 600), FocusArea.UP, [1, 2]), e.addAreaEvent({
+		x: 1280,
+		y: 0,
+		r: 100
+	}, e.teleport.bind(e, "ForestOpen", 194, 610));
+	var a = e.addQuestNPC(667, 311, ForestMain.DATA, {
+		name: "Mr. Matt",
+		atlas: "merchant"
+	}, [{
+		text: "That's it for now!"
+	}]);
+	t && a.process(), e.addChest(1, 1066, 200, [{
+		ID: 1,
+		type: "item"
+	}], "A"), Prodigy.MapData.prototype.setup.call(this, e)
+}, ForestMain.AUDIO = [{
+	tag: "voice-20-1",
+	s: 0,
+	d: 6
+}, {
+	tag: "voice-20-1",
+	s: 6,
+	d: 6
+}, {
+	tag: "voice-20-2",
+	s: 0,
+	d: 6
+}, {
+	tag: "voice-20-3",
+	s: 0,
+	d: 3
+}, {
+	tag: "voice-20-4",
+	s: 0,
+	d: 5
+}, {
+	tag: "voice-20-4",
+	s: 5,
+	d: 5
+}], ForestMain.DATA = {
+	ID: 20,
+	quests: [{
+		name: "Get Off My Lawn!",
+		desc: "Mugs wants you to collect feathers",
+		start: [{
+			face: 5,
+			anim: 4,
+			text: "What do we have here? You came just in time...I need feathers for a new recipe!",
+			audio: ForestMain.AUDIO[0]
+		}, {
+			face: 5,
+			anim: 4,
+			text: "You can find feathers in the woods. Just follow the yellow arrow, and it'll show you the way!",
+			audio: ForestMain.AUDIO[1]
+		}],
+		during: [{
+			face: 5,
+			anim: 4,
+			text: "You can find feathers in the woods. Just follow the yellow arrow, and it'll show you the way!",
+			audio: ForestMain.AUDIO[1]
+		}],
+		complete: [{
+			face: 5,
+			anim: 4,
+			text: "Would you look at that...you did it!",
+			audio: ForestMain.AUDIO[3]
+		}],
+		req: [{
+			type: "item",
+			ID: 9,
+			N: 3
+		}],
+		reward: [{
+			type: "gold",
+			N: 100
+		}]
+	}, {
+		name: "Get Off My Lawn!",
+		desc: "Mugs wants you to defeat the Luminites in the forest",
+		start: [{
+			face: 5,
+			anim: 4,
+			text: "You're pretty tough...I wonder if you could beat some tougher monsters?",
+			audio: ForestMain.AUDIO[4]
+		}, {
+			face: 5,
+			anim: 4,
+			text: "Follow the yellow arrow to the clearing and defeat the Luminites there!",
+			audio: ForestMain.AUDIO[5]
+		}],
+		during: [{
+			face: 5,
+			anim: 4,
+			text: "Follow the yellow arrow to the clearing and defeat the Luminites there!",
+			audio: ForestMain.AUDIO[5]
+		}],
+		complete: [{
+			face: 5,
+			anim: 4,
+			text: "Would you look at that...you did it!",
+			audio: ForestMain.AUDIO[3]
+		}],
+		req: [{
+			type: "pet",
+			ID: 20,
+			N: 2
+		}],
+		reward: [{
+			type: "gold",
+			N: 100
+		}]
+	}]
+}, ForestClearing = function (e, t, a) {
+	Prodigy.MapData.call(this, e, t || 100, a || 200, 20, "ForestClearing", "ForestMain", "Forest Path", "zone-forest-clearing", ForestMain.DATA.quests), this._map = {
+		data: "map-forest",
+		above: ["foyer-above"],
+		below: ["foyer-ground", "foyer-ground2"]
+	}, this.assets = ["map-forest", "tileset-forest", "tileset-core"]
+}, ForestClearing.prototype = Object.create(Prodigy.MapData.prototype), ForestClearing.prototype.setup = function (e) {
+	e.addAreaEvent({
+		x: 210,
+		y: 720,
+		r: 100
+	}, e.teleport.bind(e, "ForestMain", 570, 110), FocusArea.DOWN, null, !0), e.addAreaEvent({
+		x: 1280,
+		y: 384,
+		r: 100
+	}, e.teleport.bind(e, "ForestOpen", 110, 250), FocusArea.RIGHT, [2]);
+	var t = {
+		questID: 1,
+		item: {
+			type: "item",
+			ID: "9"
+		}
+	};
+	e.addCollect(1, 942, 522, "icons", "item/9", t), e.addCollect(2, 730, 160, "icons", "item/9", t), e.addCollect(3, 561, 458, "icons", "item/9", t);
+	var a = {
+		screen: "bg-battle-forest",
+		encounter: [{
+			ID: 18
+		}, {
+			ID: 19
+		}]
+	};
+	e.addMonster(1, 441, 314, "bird", a), e.addMonster(2, 866, 350, "bird", a);
+	var s = this.game.prodigy.player.quests.getCurrentQuest(ForestMain.DATA.ID);
+	1 === s && this.game.prodigy.player.tutorial.getZoneValue(ForestMain.DATA.ID) < 1 ? (this.game.prodigy.player.tutorial.setZoneValue(ForestMain.DATA.ID, 0, 1), this.game.prodigy.dialogue.setText({
+		text: "Oh fuddledud! They're guarded by monsters! Better be careful, young one!",
+		face: 4,
+		anim: 4,
+		audio: ForestMain.AUDIO[2]
+	}), this.game.prodigy.dialogue.start("npc-face-merchant"), e.disablePopups = !0) : this.startScene(e), Prodigy.MapData.prototype.setup.call(this, e)
+}, ForestClearing.prototype.startScene = function (e) {
+	e.user.evtProc = !0, e.user.setPath([]), this.game.input.mouse.enabled = !1;
+	var t = function (t) {
+			t.destroy(), this.game.input.mouse.enabled = !0, e.user.evtProc = !1
+		},
+		a = function (e) {
+			this.game.input.mouse.enabled = !1, e.setPath([{
+				x: 1280,
+				y: 400
+			}], t.bind(this, e))
+		},
+		s = function (e) {
+			this.game.input.mouse.enabled = !0, this.game.prodigy.dialogue.setText({
+				text: "He's getting away!",
+				face: 4
+			}), this.game.prodigy.dialogue.setText({
+				callback: a.bind(this, e)
+			}), this.game.prodigy.dialogue.start("npc-face-merchant")
+		},
+		i = e.addNPC(200, 500);
+	i.setPath([{
+		x: 620,
+		y: 200
+	}], s.bind(this))
+}, ForestOpen = function (e, t, a) {
+	Prodigy.MapData.call(this, e, t || 100, a || 200, 20, "ForestOpen", "ForestMain", "Forest Clearing", "zone-forest-open", ForestMain.DATA.quests), this._map = {
+		data: "map-forest",
+		above: ["clearing-above"],
+		below: ["clearing-ground", "clearing-ground2"]
+	}, this.assets = ["map-forest", "tileset-forest", "tileset-core"]
+}, ForestOpen.prototype = Object.create(Prodigy.MapData.prototype), ForestOpen.prototype.setup = function (e) {
+	e.addAreaEvent({
+		x: 0,
+		y: 250,
+		r: 100
+	}, e.teleport.bind(e, "ForestClearing", 1170, 384), FocusArea.LEFT, [1], !0), e.addAreaEvent({
+		x: 194,
+		y: 720,
+		r: 100
+	}, e.teleport.bind(e, "ForestMain", 1170, 110));
+	var t = {
+		screen: "bg-battle-forest",
+		encounter: [{
+			ID: 20
+		}]
+	};
+	e.addMonster(1, 594, 230, "animal", t), e.addMonster(2, 910, 435, "animal", t), e.addMonster(3, 559, 581, "animal", t), Prodigy.MapData.prototype.setup.call(this, e)
+};
+var Tree = function () {
 		function e(t) {
 			TileScreen.call(this, t, e.DATA)
 		}
@@ -24430,7 +24918,7 @@ var DormMenu = function () {
 				},
 				"normal-outfit-male-38": {
 					type: "spritesheet",
-					base: n,
+					base: o,
 					url: "38.png",
 					x: 30,
 					y: 34,
@@ -39946,7 +40434,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-16-1": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "1-1.png",
                                 x: 41,
                                 y: 45,
@@ -39955,7 +40443,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-16-10": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "1-10.png",
                                 x: 41,
                                 y: 44,
@@ -39964,7 +40452,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-16-11": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "1-11.png",
                                 x: 41,
                                 y: 44,
@@ -39973,7 +40461,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-16-12": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "1-12.png",
                                 x: 41,
                                 y: 44,
@@ -39982,7 +40470,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-16-13": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "1-13.png",
                                 x: 41,
                                 y: 44,
@@ -39991,7 +40479,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-16-14": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "1-14.png",
                                 x: 41,
                                 y: 44,
@@ -40000,7 +40488,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-16-15": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "1-15.png",
                                 x: 41,
                                 y: 44,
@@ -40009,7 +40497,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-16-16": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "1-16.png",
                                 x: 41,
                                 y: 44,
@@ -40018,7 +40506,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-16-2": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "1-2.png",
                                 x: 41,
                                 y: 44,
@@ -40027,7 +40515,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-16-3": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "1-3.png",
                                 x: 41,
                                 y: 44,
@@ -40036,7 +40524,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-16-4": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "1-4.png",
                                 x: 41,
                                 y: 44,
@@ -40045,7 +40533,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-16-5": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "1-5.png",
                                 x: 41,
                                 y: 44,
@@ -40054,7 +40542,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-16-6": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "1-6.png",
                                 x: 41,
                                 y: 44,
@@ -40063,7 +40551,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-16-7": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "1-7.png",
                                 x: 41,
                                 y: 44,
@@ -40072,7 +40560,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-16-8": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "1-8.png",
                                 x: 41,
                                 y: 44,
@@ -40081,7 +40569,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-16-9": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "1-9.png",
                                 x: 41,
                                 y: 44,
@@ -40090,7 +40578,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-17-1": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "2-1.png",
                                 x: 41,
                                 y: 32,
@@ -40099,7 +40587,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-17-10": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "2-10.png",
                                 x: 41,
                                 y: 32,
@@ -40108,7 +40596,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-17-11": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "2-11.png",
                                 x: 41,
                                 y: 32,
@@ -40117,7 +40605,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-17-12": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "2-12.png",
                                 x: 41,
                                 y: 32,
@@ -40126,7 +40614,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-17-13": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "2-13.png",
                                 x: 41,
                                 y: 32,
@@ -40135,7 +40623,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-17-14": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "2-14.png",
                                 x: 41,
                                 y: 32,
@@ -40144,7 +40632,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-17-15": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "2-15.png",
                                 x: 41,
                                 y: 32,
@@ -40153,7 +40641,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-17-16": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "2-16.png",
                                 x: 41,
                                 y: 32,
@@ -40162,7 +40650,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-17-2": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "2-2.png",
                                 x: 41,
                                 y: 32,
@@ -40171,7 +40659,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-17-3": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "2-3.png",
                                 x: 41,
                                 y: 32,
@@ -40180,7 +40668,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-17-4": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "2-4.png",
                                 x: 41,
                                 y: 32,
@@ -40189,7 +40677,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-17-5": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "2-5.png",
                                 x: 41,
                                 y: 32,
@@ -40198,7 +40686,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-17-6": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "2-6.png",
                                 x: 41,
                                 y: 32,
@@ -40207,7 +40695,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-17-7": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "2-7.png",
                                 x: 41,
                                 y: 32,
@@ -40216,7 +40704,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-17-8": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "2-8.png",
                                 x: 41,
                                 y: 32,
@@ -40225,7 +40713,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-17-9": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "2-9.png",
                                 x: 41,
                                 y: 32,
@@ -40234,7 +40722,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-18-1": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "3-1.png",
                                 x: 41,
                                 y: 36,
@@ -40243,7 +40731,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-18-10": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "3-10.png",
                                 x: 41,
                                 y: 36,
@@ -40252,7 +40740,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-18-11": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "3-11.png",
                                 x: 41,
                                 y: 36,
@@ -40261,7 +40749,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-18-12": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "3-12.png",
                                 x: 41,
                                 y: 36,
@@ -40270,7 +40758,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-18-13": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "3-13.png",
                                 x: 41,
                                 y: 36,
@@ -40279,7 +40767,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-18-14": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "3-14.png",
                                 x: 41,
                                 y: 36,
@@ -40288,7 +40776,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-18-15": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "3-15.png",
                                 x: 41,
                                 y: 36,
@@ -40297,7 +40785,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-18-16": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "3-16.png",
                                 x: 41,
                                 y: 36,
@@ -40306,7 +40794,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-18-2": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "3-2.png",
                                 x: 41,
                                 y: 36,
@@ -40315,7 +40803,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-18-3": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "3-3.png",
                                 x: 41,
                                 y: 36,
@@ -40324,7 +40812,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-18-4": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "3-4.png",
                                 x: 41,
                                 y: 36,
@@ -40333,7 +40821,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-18-5": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "3-5.png",
                                 x: 41,
                                 y: 36,
@@ -40342,7 +40830,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-18-6": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "3-6.png",
                                 x: 41,
                                 y: 36,
@@ -40351,7 +40839,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-18-7": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "3-7.png",
                                 x: 41,
                                 y: 36,
@@ -40360,7 +40848,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-18-8": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "3-8.png",
                                 x: 41,
                                 y: 36,
@@ -40369,7 +40857,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-18-9": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "3-9.png",
                                 x: 41,
                                 y: 36,
@@ -40378,7 +40866,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-19-1": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "4-1.png",
                                 x: 40,
                                 y: 44,
@@ -40387,7 +40875,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-19-10": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "4-10.png",
                                 x: 40,
                                 y: 44,
@@ -40396,7 +40884,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-19-11": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "4-11.png",
                                 x: 40,
                                 y: 44,
@@ -40405,7 +40893,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-19-12": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "4-12.png",
                                 x: 40,
                                 y: 44,
@@ -40414,7 +40902,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-19-13": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "4-13.png",
                                 x: 40,
                                 y: 44,
@@ -40423,7 +40911,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-19-14": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "4-14.png",
                                 x: 40,
                                 y: 44,
@@ -40432,7 +40920,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-19-15": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "4-15.png",
                                 x: 40,
                                 y: 44,
@@ -40441,7 +40929,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-19-16": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "4-16.png",
                                 x: 40,
                                 y: 44,
@@ -40450,7 +40938,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-19-2": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "4-2.png",
                                 x: 40,
                                 y: 44,
@@ -40459,7 +40947,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-19-3": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "4-3.png",
                                 x: 40,
                                 y: 44,
@@ -40468,7 +40956,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-19-4": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "4-4.png",
                                 x: 40,
                                 y: 44,
@@ -40477,7 +40965,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-19-5": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "4-5.png",
                                 x: 40,
                                 y: 44,
@@ -40486,7 +40974,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-19-6": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "4-6.png",
                                 x: 40,
                                 y: 44,
@@ -40495,7 +40983,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-19-7": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "4-7.png",
                                 x: 40,
                                 y: 44,
@@ -40504,7 +40992,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-19-8": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "4-8.png",
                                 x: 40,
                                 y: 44,
@@ -40513,7 +41001,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-19-9": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "4-9.png",
                                 x: 40,
                                 y: 44,
@@ -40522,7 +41010,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-20-1": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "5-1.png",
                                 x: 42,
                                 y: 44,
@@ -40531,7 +41019,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-20-10": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "5-10.png",
                                 x: 42,
                                 y: 44,
@@ -40540,7 +41028,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-20-11": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "5-11.png",
                                 x: 42,
                                 y: 44,
@@ -40549,7 +41037,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-20-12": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "5-12.png",
                                 x: 42,
                                 y: 44,
@@ -40558,7 +41046,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-20-13": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "5-13.png",
                                 x: 42,
                                 y: 44,
@@ -40567,7 +41055,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-20-14": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "5-14.png",
                                 x: 42,
                                 y: 44,
@@ -40576,7 +41064,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-20-15": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "5-15.png",
                                 x: 42,
                                 y: 44,
@@ -40585,7 +41073,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-20-16": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "5-16.png",
                                 x: 42,
                                 y: 44,
@@ -40594,7 +41082,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-20-2": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "5-2.png",
                                 x: 42,
                                 y: 44,
@@ -40603,7 +41091,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-20-3": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "5-3.png",
                                 x: 42,
                                 y: 44,
@@ -40612,7 +41100,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-20-4": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "5-4.png",
                                 x: 42,
                                 y: 44,
@@ -40621,7 +41109,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-20-5": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "5-5.png",
                                 x: 42,
                                 y: 44,
@@ -40630,7 +41118,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-20-6": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "5-6.png",
                                 x: 42,
                                 y: 44,
@@ -40639,7 +41127,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-20-7": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "5-7.png",
                                 x: 42,
                                 y: 44,
@@ -40648,7 +41136,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-20-8": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "5-8.png",
                                 x: 42,
                                 y: 44,
@@ -40657,7 +41145,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-20-9": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "5-9.png",
                                 x: 42,
                                 y: 44,
@@ -40666,7 +41154,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-21-1": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "6-1.png",
                                 x: 41,
                                 y: 44,
@@ -40675,7 +41163,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-21-10": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "6-10.png",
                                 x: 41,
                                 y: 44,
@@ -40684,7 +41172,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-21-11": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "6-11.png",
                                 x: 41,
                                 y: 44,
@@ -40693,7 +41181,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-21-12": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "6-12.png",
                                 x: 41,
                                 y: 44,
@@ -40702,7 +41190,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-21-13": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "6-13.png",
                                 x: 41,
                                 y: 44,
@@ -40711,7 +41199,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-21-14": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "6-14.png",
                                 x: 41,
                                 y: 44,
@@ -40720,7 +41208,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-21-15": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "6-15.png",
                                 x: 41,
                                 y: 44,
@@ -40729,7 +41217,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-21-16": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "6-16.png",
                                 x: 41,
                                 y: 44,
@@ -40738,7 +41226,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-21-2": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "6-2.png",
                                 x: 41,
                                 y: 44,
@@ -40747,7 +41235,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-21-3": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "6-3.png",
                                 x: 41,
                                 y: 44,
@@ -40756,7 +41244,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-21-4": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "6-4.png",
                                 x: 41,
                                 y: 44,
@@ -40765,7 +41253,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-21-5": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "6-5.png",
                                 x: 41,
                                 y: 44,
@@ -40774,7 +41262,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-21-6": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "6-6.png",
                                 x: 41,
                                 y: 44,
@@ -40783,7 +41271,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-21-7": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "6-7.png",
                                 x: 41,
                                 y: 44,
@@ -40792,7 +41280,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-21-8": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "6-8.png",
                                 x: 41,
                                 y: 44,
@@ -40801,7 +41289,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-21-9": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "6-9.png",
                                 x: 41,
                                 y: 44,
@@ -40810,7 +41298,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-22-1": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "7-1.png",
                                 x: 36,
                                 y: 44,
@@ -40819,7 +41307,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-22-10": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "7-10.png",
                                 x: 36,
                                 y: 44,
@@ -40828,7 +41316,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-22-11": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "7-11.png",
                                 x: 36,
                                 y: 44,
@@ -40837,7 +41325,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-22-12": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "7-12.png",
                                 x: 36,
                                 y: 44,
@@ -40846,7 +41334,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-22-13": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "7-13.png",
                                 x: 36,
                                 y: 44,
@@ -40855,7 +41343,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-22-14": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "7-14.png",
                                 x: 36,
                                 y: 44,
@@ -40864,7 +41352,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-22-15": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "7-15.png",
                                 x: 36,
                                 y: 44,
@@ -40873,7 +41361,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-22-16": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "7-16.png",
                                 x: 36,
                                 y: 44,
@@ -40882,7 +41370,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-22-2": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "7-2.png",
                                 x: 36,
                                 y: 44,
@@ -40891,7 +41379,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-22-3": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "7-3.png",
                                 x: 36,
                                 y: 44,
@@ -40900,7 +41388,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-22-4": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "7-4.png",
                                 x: 36,
                                 y: 44,
@@ -40909,7 +41397,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-22-5": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "7-5.png",
                                 x: 36,
                                 y: 44,
@@ -40918,7 +41406,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-22-6": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "7-6.png",
                                 x: 36,
                                 y: 44,
@@ -40927,7 +41415,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-22-7": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "7-7.png",
                                 x: 36,
                                 y: 44,
@@ -40936,7 +41424,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-22-8": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "7-8.png",
                                 x: 36,
                                 y: 44,
@@ -40945,7 +41433,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-22-9": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "7-9.png",
                                 x: 36,
                                 y: 44,
@@ -40954,7 +41442,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-23-1": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "8-1.png",
                                 x: 40,
                                 y: 44,
@@ -40963,7 +41451,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-23-10": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "8-10.png",
                                 x: 40,
                                 y: 44,
@@ -40972,7 +41460,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-23-11": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "8-11.png",
                                 x: 40,
                                 y: 44,
@@ -40981,7 +41469,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-23-12": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "8-12.png",
                                 x: 40,
                                 y: 44,
@@ -40990,7 +41478,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-23-13": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "8-13.png",
                                 x: 40,
                                 y: 44,
@@ -40999,7 +41487,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-23-14": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "8-14.png",
                                 x: 40,
                                 y: 44,
@@ -41008,7 +41496,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-23-15": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "8-15.png",
                                 x: 40,
                                 y: 44,
@@ -41017,7 +41505,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-23-16": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "8-16.png",
                                 x: 40,
                                 y: 44,
@@ -41026,7 +41514,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-23-2": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "8-2.png",
                                 x: 40,
                                 y: 44,
@@ -41035,7 +41523,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-23-3": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "8-3.png",
                                 x: 40,
                                 y: 44,
@@ -41044,7 +41532,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-23-4": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "8-4.png",
                                 x: 40,
                                 y: 44,
@@ -41053,7 +41541,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-23-5": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "8-5.png",
                                 x: 40,
                                 y: 44,
@@ -41062,7 +41550,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-23-6": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "8-6.png",
                                 x: 40,
                                 y: 44,
@@ -41071,7 +41559,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-23-7": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "8-7.png",
                                 x: 40,
                                 y: 44,
@@ -41080,7 +41568,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-23-8": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "8-8.png",
                                 x: 40,
                                 y: 44,
@@ -41089,7 +41577,7 @@ var DormMenu = function () {
                         },
                         "reduced-hair-female-23-9": {
                                 type: "spritesheet",
-                                base: i,
+                                base: s,
                                 url: "8-9.png",
                                 x: 40,
                                 y: 44,
@@ -50055,7 +50543,7 @@ var Names = function () {
 }();
 Names.createNameFromIndex = function (e, t, a, s) {
 	var i = "male" === e ? Names.BOY_NAMES[t] : Names.GIRL_NAMES[t];
-	return i += " " + Names.FIRST_NAMES[a], i += " " + Names.MIDDLE_NAMES[a], i += Names.LAST_NAMES[s].toLowerCase()
+	return i += " " + Names.MIDDLE_NAMES[a], i += Names.LAST_NAMES[s].toLowerCase()
 }, Names.generateName = function (e) {
 	var t = "";
 	t = "male" === e ? Names.BOY_NAMES[Math.floor(Math.random() * (Names.BOY_NAMES.length - 1))] : Names.GIRL_NAMES[Math.floor(Math.random() * (Names.GIRL_NAMES.length - 1))];
