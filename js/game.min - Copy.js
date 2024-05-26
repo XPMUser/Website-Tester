@@ -10324,7 +10324,7 @@ var Screen = function () {
 			t.alpha = .5, t.height = 40, t.width = 400, this.background.add(t), this.createAccountButton = new TextButton(this.game, this.background, 50, this.game.world.height - 70, {
 				size: TextButton.MED,
 				icon: "next",
-				text: "new account"
+				text: "new wizard"
 			}, this.createCharacter.bind(this)), new BitmapFont(this.game, this.background, this.game.world.centerX - 200, 690, "" + this.game.prodigy.version, {
 				width: 400,
 				align: "center"
