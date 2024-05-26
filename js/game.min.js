@@ -44552,6 +44552,178 @@ Items.getItemData = function (e, t) {
 		drop: 1,
 		flavorText: "A modified machine, the gizmotron stores magic inside and releases it at the user's will.",
 		d: 3
+        }, {
+                ID: 71,
+                name: "Pumpkin Wand",
+                member: 1,
+                rarity: 1,
+                drop: 1,
+                flavorText: "A plastic wand replica of the original Pumpkin Lord's weapon of choice...",
+                d: 2
+        }, {
+                ID: 72,
+                name: "Spooky Candle",
+                member: 1,
+                rarity: 1,
+                drop: 1,
+                flavorText: "There's nothing really wrong with this candle, but it does kind of give you the creeps.",
+                d: 2
+        }, {
+                ID: 73,
+                name: "Mjoln-Ice",
+                member: 0,
+                rarity: 2,
+                drop: 1,
+                flavorText: "A mystic hammer wielded by the great Frost Beard - some say the hammer grants its wielder the powers of a Norse god.",
+                d: 3
+        }, {
+                ID: 74,
+                name: "Pickaxe",
+                member: 0,
+                rarity: 0,
+                drop: 1,
+                flavorText: "A standard-issue pickaxe, popular among the miners who used to inhabit the Shiverchill mines.",
+                d: 2
+        }, {
+                ID: 75,
+                name: "Energy Staff",
+                member: 0,
+                rarity: 1,
+                drop: 1,
+                flavorText: "This staff likely used to be much more powerful...when it worked. Now, it just seems to be used to intimidate.",
+                d: 2
+        }, {
+                ID: 76,
+                name: "Glassfire",
+                member: 0,
+                rarity: 2,
+                drop: 1,
+                flavorText: "This strange orb seems to have a small elemental stuck inside, though it seems happy enough in there.",
+                d: 3
+        }, {
+                ID: 77,
+                name: "Draconyx",
+                member: 0,
+                rarity: 3,
+                drop: 1,
+                flavorText: "There's something about this staff that you don't like - as if strange whispers beckon you to hold it and never let go.",
+                d: 4
+        }, {
+                ID: 78,
+                name: "Power Orb",
+                member: 0,
+                rarity: 3,
+                drop: 1,
+                flavorText: "This weapon is wielded only by the greatest Bounty Hunters. Nearby monsters are drawn to its crystalline orb with a hypnotic pull.",
+                d: 4
+        }, {
+                ID: 79,
+                name: "Clawed Staff",
+                member: 0,
+                rarity: 2,
+                drop: 1,
+                flavorText: "The standard-issue weapon of many an explorer, it's claw is perfect for getting to those hard to reach places.",
+                d: 3
+        }, {
+                ID: 80,
+                name: "Swarm of Bees",
+                member: 0,
+                rarity: 2,
+                drop: 1,
+                flavorText: "",
+                d: 3
+        }, {
+                ID: 81,
+                name: "Castling Candle",
+                member: 0,
+                rarity: 2,
+                drop: 1,
+                flavorText: "This is the primary tool used by the Candle Knights. Like the helmet, the light on this candle can never be extinguished.",
+                d: 3
+        }, {
+                ID: 82,
+                name: "Big Hex Conductor",
+                member: 0,
+                rarity: 2,
+                drop: 1,
+                flavorText: "This was made by Big Hex himself!",
+                d: 4
+        }, {
+                ID: 83,
+                name: "Arctursus Power Rod",
+                member: 0,
+                rarity: 2,
+                drop: 1,
+                flavorText: "This rod was forged by the Warden that gave Arctursus his frost gauntlets.",
+                d: 4
+        }, {
+                ID: 84,
+                name: "Florafox Wand",
+                member: 0,
+                rarity: 2,
+                drop: 1,
+                flavorText: "This wand was grown in the same garden as Florafox. It is said to hold the same plant-healing magic that Florafox can create.",
+                d: 4
+        }, {
+                ID: 85,
+                name: "Diveodile Sea Staff",
+                member: 0,
+                rarity: 2,
+                drop: 1,
+                flavorText: "This staff was crafted by townsfolk that lived on the eastern shore of the island, in the hopes that it would help them protect their waters as Diveodile did.",
+                d: 4
+        }, {
+                ID: 86,
+                name: "Magmischief Fire Rod",
+                member: 0,
+                rarity: 2,
+                drop: 1,
+                flavorText: "The rod was fashioned out of a stalagmite made of magma in a deep, hidden cave in Bonfire Spire.",
+                d: 4
+        }, {
+                ID: 87,
+                name: "Crystal staff",
+                member: 0,
+                rarity: 1,
+                drop: 1,
+                flavorText: "A staff made of crystal!",
+                d: 3,
+                memberAd: 0
+        }, {
+                ID: 88,
+                name: "Fairy Sword",
+                member: 1,
+                rarity: 2,
+                drop: 1,
+                flavorText: "This magical blade was created by fairies for other creatures who defend their forest.",
+                d: 3
+        }, {
+                ID: 89,
+                name: "Veggie Rod",
+                member: 1,
+                rarity: 2,
+                drop: 1,
+                flavorText: "A wacky old wizard thought that vegetables had some hidden magical power, and so they created this staff. Maybe they were right?",
+                d: 3,
+                memberAd: 0
+        }, {
+                ID: 90,
+                name: "Umbrella",
+                member: 0,
+                rarity: 1,
+                drop: 1,
+                flavorText: "Whack enemies and protect yourself from rain!",
+                d: 3,
+                memberAd: 0
+        }, {
+                ID: 91,
+                name: "Wingblade",
+                member: 1,
+                rarity: 2,
+                drop: 1,
+                flavorText: "Legend says these swords belonged to the Sky Knights who fought on the backs of Pegasi a long time ago.",
+                d: 3,
+                memberAd: 0
 	}],
 	boots: [{
 		name: "Magi Runners",
