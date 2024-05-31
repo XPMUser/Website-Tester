@@ -2,14 +2,14 @@
 <html>
 
 <head>
-    <title>Prodidows 1.50.0 Edition</title>
-        <meta charset="UTF-8" />
-<meta content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <meta name="description" content="The legendary math game Prodigy is now legendary again, and no longer a math game!"/>
+    <title>Prodidows Alpha 1.22.4 Edition</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="The legendary math game Prodidows is now legendary again!"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <link rel="icon" type="image/png" href="https://xpmuser.github.io/prodidows/images/favicon.png">
     <link rel="stylesheet" href="https://web.archive.org/web/20150910093225im_/https://www.prodigygame.com//Includes/Styles/Fonts/Font-Awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://web.archive.org/web/20150910093225im_/https://www.prodigygame.com/assets/styles/main.css?v=1-17-0">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,300,400,500,600,700' rel='stylesheet' type='text/css'>
     <style>
@@ -18,7 +18,7 @@
             overflow: hidden;
         }
         
-        body {    
+        body {
             margin: 0;
             background-color: #627CDE;
             height: 100%;
@@ -149,237 +149,6 @@
             background-color: #FCF8E3;
             color: #8A6D3B;
         }
-
-            .ios-install-prompt {
-                background-color:#F2F2F2;
-                width:100%;
-                height:70px;
-                position:absolute;
-                z-index:10;
-                padding:5px 10px;
-            }
-
-            .ios-install-prompt__wrapper {
-                margin: 0 auto;
-                height:100%;
-                width:50%;
-            }
-
-            .ios-install-prompt__close {
-                display:block;
-                position:relative;
-                float:left;
-                height:100%;
-                top:35%;
-                color:#848484;
-                padding-right:20px;
-                cursor:pointer;
-            }
-
-            .ios-install-prompt__icon {
-                display:block;
-                float:left;
-                height:63px;
-                margin-right:5px;
-            }
-
-            .ios-install-prompt__data {
-                display:block;
-                float:left;
-                line-height:1.3;
-                margin-top:3px;
-            }
-
-            .ios-install-prompt__title {
-                color:#444;
-                display:block;
-                font-size:12px;
-                font-weight:bold;
-            }
-
-            .ios-install-prompt__label {
-                color:#5e5e5e;
-                display:block;
-                font-size:10px;
-            }
-
-            .ios-install-prompt__star {
-                color:#FF9300;
-            }
-
-            .ios-install-prompt__link {
-                display:block;
-                position:relative;
-                float:right;
-                height:100%;
-                top:30%;
-                color:#1481FE;
-                padding-right:5px;
-                cursor:pointer;
-            }
-
-            .login-progress-outline {
-                position:absolute;
-                background-color:#000000;
-                border-radius:4px;
-            }
-
-            .login-progress-container {
-                position:absolute;
-                background-color:#FFFFFF;
-                border-radius:4px;
-            }
-
-            .login-progress-bar {
-                position:absolute;
-                background-color:#1CE59D;
-                background-image: linear-gradient(#6DFE7A, #0AC3A2);
-                border-radius:4px;
-                -webkit-transition: width 1.25s cubic-bezier(.23,1,.32,1);
-                -moz-transition: width 1.25s cubic-bezier(.23,1,.32,1);
-                transition: width 1.25s cubic-bezier(.23,1,.32,1);
-            }
-
-            %game-menu {
-                z-index: 3;
-                position: fixed;
-                left: 10%;
-                width: 80%;
-                top: 10%;
-                height: 80%;
-                padding: 5% 5% 0 5%;
-                background-color:white;
-                border-radius:15px;
-            }
-
-            .game-menu--hex {
-                @extend %game-menu;
-
-                background: no-repeat right url("../images/game/hex/splash.jpg");
-                background-size: 100%;
-            }
-
-            .game-menu__close {
-                position:absolute;
-                top:0;
-                right:0;
-                top: -25px;
-                right: -25px;
-                height: 50px;
-                width: 50px;
-            }
-
-            .unlock-menu__form-container {
-                width:100%;
-
-                @include media($medium) {
-                    width: 55%;
-                }
-            }
-
-            .unlock-menu__title {
-                margin: 5px 0px 15px;
-                font-weight: 900;
-                color: #dbbe95;
-                // text-shadow: #b39b79;
-            }
-
-            %game-menu__container {
-                background-color:rgba(255,255,255,0.9);
-                padding: 10px;
-                border-radius:15px;
-            }
-
-            .unlock-menu__wrapper {
-                height:100%;
-                overflow-y:auto;
-            }
-
-            .game-menu__container {
-                @extend %game-menu__container;
-            }
-
-            .game-menu__container--unlock {
-                @extend %game-menu__container;
-                @extend %game-border;
-
-                margin:10px 10px 25px 10px;
-            }
-
-            %game-border {
-                box-shadow: 0 0 0 1px #595959, 0 0 0 5px #f6d6ab, 0 0 0 8px #d2aa71;
-            }
-
-            .game-border {
-                @extend %game-border;
-            }
-
-            #game-loading-container {
-                position:absolute;
-                width:100%;
-                height:100%;
-                z-index:0;
-                background-color:#627CDE;
-            }
-
-            .game-loading {
-                width:80%;
-                height:100%;
-            }
-
-            .game-loading__ed {
-                display: block;
-                height: 150px;
-                margin-bottom: 22px;
-            }
-
-            .game-loading__font {
-                color: #fff;
-                text-align: center;
-                margin-top: 22 !important;
-            }
-
-            .ed-progress-outline {
-                height: 24px;
-                width: 100%;
-                background-color:#000000;
-                border-radius:4px;
-                display: flex;
-                align-items: center;
-                padding: 0px 1px;
-            }
-
-            .ed-progress-container {
-                height: 22px;
-                width: 100%;
-                background-color:#FFFFFF;
-                border-radius:4px;
-            }
-
-            .ed-progress-bar {
-                height: 22px;
-                width: 0%;
-                background-color:#1CE59D;
-                background-image: linear-gradient(#6DFE7A, #0AC3A2);
-                border-radius:4px;
-                -webkit-transition: width 1.25s cubic-bezier(.23,1,.32,1);
-                -moz-transition: width 1.25s cubic-bezier(.23,1,.32,1);
-                transition: width 1.25s cubic-bezier(.23,1,.32,1);
-            }
-
-            <!-- TODO: inherit from body (from main.css)
-                -webkit-font-smoothing: antialiased;
-                background-color: #fff;
-                color: #555;
-                font-family: "Open Sans",sans-serif;
-                font-size: 1em;
-                line-height: 1.5;
-            -->
-
-            .game-announcement {
-                position:absolute;
-                z-index:10;
-            }
     </style>
 </head>
 <script id="advanced-modal-base-template" type="text/x-handlebars-template">
@@ -543,29 +312,21 @@
     </div>
 
     <div id="membership-flow"></div>
-    <script src="https://prodigygame.com/assets/scripts/app/build/public.min.js"></script>
-    <script src="https://xpmuser.github.io/oldprodigy/1-50-0/js/lodash.min.js"></script>
-    <script src="https://xpmuser.github.io/prodigy-classic/game-helpers.min.js"></script>
-    <script src="https://xpmuser.github.io/prodigy-classic/phaser.min.js"></script>
     <script src='https://xpmuser.github.io/prodigy-classic/socket.io-1.3.5.js'></script>
-    <script src="https://xpmuser.github.io/prodigy-classic/controls.min.js"></script>
-    <script src="https://xpmuser.github.io/prodigy-classic/question.min.js"></script>
+    <script src="https://xpmuser.github.io/prodigy-classic/public.min.js"></script>
+    <script src="https://xpmuser.github.io/prodigy-classic/game-helpers.min.js"></script>
     <script src="https://xpmuser.github.io/prodigy-classic/game.js"></script>
-    <script src='https://s3.amazonaws.com/prodigy-assets/education/skills/prod/f08de16886/curricula.json'></script>
-    <script src="https://code.prodigygame.com/lib/particle-storm.min.js"></script>
-    <script src="https://s3.amazonaws.com/prodigy-assets/education/skills/prod/f08de16886/skillTrees.json"></script>
-    <script src="https://xpmuser.github.io/oldprodigy/1-50-0/js/phaser-spine.min.js"></script>
-    <script src="https://xpmuser.github.io/oldprodigy/1-50-0/js/easystar-0.4.4.min.js"></script>
-    <script src="https://xpmuser.github.io/prodigy-classic/easystar-0.2.0.min.js"></script>
-    <script src="https://xpmuser.github.io/oldprodigy/1-50-0/js/mod-handler.js"></script>
+    <script src="https://xpmuser.github.io/prodigy-classic/controls.min.js"></script>
+    <script src="https://xpmuser.github.io/prodigy-classic/controls.css"></script>
+    <script src="https://xpmuser.github.io/prodigy-classic/question.min.js"></script>
+    <script src="https://xpmuser.github.io/oldprodigy/pde1224/js/phaser.min.js"></script>
     <script src="./js/game.min.js"></script>
-    <script src="https://prodigy.blob.core.windows.net/edu-controls-2-2-12/controls.css"></script>
-    <script src="https://www.googletagmanager.com/gtm.js?id=GTM-T7TSN5K"></script>
-    <script src="https://accounts.google.com/gsi/client?onload=onGooglePlatformLoad" async defer></script>
+    <script src="./js/mod-handler.js"></script>
+    <script src="https://xpmuser.github.io/oldprodigy/pde1224/js/easystar-0.2.0.min.js"></script>
     <script type="text/javascript">
         var prodigyWeb = {};
         prodigyWeb.country = undefined;
-        prodigyWeb.gameVersion = '1-50-0';
+        prodigyWeb.gameVersion = '1-22-4';
 
         window.onload = function() {
             document.addEventListener("contextmenu", function(e) {
@@ -627,58 +388,9 @@
                 classCodeModal.callback = callback;
                 classCodeModal.render();
             }
-        }
+        };
     </script>
+
 </body>
-    <div id="game-loading-container-div" class="game-loading container">
-        <div id="loading-div">
-            <img class="game-loading__ed" src="https://xpmuser.github.io/favicon.png" />
-            <!-- TODO: localize -->
-            <p class="game-loading__font">Starting Old Prodigy</p>
-            <div id="ed-progress-outline" class="ed-progress-outline">
-                <div id="ed-progress-container" class="ed-progress-container">
-                    <div id="ed-progress-bar" class="ed-progress-bar"></div>
-                </div>
-            </div>
-        </div>
-        <div id="error-div" style="display: none;">
-            <img class="game-loading__ed" src="https://xpmuser.github.io/favicon.png">
-            <h4 id="error-div-title" class="text-white text-center text-mt-md"></h4>
-            <p id="error-div-description" class="text-white text-center text-mt-md"></p>
-        </div>
-    </div>
-</div>
-    </div>
-    <div id="game-wrapper">
-        <div id='game-container'></div>
-        <div id='external-content'></div>
-        <div id='external-ui'></div>
-        <div id='notices'></div>
-        <div id='popups'>
-            <div id='dynamic-popups'></div>
-        </div>
-    </div>
-    <div id="membership-flow" class="game-page-overlay"></div>
-    <div id="game-page-overlay" class="game-page-overlay"></div>
 
-    </body>
-<div id="g_id_onload"
-     data-client_id="220442635630-9tjlg48pualfqmef01i1bsq0453ecucv.apps.googleusercontent.com"
-     data-context="signin"
-     data-ux_mode="popup"
-     ##data-login_uri=""
-     data-nonce=""
-     data-auto_select="true"
-     data-itp_support="true">
-</div>
-
-<div class="g_id_signin"
-     data-type="standard"
-     data-shape="rectangular"
-     data-theme="filled_blue"
-     data-text="signin_with"
-     data-size="large"
-     data-logo_alignment="left">
-</div>
-    </body>
 </html>
