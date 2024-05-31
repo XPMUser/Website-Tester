@@ -55,40 +55,49 @@ class ModHandler {
 	}
 	
 	initWalkSpeedMod() {
-		let walkSpeed = 1;
-		
-		let openOther = SystemMenu.prototype.openOther;
-		SystemMenu.prototype.openOther = function() {
-			openOther.call(this);
-			new BitmapFont(this.game, this.content, 0, 280, "walk speed", {
-				width: 400,
-				align: "center"
-			}), this.walkSpeedBar = new ProgressBar(this.game, this.content, 50, 310, 300, 80, 1, walkSpeed/20), this.walkSpeedBar.setDraggable(), this.walkSpeedBar.setBarAnimationSpeed(ProgressBar.SPEED_VERYSLOW)
-		};
-		
-		let menuUpdate = SystemMenu.prototype.menuUpdate;
-		SystemMenu.prototype.menuUpdate = function() {
-			menuUpdate.call(this);
-			if (Util.isDefined(this.walkSpeedBar) && walkSpeed !== this.walkSpeedBar.getPercent()*20)
-				walkSpeed = this.walkSpeedBar.getPercent()*20;
-		};
-		
-		let clearContents = SystemMenu.prototype.clearContents;
-		SystemMenu.prototype.clearContents = function() {
-			clearContents.call(this);
-			if (Util.isDefined(this.walkSpeedBar)) {
-				this.walkSpeedBar.destroy();
-				this.walkSpeedBar = null;
-			}
-		}
-		
-		WalkableScreen.prototype.listener = function(e, t) {
-			e = e || 0, t = t || 0;
-			var a = this.path.findBasicPath(this.user.x + e, this.user.y + t, this.game.input.x + e, this.game.input.y + t);
-			a[0].x -= e, a[0].y -= t;
-			var i = this.path.getCallback(Math.floor(a[0].x / this.tileSize), Math.floor(a[0].y / this.tileSize));
-			this.user.setPath(a, i, walkSpeed)
-		}
+		let walkSpeed = 1,
+        openOther = SystemMenu.prototype.openOther;
+        SystemMenu.prototype.openOther = function() {
+            openOther.call(this);
+            new BitmapFont(this.game, this.content, 0, 300, "walk speed", {
+                width: 400,
+                align: "center"
+            }), this.walkSpeedBar = new ProgressBar(this.game, this.content, 50, 330, 300, 80, 1, walkSpeed/20), this.walkSpeedBar.setDraggable(), this.walkSpeedBar.setBarAnimationSpeed(ProgressBar.SPEED_VERYSLOW)
+        };
+        
+        let menuUpdate = SystemMenu.prototype.menuUpdate;
+        SystemMenu.prototype.menuUpdate = function() {
+            menuUpdate.call(this);
+            if (Util.isDefined(this.walkSpeedBar) && walkSpeed !== this.walkSpeedBar.getPercent()*20)
+                walkSpeed = this.walkSpeedBar.getPercent()*20;
+        };
+        
+        let clearContents = SystemMenu.prototype.clearContents;
+        SystemMenu.prototype.clearContents = function() {
+            clearContents.call(this);
+            if (Util.isDefined(this.walkSpeedBar)) {
+                this.walkSpeedBar.destroy();
+                this.walkSpeedBar = null;
+            }
+        }
+        
+        WalkableScreen.prototype.listener = function() {
+            var e = function(e) {
+                if (Util.isDefined(e)) {
+                    var t = this.path.getCallback(Math.floor(e[0].x / this.tileSize), Math.floor(e[0].y / this.tileSize));
+                    this.user.setPath(e, t, walkSpeed);
+                    var a = this.game.prodigy.player;
+                    this.user.evtProc || this.game.prodigy.network.emitMessage({
+                        action: "move",
+                        data: {
+                            userID: a.userID,
+                            path: e
+                        }
+            })
+                }
+            };
+            this.path.findPath(this.user.x, this.user.y, this.game.input.x, this.game.input.y, e.bind(this))
+        }
 	}
 	
 	initFastGameSpeedMod() {
