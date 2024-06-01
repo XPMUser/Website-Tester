@@ -1573,17 +1573,17 @@ Prodigy.extends = function(e, t, a) {
 		},
 		"bgm-victory": {
 			type: "bgm",
-			base: "https://xpmuser.github.io/oldprodigy/1-11-0/assets/audio/voice/",
+			base: u,
 			url: "bgm-victory.mp3"
 		},
 		"bgm-battle": {
 			type: "bgm",
-			base: "https://xpmuser.github.io/oldprodigy/1-11-0/assets/audio/voice/",
+			base: u,
 			url: "bgm-battle.mp3"
 		},
 		"bgm-intro": {
 			type: "bgm",
-			base: "https://xpmuser.github.io/oldprodigy/1-11-0/assets/audio/voice/",
+			base: u,
 			url: "bgm-intro.mp3"
 		},
 		"bgm-space": {
@@ -5464,7 +5464,7 @@ Prodigy.extends = function(e, t, a) {
 		},
 		"reduced-outfit-male-38": {
 			type: "spritesheet",
-			base: e,
+			base: "https://xpmuser.github.io/prodidows/1-10-0/images/outfits/male/reduced/",
 			url: "38.png",
 			x: 17,
 			y: 0,
@@ -8827,6 +8827,96 @@ Prodigy.extends = function(e, t, a) {
 			y: 61,
 			w: 104,
 			h: 162
+                        },
+                        "normal-weapon-80": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "80.png",
+                                x: 125,
+                                y: 60,
+                                w: 125,
+                                h: 115
+                        },
+                        "normal-weapon-81": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "81.png",
+                                x: 60,
+                                y: -10,
+                                w: 2048,
+                                h: 256
+                        },
+                        "normal-weapon-82": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "82.png",
+                                x: 122,
+                                y: 78,
+                                w: 113,
+                                h: 147
+                        },
+                        "normal-weapon-83": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "83.png",
+                                x: 138,
+                                y: 131,
+                                w: 68,
+                                h: 68
+                        },
+                        "normal-weapon-84": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "84.png",
+                                x: 134,
+                                y: 127,
+                                w: 77,
+                                h: 77
+                        },
+                        "normal-weapon-85": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "85.png",
+                                x: 132,
+                                y: 131,
+                                w: 75,
+                                h: 75
+                        },
+                        "normal-weapon-86": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "86.png",
+                                x: 132,
+                                y: 131,
+                                w: 74,
+                                h: 73
+                        },
+                        "normal-weapon-87": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "87.png",
+                                x: 130,
+                                y: 76,
+                                w: 95,
+                                h: 147
+                        },
+                        "normal-weapon-88": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "88.png",
+                                x: 145,
+                                y: 127,
+                                w: 65,
+                                h: 65
+                        },
+                        "normal-weapon-89": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "89.png",
+                                x: 142,
+                                y: 64,
+                                w: 95,
+                                h: 137
 		},
 		"normal-weapon-9": {
 			type: "spritesheet",
@@ -8836,6 +8926,24 @@ Prodigy.extends = function(e, t, a) {
 			y: 136,
 			w: 59,
 			h: 59
+                        },
+                        "normal-weapon-90": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "90.png",
+                                x: 148,
+                                y: 130,
+                                w: 58,
+                                h: 64
+                        },
+                        "normal-weapon-91": {
+                                type: "spritesheet",
+                                base: d,
+                                url: "91.png",
+                                x: 145,
+                                y: 128,
+                                w: 61,
+                                h: 61
                         },
                         "normal-hair-male-24-1": {
                                 type: "spritesheet",
@@ -13591,7 +13699,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-9-1": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "1-1.png",
                                 x: 25,
                                 y: 46,
@@ -13600,7 +13708,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-9-10": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "1-10.png",
                                 x: 25,
                                 y: 46,
@@ -13609,7 +13717,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-9-11": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "1-11.png",
                                 x: 25,
                                 y: 46,
@@ -13618,7 +13726,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-9-12": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "1-12.png",
                                 x: 25,
                                 y: 46,
@@ -13627,7 +13735,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-9-13": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "1-13.png",
                                 x: 25,
                                 y: 46,
@@ -13636,7 +13744,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-9-14": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "1-14.png",
                                 x: 25,
                                 y: 46,
@@ -13645,7 +13753,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-9-15": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "1-15.png",
                                 x: 25,
                                 y: 46,
@@ -13654,7 +13762,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-9-16": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "1-16.png",
                                 x: 25,
                                 y: 46,
@@ -13663,7 +13771,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-9-2": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "1-2.png",
                                 x: 25,
                                 y: 46,
@@ -13672,7 +13780,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-9-3": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "1-3.png",
                                 x: 25,
                                 y: 46,
@@ -13681,7 +13789,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-9-4": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "1-4.png",
                                 x: 25,
                                 y: 46,
@@ -13690,7 +13798,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-9-5": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "1-5.png",
                                 x: 25,
                                 y: 46,
@@ -13699,7 +13807,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-9-6": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "1-6.png",
                                 x: 25,
                                 y: 46,
@@ -13708,7 +13816,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-9-7": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "1-7.png",
                                 x: 25,
                                 y: 46,
@@ -13717,7 +13825,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-9-8": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "1-8.png",
                                 x: 25,
                                 y: 46,
@@ -13726,7 +13834,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-9-9": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "1-9.png",
                                 x: 25,
                                 y: 46,
@@ -13735,7 +13843,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-10-1": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "2-1.png",
                                 x: 25,
                                 y: 46,
@@ -13744,7 +13852,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-10-10": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "2-10.png",
                                 x: 25,
                                 y: 46,
@@ -13753,7 +13861,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-10-11": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "2-11.png",
                                 x: 25,
                                 y: 46,
@@ -13762,7 +13870,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-10-12": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "2-12.png",
                                 x: 25,
                                 y: 46,
@@ -13771,7 +13879,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-10-13": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "2-13.png",
                                 x: 25,
                                 y: 46,
@@ -13780,7 +13888,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-10-14": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "2-14.png",
                                 x: 25,
                                 y: 46,
@@ -13789,7 +13897,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-10-15": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "2-15.png",
                                 x: 25,
                                 y: 46,
@@ -13798,7 +13906,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-10-16": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "2-16.png",
                                 x: 25,
                                 y: 46,
@@ -13807,7 +13915,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-10-2": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "2-2.png",
                                 x: 25,
                                 y: 46,
@@ -13816,7 +13924,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-10-3": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "2-3.png",
                                 x: 25,
                                 y: 46,
@@ -13825,7 +13933,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-10-4": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "2-4.png",
                                 x: 25,
                                 y: 46,
@@ -13834,7 +13942,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-10-5": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "2-5.png",
                                 x: 25,
                                 y: 46,
@@ -13843,7 +13951,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-10-6": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "2-6.png",
                                 x: 25,
                                 y: 46,
@@ -13852,7 +13960,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-10-7": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "2-7.png",
                                 x: 25,
                                 y: 46,
@@ -13861,7 +13969,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-10-8": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "2-8.png",
                                 x: 25,
                                 y: 46,
@@ -13870,7 +13978,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-10-9": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "2-9.png",
                                 x: 25,
                                 y: 46,
@@ -13879,7 +13987,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-11-1": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "3-1.png",
                                 x: 25,
                                 y: 46,
@@ -13888,7 +13996,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-11-10": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "3-10.png",
                                 x: 25,
                                 y: 46,
@@ -13897,7 +14005,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-11-11": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "3-11.png",
                                 x: 25,
                                 y: 46,
@@ -13906,7 +14014,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-11-12": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "3-12.png",
                                 x: 25,
                                 y: 46,
@@ -13915,7 +14023,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-11-13": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "3-13.png",
                                 x: 25,
                                 y: 46,
@@ -13924,7 +14032,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-11-14": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "3-14.png",
                                 x: 25,
                                 y: 46,
@@ -13933,7 +14041,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-11-15": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "3-15.png",
                                 x: 25,
                                 y: 46,
@@ -13942,7 +14050,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-11-16": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "3-16.png",
                                 x: 25,
                                 y: 46,
@@ -13951,7 +14059,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-11-2": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "3-2.png",
                                 x: 25,
                                 y: 46,
@@ -13960,7 +14068,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-11-3": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "3-3.png",
                                 x: 25,
                                 y: 46,
@@ -13969,7 +14077,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-11-4": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "3-4.png",
                                 x: 25,
                                 y: 46,
@@ -13978,7 +14086,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-11-5": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "3-5.png",
                                 x: 25,
                                 y: 46,
@@ -13987,7 +14095,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-11-6": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "3-6.png",
                                 x: 25,
                                 y: 46,
@@ -13996,7 +14104,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-11-7": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "3-7.png",
                                 x: 25,
                                 y: 46,
@@ -14005,7 +14113,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-11-8": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "3-8.png",
                                 x: 25,
                                 y: 46,
@@ -14014,7 +14122,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-11-9": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "3-9.png",
                                 x: 25,
                                 y: 46,
@@ -14023,7 +14131,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-12-1": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "4-1.png",
                                 x: 25,
                                 y: 46,
@@ -14032,7 +14140,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-12-10": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "4-10.png",
                                 x: 25,
                                 y: 46,
@@ -14041,7 +14149,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-12-11": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "4-11.png",
                                 x: 25,
                                 y: 46,
@@ -14050,7 +14158,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-12-12": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "4-12.png",
                                 x: 25,
                                 y: 46,
@@ -14059,7 +14167,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-12-13": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "4-13.png",
                                 x: 25,
                                 y: 46,
@@ -14068,7 +14176,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-12-14": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "4-14.png",
                                 x: 25,
                                 y: 46,
@@ -14077,7 +14185,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-12-15": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "4-15.png",
                                 x: 25,
                                 y: 46,
@@ -14086,7 +14194,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-12-16": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "4-16.png",
                                 x: 25,
                                 y: 46,
@@ -14095,7 +14203,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-12-2": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "4-2.png",
                                 x: 25,
                                 y: 46,
@@ -14104,7 +14212,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-12-3": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "4-3.png",
                                 x: 25,
                                 y: 46,
@@ -14113,7 +14221,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-12-4": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "4-4.png",
                                 x: 25,
                                 y: 46,
@@ -14122,7 +14230,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-12-5": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "4-5.png",
                                 x: 25,
                                 y: 46,
@@ -14131,7 +14239,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-12-6": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "4-6.png",
                                 x: 25,
                                 y: 46,
@@ -14140,7 +14248,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-12-7": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "4-7.png",
                                 x: 25,
                                 y: 46,
@@ -14149,7 +14257,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-12-8": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "4-8.png",
                                 x: 25,
                                 y: 46,
@@ -14158,7 +14266,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-12-9": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "4-9.png",
                                 x: 25,
                                 y: 46,
@@ -14167,7 +14275,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-13-1": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "5-1.png",
                                 x: 25,
                                 y: 46,
@@ -14176,7 +14284,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-13-10": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "5-10.png",
                                 x: 25,
                                 y: 46,
@@ -14185,7 +14293,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-13-11": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "5-11.png",
                                 x: 25,
                                 y: 46,
@@ -14194,7 +14302,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-13-12": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "5-12.png",
                                 x: 25,
                                 y: 46,
@@ -14203,7 +14311,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-13-13": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "5-13.png",
                                 x: 25,
                                 y: 46,
@@ -14212,7 +14320,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-13-14": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "5-14.png",
                                 x: 25,
                                 y: 46,
@@ -14221,7 +14329,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-13-15": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "5-15.png",
                                 x: 25,
                                 y: 46,
@@ -14230,7 +14338,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-13-16": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "5-16.png",
                                 x: 25,
                                 y: 46,
@@ -14239,7 +14347,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-13-2": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "5-2.png",
                                 x: 25,
                                 y: 46,
@@ -14248,7 +14356,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-13-3": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "5-3.png",
                                 x: 25,
                                 y: 46,
@@ -14257,7 +14365,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-13-4": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "5-4.png",
                                 x: 25,
                                 y: 46,
@@ -14266,7 +14374,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-13-5": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "5-5.png",
                                 x: 25,
                                 y: 46,
@@ -14275,7 +14383,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-13-6": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "5-6.png",
                                 x: 25,
                                 y: 46,
@@ -14284,7 +14392,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-13-7": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "5-7.png",
                                 x: 25,
                                 y: 46,
@@ -14293,7 +14401,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-13-8": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "5-8.png",
                                 x: 25,
                                 y: 46,
@@ -14302,7 +14410,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-13-9": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "5-9.png",
                                 x: 25,
                                 y: 46,
@@ -14311,7 +14419,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-14-1": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "6-1.png",
                                 x: 22,
                                 y: 46,
@@ -14320,7 +14428,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-14-10": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "6-10.png",
                                 x: 22,
                                 y: 46,
@@ -14329,7 +14437,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-14-11": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "6-11.png",
                                 x: 22,
                                 y: 46,
@@ -14338,7 +14446,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-14-12": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "6-12.png",
                                 x: 22,
                                 y: 46,
@@ -14347,7 +14455,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-14-13": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "6-13.png",
                                 x: 22,
                                 y: 46,
@@ -14356,7 +14464,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-14-14": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "6-14.png",
                                 x: 22,
                                 y: 46,
@@ -14365,7 +14473,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-14-15": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "6-15.png",
                                 x: 22,
                                 y: 46,
@@ -14374,7 +14482,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-14-16": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "6-16.png",
                                 x: 22,
                                 y: 46,
@@ -14383,7 +14491,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-14-2": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "6-2.png",
                                 x: 22,
                                 y: 46,
@@ -14392,7 +14500,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-14-3": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "6-3.png",
                                 x: 22,
                                 y: 46,
@@ -14401,7 +14509,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-14-4": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "6-4.png",
                                 x: 22,
                                 y: 46,
@@ -14410,7 +14518,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-14-5": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "6-5.png",
                                 x: 22,
                                 y: 46,
@@ -14419,7 +14527,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-14-6": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "6-6.png",
                                 x: 22,
                                 y: 46,
@@ -14428,7 +14536,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-14-7": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "6-7.png",
                                 x: 22,
                                 y: 46,
@@ -14437,7 +14545,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-14-8": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "6-8.png",
                                 x: 22,
                                 y: 46,
@@ -14446,7 +14554,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-14-9": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "6-9.png",
                                 x: 22,
                                 y: 46,
@@ -14455,7 +14563,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-15-1": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "7-1.png",
                                 x: 36,
                                 y: 44,
@@ -14464,7 +14572,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-15-10": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "7-10.png",
                                 x: 36,
                                 y: 44,
@@ -14473,7 +14581,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-15-11": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "7-11.png",
                                 x: 36,
                                 y: 44,
@@ -14482,7 +14590,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-15-12": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "7-12.png",
                                 x: 36,
                                 y: 44,
@@ -14491,7 +14599,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-15-13": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "7-13.png",
                                 x: 36,
                                 y: 44,
@@ -14500,7 +14608,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-15-14": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "7-14.png",
                                 x: 36,
                                 y: 44,
@@ -14509,7 +14617,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-15-15": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "7-15.png",
                                 x: 36,
                                 y: 44,
@@ -14518,7 +14626,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-15-16": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "7-16.png",
                                 x: 36,
                                 y: 44,
@@ -14527,7 +14635,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-15-2": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "7-2.png",
                                 x: 36,
                                 y: 44,
@@ -14536,7 +14644,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-15-3": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "7-3.png",
                                 x: 36,
                                 y: 44,
@@ -14545,7 +14653,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-15-4": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "7-4.png",
                                 x: 36,
                                 y: 44,
@@ -14554,7 +14662,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-15-5": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "7-5.png",
                                 x: 36,
                                 y: 44,
@@ -14563,7 +14671,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-15-6": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "7-6.png",
                                 x: 36,
                                 y: 44,
@@ -14572,7 +14680,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-15-7": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "7-7.png",
                                 x: 36,
                                 y: 44,
@@ -14581,7 +14689,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-15-8": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "7-8.png",
                                 x: 36,
                                 y: 44,
@@ -14590,7 +14698,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-15-9": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "7-9.png",
                                 x: 36,
                                 y: 44,
@@ -14599,7 +14707,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-16-1": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "8-1.png",
                                 x: 34,
                                 y: 44,
@@ -14608,7 +14716,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-16-10": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "8-10.png",
                                 x: 34,
                                 y: 44,
@@ -14617,7 +14725,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-16-11": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "8-11.png",
                                 x: 34,
                                 y: 44,
@@ -14626,7 +14734,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-16-12": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "8-12.png",
                                 x: 34,
                                 y: 44,
@@ -14635,7 +14743,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-16-13": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "8-13.png",
                                 x: 34,
                                 y: 44,
@@ -14644,7 +14752,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-16-14": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "8-14.png",
                                 x: 34,
                                 y: 44,
@@ -14653,7 +14761,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-16-15": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "8-15.png",
                                 x: 34,
                                 y: 44,
@@ -14662,7 +14770,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-16-16": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "8-16.png",
                                 x: 34,
                                 y: 44,
@@ -14671,7 +14779,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-16-2": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "8-2.png",
                                 x: 34,
                                 y: 44,
@@ -14680,7 +14788,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-16-3": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "8-3.png",
                                 x: 34,
                                 y: 44,
@@ -14689,7 +14797,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-16-4": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "8-4.png",
                                 x: 34,
                                 y: 44,
@@ -14698,7 +14806,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-16-5": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "8-5.png",
                                 x: 34,
                                 y: 44,
@@ -14707,7 +14815,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-16-6": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "8-6.png",
                                 x: 34,
                                 y: 44,
@@ -14716,7 +14824,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-16-7": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "8-7.png",
                                 x: 34,
                                 y: 44,
@@ -14725,7 +14833,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-16-8": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "8-8.png",
                                 x: 34,
                                 y: 44,
@@ -14734,7 +14842,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-16-9": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "8-9.png",
                                 x: 34,
                                 y: 44,
@@ -14743,7 +14851,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-17-1": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "9-1.png",
                                 x: 36,
                                 y: 46,
@@ -14752,7 +14860,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-17-10": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "9-10.png",
                                 x: 36,
                                 y: 46,
@@ -14761,7 +14869,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-17-11": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "9-11.png",
                                 x: 36,
                                 y: 46,
@@ -14770,7 +14878,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-17-12": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "9-12.png",
                                 x: 36,
                                 y: 46,
@@ -14779,7 +14887,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-17-13": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "9-13.png",
                                 x: 36,
                                 y: 46,
@@ -14788,7 +14896,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-17-14": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "9-14.png",
                                 x: 36,
                                 y: 46,
@@ -14797,7 +14905,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-17-15": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "9-15.png",
                                 x: 36,
                                 y: 46,
@@ -14806,7 +14914,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-17-16": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "9-16.png",
                                 x: 36,
                                 y: 46,
@@ -14815,7 +14923,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-17-2": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "9-2.png",
                                 x: 36,
                                 y: 46,
@@ -14824,7 +14932,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-17-3": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "9-3.png",
                                 x: 36,
                                 y: 46,
@@ -14833,7 +14941,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-17-4": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "9-4.png",
                                 x: 36,
                                 y: 46,
@@ -14842,7 +14950,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-17-5": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "9-5.png",
                                 x: 36,
                                 y: 46,
@@ -14851,7 +14959,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-17-6": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "9-6.png",
                                 x: 36,
                                 y: 46,
@@ -14860,7 +14968,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-17-7": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "9-7.png",
                                 x: 36,
                                 y: 46,
@@ -14869,7 +14977,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-17-8": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "9-8.png",
                                 x: 36,
                                 y: 46,
@@ -14878,7 +14986,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-17-9": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "9-9.png",
                                 x: 36,
                                 y: 46,
@@ -14887,7 +14995,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-18-1": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "10-1.png",
                                 x: 33,
                                 y: 46,
@@ -14896,7 +15004,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-18-10": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "10-10.png",
                                 x: 33,
                                 y: 46,
@@ -14905,7 +15013,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-18-11": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "10-11.png",
                                 x: 33,
                                 y: 46,
@@ -14914,7 +15022,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-18-12": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "10-12.png",
                                 x: 33,
                                 y: 46,
@@ -14923,7 +15031,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-18-13": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "10-13.png",
                                 x: 33,
                                 y: 46,
@@ -14932,7 +15040,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-18-14": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "10-14.png",
                                 x: 33,
                                 y: 46,
@@ -14941,7 +15049,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-18-15": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "10-15.png",
                                 x: 33,
                                 y: 46,
@@ -14950,7 +15058,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-18-16": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "10-16.png",
                                 x: 33,
                                 y: 46,
@@ -14959,7 +15067,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-18-2": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "10-2.png",
                                 x: 33,
                                 y: 46,
@@ -14968,7 +15076,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-18-3": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "10-3.png",
                                 x: 33,
                                 y: 46,
@@ -14977,7 +15085,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-18-4": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "10-4.png",
                                 x: 33,
                                 y: 46,
@@ -14986,7 +15094,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-18-5": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "10-5.png",
                                 x: 33,
                                 y: 46,
@@ -14995,7 +15103,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-18-6": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "10-6.png",
                                 x: 33,
                                 y: 46,
@@ -15004,7 +15112,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-18-7": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "10-7.png",
                                 x: 33,
                                 y: 46,
@@ -15013,7 +15121,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-18-8": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "10-8.png",
                                 x: 33,
                                 y: 46,
@@ -15022,7 +15130,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-18-9": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "10-9.png",
                                 x: 33,
                                 y: 46,
@@ -15031,7 +15139,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-19-1": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "11-1.png",
                                 x: 33,
                                 y: 46,
@@ -15040,7 +15148,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-19-10": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "11-10.png",
                                 x: 33,
                                 y: 46,
@@ -15049,7 +15157,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-19-11": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "11-11.png",
                                 x: 33,
                                 y: 46,
@@ -15058,7 +15166,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-19-12": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "11-12.png",
                                 x: 33,
                                 y: 46,
@@ -15067,7 +15175,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-19-13": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "11-13.png",
                                 x: 33,
                                 y: 46,
@@ -15076,7 +15184,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-19-14": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "11-14.png",
                                 x: 33,
                                 y: 46,
@@ -15085,7 +15193,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-19-15": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "11-15.png",
                                 x: 33,
                                 y: 46,
@@ -15094,7 +15202,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-19-16": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "11-16.png",
                                 x: 33,
                                 y: 46,
@@ -15103,7 +15211,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-19-2": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "11-2.png",
                                 x: 33,
                                 y: 46,
@@ -15112,7 +15220,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-19-3": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "11-3.png",
                                 x: 33,
                                 y: 46,
@@ -15121,7 +15229,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-19-4": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "11-4.png",
                                 x: 33,
                                 y: 46,
@@ -15130,7 +15238,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-19-5": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "11-5.png",
                                 x: 33,
                                 y: 46,
@@ -15139,7 +15247,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-19-6": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "11-6.png",
                                 x: 33,
                                 y: 46,
@@ -15148,7 +15256,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-19-7": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "11-7.png",
                                 x: 33,
                                 y: 46,
@@ -15157,7 +15265,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-19-8": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "11-8.png",
                                 x: 33,
                                 y: 46,
@@ -15166,7 +15274,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-19-9": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "11-9.png",
                                 x: 33,
                                 y: 46,
@@ -15175,7 +15283,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-20-1": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "12-1.png",
                                 x: 33,
                                 y: 44,
@@ -15184,7 +15292,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-20-10": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "12-10.png",
                                 x: 33,
                                 y: 44,
@@ -15193,7 +15301,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-20-11": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "12-11.png",
                                 x: 33,
                                 y: 44,
@@ -15202,7 +15310,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-20-12": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "12-12.png",
                                 x: 33,
                                 y: 44,
@@ -15211,7 +15319,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-20-13": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "12-13.png",
                                 x: 33,
                                 y: 44,
@@ -15220,7 +15328,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-20-14": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "12-14.png",
                                 x: 33,
                                 y: 44,
@@ -15229,7 +15337,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-20-15": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "12-15.png",
                                 x: 33,
                                 y: 44,
@@ -15238,7 +15346,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-20-16": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "12-16.png",
                                 x: 33,
                                 y: 44,
@@ -15247,7 +15355,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-20-2": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "12-2.png",
                                 x: 33,
                                 y: 44,
@@ -15256,7 +15364,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-20-3": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "12-3.png",
                                 x: 33,
                                 y: 44,
@@ -15265,7 +15373,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-20-4": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "12-4.png",
                                 x: 33,
                                 y: 44,
@@ -15274,7 +15382,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-20-5": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "12-5.png",
                                 x: 33,
                                 y: 44,
@@ -15283,7 +15391,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-20-6": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "12-6.png",
                                 x: 33,
                                 y: 44,
@@ -15292,7 +15400,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-20-7": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "12-7.png",
                                 x: 33,
                                 y: 44,
@@ -15301,7 +15409,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-20-8": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "12-8.png",
                                 x: 33,
                                 y: 44,
@@ -15310,7 +15418,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-20-9": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "12-9.png",
                                 x: 33,
                                 y: 44,
@@ -15319,7 +15427,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-21-1": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "13-1.png",
                                 x: 22,
                                 y: 46,
@@ -15328,7 +15436,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-21-10": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "13-10.png",
                                 x: 22,
                                 y: 46,
@@ -15337,7 +15445,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-21-11": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "13-11.png",
                                 x: 22,
                                 y: 46,
@@ -15346,7 +15454,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-21-12": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "13-12.png",
                                 x: 22,
                                 y: 46,
@@ -15355,7 +15463,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-21-13": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "13-13.png",
                                 x: 22,
                                 y: 46,
@@ -15364,7 +15472,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-21-14": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "13-14.png",
                                 x: 22,
                                 y: 46,
@@ -15373,7 +15481,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-21-15": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "13-15.png",
                                 x: 22,
                                 y: 46,
@@ -15382,7 +15490,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-21-16": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "13-16.png",
                                 x: 22,
                                 y: 46,
@@ -15391,7 +15499,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-21-2": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "13-2.png",
                                 x: 22,
                                 y: 46,
@@ -15400,7 +15508,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-21-3": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "13-3.png",
                                 x: 22,
                                 y: 46,
@@ -15409,7 +15517,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-21-4": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "13-4.png",
                                 x: 22,
                                 y: 46,
@@ -15418,7 +15526,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-21-5": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "13-5.png",
                                 x: 22,
                                 y: 46,
@@ -15427,7 +15535,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-21-6": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "13-6.png",
                                 x: 22,
                                 y: 46,
@@ -15436,7 +15544,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-21-7": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "13-7.png",
                                 x: 22,
                                 y: 46,
@@ -15445,7 +15553,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-21-8": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "13-8.png",
                                 x: 22,
                                 y: 46,
@@ -15454,7 +15562,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-21-9": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "13-9.png",
                                 x: 22,
                                 y: 46,
@@ -15463,7 +15571,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-22-1": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "14-1.png",
                                 x: 22,
                                 y: 46,
@@ -15472,7 +15580,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-22-10": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "14-10.png",
                                 x: 22,
                                 y: 46,
@@ -15481,7 +15589,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-22-11": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "14-11.png",
                                 x: 22,
                                 y: 46,
@@ -15490,7 +15598,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-22-12": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "14-12.png",
                                 x: 22,
                                 y: 46,
@@ -15499,7 +15607,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-22-13": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "14-13.png",
                                 x: 22,
                                 y: 46,
@@ -15508,7 +15616,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-22-14": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "14-14.png",
                                 x: 22,
                                 y: 46,
@@ -15517,7 +15625,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-22-15": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "14-15.png",
                                 x: 22,
                                 y: 46,
@@ -15526,7 +15634,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-22-16": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "14-16.png",
                                 x: 22,
                                 y: 46,
@@ -15535,7 +15643,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-22-2": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "14-2.png",
                                 x: 22,
                                 y: 46,
@@ -15544,7 +15652,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-22-3": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "14-3.png",
                                 x: 22,
                                 y: 46,
@@ -15553,7 +15661,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-22-4": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "14-4.png",
                                 x: 22,
                                 y: 46,
@@ -15562,7 +15670,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-22-5": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "14-5.png",
                                 x: 22,
                                 y: 46,
@@ -15571,7 +15679,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-22-6": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "14-6.png",
                                 x: 22,
                                 y: 46,
@@ -15580,7 +15688,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-22-7": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "14-7.png",
                                 x: 22,
                                 y: 46,
@@ -15589,7 +15697,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-22-8": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "14-8.png",
                                 x: 22,
                                 y: 46,
@@ -15598,7 +15706,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-22-9": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "14-9.png",
                                 x: 22,
                                 y: 46,
@@ -15607,7 +15715,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-23-1": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "15-1.png",
                                 x: 22,
                                 y: 46,
@@ -15616,7 +15724,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-23-10": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "15-10.png",
                                 x: 22,
                                 y: 46,
@@ -15625,7 +15733,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-23-11": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "15-11.png",
                                 x: 22,
                                 y: 46,
@@ -15634,7 +15742,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-23-12": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "15-12.png",
                                 x: 22,
                                 y: 46,
@@ -15643,7 +15751,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-23-13": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "15-13.png",
                                 x: 22,
                                 y: 46,
@@ -15652,7 +15760,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-23-14": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "15-14.png",
                                 x: 22,
                                 y: 46,
@@ -15661,7 +15769,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-23-15": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "15-15.png",
                                 x: 22,
                                 y: 46,
@@ -15670,7 +15778,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-23-16": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "15-16.png",
                                 x: 22,
                                 y: 46,
@@ -15679,7 +15787,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-23-2": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "15-2.png",
                                 x: 22,
                                 y: 46,
@@ -15688,7 +15796,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-23-3": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "15-3.png",
                                 x: 22,
                                 y: 46,
@@ -15697,7 +15805,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-23-4": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "15-4.png",
                                 x: 22,
                                 y: 46,
@@ -15706,7 +15814,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-23-5": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "15-5.png",
                                 x: 22,
                                 y: 46,
@@ -15715,7 +15823,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-23-6": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "15-6.png",
                                 x: 22,
                                 y: 46,
@@ -15724,7 +15832,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-23-7": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "15-7.png",
                                 x: 22,
                                 y: 46,
@@ -15733,7 +15841,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-23-8": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "15-8.png",
                                 x: 22,
                                 y: 46,
@@ -15742,7 +15850,7 @@ Prodigy.extends = function(e, t, a) {
                         },
                         "reduced-hair-male-23-9": {
                                 type: "spritesheet",
-                                base: i,
+                                base: a,
                                 url: "15-9.png",
                                 x: 22,
                                 y: 46,
@@ -18053,6 +18161,1158 @@ Prodigy.extends = function(e, t, a) {
 			w: 113,
 			h: 88
 		},
+		"normal-hair-female-16-1": {
+			type: "spritesheet",
+			base: n,
+			url: "1-1.png",
+			x: 88,
+			y: 74,
+			w: 90,
+			h: 75
+		},
+		"normal-hair-female-16-10": {
+			type: "spritesheet",
+			base: n,
+			url: "1-10.png",
+			x: 88,
+			y: 74,
+			w: 90,
+			h: 75
+		},
+		"normal-hair-female-16-11": {
+			type: "spritesheet",
+			base: n,
+			url: "1-11.png",
+			x: 88,
+			y: 74,
+			w: 90,
+			h: 75
+		},
+		"normal-hair-female-16-12": {
+			type: "spritesheet",
+			base: n,
+			url: "1-12.png",
+			x: 88,
+			y: 74,
+			w: 90,
+			h: 75
+		},
+		"normal-hair-female-16-13": {
+			type: "spritesheet",
+			base: n,
+			url: "1-13.png",
+			x: 88,
+			y: 74,
+			w: 90,
+			h: 75
+		},
+		"normal-hair-female-16-14": {
+			type: "spritesheet",
+			base: n,
+			url: "1-14.png",
+			x: 88,
+			y: 74,
+			w: 90,
+			h: 75
+		},
+		"normal-hair-female-16-15": {
+			type: "spritesheet",
+			base: n,
+			url: "1-15.png",
+			x: 88,
+			y: 74,
+			w: 90,
+			h: 75
+		},
+		"normal-hair-female-16-16": {
+			type: "spritesheet",
+			base: n,
+			url: "1-16.png",
+			x: 88,
+			y: 74,
+			w: 90,
+			h: 75
+		},
+		"normal-hair-female-16-2": {
+			type: "spritesheet",
+			base: n,
+			url: "1-2.png",
+			x: 88,
+			y: 74,
+			w: 90,
+			h: 75
+		},
+		"normal-hair-female-16-3": {
+			type: "spritesheet",
+			base: n,
+			url: "1-3.png",
+			x: 88,
+			y: 74,
+			w: 90,
+			h: 75
+		},
+		"normal-hair-female-16-4": {
+			type: "spritesheet",
+			base: n,
+			url: "1-4.png",
+			x: 88,
+			y: 74,
+			w: 90,
+			h: 75
+		},
+		"normal-hair-female-16-5": {
+			type: "spritesheet",
+			base: n,
+			url: "1-5.png",
+			x: 88,
+			y: 74,
+			w: 90,
+			h: 75
+		},
+		"normal-hair-female-16-6": {
+			type: "spritesheet",
+			base: n,
+			url: "1-6.png",
+			x: 88,
+			y: 74,
+			w: 90,
+			h: 75
+		},
+		"normal-hair-female-16-7": {
+			type: "spritesheet",
+			base: n,
+			url: "1-7.png",
+			x: 88,
+			y: 74,
+			w: 90,
+			h: 75
+		},
+		"normal-hair-female-16-8": {
+			type: "spritesheet",
+			base: n,
+			url: "1-8.png",
+			x: 88,
+			y: 74,
+			w: 90,
+			h: 75
+		},
+		"normal-hair-female-16-9": {
+			type: "spritesheet",
+			base: n,
+			url: "1-9.png",
+			x: 88,
+			y: 74,
+			w: 90,
+			h: 75
+		},
+		"normal-hair-female-17-1": {
+			type: "spritesheet",
+			base: n,
+			url: "2-1.png",
+			x: 87,
+			y: 51,
+			w: 94,
+			h: 101
+		},
+		"normal-hair-female-17-10": {
+			type: "spritesheet",
+			base: n,
+			url: "2-10.png",
+			x: 87,
+			y: 51,
+			w: 94,
+			h: 101
+		},
+		"normal-hair-female-17-11": {
+			type: "spritesheet",
+			base: n,
+			url: "2-11.png",
+			x: 87,
+			y: 51,
+			w: 94,
+			h: 101
+		},
+		"normal-hair-female-17-12": {
+			type: "spritesheet",
+			base: n,
+			url: "2-12.png",
+			x: 87,
+			y: 51,
+			w: 94,
+			h: 101
+		},
+		"normal-hair-female-17-13": {
+			type: "spritesheet",
+			base: n,
+			url: "2-13.png",
+			x: 87,
+			y: 51,
+			w: 94,
+			h: 101
+		},
+		"normal-hair-female-17-14": {
+			type: "spritesheet",
+			base: n,
+			url: "2-14.png",
+			x: 87,
+			y: 51,
+			w: 94,
+			h: 101
+		},
+		"normal-hair-female-17-15": {
+			type: "spritesheet",
+			base: n,
+			url: "2-15.png",
+			x: 87,
+			y: 51,
+			w: 94,
+			h: 101
+		},
+		"normal-hair-female-17-16": {
+			type: "spritesheet",
+			base: n,
+			url: "2-16.png",
+			x: 87,
+			y: 51,
+			w: 94,
+			h: 101
+		},
+		"normal-hair-female-17-2": {
+			type: "spritesheet",
+			base: n,
+			url: "2-2.png",
+			x: 87,
+			y: 51,
+			w: 94,
+			h: 101
+		},
+		"normal-hair-female-17-3": {
+			type: "spritesheet",
+			base: n,
+			url: "2-3.png",
+			x: 87,
+			y: 51,
+			w: 94,
+			h: 101
+		},
+		"normal-hair-female-17-4": {
+			type: "spritesheet",
+			base: n,
+			url: "2-4.png",
+			x: 87,
+			y: 51,
+			w: 94,
+			h: 101
+		},
+		"normal-hair-female-17-5": {
+			type: "spritesheet",
+			base: n,
+			url: "2-5.png",
+			x: 87,
+			y: 51,
+			w: 94,
+			h: 101
+		},
+		"normal-hair-female-17-6": {
+			type: "spritesheet",
+			base: n,
+			url: "2-6.png",
+			x: 87,
+			y: 51,
+			w: 94,
+			h: 101
+		},
+		"normal-hair-female-17-7": {
+			type: "spritesheet",
+			base: n,
+			url: "2-7.png",
+			x: 87,
+			y: 51,
+			w: 94,
+			h: 101
+		},
+		"normal-hair-female-17-8": {
+			type: "spritesheet",
+			base: n,
+			url: "2-8.png",
+			x: 87,
+			y: 51,
+			w: 94,
+			h: 101
+		},
+		"normal-hair-female-17-9": {
+			type: "spritesheet",
+			base: n,
+			url: "2-9.png",
+			x: 87,
+			y: 51,
+			w: 94,
+			h: 101
+		},
+		"normal-hair-female-18-1": {
+			type: "spritesheet",
+			base: n,
+			url: "3-1.png",
+			x: 86,
+			y: 55,
+			w: 100,
+			h: 97
+		},
+		"normal-hair-female-18-10": {
+			type: "spritesheet",
+			base: n,
+			url: "3-10.png",
+			x: 86,
+			y: 55,
+			w: 100,
+			h: 97
+		},
+		"normal-hair-female-18-11": {
+			type: "spritesheet",
+			base: n,
+			url: "3-11.png",
+			x: 86,
+			y: 55,
+			w: 100,
+			h: 97
+		},
+		"normal-hair-female-18-12": {
+			type: "spritesheet",
+			base: n,
+			url: "3-12.png",
+			x: 86,
+			y: 55,
+			w: 100,
+			h: 97
+		},
+		"normal-hair-female-18-13": {
+			type: "spritesheet",
+			base: n,
+			url: "3-13.png",
+			x: 86,
+			y: 55,
+			w: 100,
+			h: 97
+		},
+		"normal-hair-female-18-14": {
+			type: "spritesheet",
+			base: n,
+			url: "3-14.png",
+			x: 86,
+			y: 55,
+			w: 100,
+			h: 97
+		},
+		"normal-hair-female-18-15": {
+			type: "spritesheet",
+			base: n,
+			url: "3-15.png",
+			x: 86,
+			y: 55,
+			w: 100,
+			h: 97
+		},
+		"normal-hair-female-18-16": {
+			type: "spritesheet",
+			base: n,
+			url: "3-16.png",
+			x: 86,
+			y: 55,
+			w: 100,
+			h: 97
+		},
+		"normal-hair-female-18-2": {
+			type: "spritesheet",
+			base: n,
+			url: "3-2.png",
+			x: 86,
+			y: 55,
+			w: 100,
+			h: 97
+		},
+		"normal-hair-female-18-3": {
+			type: "spritesheet",
+			base: n,
+			url: "3-3.png",
+			x: 86,
+			y: 55,
+			w: 100,
+			h: 97
+		},
+		"normal-hair-female-18-4": {
+			type: "spritesheet",
+			base: n,
+			url: "3-4.png",
+			x: 86,
+			y: 55,
+			w: 100,
+			h: 97
+		},
+		"normal-hair-female-18-5": {
+			type: "spritesheet",
+			base: n,
+			url: "3-5.png",
+			x: 86,
+			y: 55,
+			w: 100,
+			h: 97
+		},
+		"normal-hair-female-18-6": {
+			type: "spritesheet",
+			base: n,
+			url: "3-6.png",
+			x: 86,
+			y: 55,
+			w: 100,
+			h: 97
+		},
+		"normal-hair-female-18-7": {
+			type: "spritesheet",
+			base: n,
+			url: "3-7.png",
+			x: 86,
+			y: 55,
+			w: 100,
+			h: 97
+		},
+		"normal-hair-female-18-8": {
+			type: "spritesheet",
+			base: n,
+			url: "3-8.png",
+			x: 86,
+			y: 55,
+			w: 100,
+			h: 97
+		},
+		"normal-hair-female-18-9": {
+			type: "spritesheet",
+			base: n,
+			url: "3-9.png",
+			x: 86,
+			y: 55,
+			w: 100,
+			h: 97
+		},
+		"normal-hair-female-19-1": {
+			type: "spritesheet",
+			base: n,
+			url: "4-1.png",
+			x: 86,
+			y: 73,
+			w: 92,
+			h: 77
+		},
+		"normal-hair-female-19-10": {
+			type: "spritesheet",
+			base: n,
+			url: "4-10.png",
+			x: 86,
+			y: 73,
+			w: 92,
+			h: 77
+		},
+		"normal-hair-female-19-11": {
+			type: "spritesheet",
+			base: n,
+			url: "4-11.png",
+			x: 86,
+			y: 73,
+			w: 92,
+			h: 77
+		},
+		"normal-hair-female-19-12": {
+			type: "spritesheet",
+			base: n,
+			url: "4-12.png",
+			x: 86,
+			y: 73,
+			w: 92,
+			h: 77
+		},
+		"normal-hair-female-19-13": {
+			type: "spritesheet",
+			base: n,
+			url: "4-13.png",
+			x: 86,
+			y: 73,
+			w: 92,
+			h: 77
+		},
+		"normal-hair-female-19-14": {
+			type: "spritesheet",
+			base: n,
+			url: "4-14.png",
+			x: 86,
+			y: 73,
+			w: 92,
+			h: 77
+		},
+		"normal-hair-female-19-15": {
+			type: "spritesheet",
+			base: n,
+			url: "4-15.png",
+			x: 86,
+			y: 73,
+			w: 92,
+			h: 77
+		},
+		"normal-hair-female-19-16": {
+			type: "spritesheet",
+			base: n,
+			url: "4-16.png",
+			x: 86,
+			y: 73,
+			w: 92,
+			h: 77
+		},
+		"normal-hair-female-19-2": {
+			type: "spritesheet",
+			base: n,
+			url: "4-2.png",
+			x: 86,
+			y: 73,
+			w: 92,
+			h: 77
+		},
+		"normal-hair-female-19-3": {
+			type: "spritesheet",
+			base: n,
+			url: "4-3.png",
+			x: 86,
+			y: 73,
+			w: 92,
+			h: 77
+		},
+		"normal-hair-female-19-4": {
+			type: "spritesheet",
+			base: n,
+			url: "4-4.png",
+			x: 86,
+			y: 73,
+			w: 92,
+			h: 77
+		},
+		"normal-hair-female-19-5": {
+			type: "spritesheet",
+			base: n,
+			url: "4-5.png",
+			x: 86,
+			y: 73,
+			w: 92,
+			h: 77
+		},
+		"normal-hair-female-19-6": {
+			type: "spritesheet",
+			base: n,
+			url: "4-6.png",
+			x: 86,
+			y: 73,
+			w: 92,
+			h: 77
+		},
+		"normal-hair-female-19-7": {
+			type: "spritesheet",
+			base: n,
+			url: "4-7.png",
+			x: 86,
+			y: 73,
+			w: 92,
+			h: 77
+		},
+		"normal-hair-female-19-8": {
+			type: "spritesheet",
+			base: n,
+			url: "4-8.png",
+			x: 86,
+			y: 73,
+			w: 92,
+			h: 77
+		},
+		"normal-hair-female-19-9": {
+			type: "spritesheet",
+			base: n,
+			url: "4-9.png",
+			x: 86,
+			y: 73,
+			w: 92,
+			h: 77
+		},
+		"normal-hair-female-20-1": {
+			type: "spritesheet",
+			base: n,
+			url: "5-1.png",
+			x: 89,
+			y: 75,
+			w: 87,
+			h: 76
+		},
+		"normal-hair-female-20-10": {
+			type: "spritesheet",
+			base: n,
+			url: "5-10.png",
+			x: 89,
+			y: 75,
+			w: 87,
+			h: 76
+		},
+		"normal-hair-female-20-11": {
+			type: "spritesheet",
+			base: n,
+			url: "5-11.png",
+			x: 89,
+			y: 75,
+			w: 87,
+			h: 76
+		},
+		"normal-hair-female-20-12": {
+			type: "spritesheet",
+			base: n,
+			url: "5-12.png",
+			x: 89,
+			y: 75,
+			w: 87,
+			h: 76
+		},
+		"normal-hair-female-20-13": {
+			type: "spritesheet",
+			base: n,
+			url: "5-13.png",
+			x: 89,
+			y: 75,
+			w: 87,
+			h: 76
+		},
+		"normal-hair-female-20-14": {
+			type: "spritesheet",
+			base: n,
+			url: "5-14.png",
+			x: 89,
+			y: 75,
+			w: 87,
+			h: 76
+		},
+		"normal-hair-female-20-15": {
+			type: "spritesheet",
+			base: n,
+			url: "5-15.png",
+			x: 89,
+			y: 75,
+			w: 87,
+			h: 76
+		},
+		"normal-hair-female-20-16": {
+			type: "spritesheet",
+			base: n,
+			url: "5-16.png",
+			x: 89,
+			y: 75,
+			w: 87,
+			h: 76
+		},
+		"normal-hair-female-20-2": {
+			type: "spritesheet",
+			base: n,
+			url: "5-2.png",
+			x: 89,
+			y: 75,
+			w: 87,
+			h: 76
+		},
+		"normal-hair-female-20-3": {
+			type: "spritesheet",
+			base: n,
+			url: "5-3.png",
+			x: 89,
+			y: 75,
+			w: 87,
+			h: 76
+		},
+		"normal-hair-female-20-4": {
+			type: "spritesheet",
+			base: n,
+			url: "5-4.png",
+			x: 89,
+			y: 75,
+			w: 87,
+			h: 76
+		},
+		"normal-hair-female-20-5": {
+			type: "spritesheet",
+			base: n,
+			url: "5-5.png",
+			x: 89,
+			y: 75,
+			w: 87,
+			h: 76
+		},
+		"normal-hair-female-20-6": {
+			type: "spritesheet",
+			base: n,
+			url: "5-6.png",
+			x: 89,
+			y: 75,
+			w: 87,
+			h: 76
+		},
+		"normal-hair-female-20-7": {
+			type: "spritesheet",
+			base: n,
+			url: "5-7.png",
+			x: 89,
+			y: 75,
+			w: 87,
+			h: 76
+		},
+		"normal-hair-female-20-8": {
+			type: "spritesheet",
+			base: n,
+			url: "5-8.png",
+			x: 89,
+			y: 75,
+			w: 87,
+			h: 76
+		},
+		"normal-hair-female-20-9": {
+			type: "spritesheet",
+			base: n,
+			url: "5-9.png",
+			x: 89,
+			y: 75,
+			w: 87,
+			h: 76
+		},
+		"normal-hair-female-21-1": {
+			type: "spritesheet",
+			base: n,
+			url: "6-1.png",
+			x: 87,
+			y: 75,
+			w: 85,
+			h: 76
+		},
+		"normal-hair-female-21-10": {
+			type: "spritesheet",
+			base: n,
+			url: "6-10.png",
+			x: 87,
+			y: 75,
+			w: 85,
+			h: 76
+		},
+		"normal-hair-female-21-11": {
+			type: "spritesheet",
+			base: n,
+			url: "6-11.png",
+			x: 87,
+			y: 75,
+			w: 85,
+			h: 76
+		},
+		"normal-hair-female-21-12": {
+			type: "spritesheet",
+			base: n,
+			url: "6-12.png",
+			x: 87,
+			y: 75,
+			w: 85,
+			h: 76
+		},
+		"normal-hair-female-21-13": {
+			type: "spritesheet",
+			base: n,
+			url: "6-13.png",
+			x: 87,
+			y: 75,
+			w: 85,
+			h: 76
+		},
+		"normal-hair-female-21-14": {
+			type: "spritesheet",
+			base: n,
+			url: "6-14.png",
+			x: 87,
+			y: 75,
+			w: 85,
+			h: 76
+		},
+		"normal-hair-female-21-15": {
+			type: "spritesheet",
+			base: n,
+			url: "6-15.png",
+			x: 87,
+			y: 75,
+			w: 85,
+			h: 76
+		},
+		"normal-hair-female-21-16": {
+			type: "spritesheet",
+			base: n,
+			url: "6-16.png",
+			x: 87,
+			y: 75,
+			w: 85,
+			h: 76
+		},
+		"normal-hair-female-21-2": {
+			type: "spritesheet",
+			base: n,
+			url: "6-2.png",
+			x: 87,
+			y: 75,
+			w: 85,
+			h: 76
+		},
+		"normal-hair-female-21-3": {
+			type: "spritesheet",
+			base: n,
+			url: "6-3.png",
+			x: 87,
+			y: 75,
+			w: 85,
+			h: 76
+		},
+		"normal-hair-female-21-4": {
+			type: "spritesheet",
+			base: n,
+			url: "6-4.png",
+			x: 87,
+			y: 75,
+			w: 85,
+			h: 76
+		},
+		"normal-hair-female-21-5": {
+			type: "spritesheet",
+			base: n,
+			url: "6-5.png",
+			x: 87,
+			y: 75,
+			w: 85,
+			h: 76
+		},
+		"normal-hair-female-21-6": {
+			type: "spritesheet",
+			base: n,
+			url: "6-6.png",
+			x: 87,
+			y: 75,
+			w: 85,
+			h: 76
+		},
+		"normal-hair-female-21-7": {
+			type: "spritesheet",
+			base: n,
+			url: "6-7.png",
+			x: 87,
+			y: 75,
+			w: 85,
+			h: 76
+		},
+		"normal-hair-female-21-8": {
+			type: "spritesheet",
+			base: n,
+			url: "6-8.png",
+			x: 87,
+			y: 75,
+			w: 85,
+			h: 76
+		},
+		"normal-hair-female-21-9": {
+			type: "spritesheet",
+			base: n,
+			url: "6-9.png",
+			x: 87,
+			y: 75,
+			w: 85,
+			h: 76
+		},
+		"normal-hair-female-22-1": {
+			type: "spritesheet",
+			base: n,
+			url: "7-1.png",
+			x: 76,
+			y: 73,
+			w: 105,
+			h: 78
+		},
+		"normal-hair-female-22-10": {
+			type: "spritesheet",
+			base: n,
+			url: "7-10.png",
+			x: 76,
+			y: 73,
+			w: 105,
+			h: 78
+		},
+		"normal-hair-female-22-11": {
+			type: "spritesheet",
+			base: n,
+			url: "7-11.png",
+			x: 76,
+			y: 73,
+			w: 105,
+			h: 78
+		},
+		"normal-hair-female-22-12": {
+			type: "spritesheet",
+			base: n,
+			url: "7-12.png",
+			x: 76,
+			y: 73,
+			w: 105,
+			h: 78
+		},
+		"normal-hair-female-22-13": {
+			type: "spritesheet",
+			base: n,
+			url: "7-13.png",
+			x: 76,
+			y: 73,
+			w: 105,
+			h: 78
+		},
+		"normal-hair-female-22-14": {
+			type: "spritesheet",
+			base: n,
+			url: "7-14.png",
+			x: 76,
+			y: 73,
+			w: 105,
+			h: 78
+		},
+		"normal-hair-female-22-15": {
+			type: "spritesheet",
+			base: n,
+			url: "7-15.png",
+			x: 76,
+			y: 73,
+			w: 105,
+			h: 78
+		},
+		"normal-hair-female-22-16": {
+			type: "spritesheet",
+			base: n,
+			url: "7-16.png",
+			x: 76,
+			y: 73,
+			w: 105,
+			h: 78
+		},
+		"normal-hair-female-22-2": {
+			type: "spritesheet",
+			base: n,
+			url: "7-2.png",
+			x: 76,
+			y: 73,
+			w: 105,
+			h: 78
+		},
+		"normal-hair-female-22-3": {
+			type: "spritesheet",
+			base: n,
+			url: "7-3.png",
+			x: 76,
+			y: 73,
+			w: 105,
+			h: 78
+		},
+		"normal-hair-female-22-4": {
+			type: "spritesheet",
+			base: n,
+			url: "7-4.png",
+			x: 76,
+			y: 73,
+			w: 105,
+			h: 78
+		},
+		"normal-hair-female-22-5": {
+			type: "spritesheet",
+			base: n,
+			url: "7-5.png",
+			x: 76,
+			y: 73,
+			w: 105,
+			h: 78
+		},
+		"normal-hair-female-22-6": {
+			type: "spritesheet",
+			base: n,
+			url: "7-6.png",
+			x: 76,
+			y: 73,
+			w: 105,
+			h: 78
+		},
+		"normal-hair-female-22-7": {
+			type: "spritesheet",
+			base: n,
+			url: "7-7.png",
+			x: 76,
+			y: 73,
+			w: 105,
+			h: 78
+		},
+		"normal-hair-female-22-8": {
+			type: "spritesheet",
+			base: n,
+			url: "7-8.png",
+			x: 76,
+			y: 73,
+			w: 105,
+			h: 78
+		},
+		"normal-hair-female-22-9": {
+			type: "spritesheet",
+			base: n,
+			url: "7-9.png",
+			x: 76,
+			y: 73,
+			w: 105,
+			h: 78
+		},
+		"normal-hair-female-23-1": {
+			type: "spritesheet",
+			base: n,
+			url: "8-1.png",
+			x: 82,
+			y: 73,
+			w: 104,
+			h: 81
+		},
+		"normal-hair-female-23-10": {
+			type: "spritesheet",
+			base: n,
+			url: "8-10.png",
+			x: 82,
+			y: 73,
+			w: 104,
+			h: 81
+		},
+		"normal-hair-female-23-11": {
+			type: "spritesheet",
+			base: n,
+			url: "8-11.png",
+			x: 82,
+			y: 73,
+			w: 104,
+			h: 81
+		},
+		"normal-hair-female-23-12": {
+			type: "spritesheet",
+			base: n,
+			url: "8-12.png",
+			x: 82,
+			y: 73,
+			w: 104,
+			h: 81
+		},
+		"normal-hair-female-23-13": {
+			type: "spritesheet",
+			base: n,
+			url: "8-13.png",
+			x: 82,
+			y: 73,
+			w: 104,
+			h: 81
+		},
+		"normal-hair-female-23-14": {
+			type: "spritesheet",
+			base: n,
+			url: "8-14.png",
+			x: 82,
+			y: 73,
+			w: 104,
+			h: 81
+		},
+		"normal-hair-female-23-15": {
+			type: "spritesheet",
+			base: n,
+			url: "8-15.png",
+			x: 82,
+			y: 73,
+			w: 104,
+			h: 81
+		},
+		"normal-hair-female-23-16": {
+			type: "spritesheet",
+			base: n,
+			url: "8-16.png",
+			x: 82,
+			y: 73,
+			w: 104,
+			h: 81
+		},
+		"normal-hair-female-23-2": {
+			type: "spritesheet",
+			base: n,
+			url: "8-2.png",
+			x: 82,
+			y: 73,
+			w: 104,
+			h: 81
+		},
+		"normal-hair-female-23-3": {
+			type: "spritesheet",
+			base: n,
+			url: "8-3.png",
+			x: 82,
+			y: 73,
+			w: 104,
+			h: 81
+		},
+		"normal-hair-female-23-4": {
+			type: "spritesheet",
+			base: n,
+			url: "8-4.png",
+			x: 82,
+			y: 73,
+			w: 104,
+			h: 81
+		},
+		"normal-hair-female-23-5": {
+			type: "spritesheet",
+			base: n,
+			url: "8-5.png",
+			x: 82,
+			y: 73,
+			w: 104,
+			h: 81
+		},
+		"normal-hair-female-23-6": {
+			type: "spritesheet",
+			base: n,
+			url: "8-6.png",
+			x: 82,
+			y: 73,
+			w: 104,
+			h: 81
+		},
+		"normal-hair-female-23-7": {
+			type: "spritesheet",
+			base: n,
+			url: "8-7.png",
+			x: 82,
+			y: 73,
+			w: 104,
+			h: 81
+		},
+		"normal-hair-female-23-8": {
+			type: "spritesheet",
+			base: n,
+			url: "8-8.png",
+			x: 82,
+			y: 73,
+			w: 104,
+			h: 81
+		},
+		"normal-hair-female-23-9": {
+			type: "spritesheet",
+			base: n,
+			url: "8-9.png",
+			x: 82,
+			y: 73,
+			w: 104,
+			h: 81
+		},
 		"reduced-hair-female-1-1": {
 			type: "spritesheet",
 			base: a,
@@ -19060,6 +20320,1158 @@ Prodigy.extends = function(e, t, a) {
 			y: 46,
 			w: 64,
 			h: 55
+		},
+		"reduced-hair-female-16-1": {
+			type: "spritesheet",
+			base: i,
+			url: "1-1.png",
+			x: 41,
+			y: 45,
+			w: 46,
+			h: 38
+		},
+		"reduced-hair-female-16-10": {
+			type: "spritesheet",
+			base: i,
+			url: "1-10.png",
+			x: 41,
+			y: 44,
+			w: 46,
+			h: 38
+		},
+		"reduced-hair-female-16-11": {
+			type: "spritesheet",
+			base: i,
+			url: "1-11.png",
+			x: 41,
+			y: 44,
+			w: 46,
+			h: 38
+		},
+		"reduced-hair-female-16-12": {
+			type: "spritesheet",
+			base: i,
+			url: "1-12.png",
+			x: 41,
+			y: 44,
+			w: 46,
+			h: 38
+		},
+		"reduced-hair-female-16-13": {
+			type: "spritesheet",
+			base: i,
+			url: "1-13.png",
+			x: 41,
+			y: 44,
+			w: 46,
+			h: 38
+		},
+		"reduced-hair-female-16-14": {
+			type: "spritesheet",
+			base: i,
+			url: "1-14.png",
+			x: 41,
+			y: 44,
+			w: 46,
+			h: 38
+		},
+		"reduced-hair-female-16-15": {
+			type: "spritesheet",
+			base: i,
+			url: "1-15.png",
+			x: 41,
+			y: 44,
+			w: 46,
+			h: 38
+		},
+		"reduced-hair-female-16-16": {
+			type: "spritesheet",
+			base: i,
+			url: "1-16.png",
+			x: 41,
+			y: 44,
+			w: 46,
+			h: 38
+		},
+		"reduced-hair-female-16-2": {
+			type: "spritesheet",
+			base: i,
+			url: "1-2.png",
+			x: 41,
+			y: 44,
+			w: 46,
+			h: 38
+		},
+		"reduced-hair-female-16-3": {
+			type: "spritesheet",
+			base: i,
+			url: "1-3.png",
+			x: 41,
+			y: 44,
+			w: 46,
+			h: 38
+		},
+		"reduced-hair-female-16-4": {
+			type: "spritesheet",
+			base: i,
+			url: "1-4.png",
+			x: 41,
+			y: 44,
+			w: 46,
+			h: 38
+		},
+		"reduced-hair-female-16-5": {
+			type: "spritesheet",
+			base: i,
+			url: "1-5.png",
+			x: 41,
+			y: 44,
+			w: 46,
+			h: 38
+		},
+		"reduced-hair-female-16-6": {
+			type: "spritesheet",
+			base: i,
+			url: "1-6.png",
+			x: 41,
+			y: 44,
+			w: 46,
+			h: 38
+		},
+		"reduced-hair-female-16-7": {
+			type: "spritesheet",
+			base: i,
+			url: "1-7.png",
+			x: 41,
+			y: 44,
+			w: 46,
+			h: 38
+		},
+		"reduced-hair-female-16-8": {
+			type: "spritesheet",
+			base: i,
+			url: "1-8.png",
+			x: 41,
+			y: 44,
+			w: 46,
+			h: 38
+		},
+		"reduced-hair-female-16-9": {
+			type: "spritesheet",
+			base: i,
+			url: "1-9.png",
+			x: 41,
+			y: 44,
+			w: 46,
+			h: 38
+		},
+		"reduced-hair-female-17-1": {
+			type: "spritesheet",
+			base: i,
+			url: "2-1.png",
+			x: 41,
+			y: 32,
+			w: 47,
+			h: 52
+		},
+		"reduced-hair-female-17-10": {
+			type: "spritesheet",
+			base: i,
+			url: "2-10.png",
+			x: 41,
+			y: 32,
+			w: 47,
+			h: 52
+		},
+		"reduced-hair-female-17-11": {
+			type: "spritesheet",
+			base: i,
+			url: "2-11.png",
+			x: 41,
+			y: 32,
+			w: 47,
+			h: 52
+		},
+		"reduced-hair-female-17-12": {
+			type: "spritesheet",
+			base: i,
+			url: "2-12.png",
+			x: 41,
+			y: 32,
+			w: 47,
+			h: 52
+		},
+		"reduced-hair-female-17-13": {
+			type: "spritesheet",
+			base: i,
+			url: "2-13.png",
+			x: 41,
+			y: 32,
+			w: 47,
+			h: 52
+		},
+		"reduced-hair-female-17-14": {
+			type: "spritesheet",
+			base: i,
+			url: "2-14.png",
+			x: 41,
+			y: 32,
+			w: 47,
+			h: 52
+		},
+		"reduced-hair-female-17-15": {
+			type: "spritesheet",
+			base: i,
+			url: "2-15.png",
+			x: 41,
+			y: 32,
+			w: 47,
+			h: 52
+		},
+		"reduced-hair-female-17-16": {
+			type: "spritesheet",
+			base: i,
+			url: "2-16.png",
+			x: 41,
+			y: 32,
+			w: 47,
+			h: 52
+		},
+		"reduced-hair-female-17-2": {
+			type: "spritesheet",
+			base: i,
+			url: "2-2.png",
+			x: 41,
+			y: 32,
+			w: 47,
+			h: 52
+		},
+		"reduced-hair-female-17-3": {
+			type: "spritesheet",
+			base: i,
+			url: "2-3.png",
+			x: 41,
+			y: 32,
+			w: 47,
+			h: 52
+		},
+		"reduced-hair-female-17-4": {
+			type: "spritesheet",
+			base: i,
+			url: "2-4.png",
+			x: 41,
+			y: 32,
+			w: 47,
+			h: 52
+		},
+		"reduced-hair-female-17-5": {
+			type: "spritesheet",
+			base: i,
+			url: "2-5.png",
+			x: 41,
+			y: 32,
+			w: 47,
+			h: 52
+		},
+		"reduced-hair-female-17-6": {
+			type: "spritesheet",
+			base: i,
+			url: "2-6.png",
+			x: 41,
+			y: 32,
+			w: 47,
+			h: 52
+		},
+		"reduced-hair-female-17-7": {
+			type: "spritesheet",
+			base: i,
+			url: "2-7.png",
+			x: 41,
+			y: 32,
+			w: 47,
+			h: 52
+		},
+		"reduced-hair-female-17-8": {
+			type: "spritesheet",
+			base: i,
+			url: "2-8.png",
+			x: 41,
+			y: 32,
+			w: 47,
+			h: 52
+		},
+		"reduced-hair-female-17-9": {
+			type: "spritesheet",
+			base: i,
+			url: "2-9.png",
+			x: 41,
+			y: 32,
+			w: 47,
+			h: 52
+		},
+		"reduced-hair-female-18-1": {
+			type: "spritesheet",
+			base: i,
+			url: "3-1.png",
+			x: 41,
+			y: 36,
+			w: 50,
+			h: 48
+		},
+		"reduced-hair-female-18-10": {
+			type: "spritesheet",
+			base: i,
+			url: "3-10.png",
+			x: 41,
+			y: 36,
+			w: 50,
+			h: 48
+		},
+		"reduced-hair-female-18-11": {
+			type: "spritesheet",
+			base: i,
+			url: "3-11.png",
+			x: 41,
+			y: 36,
+			w: 50,
+			h: 48
+		},
+		"reduced-hair-female-18-12": {
+			type: "spritesheet",
+			base: i,
+			url: "3-12.png",
+			x: 41,
+			y: 36,
+			w: 50,
+			h: 48
+		},
+		"reduced-hair-female-18-13": {
+			type: "spritesheet",
+			base: i,
+			url: "3-13.png",
+			x: 41,
+			y: 36,
+			w: 50,
+			h: 48
+		},
+		"reduced-hair-female-18-14": {
+			type: "spritesheet",
+			base: i,
+			url: "3-14.png",
+			x: 41,
+			y: 36,
+			w: 50,
+			h: 48
+		},
+		"reduced-hair-female-18-15": {
+			type: "spritesheet",
+			base: i,
+			url: "3-15.png",
+			x: 41,
+			y: 36,
+			w: 50,
+			h: 48
+		},
+		"reduced-hair-female-18-16": {
+			type: "spritesheet",
+			base: i,
+			url: "3-16.png",
+			x: 41,
+			y: 36,
+			w: 50,
+			h: 48
+		},
+		"reduced-hair-female-18-2": {
+			type: "spritesheet",
+			base: i,
+			url: "3-2.png",
+			x: 41,
+			y: 36,
+			w: 50,
+			h: 48
+		},
+		"reduced-hair-female-18-3": {
+			type: "spritesheet",
+			base: i,
+			url: "3-3.png",
+			x: 41,
+			y: 36,
+			w: 50,
+			h: 48
+		},
+		"reduced-hair-female-18-4": {
+			type: "spritesheet",
+			base: i,
+			url: "3-4.png",
+			x: 41,
+			y: 36,
+			w: 50,
+			h: 48
+		},
+		"reduced-hair-female-18-5": {
+			type: "spritesheet",
+			base: i,
+			url: "3-5.png",
+			x: 41,
+			y: 36,
+			w: 50,
+			h: 48
+		},
+		"reduced-hair-female-18-6": {
+			type: "spritesheet",
+			base: i,
+			url: "3-6.png",
+			x: 41,
+			y: 36,
+			w: 50,
+			h: 48
+		},
+		"reduced-hair-female-18-7": {
+			type: "spritesheet",
+			base: i,
+			url: "3-7.png",
+			x: 41,
+			y: 36,
+			w: 50,
+			h: 48
+		},
+		"reduced-hair-female-18-8": {
+			type: "spritesheet",
+			base: i,
+			url: "3-8.png",
+			x: 41,
+			y: 36,
+			w: 50,
+			h: 48
+		},
+		"reduced-hair-female-18-9": {
+			type: "spritesheet",
+			base: i,
+			url: "3-9.png",
+			x: 41,
+			y: 36,
+			w: 50,
+			h: 48
+		},
+		"reduced-hair-female-19-1": {
+			type: "spritesheet",
+			base: i,
+			url: "4-1.png",
+			x: 40,
+			y: 44,
+			w: 47,
+			h: 39
+		},
+		"reduced-hair-female-19-10": {
+			type: "spritesheet",
+			base: i,
+			url: "4-10.png",
+			x: 40,
+			y: 44,
+			w: 47,
+			h: 39
+		},
+		"reduced-hair-female-19-11": {
+			type: "spritesheet",
+			base: i,
+			url: "4-11.png",
+			x: 40,
+			y: 44,
+			w: 47,
+			h: 39
+		},
+		"reduced-hair-female-19-12": {
+			type: "spritesheet",
+			base: i,
+			url: "4-12.png",
+			x: 40,
+			y: 44,
+			w: 47,
+			h: 39
+		},
+		"reduced-hair-female-19-13": {
+			type: "spritesheet",
+			base: i,
+			url: "4-13.png",
+			x: 40,
+			y: 44,
+			w: 47,
+			h: 39
+		},
+		"reduced-hair-female-19-14": {
+			type: "spritesheet",
+			base: i,
+			url: "4-14.png",
+			x: 40,
+			y: 44,
+			w: 47,
+			h: 39
+		},
+		"reduced-hair-female-19-15": {
+			type: "spritesheet",
+			base: i,
+			url: "4-15.png",
+			x: 40,
+			y: 44,
+			w: 47,
+			h: 39
+		},
+		"reduced-hair-female-19-16": {
+			type: "spritesheet",
+			base: i,
+			url: "4-16.png",
+			x: 40,
+			y: 44,
+			w: 47,
+			h: 39
+		},
+		"reduced-hair-female-19-2": {
+			type: "spritesheet",
+			base: i,
+			url: "4-2.png",
+			x: 40,
+			y: 44,
+			w: 47,
+			h: 39
+		},
+		"reduced-hair-female-19-3": {
+			type: "spritesheet",
+			base: i,
+			url: "4-3.png",
+			x: 40,
+			y: 44,
+			w: 47,
+			h: 39
+		},
+		"reduced-hair-female-19-4": {
+			type: "spritesheet",
+			base: i,
+			url: "4-4.png",
+			x: 40,
+			y: 44,
+			w: 47,
+			h: 39
+		},
+		"reduced-hair-female-19-5": {
+			type: "spritesheet",
+			base: i,
+			url: "4-5.png",
+			x: 40,
+			y: 44,
+			w: 47,
+			h: 39
+		},
+		"reduced-hair-female-19-6": {
+			type: "spritesheet",
+			base: i,
+			url: "4-6.png",
+			x: 40,
+			y: 44,
+			w: 47,
+			h: 39
+		},
+		"reduced-hair-female-19-7": {
+			type: "spritesheet",
+			base: i,
+			url: "4-7.png",
+			x: 40,
+			y: 44,
+			w: 47,
+			h: 39
+		},
+		"reduced-hair-female-19-8": {
+			type: "spritesheet",
+			base: i,
+			url: "4-8.png",
+			x: 40,
+			y: 44,
+			w: 47,
+			h: 39
+		},
+		"reduced-hair-female-19-9": {
+			type: "spritesheet",
+			base: i,
+			url: "4-9.png",
+			x: 40,
+			y: 44,
+			w: 47,
+			h: 39
+		},
+		"reduced-hair-female-20-1": {
+			type: "spritesheet",
+			base: i,
+			url: "5-1.png",
+			x: 42,
+			y: 44,
+			w: 44,
+			h: 39
+		},
+		"reduced-hair-female-20-10": {
+			type: "spritesheet",
+			base: i,
+			url: "5-10.png",
+			x: 42,
+			y: 44,
+			w: 44,
+			h: 39
+		},
+		"reduced-hair-female-20-11": {
+			type: "spritesheet",
+			base: i,
+			url: "5-11.png",
+			x: 42,
+			y: 44,
+			w: 44,
+			h: 39
+		},
+		"reduced-hair-female-20-12": {
+			type: "spritesheet",
+			base: i,
+			url: "5-12.png",
+			x: 42,
+			y: 44,
+			w: 44,
+			h: 39
+		},
+		"reduced-hair-female-20-13": {
+			type: "spritesheet",
+			base: i,
+			url: "5-13.png",
+			x: 42,
+			y: 44,
+			w: 44,
+			h: 39
+		},
+		"reduced-hair-female-20-14": {
+			type: "spritesheet",
+			base: i,
+			url: "5-14.png",
+			x: 42,
+			y: 44,
+			w: 44,
+			h: 39
+		},
+		"reduced-hair-female-20-15": {
+			type: "spritesheet",
+			base: i,
+			url: "5-15.png",
+			x: 42,
+			y: 44,
+			w: 44,
+			h: 39
+		},
+		"reduced-hair-female-20-16": {
+			type: "spritesheet",
+			base: i,
+			url: "5-16.png",
+			x: 42,
+			y: 44,
+			w: 44,
+			h: 39
+		},
+		"reduced-hair-female-20-2": {
+			type: "spritesheet",
+			base: i,
+			url: "5-2.png",
+			x: 42,
+			y: 44,
+			w: 44,
+			h: 39
+		},
+		"reduced-hair-female-20-3": {
+			type: "spritesheet",
+			base: i,
+			url: "5-3.png",
+			x: 42,
+			y: 44,
+			w: 44,
+			h: 39
+		},
+		"reduced-hair-female-20-4": {
+			type: "spritesheet",
+			base: i,
+			url: "5-4.png",
+			x: 42,
+			y: 44,
+			w: 44,
+			h: 39
+		},
+		"reduced-hair-female-20-5": {
+			type: "spritesheet",
+			base: i,
+			url: "5-5.png",
+			x: 42,
+			y: 44,
+			w: 44,
+			h: 39
+		},
+		"reduced-hair-female-20-6": {
+			type: "spritesheet",
+			base: i,
+			url: "5-6.png",
+			x: 42,
+			y: 44,
+			w: 44,
+			h: 39
+		},
+		"reduced-hair-female-20-7": {
+			type: "spritesheet",
+			base: i,
+			url: "5-7.png",
+			x: 42,
+			y: 44,
+			w: 44,
+			h: 39
+		},
+		"reduced-hair-female-20-8": {
+			type: "spritesheet",
+			base: i,
+			url: "5-8.png",
+			x: 42,
+			y: 44,
+			w: 44,
+			h: 39
+		},
+		"reduced-hair-female-20-9": {
+			type: "spritesheet",
+			base: i,
+			url: "5-9.png",
+			x: 42,
+			y: 44,
+			w: 44,
+			h: 39
+		},
+		"reduced-hair-female-21-1": {
+			type: "spritesheet",
+			base: i,
+			url: "6-1.png",
+			x: 41,
+			y: 44,
+			w: 45,
+			h: 38
+		},
+		"reduced-hair-female-21-10": {
+			type: "spritesheet",
+			base: i,
+			url: "6-10.png",
+			x: 41,
+			y: 44,
+			w: 45,
+			h: 38
+		},
+		"reduced-hair-female-21-11": {
+			type: "spritesheet",
+			base: i,
+			url: "6-11.png",
+			x: 41,
+			y: 44,
+			w: 45,
+			h: 38
+		},
+		"reduced-hair-female-21-12": {
+			type: "spritesheet",
+			base: i,
+			url: "6-12.png",
+			x: 41,
+			y: 44,
+			w: 45,
+			h: 38
+		},
+		"reduced-hair-female-21-13": {
+			type: "spritesheet",
+			base: i,
+			url: "6-13.png",
+			x: 41,
+			y: 44,
+			w: 45,
+			h: 38
+		},
+		"reduced-hair-female-21-14": {
+			type: "spritesheet",
+			base: i,
+			url: "6-14.png",
+			x: 41,
+			y: 44,
+			w: 45,
+			h: 38
+		},
+		"reduced-hair-female-21-15": {
+			type: "spritesheet",
+			base: i,
+			url: "6-15.png",
+			x: 41,
+			y: 44,
+			w: 45,
+			h: 38
+		},
+		"reduced-hair-female-21-16": {
+			type: "spritesheet",
+			base: i,
+			url: "6-16.png",
+			x: 41,
+			y: 44,
+			w: 45,
+			h: 38
+		},
+		"reduced-hair-female-21-2": {
+			type: "spritesheet",
+			base: i,
+			url: "6-2.png",
+			x: 41,
+			y: 44,
+			w: 45,
+			h: 38
+		},
+		"reduced-hair-female-21-3": {
+			type: "spritesheet",
+			base: i,
+			url: "6-3.png",
+			x: 41,
+			y: 44,
+			w: 45,
+			h: 38
+		},
+		"reduced-hair-female-21-4": {
+			type: "spritesheet",
+			base: i,
+			url: "6-4.png",
+			x: 41,
+			y: 44,
+			w: 45,
+			h: 38
+		},
+		"reduced-hair-female-21-5": {
+			type: "spritesheet",
+			base: i,
+			url: "6-5.png",
+			x: 41,
+			y: 44,
+			w: 45,
+			h: 38
+		},
+		"reduced-hair-female-21-6": {
+			type: "spritesheet",
+			base: i,
+			url: "6-6.png",
+			x: 41,
+			y: 44,
+			w: 45,
+			h: 38
+		},
+		"reduced-hair-female-21-7": {
+			type: "spritesheet",
+			base: i,
+			url: "6-7.png",
+			x: 41,
+			y: 44,
+			w: 45,
+			h: 38
+		},
+		"reduced-hair-female-21-8": {
+			type: "spritesheet",
+			base: i,
+			url: "6-8.png",
+			x: 41,
+			y: 44,
+			w: 45,
+			h: 38
+		},
+		"reduced-hair-female-21-9": {
+			type: "spritesheet",
+			base: i,
+			url: "6-9.png",
+			x: 41,
+			y: 44,
+			w: 45,
+			h: 38
+		},
+		"reduced-hair-female-22-1": {
+			type: "spritesheet",
+			base: i,
+			url: "7-1.png",
+			x: 36,
+			y: 44,
+			w: 53,
+			h: 38
+		},
+		"reduced-hair-female-22-10": {
+			type: "spritesheet",
+			base: i,
+			url: "7-10.png",
+			x: 36,
+			y: 44,
+			w: 53,
+			h: 38
+		},
+		"reduced-hair-female-22-11": {
+			type: "spritesheet",
+			base: i,
+			url: "7-11.png",
+			x: 36,
+			y: 44,
+			w: 53,
+			h: 38
+		},
+		"reduced-hair-female-22-12": {
+			type: "spritesheet",
+			base: i,
+			url: "7-12.png",
+			x: 36,
+			y: 44,
+			w: 53,
+			h: 38
+		},
+		"reduced-hair-female-22-13": {
+			type: "spritesheet",
+			base: i,
+			url: "7-13.png",
+			x: 36,
+			y: 44,
+			w: 53,
+			h: 38
+		},
+		"reduced-hair-female-22-14": {
+			type: "spritesheet",
+			base: i,
+			url: "7-14.png",
+			x: 36,
+			y: 44,
+			w: 53,
+			h: 38
+		},
+		"reduced-hair-female-22-15": {
+			type: "spritesheet",
+			base: i,
+			url: "7-15.png",
+			x: 36,
+			y: 44,
+			w: 53,
+			h: 38
+		},
+		"reduced-hair-female-22-16": {
+			type: "spritesheet",
+			base: i,
+			url: "7-16.png",
+			x: 36,
+			y: 44,
+			w: 53,
+			h: 38
+		},
+		"reduced-hair-female-22-2": {
+			type: "spritesheet",
+			base: i,
+			url: "7-2.png",
+			x: 36,
+			y: 44,
+			w: 53,
+			h: 38
+		},
+		"reduced-hair-female-22-3": {
+			type: "spritesheet",
+			base: i,
+			url: "7-3.png",
+			x: 36,
+			y: 44,
+			w: 53,
+			h: 38
+		},
+		"reduced-hair-female-22-4": {
+			type: "spritesheet",
+			base: i,
+			url: "7-4.png",
+			x: 36,
+			y: 44,
+			w: 53,
+			h: 38
+		},
+		"reduced-hair-female-22-5": {
+			type: "spritesheet",
+			base: i,
+			url: "7-5.png",
+			x: 36,
+			y: 44,
+			w: 53,
+			h: 38
+		},
+		"reduced-hair-female-22-6": {
+			type: "spritesheet",
+			base: i,
+			url: "7-6.png",
+			x: 36,
+			y: 44,
+			w: 53,
+			h: 38
+		},
+		"reduced-hair-female-22-7": {
+			type: "spritesheet",
+			base: i,
+			url: "7-7.png",
+			x: 36,
+			y: 44,
+			w: 53,
+			h: 38
+		},
+		"reduced-hair-female-22-8": {
+			type: "spritesheet",
+			base: i,
+			url: "7-8.png",
+			x: 36,
+			y: 44,
+			w: 53,
+			h: 38
+		},
+		"reduced-hair-female-22-9": {
+			type: "spritesheet",
+			base: i,
+			url: "7-9.png",
+			x: 36,
+			y: 44,
+			w: 53,
+			h: 38
+		},
+		"reduced-hair-female-23-1": {
+			type: "spritesheet",
+			base: i,
+			url: "8-1.png",
+			x: 40,
+			y: 44,
+			w: 50,
+			h: 40
+		},
+		"reduced-hair-female-23-10": {
+			type: "spritesheet",
+			base: i,
+			url: "8-10.png",
+			x: 40,
+			y: 44,
+			w: 50,
+			h: 40
+		},
+		"reduced-hair-female-23-11": {
+			type: "spritesheet",
+			base: i,
+			url: "8-11.png",
+			x: 40,
+			y: 44,
+			w: 50,
+			h: 40
+		},
+		"reduced-hair-female-23-12": {
+			type: "spritesheet",
+			base: i,
+			url: "8-12.png",
+			x: 40,
+			y: 44,
+			w: 50,
+			h: 40
+		},
+		"reduced-hair-female-23-13": {
+			type: "spritesheet",
+			base: i,
+			url: "8-13.png",
+			x: 40,
+			y: 44,
+			w: 50,
+			h: 40
+		},
+		"reduced-hair-female-23-14": {
+			type: "spritesheet",
+			base: i,
+			url: "8-14.png",
+			x: 40,
+			y: 44,
+			w: 50,
+			h: 40
+		},
+		"reduced-hair-female-23-15": {
+			type: "spritesheet",
+			base: i,
+			url: "8-15.png",
+			x: 40,
+			y: 44,
+			w: 50,
+			h: 40
+		},
+		"reduced-hair-female-23-16": {
+			type: "spritesheet",
+			base: i,
+			url: "8-16.png",
+			x: 40,
+			y: 44,
+			w: 50,
+			h: 40
+		},
+		"reduced-hair-female-23-2": {
+			type: "spritesheet",
+			base: i,
+			url: "8-2.png",
+			x: 40,
+			y: 44,
+			w: 50,
+			h: 40
+		},
+		"reduced-hair-female-23-3": {
+			type: "spritesheet",
+			base: i,
+			url: "8-3.png",
+			x: 40,
+			y: 44,
+			w: 50,
+			h: 40
+		},
+		"reduced-hair-female-23-4": {
+			type: "spritesheet",
+			base: i,
+			url: "8-4.png",
+			x: 40,
+			y: 44,
+			w: 50,
+			h: 40
+		},
+		"reduced-hair-female-23-5": {
+			type: "spritesheet",
+			base: i,
+			url: "8-5.png",
+			x: 40,
+			y: 44,
+			w: 50,
+			h: 40
+		},
+		"reduced-hair-female-23-6": {
+			type: "spritesheet",
+			base: i,
+			url: "8-6.png",
+			x: 40,
+			y: 44,
+			w: 50,
+			h: 40
+		},
+		"reduced-hair-female-23-7": {
+			type: "spritesheet",
+			base: i,
+			url: "8-7.png",
+			x: 40,
+			y: 44,
+			w: 50,
+			h: 40
+		},
+		"reduced-hair-female-23-8": {
+			type: "spritesheet",
+			base: i,
+			url: "8-8.png",
+			x: 40,
+			y: 44,
+			w: 50,
+			h: 40
+		},
+		"reduced-hair-female-23-9": {
+			type: "spritesheet",
+			base: i,
+			url: "8-9.png",
+			x: 40,
+			y: 44,
+			w: 50,
+			h: 40
 		},
 		"reduced-hair-female-2-1": {
 			type: "spritesheet",
@@ -24568,6 +26980,326 @@ Items.getItemData = function(e, t) {
         rarity: 0,
         drop: 1,
         flavorText: "What's a party without confetti?"
+	}, {
+		ID: 78,
+		name: "Firefly",
+		member: 0,
+		rarity: 0,
+		drop: 1,
+		flavorText: "A firefly from the Firefly Forest. Bring these to the merchant in the Firefly Clearing for rewards."
+	}, {
+		ID: 79,
+		name: "Frozen Something",
+		member: 0,
+		rarity: 0,
+		drop: 1,
+		flavorText: "This ice block has something inside it. Maybe there's a way to get it out?"
+	}, {
+		ID: 80,
+		name: "Ice Crystal",
+		member: 0,
+		rarity: 0,
+		drop: 1,
+		flavorText: "A valuable ice crystal from the Shiverchill Mountains. Bring these to the miner in the Ruined Entrance for rewards."
+	}, {
+		ID: 81,
+		name: "Factory Key",
+		member: 0,
+		rarity: 0,
+		drop: 1,
+		flavorText: "A key to the factory in Skywatch."
+	}, {
+		ID: 82,
+		name: "Master Key Fragment",
+		member: 0,
+		rarity: 0,
+		drop: 1,
+		flavorText: "Half of the Master Key. Find the other half and bring it to Benni to fix."
+	}, {
+		ID: 83,
+		name: "Master Key",
+		member: 0,
+		rarity: 0,
+		drop: 1,
+		flavorText: "The key to the Cumulus Room in the Skywatch Factory."
+	}, {
+		ID: 84,
+		name: "Bounty Note",
+		member: 0,
+		rarity: 0,
+		drop: 1,
+		flavorText: "This bounty note means you have accepted the 1st bounty for today. Check the bounty section of the Awards Menu for details."
+	}, {
+		ID: 85,
+		name: "Bounty Note",
+		member: 0,
+		rarity: 0,
+		drop: 1,
+		flavorText: "This bounty note means you have accepted the 2nd bounty for today. Check the bounty section of the Awards Menu for details."
+	}, {
+		ID: 86,
+		name: "Bounty Note",
+		member: 0,
+		rarity: 0,
+		drop: 1,
+		flavorText: "This bounty note means you have accepted the 3rd bounty for today. Check the bounty section of the Awards Menu for details."
+	}, {
+		ID: 87,
+		name: "Weather O Meter",
+		member: 0,
+		rarity: 0,
+		drop: 1,
+		flavorText: "Benni uses this device to take weather readings around Skywatch."
+	}, {
+		ID: 88,
+		name: "Raisin",
+		member: 0,
+		rarity: 0,
+		drop: 1,
+		flavorText: "Slurpy's special ingredient."
+	}, {
+		ID: 89,
+		name: "Cooking Tools",
+		member: 0,
+		rarity: 0,
+		drop: 1,
+		flavorText: "A ragtag assortment of cooking tools."
+	}, {
+		ID: 90,
+		name: "Turnip",
+		member: 0,
+		rarity: 0,
+		drop: 1,
+		flavorText: "This huge turnip is the Queen's favorite ingredient."
+	}, {
+		ID: 91,
+		name: "Slurpy's Dish",
+		member: 0,
+		rarity: 0,
+		drop: 1,
+		flavorText: "A stew made from turnips by Slurpy the slime. It is surprisingly well made."
+	}, {
+		ID: 92,
+		name: "Crimson Ruby Key",
+		member: 0,
+		rarity: 0,
+		drop: 1,
+		flavorText: "A key used to open a very special chest in Bonfire Spire."
+	}, {
+		ID: 93,
+		name: "Weather O Meter",
+		member: 0,
+		rarity: 0,
+		drop: 1,
+		flavorText: "Benni uses this device to take weather readings around Skywatch, but it looks like it's been chewed up."
+	}, {
+		ID: 94,
+		name: "Scroll of Paper",
+		member: 0,
+		rarity: 0,
+		drop: 1,
+		flavorText: "A roll of paper, looks pretty important."
+	}, {
+		ID: 95,
+		name: "Resist All",
+		member: 0,
+		drop: 1,
+		flavorText: "This battle potion gives you resistance to ALL attacks in monster battles. Lasts for 1 battle.",
+		type: "potion",
+		subType: "elemental",
+		element: "all",
+		potency: 1,
+		price: 0,
+		previewIcon: "item/110",
+		effect: "+10% defense against all attacks"
+	}, {
+		ID: 96,
+		name: "Fire Resist",
+		member: 1,
+		drop: 1,
+		flavorText: "This battle potion gives you resistance to Fire attacks in monster battles. Lasts for 1 battle.",
+		type: "potion",
+		subType: "elemental",
+		element: "fire",
+		potency: 1,
+		price: 100,
+		effect: "Bonus: Fire Defense"
+	}, {
+		ID: 97,
+		name: "Strong Fire Resist",
+		member: 1,
+		flavorText: "This battle potion gives you strong resistance to Fire attacks in monster battles. Lasts for 1 battle.",
+		type: "potion",
+		drop: 1,
+		subType: "elemental",
+		element: "fire",
+		potency: 2,
+		price: 200,
+		effect: "Bonus: [bonus-arrow] Fire Defense"
+	}, {
+		ID: 98,
+		name: "Water Resist",
+		member: 1,
+		drop: 1,
+		flavorText: "This battle potion gives you resistance to Water attacks in monster battles. Lasts for 1 battle.",
+		type: "potion",
+		subType: "elemental",
+		element: "water",
+		potency: 1,
+		price: 100,
+		effect: "Bonus: Water Defense"
+	}, {
+		ID: 99,
+		name: "Strong Water Resist",
+		member: 1,
+		drop: 1,
+		flavorText: "This battle potion gives you strong resistance to Water attacks in monster battles. Lasts for 1 battle.",
+		type: "potion",
+		subType: "elemental",
+		element: "water",
+		potency: 2,
+		price: 200,
+		effect: "Bonus: [bonus-arrow] Water Defense"
+	}, {
+		ID: 100,
+		name: "Earth Resist",
+		member: 1,
+		drop: 1,
+		flavorText: "This battle potion gives you resistance to Earth attacks in monster battles. Lasts for 1 battle.",
+		type: "potion",
+		subType: "elemental",
+		element: "earth",
+		potency: 1,
+		price: 100,
+		effect: "Bonus: Earth Defense"
+	}, {
+		ID: 101,
+		name: "Strong Earth Resist",
+		member: 1,
+		drop: 1,
+		flavorText: "This battle potion gives you strong resistance to Earth attacks in monster battles. Lasts for 1 battle.",
+		type: "potion",
+		subType: "elemental",
+		element: "earth",
+		potency: 2,
+		price: 200,
+		effect: "Bonus: [bonus-arrow] Earth Defense"
+	}, {
+		ID: 102,
+		name: "Ice Resist",
+		member: 1,
+		drop: 1,
+		flavorText: "This battle potion gives you resistance to Ice attacks in monster battles. Lasts for 1 battle.",
+		type: "potion",
+		subType: "elemental",
+		element: "ice",
+		potency: 1,
+		price: 100,
+		effect: "Bonus: Ice Defense"
+	}, {
+		ID: 103,
+		name: "Strong Ice Resist",
+		member: 1,
+		drop: 1,
+		flavorText: "This battle potion gives you strong resistance to Ice attacks in monster battles. Lasts for 1 battle.",
+		type: "potion",
+		subType: "elemental",
+		element: "ice",
+		potency: 2,
+		price: 200,
+		effect: "Bonus: [bonus-arrow] Ice Defense"
+	}, {
+		ID: 104,
+		name: "Storm Resist",
+		member: 1,
+		drop: 1,
+		flavorText: "This battle potion gives you resistance to Storm attacks in monster battles. Lasts for 1 battle.",
+		type: "potion",
+		subType: "elemental",
+		element: "storm",
+		potency: 1,
+		price: 100,
+		effect: "Bonus: Storm Defense"
+	}, {
+		ID: 105,
+		name: "Strong Storm Resist",
+		member: 1,
+		drop: 1,
+		flavorText: "This battle potion gives you strong resistance to Storm attacks in monster battles. Lasts for 1 battle.",
+		type: "potion",
+		subType: "elemental",
+		element: "storm",
+		potency: 2,
+		price: 200,
+		effect: "Bonus: [bonus-arrow] Storm Defense"
+	}, {
+		ID: 106,
+		name: "Damage Bonus",
+		member: 1,
+		drop: 1,
+		flavorText: "This battle potion gives a boost to your attack damage in monster battles. Lasts for 1 battle.",
+		type: "potion",
+		element: "damage",
+		potency: 1,
+		price: 100,
+		effect: "Bonus: [bonus-arrow] Attack"
+	}, {
+		ID: 107,
+		name: "Strong Damage Bonus",
+		member: 1,
+		drop: 1,
+		flavorText: "This battle potion gives a strong boost to your attack damage in monster battles. Lasts for 1 battle.",
+		type: "potion",
+		element: "damage",
+		potency: 2,
+		price: 200,
+		effect: "Bonus: [bonus-arrow] [bonus-arrow] Attack"
+	}, {
+		ID: 108,
+		name: "Critical Chance Up",
+		member: 1,
+		drop: 1,
+		flavorText: "This battle potion increases the chance your attack will be a critical hit in monster battles. Lasts for 1 battle.",
+		type: "potion",
+		element: "critical",
+		potency: 1,
+		price: 100,
+		effect: "Bonus: Critical hits happen twice as often"
+	}, {
+		ID: 109,
+		name: "Always Critical",
+		member: 1,
+		drop: 1,
+		flavorText: "This battle potion makes every attack you use a critical hit in monster battles. Lasts for 1 battle.",
+		type: "potion",
+		element: "critical",
+		potency: 2,
+		price: 500,
+		effect: "Bonus: Attacks are always critical hits"
+	}, {
+		ID: 110,
+		name: "Resist All",
+		member: 1,
+		drop: 1,
+		flavorText: "This battle potion gives you resistance to ALL attacks in monster battles. Lasts for 1 battle.",
+		type: "potion",
+		subType: "elemental",
+		element: "all",
+		potency: 1,
+		price: 300,
+		effect: "Bonus: All defense"
+	}, {
+		ID: 111,
+		name: "Strong Resist All",
+		member: 1,
+		drop: 1,
+		flavorText: "This battle potion gives you strong resistance to ALL attacks in monster battles. Lasts for 1 battle.",
+		type: "potion",
+		subType: "elemental",
+		element: "all",
+		potency: 2,
+		price: 500,
+		effect: "Bonus: [bonus-arrow] All defense"
     }],
     key: [{
         ID: 1,
@@ -29723,7 +32455,7 @@ Names.createNameFromIndex = function(e, t, a, i) {
     var a = Names.MIDDLE_NAMES[Math.floor(Math.random() * (Names.MIDDLE_NAMES.length - 1))],
         i = Names.LAST_NAMES[Math.floor(Math.random() * (Names.LAST_NAMES.length - 1))].toLowerCase();
     return t + " " + a + i
-}, Names.BOY_NAMES = ["Aaron", "Abdullah", "Abraham", "Adam", "Adrian", "Ahmad", "Ahmed", "Aidan", "Aiden", "Alan", "Albert", "Alejandro", "Alex", "Alexander", "Alexis", "Ali", "Alvin", "Andres", "Andrew", "Aneesh", "Angel", "Angelo", "Anthony", "Antonio", "Arthur", "Ashton", "Austin", "Ayden", "Benjamin", "Billy", "Blake", "Bobby", "Bort", "Braden", "Bradley", "Brady", "Brandon", "Brayden", "Brendan", "Brian", "Brody", "Bruce", "Bryan", "Bryce", "Bryson", "Caden", "Caleb", "Cameron", "Carl", "Carlos", "Carson", "Carter", "Cesar", "Charles", "Chase", "Christian", "Christopher", "Cody", "Colby", "Cole", "Colin", "Collin", "Colton", "Conner", "Connor", "Cooper", "Craig", "Cristian", "Dakota", "Dalton", "Damian", "Daniel", "Darien", "David", "Dennis", "Derek", "Devin", "Devon", "Diego", "Dominic", "Donald", "Donovan", "Douglas", "Dylan", "Edgar", "Eduardo", "Edward", "Edwin", "Eli", "Elias", "Elijah", "Emmanuel", "Eric", "Erick", "Erik", "Ethan", "Eugene", "Evan", "Fernando", "Francisco", "Frank", "Gabriel", "Gage", "Garrett", "Gary", "Gavin", "George", "Gerald", "Giovanni", "Grant", "Gregory", "Hammad", "Hamza", "Harold", "Hayden", "Hector", "Henry", "Howard", "Hunter", "Ian", "Ibrahim", "Isaac", "Isaiah", "Ivan", "Jack", "Jackson", "Jacob", "Jaden", "Jake", "Jalen", "James", "Jared", "Jason", "Javier", "Jayden", "Jeffrey", "Jeremiah", "Jeremy", "Jerry", "Jesse", "Jimothy", "Joe", "Joel", "John", "Johnathan", "Johnny", "Jonah", "Jonathan", "Jordan", "Jorge", "Jose", "Joseph", "Joshua", "Josiah", "Juan", "Julian", "Justin", "Kaden", "Kaleb", "Keith", "Kenneth", "Kevin", "Kian", "Kyle", "Landon", "Larry", "Lawrence", "Leonardo", "Levi", "Liam", "Logan", "Louis", "Lucas", "Luis", "Luke", "Malachi", "Malik", "Manuel", "Marco", "Marcus", "Mario", "Mark", "Martin", "Marvin", "Mason", "Matthew", "Max", "Maxwell", "Micah", "Michael", "Miguel", "Muhammad", "Nathan", "Nathaniel", "Nicholas", "Nicolas", "Noah", "Nolan", "Oliver", "Omar", "Omar", "Oscar", "Owen", "Parker", "Patrick", "Paul", "Peter", "Peyton", "Philip", "Phillip", "Preston", "Ralph", "Raymond", "Ricardo", "Richard", "Riley", "Robert", "Roger", "Rohan", "Ronald", "Rory", "Roy", "Rupy", "Russell", "Ryan", "Samuel", "Scott", "Sean", "Sebastian", "Sergio", "Seth", "Shane", "Shawn", "Spencer", "Stephen", "Steve", "Steven", "Tanner", "Terry", "Thomas", "Timothy", "Travis", "Trenton", "Trevor", "Tristan", "Tyler", "Van", "Victor", "Vincent", "Walter", "Wasee", "Wayne", "Wesley", "William", "William", "Wyatt", "Xavier", "Youssef", "Zachary"], Names.GIRL_NAMES = ["Aaliyah", "Abby", "Abigail", "Addison", "Adriana", "Adrianna", "Alana", "Alexa", "Alexandra", "Alexandria", "Alexia", "Alexis", "Alice", "Alicia", "Allison", "Alondra", "Alyssa", "Amanda", "Amber", "Amelia", "Amy", "Ana", "Andrea", "Angel", "Angela", "Angelica", "Angelina", "Ann", "Anna", "Ariana", "Arianna", "Ashley", "Ashlyn", "Aubrey", "Audrey", "Autumn", "Ava", "Avery", "Bailey", "Barbara", "Betty", "Beverly", "Bianca", "Breanna", "Brenda", "Briana", "Brianna", "Brittany", "Brooke", "Brooklyn", "Caitlin", "Caitlyn", "Camila", "Carol", "Caroline", "Carolyn", "Cassandra", "Cassidy", "Catherine", "Charlotte", "Chelsea", "Cheryl", "Cheyenne", "Chloe", "Christina", "Christine", "Claire", "Courtney", "Crystal", "Cynthia", "Daisy", "Daniela", "Danielle", "Deborah", "Debra", "Delaney", "Denise", "Destiny", "Diana", "Diane", "Donna", "Doris", "Dorothy", "Elizabeth", "Ella", "Ellen", "Ellie", "Emily", "Emma", "Erica", "Erin", "Eva", "Evelyn", "Faith", "Fatima", "Felicia", "Frances", "Gabriela", "Gabriella", "Gabrielle", "Genesis", "Gianna", "Giselle", "Gloria", "Grace", "Gracie", "Hailey", "Haley", "Hannah", "Heather", "Helen", "Hope", "Isabel", "Isabella", "Isabelle", "Jacqueline", "Jada", "Jade", "Jana", "Jane", "Janet", "Janice", "Jasmin", "Jasmine", "Jayla", "Jazmin", "Jean", "Jenna", "Jennifer", "Jessica", "Jillian", "Joan", "Jocelyn", "Jordan", "Jordyn", "Joyce", "Judith", "Judy", "Julia", "Juliana", "Julie", "Kaitlyn", "Karen", "Kate", "Katelyn", "Katherine", "Kathleen", "Kathryn", "Kathy", "Katie", "Kayla", "Kaylee", "Kelly", "Kelsey", "Kendall", "Kennedy", "Kiara", "Kimberly", "Kira", "Kylee", "Kylie", "Laura", "Lauren", "Layla", "Leah", "Leslie", "Liliana", "Lillian", "Lilly", "Lily", "Linda", "Lindsey", "Lisa", "Lori", "Louise", "Lucy", "Lydia", "Mackenzie", "Madeline", "Madelyn", "Madison", "Makayla", "Makenzie", "Margaret", "Maria", "Mariah", "Mariam", "Mariam", "Marie", "Marilyn", "Marissa", "Martha", "Mary", "Maya", "Mckenzie", "Megan", "Melanie", "Melissa", "Mia", "Michelle", "Mikayla", "Mildred", "Miranda", "Molly", "Morgan", "Mya", "Nancy", "Naomi", "Natalia", "Natalie", "Nevaeh", "Nichole", "Nicole", "Nur", "Olivia", "Paige", "Pamela", "Patricia", "Payton", "Peyton", "Rachel", "Reagan", "Rebecca", "Riley", "Rose", "Ruby", "Ruth", "Rylee", "Sabrina", "Sadie", "Salma", "Samantha", "Sandra", "Sara", "Sarah", "Savannah", "Serenity", "Sharon", "Shelby", "Shirley", "Sierra", "Skylar", "Sofia", "Sophia", "Sophie", "Stephanie", "Summer", "Susan", "Sydney", "Tammy", "Taylor", "Teresa", "Theresa", "Tiffany", "Trinity", "Valeria", "Valerie", "Vanessa", "Veronica", "Victoria", "Virginia", "Zoe", "Zoey"], Names.FIRST_NAMES = [], Names.MIDDLE_NAMES = ["Air", "Animal", "Battle", "Blue", "Clear", "Cloud", "Coin", "Daring", "Dark", "Day", "Diamond", "Divine", "Dragon", "Dream", "Earth", "Fable", "Fairy", "Fall", "Fancy", "Far", "Fire", "Flame", "Fog", "Forge", "Frost", "Fruit", "Garden", "Gear", "Ghost", "Giant", "Glass", "Gold", "Golden", "Good", "Green", "Heavy", "Hero", "Ice", "Illusion", "Iron", "Land", "Leaf", "Legend", "Life", "Lightning", "Maelstrom", "Magic", "Metal", "Monster", "Moon", "Mountain", "Myth", "Near", "Night", "Ocean", "Plant", "Quake", "Rain", "Red", "River", "Ruby", "Silver", "Sleep", "Soft", "Spell", "Spring", "Star", "Storm", "Strong", "Summer", "Swift", "Thunder", "Water", "White", "Wild", "Wind", "Winter", "Wish", "Wonder", "Yellow"], Names.LAST_NAMES = ["Blade", "Boots", "Boy", "Breath", "Brother", "Caller", "Cast", "Caster", "Catcher", "Crafter", "Dancer", "Dreamer", "Drifter", "Ear", "Eyes", "Follower", "Foot", "Friend", "Gem", "Girl", "Giver", "Hand", "Heart", "Helper", "Hunter", "Leader", "Legs", "Lemon", "Light", "Man", "Mask", "Master", "Nose", "Ore", "Pants", "Petal", "Prism", "Ring", "Runner", "Seed", "Shade", "Shadow", "Shard", "Shine", "Shirt", "Singer", "Sister", "Smith", "Song", "Spoon", "Staff", "Steel", "Strider", "Sword", "Tail", "Talon", "Tamer", "Thinker", "Torch", "Vault", "Voice", "Walker", "Wand", "Ward", "Whisper", "Winner", "Woman"], Prodigy.Element = function(e, t, a, i) {
+}, Names.BOY_NAMES = ["Aaron", "Abdullah", "Abraham", "Adam", "Adrian", "Ahmad", "Ahmed", "Aidan", "Aiden", "Alan", "Albert", "Alejandro", "Alex", "Alexander", "Alexis", "Ali", "Alvin", "Andres", "Andrew", "Aneesh", "Angel", "Angelo", "Anthony", "Antonio", "Arthur", "Ashton", "Austin", "Ayden", "Benjamin", "Billy", "Blake", "Bobby", "Bort", "Braden", "Bradley", "Brady", "Brandon", "Brayden", "Brendan", "Brian", "Brody", "Bruce", "Bryan", "Bryce", "Bryson", "Caden", "Caleb", "Camden", "Cameron", "Carl", "Carlos", "Carson", "Carter", "Cesar", "Charles", "Chase", "Christian", "Christopher", "Cody", "Colby", "Cole", "Colin", "Collin", "Colton", "Conner", "Connor", "Cooper", "Craig", "Cristian", "Dakota", "Dalton", "Damian", "Daniel", "Darien", "David", "Dennis", "Derek", "Devin", "Devon", "Diego", "Dominic", "Donald", "Donovan", "Douglas", "Dylan", "Edgar", "Eduardo", "Edward", "Edwin", "Eli", "Elias", "Elijah", "Emmanuel", "Eric", "Erick", "Erik", "Ethan", "Eugene", "Evan", "Fernando", "Francisco", "Frank", "Gabriel", "Gage", "Garrett", "Gary", "Gavin", "George", "Gerald", "Giovanni", "Grant", "Gregory", "Hammad", "Hamza", "Harold", "Hayden", "Hector", "Henry", "Howard", "Hunter", "Ian", "Ibrahim", "Isaac", "Isaiah", "Ivan", "Jack", "Jackson", "Jacob", "Jaden", "Jake", "Jalen", "James", "Jared", "Jason", "Javier", "Jayden", "Jeffrey", "Jeremiah", "Jeremy", "Jerry", "Jesse", "Jimothy", "Joe", "Joel", "John", "Johnathan", "Johnny", "Jonah", "Jonathan", "Jordan", "Jorge", "Jose", "Joseph", "Joshua", "Josiah", "Juan", "Julian", "Justin", "Kaden", "Kaleb", "Keith", "Kenneth", "Kevin", "Kian", "Kyle", "Landon", "Larry", "Lawrence", "Leonardo", "Levi", "Liam", "Logan", "Louis", "Lucas", "Luis", "Luke", "Malachi", "Malik", "Manuel", "Marco", "Marcus", "Mario", "Mark", "Martin", "Marvin", "Mason", "Matthew", "Max", "Maxwell", "Micah", "Michael", "Miguel", "Muhammad", "Nathan", "Nathaniel", "Nicholas", "Nicolas", "Noah", "Nolan", "Oliver", "Omar", "Oscar", "Owen", "Parker", "Patrick", "Paul", "Peter", "Peyton", "Philip", "Phillip", "Preston", "Ralph", "Raymond", "Ricardo", "Richard", "Riley", "Robert", "Roger", "Rohan", "Ronald", "Rory", "Roy", "Rupy", "Russell", "Ryan", "Samuel", "Scott", "Sean", "Sebastian", "Sergio", "Seth", "Shane", "Shawn", "Solomon", "Spencer", "Stephen", "Steve", "Steven", "Tanner", "Terry", "Thomas", "Timothy", "Travis", "Trenton", "Trevor", "Tristan", "Tyler", "Van", "Victor", "Vincent", "Walter", "Wasee", "Wayne", "Wesley", "William", "Wyatt", "Xavier", "Youssef", "Zachary", "Aaliyah", "Abby", "Abigail", "Addison", "Adriana", "Adrianna", "Alana", "Alexa", "Alexandra", "Alexandria", "Alexia", "Alexis", "Alice", "Alicia", "Allison", "Alondra", "Alyssa", "Amanda", "Amber", "Amelia", "Amy", "Ana", "Andrea", "Angel", "Angela", "Angelica", "Angelina", "Ann", "Anna", "Ariana", "Arianna", "Ashley", "Ashlyn", "Aubrey", "Audrey", "Autumn", "Ava", "Avery", "Bailey", "Barbara", "Betty", "Beverly", "Bianca", "Breanna", "Brenda", "Briana", "Brianna", "Brittany", "Brooke", "Brooklyn", "Caitlin", "Caitlyn", "Camila", "Carol", "Caroline", "Carolyn", "Cassandra", "Cassidy", "Catherine", "Charlotte", "Chelsea", "Cheryl", "Cheyenne", "Chloe", "Christina", "Christine", "Claire", "Courtney", "Crystal", "Cynthia", "Daisy", "Daniela", "Danielle", "Deborah", "Debra", "Delaney", "Denise", "Destiny", "Diana", "Diane", "Donna", "Doris", "Dorothy", "Elizabeth", "Ella", "Ellen", "Ellie", "Emily", "Emma", "Erica", "Erin", "Eva", "Evelyn", "Faith", "Fatima", "Felicia", "Frances", "Gabriela", "Gabriella", "Gabrielle", "Genesis", "Gianna", "Giselle", "Gloria", "Grace", "Gracie", "Hailey", "Haley", "Hannah", "Heather", "Helen", "Hope", "Isabel", "Isabella", "Isabelle", "Jacqueline", "Jada", "Jade", "Jana", "Jane", "Janet", "Janice", "Jasmin", "Jasmine", "Jayla", "Jazmin", "Jean", "Jenna", "Jennifer", "Jessica", "Jillian", "Joan", "Jocelyn", "Jordan", "Jordyn", "Joyce", "Judith", "Judy", "Julia", "Juliana", "Julie", "Kaitlyn", "Karen", "Kate", "Katelyn", "Katherine", "Kathleen", "Kathryn", "Kathy", "Katie", "Kayla", "Kaylee", "Kelly", "Kelsey", "Kendall", "Kennedy", "Kiara", "Kimberly", "Kira", "Kylee", "Kylie", "Laura", "Lauren", "Layla", "Leah", "Leslie", "Liliana", "Lillian", "Lilly", "Lily", "Linda", "Lindsey", "Lisa", "Lori", "Louise", "Lucy", "Lydia", "Mackenzie", "Madeline", "Madelyn", "Madison", "Makayla", "Makenzie", "Margaret", "Maria", "Mariah", "Mariam", "Mariam", "Marie", "Marilyn", "Marissa", "Martha", "Mary", "Maya", "Mckenzie", "Megan", "Melanie", "Melissa", "Mia", "Michelle", "Mikayla", "Mildred", "Miranda", "Molly", "Morgan", "Mya", "Nancy", "Naomi", "Natalia", "Natalie", "Nevaeh", "Nichole", "Nicole", "Nur", "Olivia", "Paige", "Pamela", "Patricia", "Payton", "Peyton", "Rachel", "Reagan", "Rebecca", "Riley", "Rose", "Ruby", "Ruth", "Rylee", "Sabrina", "Sadie", "Salma", "Samantha", "Sandra", "Sara", "Sarah", "Savannah", "Serenity", "Sharon", "Shelby", "Shirley", "Sierra", "Skylar", "Sofia", "Sophia", "Sophie", "Stephanie", "Summer", "Susan", "Sydney", "Tammy", "Taylor", "Teresa", "Theresa", "Tiffany", "Trinity", "Valeria", "Valerie", "Vanessa", "Veronica", "Victoria", "Virginia", "Zoe", "Zoey"], Names.GIRL_NAMES = ["Aaliyah", "Abby", "Abigail", "Addison", "Adriana", "Adrianna", "Alana", "Alexa", "Alexandra", "Alexandria", "Alexia", "Alexis", "Alice", "Alicia", "Allison", "Alondra", "Alyssa", "Amanda", "Amber", "Amelia", "Amy", "Ana", "Andrea", "Angel", "Angela", "Angelica", "Angelina", "Ann", "Anna", "Ariana", "Arianna", "Ashley", "Ashlyn", "Aubrey", "Audrey", "Autumn", "Ava", "Avery", "Bailey", "Barbara", "Betty", "Beverly", "Bianca", "Breanna", "Brenda", "Briana", "Brianna", "Brittany", "Brooke", "Brooklyn", "Caitlin", "Caitlyn", "Camila", "Carol", "Caroline", "Carolyn", "Cassandra", "Cassidy", "Catherine", "Charlotte", "Chelsea", "Cheryl", "Cheyenne", "Chloe", "Christina", "Christine", "Claire", "Courtney", "Crystal", "Cynthia", "Daisy", "Daniela", "Danielle", "Deborah", "Debra", "Delaney", "Denise", "Destiny", "Diana", "Diane", "Donna", "Doris", "Dorothy", "Elizabeth", "Ella", "Ellen", "Ellie", "Emily", "Emma", "Erica", "Erin", "Eva", "Evelyn", "Faith", "Fatima", "Felicia", "Frances", "Gabriela", "Gabriella", "Gabrielle", "Genesis", "Gianna", "Giselle", "Gloria", "Grace", "Gracie", "Hailey", "Haley", "Hannah", "Heather", "Helen", "Hope", "Isabel", "Isabella", "Isabelle", "Jacqueline", "Jada", "Jade", "Jana", "Jane", "Janet", "Janice", "Jasmin", "Jasmine", "Jayla", "Jazmin", "Jean", "Jenna", "Jennifer", "Jessica", "Jillian", "Joan", "Jocelyn", "Jordan", "Jordyn", "Joyce", "Judith", "Judy", "Julia", "Juliana", "Julie", "Kaitlyn", "Karen", "Kate", "Katelyn", "Katherine", "Kathleen", "Kathryn", "Kathy", "Katie", "Kayla", "Kaylee", "Kelly", "Kelsey", "Kendall", "Kennedy", "Kiara", "Kimberly", "Kira", "Kylee", "Kylie", "Laura", "Lauren", "Layla", "Leah", "Leslie", "Liliana", "Lillian", "Lilly", "Lily", "Linda", "Lindsey", "Lisa", "Lori", "Louise", "Lucy", "Lydia", "Mackenzie", "Madeline", "Madelyn", "Madison", "Makayla", "Makenzie", "Margaret", "Maria", "Mariah", "Mariam", "Mariam", "Marie", "Marilyn", "Marissa", "Martha", "Mary", "Maya", "Mckenzie", "Megan", "Melanie", "Melissa", "Mia", "Michelle", "Mikayla", "Mildred", "Miranda", "Molly", "Morgan", "Mya", "Nancy", "Naomi", "Natalia", "Natalie", "Nevaeh", "Nichole", "Nicole", "Nur", "Olivia", "Paige", "Pamela", "Patricia", "Payton", "Peyton", "Rachel", "Reagan", "Rebecca", "Riley", "Rose", "Ruby", "Ruth", "Rylee", "Sabrina", "Sadie", "Salma", "Samantha", "Sandra", "Sara", "Sarah", "Savannah", "Serenity", "Sharon", "Shelby", "Shirley", "Sierra", "Skylar", "Sofia", "Sophia", "Sophie", "Stephanie", "Summer", "Susan", "Sydney", "Tammy", "Taylor", "Teresa", "Theresa", "Tiffany", "Trinity", "Valeria", "Valerie", "Vanessa", "Veronica", "Victoria", "Virginia", "Zoe", "Zoey", "Aaron", "Abdullah", "Abraham", "Adam", "Adrian", "Ahmad", "Ahmed", "Aidan", "Aiden", "Alan", "Albert", "Alejandro", "Alex", "Alexander", "Alexis", "Ali", "Alvin", "Andres", "Andrew", "Aneesh", "Angel", "Angelo", "Anthony", "Antonio", "Arthur", "Ashton", "Austin", "Ayden", "Benjamin", "Billy", "Blake", "Bobby", "Bort", "Braden", "Bradley", "Brady", "Brandon", "Brayden", "Brendan", "Brian", "Brody", "Bruce", "Bryan", "Bryce", "Bryson", "Caden", "Caleb", "Camden", "Cameron", "Carl", "Carlos", "Carson", "Carter", "Cesar", "Charles", "Chase", "Christian", "Christopher", "Cody", "Colby", "Cole", "Colin", "Collin", "Colton", "Conner", "Connor", "Cooper", "Craig", "Cristian", "Dakota", "Dalton", "Damian", "Daniel", "Darien", "David", "Dennis", "Derek", "Devin", "Devon", "Diego", "Dominic", "Donald", "Donovan", "Douglas", "Dylan", "Edgar", "Eduardo", "Edward", "Edwin", "Eli", "Elias", "Elijah", "Emmanuel", "Eric", "Erick", "Erik", "Ethan", "Eugene", "Evan", "Fernando", "Francisco", "Frank", "Gabriel", "Gage", "Garrett", "Gary", "Gavin", "George", "Gerald", "Giovanni", "Grant", "Gregory", "Hammad", "Hamza", "Harold", "Hayden", "Hector", "Henry", "Howard", "Hunter", "Ian", "Ibrahim", "Isaac", "Isaiah", "Ivan", "Jack", "Jackson", "Jacob", "Jaden", "Jake", "Jalen", "James", "Jared", "Jason", "Javier", "Jayden", "Jeffrey", "Jeremiah", "Jeremy", "Jerry", "Jesse", "Jimothy", "Joe", "Joel", "John", "Johnathan", "Johnny", "Jonah", "Jonathan", "Jordan", "Jorge", "Jose", "Joseph", "Joshua", "Josiah", "Juan", "Julian", "Justin", "Kaden", "Kaleb", "Keith", "Kenneth", "Kevin", "Kian", "Kyle", "Landon", "Larry", "Lawrence", "Leonardo", "Levi", "Liam", "Logan", "Louis", "Lucas", "Luis", "Luke", "Malachi", "Malik", "Manuel", "Marco", "Marcus", "Mario", "Mark", "Martin", "Marvin", "Mason", "Matthew", "Max", "Maxwell", "Micah", "Michael", "Miguel", "Muhammad", "Nathan", "Nathaniel", "Nicholas", "Nicolas", "Noah", "Nolan", "Oliver", "Omar", "Oscar", "Owen", "Parker", "Patrick", "Paul", "Peter", "Peyton", "Philip", "Phillip", "Preston", "Ralph", "Raymond", "Ricardo", "Richard", "Riley", "Robert", "Roger", "Rohan", "Ronald", "Rory", "Roy", "Rupy", "Russell", "Ryan", "Samuel", "Scott", "Sean", "Sebastian", "Sergio", "Seth", "Shane", "Shawn", "Solomon", "Spencer", "Stephen", "Steve", "Steven", "Tanner", "Terry", "Thomas", "Timothy", "Travis", "Trenton", "Trevor", "Tristan", "Tyler", "Van", "Victor", "Vincent", "Walter", "Wasee", "Wayne", "Wesley", "William", "Wyatt", "Xavier", "Youssef", "Zachary"], Names.FIRST_NAMES = [], Names.MIDDLE_NAMES = ["Air", "Animal", "Battle", "Blue", "Clear", "Cloud", "Coin", "Daring", "Dark", "Day", "Diamond", "Divine", "Dragon", "Dream", "Earth", "Fable", "Fairy", "Fall", "Fancy", "Far", "Fire", "Flame", "Fog", "Forge", "Frost", "Fruit", "Garden", "Gear", "Ghost", "Giant", "Glass", "Gold", "Golden", "Good", "Green", "Heavy", "Hero", "Ice", "Illusion", "Iron", "Land", "Leaf", "Legend", "Life", "Lightning", "Maelstrom", "Magic", "Metal", "Monster", "Moon", "Mountain", "Myth", "Near", "Night", "Ocean", "Plant", "Quake", "Rain", "Red", "River", "Ruby", "Silver", "Sleep", "Soft", "Spell", "Spring", "Star", "Storm", "Strong", "Summer", "Swift", "Thunder", "Water", "White", "Wild", "Wind", "Winter", "Wish", "Wonder", "Yellow"], Names.LAST_NAMES = ["Blade", "Boots", "Boy", "Breath", "Brother", "Caller", "Cast", "Caster", "Catcher", "Crafter", "Dancer", "Dreamer", "Drifter", "Ear", "Eyes", "Follower", "Foot", "Friend", "Gem", "Girl", "Giver", "Hand", "Heart", "Helper", "Hunter", "Leader", "Legs", "Lemon", "Light", "Man", "Mask", "Master", "Nose", "Ore", "Pants", "Petal", "Prism", "Ring", "Runner", "Seed", "Shade", "Shadow", "Shard", "Shine", "Shirt", "Singer", "Sister", "Smith", "Song", "Spoon", "Staff", "Steel", "Strider", "Sword", "Tail", "Talon", "Tamer", "Thinker", "Torch", "Vault", "Voice", "Walker", "Wand", "Ward", "Whisper", "Winner", "Woman"], Prodigy.Element = function(e, t, a, i) {
     Phaser.Group.call(this, e, t), Util.isDefined(a) && (this.x = a), Util.isDefined(i) && (this.y = i), this.onClick = new Array
 }, Prodigy.extends(Prodigy.Element, Phaser.Group, {
     constructor: Prodigy.Element,
@@ -39005,7 +41737,7 @@ var Boss = function() {
             this.data = {
                 name: t,
                 gender: e,
-                hairStyle: Math.floor(1 + 8 * Math.random()),
+                hairStyle: Math.floor(1 + 24 * Math.random()),
                 hairColor: Math.floor(1 + 16 * Math.random()),
                 skinColor: Math.floor(1 + 5 * Math.random()),
                 eyeColor: Math.floor(1 + 15 * Math.random())
@@ -39035,7 +41767,7 @@ var Boss = function() {
         }, e.prototype.getHairStyle = function() {
             return this.data.hairStyle
         }, e.prototype.setHairStyle = function(e) {
-            e >= 1 && 15 >= e && (this.data.hairStyle = e), this.updated = !0
+            e >= 1 && 24 >= e && (this.data.hairStyle = e), this.updated = !0
         }, e.prototype.getHairColor = function() {
             return this.data.hairColor
         }, e.prototype.setHairColor = function(e) {
@@ -39055,8 +41787,8 @@ var Boss = function() {
         }, e
     }();
 Appearance.hairNames = {
-    male: ["Prince", "Spikes", "Rock Star", "Fever", "Neat", "Slick", "Shaggy", "Bed Head"],
-    female: ["Grace", "Spring", "Fall", "Side Swept", "Winter", "Uplift", "Blossom", "Sunshine", "Excite", "Pizzazz", "Dashing", "Summer", "Lilly", "Sweetheart", "Island Breeze"]
+    male: ["Prince", "Spikes", "Rock Star", "Fever", "Neat", "Slick", "Shaggy", "Bed Head", "Grace", "Spring", "Fall", "Side Swept", "Winter", "Uplift", "Blossom", "Sunshine", "Excite", "Pizzazz", "Dashing", "Summer", "Lilly", "Sweetheart", "Island Breeze", "Baldy"],
+    female: ["Grace", "Spring", "Fall", "Side Swept", "Winter", "Uplift", "Blossom", "Sunshine", "Excite", "Pizzazz", "Dashing", "Summer", "Lilly", "Sweetheart", "Island Breeze", "Prince", "Spikes", "Rock Star", "Fever", "Neat", "Slick", "Shaggy", "Bed Head", "Baldy"]
 };
 var Quests = function() {
     function e() {
@@ -39970,11 +42702,11 @@ var SystemMenu = function() {
             var t = [{
                 icon: "star",
                 callback: this.loadWizards.bind(this, "data.level"),
-                title: "Tip 1"
+                title: "Tips"
             }, {
                 icon: "gold",
                 callback: this.loadWizards.bind(this, "data.gold"),
-                title: "Tip 2"
+                title: "Tips"
             }];
             this.showFrame("leaderboard", "CLASS LEADERBOARD (LEVEL)", t, e);
             var a = new TextButton(this.game, this, 0, 0, {
@@ -39983,7 +42715,7 @@ var SystemMenu = function() {
             }, this.close.bind(this));
             this.showBtns([], [a]), this.setupComplete = !0
         }, e.prototype.loadWizards = function(e) {
-            return Util.isDefined(this.lastUpdate) && this.lastUpdate > (new Date).getTime() ? (this.game.prodigy.open.message("Please wait a few seconds before refreshing the leaderboards"), void 0) : (this.lastUpdate = (new Date).getTime() + 5e3, this.error.visible = !0, Util.isDefined(this.classIDs) && this.classIDs.length > 0 ? (this.error.setText("Loading..."), this.content.visible = !1, this.game.prodigy.network.getLeaderboard(e, this.classIDs, this.loadWizardsComplete.bind(this, e, !0), this.loadWizardsComplete.bind(this, e, !1))) : this.error.setText("To change your skin tone, your gender, and/or your name (not your nickname), you can edit your save using text editors like Notepad."), void 0)
+            return Util.isDefined(this.lastUpdate) && this.lastUpdate > (new Date).getTime() ? (this.game.prodigy.open.message("Do you know javascript?"), void 0) : (this.lastUpdate = (new Date).getTime() + 5e3, this.error.visible = !0, Util.isDefined(this.classIDs) && this.classIDs.length > 0 ? (this.error.setText("Loading..."), this.content.visible = !1, this.game.prodigy.network.getLeaderboard(e, this.classIDs, this.loadWizardsComplete.bind(this, e, !0), this.loadWizardsComplete.bind(this, e, !1))) : this.error.setText("To change your skin tone, your gender, and/or your name (not your nickname), you can edit your save using text editors like Notepad."), void 0)
         }, e.prototype.loadWizardsComplete = function(t, a, i) {
             if (Util.isDefined(this.game)) {
                 if (console.log(i), this.type = t, this.leaders = i, !a || !Util.isDefined(i) || i.length <= 0) return this.error.setText("There was an error loading your class...try again later"), this.error.visible = !0, void 0;
@@ -42700,7 +45432,7 @@ var GotItem = function() {
                 width: 348,
                 align: "center"
             }), this.buyBtn = new TextButton(this.game, this.data, 74, 290, {
-                text: "0",
+                text: "FREE",
                 icon: "item/26"
             }, this.buy.bind(this)), this.gold = new BitmapFont(this.game, this, 50, 655, "[gold] " + this.game.prodigy.player.getGold(), {
                 size: 40
@@ -53628,7 +56360,7 @@ var Tower = function() {
                 };
             Battle.startBattle(this.game, this.mods, e.bind(this), t.bind(this, this.floor, this.mods.boss), null, "TowerBase")
         }, e.prototype.toFloor = function(e) {
-            return e > 100 ? (this.toBase(), void 0) : (this.game.state.states.Tower.playerX = 602, this.game.state.states.Tower.playerY = 150, this.game.state.states.Tower.floor = e, this.game.state.states.Tower.cleared = !1, this.game.state.start("Tower"), void 0)
+            return e > 105 ? (this.toBase(), void 0) : (this.game.state.states.Tower.playerX = 602, this.game.state.states.Tower.playerY = 150, this.game.state.states.Tower.floor = e, this.game.state.states.Tower.cleared = !1, this.game.state.start("Tower"), void 0)
         }, e.prototype.toBase = function() {
             var t = function(e) {
                     e.state.states.TowerBase.playerX = 1200, e.state.states.TowerBase.playerY = 400, e.state.start("TowerBase")
@@ -54056,6 +56788,10 @@ Tower.AUDIO = [{
         text: "Come, wizard! It's time for you to face the strongest wizard of all time!",
         face: 3,
         audio: Tower.AUDIO[2]
+}], [{
+        text: "Do you really think you can beat my tower? There were a few more floors left."
+}, {
+        text: "Wanna dance?"
     }]
 ], Tower.OPPONENTS = [{
     pets: [{
@@ -54842,7 +57578,7 @@ var TowerBase = function() {
         }, this.openTower.bind(this)), new HealEvent(this.game, this.content, this.user, this.path, 538, 239)
     }, e.prototype.openTower = function() {
         var t = this.game.prodigy.player.getTowerProgress();
-        if (t = t - t % 5 + 1, t > 100 && (t = 100), this.game.prodigy.network.sendAnalytics("Dark-Tower"), this.game.prodigy.player.isMember)
+        if (t = t - t % 5 + 1, t > 105 && (t = 105), this.game.prodigy.network.sendAnalytics("Dark-Tower"), this.game.prodigy.player.isMember)
             if (0 === this.game.prodigy.player.getTowerProgress()) {
                 for (var a = 1; 6 > a; a++) this.game.prodigy.dialogue.setText(e.DATA.dialogue[a]);
                 var i = {
@@ -54852,7 +57588,7 @@ var TowerBase = function() {
                     audio: e.AUDIO[0]
                 };
                 this.game.prodigy.dialogue.setText(i)
-            } else if (this.game.prodigy.player.getTowerProgress() > 99)
+            } else if (this.game.prodigy.player.getTowerProgress() > 104)
             for (var a = 6; 8 > a; a++) this.game.prodigy.dialogue.setText(e.DATA.dialogue[a]);
         else {
             var i = {
