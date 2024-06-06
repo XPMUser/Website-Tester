@@ -1912,12 +1912,17 @@ Util.capitalize = function(e) {
 		"map-lamplight-c3": {
 			type: "json",
 			base: c,
-			url: "map-lamplight-c3/3/map-lamplight-c3.json"
+			url: "map-lamplight-c3-springfest/5/map-lamplight-c3-springfest.json"
 		},
 		"map-lamplight-c4": {
 			type: "json",
 			base: "https://xpmuser.github.io/oldprodigy/pde1500/assets/data/",
 			url: "map-lamplight-c4/1/map-lamplight-c4.json"
+		},
+		"map-lamplight-d4": {
+			type: "json",
+			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/data/",
+			url: "map-lamplight-d4/2/map-lamplight-d4.json"
 		},
 		"map-lamplight-a2-pumpkinfest": {
 			type: "json",
@@ -65604,7 +65609,7 @@ Arena.AUDIO = [{
 			ID: 36
 		}]
 	}, this.util = new Prodigy.LamplightUtil(e, this), this.name = "Lamplight", this.ID = "lamplight", this.game = e, this.bgm = "bgm-lamplight", this.minLevel = 1, this.maxLevel = 4, this.battleBG = "bg-battle-arena", this.onFaint = "lamplight-B3", this.questHub = "lamplight-B3", this.states = ["event", "1stpresent", "bounty", "daily", "firstPotion"];
-	var t = ["tileset-generic-new", "tileset-town-new", "tileset-forest-new", "tileset-collisions", "npc-sprite-gnome", "zone-lamplight", "bgm-lamplight", "sfx-lamplight"];
+	var t = ["tileset-springfest", "tileset-generic-new", "tileset-town-new", "tileset-forest-new", "tileset-collisions", "npc-sprite-gnome", "zone-lamplight", "bgm-lamplight", "sfx-lamplight"];
 	this.maps = {
 		A2: new Prodigy.Lamplight_A2(this, t),
 		A3: new Prodigy.Lamplight_A3(this, t),
@@ -65617,7 +65622,8 @@ Arena.AUDIO = [{
 		B5: new Prodigy.Lamplight_B5(this, t),
 		C2: new Prodigy.Lamplight_C2(this, t),
 		C3: new Prodigy.Lamplight_C3(this, t),
-		C4: new Prodigy.Lamplight_C4(this, t)
+		C4: new Prodigy.Lamplight_C4(this, t),
+		D4: new Prodigy.Lamplight_D4(this, t)
 	}, this.quests = {
 		1: new Prodigy.Lamplight_Q1(this, t),
 		2: new Prodigy.Lamplight_Q2(this, t)
@@ -66384,7 +66390,7 @@ Arena.AUDIO = [{
 		}, "lamplight-A2", 1160, 360, null, AreaEvent.LEFT), this._zone.util.addLamp(e, t, 162, 58), this._zone.util.addLamp(e, t, 442, 58), this._zone.util.addLamp(e, t, 802, 58), this._zone.util.addLamp(e, t, 1082, 58)
 	}
 }), Prodigy.Lamplight_B3 = function(e, t) {
-	Prodigy.Map.call(this, e, "B3", "Town Square", 120, 417.5, ["lamplight-A3", "lamplight-C3"], t.concat("zone-lamplight", "npc-sprite-merchant"))
+	Prodigy.Map.call(this, e, "B3", "Town Square", 120, 417.5, ["lamplight-A3", "lamplight-C3"], t.concat("zone-lamplight", "npc-sprite-merchant", "tileset-springfest"))
 }, Prodigy.extends(Prodigy.Lamplight_B3, Prodigy.Map, {
 	constructor: Prodigy.Lamplight_B3,
 	init: function(e, t, i, a) {
@@ -66479,7 +66485,7 @@ Arena.AUDIO = [{
 		this._zone.util.addDoor(e, t, 920, 240, 120, 160, 980, 400, a, !0), this._zone.util.addLamp(e, t, 2, 98), this._zone.util.addLamp(e, t, 242, 98), this._zone.util.addLamp(e, t, 2, 458), this._zone.util.addLamp(e, t, 2, 658), this._zone.util.addLamp(e, t, 280, 223), this._zone.util.addLamp(e, t, 1246, 223)
 	}
 }), Prodigy.Lamplight_C3 = function(e, t) {
-	Prodigy.Map.call(this, e, "C3", "Coliseum", 160, 540, ["lamplight-B3", "lamplight-C2", "lamplight-C4"], t.concat(["npc-sprite-noot"]))
+	Prodigy.Map.call(this, e, "C3", "Coliseum", 160, 540, ["lamplight-B3", "lamplight-C2", "lamplight-C4"], t.concat(["npc-sprite-noot", "tileset-springfest"]))
 }, Prodigy.extends(Prodigy.Lamplight_C3, Prodigy.Map, {
 	constructor: Prodigy.Lamplight_C3,
 	setup: function(e, t, i) {
@@ -66501,7 +66507,13 @@ Arena.AUDIO = [{
 			w: 160,
 			h: 120,
 			rect: !0
-		}, "lamplight-C4", 200, 180, null, AreaEvent.DOWN), this._zone.util.addDoor(e, t, 520, 200, 120, 160, 580, 360, e.prodigy.start.bind(e.prodigy, "Arena")), this.addHealStone(e, t, 1100, 200), new Prodigy.Component.BountyBoard(e, t, t.data)
+		}, "lamplight-C4", 200, 180, null, AreaEvent.DOWN), this.addAreaEvent(e, t, {
+			x: 1300,
+			y: 500,
+			w: 400,
+			h: 200,
+			rect: !0
+		}, "lamplight-D4", 260, 540, null, AreaEvent.RIGHT), this._zone.util.addDoor(e, t, 520, 200, 120, 160, 580, 360, e.prodigy.start.bind(e.prodigy, "Arena")), this.addHealStone(e, t, 1100, 200), new Prodigy.Component.BountyBoard(e, t, t.data)
 	}
 }), Prodigy.Lamplight_C4 = function(e, t) {
 	Prodigy.Map.call(this, e, "C4", "Market", 200, 180, ["lamplight-B4", "lamplight-C3", "tower-0"], t.concat(["npc-sprite-noot"])), this._store = {
@@ -66674,6 +66686,26 @@ Arena.AUDIO = [{
 			h: 200,
 			rect: !0
 		}, "tower-0", 160, 540, null, AreaEvent.DOWN), this._zone.util.addDoor(e, t, 840, 280, 120, 160, 900, 440, e.prodigy.open.store.bind(e.prodigy.open, this._store)), this._zone.util.addLamp(e, t, 562, 298), this._zone.util.addLamp(e, t, 1202, 298)
+	}
+}), Prodigy.Lamplight_D4 = function(e, t) {
+	Prodigy.Map.call(this, e, "D4", "Firefly Garden", 200, 600, ["lamplight-C3", "house-suburbs"], t.concat(["npc-sprite-noot"]))
+}, Prodigy.extends(Prodigy.Lamplight_D4, Prodigy.Map, {
+	constructor: Prodigy.Lamplight_D4,
+	setup: function(e, t, i) {
+		Prodigy.Map.prototype.setup.call(this, e, t, i), this.addAreaEvent(e, t, {
+			x: 100,
+			y: 550,
+			w: 160,
+			h: 180,
+			rect: !0
+		}, "lamplight-C3", 1000, 540, null, AreaEvent.LEFT), this.addAreaEvent(e, t, {
+			x: 460,
+			y: 200,
+			w: 120,
+			h: 160,
+			rect: !0
+		}, "dorm-0", 900, 540, null, AreaEvent.LEFT);
+		this._zone.util.addLamp(e, t, 2, 98), this._zone.util.addLamp(e, t, 242, 98), this._zone.util.addLamp(e, t, 2, 458), this._zone.util.addLamp(e, t, 2, 658), this._zone.util.addLamp(e, t, 280, 223), this._zone.util.addLamp(e, t, 1246, 223)
 	}
 }), Prodigy.Lamplight_Q1 = function(e, t) {
 	Prodigy.Quest.call(this, e, t, 1, "", {
