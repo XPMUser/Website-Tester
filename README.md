@@ -7,3 +7,5 @@ Available Modpacks:
 2. FastGameSpeed
 3. RebalancedBattles
 4. ImitationTitan
+
+Upcoming/next version: unknown.
