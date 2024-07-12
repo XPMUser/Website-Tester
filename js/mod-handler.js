@@ -212,7 +212,7 @@ class ModHandler {
                         }
                         this.starsToProcess = 0;
                         var n = this.getLevel();
-                        if (this.game.broadcaster.broadcast(Prodigy.Events.Creature.STARS_ADDED, this, null), n >= 125) return !1;
+                        if (this.game.broadcaster.broadcast(Prodigy.Events.Creature.STARS_ADDED, this, null), n >= 100) return !1;
                         if (Util.isDefined(this.data.stars) ? this.data.stars += e : this.data.stars = e, Util.isDefined(i) || (this.starsEarned += e), this.data.level = Prodigy.Creature.levelFromStars(this.data.stars), n !== this.data.level) {
                                 this.levelEvents = [];
                                 var l = this.getLevelingCurve(this.data.level);

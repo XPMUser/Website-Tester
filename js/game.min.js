@@ -457,7 +457,7 @@ Prodigy.extends = function(e, t, i) {
 }, Prodigy.Entity = {}, Prodigy.Breadcrumbs = {};
 var GameConstants = GameConstants || function() {
 	var e = {};
-	if (e["GameConstants.Build.VERSION"] = "Prodigy 1-50-0 Definitive Edition", e["GameConstants.Beta.VERSION"] = "Version 2.0.2 Modified by XPMUser", e["GameConstants.Build.LODASH_VERSION"] = "4.13.1", e["GameConstants.Build.DEBUG"] = !1, e["GameConstants.Build.SHOW_FPS"] = !1, e["GameConstants.Build.MUTE_BGM"] = !1, e["GameConstants.Build.LOG_LEVEL"] = 12, e["GameConstants.Build.ASSETS_LOCATION"] = "https://cdn.prodigygame.com/game/assets/", e["GameConstants.Build.TELEPORT"] = "", e["GameConstants.Build.QUEST"] = [], e["GameConstants.Build.ITEM_TYPE"] = [], e["GameConstants.Build.KILL_GORE"] = !1, e["GameConstants.Build.EASY_MODE"] = !1, e["GameConstants.Build.MEMBERSHIP"] = !1, e["GameConstants.Tower.MAX_FREE_MEMBER_FLOOR"] = 5, e["GameConstants.Debug.DISABLE_DAILY_BONUS"] = !1, e["GameConstants.Debug.ENABLE_MAP"] = !1, e["GameConstants.Debug.AUTO_LOGIN"] = [], e["GameConstants.Debug.GET_PET"] = [], e["GameConstants.Debug.SET_LEVEL"] = 0, e["GameConstants.Debug.DISABLE_ACHIEVEMENTS"] = !1, e["GameConstants.Debug.GET_GOLD"] = 0, e["GameConstants.Debug.GET_SPELL"] = 0, e["GameConstants.Debug.COMPLETE_TUTORIAL"] = !1, e["GameConstants.Debug.FORCE_DROPS"] = [], e["GameConstants.Mailer.TEST_MAIL"] = !1, e["GameConstants.FriendsList.TEST_FRIENDS_LIST"] = !1, e["GameConstants.Features.ENABLE_HOUSE_MOVING"] = !0, e["GameConstants.Features.Wheel.COOLDOWN"] = 5, e["GameConstants.Features.Wheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.Wheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.Wheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.TwilightWheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.TwilightWheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.TwilightWheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.SplitTests.PLAY_AT_HOME"] = !0, e["GameConstants.Features.TwilightWheel.RIGGED_REWARD"] = null, e["GameConstants.Features.SplitTests.USER_ID_MOD"] = 4, e["GameConstants.Features.SplitTests.CLASS_ID_MOD"] = 0, e["GameConstants.Features.SplitTests.GRADE_MOD"] = 0, e["GameConstants.Battle.VALID_PARENT_EMAIL_STARS_PERCENTAGE"] = 1.05, e["GameConstants.Battle.MAX_NUM_PETS"] = 1, "undefined" != typeof gameConstantsLocal)
+	if (e["GameConstants.Build.VERSION"] = "Prodigy 1-50-0 Definitive Edition", e["GameConstants.Beta.VERSION"] = "Version 2.0.3 Modified by XPMUser", e["GameConstants.Build.LODASH_VERSION"] = "4.13.1", e["GameConstants.Build.DEBUG"] = !1, e["GameConstants.Build.SHOW_FPS"] = !1, e["GameConstants.Build.MUTE_BGM"] = !1, e["GameConstants.Build.LOG_LEVEL"] = 12, e["GameConstants.Build.ASSETS_LOCATION"] = "https://cdn.prodigygame.com/game/assets/", e["GameConstants.Build.TELEPORT"] = "", e["GameConstants.Build.QUEST"] = [], e["GameConstants.Build.ITEM_TYPE"] = [], e["GameConstants.Build.KILL_GORE"] = !1, e["GameConstants.Build.EASY_MODE"] = !1, e["GameConstants.Build.MEMBERSHIP"] = !1, e["GameConstants.Tower.MAX_FREE_MEMBER_FLOOR"] = 5, e["GameConstants.Debug.DISABLE_DAILY_BONUS"] = !1, e["GameConstants.Debug.ENABLE_MAP"] = !1, e["GameConstants.Debug.AUTO_LOGIN"] = [], e["GameConstants.Debug.GET_PET"] = [], e["GameConstants.Debug.SET_LEVEL"] = 0, e["GameConstants.Debug.DISABLE_ACHIEVEMENTS"] = !1, e["GameConstants.Debug.GET_GOLD"] = 0, e["GameConstants.Debug.GET_SPELL"] = 0, e["GameConstants.Debug.COMPLETE_TUTORIAL"] = !1, e["GameConstants.Debug.FORCE_DROPS"] = [], e["GameConstants.Mailer.TEST_MAIL"] = !1, e["GameConstants.FriendsList.TEST_FRIENDS_LIST"] = !1, e["GameConstants.Features.ENABLE_HOUSE_MOVING"] = !0, e["GameConstants.Features.Wheel.COOLDOWN"] = 5, e["GameConstants.Features.Wheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.Wheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.Wheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.TwilightWheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.TwilightWheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.TwilightWheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.SplitTests.PLAY_AT_HOME"] = !0, e["GameConstants.Features.TwilightWheel.RIGGED_REWARD"] = null, e["GameConstants.Features.SplitTests.USER_ID_MOD"] = 4, e["GameConstants.Features.SplitTests.CLASS_ID_MOD"] = 0, e["GameConstants.Features.SplitTests.GRADE_MOD"] = 0, e["GameConstants.Battle.VALID_PARENT_EMAIL_STARS_PERCENTAGE"] = 1.05, e["GameConstants.Battle.MAX_NUM_PETS"] = 1, "undefined" != typeof gameConstantsLocal)
 		for (var t in gameConstantsLocal) e[t] = gameConstantsLocal[t];
 	return {
 		get: function(t) {
@@ -859,7 +859,7 @@ Util.capitalize = function(e) {
 		},
 		heads: {
 			type: "localAtlas",
-			base: "https://cdn.prodigygame.com/game/assets/v1/atlases/",
+			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/",
 			key: "general-head",
 			v: "1"
 		},
@@ -1538,8 +1538,8 @@ Util.capitalize = function(e) {
 		},
 		"tileset-springfest": {
 			type: "spritesheet",
-			base: p,
-			url: "tileset-outsidesnow/2/tileset-outsidesnow.png",
+			base: "https://upload.wikimedia.org/",
+			url: "wikipedia/commons/thumb/0/02/Transparent_square.svg/1200px-Transparent_square.svg.png",
 			w: 40,
 			h: 40
 		},
@@ -45770,9 +45770,8 @@ Prodigy.ForestBoss = function(e, t) {
 					2: [0, 1],
 					3: [0, 0, 1],
 					4: [0, 0, 1, 1],
-					5: [0, 0, 0, 1, 1],
-					6: [0, 0, 1, 1, 1, 0]
-				}, a = ["hex", "flora", "arc", "dive", "mag", "hex", "hex"], s = [125, 126, 127, 128, 129, 125, 125], r = [], o = Math.min(6, t.length), n = 0; o > n; n++) {
+					5: [0, 0, 0, 1, 1]
+				}, a = ["hex", "flora", "arc", "dive", "mag"], s = [125, 126, 127, 128, 129], r = [], o = Math.min(5, t.length), n = 0; o > n; n++) {
 				var h = n < t.length ? this.game.prodigy.attacks.getAttack(t[n]) : null;
 				r.push(this.game.prodigy.create.stackButton(this.content, 0, 0, [{
 					tag: "icon-base"
@@ -46503,16 +46502,9 @@ Prodigy.ForestBoss = function(e, t) {
 				frameNo: 0
 			}, 1, Phaser.Easing.Quadratic.In), this.f8 = this.game.add.tween(this._petImage).to({
 				alpha: 1
-			}, 1e3, Phaser.Easing.Quadratic.In), this.f1.chain(this.f2), this.f2.chain(this.f3), this.f3.chain(this.f4), this.f4.chain(this.f5), this.f5.chain(this.f6), this.f6.chain(this.f7), this.f7.chain(this.f8), this.f8.chain(this.f1), this.f1.start(), this.game.prodigy.create.font(this.content, 309, 100, "Go to settings, and click get all epics to get every single epic on your team today! ", {
+			}, 1e3, Phaser.Easing.Quadratic.In), this.f1.chain(this.f2), this.f2.chain(this.f3), this.f3.chain(this.f4), this.f4.chain(this.f5), this.f5.chain(this.f6), this.f6.chain(this.f7), this.f7.chain(this.f8), this.f8.chain(this.f1), this.f1.start(), this.game.prodigy.create.font(this.content, 309, 100, "Go to the pet store in the Pet Park in Lamplight Town, open the Epics tab, and you'll find this epic.", {
 				size: 16,
 				width: 370
-			});
-			var r = this.game.prodigy.create.panelButton(this.content, 180, 290, 9, 2, "button", this.openWebsite.bind(this, "buy toy now!"));
-			r.content.add(this.game.prodigy.create.sprite(10, -10, "icons", "pets/" + s.ID)), this.game.prodigy.create.font(r.content, 100, 15, "buy toy now!", {
-				width: 250,
-				size: 36,
-				font: "button",
-				align: "center"
 			})
 		}
 	},
@@ -49528,7 +49520,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 }, Prodigy.extends(Prodigy.Menu.BuyToy, Prodigy.RenderMenu, {
 	constructor: Prodigy.Menu.BuyToy,
 	create: function() {
-		this.addTransparent(.5), this.sprites = this.game.prodigy.create.element(this, 350, 100), this.b = this.game.prodigy.create.panel(this.sprites, 100, 0, 10, 13, "shine2"), this.text = this.game.prodigy.create.font(this.sprites, 150, 20, Util.isDefined(this.message) ? this.message : "If you want to play this game, you need", {
+		this.addTransparent(.5), this.sprites = this.game.prodigy.create.element(this, 350, 100), this.b = this.game.prodigy.create.panel(this.sprites, 100, 0, 10, 13, "shine2"), this.text = this.game.prodigy.create.font(this.sprites, 150, 20, Util.isDefined(this.message) ? this.message : "If you want to play this game, you'll need this epic.", {
 			width: 300,
 			align: "center"
 		}), this.toyImg = this.sprites.add(this.game.prodigy.create.sprite(150, 100, "popup-toyStore", this.id + "_1")), this.toyImg.scale.x = 25 / 35, this.toyImg.scale.y = 25 / 35;
@@ -49540,8 +49532,8 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 		});
 		var t = e.name.length;
 		this.sprites.add(this.game.prodigy.create.sprite(300 - 8 * t - 60, 300, "icons", "icon-bar-" + e.element));
-		var i = this.game.prodigy.create.panelButton(this.sprites, 120, 395, 9, 2, "button", this.openWebsite.bind(this, Util.isDefined(this.urlMessage) ? this.urlMessage : "epics arena!"));
-		i.content.add(this.game.prodigy.create.sprite(10, -10, "icons", "pets/" + this.id)), this.game.prodigy.create.font(i.content, 100, 15, "buy toy now!", {
+		var i = this.game.prodigy.create.panelButton(this.sprites, 120999999, 395, 9, 2, "button", this.openWebsite.bind(this, Util.isDefined(this.urlMessage) ? this.urlMessage : "epics arena!"));
+		i.content.add(this.game.prodigy.create.sprite(10, -10, "icons", "pets/" + this.id)), this.game.prodigy.create.font(i.content, 100999999, 15, "buy toy now!", {
 			width: 250,
 			size: 36,
 			font: "button",
@@ -52763,7 +52755,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 }), Prodigy.Container.Arena = function(e, t, i, a) {
 	Prodigy.Control.Element.call(this, e, t, i, a);
 	var s = e.prodigy.player.processDeserter(),
-		r = ["Item", "Item", "Item", "Item", "Item", "Item"],
+		r = ["Item Shop", "Item Shop", "Item Shop", "Item Shop", "Item Shop", "Item Shop"],
 		o = ["", "", "", "", "", ""],
 		n = [
 			[0, 499],
@@ -52777,7 +52769,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 		d = this.game.prodigy.player.isUnranked();
 	var p = this.game.prodigy.create.panel(this, 0, 0, 13, 7, "panel-base"),
 		c = p.add(this.game.prodigy.create.sprite(1099999, 10, "icons", "emblem-rank" + (h + 1)));
-	d && (c.tint = 5592405), this.game.prodigy.create.font(p, 20, 0, d ? r[0] : r[h + 1] + " Shop", {
+	d && (c.tint = 5592405), this.game.prodigy.create.font(p, 20, 0, d ? r[0] : r[h + 1] + "", {
 		font: "button",
 		size: 36,
 		width: 480,
@@ -52794,7 +52786,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 		lineHeight: 30
 	});
 	var g = Arena.STORE;
-	g.callback = this.game.prodigy.player.getArenaRank.bind(this.game.prodigy.player), this.game.prodigy.create.button(p, 400, 180, "icons", "catalogue", this.game.prodigy.open.rankStore.bind(this.game.prodigy.open, g)), d && this.game.prodigy.create.font(p, 140, 48, "Earn a score of [arena]100 or more to reach Bronze Rank!", {
+	g.callback = this.game.prodigy.player.getArenaRank.bind(this.game.prodigy.player), this.game.prodigy.create.button(p, 400, 180, "icons", "catalogue", this.game.prodigy.open.rankStore.bind(this.game.prodigy.open, g)), d && this.game.prodigy.create.font(p, 140, 48, "You can also get extra items from the Prodigy Store/Item Shop!", {
 		size: 20,
 		width: 360,
 		align: "right",
@@ -52930,10 +52922,10 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 		var a = null;
 		if (!this.game.prodigy.player.isMember) {
 			var a = this.game.prodigy.create.panelButton(e, t, i, 6, 3, "member", this.game.prodigy.open.membership.bind(this.game.prodigy.open, Prodigy.Menu.MemberAd.MORE_EXP));
-			this.game.prodigy.create.font(a.content, 8, 20, "Rank Up  Faster!", {
+			this.game.prodigy.create.font(a.content, 899999999999, 20, "Rank Up  Faster!", {
 				font: "button",
-				size: 36,
-				width: 240,
+				size: 0,
+				width: 0,
 				align: "center"
 			})
 		}
@@ -79384,7 +79376,7 @@ Prodigy.Controller.BattleController = function(e) {
 					desc: "Spend [X] gold",
 					icon: "catalogue",
 					fct: this.processValue.bind(this, "gS"),
-					ranks: [1e3, 1e5, 1e6]
+					ranks: [1e1, 1e2, 1e3]
 				}, {
 					ID: 4,
 					name: "Runway Model",
@@ -79632,7 +79624,7 @@ Prodigy.Controller.BattleController = function(e) {
 					icon: "weapon/22",
 					fct: r.getZoneVars.bind(r, this.game, "bonfire_spire", "wizard"),
 					ranks: [2]
-				}]
+				}]				
 			}, {
 				tag: "Education",
 				data: [{
@@ -79665,7 +79657,7 @@ Prodigy.Controller.BattleController = function(e) {
 					desc: "Defeat [X] Coliseum opponents",
 					icon: "weapon/62",
 					fct: t.getColiseum.bind(t),
-					ranks: [5, 10, 15, 20, 33]
+					ranks: [7, 14, 21, 28, 35]
 				}]
 			}];
 		if (!Util.isDefined(e)) return n;
