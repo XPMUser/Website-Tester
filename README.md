@@ -8,4 +8,4 @@ Available Modpacks:
 3. RebalancedBattles
 4. ImitationTitan
 
-Upcoming/next version: 1-50-0.
+Upcoming/next version: prodigyde.
