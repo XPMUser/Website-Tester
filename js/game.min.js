@@ -25459,9 +25459,9 @@ var DormMenu = function() {
                         },
                         heads: {
                                 type: "atlas",
-                                base: "https://daboss7173.github.io/oldprodigy/1-10-0/assets/images/",
-                                url: "head.png",
-                                json: "head.json"
+                                base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/general-head/1/",
+                                url: "general-head.png",
+                                json: "general-head.json"
                         },
                         "normal-outfit-male-1": {
                                 type: "spritesheet",
