@@ -25459,7 +25459,7 @@ var DormMenu = function() {
                         },
                         heads: {
                                 type: "atlas",
-                                base: "https://daboss7173.github.io/oldprodigy/1-10-0/images/",
+                                base: "https://daboss7173.github.io/oldprodigy/1-10-0/assets/images/",
                                 url: "head.png",
                                 json: "head.json"
                         },
