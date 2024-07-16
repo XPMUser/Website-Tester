@@ -8,4 +8,4 @@ Available Modpacks:
 3. RebalancedBattles
 4. ImitationTitan
 
-  Upcoming/next version: 3.15.3.
+  Upcoming/next version: N/A.
