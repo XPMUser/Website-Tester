@@ -1,4 +1,4 @@
-﻿function Util() {}
+function Util() {}
 
 function Device() {}
 
@@ -54345,54 +54345,132 @@ var Screen = function() {
 		function e(e) {
 			Screen.call(this, e, "Login", "login", "login", ["login", "sfx-ui", "icons", "icons-menu", "icons-hud", "npc-sprite-toy"]), this.showMenu = !1, this.skipUrlParams = !1
 		}
-		return e.prototype = Object.create(Screen.prototype), e.prototype.create = function() {
+		return e.onGoogleAuthLoadedCallback = null, e.isGoogleAuthLoaded = !1, e.onGoogleAuthLoaded = function (t, i) {
+			e.isGoogleAuthLoaded = t, i = Util.isDefined(i) ? i : {
+				error: "no error specified",
+				details: "no details specified"
+			}, t ? (Util.log("Login.onGoogleAuthLoaded - google auth lib loaded successfully"), Util.isDefined(e.onGoogleAuthLoadedCallback) && (e.onGoogleAuthLoadedCallback(), e.onGoogleAuthLoadedCallback = null)) : Util.log("Login.onGoogleAuthLoaded - error loading google auth lib. The error is: " + i.error + " \n details: " + i.details, Util.ERROR)
+		}, window.onGooglePlatformLoad = function () {
+			Util.log("google platform loaded"), window.gapi.load("auth2", function () {
+				var t = window.gapi.auth2.init({
+					client_id: "220442635630-9tjlg48pualfqmef01i1bsq0453ecucv.apps.googleusercontent.com",
+					cookiepolicy: "single_host_origin"
+				});
+				t.then(function () {
+					e.onGoogleAuthLoaded(!0)
+				}, function (t) {
+					e.onGoogleAuthLoaded(!1, t)
+				})
+			})
+		}, e.prototype = Object.create(Screen.prototype), e.GOOGLE_AUTH_FAIL_DEFAULT = "Signing in with Google was unsuccessful", e.GOOGLE_AUTH_POPUP_BLOCKED = "Your browser is blocking popups. To sign in with Google, please allow popups and try again.", e.GOOGLE_AUTH_USE_BROWSER_INSTEAD = "Google sign-in only works in the browser version of Prodigy. Would you like to open Prodigy in the browser?", e.prototype.create = function () {
 			this.game.prodigy.network.logout(!0), this.game.prodigy.debug.setup(this.game);
 			try {
 				$("#first-loading-screen").remove()
 			} catch (e) {}
 			try {
 				Util.getUrlVariable("iosApp") && webkit.messageHandlers.setGameVisible.postMessage(0)
-			} catch (t) {}
+			} catch (e) {}
 			Screen.prototype.create.call(this)
 		}, e.prototype.screenSetup = function() {
-			this.game.prodigy.debug.easyMode(1, 1), this.background.add(this.game.prodigy.create.sprite(0, 0, "login", "bg")), this.loginBox = this.game.prodigy.create.element(this.background), this.usernameField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "username", "", 100, 230, 300, 40), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Username:");
+			this.eduToggle = function(){
+			if (PIXI.game.prodigy.debug.disableEdu == !1 || PIXI.game.prodigy.debug.disableEdu == undefined){
+			PIXI.game.prodigy.debug.disableEdu = true
+			return
+			}
+			if (PIXI.game.prodigy.debug.disableEdu == !0){
+			PIXI.game.prodigy.debug.disableEdu = false
+			return
+			}
+			}
+			this.game.prodigy.create.textButton(this.loginBox, 500, 8, {
+                text: "Math Off",
+                size: Prodigy.Control.TextButton.MED
+            }, this.eduToggle.bind(this))
+			
+			this.game.prodigy.create.textButton(this.loginBox, 500, 72, {
+                text: "Math On",
+                size: Prodigy.Control.TextButton.MED
+            }, this.eduToggle.bind(this)), this.game.prodigy.debug.easyMode(0, 0), this.background.add(this.game.prodigy.create.sprite(0, 0, "login", "bg")), this.loginBox = this.game.prodigy.create.element(this.background), this.usernameField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "username", "", 100, 230, 300, 40), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Username:");
 			var e = Util.getCookie("prodigyUsername");
-			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 100, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Password:"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "offline", this.offlineMode.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
+			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 100, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Password:"),
+			this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)),
+			this.googleLoginButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "google-signin-btn", this.onGoogleLoginButtonClick.bind(this));
+			this.progressBox = this.game.prodigy.create.element(this.background, 100, 250),
+			this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
 				width: 300,
 				align: "center"
 			}), this.closeButton = this.game.prodigy.create.textButton(this.progressBox, 0, 100, {
 				icon: "close",
 				text: "okay",
 				size: Prodigy.Control.TextButton.MED
-			}, this.showLogin.bind(this, !0)), this.progressBox.visible = !1, this.createAccountButton = this.game.prodigy.create.button(this.background, 100, 560, "login", "student", this.createAccount.bind(this));
+			}, this.showLogin.bind(this, !0)),
+			this.progressBox.visible = !1,
+			this.createAccountButton = this.game.prodigy.create.button(this.background, 100, 560, "login", "student", this.createAccount.bind(this));
 			var t = this.game.prodigy.create.panel(this.background, 100, 660, 4, 1, "lb");
 			t.alpha = .25, this.game.prodigy.create.font(this.background, t.x, t.y + 8, "Privacy Policy", {
 				size: 16,
 				width: 160,
 				align: "center"
-			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "www.prodigygame.com/privacy-policy/")), (t = this.game.prodigy.create.panel(this.background, 280, 660, 3, 1, "lb")).alpha = .25, this.game.prodigy.create.font(this.background, t.x, t.y + 8, "Home", {
+			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "www.prodigygame.com/privacy-policy/")), t = this.game.prodigy.create.panel(this.background, 280, 660, 3, 1, "lb"), t.alpha = .25, this.game.prodigy.create.font(this.background, t.x, t.y + 8, "Home", {
 				size: 16,
 				width: 120,
 				align: "center"
-			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "https://xpmuser.github.io/")), this.showLogin(!0), this.checkForAdmin(), Screen.prototype.screenSetup.call(this)
+			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "xpmuser.github.io/oldprodigy")), this.showLogin(!0), this.checkForAdmin(), Screen.prototype.screenSetup.call(this)
 		}, e.prototype.offlineMode = function() {
 			this.game.prodigy.start("CharSelect")
 		}, e.prototype.openFileForCharacter = function() {
-			var e = document.createElement("input"),
+			var fileInput = document.createElement('input'),
 				t = this;
-			e.type = "file", e.id = "myfile" + Math.floor(999999 * Math.random()), e.name = "files", e.style.display = "none", e.click(), e.onchange = function(e) {
-				var i = new FileReader;
-				i.readAsText(e.target.files[0]), i.onload = function(e) {
-					t.loadCharacter.call(t, JSON.parse(e.target.result), !0)
-				}, i.onerror = function(e) {
-					t.game.prodigy.open.okaymessage("Failed to open save file, please retry.", null, null, "Character Loader")
+			fileInput.type = 'file',
+			fileInput.id = 'myfile' + Math.floor(Math.random() * 999999),
+			fileInput.name = 'files',
+			fileInput.style.display = 'none',
+			fileInput.click();
+			fileInput.onchange = function(file) {
+				var reader = new FileReader();
+				reader.readAsText(file.target.files[0]);
+				reader.onload = function(reader) {
+					t.loadCharacter.call(t, JSON.parse(reader.target.result), !0);
+				};
+				reader.onerror = function(reader) {
+					t.game.prodigy.open.okaymessage("Failed to open save file, please retry.",null,null,"Character Loader");
 				}
 			}
 		}, e.prototype.loadCharacter = function(e, t) {
 			try {
-				e.gameVersion != this.game.prodigy.version && !0 == t ? (this.game.prodigy.open.confirm("Your character is from a different Prodigy version! This may cause multiple problems while playing!\n\nDo you want to continue?", this.loadCharacter.bind(this, e, !1), this.showLogin.bind(this, !0), null, "Character Loader"), this.showLogin(!1)) : (this.game.prodigy.player.appearance.data = e.appearancedata, this.game.prodigy.player.equipment.data = e.equipmentdata, this.game.prodigy.player.kennel.data = e.kenneldata, this.game.prodigy.player.data = e.data, this.game.prodigy.player.quests.data = e.questdata, this.game.prodigy.player.backpack.data = e.backpackdata, Util.isDefined(e.housedata) && (this.game.prodigy.player.house.data = e.housedata), Util.isDefined(e.tutorialdata) && (this.game.prodigy.player.tutorial.data = e.tutorialdata), Util.isDefined(e.statedata) && (this.game.prodigy.player.state.data = e.statedata), Util.isDefined(e.achievementsdata) && (this.game.prodigy.player.achievements.data = e.achievementsdata), Util.isDefined(e.metadata) ? this.game.prodigy.player.isMember = e.metadata.isMember : this.game.prodigy.player.isMember = !1, this.offlineMode())
-			} catch (i) {
-				console.error(i), this.game.prodigy.open.okaymessage("A critical error occurred during your character load! This is most-likely from a corrupted/modified save.\n\n\nCheck the console for more details.", null, null, "Character Loader"), console.log("Character load failed!")
+				if (e.gameVersion != this.game.prodigy.version && t == !0) {
+					this.game.prodigy.open.confirm("Your character is from a different Prodigy version! This may cause multiple problems while playing!\n\nDo you want to continue?", this.loadCharacter.bind(this, e, !1), this.showLogin.bind(this, !0), null, "Character Loader")
+					this.showLogin(!1);
+				} else {
+					this.game.prodigy.player.appearance.data = e.appearancedata,
+					this.game.prodigy.player.equipment.data = e.equipmentdata,
+					this.game.prodigy.player.kennel.data = e.kenneldata,
+					this.game.prodigy.player.data = e.data,
+					this.game.prodigy.player.quests.data = e.questdata,
+					this.game.prodigy.player.backpack.data = e.backpackdata;
+					if (Util.isDefined(e.housedata)) {
+						this.game.prodigy.player.house.data = e.housedata
+					};
+					if (Util.isDefined(e.tutorialdata)) {
+						this.game.prodigy.player.tutorial.data = e.tutorialdata
+					};
+					if (Util.isDefined(e.statedata)) {
+						this.game.prodigy.player.state.data = e.statedata
+					};
+					if (Util.isDefined(e.achievementsdata)) {
+						this.game.prodigy.player.achievements.data = e.achievementsdata
+					};
+					if (Util.isDefined(e.metadata)) {
+						this.game.prodigy.player.isMember = e.metadata.isMember
+					} else {
+						this.game.prodigy.player.isMember = !1 // No membership by default
+					};
+					this.offlineMode()
+				}
+			} catch (error) {
+				console.error(error);
+				this.game.prodigy.open.okaymessage("A critical error occurred during your character load! This is most-likely from a corrupted/modified save.\n\n\nCheck the console for more details.", null, null, "Character Loader");
+				console.log("Character load failed!");
 			}
 		}, e.prototype.checkForAdmin = function() {
 			if ("admin" === Util.getUrlVariable("accessType")) {
@@ -54407,10 +54485,52 @@ var Screen = function() {
 			this.showLogin(e), this.loginBox.visible = e
 		}, e.prototype.startLogin = function() {
 			this.showLogin(!1), this.error.setText("Logging in..."), this.closeButton.visible = !1, this.username = this.usernameField.getValue(), this.password = this.passwordField.getValue(), "" === this.username || "" === this.password ? this.onError(NetworkManager.LOGIN, null, 400) : window.setTimeout(this.login.bind(this), 1e3)
+      }, e.prototype.onGoogleLoginButtonClick = function () {
+			if ("1" !== Util.getUrlVariable("iosApp")) this.authorizeWithGoogle();
+			else {
+				this.gotoLoginMode("Prompting for browser version...");
+				var t = this.game.prodigy.open.messageBox(e.GOOGLE_AUTH_USE_BROWSER_INSTEAD, function () {
+					try {
+						webkit.messageHandlers.openWebsiteInBrowser.postMessage(window.location.href.replace("iosApp=1", "action=auth-with-google"))
+					} catch (e) {
+						Util.log("Login.onGoogleLoginButtonClick - exception: " + e.message, Util.ERROR)
+					}
+				});
+				t.onClose = function () {
+					this.showLogin(!0)
+				}.bind(this)
+			}
+		}, e.prototype.authorizeWithGoogle = function () {
+			if (e.isGoogleAuthLoaded) {
+				this.gotoLoginMode("Logging in with Google...");
+				var t = window.gapi.auth2.getAuthInstance().signIn({
+					scope: "profile email"
+				});
+				t.then(this.onGoogleAuthorizeSuccess.bind(this), this.onGoogleAuthorizeFail.bind(this))
+			} else Util.log("Login.authorizeWithGoogle - the Google auth2 lib is not loaded so we can't prompt for google credentials", Util.ERROR)
+		}, e.prototype.onGoogleAuthorizeFail = function (t) {
+			Util.log("onGoogleAuthorizeFail: " + t.error, Util.ERROR), "popup_closed_by_user" === t.error ? this.showLogin(!0) : "popup_blocked_by_browser" === t.error ? this.game.prodigy.open.messageBoxOkay(e.GOOGLE_AUTH_POPUP_BLOCKED, "OKAY", function () {
+				this.showLogin(!0)
+			}.bind(this)) : this.showErrorText(e.GOOGLE_AUTH_FAIL_DEFAULT)
+		}, e.prototype.onGoogleAuthorizeSuccess = function (e) {
+			Util.log("onGoogleLoginSuccess: " + e);
+			var t = {
+				idToken: e.getAuthResponse().id_token,
+				name: e.getBasicProfile().getName(),
+				email: e.getBasicProfile().getEmail()
+			};
+			this.username = t.email, this.loginWithGoogle(t)
+		}, e.prototype.loginWithGoogle = function (e) {
+			this.game.prodigy.network.loginWithGoogle(e.idToken, this.game.prodigy.player, this.onLoginWithGoogleError.bind(this, e, NetworkManager.LOGIN), this.loadSkills.bind(this))
+		}, e.prototype.onLoginWithGoogleError = function (e, t, i, a) {
+			if (404 === a) {
+				var s = location.host + "/Registration/?token=" + e.idToken + "&name=" + e.name + "&email=" + e.email + "&origin=" + window.location.href;
+				this.game.prodigy.network.openWebsite(s, !1)
+			} else this.onError(t, i, a)
 		}, e.prototype.login = function() {
 			this.game.prodigy.network.login(this.username, this.password, this.game.prodigy.player, this.onError.bind(this, NetworkManager.LOGIN), this.loadSkills.bind(this))
 		}, e.prototype.loadSkills = function(e) {
-			this.game.prodigy.player.username = this.username, (e = e || {}).username = this.username, e.password = this.password, this.error.setText("Loading skills..."), this.game.prodigy.network.loadSkills(this.game.prodigy.player.userID, this.game.prodigy.player.classIDs, this.loginSuccess.bind(this), this.onError.bind(this, NetworkManager.SKILLS))
+			this.game.prodigy.player.username = this.username, e = e || {}, e.username = this.username, e.password = this.password, this.error.setText("Loading skills..."), this.game.prodigy.network.loadSkills(this.game.prodigy.player.userID, this.game.prodigy.player.classIDs, this.loginSuccess.bind(this), this.onError.bind(this, NetworkManager.SKILLS))
 		}, e.prototype.loginSuccess = function(e) {
 			this.game.prodigy.education.init(e), this.error.setText("Loading worlds..."), this.game.prodigy.network.getWorldList(this.openPlayer.bind(this), this.openPlayer.bind(this, null))
 		}, e.prototype.openPlayer = function(e) {
@@ -54421,14 +54541,16 @@ var Screen = function() {
 			}, e)) : (this.game.prodigy.network.sendEvent("login"), this.game.prodigy.start("CharSelect", {
 				time: 1001
 			}, e))
-		}, e.prototype.createAccount = function(e) {
+		}, e.prototype.createAccount = function (e) {
 			this.game.prodigy.start("CharCreate")
+		}, e.prototype.startLoginTutorial = function (e, t, i) {
+			this.showLogin(!0), this.createAccountButton.visible = !e, e && (this.new_username = t, this.new_password = i, this.usernameField.setValue(""), this.passwordField.setValue(""), this.tutorial = !0)
 		}, e.prototype.completeCharCreate = function(e, t, i) {
 			this.showLogin(!0), this.createAccountButton.visible = !e, e && (this.new_username = t, this.new_password = i, this.usernameField.setValue(""), this.passwordField.setValue(""), this.tutorial = !0)
 		}, e.prototype.update = function() {
 			if (Screen.prototype.update.call(this), this.tutorial) {
 				var e = this.usernameField.getValue() || "";
-				if ((e = e.toLowerCase()) !== this.new_username.toLowerCase()) {
+				if (e = e.toLowerCase(), e !== this.new_username.toLowerCase()) {
 					if (this.usernameField.hasTooltip()) return;
 					this.usernameField.showTooltip("'" + this.new_username + "'", 330), this.usernameField.setFocus(!0), this.passwordField.showTooltip(null), this.loginButton.highlight(!1)
 				} else if (this.passwordField.getValue() !== this.new_password) {
