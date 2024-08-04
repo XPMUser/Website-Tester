@@ -892,9 +892,7 @@ Util.capitalize = function(e) {
 		},
 		login: {
 			type: "localAtlas",
-			base: "https://xpmuser.github.io/oldprodigy/pdenot1.50.0/assets/images/",
-			key: "general-login",
-			v: "4"
+			base: "https://xpmuser.github.io/assets/images/"
 		},
 		map: {
 			type: "localAtlas",
