@@ -1,0 +1,208 @@
+{
+    "frames": {
+        "npc_0": {
+            "frame": {
+                "x": 2,
+                "y": 2,
+                "w": 86,
+                "h": 100
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 86,
+                "h": 100
+            },
+            "sourceSize": {
+                "w": 86,
+                "h": 100
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "npc_1": {
+            "frame": {
+                "x": 90,
+                "y": 2,
+                "w": 86,
+                "h": 100
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 86,
+                "h": 100
+            },
+            "sourceSize": {
+                "w": 86,
+                "h": 100
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "npc_2": {
+            "frame": {
+                "x": 178,
+                "y": 2,
+                "w": 86,
+                "h": 100
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 86,
+                "h": 100
+            },
+            "sourceSize": {
+                "w": 86,
+                "h": 100
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "npc_3": {
+            "frame": {
+                "x": 266,
+                "y": 2,
+                "w": 86,
+                "h": 100
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 86,
+                "h": 100
+            },
+            "sourceSize": {
+                "w": 86,
+                "h": 100
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "npc_4": {
+            "frame": {
+                "x": 354,
+                "y": 2,
+                "w": 86,
+                "h": 100
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 86,
+                "h": 100
+            },
+            "sourceSize": {
+                "w": 86,
+                "h": 100
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "npc_5": {
+            "frame": {
+                "x": 442,
+                "y": 2,
+                "w": 86,
+                "h": 100
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 86,
+                "h": 100
+            },
+            "sourceSize": {
+                "w": 86,
+                "h": 100
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "npc_6": {
+            "frame": {
+                "x": 530,
+                "y": 2,
+                "w": 86,
+                "h": 100
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 86,
+                "h": 100
+            },
+            "sourceSize": {
+                "w": 86,
+                "h": 100
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "npc_7": {
+            "frame": {
+                "x": 618,
+                "y": 2,
+                "w": 86,
+                "h": 100
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 86,
+                "h": 100
+            },
+            "sourceSize": {
+                "w": 86,
+                "h": 100
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        }
+    },
+    "meta": {
+        "app": "undefined",
+        "version": "1.0",
+        "image": "npc-sprite-flora.png",
+        "format": "RGBA8888",
+        "size": {
+            "w": 706,
+            "h": 104
+        },
+        "scale": "1",
+        "smartupdate": "$TexturePacker:SmartUpdate:c06a3f80aaf7e431a8dfb50344ce590e:9677583c652a699f172f2a37eb35ef5e:eb2eeecdb251b2c8946baa89495684fc$"
+    }
+}
