@@ -8,4 +8,4 @@ Available Modpacks:
 3. RebalancedBattles
 4. ImitationTitan
 
-  Upcoming/next version: pde1-50-0 because we're adding google.
+  Upcoming/next version: pde1221.
