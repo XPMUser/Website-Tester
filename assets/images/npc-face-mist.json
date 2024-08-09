@@ -1,0 +1,36 @@
+{
+    "frames": {
+        "face_0": {
+            "frame": {
+                "x": 1,
+                "y": 1,
+                "w": 193,
+                "h": 185
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 193,
+                "h": 185
+            },
+            "sourceSize": {
+                "w": 193,
+                "h": 185
+            }
+        }
+    },
+    "meta": {
+        "app": "DP",
+        "version": "1.0",
+        "image": "npc-face-mist.png",
+        "format": "RGBA5551",
+        "size": {
+            "w": 195,
+            "h": 187
+        },
+        "scale": "1",
+        "smartupdate": "$TexturePacker:SmartUpdate:59f49cad9a4ab2002a942721dd89a5b9:97fb867a832d0196a57e7da7bef3f7da:9b329bfc5d8d9b8e9b6bbae8675cd2c2$"
+    }
+}

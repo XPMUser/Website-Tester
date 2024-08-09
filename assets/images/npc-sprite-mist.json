@@ -1,0 +1,207 @@
+{
+  "frames": {
+    "npc_3.png": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 101,
+        "h": 100
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 101,
+        "h": 100
+      },
+      "sourceSize": {
+        "w": 101,
+        "h": 104
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "npc_4.png": {
+      "frame": {
+        "x": 101,
+        "y": 0,
+        "w": 101,
+        "h": 100
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 101,
+        "h": 100
+      },
+      "sourceSize": {
+        "w": 101,
+        "h": 104
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "npc_5.png": {
+      "frame": {
+        "x": 202,
+        "y": 0,
+        "w": 101,
+        "h": 100
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 101,
+        "h": 100
+      },
+      "sourceSize": {
+        "w": 101,
+        "h": 104
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "npc_6.png": {
+      "frame": {
+        "x": 303,
+        "y": 0,
+        "w": 101,
+        "h": 100
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 101,
+        "h": 100
+      },
+      "sourceSize": {
+        "w": 101,
+        "h": 104
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "npc_7.png": {
+      "frame": {
+        "x": 404,
+        "y": 0,
+        "w": 101,
+        "h": 100
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 101,
+        "h": 100
+      },
+      "sourceSize": {
+        "w": 101,
+        "h": 104
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "npc_1.png": {
+      "frame": {
+        "x": 505,
+        "y": 0,
+        "w": 98,
+        "h": 100
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 98,
+        "h": 100
+      },
+      "sourceSize": {
+        "w": 101,
+        "h": 104
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "npc_2.png": {
+      "frame": {
+        "x": 605,
+        "y": 0,
+        "w": 98,
+        "h": 100
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 98,
+        "h": 100
+      },
+      "sourceSize": {
+        "w": 101,
+        "h": 104
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "npc_0.png": {
+      "frame": {
+        "x": 705,
+        "y": 0,
+        "w": 98,
+        "h": 97
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 98,
+        "h": 97
+      },
+      "sourceSize": {
+        "w": 101,
+        "h": 104
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  },
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.7",
+    "image": "npc-sprite-mist.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2048,
+      "h": 2048
+    },
+    "scale": 1
+  }
+}
