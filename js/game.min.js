@@ -25559,7 +25559,7 @@ Items.getItemData = function(e, t) {
         ID: 47,
         name: "The Master of Trials",
         member: 0,
-        rarity: 3,
+        rarity: 4,
         drop: 1,
         flavorText: "To be held only by the Trial Masters, its powers are the stuff of legends. How did you get it?",
         d: 99999999999999999999999999999999999
@@ -25927,7 +25927,7 @@ Items.getItemData = function(e, t) {
 		drop: 10,
 		flavorText: "Credits to Daboss7173 for this wand in different colors.",
         d: 80,
-		memberAd: 0		
+		memberAd: 0
     }],
     boots: [{
         name: "Magi Runners",
@@ -26440,7 +26440,8 @@ Items.getItemData = function(e, t) {
         rarity: 2,
         drop: 1,
         flavorText: 'Formerly worn by Eustace Redhale "The King of Dragons" and the last ruler to ride one. It has the power of dragon\'s fire.',
-        h: 3
+        h: 6,
+        d: 3
     }, {
         ID: 36,
         name: "Duelist Helm",
@@ -26828,7 +26829,8 @@ Items.getItemData = function(e, t) {
             rarity: 1,
             drop: 1,
             flavorText: "Credits to Craftersshaft and Mr. Intend for this hat.",
-            h: 4
+            h: 4,
+            d: 2
     }],
     item: [{
         name: "Apple",
@@ -32809,7 +32811,7 @@ Names.createNameFromIndex = function(e, t, a, i) {
     showTooltip: function(e, t) {
         if (Util.isDefined(this.tooltip) && (this.tooltip.destroy(), this.tooltip = null), Util.isDefined(e)) {
             this.tooltip = new Prodigy.Element(this.game, this, t);
-            var a = this.tooltip.add(new Prodigy.Sprite(this.game, 30, 0, "core", "tooltip"));
+            var a = this.tooltip.add(new Prodigy.Sprite(this.game, 30, 0, "core", ""));
             a.alpha = .9, a.width = 300, a.height = 50, new BitmapFont(this.game, this.tooltip, 90, 11, e, {
                 width: 230,
                 align: "center"
@@ -42805,7 +42807,7 @@ Prodigy.Backpack = function(e) {
         }), new Button(this.game, this, 1080, 30, "icons", "close", this.close.bind(this)), Prodigy.RenderMenu.prototype.create.call(this), this.startLoad(["popup-member"], this.showContent.bind(this, e))
     },
     showContent: function(e) {
-        this.e.removeAll(!0), this.b.add(new Prodigy.Sprite(this.game, 40, 40, "popup-member", "bg")), this.b.add(new Prodigy.Sprite(this.game, 10, 183, "popup-member", "p1")), this.b.add(new Prodigy.Sprite(this.game, 18, 339, "popup-member", "p2")), this.b.add(new Prodigy.Sprite(this.game, 22, 473, "popup-member", "p3")), this.b.add(new Prodigy.Sprite(this.game, 107, 600, "popup-member", "p4"));
+        this.e.removeAll(!0), this.b.add(new Prodigy.Sprite(this.game, 40, 40, "popup-member", "")), this.b.add(new Prodigy.Sprite(this.game, 10, 183, "popup-member", "p1")), this.b.add(new Prodigy.Sprite(this.game, 18, 339, "popup-member", "p2")), this.b.add(new Prodigy.Sprite(this.game, 22, 473, "popup-member", "p3")), this.b.add(new Prodigy.Sprite(this.game, 107, 600, "popup-member", "p4"));
         var t = ["More gold and stars!", "Access to all items!", "Exclusive zones!", "All house items!", "Access to all pets!", "And much more!"],
             a = new Prodigy.Panel(this.game, this.e, 580, 180, 8, 7, "");
         a.alpha = .75, new BitmapFont(this.game, a, 20, 10, "Members ALSO get...", {
@@ -44056,7 +44058,7 @@ var CharSelect = function() {
     }(),
     NavBar = function() {
         function e(e, t, a, i) {
-            Prodigy.Element.call(this, e, t), this.menu = i, this.disable = a, this.btns = [], this.addBook(), this.addBag(), this.addPets(), this.addLeaderboard(), this.addGender(), this.addGender2(), this.addMap(), this.addSettings(), this.addStore();
+            Prodigy.Element.call(this, e, t), this.menu = i, this.disable = a, this.btns = [], this.addBook(), this.addBag(), this.addPets(), this.addcreateAccount(), this.addGender(), this.addGender2(), this.addMap(), this.addSettings(), this.addStore();
             for (var s = 0; s < this.btns.length; s++) s > 0 && (this.btns[s].x = this.btns[s - 1].x + this.btns[s - 1].width + 5), this.btns[s].y = -this.btns[s].height
         }
         return e.prototype = Object.create(Prodigy.Element.prototype), e.prototype.checkNew = function(e, t, a) {
@@ -63423,7 +63425,7 @@ Prodigy.MenuFactory = function(e) {
         this._menus.push(new Store(this.game, this.menuLayer, e, t, a))
     }
 }, Prodigy.MenuFactory.prototype.constructor = Prodigy.MenuFactory, Prodigy.GameObj = function(e) {
-    this.version3 = "", this.version2 = "Prodigy Version 1.22.1", this.version = "Definitive Edition version 2.0.3b", this.player = new Player, this.assets = new Prodigy.Assets, this.load = new Prodigy.Loader(e), this.graphics = new Prodigy.GraphicsController(e), this.audio = new AudioController(e), this.open = new Prodigy.MenuFactory(e), this.world = new Prodigy.World(e), this.effects = new Prodigy.EffectFactory(e), this.event = new Prodigy.EventFactory(e), this.dialogue = new DialogueFactory(e), this.skin = new Prodigy.SkinFactory(e), this.chat = new Prodigy.ChatManager(e), this.network = new NetworkManager(e), this.education = new Prodigy.EducationSystem(e), this.mail = new Prodigy.MailController(e), this.canvas = null, this.bmd = new Phaser.BitmapData(e, null, 1280, 720), this.math = Prodigy.Math, this.dialogues = new Prodigy.Dialogues, this.debug = new Prodigy.Debug(e), console.log("%c %c %c Prodigy " + this.version + " | patch 1.16.5 %c %c ", "background: #555", "background: #333", "background: #111; color: #eeeeee", "background: #333", "background: #555")
+    this.version3 = "", this.version2 = "Prodigy Version 1.22.1", this.version = "Definitive Edition version 2.0.4c", this.player = new Player, this.assets = new Prodigy.Assets, this.load = new Prodigy.Loader(e), this.graphics = new Prodigy.GraphicsController(e), this.audio = new AudioController(e), this.open = new Prodigy.MenuFactory(e), this.world = new Prodigy.World(e), this.effects = new Prodigy.EffectFactory(e), this.event = new Prodigy.EventFactory(e), this.dialogue = new DialogueFactory(e), this.skin = new Prodigy.SkinFactory(e), this.chat = new Prodigy.ChatManager(e), this.network = new NetworkManager(e), this.education = new Prodigy.EducationSystem(e), this.mail = new Prodigy.MailController(e), this.canvas = null, this.bmd = new Phaser.BitmapData(e, null, 1280, 720), this.math = Prodigy.Math, this.dialogues = new Prodigy.Dialogues, this.debug = new Prodigy.Debug(e), console.log("%c %c %c Prodigy " + this.version + " | patch 1.16.5 %c %c ", "background: #555", "background: #333", "background: #111; color: #eeeeee", "background: #333", "background: #555")
 }, Prodigy.GameObj.prototype = {
     init: function(e) {
         this.textureBelow = e.add.renderTexture(1280, 720), this.textureAbove = e.add.renderTexture(1280, 720), this.textureMenu = e.add.renderTexture(1280, 720)
