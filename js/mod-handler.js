@@ -253,21 +253,18 @@ Prodigy.extends = function(e, t, a) {
 	this._assets = {
 		"bgm-victory": {
 			type: "bgm",
-			base: "https://cdn.prodigygame.com/game/assets/audio/bgm/",
+			base: u,
 			url: "bgm-victory.mp3",
-			url: "bgm-victory.ogg"
 		},
 		"bgm-battle": {
 			type: "bgm",
-			base: "https://cdn.prodigygame.com/game/assets/audio/bgm/",
+			base: u,
 			url: "bgm-battle.mp3",
-			url: "bgm-battle.ogg"
 		},
 		"bgm-intro": {
 			type: "bgm",
-			base: "https://cdn.prodigygame.com/game/assets/audio/bgm/",
+			base: u,
 			url: "bgm-intro.mp3",
-			url: "bgm-intro.ogg"
 		}
 			}
 }, Prodigy.Assets.prototype = {
