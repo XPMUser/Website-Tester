@@ -8,7 +8,10 @@
 		Walk Speed 					Daboss7173
 		Fast Game Speed				Daboss7173
 		Classic Faces				Daboss7173
-		1.10.0						XPMUser
+		Classic Faces for boys      XPMUser
+		CoyBlush                    XPMUser
+		Custom Music                XPMUser
+		Credits: Daboss7173, XPMUser, & Prodigy Education
 	
 	Written by: Daboss7173 & XPMUser
 	Github: https://github.com/Daboss7173/Daboss7173.github.io
@@ -46,8 +49,14 @@ class ModHandler {
 				id: "ClassicFaces",
 				patch: "initClassicFaceMod"
 			}, {
-				id: "1.10.0",
-				patch: "initFixerMod"
+				id: "ClassicFacesforboys",
+				patch: "initClassicFacesforboysMod"
+			}, {
+				id: "CoyBlush",
+				patch: "initCoyBlushMod"
+			}, {
+				id: "CustomMusic",
+				patch: "initCustomMusicMod"
 			}]
 	}
 	
@@ -167,6 +176,109 @@ class ModHandler {
 		}
 		
 	}	
+	
+	initClassicFacesforboysMod() {
+		var assets = this.game.prodigy.assets._assets;
+		assets.heads.base = "assets/images/general-2";
+		
+		PlayerContainer.getAssets = function(e, t, a, s, i) {
+			var i = new Array;
+			t = 1 === t ? "reduced" : "normal", Util.isDefined(a) || (a = e.equipment.getEquipment("outfit")), i.push(Util.isDefined(a) ? t + "-outfit-" + e.appearance.getGender() + "-" + a : null), i.push(t + "/face/" + e.appearance.getSkinColor()), i.push(t + "-hair-" + e.appearance.getGender() + "-" + e.appearance.getHairStyle() + "-" + e.appearance.getHairColor()), i.push(t + "/eyes/" + e.appearance.getGender() + "/" + e.appearance.getEyeColor()), i.push(Util.isDefined(e.equipment.getEquipment("hat")) ? t + "-hat-" + e.equipment.getEquipment("hat") : null), i.push("normal" === t && Util.isDefined(e.equipment.getEquipment("weapon")) ? t + "-weapon-" + e.equipment.getEquipment("weapon") : null), Util.isDefined(i[0]) || (i[0] = t + "-outfit-" + e.appearance.getGender() + "-13");
+			var s = e.equipment.getEquipment("hat");
+			if (Util.isDefined(s)) {
+				var t = Items.getItemData("hat", s).type;
+				("cover" === t || "wrap" === t) && (i[1] = null)
+			}
+			return i
+		}
+		
+	}
+	initCoyBlushMod() {
+		var assets = this.game.prodigy.assets._assets;
+		assets.heads.base = "assets/images/general-";
+		
+		PlayerContainer.getAssets = function(e, t, a, s, i) {
+			var i = new Array;
+			t = 1 === t ? "reduced" : "normal", Util.isDefined(a) || (a = e.equipment.getEquipment("outfit")), i.push(Util.isDefined(a) ? t + "-outfit-" + e.appearance.getGender() + "-" + a : null), i.push(t + "/face/" + e.appearance.getSkinColor()), i.push(t + "-hair-" + e.appearance.getGender() + "-" + e.appearance.getHairStyle() + "-" + e.appearance.getHairColor()), i.push(t + "/eyes/" + e.appearance.getGender() + "/" + e.appearance.getEyeColor()), i.push(Util.isDefined(e.equipment.getEquipment("hat")) ? t + "-hat-" + e.equipment.getEquipment("hat") : null), i.push("normal" === t && Util.isDefined(e.equipment.getEquipment("weapon")) ? t + "-weapon-" + e.equipment.getEquipment("weapon") : null), Util.isDefined(i[0]) || (i[0] = t + "-outfit-" + e.appearance.getGender() + "-13");
+			var s = e.equipment.getEquipment("hat");
+			if (Util.isDefined(s)) {
+				var t = Items.getItemData("hat", s).type;
+				("cover" === t || "wrap" === t) && (i[1] = null)
+			}
+			return i
+		}
+		
+	}
+	initCustomMusicMod() {
+var Prodigy = {};
+Prodigy.extends = function(e, t, a) {
+    e.prototype = Object.create(t.prototype);
+    for (var i in a) e.prototype[i] = a[i]
+}, Prodigy.Assets = function() {
+    var e = "https://cdn.prodigygame.com/game/assets/images/player/reduced/outfits/male/",
+		t = "https://cdn.prodigygame.com/game/assets/images/player/reduced/outfits/female/",
+		i = "https://cdn.prodigygame.com/game/assets/images/player/reduced/hair/male/",
+		a = "https://cdn.prodigygame.com/game/assets/images/player/reduced/hair/female/",
+		s = "https://cdn.prodigygame.com/game/assets/images/player/reduced/hats/",
+		r = "https://cdn.prodigygame.com/game/assets/images/player/normal/outfits/male/",
+		o = "https://cdn.prodigygame.com/game/assets/images/player/normal/outfits/female/",
+		n = "https://cdn.prodigygame.com/game/assets/images/player/normal/hair/male/",
+		l = "https://cdn.prodigygame.com/game/assets/images/player/normal/hair/female/",
+		h = "https://cdn.prodigygame.com/game/assets/images/player/normal/hats/",
+		d = "https://cdn.prodigygame.com/game/assets/images/player/normal/weapons/",
+		p = "https://cdn.prodigygame.com/game/assets/images/player/",
+		c = "https://cdn.prodigygame.com/game/assets/fonts/",
+		u = "https://cdn.prodigygame.com/game/assets/audio/bgm/",
+		g = "https://cdn.prodigygame.com/game/assets/audio/sfx/",
+		m = "https://cdn.prodigygame.com/game/assets/audio/voice/",
+		y = "https://cdn.prodigygame.com/game/assets/images/popups/",
+		f = "https://cdn.prodigygame.com/game/assets/images/tilesets/",
+		D = "https://cdn.prodigygame.com/game/assets/data/maps/",
+		b = "https://cdn.prodigygame.com/game/assets/images/battle/",
+		I = "https://cdn.prodigygame.com/game/assets/images/stores/",
+		v = "https://cdn.prodigygame.com/game/assets/images/backgrounds/",
+		q = "https://cdn.prodigygame.com/game/assets/images/zones/",
+		w = "https://cdn.prodigygame.com/game/assets/images/games/",
+		x = "https://cdn.prodigygame.com/game/assets/images/npc/",
+		P = "https://cdn.prodigygame.com/game/assets/images/icons/",
+		k = "https://cdn.prodigygame.com/game/assets/images/attacks/",
+		M = "https://cdn.prodigygame.com/game/assets/images/monsters/",
+		C = "https://cdn.prodigygame.com/game/assets/images/events/",
+		S = "https://cdn.prodigygame.com/game/assets/images/monsters/reduced/",
+		A = "https://cdn.prodigygame.com/game/assets/images/monsters/small/",
+		T = "https://cdn.prodigygame.com/game/assets/images/boss/",
+		E = "https://cdn.prodigygame.com/game/assets/images/boss/small/",
+		N = "https://cdn.prodigygame.com/game/assets/images/prompts/",
+		B = "https://cdn.prodigygame.com/game/assets/images/scenes/";
+	this._assets = {
+		"bgm-victory": {
+			type: "bgm",
+			base: "https://cdn.prodigygame.com/game/assets/audio/bgm/",
+			url: "bgm-victory.mp3",
+			url: "bgm-victory.ogg"
+		},
+		"bgm-battle": {
+			type: "bgm",
+			base: "https://cdn.prodigygame.com/game/assets/audio/bgm/",
+			url: "bgm-battle.mp3",
+			url: "bgm-battle.ogg"
+		},
+		"bgm-intro": {
+			type: "bgm",
+			base: "https://cdn.prodigygame.com/game/assets/audio/bgm/",
+			url: "bgm-intro.mp3",
+			url: "bgm-intro.ogg"
+		}
+			}
+}, Prodigy.Assets.prototype = {
+    getAsset: function(e) {
+        return this._assets[e]
+    },
+    getImageBounds: function(e) {
+        return new Array(this._assets[e].x, this._assets[e].y, this._assets[e].w, this._assets[e].h)
+    }
+}, Prodigy.Assets.prototype.constructor = Prodigy.Assets;
+	}
 }
 
 window.checkForMods = function(e, t) {
