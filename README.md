@@ -7,5 +7,9 @@ Available Modpacks:
 2. FastGameSpeed
 3. RebalancedBattles
 4. ImitationTitan
+5. Mathless
+6. Classic Faces
+7. Classic Faces for Boys
+8. CoyBlush
 
   Upcoming/next version: pde1221.
