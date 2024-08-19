@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Prodigy Insider</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Sign Up</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="play.html">Play Now!</a>
+            <a href="signup.html">Sign Up</a>
+        </nav>
+    </header>
+
+    <main id="content">
+        <div id="signup">
+            <h2>Create an Account</h2>
+            <form onsubmit="return signUp()">
+                <label for="newUsername">Username:</label>
+                <input type="text" id="newUsername" required><br>
+                <label for="newPassword">Password:</label>
+                <input type="password" id="newPassword" required><br>
+                <button type="submit">Sign Up</button>
+            </form>
+            <p id="signupMessage"></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Name</p>
+    </footer>
+
+    <script>
+        function signUp() {
+            const username = document.getElementById('newUsername').value;
+            const password = document.getElementById('newPassword').value;
+
+            if (localStorage.getItem(username)) {
+                document.getElementById('signupMessage').textContent = 'Username already exists. Please choose a different one.';
+            } else {
+                localStorage.setItem(username, password);
+                document.getElementById('signupMessage').textContent = 'Account created successfully! You can now log in.';
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>
