@@ -12,4 +12,4 @@ Available Modpacks:
 7. Classic Faces for Boys
 8. CoyBlush
 
-  Upcoming/next version: 3-15-3 Definitive Edition.
+  Upcoming/next version: Coming Soon!
