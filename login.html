@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prodigy insider - Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Homepage</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#play">Play Now!</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main id="content">
+        <div id="login">
+            <h2>Login</h2>
+            <form onsubmit="return checkLogin()">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" required><br>
+                <button type="submit">Login</button>
+            </form>
+            <p id="message"></p>
+        </div>
+
+        <div id="loggedInContent" style="display: none;">
+            <h2>Welcome, <span id="user"></span>!</h2>
+            <p>This is your exclusive content.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Name</p>
+    </footer>
+
+    <script>
+        const users = {
+            'user1': 'password1',
+            'user2': 'password2'
+        };
+
+function checkLogin() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    const storedPassword = localStorage.getItem(username);
+    
+    if (storedPassword && storedPassword === password) {
+        localStorage.setItem('loggedInUser', username); // Store logged-in user
+        window.location.href = 'index.html'; // Redirect to homepage
+    } else {
+        document.getElementById('message').textContent = 'Invalid credentials.';
+    }
+    return false;
+}
+
+    </script>
+</body>
+</html>
