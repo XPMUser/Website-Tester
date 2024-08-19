@@ -1,47 +1,64 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <style>
-      body {
-        font-family: Pipe Dream, BrianneTod;
-        margin: 0;
-        padding: 0;
-      }
+    <title>Home - Prodigy insider program</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Old prodigy insider!</h1>
+        <nav id="navbar">
+            <a href="index.html">Home</a>
+            <a href="play.html">Play Now</a>
+            <a href="login.html" id="loginLink">Login</a>
+            <a href="signup.html" id="signupLink">Sign Up</a>
+            <span id="profileInfo" style="display:none;">
+                <a href="profile.html" id="profileLink"></a>
+                <a href="#" id="logoutLink">Logout</a>
+            </span>
+        </nav>
+    </header>
 
-      .taskbar {
-        background-color: #333;
-        overflow: hidden;
-      }
+    <main id="content">
+        <section>
+            <h2>About This Site</h2>
+            <p>This is a simple website where you can test new old prodigy versions before live release.</p>
+        </section>
+        <section>
+            <h2>Why Join?</h2>
+            <ul>
+                <li>Save your character automatically (coming soon)</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Get Started</h2>
+            <p>If you don't have an account, <a href="signup.html">sign up here</a>. If you're already a member, <a href="login.html">log in</a> to access your account.</p>
+        </section>
+    </main>
 
-      .taskbar a {
-        float: left;
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-      }
+    <footer>
+        <p>&copy; 2024 My Name</p>
+    </footer>
 
-      .taskbar a:hover {
-        background-color: #ddd;
-        color: black;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="taskbar">
-      <a href="https://xpmuser.github.io/Website-Tester/">Homepage</a>
-      <a href="https://xpmuser.github.io/Website-Tester/6-136-0">Play 6-136-0</a>
-      <a href="https://xpmuser.github.io/Website-Tester/play?mods=WalkSpeed,FastGameSpeed">Play</a>
-      <a href="https://xpmuser.github.io/Website-Tester/releasenotes.html">Release Notes</a>
-    </div>
+    <script>
+        // Check if the user is logged in
+        const currentUser = localStorage.getItem('loggedInUser');
 
-    <h1>Welcome to the Prodigy Insider Program!</h1>
+        if (currentUser) {
+            // Show profile info in the navbar
+            document.getElementById('loginLink').style.display = 'none';
+            document.getElementById('signupLink').style.display = 'none';
+            document.getElementById('profileInfo').style.display = 'inline';
+            document.getElementById('profileLink').textContent = currentUser;
+        }
 
-    <p>This is where everyone can test newer old prodigy versions.</p>
-  </body>
+        // Logout functionality
+        document.getElementById('logoutLink').addEventListener('click', function() {
+            localStorage.removeItem('loggedInUser');
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
 </html>
