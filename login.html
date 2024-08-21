@@ -3,71 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prodigy Insider - Login</title>
+    <title>Prodigy insider - Login</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Login</h1>
+        <h1>Welcome to My Homepage</h1>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="play.html">Play Now!</a>
-            <a href="login.html">Login</a>
-            <a href="signup.html">Sign Up</a>
+            <a href="#home">Home</a>
+            <a href="#play">Play Now!</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
     <main id="content">
-        <section>
-            <h2>Log in with Google</h2>
-            <button id="loginBtn">Login with Google</button>
-            <p id="loginMessage"></p>
-        </section>
+        <div id="login">
+            <h2>Login</h2>
+            <form onsubmit="return checkLogin()">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" required><br>
+                <button type="submit">Login</button>
+            </form>
+            <p id="message"></p>
+        </div>
+
+        <div id="loggedInContent" style="display: none;">
+            <h2>Welcome, <span id="user"></span>!</h2>
+            <p>This is your exclusive content.</p>
+        </div>
     </main>
 
     <footer>
-        <p></p>
+        <p>&copy; 2024 My Name</p>
     </footer>
 
-    <!-- Firebase App (the core Firebase SDK) -->
-    <script type="module">
-        import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js';
-        import { getAuth, GoogleAuthProvider, signInWithPopup } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js';
-
     <script>
-        // Your Firebase configuration
-        const firebaseConfig = {
-          apiKey: "AIzaSyCLTCdWLmOfE_QrR13Z15VjRn2gTh4BvPo",
-          authDomain: "triple-bird-410810.firebaseapp.com",
-          projectId: "triple-bird-410810",
-          storageBucket: "triple-bird-410810.appspot.com",
-          messagingSenderId: "220442635630",
-          appId: "1:220442635630:web:87ea71a698d7195c3d657f"
+        const users = {
+            'user1': 'password1',
+            'user2': 'password2'
         };
 
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
+function checkLogin() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
 
-        // Initialize Firebase Authentication
-        const auth = firebase.auth();
+    const storedPassword = localStorage.getItem(username);
+    
+    if (storedPassword && storedPassword === password) {
+        localStorage.setItem('loggedInUser', username); // Store logged-in user
+        window.location.href = 'index.html'; // Redirect to homepage
+    } else {
+        document.getElementById('message').textContent = 'Invalid credentials.';
+    }
+    return false;
+}
 
-        // Google Sign-In Provider
-        const provider = new firebase.auth.GoogleAuthProvider();
-
-        document.getElementById('loginBtn').addEventListener('click', () => {
-            auth.signInWithPopup(provider)
-                .then((result) => {
-                    // User signed in
-                    const user = result.user;
-                    localStorage.setItem('loggedInUser', user.displayName); // Save user info
-                    window.location.href = 'index.html'; // Redirect to homepage
-                })
-                .catch((error) => {
-                    // Handle Errors
-                    console.error(error.message);
-                    document.getElementById('loginMessage').textContent = 'Login failed. Please try again.';
-                });
-        });
     </script>
 </body>
 </html>
