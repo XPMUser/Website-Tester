@@ -2,30 +2,27 @@
 <html>
 
 <head>
-    <title>Prodigy Definitive Edition Beta</title>
-    <meta charset="UTF-8" />
+    <title>Prodigy Definitive Edition</title>
+        <meta charset="UTF-8" />
+<meta content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="description" content="The legendary math game Prodigy is now legendary again, and no longer a math game!"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <link rel="icon" type="image/png" href="https://web.archive.org/web/20150910093225im_/https://www.prodigygame.com/Includes/Images/favicon.gif">
-    <link rel="stylesheet" href="https://code.prodigygame.com/assets/Font-Awesome/css/font-awesome-bb53ad7bff.min.css">
-    <link rel="stylesheet" type="text/css" href="https://code.prodigygame.com/assets/styles/main-8920cc59bb.css">
+    <link rel="stylesheet" href="https://xpmuser.github.io/oldprodigy/pde1500/edu/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,300,400,500,600,700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Fredoka+One|Luckiest+Guy|Paytone+One|ABeeZee' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,400italic' rel='stylesheet' type='text/css'>
     <style>
         html {
             height: 100%;
             overflow: hidden;
-        }       
-        body {
-		background-image: url("https://xpmuser.github.io/oldprodigy/pde1500/assets/images/general-map/6/general-map.png");
-		background-attachment: fixed;
-		background-repeat: no-repeat;
-		background-position: center center;
-		height: 100%;
-		background-color: #627CDE;	
+        }
+        
+        body {    
+            margin: 0;
+            background-color: #627CDE;
+            height: 100%;
+            padding: 0 !important;
         }
         
         #game-container {
@@ -137,13 +134,9 @@
         }
         
         #first-loading-screen {
-		background-image: url("https://xpmuser.github.io/oldprodigy/pde1500/assets/images/general-map/6/general-map.png");
-		background-attachment: fixed;
-		background-repeat: no-repeat;
-		background-position: center center;
-		height: 1000px;
-		stretch: 100px;
-		background-color: #627CDE;		
+            height: 100%;
+            width: 100%;
+            background-color: #627CDE;
         }
         
         .alert {
@@ -156,127 +149,237 @@
             background-color: #FCF8E3;
             color: #8A6D3B;
         }
-		
-		.login-options-panel {
-			border: 61px solid;
-			border-image-source: url("https://raw.githubusercontent.com/XPMUser/Website-Tester/main/Custom/assets/images/ClassicLoginPanelDefinitiveEdition.png");
-			border-image-slice: 40 fill;
-			border-image-width: 40px;
-			border-image-repeat: repeat;
-			width: 400px;
-			max-width: 360px;
-			margin: 240px auto;
-			border-width: 29px;
-			display: top;
-			height: 330px;
-			move: up;
-		}
-		
-		.game-button {
-			display: inline-flex;
-			justify-content: stretch;
-			padding: 0;
-			box-sizing: border-box;
-			border: 2px solid #363636;
-			box-shadow: 0 4px 0 0 rgba(37,21,45,0.5);
-			border-radius: 7px;
-			font-family: 'Brianne Tod', Pipe Dream;
-			text-decoration: none;
-			min-width: 300px;
-			margin-bottom: 10px;
-		}
 
-		.game-button:hover {
-			text-decoration: none
-		}
+            .ios-install-prompt {
+                background-color:#F2F2F2;
+                width:100%;
+                height:70px;
+                position:absolute;
+                z-index:10;
+                padding:5px 10px;
+            }
 
-		.game-button-inner {
-			flex-grow: 1;
-			text-align: bottom;
-			margin: 4px;
-			border-radius: 4px;
-			padding: 6px 10px 7px;
-			font-size: 18px;
-			line-height: 1.22
-		}
-		
-		.game-button-orange {
-			background-image: linear-gradient(to bottom, #ffffff, #ffffff);
-			color: white
-		}
+            .ios-install-prompt__wrapper {
+                margin: 0 auto;
+                height:100%;
+                width:50%;
+            }
 
-		.game-button-orange .game-button-inner {
-			background-image: linear-gradient(to bottom, #FFAD46, #FFAD46);
-		}
+            .ios-install-prompt__close {
+                display:block;
+                position:relative;
+                float:left;
+                height:100%;
+                top:35%;
+                color:#848484;
+                padding-right:20px;
+                cursor:pointer;
+            }
 
-		.game-button-sapphire:hover {
-			background-image: linear-gradient(to bottom, #477cc9, #303c80);
-			color: white
-		}
+            .ios-install-prompt__icon {
+                display:block;
+                float:left;
+                height:63px;
+                margin-right:5px;
+            }
 
-		.game-button-sapphire:hover .game-button-inner {
-			background-image: linear-gradient(to bottom, #3659ba, #4883cf)
-		}
+            .ios-install-prompt__data {
+                display:block;
+                float:left;
+                line-height:1.3;
+                margin-top:3px;
+            }
 
-		.game-button-sapphire:active {
-			background-image: linear-gradient(to bottom, #4160be, #45abdb)
-		}
+            .ios-install-prompt__title {
+                color:#444;
+                display:block;
+                font-size:12px;
+                font-weight:bold;
+            }
 
-		.game-button-sapphire:active .game-button-inner {
-			background-image: linear-gradient(to bottom, #45b1de, #4886d4)
-		}
+            .ios-install-prompt__label {
+                color:#5e5e5e;
+                display:block;
+                font-size:10px;
+            }
 
-		.game-button-emerald {
-			background-image: linear-gradient(to bottom, #68d376, #236366);
-			color: white
-		}
+            .ios-install-prompt__star {
+                color:#FF9300;
+            }
 
-		.game-button-emerald .game-button-inner {
-			background-image: linear-gradient(to bottom, #1da38a, #5ec38a)
-		}
+            .ios-install-prompt__link {
+                display:block;
+                position:relative;
+                float:right;
+                height:100%;
+                top:30%;
+                color:#1481FE;
+                padding-right:5px;
+                cursor:pointer;
+            }
 
-		.game-button-emerald:hover {
-			background-image: linear-gradient(to bottom, #1b9885, #174160);
-			color: white
-		}
+            .login-progress-outline {
+                position:absolute;
+                background-color:#000000;
+                border-radius:4px;
+            }
 
-		.game-button-emerald:hover .game-button-inner {
-			background-image: linear-gradient(to bottom, #266a70, #1d9c88)
-		}
+            .login-progress-container {
+                position:absolute;
+                background-color:#FFFFFF;
+                border-radius:4px;
+            }
 
-		.game-button-emerald:active {
-			background-image: linear-gradient(to bottom, #226167, #77d686)
-		}
+            .login-progress-bar {
+                position:absolute;
+                background-color:#1CE59D;
+                background-image: linear-gradient(#6DFE7A, #0AC3A2);
+                border-radius:4px;
+                -webkit-transition: width 1.25s cubic-bezier(.23,1,.32,1);
+                -moz-transition: width 1.25s cubic-bezier(.23,1,.32,1);
+                transition: width 1.25s cubic-bezier(.23,1,.32,1);
+            }
 
-		.game-button-emerald:active .game-button-inner {
-			background-image: linear-gradient(to bottom, #66c88a, #1a967d)
-		}
-		
-		.game-button-ruby {
-			background-image: linear-gradient(to bottom, #ef6c6e, #ab3a49);
-			color: white
-		}
+            %game-menu {
+                z-index: 3;
+                position: fixed;
+                left: 10%;
+                width: 80%;
+                top: 10%;
+                height: 80%;
+                padding: 5% 5% 0 5%;
+                background-color:white;
+                border-radius:15px;
+            }
 
-		.game-button-ruby .game-button-inner {
-			background-image: linear-gradient(to bottom, #dd4658, #f67071)
-		}
+            .game-menu--hex {
+                @extend %game-menu;
 
-		.game-button-ruby:hover {
-			background-image: linear-gradient(to bottom, #d0445a, #6e2843);
-			color: white
-		}
+                background: no-repeat right url("../images/game/hex/splash.jpg");
+                background-size: 100%;
+            }
 
-		.game-button-ruby:hover .game-button-inner {
-			background-image: linear-gradient(to bottom, #ad3e4f, #ee475b)
-		}
+            .game-menu__close {
+                position:absolute;
+                top:0;
+                right:0;
+                top: -25px;
+                right: -25px;
+                height: 50px;
+                width: 50px;
+            }
 
-		.game-button-ruby:active {
-			background-image: linear-gradient(to bottom, #a33240, #f86668)
-		}
+            .unlock-menu__form-container {
+                width:100%;
 
-		.game-button-ruby:active .game-button-inner {
-			background-image: linear-gradient(to bottom, #f87272, #dc4456)
-		}
+                @include media($medium) {
+                    width: 55%;
+                }
+            }
+
+            .unlock-menu__title {
+                margin: 5px 0px 15px;
+                font-weight: 900;
+                color: #dbbe95;
+                // text-shadow: #b39b79;
+            }
+
+            %game-menu__container {
+                background-color:rgba(255,255,255,0.9);
+                padding: 10px;
+                border-radius:15px;
+            }
+
+            .unlock-menu__wrapper {
+                height:100%;
+                overflow-y:auto;
+            }
+
+            .game-menu__container {
+                @extend %game-menu__container;
+            }
+
+            .game-menu__container--unlock {
+                @extend %game-menu__container;
+                @extend %game-border;
+
+                margin:10px 10px 25px 10px;
+            }
+
+            %game-border {
+                box-shadow: 0 0 0 1px #595959, 0 0 0 5px #f6d6ab, 0 0 0 8px #d2aa71;
+            }
+
+            .game-border {
+                @extend %game-border;
+            }
+
+            #game-loading-container {
+                position:absolute;
+                width:100%;
+                height:100%;
+                z-index:0;
+                background-color:#627CDE;
+            }
+
+            .game-loading {
+                width:80%;
+                height:100%;
+            }
+
+            .game-loading__ed {
+                display: block;
+                height: 150px;
+                margin-bottom: 22px;
+            }
+
+            .game-loading__font {
+                color: #fff;
+                text-align: center;
+                margin-top: 22 !important;
+            }
+
+            .ed-progress-outline {
+                height: 24px;
+                width: 100%;
+                background-color:#000000;
+                border-radius:4px;
+                display: flex;
+                align-items: center;
+                padding: 0px 1px;
+            }
+
+            .ed-progress-container {
+                height: 22px;
+                width: 100%;
+                background-color:#FFFFFF;
+                border-radius:4px;
+            }
+
+            .ed-progress-bar {
+                height: 22px;
+                width: 0%;
+                background-color:#1CE59D;
+                background-image: linear-gradient(#6DFE7A, #0AC3A2);
+                border-radius:4px;
+                -webkit-transition: width 1.25s cubic-bezier(.23,1,.32,1);
+                -moz-transition: width 1.25s cubic-bezier(.23,1,.32,1);
+                transition: width 1.25s cubic-bezier(.23,1,.32,1);
+            }
+
+            <!-- TODO: inherit from body (from main.css)
+                -webkit-font-smoothing: antialiased;
+                background-color: #fff;
+                color: #555;
+                font-family: "Open Sans",sans-serif;
+                font-size: 1em;
+                line-height: 1.5;
+            -->
+
+            .game-announcement {
+                position:absolute;
+                z-index:10;
+            }
     </style>
 </head>
 <script id="advanced-modal-base-template" type="text/x-handlebars-template">
@@ -419,219 +522,49 @@
     <div id='first-loading-screen'></div>
 
     <div id="game-wrapper">
-        <div id='game-container'></div>
+        <div id='game-container'>
 
-        <div id='external-content'></div>
+        </div>
 
-        <div id='external-ui'></div>
+        <div id='external-content'>
 
-        <div id='notices'></div>
+        </div>
+
+        <div id='external-ui'>
+
+        </div>
+
+        <div id='notices'>
+        </div>
 
         <div id='popups'>
             <div id='dynamic-popups'></div>
         </div>
-		
-		<div id="login-container" style="
-			position: absolute;
-			top: -50px;
-			bot: 0px;
-			height: 100%;
-			width: 100%;
-		">
-			<div id='login-options' class="login-options-panel">
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>	
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>			
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>				
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>	
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>	
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>	
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>	
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>	
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>	
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>	
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>	
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>	
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>	
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>	
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>	
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>	
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>	
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>	
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>	
-				<button name="" type="" class="" onclick="">
-				  <span class="transparent"></span>
-				</button>				
-				<button name="button" type="" class="game-button game-button-orange" onclick="">
-				  <span class="game-button-inner">Game by Prodigy Education</span>
-				</button>				
-				<button name="button" type="submit" class="game-button game-button-orange" onclick="LoadCharacter();">
-				  <span class="game-button-inner">Load Character</span>
-				</button>
-				<button name="button" type="submit" class="game-button game-button-orange" onclick="OfflineMode();">
-				  <span class="game-button-inner">Offline Mode</span>
-				</button>
-				<button name="button" type="submit" class="game-button game-button-orange" onclick="NewWizard();">
-				  <span class="game-button-inner">New Wizard</span>
-				</button>
-			</div>
-		</div>
     </div>
 
     <div id="membership-flow"></div>
-    <script src="https://daboss7173.github.io/oldprodigy/3-15-3/js/lodash.min.js"></script>
-    <script src="https://code.prodigygame.com/lib/phaser-e28c61a564.min.js"></script>
-    <script src="https://daboss7173.github.io/oldprodigy/3-15-3/js/easystar-0.2.0.min.js"></script>
-    <script src="https://daboss7173.github.io/oldprodigy/3-15-3/js/socket.io-1.3.5.js"></script>
-    <script src="https://checkout.stripe.com/checkout.js"></script>
-    <script src="https://code.prodigygame.com/lib/phasercomponents-d75e07cce7.min.js"></script>
-    <script src="https://code.prodigygame.com/lib/crypto-core-1b15c3f6cc.min.js?v=1"></script>
-    <script src="https://code.prodigygame.com/lib/crypto-libs-306070295f.min.js?v=1"></script>
-    <script src="https://code.prodigygame.com/lib/lz-string.min.js"></script>
-    <script src="https://code.prodigygame.com/lib/stripe-checkout-wrapper.min.js"></script>
-    <script src="https://code.prodigygame.com/lib/inversify-2c041508d4.min.js"></script>
-    <script src="https://code.prodigygame.com/lib/webfont-9ea87c57dc.min.js"></script>
-    <script src="https://code.prodigygame.com/lib/async-f6dfa1eb49.min.js?v=1"></script>
-	<script>
-		window.QI = {};
-		window.SW = {};
-		SW.LoadIdentity = {
-			userInfo: function() {
-				return "{\"sid\": 1}"
-			}
-		};
-		window.userInfo = {
-			sid: 1
-		};
-		window.updateGameLoaderProgress = function(percent, message) {
-			console.log(message);
-			console.log(percent);
-		};
-		window.hideGameLoader = function() {
-			try {
-				$("#first-loading-screen").remove()
-			} catch(e) {}
-		};
-		QI.getMasteredSkills = function() {
-			return 0;
-		};
-		QI.getAllTopicBadges = function() {
-			return [];
-		};
-		QI.trigger = function() {};
-		QI.getAvailableLessonReport = function() {
-			return null;
-		};
-		QI.createVideoLessonForSkillWithOptions = function() {
-			return null;
-		};
-		QI.enableLogging = function() {};
-		QI.disableLogging = function() {};
-		QI.showProgress = function() {};
-		QI.bannerComplete = function() {};
-		QI.getCurrentAlgorithm = function() {
-			return {};
-		};
-		QI.doesSkillIDHaveLesson = function() {
-			return false;
-		}
-		QI.EducationSystemAPI = {};
-		WebFont.load({
-			google: {
-				families: ["Fredoka One", "Luckiest Guy", "Paytone One", "ABeeZee", "Roboto"]
-			}
-		})
-	</script>
+    <script src="https://prodigygame.com/assets/scripts/app/build/public.min.js"></script>
+    <script src="https://xpmuser.github.io/oldprodigy/1-50-0/js/lodash.min.js"></script>
+    <script src="https://xpmuser.github.io/prodigy-classic/game-helpers.min.js"></script>
+    <script src="https://xpmuser.github.io/oldprodigy/1-50-0/js/phaser.min.js"></script>
+    <script src='https://xpmuser.github.io/prodigy-classic/socket.io-1.3.5.js'></script>
+    <script src="https://xpmuser.github.io/oldprodigy/pde1500/edu/controls/js/controls.min.js"></script>
+    <script src="https://xpmuser.github.io/oldprodigy/pde1500/edu/question-interface/js/question.min.js"></script>
+    <script src="https://xpmuser.github.io/prodigy-classic/game.js"></script>
+    <script src='https://s3.amazonaws.com/prodigy-assets/education/skills/prod/f08de16886/curricula.json'></script>
+    <script src="https://code.prodigygame.com/lib/particle-storm.min.js"></script>
+    <script src="https://s3.amazonaws.com/prodigy-assets/education/skills/prod/f08de16886/skillTrees.json"></script>
+    <script src="https://xpmuser.github.io/oldprodigy/1-50-0/js/phaser-spine.min.js"></script>
+    <script src="https://xpmuser.github.io/oldprodigy/1-50-0/js/easystar-0.4.4.min.js"></script>
+    <script src="https://xpmuser.github.io/prodigy-classic/easystar-0.2.0.min.js"></script>
+    <script src="./js/mod-handler.js"></script>
     <script src="./js/game.min.js"></script>
+    <script src="https://www.googletagmanager.com/gtm.js?id=GTM-T7TSN5K"></script>
+    <script src="https://accounts.google.com/gsi/client?onload=onGooglePlatformLoad" async defer></script>
     <script type="text/javascript">
         var prodigyWeb = {};
         prodigyWeb.country = undefined;
-        prodigyWeb.gameVersion = '3-15-3';
+        prodigyWeb.gameVersion = '1-50-0';
 
         window.onload = function() {
             document.addEventListener("contextmenu", function(e) {
@@ -693,9 +626,58 @@
                 classCodeModal.callback = callback;
                 classCodeModal.render();
             }
-        };
+        }
     </script>
-
 </body>
+    <div id="game-loading-container-div" class="game-loading container">
+        <div id="loading-div">
+            <img class="game-loading__ed" src="https://xpmuser.github.io/favicon.png" />
+            <!-- TODO: localize -->
+            <p class="game-loading__font">Starting Old Prodigy</p>
+            <div id="ed-progress-outline" class="ed-progress-outline">
+                <div id="ed-progress-container" class="ed-progress-container">
+                    <div id="ed-progress-bar" class="ed-progress-bar"></div>
+                </div>
+            </div>
+        </div>
+        <div id="error-div" style="display: none;">
+            <img class="game-loading__ed" src="https://xpmuser.github.io/favicon.png">
+            <h4 id="error-div-title" class="text-white text-center text-mt-md"></h4>
+            <p id="error-div-description" class="text-white text-center text-mt-md"></p>
+        </div>
+    </div>
+</div>
+    </div>
+    <div id="game-wrapper">
+        <div id='game-container'></div>
+        <div id='external-content'></div>
+        <div id='external-ui'></div>
+        <div id='notices'></div>
+        <div id='popups'>
+            <div id='dynamic-popups'></div>
+        </div>
+    </div>
+    <div id="membership-flow" class="game-page-overlay"></div>
+    <div id="game-page-overlay" class="game-page-overlay"></div>
 
+    </body>
+<div id="g_id_onload"
+     data-client_id="220442635630-9tjlg48pualfqmef01i1bsq0453ecucv.apps.googleusercontent.com"
+     data-context="signin"
+     data-ux_mode="popup"
+     ##data-login_uri=""
+     data-nonce=""
+     data-auto_select="true"
+     data-itp_support="true">
+</div>
+
+<div class="g_id_signin"
+     data-type="standard"
+     data-shape="rectangular"
+     data-theme="filled_blue"
+     data-text="signin_with"
+     data-size="large"
+     data-logo_alignment="left">
+</div>
+    </body>
 </html>
