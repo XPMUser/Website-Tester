@@ -12,4 +12,4 @@ Available Modpacks:
 7. Classic Faces for Boys
 8. CoyBlush
 
-  Upcoming/next version: Pde1500
+  Upcoming/next version: undefined
