@@ -54343,7 +54343,7 @@ Boot.init = function() {
 });
 var Screen = function() {
 		function e(e, t, i, a, s) {
-			Phaser.State.call(this), this.assets = ["630", "core2"], this.showMenu = !1, this.game = e, this.screenName = a || "", this.zoneName = i || "zero", this.fullName = t || "", this.assets = s || [], this._screenData = null
+			Phaser.State.call(this), this.showMenu = !1, this.game = e, this.screenName = a || "", this.zoneName = i || "zero", this.fullName = t || "", this.assets = s || [], this._screenData = null
 		}
 		return e.prototype = Object.create(Phaser.State.prototype), e.prototype.initListeners = function() {
 			this.game.broadcaster.addAppListener(Prodigy.Events.Screen.ADD_CHILD, this.onAddChild.bind(this), this, this.game), this.game.broadcaster.addAppListener(Prodigy.Events.Screen.GET_LAYER, this.onGetLayer.bind(this), this, this.game)
@@ -54363,12 +54363,6 @@ var Screen = function() {
 			}).bind(this), Phaser.State.prototype.preload.call(this), this.initListeners()
 		}, e.prototype.create = function() {
 			Phaser.State.prototype.create.call(this), this.screenSetup(), this.complete = !0
-		}, e.prototype.addSoundButton = function () {
-			var e = function (e) {
-					"sound-on" === e.frameName ? (e.frameName = "sound-off", this.game.prodigy.audio.setMute(!0)) : "sound-off" === e.frameName && (e.frameName = "sound-on", this.game.prodigy.audio.setMute(!1))
-				},
-				t = this.game.prodigy.create.sprite(this.game, 10, "630", "core2", "sound-on");
-			this.game.prodigy.audio.getBGMVolume() <= 0 && this.game.prodigy.audio.getSFXVolume() <= 0 && (t.frameName = "sound-off"), this.menus.add(t), t.inputEnabled = !0, t.events.onInputDown.add(e.bind(this, t), this)
 		}, e.prototype.fadeIn = function() {
 			this.fadeInSet ? this.game.add.tween(this.opaque).to({
 				alpha: 0
@@ -54521,7 +54515,7 @@ var Screen = function() {
 		}, e
 	}();
 WalkableScreen = function(e, t, i) {
-	i = i || [], Screen.call(this, e, t.fullName, t.zoneName, t.atlas, i.concat(["bgm-intro"])), this.area = null, this.showMenu = !0, this.tileSize = 20, this.hideHex = !1, this.playersInfo = {}, this.playerList = {}, this.playerList = new Array, this.playerList.push(this.user), this.playerHash = {}, this.disableBots || this.createBots(), this.assets = ["630", "core2"], this.clickAreas = []
+	i = i || [], Screen.call(this, e, t.fullName, t.zoneName, t.atlas, i.concat(["bgm-intro"])), this.area = null, this.showMenu = !0, this.tileSize = 20, this.hideHex = !1, this.playersInfo = {}, this.playerList = {}, this.playerList = new Array, this.playerList.push(this.user), this.playerHash = {}, this.disableBots || this.createBots(), this.clickAreas = []
 }, Prodigy.extends(WalkableScreen, Screen, {
 	constructor: WalkableScreen,
 	onDebugAutoClick: function(e) {
@@ -54549,7 +54543,7 @@ WalkableScreen = function(e, t, i) {
 		this.bg = this.game.prodigy.create.sprite(0, 0, this.screenName, "bg"), this.bg.inputEnabled = !0, this.bg.events.onInputDown.add(this.listener.bind(this), this), this.background.add(this.bg)
 	},
 	screenSetup: function(e, t) {
-		t || this.game.prodigy.skin.apply(this), Device.isTablet() || Device.iPadMini() || 1 == Util.getUrlVariable("iosApp") || !Util.isDefined(this.bgm) || (this.game.prodigy.audio.playBGM(this.bgm, !0, !0), this.game.prodigy.audio.resumeBGM()), this.noSoundButton || this.addSoundButton(), Screen.prototype.screenSetup.call(this)
+		t || this.game.prodigy.skin.apply(this), Device.isTablet() || Device.iPadMini() || 1 == Util.getUrlVariable("iosApp") || !Util.isDefined(this.bgm) || (this.game.prodigy.audio.playBGM(this.bgm, !0, !0), this.game.prodigy.audio.resumeBGM()), Screen.prototype.screenSetup.call(this)
 	},
 	start: function() {
 		this.user.evtProc = !1, Screen.prototype.start.call(this)
