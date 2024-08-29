@@ -269,7 +269,7 @@ class ModHandler {
                 }
 	initClassicFaceMod() {
 		var assets = this.game.prodigy.assets._assets;
-		assets.heads.base = "https://xpmuser.github.io/prodidows/1-10-0/assets/images/";
+		assets.heads.base = "https://xpmuser.github.io/oldprodigy/prodigyde/assets/images/";
 		
 		PlayerContainer.getAssets = function(e, t, a, s, i) {
 			var i = new Array;
@@ -284,9 +284,9 @@ class ModHandler {
 		
 	}	
 	
-	initCancelledMod() {
+	initClassicFacesforboysMod() {
 		var assets = this.game.prodigy.assets._assets;
-		assets.heads.base = "https://xpmuser.github.io/oldprodigy/pde1500/assets/images/coyblush/";
+		assets.heads.base = "https://xpmuser.github.io/oldprodigy/pde1500/assets/images/femalefacesforboys/";
 		
 		PlayerContainer.getAssets = function(e, t, a, s, i) {
 			var i = new Array;
@@ -300,7 +300,7 @@ class ModHandler {
 		}
 		
 	}
-	initundefinedMod() {
+	initCoyBlushMod() {
 		var assets = this.game.prodigy.assets._assets;
 		assets.heads.base = "https://ao28th28.github.io/oldprodigy/pde1500/assets/images/coyblush/";
 		
