@@ -12,4 +12,6 @@ Available Modpacks:
 7. Classic Faces for Boys
 8. CoyBlush
 
-  Upcoming/next version: undefined
+  Upcoming/next version: pde1500
+
+Warning: The Sound Button has problems and core.png gets in the way during the tutorial.
