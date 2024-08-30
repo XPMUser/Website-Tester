@@ -457,7 +457,7 @@ Prodigy.extends = function(e, t, i) {
 }, Prodigy.Entity = {}, Prodigy.Breadcrumbs = {};
 var GameConstants = GameConstants || function() {
 	var e = {};
-	if (e["GameConstants.Build.VERSION"] = "Prodigy 1-50-0 Definitive Edition", e["GameConstants.Beta.VERSION"] = "Version 2.0.5 Modified by XPMUser", e["GameConstants.Build.LODASH_VERSION"] = "4.13.1", e["GameConstants.Build.DEBUG"] = !1, e["GameConstants.Build.SHOW_FPS"] = !1, e["GameConstants.Build.MUTE_BGM"] = !1, e["GameConstants.Build.LOG_LEVEL"] = 12, e["GameConstants.Build.ASSETS_LOCATION"] = "https://cdn.prodigygame.com/game/assets/", e["GameConstants.Build.TELEPORT"] = "", e["GameConstants.Build.QUEST"] = [], e["GameConstants.Build.ITEM_TYPE"] = [], e["GameConstants.Build.KILL_GORE"] = !1, e["GameConstants.Build.EASY_MODE"] = !1, e["GameConstants.Build.MEMBERSHIP"] = !1, e["GameConstants.Tower.MAX_FREE_MEMBER_FLOOR"] = 5, e["GameConstants.Debug.DISABLE_DAILY_BONUS"] = !1, e["GameConstants.Debug.ENABLE_MAP"] = !1, e["GameConstants.Debug.AUTO_LOGIN"] = [], e["GameConstants.Debug.GET_PET"] = [], e["GameConstants.Debug.SET_LEVEL"] = 0, e["GameConstants.Debug.DISABLE_ACHIEVEMENTS"] = !1, e["GameConstants.Debug.GET_GOLD"] = 0, e["GameConstants.Debug.GET_SPELL"] = 0, e["GameConstants.Debug.COMPLETE_TUTORIAL"] = !1, e["GameConstants.Debug.FORCE_DROPS"] = [], e["GameConstants.Mailer.TEST_MAIL"] = !1, e["GameConstants.FriendsList.TEST_FRIENDS_LIST"] = !1, e["GameConstants.Features.ENABLE_HOUSE_MOVING"] = !0, e["GameConstants.Features.Wheel.COOLDOWN"] = 5, e["GameConstants.Features.Wheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.Wheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.Wheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.TwilightWheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.TwilightWheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.TwilightWheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.SplitTests.PLAY_AT_HOME"] = !0, e["GameConstants.Features.TwilightWheel.RIGGED_REWARD"] = null, e["GameConstants.Features.SplitTests.USER_ID_MOD"] = 4, e["GameConstants.Features.SplitTests.CLASS_ID_MOD"] = 0, e["GameConstants.Features.SplitTests.GRADE_MOD"] = 0, e["GameConstants.Battle.VALID_PARENT_EMAIL_STARS_PERCENTAGE"] = 1.05, e["GameConstants.Battle.MAX_NUM_PETS"] = 1, "undefined" != typeof gameConstantsLocal)
+	if (e["GameConstants.Build.VERSION"] = "Prodigy Version 1-50-0 (Open-Source)", e["GameConstants.Beta.VERSION"] = "Definitive Edition Version 2.0.6", e["GameConstants.Build.LODASH_VERSION"] = "4.13.1", e["GameConstants.Build.DEBUG"] = !1, e["GameConstants.Build.SHOW_FPS"] = !1, e["GameConstants.Build.MUTE_BGM"] = !1, e["GameConstants.Build.LOG_LEVEL"] = 12, e["GameConstants.Build.ASSETS_LOCATION"] = "https://cdn.prodigygame.com/game/assets/", e["GameConstants.Build.TELEPORT"] = "", e["GameConstants.Build.QUEST"] = [], e["GameConstants.Build.ITEM_TYPE"] = [], e["GameConstants.Build.KILL_GORE"] = !1, e["GameConstants.Build.EASY_MODE"] = !1, e["GameConstants.Build.MEMBERSHIP"] = !1, e["GameConstants.Tower.MAX_FREE_MEMBER_FLOOR"] = 5, e["GameConstants.Debug.DISABLE_DAILY_BONUS"] = !1, e["GameConstants.Debug.ENABLE_MAP"] = !1, e["GameConstants.Debug.AUTO_LOGIN"] = [], e["GameConstants.Debug.GET_PET"] = [], e["GameConstants.Debug.SET_LEVEL"] = 0, e["GameConstants.Debug.DISABLE_ACHIEVEMENTS"] = !1, e["GameConstants.Debug.GET_GOLD"] = 0, e["GameConstants.Debug.GET_SPELL"] = 0, e["GameConstants.Debug.COMPLETE_TUTORIAL"] = !1, e["GameConstants.Debug.FORCE_DROPS"] = [], e["GameConstants.Mailer.TEST_MAIL"] = !1, e["GameConstants.FriendsList.TEST_FRIENDS_LIST"] = !1, e["GameConstants.Features.ENABLE_HOUSE_MOVING"] = !0, e["GameConstants.Features.Wheel.COOLDOWN"] = 5, e["GameConstants.Features.Wheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.Wheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.Wheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.TwilightWheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.TwilightWheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.TwilightWheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.SplitTests.PLAY_AT_HOME"] = !0, e["GameConstants.Features.TwilightWheel.RIGGED_REWARD"] = null, e["GameConstants.Features.SplitTests.USER_ID_MOD"] = 4, e["GameConstants.Features.SplitTests.CLASS_ID_MOD"] = 0, e["GameConstants.Features.SplitTests.GRADE_MOD"] = 0, e["GameConstants.Battle.VALID_PARENT_EMAIL_STARS_PERCENTAGE"] = 1.05, e["GameConstants.Battle.MAX_NUM_PETS"] = 1, "undefined" != typeof gameConstantsLocal)
 		for (var t in gameConstantsLocal) e[t] = gameConstantsLocal[t];
 	return {
 		get: function(t) {
@@ -6977,6 +6977,15 @@ Util.capitalize = function(e) {
 			w: 74,
 			h: 81
 		},
+		"normal-outfit-male-59": {
+			type: "spritesheet",
+			base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+			url: "0-1.png",
+			x: 92,
+			y: 154,
+			w: 74,
+			h: 81
+		},
 		"normal-outfit-male-6": {
 			type: "spritesheet",
 			base: r,
@@ -7480,20 +7489,29 @@ Util.capitalize = function(e) {
 			y: 76,
 			w: 54,
 			h: 49
-                        },
-                        "reduced-outfit-male-57": {
-                                type: "spritesheet",
-                                base: e,
-                                url: "24.png",
-                                x: 25,
-                                y: 78,
-                                w: 56,
-                                h: 47
+        },
+        "reduced-outfit-male-57": {
+            type: "spritesheet",
+            base: e,
+            url: "24.png",
+            x: 25,
+            y: 78,
+            w: 56,
+            h: 47                                                                        
 		},
 		"reduced-outfit-male-58": {
 			type: "spritesheet",
 			base: "https://xpmuser.github.io/oldprodigy/pde1221/assets/images/player/reduced/male/outfit/",
 			url: "58.png",
+			x: 45,
+			y: 84,
+			w: 37,
+			h: 42
+		},
+		"reduced-outfit-male-59": {
+			type: "spritesheet",
+			base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+            url: "0-1.png",
 			x: 45,
 			y: 84,
 			w: 37,
@@ -8007,19 +8025,28 @@ Util.capitalize = function(e) {
 			type: "spritesheet",
 			base: "https://xpmuser.github.io/prodidows/1-10-0/images/outfits/female/normal/",
 			url: "57.png",
-                        x: 94,
-                        y: 156,
-                        w: 68,
-                        h: 78
-                        },
-                        "normal-outfit-female-58": {
-                                type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-22-4/assets/images/outfits/normal/female/",
-                                url: "58.png",
-                                x: 94,
-                                y: 156,
-                                w: 68,
-                                h: 78
+            x: 94,
+            y: 156,
+            w: 68,
+            h: 78
+        },
+        "normal-outfit-female-58": {
+            type: "spritesheet",
+            base: "https://xpmuser.github.io/prodidows/1-22-4/assets/images/outfits/normal/female/",
+            url: "58.png",
+            x: 94,
+            y: 156,
+            w: 68,
+            h: 78
+		},
+		"normal-outfit-female-59": {
+			type: "spritesheet",
+			base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+            url: "0-1.png",
+			x: 91,
+			y: 140,
+			w: 71,
+			h: 94
 		},
 		"normal-outfit-female-6": {
 			type: "spritesheet",
@@ -8533,11 +8560,20 @@ Util.capitalize = function(e) {
 			y: 86,
 			w: 35,
 			h: 39
-                        },
-                        "reduced-outfit-female-58": {
-                                type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-22-4/assets/images/outfits/reduced/female/",
-                                url: "58.png",
+        },
+        "reduced-outfit-female-58": {
+            type: "spritesheet",
+            base: "https://xpmuser.github.io/prodidows/1-22-4/assets/images/outfits/reduced/female/",
+            url: "58.png",
+			x: 45,
+			y: 86,
+			w: 35,
+			h: 39
+        },
+        "reduced-outfit-female-59": {
+            type: "spritesheet",
+            base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+            url: "0-1.png",
 			x: 45,
 			y: 86,
 			w: 35,
@@ -29081,6 +29117,10 @@ Util.capitalize = function(e) {
 	}, {
 		text: "Your hearts are fully restored when you level up!"
 	}, {
+		text: "Our Firebase Project's unrecognizable, so Google OAuth's a no go too for now."
+	}, {
+		text: "Render emailed us failed jobs, so Multiplayer Mode's a no go for now."
+	}, {
 		text: "Want a new look? Head to the Stylist in Lamplight Town or you can also edit your save."
 	}, {
 		text: "The latest and greatest equipment can be bought at the Item Shop in Lamplight Town."
@@ -29111,13 +29151,13 @@ Util.capitalize = function(e) {
 	}, {
 		text: "Can't win against a boss or another wizard? Level up your team and then try again!"
 	}, {
-		text: "Practice makes perfect! If you get a question wrong, try using a hint for the next one!"
+		text: "To apply modpacks for this version, put /?mods=<mod name> or ?mods=<mod name> in the address bar."
 	}, {
 		text: "Merchants are found all over the island. Some offer new items, others offer quests!"
 	}, {
 		text: "Want to change your equipment? Open up the Backpack from the Main Menu!"
 	}, {
-		text: "Save your game using the save character button in the Other tab on the Settings Menu!"
+		text: "Save your game by using the save character button in the Other tab on the Settings Menu!"
 	}, {
 		text: "Google Sign-in, Multiplayer Mode, etc are all coming soon."
 	}, {
@@ -29829,6 +29869,14 @@ Items.getItemData = function(e, t) {
 		rarity: 4,
 		drop: 1,
 		flavorText: "undefined",
+		effects: [88]
+	}, {
+		ID: 59,
+		name: "Ghost Outfit",
+		member: 1,
+		rarity: 4,
+		drop: 1,
+		flavorText: "Where's my body?",
 		effects: [88]
 	}],
 	weapon: [{
@@ -30776,10 +30824,10 @@ Items.getItemData = function(e, t) {
 		ID: 26,
 		name: "Duelist Boots",
 		member: 0,
-		rarity: 3,
+		rarity: 4,
 		drop: 1,
 		flavorText: 'Official boots of the Annual Wizard Dueling Contest, they say "The Choice of Champions" in big letters on their sides.',
-		effects: [82]
+		effects: [83]
 	}, {
 		ID: 27,
 		name: "Shiverchill Boots",
@@ -30792,10 +30840,10 @@ Items.getItemData = function(e, t) {
 		ID: 28,
 		name: "Embers",
 		member: 0,
-		rarity: 1,
+		rarity: 3,
 		drop: 1,
 		flavorText: "Made for wizards whose feet get cold. It feels like your toes are warming up in front of the fire.",
-		effects: [34]
+		effects: [82]
 	}],
 	follow: [{
 		ID: 1,
@@ -44553,7 +44601,7 @@ Prodigy.ForestBoss = function(e, t) {
 }, Prodigy.extends(Prodigy.Menu.SystemMenu, Prodigy.RenderMenu, {
 	constructor: Prodigy.Menu.SystemMenu,
 	create: function() {
-		this.addTransparent(), this.content = this.game.prodigy.create.element(this, 280, 260, 15, 8), this.createBaseSetup(20, 13, "shine", "O, A, C, E", [{
+		this.addTransparent(), this.content = this.game.prodigy.create.element(this, 280, 260, 15, 8), this.createBaseSetup(24, 13, "shine", "O, A, C, E", [{
 			icon: "settings",
 			bot: "Sound"
 		}, {
@@ -44567,19 +44615,23 @@ Prodigy.ForestBoss = function(e, t) {
 			icon: "player",
 			top: "Game",
 			bot: "Credits"
-		}]), Prodigy.RenderMenu.prototype.create.call(this), this.setMode(0), this.game.prodigy.create.advButton(this, 900, 280, {
+		}, {
+			icon: "player",
+			top: "Game",
+			bot: "Version"
+		}]), Prodigy.RenderMenu.prototype.create.call(this), this.setMode(0), this.game.prodigy.create.advButton(this, 930, 280, {
 			icon: "settings",
 			bot: "Intro"
-		}, this.openIntro.bind(this)), this.game.prodigy.create.advButton(this, 900, 380, {
+		}, this.openIntro.bind(this)), this.game.prodigy.create.advButton(this, 930, 380, {
 			icon: "settings",
 			bot: "Member"
-		}, this.toggleMember.bind(this)), this.game.prodigy.create.advButton(this, 900, 480, {
+		}, this.toggleMember.bind(this)), this.game.prodigy.create.advButton(this, 930, 480, {
 			icon: "settings",
 			bot: "Log Out"
 		}, this.exitGame.bind(this))
 	},
 	clearContents: function() {
-		Util.isDefined(this.content) && this.content.destroy(), Util.isDefined(this.panel) && this.panel.destroy(), Util.isDefined(this.soundVolumeBar) && (this.soundVolumeBar.destroy(), this.soundVolumeBar = null), Util.isDefined(this.voiceVolumeBar) && (this.voiceVolumeBar.destroy(), this.voiceVolumeBar = null), Util.isDefined(this.bgmVolumeBar) && (this.bgmVolumeBar.destroy(), this.bgmVolumeBar = null), this.panel = this.game.prodigy.create.panel(this, 280, 260, 15, 8, "white"), this.content = this.game.prodigy.create.element(this, 280, 260, 15, 8)
+		Util.isDefined(this.content) && this.content.destroy(), Util.isDefined(this.panel) && this.panel.destroy(), Util.isDefined(this.soundVolumeBar) && (this.soundVolumeBar.destroy(), this.soundVolumeBar = null), Util.isDefined(this.voiceVolumeBar) && (this.voiceVolumeBar.destroy(), this.voiceVolumeBar = null), Util.isDefined(this.bgmVolumeBar) && (this.bgmVolumeBar.destroy(), this.bgmVolumeBar = null), this.panel = this.game.prodigy.create.panel(this, 260, 260, 16, 8, "white"), this.content = this.game.prodigy.create.element(this, 280, 260, 15, 8)
 	},
 	setMode: function(e) {
 		switch (Prodigy.RenderMenu.prototype.setMode.call(this, e), this.clearContents(), e) {
@@ -44591,6 +44643,9 @@ Prodigy.ForestBoss = function(e, t) {
 				break;
 			case 3:
 				this.openCredits();
+				break;
+			case 4:
+				this.openVersion();
 				break;
 			default:
 				this.openSound()
@@ -44655,9 +44710,16 @@ Prodigy.ForestBoss = function(e, t) {
 		}, this.MiddleandLastName.bind(this))
 	},
 	openCredits: function() {
-		var e = Util.isDefined(this.game.prodigy.player.world) ? "Open-Source Definitive Edition Team: XPMUser & Toonigy, Original Game By Prodigy Education a.k.a SMARTeacher, Definitive Edition Idea By Daboss7173, & Project Contributors: Prodigy Education, Daboss7173, XPMUser, Toonigy, Craftersshaft, Mr. Intend, Peridot/Starry Ciocirlan, & Stefan25897 (Formerly King Raber)" : "Open-Source Definitive Edition Team: XPMUser & Toonigy, Original Game By Prodigy Education a.k.a SMARTeacher, Definitive Edition Idea By Daboss7173, & Project Contributors: Prodigy Education, Daboss7173, XPMUser, Toonigy, Craftersshaft, Mr. Intend, Peridot/Starry Ciocirlan, & Stefan25897 (Formerly King Raber)";
+		var e = Util.isDefined(this.game.prodigy.player.world) ? "Open-Source Mode Definitive Edition Team: XPMUser & Toonigy, Original Game By Prodigy Education a.k.a SMARTeacher, Definitive Edition Idea By Daboss7173, & Project Contributors: Prodigy Education, Daboss7173, XPMUser, Toonigy, Craftersshaft, Mr. Intend, Peridot/Starry Ciocirlan, Stefan25897 (Formerly King Raber), etc" : "Open-Source Definitive Edition Team: XPMUser & Toonigy, Original Game By Prodigy Education a.k.a SMARTeacher, Definitive Edition Idea By Daboss7173, & Project Contributors: Prodigy Education, Daboss7173, XPMUser, Toonigy, Craftersshaft, Mr. Intend, Peridot/Starry Ciocirlan, Stefan25897 (Formerly King Raber), etc";
 		this.game.prodigy.create.font(this.content, 0, 50, e, {
 			width: 600,
+			align: "center"
+		})
+	},
+	openVersion: function() {
+		var e = Util.isDefined(this.game.prodigy.player.world) ? "Prodigy Version 1.50.0 Mode - Definitive Edition Version 2.0.6" : "Prodigy Version 1.50.0 Mode - Definitive Edition Version 2.0.6";
+		this.game.prodigy.create.font(this.content, 10, 50, e, {
+			width: 590,
 			align: "center"
 		})
 	},
@@ -46792,21 +46854,21 @@ Prodigy.ForestBoss = function(e, t) {
 			("hat" === e.type || "outfit" === e.type || "weapon" === e.type || "boots" === e.type || "follow" === e.type) && (t = !0), "spell" === this.items[0].type && (i = !0), t ? (this.items.length > 2 ? this.dialogue.setText({
 				text: "You got something!",
 				element: this.getItems(this.items.length - 1, 0),
-				face: 2,
+				face: 3,
 				anim: 1
 			}) : this.getSingleDialogue(this.items[0], 0), this.dialogue.setText({
 				callback: this.getSingleDialogue.bind(this, e, this.items.length - 1)
 			})) : i ? (this.items.length > 2 ? this.dialogue.setText({
 				text: "You got something!",
 				element: this.getItems(this.items.length - 1, 1),
-				face: 2,
+				face: 3,
 				anim: 1
 			}) : this.getSingleDialogue(e, this.items.length - 1), this.dialogue.setText({
 				callback: this.getSingleDialogue.bind(this, this.items[0], 0)
 			})) : (this.dialogue.setText({
 				text: "You got something!",
 				element: this.getItems(this.items.length, 0),
-				face: 2,
+				face: 3,
 				anim: 1
 			}), this.dialogue.setText({
 				callback: this.close.bind(this)
@@ -81012,7 +81074,7 @@ var Pathfinder = function() {
 	}, e
 }();
 Prodigy.GameObj = function(e) {
-	this.version = "version " + GameConstants.get("GameConstants.Build.VERSION"), this.version2 = "version " + GameConstants.get("GameConstants.Beta.VERSION"), this.game = e, this.game.versioned = window.location.href.indexOf("feature") > -1 || window.location.href.indexOf("release") > -1, this.game.clientVersion = this.game.versioned ? null : Util.validateVersion(GameConstants.get("GameConstants.Build.VERSION")), this.player = new Player(this.game), this.updateCount = 0, this.game.broadcaster = new Prodigy.Broadcaster(e), this.game.random = new Prodigy.Random(e), this.assets = new Prodigy.Assets, this.load = new Prodigy.Loader(e), this.graphics = new Prodigy.Controller.GraphicsController(e), this.audio = new Prodigy.Controller.AudioController(e), this.mail = new Prodigy.MailController(e), this.battle = new Prodigy.Controller.BattleController(e), this.pvp = new Prodigy.Controller.PVPController(e), this.achievements = new Prodigy.Controller.AchievementController(e), this.surveyController = new Prodigy.Controller.SurveyController(e), this.open = new Prodigy.MenuFactory(e), this.effects = new Prodigy.EffectFactory(e), this.event = new Prodigy.EventFactory(e), this.dialogue = new Prodigy.DialogueFactory(e), this.education = new ExternalFactory(e), this.skin = new Prodigy.SkinFactory(e), this.create = new Prodigy.Factory.AdvGameObjectFactory(e), this.animation = new Prodigy.GenAnimation(e), this.chat = new Prodigy.ChatManager, this.network = new NetworkManager(e), this.bounty = new Prodigy.BountyManager(e), this.affixes = new Prodigy.AffixManager(e), this.attacks = new Prodigy.Attacks(e), this.mailNetworkHandler = new Prodigy.NetworkHandlers.MailerNetworkHandler(e), this.friendsListNetworkHandler = new Prodigy.NetworkHandlers.FriendsListNetworkHandler(e), this.messageListener = new Prodigy.Listener.MessageListener(e), this.world = new Prodigy.World(e), this.canvas = null, this.dialogues = new Prodigy.Dialogues, this.hints = new Prodigy.Hints, this.emailDomains = new Prodigy.EmailDomains, this.dailyLoginBonusRewards = new Prodigy.DailyLoginBonusRewards, this.twilightWheelPrizes = new Prodigy.TwilightWheelPrizes(e), this.updateCount = 0, this.debug = new Prodigy.Debug(e), Util.log(this.version, Util.INFO), Util.log(this.version2, Util.INFO), Prodigy.Lodash.VERSION !== GameConstants.get("GameConstants.Build.LODASH_VERSION") && Util.log("LODASH VERSION CHANGED", Util.ERROR)
+	this.version = "" + GameConstants.get("GameConstants.Build.VERSION"), this.version2 = "" + GameConstants.get("GameConstants.Beta.VERSION"), this.game = e, this.game.versioned = window.location.href.indexOf("feature") > -1 || window.location.href.indexOf("release") > -1, this.game.clientVersion = this.game.versioned ? null : Util.validateVersion(GameConstants.get("GameConstants.Build.VERSION")), this.player = new Player(this.game), this.updateCount = 0, this.game.broadcaster = new Prodigy.Broadcaster(e), this.game.random = new Prodigy.Random(e), this.assets = new Prodigy.Assets, this.load = new Prodigy.Loader(e), this.graphics = new Prodigy.Controller.GraphicsController(e), this.audio = new Prodigy.Controller.AudioController(e), this.mail = new Prodigy.MailController(e), this.battle = new Prodigy.Controller.BattleController(e), this.pvp = new Prodigy.Controller.PVPController(e), this.achievements = new Prodigy.Controller.AchievementController(e), this.surveyController = new Prodigy.Controller.SurveyController(e), this.open = new Prodigy.MenuFactory(e), this.effects = new Prodigy.EffectFactory(e), this.event = new Prodigy.EventFactory(e), this.dialogue = new Prodigy.DialogueFactory(e), this.education = new ExternalFactory(e), this.skin = new Prodigy.SkinFactory(e), this.create = new Prodigy.Factory.AdvGameObjectFactory(e), this.animation = new Prodigy.GenAnimation(e), this.chat = new Prodigy.ChatManager, this.network = new NetworkManager(e), this.bounty = new Prodigy.BountyManager(e), this.affixes = new Prodigy.AffixManager(e), this.attacks = new Prodigy.Attacks(e), this.mailNetworkHandler = new Prodigy.NetworkHandlers.MailerNetworkHandler(e), this.friendsListNetworkHandler = new Prodigy.NetworkHandlers.FriendsListNetworkHandler(e), this.messageListener = new Prodigy.Listener.MessageListener(e), this.world = new Prodigy.World(e), this.canvas = null, this.dialogues = new Prodigy.Dialogues, this.hints = new Prodigy.Hints, this.emailDomains = new Prodigy.EmailDomains, this.dailyLoginBonusRewards = new Prodigy.DailyLoginBonusRewards, this.twilightWheelPrizes = new Prodigy.TwilightWheelPrizes(e), this.updateCount = 0, this.debug = new Prodigy.Debug(e), Util.log(this.version, Util.INFO), Util.log(this.version2, Util.INFO), Prodigy.Lodash.VERSION !== GameConstants.get("GameConstants.Build.LODASH_VERSION") && Util.log("LODASH VERSION CHANGED", Util.ERROR)
 }, Prodigy.GameObj.prototype = {
 	constructor: Prodigy.GameObj,
 	init: function(e) {
