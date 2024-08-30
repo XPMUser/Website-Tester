@@ -7,11 +7,11 @@ Available Modpacks:
 2. FastGameSpeed
 3. RebalancedBattles
 4. ImitationTitan
-5. Mathless
-6. Classic Faces
-7. Classic Faces for Boys
-8. CoyBlush
+5. Classic Faces
+6. Classic Faces for Boys
+7. CoyBlush
 
   Upcoming/next version: pde1500
 
-Warning: The Sound Button has problems and core.png gets in the way during the tutorial.
+Warning: The Ghost Outfit's icon's icons.png.
+The console log is lying about the error for ClassicFaces.
