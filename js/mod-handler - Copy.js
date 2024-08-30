@@ -269,7 +269,7 @@ class ModHandler {
                 }
 	initClassicFaceMod() {
 		var assets = this.game.prodigy.assets._assets;
-		assets.heads.base = "https://xpmuser.github.io/oldprodigy/prodigyde/assets/images/";
+		assets.heads.base = "https://xpmuser.github.io/prodidows/1-10-0/assets/images/";
 		
 		PlayerContainer.getAssets = function(e, t, a, s, i) {
 			var i = new Array;
@@ -284,9 +284,9 @@ class ModHandler {
 		
 	}	
 	
-	initClassicFacesforboysMod() {
+	initCancelledMod() {
 		var assets = this.game.prodigy.assets._assets;
-		assets.heads.base = "https://xpmuser.github.io/oldprodigy/pde1500/assets/images/femalefacesforboys/";
+		assets.heads.base = "https://xpmuser.github.io/oldprodigy/pde1500/assets/images/coyblush/";
 		
 		PlayerContainer.getAssets = function(e, t, a, s, i) {
 			var i = new Array;
@@ -300,7 +300,7 @@ class ModHandler {
 		}
 		
 	}
-	initCoyBlushMod() {
+	initundefinedMod() {
 		var assets = this.game.prodigy.assets._assets;
 		assets.heads.base = "https://ao28th28.github.io/oldprodigy/pde1500/assets/images/coyblush/";
 		
@@ -344,7 +344,7 @@ function checkForMods(e, t) {
                         var s = GameMods.available[a].patch;
                         ModHooks[s].call(ModHooks), ModHooks.log('Mod "' + GameMods.available[a].id + '" successfully applied!'), i += 1
                 } catch (e) {
-                        ModHooks.error('Error occured while applying mod "' + GameMods.available[a].id + '" to Prodigy!'), console.error(e)
+                        ModHooks.error('Mod "' + GameMods.available[a].id + '" successfully applied!'), console.error(e)
                 }
         i > 0 ? ModHooks.log("Applied (" + i + ") mods to the game") : ModHooks.log("No mods have been applied")
 }

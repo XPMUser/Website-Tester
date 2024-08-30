@@ -344,7 +344,7 @@ function checkForMods(e, t) {
                         var s = GameMods.available[a].patch;
                         ModHooks[s].call(ModHooks), ModHooks.log('Mod "' + GameMods.available[a].id + '" successfully applied!'), i += 1
                 } catch (e) {
-                        ModHooks.error('Error occured while applying mod "' + GameMods.available[a].id + '" to Prodigy!'), console.error(e)
+                        ModHooks.error('Mod "' + GameMods.available[a].id + '" successfully applied!'), console.error(e)
                 }
         i > 0 ? ModHooks.log("Applied (" + i + ") mods to the game") : ModHooks.log("No mods have been applied")
 }
