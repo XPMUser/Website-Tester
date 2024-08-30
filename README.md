@@ -14,4 +14,3 @@ Available Modpacks:
   Upcoming/next version: pde1500
 
 Warning: The Ghost Outfit's icon's icons.png.
-The console log is lying about the error for ClassicFaces.
