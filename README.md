@@ -11,6 +11,4 @@ Available Modpacks:
 6. Classic Faces for Boys
 7. CoyBlush
 
-  Upcoming/next version: pde1500
-
-Warning: The Ghost Outfit's icon's icons.png.
+  Upcoming/next version: N/A
