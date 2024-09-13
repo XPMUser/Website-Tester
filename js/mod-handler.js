@@ -274,10 +274,9 @@ class ModHandler {
 	
 	initClassicFaceMod() {
 		var assets = this.game.prodigy.assets._assets;
-		assets.heads.base = "https://daboss7173.github.io/oldprodigy/1-50-0/images/";
+		assets.heads.base = "https://xpmuser.github.io/oldprodigy/1-50-0/images/";
 		assets.heads.type = "localAtlas";
 		assets.heads.key = "general-mod-head";
-		
 		Prodigy.Container.PlayerContainer.getAssets = function (e, t, i, a) {
 			var s = new Array;
 			t = 1 === t ? "reduced" : "normal", a ? s.push(null) : (Util.isDefined(i) || (i = e.equipment.getEquipment("outfit")), s.push(Util.isDefined(i) ? t + "-outfit-" + e.appearance.getGender() + "-" + i : null)), s.push(t + "/face/" + e.appearance.getSkinColor()), s.push(t + "-hair-" + e.appearance.getGender() + "-" + e.appearance.getHairStyle() + "-" + e.appearance.getHairColor()), s.push(t + "/eyes/" + e.appearance.getGender() + "/" + e.appearance.getEyeColor()), s.push(Util.isDefined(e.equipment.getEquipment("hat")) ? t + "-hat-" + e.equipment.getEquipment("hat") : null), s.push("normal" === t && Util.isDefined(e.equipment.getEquipment("weapon")) ? t + "-weapon-" + e.equipment.getEquipment("weapon") : null), Util.isDefined(s[0]) || (s[0] = t + "-outfit-" + e.appearance.getGender() + "-13");
