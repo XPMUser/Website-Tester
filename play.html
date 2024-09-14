@@ -5,11 +5,11 @@
     <title>Prodigy Definitive Edition</title>
         <meta charset="UTF-8" />
 <meta content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <meta name="description" content="Old Prodigy is back and better than ever! Click now and try the definitive Old Prodigy experience!"/>
+    <meta name="description" content="The legendary math game Prodigy is now legendary again, and no longer a math game!"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <link rel="icon" type="image/png" href="https://web.archive.org/web/20150910093225im_/https://www.prodigygame.com/Includes/Images/favicon.gif">
-    <link rel="stylesheet" href="https://xpmuser.github.io/oldprodigy/pde1500/edu/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./edu/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,300,400,500,600,700' rel='stylesheet' type='text/css'>
     <style>
@@ -134,15 +134,9 @@
         }
         
         #first-loading-screen {
-            background-image: url("https://xpmuser.github.io/oldprodigy/pde1500/assets/images/Login-Loader.png");
-			text: "Starting Old Prodigy";
-		background-attachment: fixed;
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: center center;
-		margin: auto;
-		height: 100%;
-		background-color: #627CDE;
+            height: 100%;
+            width: 100%;
+            background-color: #627CDE;
         }
         
         .alert {
@@ -554,8 +548,8 @@
     <script src="https://xpmuser.github.io/prodigy-classic/game-helpers.min.js"></script>
     <script src="https://xpmuser.github.io/oldprodigy/1-50-0/js/phaser.min.js"></script>
     <script src='https://xpmuser.github.io/prodigy-classic/socket.io-1.3.5.js'></script>
-    <script src="https://xpmuser.github.io/oldprodigy/pde1500/edu/controls/js/controls.min.js"></script>
-    <script src="https://xpmuser.github.io/oldprodigy/pde1500/edu/question-interface/js/question.min.js"></script>
+    <script src="./edu/controls/js/controls.min.js"></script>
+    <script src="./edu/question-interface/js/question.min.js"></script>
     <script src="https://xpmuser.github.io/prodigy-classic/game.js"></script>
     <script src='https://s3.amazonaws.com/prodigy-assets/education/skills/prod/f08de16886/curricula.json'></script>
     <script src="https://code.prodigygame.com/lib/particle-storm.min.js"></script>
@@ -635,21 +629,21 @@
         }
     </script>
 </body>
-    <div id="game-loading-container-div" class="game-loading container" draggable="false">
-        <div id="loading-div" draggable="false">
-            <img class="game-loading__ed" draggable="false" src="https://cdn.prodigygame.com/assets/images/ed/@2x/ed-stars@2x.png" />
+    <div id="game-loading-container-div" class="game-loading container">
+        <div id="loading-div">
+            <img class="game-loading__ed" src="https://xpmuser.github.io/favicon.png" />
             <!-- TODO: localize -->
-            <p class="game-loading__font" draggable="false">Loading Prodigy Game Files...</p>
-            <div id="ed-progress-outline" class="ed-progress-outline" draggable="false">
-                <div id="ed-progress-container" class="ed-progress-container" draggable="false">
-                    <div id="ed-progress-bar" class="ed-progress-bar" draggable="false"></div>
+            <p class="game-loading__font">Starting Old Prodigy</p>
+            <div id="ed-progress-outline" class="ed-progress-outline">
+                <div id="ed-progress-container" class="ed-progress-container">
+                    <div id="ed-progress-bar" class="ed-progress-bar"></div>
                 </div>
             </div>
         </div>
-        <div id="error-div" style="display: none;" draggable="false">
-            <img class="game-loading__ed" src="https://cdn.prodigygame.com/assets/images/ed/@2x/ed-sad@2x.png" draggable="false">
-            <h4 id="error-div-title" class="text-white text-center text-mt-md" draggable="false"></h4>
-            <p id="error-div-description" class="text-white text-center text-mt-md" draggable="false"></p>
+        <div id="error-div" style="display: none;">
+            <img class="game-loading__ed" src="https://xpmuser.github.io/favicon.png">
+            <h4 id="error-div-title" class="text-white text-center text-mt-md"></h4>
+            <p id="error-div-description" class="text-white text-center text-mt-md"></p>
         </div>
     </div>
 </div>
@@ -666,5 +660,24 @@
     <div id="membership-flow" class="game-page-overlay"></div>
     <div id="game-page-overlay" class="game-page-overlay"></div>
 
+    </body>
+<div id="g_id_onload"
+     data-client_id="220442635630-9tjlg48pualfqmef01i1bsq0453ecucv.apps.googleusercontent.com"
+     data-context="signin"
+     data-ux_mode="popup"
+     ##data-login_uri=""
+     data-nonce=""
+     data-auto_select="true"
+     data-itp_support="true">
+</div>
+
+<div class="g_id_signin"
+     data-type="standard"
+     data-shape="rectangular"
+     data-theme="filled_blue"
+     data-text="signin_with"
+     data-size="large"
+     data-logo_alignment="left">
+</div>
     </body>
 </html>
