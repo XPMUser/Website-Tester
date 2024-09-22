@@ -607,7 +607,7 @@ Prodigy.extends = function (e, t, i) {
 }, Prodigy.Entity = {}, Prodigy.Breadcrumbs = {};
 var GameConstants = GameConstants || function () {
 	var e = {};
-	if (e["GameConstants.Build.VERSION"] = "1-51-0 mode (1.5.0 beta)", e["GameConstants.Build.LODASH_VERSION"] = "4.13.1", e["GameConstants.Build.DEBUG"] = !1, e["GameConstants.Build.SHOW_FPS"] = !1, e["GameConstants.Build.MUTE_BGM"] = !1, e["GameConstants.Build.LOG_LEVEL"] = 12, e["GameConstants.Build.ASSETS_LOCATION"] = "https://cdn.prodigygame.com/game/assets/", e["GameConstants.Build.TELEPORT"] = "", e["GameConstants.Build.QUEST"] = [], e["GameConstants.Build.ITEM_TYPE"] = [], e["GameConstants.Build.KILL_GORE"] = !1, e["GameConstants.Build.EASY_MODE"] = !1, e["GameConstants.Build.MEMBERSHIP"] = !1, e["GameConstants.Tower.MAX_FREE_MEMBER_FLOOR"] = 5, e["GameConstants.Debug.DISABLE_DAILY_BONUS"] = !1, e["GameConstants.Debug.ENABLE_MAP"] = !1, e["GameConstants.Debug.AUTO_LOGIN"] = [], e["GameConstants.Debug.GET_PET"] = [], e["GameConstants.Debug.SET_LEVEL"] = 0, e["GameConstants.Debug.DISABLE_ACHIEVEMENTS"] = !1, e["GameConstants.Debug.GET_GOLD"] = 0, e["GameConstants.Debug.GET_SPELL"] = 0, e["GameConstants.Debug.COMPLETE_TUTORIAL"] = !1, e["GameConstants.Debug.FORCE_DROPS"] = [], e["GameConstants.Mailer.TEST_MAIL"] = !1, e["GameConstants.FriendsList.TEST_FRIENDS_LIST"] = !1, e["GameConstants.Features.ENABLE_HOUSE_MOVING"] = !0, e["GameConstants.Features.Wheel.COOLDOWN"] = 5, e["GameConstants.Features.Wheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.Wheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.Wheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.TwilightWheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.TwilightWheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.TwilightWheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.SplitTests.PLAY_AT_HOME"] = !0, e["GameConstants.Features.TwilightWheel.RIGGED_REWARD"] = null, e["GameConstants.Features.SplitTests.USER_ID_MOD"] = 4, e["GameConstants.Features.SplitTests.CLASS_ID_MOD"] = 0, e["GameConstants.Features.SplitTests.GRADE_MOD"] = 0, e["GameConstants.Battle.VALID_PARENT_EMAIL_STARS_PERCENTAGE"] = 1.05, e["GameConstants.Battle.MAX_NUM_PETS"] = 1, "undefined" != typeof gameConstantsLocal)
+	if (e["GameConstants.Build.VERSION"] = "1-51-0 mode (1.5.0 beta)", e["GameConstants.Build.LODASH_VERSION"] = "4.13.1", e["GameConstants.Build.DEBUG"] = !0, e["GameConstants.Build.SHOW_FPS"] = !0, e["GameConstants.Build.MUTE_BGM"] = !1, e["GameConstants.Build.LOG_LEVEL"] = 12, e["GameConstants.Build.ASSETS_LOCATION"] = "https://cdn.prodigygame.com/game/assets/", e["GameConstants.Build.TELEPORT"] = "", e["GameConstants.Build.QUEST"] = [], e["GameConstants.Build.ITEM_TYPE"] = [], e["GameConstants.Build.KILL_GORE"] = !1, e["GameConstants.Build.EASY_MODE"] = !1, e["GameConstants.Build.MEMBERSHIP"] = !1, e["GameConstants.Tower.MAX_FREE_MEMBER_FLOOR"] = 5, e["GameConstants.Debug.DISABLE_DAILY_BONUS"] = !1, e["GameConstants.Debug.ENABLE_MAP"] = !1, e["GameConstants.Debug.AUTO_LOGIN"] = [], e["GameConstants.Debug.GET_PET"] = [], e["GameConstants.Debug.SET_LEVEL"] = 0, e["GameConstants.Debug.DISABLE_ACHIEVEMENTS"] = !1, e["GameConstants.Debug.GET_GOLD"] = 0, e["GameConstants.Debug.GET_SPELL"] = 0, e["GameConstants.Debug.COMPLETE_TUTORIAL"] = !1, e["GameConstants.Debug.FORCE_DROPS"] = [], e["GameConstants.Mailer.TEST_MAIL"] = !0, e["GameConstants.FriendsList.TEST_FRIENDS_LIST"] = !0, e["GameConstants.Features.ENABLE_HOUSE_MOVING"] = !0, e["GameConstants.Features.Wheel.COOLDOWN"] = 5, e["GameConstants.Features.Wheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.Wheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.Wheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.TwilightWheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.TwilightWheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.TwilightWheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.SplitTests.PLAY_AT_HOME"] = !0, e["GameConstants.Features.TwilightWheel.RIGGED_REWARD"] = null, e["GameConstants.Features.SplitTests.USER_ID_MOD"] = 4, e["GameConstants.Features.SplitTests.CLASS_ID_MOD"] = 0, e["GameConstants.Features.SplitTests.GRADE_MOD"] = 0, e["GameConstants.Battle.VALID_PARENT_EMAIL_STARS_PERCENTAGE"] = 1.05, e["GameConstants.Battle.MAX_NUM_PETS"] = 1, "undefined" != typeof gameConstantsLocal)
 		for (var t in gameConstantsLocal) e[t] = gameConstantsLocal[t];
 	return {
 		get: function (t) {
@@ -1654,9 +1654,10 @@ Prodigy.Container.PlayerContainerAnimations = {
 			v: "16"
 		},
 		core: {
-			type: "atlas",
+			type: "localAtlas",
+			base: "https://xpmuser.github.io/oldprodigy/pde1500/assets/v1/atlases/",
 			key: "general-core",
-			v: "6"
+			v: "3"
 		},
 		630: {
 			type: "localAtlas",
@@ -1968,7 +1969,7 @@ Prodigy.Container.PlayerContainerAnimations = {
 		},
 		"npc-sprite-noot": {
 			type: "atlas",
-			key: "npc-sprite-noot",
+			key: "npc-sprite-guard",
 			v: "1"
 		},
 		"npc-sprite-pippit": {
@@ -32550,9 +32551,9 @@ Prodigy.ForestBoss = function (e, t) {
 	create: function () {
 		this.addTransparent();
 		var e = this.game.prodigy.create.element(this.background);
-		this.game.prodigy.create.panel(e, 960, 140, 4, 6, "shine"), this.game.prodigy.create.panel(e, 160, 140, 4, 6, "shine");
-		var t = this.game.prodigy.create.panel(e, 280, 60, 18, 10, "shine");
-		t.add(new Phaser.TileSprite(this.game, 11, 40, 698, 40, "core", "blue-top")), t.add(new Phaser.TileSprite(this.game, 11, 80, 698, 240, "core", "blue-mid")), t.add(new Phaser.TileSprite(this.game, 11, 320, 698, 40, "core", "blue-top2")), Prodigy.RenderMenu.prototype.create.call(this), this.content = this.game.prodigy.create.element(this), this.spinner = this.add(this.game.prodigy.create.sprite(640, 300, "core", "loading")), this.spinner.anchor.setTo(.5, .5), this.game.add.tween(this.spinner).to({
+		this.game.prodigy.create.panel(e, 960, 140, 4, 6, "stat"), this.game.prodigy.create.panel(e, 160, 140, 4, 6, "stat");
+		var t = this.game.prodigy.create.panel(e, 280, 60, 18, 10, "stat");
+		t.add(new Phaser.TileSprite(this.game, 11, 40, 698, 40, "core", "stat-top")), t.add(new Phaser.TileSprite(this.game, 11, 80, 698, 240, "core", "stat-mid")), t.add(new Phaser.TileSprite(this.game, 11, 320, 698, 40, "core", "stat-top2")), Prodigy.RenderMenu.prototype.create.call(this), this.content = this.game.prodigy.create.element(this), this.spinner = this.add(this.game.prodigy.create.sprite(640, 300, "core", "loading")), this.spinner.anchor.setTo(.5, .5), this.game.add.tween(this.spinner).to({
 			angle: 360
 		}, 2e3, Phaser.Easing.Linear.None, !0, 0, Number.MAX_VALUE, !1), this.spinner.visible = !1, this.modules = [], Util.isDefined(this.username) || (this.modules.push(new Prodigy.Container.ClassCodePage(this.game, this.content, this.data)), Util.isDefined(this.googleData) || (this.modules.push(new Prodigy.Container.NamePage(this.game, this.content, this.data)), this.modules.push(new Prodigy.Container.PasswordPage(this.game, this.content, this.data)))), this.hasLocation || this.modules.push(new Prodigy.Container.LocationPage(this.game, this.content, this.data)), this.modules.push(new Prodigy.Container.GradePage(this.game, this.content, this.data));
 		for (var i = 0; i < this.modules.length; i++) {
@@ -33047,7 +33048,7 @@ Prodigy.ForestBoss = function (e, t) {
 	setup: function () {
 		Prodigy.Control.Menu.prototype.menuSetup.call(this), this.base = this.game.prodigy.create.element(this, 320, 150);
 		var e = this.game.prodigy.create.element(this.base, 0, 0);
-		this.game.prodigy.create.panel(e, 0, 0, 16, 10, "shine"), e.add(new Phaser.TileSprite(this.game, 11, 200, 618, 40, "core", "blue-top")), e.add(new Phaser.TileSprite(this.game, 11, 240, 618, 20, "core", "blue-mid")), e.add(new Phaser.TileSprite(this.game, 11, 260, 618, 40, "core", "blue-top2")), this.game.prodigy.create.panel(e, 40, 40, 14, 3, "banner"), this.base.add(this.game.prodigy.create.sprite(100, -30, "core-2", "menu-noot")), this.game.prodigy.create.font(this.base, 260, 58, "How would you rate Prodigy?", {
+		this.game.prodigy.create.panel(e, 0, 0, 16, 10, "stat"), e.add(new Phaser.TileSprite(this.game, 11, 200, 618, 40, "core", "blue-top")), e.add(new Phaser.TileSprite(this.game, 11, 240, 618, 20, "core", "stat-mid")), e.add(new Phaser.TileSprite(this.game, 11, 260, 618, 40, "core", "stat-top2")), this.game.prodigy.create.panel(e, 40, 40, 14, 3, "banner"), this.base.add(this.game.prodigy.create.sprite(100, -30, "core-2", "menu-noot")), this.game.prodigy.create.font(this.base, 260, 58, "How would you rate Prodigy?", {
 			size: 36,
 			font: "button",
 			width: 300,
@@ -37658,10 +37659,10 @@ Prodigy.ForestBoss = function (e, t) {
 		this.game.prodigy.loading(!0), this.game.prodigy.load.assets(["popup-after-hours"], this.renderImages.bind(this, t, o)), Prodigy.RenderMenu.prototype.create.call(this)
 	},
 	renderBackground: function (e, t) {
-		return this.game.prodigy.create.panel(e, t.left, t.top, t.tileWidth, t.tileHeight, "shine")
+		return this.game.prodigy.create.panel(e, t.left, t.top, t.tileWidth, t.tileHeight, "stat")
 	},
 	renderContent: function (e, t) {
-		e.add(new Phaser.TileSprite(this.game, t.left, t.top, t.width, t.tileSize, "core", "blue-top")), e.add(new Phaser.TileSprite(this.game, t.left, t.top + t.tileSize, t.width, (t.tileHeight - 2) * t.tileSize, "core", "blue-mid")), e.add(new Phaser.TileSprite(this.game, t.left, t.top + (t.tileHeight - 1) * t.tileSize, t.width, t.tileSize, "core", "blue-top2"))
+		e.add(new Phaser.TileSprite(this.game, t.left, t.top, t.width, t.tileSize, "core", "stat-top")), e.add(new Phaser.TileSprite(this.game, t.left, t.top + t.tileSize, t.width, (t.tileHeight - 2) * t.tileSize, "core", "stat-mid")), e.add(new Phaser.TileSprite(this.game, t.left, t.top + (t.tileHeight - 1) * t.tileSize, t.width, t.tileSize, "core", "stat-top2"))
 	},
 	renderTitle: function (e, t) {
 		var i = this.game.prodigy.create.panel(e, t.left, t.top, t.tileWidth, 2, "banner");
@@ -42932,7 +42933,7 @@ CutScene.getValue = function (e, t, i, a, s) {
 		this.game.prodigy.network.sendToyEvent("char-select", 4), Screen.prototype.create.call(this), this.game.prodigy.player.saveEnabled = !1
 	},
 	screenSetup: function () {
-		this.background.add(this.game.prodigy.create.sprite(0, 0, "bg-battle-academy")), this.game.prodigy.create.panel(this.background, 240, 640, 20, 3, "shine2"), this.off = this.game.prodigy.create.textButton(this.background, 820, 660, {
+		this.background.add(this.game.prodigy.create.sprite(0, 0, "bg-battle-academy")), this.game.prodigy.create.panel(this.background, 240, 640, 16, 3, ""), this.off = this.game.prodigy.create.textButton(this.background, 820, 660, {
 			icon: "next",
 			text: "next"
 		}, this.offlineMode.bind(this)), this.game.prodigy.create.textButton(this.background, 260, 660, {
