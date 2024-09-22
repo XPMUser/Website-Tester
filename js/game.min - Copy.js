@@ -1655,7 +1655,7 @@ Prodigy.Container.PlayerContainerAnimations = {
 		},
 		core: {
 			type: "localAtlas",
-			base: "https://xpmuser.github.io/oldprodigy/pde1500/assets/v1/atlases/",
+			base: "https://xpmuser.github.io/Website-Tester/assets/images/",
 			key: "general-core",
 			v: "3"
 		},
