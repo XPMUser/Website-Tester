@@ -2196,7 +2196,8 @@ Prodigy.Container.PlayerContainerAnimations = {
 			v: "1"
 		},
 		"popup-member-modular": {
-			type: "atlas",
+			type: "localAtlas",
+			base: "https://xpmuser.github.io/oldprodigy/pde1500/assets/images/",
 			key: "popup-member-modular",
 			v: "6"
 		},
@@ -31751,7 +31752,7 @@ Prodigy.ForestBoss = function (e, t) {
 	setup: function () {
 		Prodigy.Control.Menu.prototype.menuSetup.call(this), this.form = this.game.prodigy.create.element(this, 280, 100);
 		var e = this.game.prodigy.create.element(this.form, 0, 0);
-		this.game.prodigy.create.panel(e, 0, 0, 18, 12, "shine"), e.add(new Phaser.TileSprite(this.game, 11, 189, 698, 40, "core", "stat-top")), e.add(new Phaser.TileSprite(this.game, 11, 229, 698, 160, "core", "stat-mid")), e.add(new Phaser.TileSprite(this.game, 11, 389, 698, 40, "core", "stat-top2")), this.game.prodigy.create.panel(e, 40, 40, 16, 3, "banner"), this.form.add(this.game.prodigy.create.sprite(100, -30, "core-2", "menu-noot")), this.game.prodigy.create.font(this.form, 320, 58, "Parent Email Link!", {
+		this.game.prodigy.create.panel(e, 0, 0, 18, 12, ""), e.add(new Phaser.TileSprite(this.game, 11, 189, 698, 40, "core", "stat-top")), e.add(new Phaser.TileSprite(this.game, 11, 229, 698, 160, "core", "stat-mid")), e.add(new Phaser.TileSprite(this.game, 11, 389, 698, 40, "core", "stat-top2")), this.game.prodigy.create.panel(e, 40, 40, 16, 3, "banner"), this.form.add(this.game.prodigy.create.sprite(100, -30, "core-2", "menu-noot")), this.game.prodigy.create.font(this.form, 320, 58, "Parent Email Link!", {
 			size: 30,
 			width: 250,
 			align: "center",
@@ -31994,19 +31995,31 @@ Prodigy.ForestBoss = function (e, t) {
 }, Prodigy.extends(Prodigy.Menu.SystemMenu, Prodigy.RenderMenu, {
 	constructor: Prodigy.Menu.SystemMenu,
 	create: function() {
-		this.addTransparent(), this.content = this.game.prodigy.create.element(this, 280, 260, 15, 8), this.createBaseSetup(20, 13, "shine", "OPTIONS", [{
+		this.addTransparent(), this.content = this.game.prodigy.create.element(this, 280, 260, 15, 8), this.createBaseSetup(24, 13, "stat", "O, A, C, E", [{
 			icon: "settings",
 			bot: "Sound"
 		}, {
 			icon: "settings",
-			bot: "Graphics"
-		}, {
-			icon: "settings",
-			bot: "Network"
-		}, {
-			icon: "settings",
 			bot: "Other"
-		}]), Prodigy.RenderMenu.prototype.create.call(this), this.setMode(0), this.game.prodigy.create.advButton(this, 900, 480, {
+		}, {
+			icon: "player",
+			top: "Name &",
+			bot: "Gender"
+		}, {
+			icon: "player",
+			top: "Game",
+			bot: "Credits"
+		}, {
+			icon: "player",
+			top: "Game",
+			bot: "Version"
+		}]), Prodigy.RenderMenu.prototype.create.call(this), this.setMode(0), this.game.prodigy.create.advButton(this, 930, 280, {
+			icon: "map",
+			bot: "Intro"
+		}, this.openIntro.bind(this)), this.game.prodigy.create.advButton(this, 930, 380, {
+			icon: "member",
+			bot: "Member"
+		}, this.toggleMember.bind(this)), this.game.prodigy.create.advButton(this, 930, 480, {
 			icon: "settings",
 			bot: "Log Out"
 		}, this.exitGame.bind(this))
@@ -32015,15 +32028,59 @@ Prodigy.ForestBoss = function (e, t) {
 		Util.isDefined(this.content) && this.content.destroy(), Util.isDefined(this.panel) && this.panel.destroy(), Util.isDefined(this.soundVolumeBar) && (this.soundVolumeBar.destroy(), this.soundVolumeBar = null), Util.isDefined(this.voiceVolumeBar) && (this.voiceVolumeBar.destroy(), this.voiceVolumeBar = null), Util.isDefined(this.bgmVolumeBar) && (this.bgmVolumeBar.destroy(), this.bgmVolumeBar = null), this.panel = this.game.prodigy.create.panel(this, 280, 260, 15, 8, "white"), this.content = this.game.prodigy.create.element(this, 280, 260, 15, 8)
 	},
 	setMode: function(e) {
+		var t;
+		Prodigy.RenderMenu.prototype.setMode.call(this, e), Util.isDefined(this.content) && this.content.destroy(), t = e === Prodigy.Menu.Social.ARENA ? "Arena" : e === Prodigy.Menu.Social.ARENA_LEADERBOARD ? "ArenaLeaderboard" : e === Prodigy.Menu.Social.BATTLE_REQUESTS ? "BattleRequests" : e === Prodigy.Menu.Social.BOUNTIES ? "Bounties" : e === Prodigy.Menu.Social.ACHIEVEMENTS ? "Achievements" : "Leaderboard", this.content = new Prodigy.Container[t](this.game, this, 80, 200), this.page = e
+	}
+}), Prodigy.Menu.SystemMenu = function(e, t) {
+	Prodigy.RenderMenu.call(this, e, t, 0, 0, e.prodigy.textureMenu), this.create()
+}, Prodigy.extends(Prodigy.Menu.SystemMenu, Prodigy.RenderMenu, {
+	constructor: Prodigy.Menu.SystemMenu,
+	create: function() {
+		this.addTransparent(), this.content = this.game.prodigy.create.element(this, 280, 260, 15, 8), this.createBaseSetup(24, 13, "stat", "O, A, C, E", [{
+			icon: "settings",
+			bot: "Sound"
+		}, {
+			icon: "settings",
+			bot: "Other"
+		}, {
+			icon: "player",
+			top: "Name &",
+			bot: "Gender"
+		}, {
+			icon: "player",
+			top: "Game",
+			bot: "Credits"
+		}, {
+			icon: "player",
+			top: "Game",
+			bot: "Version"
+		}]), Prodigy.RenderMenu.prototype.create.call(this), this.setMode(0), this.game.prodigy.create.advButton(this, 930, 280, {
+			icon: "map",
+			bot: "Intro"
+		}, this.openIntro.bind(this)), this.game.prodigy.create.advButton(this, 930, 380, {
+			icon: "member",
+			bot: "Member"
+		}, this.toggleMember.bind(this)), this.game.prodigy.create.advButton(this, 930, 480, {
+			icon: "settings",
+			bot: "Log Out"
+		}, this.exitGame.bind(this))
+	},
+	clearContents: function() {
+		Util.isDefined(this.content) && this.content.destroy(), Util.isDefined(this.panel) && this.panel.destroy(), Util.isDefined(this.soundVolumeBar) && (this.soundVolumeBar.destroy(), this.soundVolumeBar = null), Util.isDefined(this.voiceVolumeBar) && (this.voiceVolumeBar.destroy(), this.voiceVolumeBar = null), Util.isDefined(this.bgmVolumeBar) && (this.bgmVolumeBar.destroy(), this.bgmVolumeBar = null), this.panel = this.game.prodigy.create.panel(this, 260, 260, 16, 8, "white"), this.content = this.game.prodigy.create.element(this, 280, 260, 15, 8)
+	},
+	setMode: function(e) {
 		switch (Prodigy.RenderMenu.prototype.setMode.call(this, e), this.clearContents(), e) {
 			case 1:
-				this.openGraphics();
+				this.openOther();
 				break;
 			case 2:
-				this.openNetwork();
+				this.openGender();
 				break;
 			case 3:
-				this.openOther();
+				this.openCredits();
+				break;
+			case 4:
+				this.openVersion();
 				break;
 			default:
 				this.openSound()
@@ -32045,73 +32102,79 @@ Prodigy.ForestBoss = function (e, t) {
 		}
 	},
 	openSound: function() {
-		var e = 525,
-			t = this.game.prodigy.audio.getSFXVolume(),
-			i = this.game.prodigy.audio.getBGMVolume(),
-			a = this.game.prodigy.audio.getVoiceVolume();
-		this.game.prodigy.create.font(this.content, (600 - e) / 2, 30, "Sound Volume", {
-			width: e,
+		var e = this.game.prodigy.audio.getSFXVolume(),
+			t = this.game.prodigy.audio.getBGMVolume(),
+			i = this.game.prodigy.audio.getVoiceVolume();
+		this.game.prodigy.create.font(this.content, 37.5, 30, "Sound Volume", {
+			width: 525,
 			align: "center"
-		}), this.soundVolumeBar = this.game.prodigy.create.slider(this.content, (600 - e) / 2, 55, e, !1, !1), this.soundVolumeBar.reset(101, 1, Math.floor(100 * t), this.setSound.bind(this, 0)), this.game.prodigy.create.font(this.content, (600 - e) / 2, 110, "Music Volume", {
-			width: e,
+		}), this.soundVolumeBar = this.game.prodigy.create.slider(this.content, 37.5, 55, 525, !1, !1), this.soundVolumeBar.reset(101, 1, Math.floor(100 * e), this.setSound.bind(this, 0)), this.game.prodigy.create.font(this.content, 37.5, 110, "Music Volume", {
+			width: 525,
 			align: "center"
-		}), this.bgmVolumeBar = this.game.prodigy.create.slider(this.content, (600 - e) / 2, 135, e, !1, !1), this.bgmVolumeBar.reset(101, 1, Math.floor(100 * i), this.setSound.bind(this, 1)), this.game.prodigy.create.font(this.content, (600 - e) / 2, 190, "Voice Volume", {
-			width: e,
+		}), this.bgmVolumeBar = this.game.prodigy.create.slider(this.content, 37.5, 135, 525, !1, !1), this.bgmVolumeBar.reset(101, 1, Math.floor(100 * t), this.setSound.bind(this, 1)), this.game.prodigy.create.font(this.content, 37.5, 190, "Voice Volume", {
+			width: 525,
 			align: "center"
-		}), this.voiceVolumeBar = this.game.prodigy.create.slider(this.content, (600 - e) / 2, 215, e, !1, !1), this.voiceVolumeBar.reset(101, 1, Math.floor(100 * a), this.setSound.bind(this, 2)), this.game.prodigy.audio.setSFXVolume(t), this.game.prodigy.audio.setBGMVolume(i), this.game.prodigy.audio.setVoiceVolume(a)
+		}), this.voiceVolumeBar = this.game.prodigy.create.slider(this.content, 37.5, 215, 525, !1, !1), this.voiceVolumeBar.reset(101, 1, Math.floor(100 * i), this.setSound.bind(this, 2)), this.game.prodigy.audio.setSFXVolume(e), this.game.prodigy.audio.setBGMVolume(t), this.game.prodigy.audio.setVoiceVolume(i)
 	},
-	openGraphics: function() {
-		this.game.prodigy.create.textButton(this.content, 150, 50, {
-			text: "Small Screen",
-			size: Prodigy.Control.TextButton.MED
-		}, this.game.prodigy.graphics.setResolutionSmall.bind(this)), this.game.prodigy.create.textButton(this.content, 150, 125, {
-			text: "Medium Screen",
-			size: Prodigy.Control.TextButton.MED
-		}, this.game.prodigy.graphics.setResolutionMedium.bind(this)), this.game.prodigy.create.textButton(this.content, 150, 200, {
-			text: "Large Screen",
-			size: Prodigy.Control.TextButton.MED
-		}, this.game.prodigy.graphics.setResolutionLarge.bind(this))
-	},
-	openNetwork: function () {
-		var e = Util.isDefined(this.game.prodigy.player.world) ? "Your world is: " + Prodigy.Menu.Server.getServerName(this.game.prodigy.player.world) : "You are playing in Offline Mode.";
+	openOther: function() {
+		var e = Util.isDefined(this.game.prodigy.player.world) ? "Your world is: " + Prodigy.Menu.Server.getServerName(this.game.prodigy.player.world) : "Click on the save character button and choose where you want your save to be in to save your character.";
 		this.game.prodigy.create.font(this.content, 0, 50, e, {
 			width: 600,
 			align: "center"
 		}), this.game.prodigy.create.textButton(this.content, 150, 200, {
 			text: "Save Character",
 			size: Prodigy.Control.TextButton.MED
-		}, this.saveCharacter.bind(this))		 
+		}, this.saveCharacter.bind(this))
 	},
-	openOther: function() {
-		this.game.prodigy.create.textButton(this.content, 150, 50, {
-			text: "Get Epics!",
+	openGender: function() {
+		var e = Util.isDefined(this.game.prodigy.player.world) ? "" + "Switch your gender or change your name." : "Switch your gender or change your name.";
+		this.game.prodigy.create.font(this.content, 0, 50, e, {
+			width: 600,
+			align: "center"
+		}), this.game.prodigy.create.textButton(this.content, 150, 100, {
+			text: "Switch Gender",
 			size: Prodigy.Control.TextButton.MED
-		}, this.unlockEpics.bind(this)),this.game.prodigy.create.textButton(this.content, 150, 125, {
-			text: "Toggle Member",
+		}, this.toggleGender.bind(this)),
+		this.game.prodigy.create.textButton(this.content, 150, 200, {
+			text: "Wizard Title",
 			size: Prodigy.Control.TextButton.MED
-		}, this.toggleMember.bind(this))
+		}, this.MiddleandLastName.bind(this))
+    },
+	toggleGender: function() {
+        let gender = this.game.prodigy.player.appearance.getGender();
+        if (gender === "male") {
+            this.game.prodigy.player.appearance.setGender("female");
+        } else {
+            this.game.prodigy.player.appearance.setGender("male");
+        }
+        this.game.prodigy.open.confirm("Your wizard's gender has been set to " + this.game.prodigy.player.appearance.getGender() + "!\n\n\nWould you like to change your first name, or leave it as is?\n(you can always change it again later)", this.game.prodigy.open.nameChange.bind(this.game.prodigy.open, true), null, null, "System Menu")
+    },
+	openCredits: function() {
+		var e = Util.isDefined(this.game.prodigy.player.world) ? "Open-Source Mode Definitive Edition Team: XPMUser & Toonigy, Original Game By Prodigy Education a.k.a SMARTeacher, Definitive Edition Idea By Daboss7173, Project Contributors: Prodigy Education, Daboss7173, XPMUser, Toonigy, NomadX2, Craftersshaft, Mr. Intend, Peridot/Starry Ciocirlan, Stefan25897 (Formerly King Raber), etc" : "Open-Source Definitive Edition Team: XPMUser & Toonigy, Original Game By Prodigy Education a.k.a SMARTeacher, Definitive Edition Idea By Daboss7173, Project Contributors: Prodigy Education, Daboss7173, XPMUser, Toonigy, NomadX2, Craftersshaft, Mr. Intend, Peridot/Starry Ciocirlan, Stefan25897 (Formerly King Raber), etc";
+		this.game.prodigy.create.font(this.content, 0, 50, e, {
+			width: 600,
+			align: "center"
+		})
+	},
+	openVersion: function() {
+		var e = Util.isDefined(this.game.prodigy.player.world) ? "Prodigy Version 1.50.0 Mode - Definitive Edition Version 2.1.2" : "Prodigy Version 1.50.0 Mode - Definitive Edition Version 2.1.2";
+		this.game.prodigy.create.font(this.content, 10, 50, e, {
+			width: 590,
+			align: "center"
+		})
 	},
 	toggleMember: function() {
-		if (this.game.prodigy.player.isMember == true) {
-			this.game.prodigy.player.isMember = false;
-			this.game.prodigy.open.message("You have deactivated Membership.", null, null, "No longer member!", "membership")
-		}
-		else {
-			this.game.prodigy.player.isMember = true;
-			this.game.prodigy.open.message("You have unlocked Membership!", null, null, "You are member!", "membership")
-		}
+		!0 == this.game.prodigy.player.isMember ? (this.game.prodigy.player.isMember = !1, this.game.prodigy.open.okaymessage("You have deactivated Membership.", null, null, "No longer member!", "membership")) : (this.game.prodigy.player.isMember = !0, this.game.prodigy.open.okaymessage("You have unlocked Membership!", null, null, "You are member!", "membership"))
 	},
-	downloadForCharacter: function(content, fileName, contentType) {
-		var a = document.createElement("a");
-		var file = new Blob([content], {
-			type: contentType
-		});
-		a.href = URL.createObjectURL(file);
-		a.download = fileName;
-		a.click();
+	downloadForCharacter: function(e, t, i) {
+		var a = document.createElement("a"),
+			s = new Blob([e], {
+				type: i
+			});
+		return a.href = URL.createObjectURL(s), a.download = t, a.click(), !0
 	},
 	saveCharacter: function() {
-		var character = {
+		var e = {
 			appearancedata: this.game.prodigy.player.appearance.data,
 			equipmentdata: this.game.prodigy.player.equipment.data,
 			kenneldata: this.game.prodigy.player.kennel.data,
@@ -32122,60 +32185,25 @@ Prodigy.ForestBoss = function (e, t) {
 			backpackdata: this.game.prodigy.player.backpack.data,
 			housedata: this.game.prodigy.player.house.data,
 			achievementsdata: this.game.prodigy.player.achievements.data,
+      userID: this.game.prodigy.player.userID,
 			metadata: {
 				isMember: this.game.prodigy.player.isMember
 			},
 			gameVersion: this.game.prodigy.version
-		}
-		this.downloadForCharacter(JSON.stringify(character), this.game.prodigy.player.appearance.data.name + '.json', 'text/plain');
-	},
-	unlockEpics: function() {
-		this.addHex();
-		this.addFox();
-		this.addArct();
-		this.addTide();
-		this.addMag();
-		this.game.prodigy.open.message("You have unlocked ALL the epics, and their EPIC ATTACKS!! Open up the pets menu or use an epic attack to use them!");
-	},
-	addHex: function() {
-		var e = {
-			ID: 125,
-			level: 20,
-			stars: Prodigy.Creature.starsToLevel(19)
 		};
-		this.game.prodigy.player.kennel.add(e), this.game.prodigy.player.backpack.add("follow", 125), Util.isDefined(this.game.prodigy.player.equipment.data.follow) || this.game.prodigy.player.equipment.setFollow(125)
+		this.downloadForCharacter(JSON.stringify(e), this.game.prodigy.player.appearance.data.name + ".json", "text/plain")
 	},
-	addFox: function() {
-		var e = {
-			ID: 126,
-			level: 20,
-			stars: Prodigy.Creature.starsToLevel(19)
-		};
-		this.game.prodigy.player.kennel.add(e), this.game.prodigy.player.backpack.add("follow", 126), Util.isDefined(this.game.prodigy.player.equipment.data.follow) || this.game.prodigy.player.equipment.setFollow(126)
+	Girl: function() {
+		this.game.prodigy.player.appearance.data.gender="female"
 	},
-	addArct: function() {
-		var e = {
-			ID: 127,
-			level: 20,
-			stars: Prodigy.Creature.starsToLevel(19)
-		};
-		this.game.prodigy.player.kennel.add(e), this.game.prodigy.player.backpack.add("follow", 127), Util.isDefined(this.game.prodigy.player.equipment.data.follow) || this.game.prodigy.player.equipment.setFollow(127)
+	Boy: function() {
+		this.game.prodigy.player.appearance.data.gender="male"
 	},
-	addTide: function() {
-		var e = {
-			ID: 128,
-			level: 20,
-			stars: Prodigy.Creature.starsToLevel(19)
-		};
-		this.game.prodigy.player.kennel.add(e), this.game.prodigy.player.backpack.add("follow", 128), Util.isDefined(this.game.prodigy.player.equipment.data.follow) || this.game.prodigy.player.equipment.setFollow(128)
+	FirstName: function() {
+		this.game.prodigy.open.nameChange()
 	},
-	addMag: function() {
-		var e = {
-			ID: 129,
-			level: 20,
-			stars: Prodigy.Creature.starsToLevel(19)
-		};
-		this.game.prodigy.player.kennel.add(e), this.game.prodigy.player.backpack.add("follow", 129), Util.isDefined(this.game.prodigy.player.equipment.data.follow) || this.game.prodigy.player.equipment.setFollow(129)
+	MiddleandLastName: function() {
+		this.game.prodigy.open.nameChange()
 	},
 	exitGame: function() {
 		this.game.prodigy.network.logout()
@@ -32510,7 +32538,7 @@ Prodigy.ForestBoss = function (e, t) {
 }, Prodigy.extends(Prodigy.Menu.Character, Prodigy.RenderMenu, {
 	constructor: Prodigy.Menu.Character,
 	create: function () {
-		this.addTransparent(), this.panel = this.game.prodigy.create.panel(this, 240, 80, 20, 14, "shine"), this.panel.setRenderState(!0), this.game.prodigy.create.button(this, this.panel.x + 760, this.panel.y - 10, "icons", "close", this.close.bind(this)), this.panel.add(new Phaser.TileSprite(this.game, 11, 120, 778, 40, "core", "blue-top")), this.panel.add(new Phaser.TileSprite(this.game, 11, 160, 778, 300, "core", "blue-mid")), this.panel.add(new Phaser.TileSprite(this.game, 11, 460, 778, 40, "core", "blue-top2")), this.game.prodigy.create.panel(this.panel, 200, -10, 10, 2, "banner"), this.game.prodigy.create.font(this, 290, 86, "My Spellbook", {
+		this.addTransparent(), this.panel = this.game.prodigy.create.panel(this, 240, 80, 20, 14, "shine"), this.panel.setRenderState(!0), this.game.prodigy.create.button(this, this.panel.x + 760, this.panel.y - 10, "icons", "close", this.close.bind(this)), this.panel.add(new Phaser.TileSprite(this.game, 11, 120, 778, 40, "core", "stat-top")), this.panel.add(new Phaser.TileSprite(this.game, 11, 160, 778, 300, "core", "stat-mid")), this.panel.add(new Phaser.TileSprite(this.game, 11, 460, 778, 40, "core", "stat-top2")), this.game.prodigy.create.panel(this.panel, 200, -10, 10, 2, "banner"), this.game.prodigy.create.font(this, 290, 86, "My Spellbook", {
 			font: "button",
 			size: 36,
 			width: 720,
@@ -35584,8 +35612,8 @@ Prodigy.ForestBoss = function (e, t) {
 		Prodigy.RenderMenu.prototype.create.call(this), this.nameText = this.game.prodigy.create.font(this, e.x + i.x, e.y + i.y + 15, "Name Your Wizard", {
 			width: i.width,
 			align: "center",
-			size: 36,
-			font: "button"
+			size: 40,
+			font: "general"
 		}), this.bar = this.game.prodigy.create.slider(this, e.x + 30, e.y + 80 + 20, 240, !0, !0), this.closeBtn = this.game.prodigy.create.textButton(this, 490, e.y + 400 - 25, {
 			text: "I'm Done!",
 			icon: "yes",
