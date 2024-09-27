@@ -32157,7 +32157,7 @@ Prodigy.ForestBoss = function (e, t) {
 		})
 	},
 	openVersion: function() {
-		var e = Util.isDefined(this.game.prodigy.player.world) ? "Prodigy Version 1.50.0 Mode - Definitive Edition Version 2.1.2" : "Prodigy Version 1.50.0 Mode - Definitive Edition Version 2.1.2";
+		var e = Util.isDefined(this.game.prodigy.player.world) ? "Prodigy Version 1.51.0 Mode - Definitive Edition Version 1.6.0" : "Prodigy Version 1.51.0 Mode - Definitive Edition Version 1.6.0";
 		this.game.prodigy.create.font(this.content, 10, 50, e, {
 			width: 590,
 			align: "center"
