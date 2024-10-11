@@ -13,4 +13,4 @@ Available Modpacks:
 6. Classic Faces for Boys
 7. CoyBlush
 
-  Upcoming/next version: pde 1.51 for pde1500 migrating update and oldprodigyde for pde2015 migrating update
+  Upcoming/next versions: pde 1.51 for pde1500 migrating update and oldprodigyde for pde2015 migrating update
