@@ -1,7 +1,7 @@
 This is where you can test any website. Modpacks: ?mods=Whatever or ?mods=Whatever,Whatever
 This can also be used as an Old Prodigy or Prodidows Insider Program/Preview.
 
-Now, we do 2 versions!
+Now, we do 4 versions!
 
 Available Modpacks:
 
@@ -13,4 +13,4 @@ Available Modpacks:
 6. Classic Faces for Boys
 7. CoyBlush
 
-  Upcoming/next versions: pde 1.51 for pde1500 migrating update and oldprodigyde for pde2015 migrating update
+  Upcoming/next versions: pde 1.51 for pde1500 migrating update, pde1221, and oldprodigyde for pde2015 migrating update
