@@ -68,39 +68,41 @@ class ModHandler {
 	}
 	
 	initWalkSpeedMod() {
-		let walkSpeed = 1;
-		
-		let openOther = SystemMenu.prototype.openOther;
-		SystemMenu.prototype.openOther = function() {
-			openOther.call(this);
-			new BitmapFont(this.game, this.content, 0, 230, "walk speed", {
-				width: 400,
-				align: "center"
-			}), this.walkSpeedBar = new ProgressBar(this.game, this.content, 50, 260, 300, 80, 1, walkSpeed/20), this.walkSpeedBar.setDraggable(), this.walkSpeedBar.setBarAnimationSpeed(ProgressBar.SPEED_VERYSLOW)
-		};
-		
-		let menuUpdate = SystemMenu.prototype.menuUpdate;
-		SystemMenu.prototype.menuUpdate = function() {
-			menuUpdate.call(this);
-			if (Util.isDefined(this.walkSpeedBar) && walkSpeed !== this.walkSpeedBar.getPercent()*20)
-				walkSpeed = this.walkSpeedBar.getPercent()*20;
-		};
-		
-		let clearContents = SystemMenu.prototype.clearContents;
-		SystemMenu.prototype.clearContents = function() {
-			clearContents.call(this);
-			if (Util.isDefined(this.walkSpeedBar)) {
-				this.walkSpeedBar.destroy();
-				this.walkSpeedBar = null;
+		this.game.prodigy.player.walkSpeed = 1,
+		Prodigy.Container.CreatureContainer.prototype.setPath = function (e, t, i) {
+			if (Util.isDefined(e)) {
+				this.game.tweens.removeFrom(this, !1), this.game.tweens.removeFrom(this.sprites), Util.isDefined(i) || (i = this.game.prodigy.player.walkSpeed);
+				for (var a = null, s = null, r = this.x, o = this.y, n = e.length - 1; n >= 0; n--) {
+					var h = e[n];
+					Util.isDefined(h.x) || (h.x = r), Util.isDefined(h.y) || (h.y = o);
+					var l = this.game.prodigy.math.distance(h.x, h.y, r, o);
+					0 !== l && (Util.isDefined(a) || (a = this.game.add.tween(this), s = this.game.add.tween(this.sprites.scale)), a.to({
+						x: h.x,
+						y: h.y
+					}, 6 * l / i, Phaser.Easing.Linear.None), s.to({
+						x: h.x > r ? 1 : -1
+					}, 1, Phaser.Easing.Linear.None), s.to({}, 6 * l / i - 100, Phaser.Easing.Linear.None), r = h.x, o = h.y)
+				}
+				Util.isDefined(a) ? (a.onComplete.addOnce(this.stand, this), Util.isDefined(t) && a.onComplete.addOnce(t), this.walk(), this.mode = 0, Util.isDefined(a) && a.start(), Util.isDefined(s) && s.start()) : (Util.isDefined(t) && t(), this.stand())
 			}
-		}
-		
-		WalkableScreen.prototype.listener = function(e, t) {
-			e = e || 0, t = t || 0;
-			var a = this.path.findBasicPath(this.user.x + e, this.user.y + t, this.game.input.x + e, this.game.input.y + t);
-			a[0].x -= e, a[0].y -= t;
-			var i = this.path.getCallback(Math.floor(a[0].x / this.tileSize), Math.floor(a[0].y / this.tileSize));
-			this.user.setPath(a, i, walkSpeed)
+		};
+		Prodigy.Menu.SystemMenu.prototype.openOther = function () {
+			this.game.prodigy.create.textButton(this.content, 150, 50, {
+				text: "Watch Intro",
+				size: Prodigy.Control.TextButton.MED
+			}, this.openIntro.bind(this)), this.game.prodigy.create.textButton(this.content, 150, 125, {
+				text: "Toggle Member",
+				size: Prodigy.Control.TextButton.MED
+			}, this.toggleMember.bind(this)),
+			this.walkSpeedBar = this.game.prodigy.create.slider(this.content, 37, 215, 525, !1, !1),
+			this.walkSpeedBar.reset(200, 0, Math.floor((this.game.prodigy.player.walkSpeed - 0.1) * 10), this.setWalkSpeed.bind(this))
+		};
+		Prodigy.Menu.SystemMenu.prototype.setWalkSpeed = function () {
+			this.game.prodigy.player.walkSpeed = (this.walkSpeedBar.page + 1) / 10,
+			this.game.prodigy.create.font(this.content, 37, 185, "Walk Speed", {
+				width: 525,
+				align: "center"
+			})
 		}
 	}
 	
