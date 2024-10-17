@@ -8024,7 +8024,7 @@ Util.capitalize = function(e) {
 		},
 		"reduced-outfit-male-38": {
 			type: "spritesheet",
-			base: e,
+			base: "https://xpmuser.github.io/prodidows/1-10-0/images/outfits/male/reduced/",
 			url: "38.png",
 			x: 17,
 			y: 0,
@@ -30133,11 +30133,11 @@ Items.getItemData = function(e, t) {
 	}
 	return s += 50 * a, s += 25 * (i.h || 0), s += 50 * (i.d || 0)
 }, Items.DROP_RATE_BY_TYPE = {
-	outfit: 4e-4,
-	weapon: 5e-4,
-	hat: .001,
-	boots: .001,
-	item: .025
+	outfit: 1,
+	weapon: 1,
+	hat: 1,
+	boots: 1,
+	item: 1
 }, Items.DROP_RATE_BY_RARITY = [1, .75, .5, .25, .1], Items.RARITY_COLOR = ["#c7c7c7", "#6fc159", "#408cd9", "#b93ae2", "#f7942e"], Items.RARITY = ["common", "uncommon", "rare", "epic", "legendary"], Items.TYPES = ["outfit", "weapon", "boots", "hat", "item"], Items.createExtraAnimInfo = function(e, t, i, a, s) {
 	for (var r = [], o = 0; t > o; o++) r.push(e + "-" + o);
 	return {
@@ -45478,7 +45478,7 @@ Prodigy.ForestBoss = function(e, t) {
         this.game.prodigy.open.confirm("Your wizard's gender has been set to " + this.game.prodigy.player.appearance.getGender() + "!\n\n\nWould you like to change your first name, or leave it as is?\n(you can always change it again later)", this.game.prodigy.open.nameChange.bind(this.game.prodigy.open, true), null, null, "System Menu")
     },
 	openCredits: function() {
-		var e = Util.isDefined(this.game.prodigy.player.world) ? "Open-Source Mode Definitive Edition Team: XPMUser & Toonigy, Original Game By Prodigy Education a.k.a SMARTeacher, Definitive Edition Ideas By Daboss7173, Project Contributors: Prodigy Education, Daboss7173, XPMUser, Toonigy, NomadX2, Craftersshaft, Mr. Intend, Peridot/Starry Ciocirlan, Stefan25897 (Formerly King Raber), etc" : "Open-Source Definitive Edition Team: XPMUser & Toonigy, Original Game By Prodigy Education a.k.a SMARTeacher, Definitive Edition Idea By Daboss7173, Project Contributors: Prodigy Education, Daboss7173, XPMUser, Toonigy, NomadX2, Craftersshaft, Mr. Intend, Peridot/Starry Ciocirlan, Stefan25897 (Formerly King Raber), etc";
+		var e = Util.isDefined(this.game.prodigy.player.world) ? "Definitive Edition Team: XPMUser & Toonigy, Original Game By Prodigy Education a.k.a SMARTeacher, Definitive Edition Ideas By Daboss7173, Project Contributors: Prodigy Education, Daboss7173, XPMUser, Toonigy, NomadX2, Craftersshaft, Mr. Intend, Peridot/Starry Ciocirlan, Stefan25897 (Formerly King Raber), etc" : "Definitive Edition Team: XPMUser & Toonigy, Original Game By Prodigy Education a.k.a SMARTeacher, Definitive Edition Idea By Daboss7173, Project Contributors: Prodigy Education, Daboss7173, XPMUser, Toonigy, NomadX2, Craftersshaft, Mr. Intend, Peridot/Starry Ciocirlan, Stefan25897 (Formerly King Raber), etc";
 		this.game.prodigy.create.font(this.content, 0, 50, e, {
 			width: 600,
 			align: "center"
@@ -48405,7 +48405,7 @@ Prodigy.ForestBoss = function(e, t) {
 	}],
 	drops: [{
 		type: "gold",
-		N: 900000
+		N: 90000
 	}]
 }, {
 	opponent: {
@@ -48430,7 +48430,7 @@ Prodigy.ForestBoss = function(e, t) {
 	}],
 	drops: [{
 		type: "gold",
-		N: 900000
+		N: 90000
 	}]
 }, {
 	opponent: {
@@ -48455,7 +48455,7 @@ Prodigy.ForestBoss = function(e, t) {
 	}],
 	drops: [{
 		type: "gold",
-		N: 900000
+		N: 90000
 	}]
 }, {
 	opponent: {
@@ -48480,7 +48480,7 @@ Prodigy.ForestBoss = function(e, t) {
 	}],
 	drops: [{
 		type: "gold",
-		N: 900000
+		N: 90000
 	}]
 }, {
 	opponent: {
@@ -48726,6 +48726,38 @@ Prodigy.ForestBoss = function(e, t) {
                 level: 1
             }, {
                 ID: 10,
+                level: 1
+	}],
+	drops: [{
+		type: "gold",
+		N: 10000
+	}]
+}, {
+	opponent: {
+		data: '{"level":100}',
+		appearance: '{"name":"Alexa the W12-4RD", "gender":"female", "hairStyle":5,"hairColor":16,"skinColor":1,"eyeColor":13}',
+		equipment: '{"hat":23, "outfit":52, "weapon":47}'
+	},
+	title: "Prodidows' wizard in Daboss7173's PDE",
+	description: "If you have admin access to Prodidows, you'll also have access to this wizard in Daboss7173's PDE by signing in to Google as Prodidows!",
+	pets: [{
+                ID: 36,
+                level: 1
+	}],
+	drops: [{
+		type: "gold",
+		N: 10000
+	}]
+}, {
+	opponent: {
+		data: '{"level":100}',
+		appearance: '{"name":"David the W12-4RD", "gender":"male", "hairStyle":3,"hairColor":16,"skinColor":1,"eyeColor":13}',
+		equipment: '{"hat":61, "outfit":52, "weapon":47}'
+	},
+	title: "XPMUser from Daboss7173's PDE",
+	description: "This is XPMUser's main character!",
+	pets: [{
+                ID: 1,
                 level: 1
 	}],
 	drops: [{
@@ -55329,9 +55361,9 @@ var Screen = function() {
 			Screen.prototype.create.call(this)
 		}, e.prototype.screenSetup = function() {
 			var e = this.game.prodigy.open.okaymessage("The load character button doesn't work on iPads. We suggest you use another device if you're an iPad user. Press the Enter key to see the entire message so that it's easier to read it.", null, "star", "Warning!");
-			this.game.prodigy.debug.easyMode(1, 1), this.background.add(this.game.prodigy.create.sprite(0, 0, "login", "bg")), this.loginBox = this.game.prodigy.create.element(this.background), this.usernameField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "username", "", 90, 230, 300, 40), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Prodigy Version 1.50.0");
+			this.game.prodigy.debug.easyMode(1, 1), this.background.add(this.game.prodigy.create.sprite(0, 0, "login", "bg")), this.loginBox = this.game.prodigy.create.element(this.background), this.usernameField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "username", "", 90, 230, 300, 40), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Prodigy version 1.50.0");
 			var e = Util.getCookie("prodigyUsername");
-			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition Version 2.1.4"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "offline", this.offlineMode.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
+			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition version 2.1.5"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "offline", this.offlineMode.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
 				width: 300,
 				align: "center"
 			}), this.closeButton = this.game.prodigy.create.textButton(this.progressBox, 0, 100, {
