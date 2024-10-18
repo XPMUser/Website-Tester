@@ -2494,7 +2494,7 @@ Prodigy.Container.PlayerContainerAnimations = {
 		"game-data": {
 			type: "json",
 			base: "",
-			fullURL: "https://xpmuser.github.io/oldprodigyrender/assets/data/items.json"
+			fullURL: "https://xpmuser.github.io/oldprodigy/assets/data/items.json"
 		},
 		"store-data": {
 			type: "json",
@@ -32255,10 +32255,10 @@ Prodigy.ForestBoss = function (e, t) {
 }, Prodigy.extends(Prodigy.Menu.WorldMap, Prodigy.RenderMenu, {
 	constructor: Prodigy.Menu.WorldMap,
 	create: function() {
-		this.addTransparent(), this.b = this.game.prodigy.create.panel(this, 180, 60, 23, 15, "shine2"), this.b.setRenderState(!0), this.content = this.game.prodigy.create.element(this, this.b.x, this.b.y), this.game.prodigy.create.button(this, 1060, 50, "icons", "close", this.close.bind(this)), Prodigy.RenderMenu.prototype.create.call(this), this.startLoad(["map"], this.showContent.bind(this))
+		this.addTransparent(), this.b = this.game.prodigy.create.panel(this, 180, 60, 23, 15, "stat"), this.b.setRenderState(!0), this.content = this.game.prodigy.create.element(this, this.b.x, this.b.y), this.game.prodigy.create.button(this, 1060, 50, "icons", "close", this.close.bind(this)), Prodigy.RenderMenu.prototype.create.call(this), this.startLoad(["map"], this.showContent.bind(this))
 	},
 	showContent: function() {
-		this.b.add(this.game.prodigy.create.sprite(-180, -60, "map", "map")), this.process();
+		this.b.add(this.game.prodigy.create.sprite(-180, -60, "login", "login")), this.process();
 		for (var e = 0; e < Prodigy.Menu.WorldMap.BTNS.length; e++) {
 			var t = Prodigy.Menu.WorldMap.BTNS[e],
 				i = !1;
@@ -32538,9 +32538,9 @@ Prodigy.ForestBoss = function (e, t) {
 }, Prodigy.extends(Prodigy.Menu.Character, Prodigy.RenderMenu, {
 	constructor: Prodigy.Menu.Character,
 	create: function () {
-		this.addTransparent(), this.panel = this.game.prodigy.create.panel(this, 240, 80, 20, 14, "shine"), this.panel.setRenderState(!0), this.game.prodigy.create.button(this, this.panel.x + 760, this.panel.y - 10, "icons", "close", this.close.bind(this)), this.panel.add(new Phaser.TileSprite(this.game, 11, 120, 778, 40, "core", "stat-top")), this.panel.add(new Phaser.TileSprite(this.game, 11, 160, 778, 300, "core", "stat-mid")), this.panel.add(new Phaser.TileSprite(this.game, 11, 460, 778, 40, "core", "stat-top2")), this.game.prodigy.create.panel(this.panel, 200, -10, 10, 2, "banner"), this.game.prodigy.create.font(this, 290, 86, "My Spellbook", {
-			font: "button",
-			size: 36,
+		this.addTransparent(), this.panel = this.game.prodigy.create.panel(this, 240, 80, 20, 14, "stat"), this.panel.setRenderState(!0), this.game.prodigy.create.button(this, this.panel.x + 760, this.panel.y - 10, "icons", "close", this.close.bind(this)), this.panel.add(new Phaser.TileSprite(this.game, 11, 120, 778, 40, "core", "stat-top")), this.panel.add(new Phaser.TileSprite(this.game, 11, 160, 778, 300, "core", "stat-mid")), this.panel.add(new Phaser.TileSprite(this.game, 11, 460, 778, 40, "core", "stat-top2")), this.game.prodigy.create.panel(this.panel, 200, -10, 10, 2, "banner"), this.game.prodigy.create.font(this, 280, 86, "My Spellbook", {
+			font: "general",
+			size: 40,
 			width: 720,
 			align: "center"
 		}), this.game.prodigy.create.panel(this.panel, 240, 140, 8, 4, "white").alpha = .5, this.game.prodigy.create.font(this.panel, 250, 150, "Here are the spells you will see in battle.\n\nClick on a card to switch a spell.", {
@@ -32623,12 +32623,12 @@ Prodigy.ForestBoss = function (e, t) {
 		e.yesNoText(52, "noot", this.close.bind(this, !1)), e.function(this.processResults.bind(this)), e.start()
 	},
 	complete: function (e) {
-		this.spinner.visible = !1, this.game.prodigy.create.font(this.content, 240, 190, "username:", {
+		this.spinner.visible = !1, this.game.prodigy.create.font(this.content, 240, 190, "Notes:", {
 			size: 36,
 			font: "button",
 			width: 280,
 			align: "right"
-		}), this.game.prodigy.create.font(this.content, 240, 270, "password:", {
+		}), this.game.prodigy.create.font(this.content, 240, 270, "Notes 2:", {
 			size: 36,
 			font: "button",
 			width: 280,
@@ -32966,7 +32966,7 @@ Prodigy.ForestBoss = function (e, t) {
 }, Prodigy.extends(Prodigy.Menu.Message, Prodigy.Control.Menu, {
 	constructor: Prodigy.Menu.Message,
 	setup: function () {
-		Prodigy.Control.Menu.prototype.menuSetup.call(this), this.base = this.game.prodigy.create.element(this, 340, 200), this.game.prodigy.create.panel(this.base, 0, 0, 15, 8, "shine"), this.desc = this.game.prodigy.create.font(this.base, 60, 60, "", {
+		Prodigy.Control.Menu.prototype.menuSetup.call(this), this.base = this.game.prodigy.create.element(this, 340, 200), this.game.prodigy.create.panel(this.base, 0, 0, 15, 8, "stat"), this.desc = this.game.prodigy.create.font(this.base, 60, 60, "", {
 			font: "black",
 			size: 20,
 			width: 480
@@ -40774,7 +40774,7 @@ Prodigy.ForestBoss = function (e, t) {
 		}
 	}
 }), Prodigy.Container.ArenaLeaderboard = function (e, t, i, a, s) {
-	Prodigy.Control.Element.call(this, e, t, i, a), this.player = this.game.prodigy.player, this.leaders = s, this.page = 0, this.createMemberBtn(this, 0, 320), this.leader = this.game.prodigy.create.panel(this, 0, 0, 13, 7, "panel-base"), this.game.prodigy.create.font(this.leader, 0, 0, "Top Player in the World", {
+	Prodigy.Control.Element.call(this, e, t, i, a), this.player = this.game.prodigy.player, this.leaders = s, this.page = 0, this.createMemberBtn(this, 0, 320), this.leader = this.game.prodigy.create.panel(this, 0, 0, 13, 7, "panel-base"), this.game.prodigy.create.font(this.leader, 0, 0, "Select a tab to open!", {
 		font: "button",
 		size: 36,
 		width: 520,
@@ -40789,7 +40789,7 @@ Prodigy.ForestBoss = function (e, t) {
 		size: 20,
 		align: "right",
 		width: 480
-	}), this.list = this.game.prodigy.create.panel(this, 560, 0, 14, 11, "panel-base"), this.game.prodigy.create.font(this.list, 0, 0, "Top Arena Players", {
+	}), this.list = this.game.prodigy.create.panel(this, 560, 0, 14, 11, "panel-base"), this.game.prodigy.create.font(this.list, 0, 0, "Multiplayer mode is coming soon!", {
 		font: "button",
 		size: 36,
 		width: 560,
@@ -42032,7 +42032,7 @@ Boot.init = function () {
 		Util.isDefined(e) || (e = {}), e.title = e.title || "Loading", e.time = e.time || 3e3, e.fadeIn = e.fadeIn || !1, e.fadeOut = e.fadeOut || !1, e.callback = e.callback || null, e.assets = e.assets || [], e.target = e.target || "Login", e.save = Util.isDefined(e.save) ? e.save : !0, e.loadingWorker = Util.isDefined(e.loadingWorker) ? e.loadingWorker : null, this._data = e, this.game.state.start("Loading")
 	},
 	create: function () {
-		if (this.startTime = (new Date).getTime(), this.complete = !1, this.isLoaded = !1, this.isSaved = !1, this.isProcessed = !1, this._element = this.game.prodigy.create.element(), this._element.add(new Phaser.TileSprite(this.game, 0, 0, 1280, 720, "core", "load")), this._data.time > 1e3) {
+		if (this.startTime = (new Date).getTime(), this.complete = !1, this.isLoaded = !1, this.isSaved = !1, this.isProcessed = !1, this._element = this.game.prodigy.create.element(), this._element.add(new Phaser.TileSprite(this.game, 0, 0, 1280, 720, "map", "map")), this._data.time > 1e3) {
 			this.game.prodigy.create.panel(this._element, 160, 340, 24, 5, "shine"), this._element.add(new Phaser.TileSprite(this.game, 171, 380, 938, 40, "core", "stat-top")), this._element.add(new Phaser.TileSprite(this.game, 171, 420, 938, 40, "core", "stat-mid")), this._element.add(new Phaser.TileSprite(this.game, 171, 460, 938, 40, "core", "stat-top2")), this._element.add(this.game.prodigy.create.sprite(590, 310, "icons", "star"));
 			var e = this.game.prodigy.create.font(this._element, 200, 400, this.game.prodigy.hints.getRandomHint("none").text, {
 				font: "general",
@@ -51503,12 +51503,12 @@ Arena.AUDIO = [{
 	pages: [{
 		btn: {
 			icon: "star",
-			top: "Silver",
-			bot: "Rank"
+			top: "The academy item shop",
+			bot: ""
 		},
-		icon: "emblem-rank2",
+		icon: "emblem-rank1",
 		rank: 0,
-		top: "Silver Rank",
+		top: "Bronze Rank",
 		items: [{
 			ID: 76,
 			type: "item"
@@ -51699,8 +51699,8 @@ Arena.AUDIO = [{
 	}, {
 		btn: {
 			icon: "star",
-			top: "Gold",
-			bot: "Rank"
+			top: "The breath of the wild set.",
+			bot:  ""
 		},
 		icon: "emblem-rank3",
 		rank: 0,
@@ -51718,8 +51718,8 @@ Arena.AUDIO = [{
 	}, {
 		btn: {
 			icon: "star",
-			top: "Platinum",
-			bot: "Rank"
+			top: "The draconyx",
+			bot: "Set"
 		},
 		icon: "emblem-rank4",
 		rank: 0,
