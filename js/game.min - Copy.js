@@ -37192,6 +37192,9 @@ bot.reload();
 			type: "SpellbookButton"
 		})
 	},
+	addAutoHeal: function(e, t) {
+		this.game.prodigy.player.changeCurrentHearts(99999999999999990)
+	},
 	addBackpack: function (e, t) {
 		(this.game.prodigy.player.getGold() > 0 || this.game.prodigy.player.backpack.getTotalUnique() > 0) && this.pages[e][t].push({
 			type: "BackpackButton"
