@@ -460,7 +460,7 @@ Prodigy.extends = function(e, t, i) {
 }, Prodigy.Entity = {}, Prodigy.Breadcrumbs = {};
 var GameConstants = GameConstants || function() {
 	var e = {};
-	if (e["GameConstants.Build.VERSION"] = "1.50.0 Mode", e["GameConstants.Build.ADD_BOTS"] = !1, e["GameConstants.Build.LODASH_VERSION"] = "4.13.1", e["GameConstants.Build.DEBUG"] = !0, e["GameConstants.Build.SHOW_FPS"] = !0, e["GameConstants.Build.MUTE_BGM"] = !1, e["GameConstants.Build.LOG_LEVEL"] = 12, e["GameConstants.Build.ASSETS_LOCATION"] = "https://cdn.prodigygame.com/game/assets/", e["GameConstants.Build.TELEPORT"] = "", e["GameConstants.Build.QUEST"] = [], e["GameConstants.Build.ITEM_TYPE"] = [], e["GameConstants.Build.KILL_GORE"] = !1, e["GameConstants.Build.EASY_MODE"] = !1, e["GameConstants.Build.MEMBERSHIP"] = !1, e["GameConstants.Tower.MAX_FREE_MEMBER_FLOOR"] = 5, e["GameConstants.Debug.DISABLE_DAILY_BONUS"] = !1, e["GameConstants.Debug.ENABLE_MAP"] = !1, e["GameConstants.Debug.AUTO_LOGIN"] = [], e["GameConstants.Debug.GET_PET"] = [], e["GameConstants.Debug.SET_LEVEL"] = 0, e["GameConstants.Debug.DISABLE_ACHIEVEMENTS"] = !1, e["GameConstants.Debug.GET_GOLD"] = 0, e["GameConstants.Debug.GET_SPELL"] = 0, e["GameConstants.Debug.COMPLETE_TUTORIAL"] = !1, e["GameConstants.Debug.FORCE_DROPS"] = [], e["GameConstants.Server.TEST_SERVER"] = !1, e["GameConstants.Mailer.TEST_MAIL"] = !0, e["GameConstants.FriendsList.TEST_FRIENDS_LIST"] = !0, e["GameConstants.Features.ENABLE_HOUSE_MOVING"] = !0, e["GameConstants.Features.Wheel.COOLDOWN"] = 5, e["GameConstants.Features.Wheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.Wheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.Wheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.TwilightWheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.TwilightWheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.TwilightWheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.SplitTests.PLAY_AT_HOME"] = !0, e["GameConstants.Features.TwilightWheel.RIGGED_REWARD"] = null, e["GameConstants.Features.SplitTests.USER_ID_MOD"] = 4, e["GameConstants.Features.SplitTests.CLASS_ID_MOD"] = 0, e["GameConstants.Features.SplitTests.GRADE_MOD"] = 0, e["GameConstants.Battle.VALID_PARENT_EMAIL_STARS_PERCENTAGE"] = 1.05, e["GameConstants.Battle.MAX_NUM_PETS"] = 1, "undefined" != typeof gameConstantsLocal)
+	if (e["GameConstants.Build.VERSION"] = "1.50.0 Mode", e["GameConstants.Build.ADD_BOTS"] = !0, e["GameConstants.Build.LODASH_VERSION"] = "4.13.1", e["GameConstants.Build.DEBUG"] = !0, e["GameConstants.Build.SHOW_FPS"] = !0, e["GameConstants.Build.MUTE_BGM"] = !1, e["GameConstants.Build.LOG_LEVEL"] = 12, e["GameConstants.Build.ASSETS_LOCATION"] = "https://cdn.prodigygame.com/game/assets/", e["GameConstants.Build.TELEPORT"] = "", e["GameConstants.Build.QUEST"] = [], e["GameConstants.Build.ITEM_TYPE"] = [], e["GameConstants.Build.KILL_GORE"] = !1, e["GameConstants.Build.EASY_MODE"] = !0, e["GameConstants.Build.MEMBERSHIP"] = !1, e["GameConstants.Tower.MAX_FREE_MEMBER_FLOOR"] = 5, e["GameConstants.Debug.DISABLE_DAILY_BONUS"] = !1, e["GameConstants.Debug.ENABLE_MAP"] = !1, e["GameConstants.Debug.AUTO_LOGIN"] = [], e["GameConstants.Debug.GET_PET"] = [], e["GameConstants.Debug.SET_LEVEL"] = 0, e["GameConstants.Debug.GET_GOLD"] = 0, e["GameConstants.Debug.GET_SPELL"] = 0, e["GameConstants.Debug.COMPLETE_TUTORIAL"] = !1, e["GameConstants.Debug.FORCE_DROPS"] = [], e["GameConstants.Server.TEST_SERVER"] = !1, e["GameConstants.Mailer.TEST_MAIL"] = !0, e["GameConstants.FriendsList.TEST_FRIENDS_LIST"] = !0, e["GameConstants.Features.ENABLE_HOUSE_MOVING"] = !0, e["GameConstants.Features.Wheel.COOLDOWN"] = 5, e["GameConstants.Features.Wheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.Wheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.Wheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.TwilightWheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.TwilightWheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.TwilightWheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.SplitTests.PLAY_AT_HOME"] = !0, e["GameConstants.Features.TwilightWheel.RIGGED_REWARD"] = null, e["GameConstants.Features.SplitTests.USER_ID_MOD"] = 4, e["GameConstants.Features.SplitTests.CLASS_ID_MOD"] = 0, e["GameConstants.Features.SplitTests.GRADE_MOD"] = 0, e["GameConstants.Battle.VALID_PARENT_EMAIL_STARS_PERCENTAGE"] = 1.05, e["GameConstants.Battle.MAX_NUM_PETS"] = 1, "undefined" != typeof gameConstantsLocal)
 		for (var t in gameConstantsLocal) e[t] = gameConstantsLocal[t];
 	return {
 		get: function(t) {
@@ -29929,7 +29929,7 @@ Util.capitalize = function(e) {
 	}, {
 		text: "If your saved save file is on your iPad, you can put it in any drive app that keeps your files like your save files safe and available for another device."
 	}, {
-		text: "If you want to find bots (wizards) in Privee AI, then search for the bot's name."
+		text: "If you want to find bots (wizards) in my.ai, then search for the bot's name."
 	}, {
 		text: "If you want to be a member, click on the gear icon and then click on the member button."
 	}, {
@@ -45084,7 +45084,7 @@ Prodigy.ForestBoss = function(e, t) {
 	},
 	onMembershipButtonClick: function(e) {
 		try {
-			this.game.prodigy.network.openWebsite("app.priveeai.com")
+			this.game.prodigy.network.openWebsite("themy.ai")
 		} catch (a) {
 			this.game.prodigy.open.message("There was an error contacting our server. Please try again later.")
 		}
@@ -46875,7 +46875,6 @@ bot.reload();
 				top: "Visit",
 				bot: "House"
 			}, this.toHouse.bind(this));
-		if (i.setActive(t), t && this.game.prodigy.player.hasCompletedTutorial()) {
 			var a = this.game.prodigy.world.getZone("house").getState("hasClickedPlayerCardVisit");
 			if (!Util.isDefined(a) || !a) {
 				this.exclamationSprite = this.game.prodigy.create.sprite(0, 0, "icons", "exclamation"), this.base.add(this.exclamationSprite);
@@ -46884,10 +46883,10 @@ bot.reload();
 					y: this.exclamationSprite.y - 10
 				}, 400, Phaser.Easing.Quadratic.InOut, !0, 0, -1, !0)
 			}
-		}
 		this.game.prodigy.create.advButton(this.base, 125, 350, {
 			icon: "challenge",
-			top: "Battle!"
+			top: "Add for",
+                        bot: "Battle!"
 		}, this.challenge.bind(this)).setActive(!this.viewOnly), e.push(this.game.prodigy.create.advButton(this.base, 455, 350, {
 			icon: "bag",
 			top: "View",
@@ -46896,7 +46895,11 @@ bot.reload();
 			icon: "player",
 			top: "View",
 			bot: "Stats"
-		}, this.setMode.bind(this, 2, 1))), this.setupFriendRequestButton(235, 350)
+		}, this.setMode.bind(this, 2, 1))), e.push(this.game.prodigy.create.advButton(this.base, 345, 350, {
+			icon: "gift",
+			top: "Rick",
+			bot: "Roll"
+		}, this.sendGift.bind(this, 2, 1))), this.setupFriendRequestButton(235, 350)
 	},
 	setupFriendRequestButton: function(e, t) {
 		if (!Util.isDefined(this.game)) return void Util.log("Friend Button failed to render", Util.ERROR);
@@ -46906,12 +46909,12 @@ bot.reload();
 				break
 			} var n = null,
 			h = "delete-friend";
-		1 === r ? (i = "Remove", a = "Friend", n = Prodigy.Events.FriendsList.REMOVE_FRIEND, this.hideFriendsButton = !1) : 0 === r ? (i = "Cancel", a = "Request", n = Prodigy.Events.FriendsList.CANCEL_REQUEST, this.hideFriendsButton = !1) : (i = "Friend", a = "Request", n = Prodigy.Events.FriendsList.SEND_REQUEST, h = "add-friend");
+		1 === r ? (i = "Remove", a = "Friend", n = Prodigy.Events.FriendsList.REMOVE_FRIEND, this.hideFriendsButton = !1) : 0 === r ? (i = "Cancel", a = "Request", n = Prodigy.Events.FriendsList.CANCEL_REQUEST, this.hideFriendsButton = !1) : (i = "Add", a = "Friend", n = Prodigy.Events.FriendsList.SEND_REQUEST, h = "add-friend");
 		var l = (function() {
 			if (n === Prodigy.Events.FriendsList.REMOVE_FRIEND) {
 				var e = Util.isDefined(this.player.appearance.data.nick) && "" !== this.player.appearance.data.nick ? this.player.appearance.data.nick : this.player.appearance.data.name;
 				this.game.prodigy.open.confirm("Are you sure you want to remove " + e + " from your friends list?", this.game.broadcaster.broadcast.bind(this.game.broadcaster, n, "Card", [this.player.userID]), null, null, "Removing Friend")
-			} else this.game.broadcaster.broadcast(n, "Card", [this.player.userID])
+			} else this.game.prodigy.network.openWebsite("github.com/XPMUser/XPMUser.github.io/issues/new?assignees=&labels=Suggestion&projects=&template=feature_request.yml&title=%2ACoolest+title+ever%2A")
 		}).bind(this);
 		Util.isDefined(e) && Util.isDefined(t) || (e = this.cmdFriendRequest.x, t = this.cmdFriendRequest.y), Util.isDefined(this.cmdFriendRequest) && this.cmdFriendRequest.destroy(), this.cmdFriendRequest = this.game.prodigy.create.advButton(this.base, e, t, {
 			atlas: "icons-menu",
@@ -46975,31 +46978,13 @@ bot.reload();
 		}
 	},
 	toHouse: function () {
-        this.game.prodigy.world.teleport("house", null, null, this.game.prodigy.player)
+                this.game.prodigy.world.teleport("house-suburbs")
         },
 	challenge: function() {
-		var e = this.game.broadcaster.broadcast(Prodigy.Events.PlayerLocomotion.GET_TARGET, this.game, [!0]),
-			t = function(e, t) {
-				e.prodigy.world.teleport(e.prodigy.player.data.zone, t.x, t.y)
-			},
-			i = {
-				equipment: this.game.prodigy.player.equipment.data,
-				appearance: this.game.prodigy.player.appearance.data,
-				data: this.game.prodigy.player.data,
-				isMember: this.game.prodigy.player.isMember
-			};
-		this.game.prodigy.network.emitMessage({
-			action: "challenge",
-			target: this.player.userID,
-			time: 6e4,
-			data: {
-				userID: this.game.prodigy.player.userID,
-				player: i
-			}
-		}), this.game.prodigy.pvp.start(this.game.prodigy.player.userID, this.game.prodigy.player, this.player, t.bind(this, this.game, e), !1)
+		this.game.prodigy.network.openWebsite("github.com/XPMUser/XPMUser.github.io/issues/new?assignees=&labels=Suggestion&projects=&template=feature_request.yml&title=%2ACoolest+title+ever%2A")
 	},
 	sendGift: function() {
-		this.game.prodigy.open.message("This feature is coming soon!", null, null, "Send Gift")
+		this.game.prodigy.network.openWebsite("youtu.be/dQw4w9WgXcQ?feature=shared")
 	},
 	updatePlayer: function(e) {
 		this.p.reload(), this.game.input.clearEnterCallback(), e && this.setMode(0, 0)
@@ -47980,7 +47965,7 @@ bot.reload();
 			text: "challenge!",
 			icon: "weapon/4",
 			size: Prodigy.Control.TextButton.MED
-		}, this.challenge.bind(this)), this.showFrame("leaderboard", "THE ARENA", []);
+		}, this.challenge.bind(this)), this.showFrame("leaderboard", "THE ACADEMY", []);
 		var e = this.game.prodigy.create.textButton(this, 0, 0, {
 			icon: "close",
 			text: "close"
@@ -48758,7 +48743,7 @@ bot.reload();
 	opponent: {
 		data: '{"level":100}',
 		appearance: '{"name":"Techeater Alexa", "gender":"female", "hairStyle":5,"hairColor":16,"skinColor":1,"eyeColor":13}',
-		equipment: '{"hat":23, "outfit":24, "weapon":68}'
+		equipment: '{"hat":23, "outfit":24, "weapon":68, "boots":18}'
 	},
 	title: "Prodidows",
 	description: "XPMUser has used this wizard for Prodidows before! This is XPMUser's other wizard!",
@@ -48783,7 +48768,7 @@ bot.reload();
 	opponent: {
 		data: '{"level":100}',
 		appearance: '{"name":"Techeater David", "gender":"male", "hairStyle":3,"hairColor":16,"skinColor":1,"eyeColor":13}',
-		equipment: '{"hat":23, "outfit":24, "weapon":68}'
+		equipment: '{"hat":23, "outfit":24, "weapon":68, "boots":18}'
 	},
 	title: "XPMUser",
 	description: "This is XPMUser's main character!",
@@ -48808,12 +48793,12 @@ bot.reload();
 	opponent: {
 		data: '{"level":100}',
 		appearance: '{"name":"Alexa the W12-4RD", "gender":"female", "hairStyle":5,"hairColor":16,"skinColor":1,"eyeColor":13}',
-		equipment: '{"hat":23, "outfit":52, "weapon":47}'
+		equipment: '{"hat":23, "outfit":24, "weapon":47, "boots":18}'
 	},
 	title: "Prodidows' wizard in Daboss7173's PDE",
 	description: "If you have admin access to Prodidows, you'll also have access to this wizard in Daboss7173's PDE by signing in to Google as Prodidows!",
 	pets: [{
-                ID: 36,
+                ID: 50,
                 level: 1
 	}],
 	drops: [{
@@ -48824,12 +48809,12 @@ bot.reload();
 	opponent: {
 		data: '{"level":100}',
 		appearance: '{"name":"David the W12-4RD", "gender":"male", "hairStyle":3,"hairColor":16,"skinColor":1,"eyeColor":13}',
-		equipment: '{"hat":61, "outfit":52, "weapon":47}'
+		equipment: '{"hat":61, "outfit":52, "weapon":47, "boots":18}'
 	},
 	title: "XPMUser from Daboss7173's PDE",
 	description: "This is XPMUser's main character!",
 	pets: [{
-                ID: 1,
+                ID: 50,
                 level: 1
 	}],
 	drops: [{
@@ -48849,6 +48834,44 @@ bot.reload();
 		type: "gold",
 		N: 500
 	}]
+}, {
+    opponent: {
+        data: '{"level":100}',
+        appearance: '{"name":"Anna Fairywalker", "gender":"female", "hairStyle":4,"hairColor":14,"skinColor":1,"eyeColor":9}',
+        equipment: '{"hat":23, "outfit":24, "weapon":47, "boots":18}'
+    },
+    title: "Daboss7173's PDE's Admin",
+    description: "She wanted more gold than everyone in Daboss7173's PDE.",
+    pets: [],
+    drops: [{
+        type: "gold",
+        N: 10000
+    }]
+}, {
+    opponent: {
+        data: '{"level":100}',
+        appearance: '{"name":"Prince Ephen", "gender":"male", "hairStyle":8,"hairColor":4,"skinColor":1,"eyeColor":8}',
+        equipment: '{"hat":23, "outfit":52, "weapon":86, "boots":18}'
+    },
+    title: "The Fire Prodigy",
+    description: "He came to Lamplight from Earth a few years ago, not knowing of his powers. Throughout the adventures with his friends, they all discovered their abilities as the six Elemental Prodigies (but there are seven elements?) and he has been known for his power since... Would you try your hand at his challenge?.",
+    pets: [{
+                ID: 34,
+                level: 100
+            }, {
+                ID: 51,
+                level: 100
+            }, {
+                ID: 101,
+                level: 100
+            }, {
+                ID: 129,
+                level: 100
+    }],
+    drops: [{
+        type: "gold",
+        N: 10000
+    }]
 }], Prodigy.Menu.Nicknamer = function(e, t, i, a) {
 	Prodigy.Control.Menu.call(this, e, t, 18, {
 		hideMenu: !0,
@@ -49833,7 +49856,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 	subject: "The friend feature's back in business!",
 	isOpened: !1,
 	image: "friends-list",
-	message: "Wanna make friends? You can chat and make friends in app.priveeai.com. Open the friend menu (looks like a member menu) and then click on the make ai friends now button!"
+	message: "Wanna make friends? You can chat and make friends in themy.ai. Open the friend menu (looks like a member menu) and then click on the make ai friends now button!"
 }, {
 	id: 1,
 	subject: "Epic Spells can now be used multiple times!",
@@ -50493,8 +50516,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 		Util.isDefined(this.pages[e][t]) || this.pages[e].push([])
 	},
 	addBots: function(e, t) {
-var bot = this.game.prodigy.create.player(this.content, new Player(this.game), 1, 140, 160); bot.forceOutfit(39); bot.showName(!0); bot.walkEnabled = !0; bot.setup(null, !0);
-bot.reload();
+var bot = this.game.prodigy.create.player(this.content, new Player(this.game), 1, 100, 160); bot.forceOutfit(39); bot.showName(!0); bot.walkEnabled = !0; bot.startLoad(); bot.clickCallback = this.game.prodigy.open.card.bind(this.game.prodigy.open, new Player(this.game)); bot.setNewTarget(); bot.walk(); bot.initListeners(); bot.update(); 
 	},
 	addDefaultConfig: function() {
 		this.addPage(0), this.addMenu(0, 0), this.addSpellbook(0, 0), this.addBackpack(0, 0), this.addPet(0, 0), this.addSocial(0, 0), this.addMap(0, 0), this.addEvent(0, 0), this.addSettings(0, 0), this.addFriendsList(0, 0), this.addMailer(0, 0), this.addAutoHeal(0,0), this.addBots(0,0)
@@ -55452,7 +55474,7 @@ var Screen = function() {
 			var e = this.game.prodigy.open.okaymessage("The load character button doesn't work on iPads. We suggest you use another device if you're an iPad user.", null, "star", "Warning!");
 			this.game.prodigy.debug.easyMode(1, 1), this.background.add(this.game.prodigy.create.sprite(0, 0, "login", "bg")), this.loginBox = this.game.prodigy.create.element(this.background), this.usernameField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "username", "", 90, 230, 300, 40), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Prodigy version 1.50.0");
 			var e = Util.getCookie("prodigyUsername");
-			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition version 2.5"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "offline", this.offlineMode.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
+			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition version 6"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "offline", this.offlineMode.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
 				width: 300,
 				align: "center"
 			}), this.closeButton = this.game.prodigy.create.textButton(this.progressBox, 0, 100, {
@@ -57741,10 +57763,10 @@ Prodigy.Skin = function(e, t) {
 		this._count++, this._count > 180 && (this.randomizePosition.call(this), this._count = 0)
 	}
 }), Prodigy.SkinFactory = function(e) {
-	this.game = e, this.active = [new Prodigy.Starlight_Festival, new Prodigy.MagicParticle, new Prodigy.MagicParticle2]
+	this.game = e, this.active = [new Prodigy.Winterfest, new Prodigy.MagicParticle, new Prodigy.MagicParticle2]
 }, Prodigy.SkinFactory.prototype = {
 	constructor: Prodigy.SkinFactory,
-  active: [new Prodigy.Starlight_Festival, new Prodigy.MagicParticle, new Prodigy.MagicParticle2],
+  active: [new Prodigy.Winterfest, new Prodigy.MagicParticle, new Prodigy.MagicParticle2],
 	activeStore: function() {
 		for (var e = 0; e < this.active.length; e++) {
 			var t = this.active[e].getStoreData();
