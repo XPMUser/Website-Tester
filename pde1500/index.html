@@ -12,6 +12,39 @@
     <link rel="stylesheet" href="https://xpmuser.github.io/oldprodigy/pde1500/edu/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,300,400,500,600,700' rel='stylesheet' type='text/css'>
+	<script>
+  let isLoggedIn = false;
+
+  function onGoogleSignIn(googleUser) {
+    const profile = googleUser.getBasicProfile();
+    console.log("ID: " + profile.getId()); // Do not send to backend!
+    console.log("Name: " + profile.getName());
+    console.log("Email: " + profile.getEmail());
+
+    isLoggedIn = true;
+    startGame();
+  }
+
+  function startGame() {
+    if (isLoggedIn) {
+      // Replace this with your game's initialization code
+      console.log("User is logged in. Starting the game...");
+      document.getElementById("game-container").innerHTML = "<p>Game Loading...</p>";
+    } else {
+      alert("Please log in with Google first.");
+    }
+  }
+
+  // Mock Google button event
+  document.getElementById("google-login-button").addEventListener("click", function() {
+    // Simulate Google login
+    setTimeout(() => {
+      isLoggedIn = true; // This simulates the Google Login success.
+      console.log("Logged in with Google!");
+      startGame();
+    }, 1000); // Simulate delay
+  });
+</script>
     <style>
         html {
             height: 100%;
@@ -565,6 +598,7 @@
     <script src="https://xpmuser.github.io/prodigy-classic/easystar-0.2.0.min.js"></script>
     <script src="./js/mod-handler.js"></script>
     <script src="./js/game.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js?onload=onGooglePlatformLoad"></script>
     <script src="https://www.googletagmanager.com/gtm.js?id=GTM-T7TSN5K"></script>
     <script src="https://accounts.google.com/gsi/client?onload=onGooglePlatformLoad" async defer></script>
     <script type="text/javascript">
