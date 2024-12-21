@@ -38443,7 +38443,7 @@ var Card = function () {
 				var a = this.base.add(new Sprite(this.game, 8, e[t][0], "core", "overlay-small"));
 				a.width = 484, a.height = e[t][1], a.alpha = e[t][2]
 			}
-			this.base.add(new Sprite(this.game, -10, -10, "icons", "icon-base-active")), new PlayerContainer(this.game, this.base, this.player, 1, 100, 240).reload(), this.player.isMember && this.base.add(new Sprite(this.game, 5, 5, "icons", "membership")), new BitmapFont(this.game, this.base, 80, 23, this.player.appearance.getName(), {
+			this.base.add(new Sprite(this.game, -10, -10, "icons", "icon-base-active")), new PlayerContainer(this.game, this.base, this.player, 2, 100, 300).reload(), this.player.isMember && this.base.add(new Sprite(this.game, 5, 5, "icons", "membership")), new BitmapFont(this.game, this.base, 80, 23, this.player.appearance.getName(), {
 				width: 370
 			});
 			var s = ["hat", "weapon", "boots", "outfit"];
@@ -42327,13 +42327,13 @@ var Screen = function () {
 				var a = this.path.getValidCoord(),
 					s = new Player;
 				s.createRandom(), s.appearance.setCoords(a[0], a[1]), this.addPlayer({
-					userID: t + 1,
+					userID: t + 100,
 					appearance: s.appearance.data,
 					data: s.data,
 					equipment: s.equipment.data
 				})
 				var i = new PlayerContainer(this.game, this.content, s, 1, a[0], a[1]);
-				i.reload(), i.showName(!0), this.playerList.push(this.game.time.events.repeat(100, 1e4, this.processBot.bind(this, i), this))
+				i.reload(), i.showName(!0), i.clickCallback = this.game.prodigy.open.card.bind(this.game.prodigy.open, s), this.playerList.push(this.game.time.events.repeat(100, 1e4, this.processBot.bind(this, i), this))
 			}
 		}, e.prototype.processBot = function (e) {
 			if (Math.random() < .005) {
@@ -53548,7 +53548,7 @@ Prodigy.MenuFactory = function (e) {
 		new Store(this.game, this.menuLayer, e, t, a).setup()
 	}
 }, Prodigy.MenuFactory.prototype.constructor = Prodigy.MenuFactory, Prodigy.GameObj = function (e) {
-	this.version = "Definitive Edition version 2.1.0",
+	this.version = "Definitive Edition version 3.0.0",
 	this.version2 = "Prodigy version 1.16.5",
     this.player = new Player,
     this.assets = new Prodigy.Assets,
