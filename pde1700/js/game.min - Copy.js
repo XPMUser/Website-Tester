@@ -2454,9 +2454,10 @@ Prodigy.Events.FriendsList = {
 			v: "17"
 		},
 		core: {
-			type: "atlas",
+			type: "local",
+			base: "https://xpmuser.github.io/oldprodigy/pde1500/assets/v1/atlases/",
 			key: "general-core",
-			v: "6"
+			v: "3"
 		},
 		"core-2": {
 			type: "atlas",
@@ -40798,7 +40799,7 @@ var Screen = function() {
 		}, e.prototype.screenSetup = function() {
 			this.background.add(this.game.prodigy.create.sprite(0, 0, "login-bg-1")), this.loginBox = this.game.prodigy.create.element(this.background), this.usernameField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "username", "", 100, 230, 300, 40), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Prodigy version 1-70-0");
 			var t = Util.getCookie("prodigyUsername");
-			Util.isDefined(t) && this.usernameField.setValue(t), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 100, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition v10"), this.loginButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login-buttons", "loadcharacter", this.openFileForCharacter.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
+			Util.isDefined(t) && this.usernameField.setValue(t), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 100, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition v11"), this.loginButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login-buttons", "loadcharacter", this.openFileForCharacter.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
 				width: 300,
 				align: "center"
 			}), this.closeButton = this.game.prodigy.create.textButton(this.progressBox, 0, 100, {
