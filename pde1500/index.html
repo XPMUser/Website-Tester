@@ -31,7 +31,9 @@
       console.log("User is logged in. Starting the game...");
       document.getElementById("game-container").innerHTML = "<p>Game Loading...</p>";
     } else {
-      alert("Please log in with Google first.");
+      // Replace this with your game's initialization code
+      console.log("User is logged in. Starting the game...");
+      document.getElementById("game-container").innerHTML = "<p>Game Loading...</p>";
     }
   }
 
@@ -700,5 +702,59 @@
     <div id="membership-flow" class="game-page-overlay"></div>
     <div id="game-page-overlay" class="game-page-overlay"></div>
 
-    </body>
+  <!-- Insert this script at the bottom of the HTML, but before you use any Firebase services -->
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js'
+
+    // If you enabled Analytics in your project, add the Firebase SDK for Google Analytics
+    import { getAnalytics } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-analytics.js'
+
+    // Add Firebase products that you want to use
+    import { getAuth } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js'
+    import { getFirestore } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js'
+  </script>
+<body>
+  <!-- Insert this script at the bottom of the HTML, but before you use any Firebase services -->
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js'
+
+    // If you enabled Analytics in your project, add the Firebase SDK for Google Analytics
+    import { getAnalytics } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-analytics.js'
+
+    // Add Firebase products that you want to use
+    import { getAuth } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js'
+    import { getFirestore } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js'
+  </script>
+</body>
+  <script type="module">
+    // ...
+
+    // TODO: Replace the following with your app's Firebase project configuration
+    const firebaseConfig = {
+  apiKey: "AIzaSyDOPdT62dH8gFAVjl5h4Qy-bwZmi-GGIzY",
+  authDomain: "prodigy200-2c7e4.firebaseapp.com",
+  databaseURL: "https://prodigy200-2c7e4-default-rtdb.firebaseio.com",
+  projectId: "prodigy200-2c7e4",
+  storageBucket: "prodigy200-2c7e4.appspot.com",
+  messagingSenderId: "799943938687",
+  appId: "1:799943938687:web:44477889304e1b4ab3654a",
+  measurementId: "G-8VVWTWST23"
+};
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+  </script>
+  <body>
+  <script type="module">
+    // ...
+
+    // TODO: Replace the following with your app's Firebase project configuration
+    const firebaseConfig = {
+      // ...
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+  </script>
+</body>
 </html>
