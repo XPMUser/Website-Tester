@@ -46535,7 +46535,7 @@ bot.reload();
 			tag: "attack",
 			x: -10,
 			y: -10
-		}], this.openElements.bind(this)));
+		}], this.openAttacks.bind(this)));
 		var t = 0;
 		!0 === this.potionMode && (e.push(this.game.prodigy.create.stackButton(this.content, 0, 0, [{
 			tag: "icon-base"
@@ -48794,7 +48794,7 @@ bot.reload();
 }, {
 	opponent: {
 		data: '{"level":100}',
-		appearance: '{"name":"Alexa the W12-4RD", "gender":"female", "hairStyle":5,"hairColor":16,"skinColor":1,"eyeColor":13}',
+		appearance: '{"name":"Alexa of the Sky", "gender":"female", "hairStyle":5,"hairColor":16,"skinColor":1,"eyeColor":13}',
 		equipment: '{"hat":23, "outfit":24, "weapon":47, "boots":18}'
 	},
 	title: "Prodidows' wizard in Daboss7173's PDE",
@@ -48810,7 +48810,7 @@ bot.reload();
 }, {
 	opponent: {
 		data: '{"level":100}',
-		appearance: '{"name":"David the W12-4RD", "gender":"male", "hairStyle":3,"hairColor":16,"skinColor":1,"eyeColor":13}',
+		appearance: '{"name":"David of the Sky", "gender":"male", "hairStyle":3,"hairColor":16,"skinColor":1,"eyeColor":13}',
 		equipment: '{"hat":61, "outfit":52, "weapon":47, "boots":18}'
 	},
 	title: "XPMUser from Daboss7173's PDE",
@@ -55505,7 +55505,7 @@ var Screen = function() {
 			var e = this.game.prodigy.open.okaymessage("The load character button doesn't work on iPads. We suggest you use another device if you're an iPad user.", null, "star", "Warning!");
 			this.game.prodigy.debug.easyMode(1, 1), this.background.add(this.game.prodigy.create.sprite(0, 0, "login", "bg")), this.loginBox = this.game.prodigy.create.element(this.background), this.usernameField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "username", "", 90, 230, 300, 40), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Prodigy version 1.50.0");
 			var e = Util.getCookie("prodigyUsername");
-			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition version 7"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "google-signin-btn", this.onGoogleLoginButtonClick.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
+			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition version 8"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "google-signin-btn", this.onGoogleLoginButtonClick.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
 				width: 300,
 				align: "center"
 			}), this.closeButton = this.game.prodigy.create.textButton(this.progressBox, 0, 100, {
