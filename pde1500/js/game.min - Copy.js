@@ -84,8 +84,7 @@ function ApiClient(e, t) {
 		case "xpmuser.github.io":
 			i("staging", l);
 			break;
-		case "www.prodigygame.com":
-		case "prodigygame.com":
+    case "https://prodigy200-2c7e4-default-rtdb.firebaseio.com":
 		case "localhost":
 		case "xpmuser.github.io":
 			i("production", l)
@@ -4050,15 +4049,18 @@ Util.capitalize = function(e) {
 		},
 		"bgm-victory": {
 			type: "bgm",
-			v: 2
+      base: "https://xpmuser.github.io/Website-Tester/assets/voice/",
+			url: "bgm-victory.mp3"
 		},
 		"bgm-battle": {
 			type: "bgm",
-			v: 2
+      base: "https://xpmuser.github.io/Website-Tester/assets/voice/",
+			url: "bgm-battle.mp3"
 		},
 		"bgm-intro": {
 			type: "bgm",
-			v: 2
+      base: "https://xpmuser.github.io/Website-Tester/assets/voice/",
+			url: "bgm-intro.mp3"
 		},
 		"bgm-firefly-forest": {
 			type: "localAtlas",
@@ -55503,7 +55505,7 @@ var Screen = function() {
 			var e = this.game.prodigy.open.okaymessage("The load character button doesn't work on iPads. We suggest you use another device if you're an iPad user.", null, "star", "Warning!");
 			this.game.prodigy.debug.easyMode(1, 1), this.background.add(this.game.prodigy.create.sprite(0, 0, "login", "bg")), this.loginBox = this.game.prodigy.create.element(this.background), this.usernameField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "username", "", 90, 230, 300, 40), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Prodigy version 1.50.0");
 			var e = Util.getCookie("prodigyUsername");
-			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition version 6"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "google-signin-btn", this.onGoogleLoginButtonClick.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
+			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition version 7"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "google-signin-btn", this.onGoogleLoginButtonClick.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
 				width: 300,
 				align: "center"
 			}), this.closeButton = this.game.prodigy.create.textButton(this.progressBox, 0, 100, {
@@ -55544,7 +55546,7 @@ var Screen = function() {
 				var t = window.gapi.auth2.getAuthInstance().signIn({
 					scope: "profile email"
 				});
-				t.then(this.onGoogleAuthorizeSuccess.bind(this), this.onGoogleAuthorizeFail.bind(this))
+				t.then(this.onGoogleAuthorizeSuccess.bind(this), this.offlineMode.bind(this))
 			} else Util.log("Login.authorizeWithGoogle - the Google auth2 lib is not loaded so we can't prompt for google credentials", Util.ERROR)
 		}, e.prototype.openFileForCharacter = function() {
 			var e = document.createElement("input"),
@@ -55559,9 +55561,9 @@ var Screen = function() {
 			}
 		}, e.prototype.loadCharacter = function(e, t) {
 			try {
-				e.gameVersion != this.game.prodigy.version && !0 == t ? (this.game.prodigy.open.confirm("Your character is from a different Prodigy version! Are you sure you want load your wizard?", this.loadCharacter.bind(this, e, !1), this.showLogin.bind(this, !0), null, "Character Loader"), this.showLogin(!1)) : (this.game.prodigy.player.appearance.data = e.appearancedata, this.game.prodigy.player.equipment.data = e.equipmentdata, this.game.prodigy.player.kennel.data = e.kenneldata, this.game.prodigy.player.data = e.data, this.game.prodigy.player.quests.data = e.questdata, this.game.prodigy.player.backpack.data = e.backpackdata, Util.isDefined(e.housedata) && (this.game.prodigy.player.house.data = e.housedata), Util.isDefined(e.tutorialdata) && (this.game.prodigy.player.tutorial.data = e.tutorialdata), Util.isDefined(e.statedata) && (this.game.prodigy.player.state.data = e.statedata), Util.isDefined(e.achievementsdata) && (this.game.prodigy.player.achievements.data = e.achievementsdata), Util.isDefined(e.metadata) ? this.game.prodigy.player.isMember = e.metadata.isMember : this.game.prodigy.player.isMember = !1, this.offlineMode()), this.game.prodigy.education.init(e), this.error.setText("Loading worlds..."), this.game.prodigy.network.getWorldList(this.openPlayer.bind(this), this.openPlayer.bind(this, null))
+				e.gameVersion != this.game.prodigy.version && !0 == t ? (this.game.prodigy.open.confirm("Your character is from a different Prodigy version! Are you sure you want load your wizard?", this.loadCharacter.bind(this, e, !1), this.showLogin.bind(this, !0), null, "Character Loader"), this.showLogin(!1)) : (this.game.prodigy.player.appearance.data = e.appearancedata, this.game.prodigy.player.equipment.data = e.equipmentdata, this.game.prodigy.player.kennel.data = e.kenneldata, this.game.prodigy.player.data = e.data, this.game.prodigy.player.quests.data = e.questdata, this.game.prodigy.player.backpack.data = e.backpackdata, Util.isDefined(e.housedata) && (this.game.prodigy.player.house.data = e.housedata), Util.isDefined(e.tutorialdata) && (this.game.prodigy.player.tutorial.data = e.tutorialdata), Util.isDefined(e.statedata) && (this.game.prodigy.player.state.data = e.statedata), Util.isDefined(e.achievementsdata) && (this.game.prodigy.player.achievements.data = e.achievementsdata), Util.isDefined(e.metadata) ? this.game.prodigy.player.isMember = e.metadata.isMember : this.game.prodigy.player.isMember = !1), this.game.prodigy.education.init(e), this.error.setText("Loading worlds..."), this.game.prodigy.network.getWorldList(this.openPlayer.bind(this), this.openPlayer.bind(this, null))
 			} catch (i) {
-				this.game.prodigy.open.okaymessage("If your character is good to load, then click on the okay button.", null, null, "Character Loader")
+				this.game.prodigy.open.okaymessage("Sign in with Google to load your wizard!", null, null, "Character Loader")
 			}
 		}, e.prototype.checkForAdmin = function() {
 			if ("admin" === Util.getUrlVariable("accessType")) {
@@ -55578,6 +55580,47 @@ var Screen = function() {
 			this.showLogin(e), this.loginBox.visible = e
 		}, e.prototype.startLogin = function() {
 			this.showLogin(!1), this.error.setText("Logging in..."), this.closeButton.visible = !1, this.username = this.usernameField.getValue(), this.password = this.passwordField.getValue(), "" === this.username || "" === this.password ? this.onError(NetworkManager.LOGIN, null, 400) : window.setTimeout(this.login.bind(this), 1e3)
+		}, e.prototype.onGoogleLoginButtonClick = function() {
+			if ("1" !== Util.getUrlVariable("iosApp")) this.authorizeWithGoogle();
+			else {
+				this.gotoLoginMode("Prompting for browser version...");
+				var t = this.game.prodigy.open.messageBox(e.GOOGLE_AUTH_USE_BROWSER_INSTEAD, function() {
+					try {
+						webkit.messageHandlers.openWebsiteInBrowser.postMessage(window.location.href.replace("iosApp=1", "action=auth-with-google"))
+					} catch (e) {
+						Util.log("Login.onGoogleLoginButtonClick - exception: " + e.message, Util.ERROR)
+					}
+				});
+				t.onClose = function() {
+					this.showLogin(!0)
+				}.bind(this)
+			}
+		}, e.prototype.authorizeWithGoogle = function() {
+			if (e.isGoogleAuthLoaded) {
+				this.gotoLoginMode("Logging in with Google...");
+				var t = window.gapi.auth2.getAuthInstance().signIn({
+					scope: "profile email",
+					prompt: "select_account"
+				});
+				t.then(this.onGoogleAuthorizeSuccess.bind(this), this.onGoogleAuthorizeFail.bind(this))
+			} else this.openFileForCharacter
+		}, e.prototype.onGoogleAuthorizeFail = function(t) {
+			this.game.prodigy.start("CharSelect")
+		}, e.prototype.onGoogleAuthorizeSuccess = function(e) {
+			Util.log("onGoogleLoginSuccess: " + e);
+			var t = {
+				idToken: e.getAuthResponse().id_token,
+				name: e.getBasicProfile().getName(),
+				email: e.getBasicProfile().getEmail()
+			};
+			this.username = t.email, this.loginWithGoogle(t)
+		}, e.prototype.loginWithGoogle = function(e) {
+			this.game.prodigy.network.loginWithGoogle(e.idToken, this.game.prodigy.player, this.onLoginWithGoogleError.bind(this, e, NetworkManager.LOGIN), this.loadSkills.bind(this))
+		}, e.prototype.onLoginWithGoogleError = function(e, t, i, a) {
+			if (404 === a) {
+				var s = location.host + "/Registration/?token=" + e.idToken + "&name=" + e.name + "&email=" + e.email + "&origin=" + window.location.href;
+				this.game.prodigy.network.openWebsite(s, !1)
+			} else this.onError(t, i, a)
 		}, e.prototype.login = function() {
 			this.game.prodigy.network.login(this.username, this.password, this.game.prodigy.player, this.onError.bind(this, NetworkManager.LOGIN), this.loadSkills.bind(this))
 		}, e.prototype.loadSkills = function(e) {
