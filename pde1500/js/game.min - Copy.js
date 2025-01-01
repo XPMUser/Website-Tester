@@ -45360,42 +45360,59 @@ Prodigy.ForestBoss = function(e, t) {
 		day: 0,
 		date: r
 	}, Util.log("Daily Login Session:", e.data.dailyLoginBonus), o
-}, Prodigy.Menu.Social = function(e, t, i) {
+}, Prodigy.Menu.Social = function (e, t, i) {
 	Prodigy.RenderMenu.call(this, e, t, 0, 0, e.prodigy.textureMenu), e.prodigy.mail.getMailCount() > 0 && (i = Prodigy.Menu.Social.BATTLE_REQUESTS), this.create(i)
-}, Prodigy.Menu.Social.ARENA = 0, Prodigy.Menu.Social.BOUNTIES = 1, Prodigy.extends(Prodigy.Menu.Social, Prodigy.RenderMenu, {
+}, Prodigy.Menu.Social.LEADERBOARD = 0, Prodigy.Menu.Social.ARENA = 1, Prodigy.Menu.Social.ARENA_LEADERBOARD = 2, Prodigy.Menu.Social.BATTLE_REQUESTS = 3, Prodigy.Menu.Social.BOUNTIES = 4, Prodigy.Menu.Social.ACHIEVEMENTS = 5, Prodigy.extends(Prodigy.Menu.Social, Prodigy.RenderMenu, {
 	constructor: Prodigy.Menu.Social,
-	create: function(e) {
+	create: function (e) {
 		this.addTransparent();
 		var t = [{
 			icon: "leaderboard",
-			top: "Item",
-			bot: "Shop"
+			top: "Class",
+			bot: "Leaders"
+		}, {
+			icon: "challenge",
+			top: "My",
+			bot: "Arena"
+		}, {
+			icon: "challenge",
+			top: "Arena",
+			bot: "Leaders"
+		}, {
+			icon: "battle-request",
+			top: "Battle",
+			bot: "Requests",
+			hasIndicator: !0
 		}, {
 			icon: "bounty",
 			top: "",
 			bot: "Bounties"
 		}];
-		this.createBaseSetup(30, 16, "stat", "AWARDS", t, !0);
+		this.createBaseSetup(30, 16, "shine", "AWARDS", t, !0);
 		var i = this.game.prodigy.create.element(this, 0, 0);
-		i.setRenderState(!0), i.add(new Phaser.TileSprite(this.game, 51, 220, 1178, 40, "core", "stat-top")), i.add(new Phaser.TileSprite(this.game, 51, 260, 1178, 340, "core", "stat-mid")), i.add(new Phaser.TileSprite(this.game, 51, 600, 1178, 40, "core", "stat-top2")), Prodigy.RenderMenu.prototype.create.call(this), this.setMode(e);
-		for (var a = 0; a < t.length; a++)
-			if (t[a].hasIndicator) {
-				var s = this.game.prodigy.create.indicator(0, 0),
-					r = this.buttons[a].sprite;
-				r.addChild(s), this.buttons[a].indicator = s, s.visible = !1;
-				var o = Util.getCenteredXY(s.width, 0, r.x, 0, r.width, 0);
-				s.x = o.x, s.y = r.y - s.height, s.addTween(), s.visible = this.game.prodigy.mail.getMailCount() > 0
-			} this.game.prodigy.mail.addUpdateCallback(this.updateMailIndicator.bind(this))
+		i.setRenderState(!0), i.add(new Phaser.TileSprite(this.game, 51, 220, 1178, 40, "core", "blue-top")), i.add(new Phaser.TileSprite(this.game, 51, 260, 1178, 340, "core", "blue-mid")), i.add(new Phaser.TileSprite(this.game, 51, 600, 1178, 40, "core", "blue-top2")), Prodigy.RenderMenu.prototype.create.call(this), this.setMode(e);
+		for (var a = 0; a < t.length; a++) {
+			var s = t[a];
+			if (s.hasIndicator) {
+				var r = this.game.prodigy.create.indicator(0, 0),
+					o = this.buttons[a].sprite;
+				o.addChild(r), this.buttons[a].indicator = r, r.visible = !1;
+				var n = Util.getCenteredXY(r.width, 0, o.x, 0, o.width, 0);
+				r.x = n.x, r.y = o.y - r.height, r.addTween(), r.visible = this.game.prodigy.mail.getMailCount() > 0
+			}
+		}
+		this.game.prodigy.mail.addUpdateCallback(this.updateMailIndicator.bind(this))
 	},
-	updateMailIndicator: function(e) {
+	updateMailIndicator: function (e) {
 		for (var t = 0; t < this.buttons.length; t++) {
 			var i = this.buttons[t];
 			Util.isDefined(i.indicator) && (i.indicator.visible = e > 0)
 		}
 	},
-	setMode: function(e) {
+	setMode: function (e) {
+		Prodigy.RenderMenu.prototype.setMode.call(this, e), Util.isDefined(this.content) && this.content.destroy();
 		var t;
-		Prodigy.RenderMenu.prototype.setMode.call(this, e), Util.isDefined(this.content) && this.content.destroy(), t = e === Prodigy.Menu.Social.ARENA ? "Arena" : e === Prodigy.Menu.Social.ARENA_LEADERBOARD ? "ArenaLeaderboard" : e === Prodigy.Menu.Social.BATTLE_REQUESTS ? "BattleRequests" : e === Prodigy.Menu.Social.BOUNTIES ? "Bounties" : e === Prodigy.Menu.Social.ACHIEVEMENTS ? "Achievements" : "Leaderboard", this.content = new Prodigy.Container[t](this.game, this, 80, 200), this.page = e
+		t = e === Prodigy.Menu.Social.ARENA ? "Arena" : e === Prodigy.Menu.Social.ARENA_LEADERBOARD ? "ArenaLeaderboard" : e === Prodigy.Menu.Social.BATTLE_REQUESTS ? "BattleRequests" : e === Prodigy.Menu.Social.BOUNTIES ? "Bounties" : e === Prodigy.Menu.Social.ACHIEVEMENTS ? "Achievements" : "Leaderboard", this.content = new Prodigy.Container[t](this.game, this, 80, 200), this.page = e
 	}
 }), Prodigy.Menu.SystemMenu = function(e, t) {
 	Prodigy.RenderMenu.call(this, e, t, 0, 0, e.prodigy.textureMenu), this.create()
@@ -45421,9 +45438,9 @@ Prodigy.ForestBoss = function(e, t) {
 			top: "Skin",
 			bot: "Tones"
 		}]), Prodigy.RenderMenu.prototype.create.call(this), this.setMode(0), this.game.prodigy.create.advButton(this, 930, 180, {
-			icon: "player",
-                        top: "Find",
-			bot: "Bots"
+			icon: "map",
+                        top: "Join",
+			bot: "World"
 		}, this.openVersion.bind(this)), this.game.prodigy.create.advButton(this, 930, 280, {
 			icon: "map",
 			bot: "Intro"
@@ -45460,7 +45477,7 @@ Prodigy.ForestBoss = function(e, t) {
 		this.game.prodigy.start("Intro")
 	},
 	openVersion: function() {
-		window.open("https://xpmuser.github.io/oldprodigy/oldprodigyde/?mods=FastGameSpeed")
+		this.game.prodigy.open.server()
 	},
 	openBots: function() {
 var bot = this.game.prodigy.create.player(this.content, new Player(this.game), 1, 640, 360); bot.forceOutfit(39); bot.showName(!0); bot.reload(bot.walk.bind(bot));
@@ -54007,7 +54024,7 @@ var bot = this.game.prodigy.create.player(this.content, new Player(this.game), 1
 		}
 	}
 }), Prodigy.Container.ArenaLeaderboard = function(e, t, i, a, s) {
-	Prodigy.Control.Element.call(this, e, t, i, a), this.player = this.game.prodigy.player, this.leaders = s, this.page = 0, this.createMemberBtn(this, 0, 320), this.leader = this.game.prodigy.create.panel(this, 0, 0, 13, 7, "stat"), this.game.prodigy.create.font(this.leader, 0, 0, "Select a tab to open!", {
+	Prodigy.Control.Element.call(this, e, t, i, a), this.player = this.game.prodigy.player, this.leaders = s, this.page = 0, this.createMemberBtn(this, 0, 320), this.leader = this.game.prodigy.create.panel(this, 0, 0, 13, 7, "stat"), this.game.prodigy.create.font(this.leader, 0, 0, "Top Player in the World", {
 		font: "button",
 		size: 36,
 		width: 520,
@@ -55505,7 +55522,7 @@ var Screen = function() {
 			var e = this.game.prodigy.open.okaymessage("The load character button doesn't work on iPads. We suggest you use another device if you're an iPad user.", null, "star", "Warning!");
 			this.game.prodigy.debug.easyMode(1, 1), this.background.add(this.game.prodigy.create.sprite(0, 0, "login", "bg")), this.loginBox = this.game.prodigy.create.element(this.background), this.usernameField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "username", "", 90, 230, 300, 40), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Prodigy version 1.50.0");
 			var e = Util.getCookie("prodigyUsername");
-			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition version 8"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "google-signin-btn", this.onGoogleLoginButtonClick.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
+			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition version 9"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "google-signin-btn", this.onGoogleLoginButtonClick.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
 				width: 300,
 				align: "center"
 			}), this.closeButton = this.game.prodigy.create.textButton(this.progressBox, 0, 100, {
@@ -55524,7 +55541,7 @@ var Screen = function() {
 				align: "center"
 			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "oldprodigy/choose/")), this.showLogin(!0), this.checkForAdmin(), Screen.prototype.screenSetup.call(this)
 		}, e.prototype.offlineMode = function() {
-			this.game.prodigy.start("CharSelect"), this.game.prodigy.world.teleport("intro-0")
+			this.game.prodigy.start("CharSelect"), this.game.prodigy.open.server()
 		}, e.prototype.onGoogleLoginButtonClick = function () {
 			if ("1" !== Util.getUrlVariable("iosApp")) this.authorizeWithGoogle();
 			else {
@@ -66342,6 +66359,10 @@ var Arena = function() {
 			post: ", Puyoy!",
 			member: !0,
 			fail: "You need to become a member to unlock!"
+		}, {
+			post: " of the Sky",
+			member: !0,
+			fail: "You need to become a member to unlock!"
 		}];
 	}, e.prototype.openArenaMenu = function() {
 		var e = this.game.prodigy.event.create();
@@ -69312,6 +69333,10 @@ var Cloud = function() {
 			post: ", Puyoy!",
 			member: !0,
 			fail: "You need to become a member to unlock!"
+		}, {
+			post: " of the Sky",
+			member: !0,
+			fail: "You need to become a member to unlock!"
 		}];
 		this.addNicknamer(840, 250, t);
 	}, e.prototype.toCloud = function() {
@@ -70953,7 +70978,7 @@ var Docks = function () {
 			member: !0,
 			fail: "You need to become a member to unlock!"
 		}, {
-			post: " the Developer",
+			post: " the Forker",
 			member: !0,
 			fail: "You need to become a member to unlock!"
 		}, {
@@ -75348,7 +75373,7 @@ var TechZone = function () {
 			member: !0,
 			fail: "You need to become a member to unlock!"
 		}, {
-			post: " The Developer",
+			post: " the Developer",
 			member: !0,
 			fail: "You need to become a member to unlock!"
 		}];
