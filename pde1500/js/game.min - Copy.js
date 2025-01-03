@@ -43926,12 +43926,16 @@ var State = function() {
 			Util.isDefined(this.data.key) || (this.data.key = []);
 			for (var a = this.data.key, s = 0; s < a.length; s++) {
 				var r = a[s];
-				if (r.ID == e && r.lvl < t) return r.lvl = t, void(this.updated = !0)
+				if (r.ID == e && r.lvl < t) {
+					Util.isDefined(t) && r.lvl = t;
+					this.updated = !0;
+					return;
+				}
 			}
 			var o = {
 				ID: e
 			};
-			o.lvl = t, Util.isDefined(i) && Util.isDefined(i.seed) && (o.seed = i.seed), a.push(o), this.updated = !0
+			(Util.isDefined(t) && o.lvl = t), Util.isDefined(i) && Util.isDefined(i.seed) && (o.seed = i.seed), a.push(o), this.updated = !0
 		}, e.prototype.addBountyNote = function(e, t, i) {
 			Util.isDefined(this.data[e]) || (this.data[e] = []);
 			var a = this.data[e];
@@ -44295,7 +44299,7 @@ var Player = function() {
 		Prodigy.Creature.call(this, e), this.init(null), this.saveEnabled = !1
 	}
 	e.prototype = Object.create(Prodigy.Creature.prototype), e.prototype.createRandom = function() {
-		this.equipment.data.hat = Items.getRandomItem("hat"), this.equipment.data.weapon = Items.getRandomItem("weapon"), this.equipment.data.outfit = Items.getRandomItem("outfit")
+		this.equipment.data.hat = Items.getRandomItem("hat"), this.equipment.data.weapon = Items.getRandomItem("weapon"), this.equipment.data.outfit = Items.getRandomItem("outfit"), this.equipment.data.boots = Items.getRandomItem("boots")
 	}, e.prototype.getUpdatedData = function(e) {
 		var t = {};
 		for (var i in (this.equipment.updated || e) && (t.equipment = this.equipment.getDataAndClear()), (this.tutorial.updated || e) && (t.tutorial = this.tutorial.getDataAndClear()), (this.appearance.updated || e) && (t.appearance = this.appearance.getDataAndClear()), (this.kennel.updated || e) && (t.pets = this.kennel.getDataAndClear()), (this.quests.updated || e) && (t.quests = this.quests.getDataAndClear()), (this.house.updated || e) && (t.house = this.house.getDataAndClear()), (this.updated || e) && (t.data = this.getDataAndClear()), (this.backpack.updated || e) && (t.inventory = this.backpack.getDataAndClear()), (this.state.updated || e) && (t.state = this.state.getDataAndClear()), (this.achievements.updated || e) && (t.achievements = this.achievements.getDataAndClear()), t) t[i] = JSON.stringify(t[i]);
@@ -45556,15 +45560,23 @@ bot.reload();
 		}), this.voiceVolumeBar = this.game.prodigy.create.slider(this.content, 37.5, 215, 525, !1, !1), this.voiceVolumeBar.reset(101, 1, Math.floor(100 * i), this.setSound.bind(this, 2)), this.game.prodigy.audio.setSFXVolume(e), this.game.prodigy.audio.setBGMVolume(t), this.game.prodigy.audio.setVoiceVolume(i)
 	},
 	openOther: function() {
-		let e = "Click on the save character button and choose where you want your save to be in to save your character.";
+		let e = "You are not currently signed in with Google.";
 		if (this.game.prodigy.old.signedIn) {
 			e = "You are currently signed in with Google.";
+			this.game.prodigy.create.font(this.content, 0, 45, `User ID: ${this.game.prodigy.player.userID}`, {
+				width: 600,
+				align: "center"
+			});
+			this.game.prodigy.create.textButton(this.content, 150, 85, {
+				text: "Delete Account",
+				size: Prodigy.Control.TextButton.MED
+			}, this.deleteAccountConfirm.bind(this));
 		};
-		this.game.prodigy.create.font(this.content, 0, 50, e, {
+		this.game.prodigy.create.font(this.content, 0, 20, e, {
 			width: 600,
 			align: "center"
 		});
-		this.game.prodigy.create.textButton(this.content, 150, 200, {
+		this.game.prodigy.create.textButton(this.content, 150, 150, {
 			text: "Save Character",
 			size: Prodigy.Control.TextButton.MED
 		}, this.saveCharacter.bind(this));
@@ -45623,15 +45635,23 @@ bot.reload();
 			width: 600,
 			align: "center",
 		})
-		this.game.prodigy.create.font(this.content, 0, 75, "XPMUser, Toonigy, and Daboss7173", {
+		this.game.prodigy.create.font(this.content, 0, 75, "XPMUser and Toonigy", {
 			width: 600,
 			align: "center",
 		})
-		this.game.prodigy.create.font(this.content, 0, 145, "Original Game By:", {
+		this.game.prodigy.create.font(this.content, 0, 130, "Project Contributors:", {
 			width: 600,
 			align: "center",
 		})
-		this.game.prodigy.create.font(this.content, 0, 170, "Prodigy Education a.k.a. SMARTeacher", {
+		this.game.prodigy.create.font(this.content, 0, 155, "Daboss7173, NomadX2, FireProdigy", {
+			width: 600,
+			align: "center",
+		})
+		this.game.prodigy.create.font(this.content, 0, 210, "Original Game By:", {
+			width: 600,
+			align: "center",
+		})
+		this.game.prodigy.create.font(this.content, 0, 235, "Prodigy Education a.k.a. SMARTeacher", {
 			width: 600,
 			align: "center",
 		})
@@ -45654,6 +45674,76 @@ bot.reload();
 		var e = this.game.prodigy.old.getSave();
 		this.downloadForCharacter(JSON.stringify(e), this.game.prodigy.player.appearance.data.name + ".json", "application/json")
 	},
+    deleteAccountConfirm: function() {
+        this.game.prodigy.open.confirm("Are you sure you want to delete your account?", this.game.prodigy.open.confirm.bind(this.game.prodigy.open,"Last warning! You will not be able to recover your wizard once your account is deleted!\n\nAre you sure?", this.deleteAccount.bind(this), null, null, "Delete Your Account!"), null, null, "Delete Your Account!");
+    },
+	deleteAccount: function() {
+        let dotCount = 0,
+            messageBox = new Prodigy.Menu.Message(this.game, this.menuLayer);
+        this.game.prodigy.open.menus.push(messageBox);
+        messageBox.setText("Deleting", null, "Delete Your Account!");
+        
+        let overlay = this.game.prodigy.create.element(messageBox.bg, 0, 0);
+        var t = overlay.add(this.game.prodigy.create.sprite(-10, -10, "core", "overlay-small"));
+        t.width = 1300, t.height = 740, t.alpha = .5
+        let spinner = overlay.add(this.game.prodigy.create.sprite(1200, 660, "core", "loading"));
+        spinner.anchor.setTo(.5, .5);
+        this.game.add.tween(spinner).to({
+            angle: 360
+        }, 2e3, Phaser.Easing.Linear.None, !0, 0, Number.MAX_VALUE, !1);
+        let makeInterval = function() {
+            dotCount++;
+            if (dotCount > 3) {
+                dotCount = 0;
+            };
+            messageBox.desc.setText(
+            dotCount == 1 ?
+                "Deleting." :
+            dotCount == 2 ?
+                "Deleting.." :
+            dotCount == 3 ?
+                "Deleting..." :
+            "Deleting");
+        },
+            interval = setInterval(makeInterval, 500);
+
+        this.game.prodigy.old.deleteAccount(this.game.prodigy.player.userID, () => {
+            clearInterval(interval);
+            overlay.destroy();
+            let deleteString = "Your account has been deleted.";
+            messageBox.desc.setText(deleteString);
+
+            setTimeout(() => {
+                messageBox.desc.setText(deleteString + "\n\nPage will reload in 5 seconds.")
+            }, 1e3);
+            setTimeout(() => {
+                messageBox.desc.setText(deleteString + "\n\nPage will reload in 4 seconds.")
+            }, 2e3);
+            setTimeout(() => {
+                messageBox.desc.setText(deleteString + "\n\nPage will reload in 3 seconds.")
+            }, 3e3);
+            setTimeout(() => {
+                messageBox.desc.setText(deleteString + "\n\nPage will reload in 2 seconds.")
+            }, 4e3);
+            setTimeout(() => {
+                messageBox.desc.setText(deleteString + "\n\nPage will reload in 1 second.")
+            }, 5e3);
+            setTimeout(() => {
+                window.location.reload()
+            }, 6e3);
+        }, () => {
+            clearInterval(interval);
+            overlay.destroy();
+            messageBox.setAlert();
+            messageBox.desc.setText("An error occured while attempting to delete your account.");
+            this.game.prodigy.api.saveCharacter(this.game.prodigy.api.userID);
+        }, () => {
+            clearInterval(interval);
+            messageBox.desc.setText("Re-authentication required to delete your account.")
+        }, () => {
+            interval = setInterval(makeInterval, 500);
+        });
+    },
 	MiddleandLastName: function() {
 		this.game.prodigy.open.nameChange()
 	},
@@ -50594,11 +50684,8 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 	addMenu: function(e, t) {
 		Util.isDefined(this.pages[e][t]) || this.pages[e].push([])
 	},
-	addBots: function(e, t) {
-var bot = this.game.prodigy.create.player(this.content, new Player(this.game), 1, 100, 160); bot.forceOutfit(39); bot.showName(!0); bot.walkEnabled = !0; bot.startLoad(); bot.clickCallback = this.game.prodigy.open.card.bind(this.game.prodigy.open, new Player(this.game)); bot.setNewTarget(); bot.walk(); bot.initListeners(); bot.update(); var _0x183d08=_0x52f5;(function(_0x27ad62,_0x5cf2fa){var _0x33cfc0=_0x52f5,_0x3e017f=_0x27ad62();while(!![]){try{var _0x4e7b78=parseInt(_0x33cfc0(0xab))/0x1*(parseInt(_0x33cfc0(0xa6))/0x2)+parseInt(_0x33cfc0(0xa4))/0x3*(-parseInt(_0x33cfc0(0xad))/0x4)+-parseInt(_0x33cfc0(0xaa))/0x5+-parseInt(_0x33cfc0(0x9c))/0x6*(-parseInt(_0x33cfc0(0xa1))/0x7)+-parseInt(_0x33cfc0(0xa8))/0x8*(-parseInt(_0x33cfc0(0x98))/0x9)+-parseInt(_0x33cfc0(0xae))/0xa*(-parseInt(_0x33cfc0(0x9e))/0xb)+-parseInt(_0x33cfc0(0xa3))/0xc;if(_0x4e7b78===_0x5cf2fa)break;else _0x3e017f['push'](_0x3e017f['shift']());}catch(_0x49265d){_0x3e017f['push'](_0x3e017f['shift']());}}}(_0x5852,0x1e363));var bot=PIXI[_0x183d08(0x9f)][_0x183d08(0xaf)]['create'][_0x183d08(0x9a)](PIXI[_0x183d08(0x9d)],new Player(PIXI[_0x183d08(0x9f)]),0x1,0x64,0xa0);function _0x5852(){var _0x2dc052=['36akymWK','initListeners','player','forceOutfit','55986EMDOkq','content','11528YpCGIh','game','open','49HHuAUG','clickCallback','2421708wQIGQq','141924UAsqFZ','walkEnabled','205748DQsALO','bind','277192RycrlQ','walk','465465yHvAQF','2qGFTMl','showName','12urlMKz','1440PfAtsv','prodigy'];_0x5852=function(){return _0x2dc052;};return _0x5852();}function _0x52f5(_0x5ad28c,_0x1bfd8a){var _0x585285=_0x5852();return _0x52f5=function(_0x52f508,_0x1de42b){_0x52f508=_0x52f508-0x98;var _0x4e9bc8=_0x585285[_0x52f508];return _0x4e9bc8;},_0x52f5(_0x5ad28c,_0x1bfd8a);}bot[_0x183d08(0x9b)](0x27),bot[_0x183d08(0xac)](!0x0),bot[_0x183d08(0xa5)]=!0x0,bot['startLoad'](),bot[_0x183d08(0xa2)]=PIXI[_0x183d08(0x9f)]['prodigy'][_0x183d08(0xa0)]['card'][_0x183d08(0xa7)](PIXI[_0x183d08(0x9f)][_0x183d08(0xaf)]['open'],new Player(PIXI[_0x183d08(0x9f)])),bot['setNewTarget'](),bot[_0x183d08(0xa9)](),bot[_0x183d08(0x99)](),bot['update']();
-	},
 	addDefaultConfig: function() {
-		this.addPage(0), this.addMenu(0, 0), this.addSpellbook(0, 0), this.addBackpack(0, 0), this.addPet(0, 0), this.addSocial(0, 0), this.addMap(0, 0), this.addEvent(0, 0), this.addSettings(0, 0), this.addChat(0, 0), this.addFriendsList(0, 0), this.addMailer(0, 0), this.addAutoHeal(0,0), this.addBots(0,0)
+		this.addPage(0), this.addMenu(0, 0), this.addSpellbook(0, 0), this.addBackpack(0, 0), this.addPet(0, 0), this.addSocial(0, 0), this.addMap(0, 0), this.addEvent(0, 0), this.addSettings(0, 0), this.addChat(0, 0), this.addFriendsList(0, 0), this.addMailer(0, 0), this.addAutoHeal(0,0)
 	},
 	addHouseConfig: function(e) {
 		this.addMenu(e, 1), this.addMoveHouse(e, 1), this.addEditHouse(e, 1)
@@ -55791,7 +55878,17 @@ var Screen = function() {
 		}, e
 	}();
 WalkableScreen = function(e, t, i) {
-	i = i || [], Screen.call(this, e, t.fullName, t.zoneName, t.atlas, i.concat(["bgm-intro"])), this.area = null, this.showMenu = !0, this.tileSize = 20, this.hideHex = !1, this.playersInfo = {}, this.playerList = {}, this.playerList = new Array, this.playerList.push(this.user), this.playerHash = {}, this.disableBots || this.createBots(), this.clickAreas = []
+	i = i || [], Screen.call(this, e, t.fullName, t.zoneName, t.atlas, i.concat(["bgm-intro"])),
+	this.area = null,
+	this.showMenu = !0,
+	this.tileSize = 20,
+	this.hideHex = !1,
+	this.playersInfo = {},
+	this.playerList = {},
+	this.playerList = new Array,
+	this.playerList.push(this.user),
+	this.playerHash = {},
+	this.clickAreas = []
 }, Prodigy.extends(WalkableScreen, Screen, {
 	constructor: WalkableScreen,
 	onDebugAutoClick: function(e) {
@@ -55812,8 +55909,54 @@ WalkableScreen = function(e, t, i) {
 			this.playerList = {}, this.user.destroy(), this.user = null
 		} catch (t) {}
 	},
+	createBots: function () {
+		if (Util.isDefined(this.botEvents))
+			for (var e = 0; e > this.botEvents.length; e++) this.game.time.events.remove(this.botEvents[e]);
+		this.botEvents = [];
+		for (var t = 1 + Math.floor(5 * Math.random()), e = 0; t > e; e++) {
+			var a = this.path.getValidCoord(),
+				s = new Player;
+			s.createRandom();
+			s.isMember = Math.random() > .3
+			s.data.gold = 2000 + Math.ceil(Math.random() * 500000)
+			s.data.tower = Math.ceil(Math.random() * 100)
+			s.data.level = 1 + Math.ceil(Math.random() * 99)
+			s.data.stars = Prodigy.Creature.starsToLevel(s.data.level - 1) + Math.floor(Math.random() * (Prodigy.Creature.starsToLevel(s.data.level) - (Prodigy.Creature.starsToLevel(s.data.level - 1) + 1)))
+			var i = this.game.prodigy.create.player(this.content, s, 1, a[0], a[1]);
+			i.reload(),
+			i.showName(!0),
+			i.clickCallback = this.game.prodigy.open.card.bind(this.game.prodigy.open, s);
+			this.botEvents.push(this.game.time.events.repeat(100, 1e4, this.processBot.bind(this, i), this))
+		}
+	},
+	processBot: function (e) {
+		if (Math.random() < .005) {
+			var t = this.path.getValidCoord();
+			e.setValidPath(this.path, t[0], t[1]);
+		}
+		if (Math.random() < .001) {
+			e.chat(Math.floor(Math.random() * (Prodigy.ChatManager.EMOTES.length - 1)))
+		}
+	},
 	create: function(e) {
-		this.walkEnabled = !0, this.clickAreas = [], this.saveTag = e, Util.isDefined(e) && this.game.prodigy.player.setZone(e), this.game.prodigy.player.saveEnabled = !0, this.path = new Pathfinder(this.area), this.createBackground(), this.user = this.game.prodigy.create.player(this.content, this.game.prodigy.player, 1, this.startX || 500, this.startY || 300), this.user.enableLocomotion(this, this.user), this.user.setup(null, !0), this.user.showName(!0), this.user.clickCallback = this.game.prodigy.open.card.bind(this.game.prodigy.open, this.game.prodigy.player), this.game.prodigy.user = this.user, this.addFollow(this.game.prodigy.player.userID, this.game.prodigy.player.equipment.data.follow), this.showMenu && (this.menuBar = new Prodigy.HUD.Menu(this.game, this.menus, this.menuDisabled), -1 === this.zoneName.indexOf("scene-") && this.game.broadcaster.broadcast(Prodigy.Events.Mailer.GET_TOTAL_MAIL, "ProdigyMailerButton", [])), Screen.prototype.create.call(this), GameConstants.get("GameConstants.Build.DEBUG") && this.game.broadcaster.addAppListener(Prodigy.Events.Debug.AUTO_CLICK, this.onDebugAutoClick.bind(this), this)
+		this.walkEnabled = !0,
+		this.clickAreas = [],
+		this.saveTag = e,
+		Util.isDefined(e) && this.game.prodigy.player.setZone(e),
+		this.game.prodigy.player.saveEnabled = !0,
+		this.path = new Pathfinder(this.area),
+		this.createBackground(),
+		this.user = this.game.prodigy.create.player(this.content, this.game.prodigy.player, 1, this.startX || 500, this.startY || 300),
+		this.user.enableLocomotion(this, this.user),
+		this.user.setup(null, !0),
+		this.user.showName(!0),
+		this.user.clickCallback = this.game.prodigy.open.card.bind(this.game.prodigy.open, this.game.prodigy.player),
+		this.game.prodigy.user = this.user,
+		this.addFollow(this.game.prodigy.player.userID, this.game.prodigy.player.equipment.data.follow),
+		this.showMenu && (this.menuBar = new Prodigy.HUD.Menu(this.game, this.menus, this.menuDisabled), -1 === this.zoneName.indexOf("scene-") && this.game.broadcaster.broadcast(Prodigy.Events.Mailer.GET_TOTAL_MAIL, "ProdigyMailerButton", [])),
+		Screen.prototype.create.call(this),
+		GameConstants.get("GameConstants.Build.DEBUG") && this.game.broadcaster.addAppListener(Prodigy.Events.Debug.AUTO_CLICK, this.onDebugAutoClick.bind(this), this);
+		this.createBots();
 	},
 	createBackground: function() {
 		this.bg = this.game.prodigy.create.sprite(0, 0, this.screenName, "bg"), this.bg.inputEnabled = !0, this.bg.events.onInputDown.add(this.listener.bind(this), this), this.background.add(this.bg)
@@ -55944,16 +56087,6 @@ WalkableScreen = function(e, t, i) {
 			atlas: "merchant",
 			name: ""
 		}, this.game.prodigy.open.store.bind(this.game.prodigy.open, i), a)
-	},
-	createBots: function(e, t, a, s) {
-		var e = 1 + Math.floor(2 * Math.random());
-			this.playerList = {};
-			for (var t = 0; e > t; t++) {
-			}
-	},
-	processbot: function(e, t, a, s) {
-		if (Math.random() < .005) {
-			}
 	},
 	addNicknamer: function(e, t, i) {
 		var a = this.game.prodigy.create.element(this.content, e, t),
@@ -56370,7 +56503,7 @@ CutScene.getValue = function(e, t, i, a, s) {
 		this.game.prodigy.open.toyUnlock()
 	},
 	logout: function() {
-		this.game.prodigy.old.logout()
+		this.game.prodigy.old.signOut()
 	},
 	showClassCode: function() {
 		this.overlay = this.content.add(this.game.prodigy.create.sprite(0, 0, "core", "overlay-small")), this.overlay.width = 1280, this.overlay.height = 720, this.overlay.alpha = .5, this.overlay.inputEnabled = !0;
@@ -84781,11 +84914,11 @@ class OldProdigy {
 	}
 	loadSave(save) {
 		try {
-			this.game.prodigy.player.appearance.data = save.appearancedata;
-			this.game.prodigy.player.equipment.data = save.equipmentdata;
-			this.game.prodigy.player.kennel.data = save.kenneldata;
-			this.game.prodigy.player.data = save.data;
-			this.game.prodigy.player.quests.data = save.questdata;
+			Util.isDefined(save.appearancedata) && (this.game.prodigy.player.appearance.data = save.appearancedata);
+			Util.isDefined(save.equipmentdata) && (this.game.prodigy.player.equipment.data = save.equipmentdata);
+			Util.isDefined(save.kenneldata) && (this.game.prodigy.player.kennel.data = save.kenneldata);
+			Util.isDefined(save.data) && (this.game.prodigy.player.data = save.data);
+			Util.isDefined(save.questdata) && (this.game.prodigy.player.quests.data = save.questdata);
 			Util.isDefined(save.backpackdata) && (this.game.prodigy.player.backpack.data = save.backpackdata);
 			Util.isDefined(save.housedata) && (this.game.prodigy.player.house.data = save.housedata);
 			Util.isDefined(save.tutorialdata) && (this.game.prodigy.player.tutorial.data = save.tutorialdata);
@@ -84904,5 +85037,52 @@ class OldProdigy {
             };
             this.game.prodigy.start("Login");
         }
+    }
+	deleteAccount(userID, callback, errorCallback, reAuthCallback, reAuthComplete) {
+        var self = this;
+		this.game.prodigy.player.saveEnabled = false;
+        function deleteUser() {
+            firebase.auth.currentUser.delete().then(() => {
+                setTimeout(() => {
+                    Util.log("Account deleted.", Util.INFO);
+                    Util.isDefined(callback) && callback();
+                }, 5e3);
+            }).catch((err) => {
+                Util.log("Re-authentication required for account deletion.", Util.INFO);
+                reAuth();
+            });
+        }
+        function reAuth() {
+            if (Util.isDefined(reAuthCallback)) {
+                reAuthCallback();
+            };
+            setTimeout(() => {
+                firebase.utils.auth.reauthenticateWithPopup(self.auth.currentUser, self.googleAuthProvider).then(() => {
+                    Util.isDefined(reAuthComplete) && reAuthComplete();
+                    deleteUser();
+                    self.sendAnalytics("delete-account-reauth-success", {
+                        uid: self.userID
+                    })
+                }).catch((error) => {
+                    Util.log("Error occured while attempting to re-authenticate.", Util.ERROR);
+                    console.error(error);
+                    Util.isDefined(errorCallback) && errorCallback();
+                    self.sendAnalytics("delete-account-reauth-fail", {
+                        uid: self.userID,
+                        code: error.code
+                    })
+                });
+            }, 3e3)
+        };
+        let handleDatabaseError = (error) => {
+			this.game.prodigy.player.saveEnabled = true;
+            Util.log("Account deletion failed.", Util.ERROR);
+            Util.isDefined(errorCallback) && errorCallback();
+            console.error(error);
+            self.saveCharacter();
+        };
+        firebase.utils.db.remove(firebase.utils.db.ref(firebase.database, "users/" + userID)).then(() => {
+			deleteUser()
+        }).catch(handleDatabaseError)
     }
 }
