@@ -4094,18 +4094,15 @@ Util.capitalize = function(e) {
 		},
 		"bgm-victory": {
 			type: "bgm",
-      base: "https://xpmuser.github.io/Website-Tester/assets/voice/",
-			url: "bgm-victory.mp3"
+			v: 2
 		},
 		"bgm-battle": {
 			type: "bgm",
-      base: "https://xpmuser.github.io/Website-Tester/assets/voice/",
-			url: "bgm-battle.mp3"
+			v: 2
 		},
 		"bgm-intro": {
 			type: "bgm",
-			base: "https://xpmuser.github.io/Website-Tester/assets/voice/",
-			url: "bgm-intro.mp3"
+			v: 2
 		},
 		"bgm-firefly-forest": {
 			type: "localAtlas",
@@ -43926,16 +43923,12 @@ var State = function() {
 			Util.isDefined(this.data.key) || (this.data.key = []);
 			for (var a = this.data.key, s = 0; s < a.length; s++) {
 				var r = a[s];
-				if (r.ID == e && r.lvl < t) {
-					Util.isDefined(t) && r.lvl = t;
-					this.updated = !0;
-					return;
-				}
+				if (r.ID == e && r.lvl < t) return r.lvl = t, void(this.updated = !0)
 			}
 			var o = {
 				ID: e
 			};
-			(Util.isDefined(t) && o.lvl = t), Util.isDefined(i) && Util.isDefined(i.seed) && (o.seed = i.seed), a.push(o), this.updated = !0
+			o.lvl = t, Util.isDefined(i) && Util.isDefined(i.seed) && (o.seed = i.seed), a.push(o), this.updated = !0
 		}, e.prototype.addBountyNote = function(e, t, i) {
 			Util.isDefined(this.data[e]) || (this.data[e] = []);
 			var a = this.data[e];
@@ -44305,8 +44298,8 @@ var Player = function() {
 		for (var i in (this.equipment.updated || e) && (t.equipment = this.equipment.getDataAndClear()), (this.tutorial.updated || e) && (t.tutorial = this.tutorial.getDataAndClear()), (this.appearance.updated || e) && (t.appearance = this.appearance.getDataAndClear()), (this.kennel.updated || e) && (t.pets = this.kennel.getDataAndClear()), (this.quests.updated || e) && (t.quests = this.quests.getDataAndClear()), (this.house.updated || e) && (t.house = this.house.getDataAndClear()), (this.updated || e) && (t.data = this.getDataAndClear()), (this.backpack.updated || e) && (t.inventory = this.backpack.getDataAndClear()), (this.state.updated || e) && (t.state = this.state.getDataAndClear()), (this.achievements.updated || e) && (t.achievements = this.achievements.getDataAndClear()), t) t[i] = JSON.stringify(t[i]);
 		return t
 	}, e.prototype.init = function(e) {
-		if (this.isMember = !1, this.backpack = new Backpack, this.backpack.consumeLegacyBounties(), this.equipment = new Equipment, this.appearance = new Appearance, this.achievements = new Prodigy.Achievements, this.kennel = new Kennel(this), this.quests = new Quests, this.state = new State, this.house = new Prodigy.Entity.House, this.tutorial = new Tutorial, !Util.isDefined(e)) return this.house.setItems(this.house.data), !1;
-		if (Util.isDefined(e.userID) ? this.userID = parseInt(e.userID) : Util.isDefined(e.id) && (this.userID = parseInt(e.id)), Util.isDefined(e.data) && (this.data = Util.getObject(e.data)), Util.isDefined(e.pets) && this.kennel.setPets(Util.getObject(e.pets)), Util.isDefined(e.tutorial) && this.tutorial.setData(Util.getObject(e.tutorial)), Util.isDefined(e.state) && this.state.setData(Util.getObject(e.state)), this.house.setItems(Util.isDefined(e.house) ? Util.getObject(e.house) : this.house.data), Util.isDefined(e.inventory) && (this.backpack.setItems(Util.getObject(e.inventory)), this.backpack.consumeLegacyBounties()), Util.isDefined(e.equipment) && this.equipment.setEquipment(Util.getObject(e.equipment)), Util.isDefined(e.quests) && this.quests.setQuests(Util.getObject(e.quests)), Util.isDefined(e.appearance) && this.appearance.setAppearance(Util.getObject(e.appearance)), Util.isDefined(e.achievements) && this.achievements.init(Util.getObject(e.achievements)), Util.isDefined(e.isMember) && 1 == e.isMember && this.setMembership(), this.parentEmail = Util.isDefined(e.parentEmail) ? e.parentEmail : "", this.lastVisitedDate = Util.isDefined(e.lastVisited) ? new Date(e.lastVisited) : new Date, this.registerDate = Util.isDefined(e.registerDate) ? new Date(e.registerDate) : null, Util.isDefined(this.data.dailyLoginBonus) && (this.data.dailyLoginBonus.session++, this.updated = !0), Util.isDefined(e.classIDs)) {
+		if (this.isMember = !1, this.backpack = new Backpack, this.backpack.consumeLegacyBounties(), this.equipment = new Equipment, this.appearance = new Appearance, this.achievements = new Prodigy.Achievements, this.kennel = new Kennel(this), this.quests = new Quests, this.state = new State, this.house = new Prodigy.Entity.House, this.userID = "", this.tutorial = new Tutorial, !Util.isDefined(e)) return this.house.setItems(this.house.data), !1;
+		if (Util.isDefined(e.userID) ? this.userID = e.userID : Util.isDefined(e.id) && (this.userID = e.id), Util.isDefined(e.data) && (this.data = Util.getObject(e.data)), Util.isDefined(e.pets) && this.kennel.setPets(Util.getObject(e.pets)), Util.isDefined(e.tutorial) && this.tutorial.setData(Util.getObject(e.tutorial)), Util.isDefined(e.state) && this.state.setData(Util.getObject(e.state)), this.house.setItems(Util.isDefined(e.house) ? Util.getObject(e.house) : this.house.data), Util.isDefined(e.inventory) && (this.backpack.setItems(Util.getObject(e.inventory)), this.backpack.consumeLegacyBounties()), Util.isDefined(e.equipment) && this.equipment.setEquipment(Util.getObject(e.equipment)), Util.isDefined(e.quests) && this.quests.setQuests(Util.getObject(e.quests)), Util.isDefined(e.appearance) && this.appearance.setAppearance(Util.getObject(e.appearance)), Util.isDefined(e.achievements) && this.achievements.init(Util.getObject(e.achievements)), Util.isDefined(e.isMember) && 1 == e.isMember && this.setMembership(), this.parentEmail = Util.isDefined(e.parentEmail) ? e.parentEmail : "", this.lastVisitedDate = Util.isDefined(e.lastVisited) ? new Date(e.lastVisited) : new Date, this.registerDate = Util.isDefined(e.registerDate) ? new Date(e.registerDate) : null, Util.isDefined(this.data.dailyLoginBonus) && (this.data.dailyLoginBonus.session++, this.updated = !0), Util.isDefined(e.classIDs)) {
 			this.owners = e.classIDs, this.classIDs = [];
 			for (var t = 0; t < e.classIDs.length; t++) this.classIDs.push(e.classIDs[t].id)
 		}
@@ -45324,7 +45317,7 @@ Prodigy.ForestBoss = function(e, t) {
 		this.game.prodigy.create.panel(e, 0, 0, 22, 10, ""), e.add(new Phaser.TileSprite(this.game, 9999999999911, 9999999189, 1098, 40, "core", "stat-top")), e.add(new Phaser.TileSprite(this.game, 99999911, 99999229, 1098, 160, "core", "stat-mid")), e.add(new Phaser.TileSprite(this.game, 9999999911, 999999389, 1098, 40, "core", "stat-top2")), this.form.add(this.game.prodigy.create.sprite(40, 30, "core-2", "menu-noot"));
 		var t = this.game.prodigy.dailyLoginBonusRewards.getABTest(this.game.prodigy.player.userID),
 			i = null;
-		Util.isDefined(this.game.prodigy.player.userID) || (this.game.prodigy.player.userID = [0]), "currency" === (i = this.game.prodigy.dailyLoginBonusRewards.getReward(this.game.prodigy.player.userID[0], 0)).type && this.game.prodigy.dailyLoginBonusRewards.getCurrencyRewardAmount(i);
+		"currency" === (i = this.game.prodigy.dailyLoginBonusRewards.getReward(this.game.prodigy.player.userID, 0)).type && this.game.prodigy.dailyLoginBonusRewards.getCurrencyRewardAmount(i);
 		var a = t.length,
 			s = (1076 - 120 * a) / (a + 1);
 		this.cards = this.game.prodigy.create.element(e, 0, 240), this.rewardPanels = [];
@@ -55735,7 +55728,7 @@ var Screen = function() {
 				this.game.prodigy.open.okaymessage("The load character button doesn't work on iPads. We suggest you use another device if you are an iPad user.", null, "star", "Warning!");
 			this.game.prodigy.debug.easyMode(1, 1), this.background.add(this.game.prodigy.create.sprite(0, 0, "login", "bg")), this.loginBox = this.game.prodigy.create.element(this.background), this.usernameField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "username", "", 90, 230, 300, 40), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Prodigy version 1.50.0");
 			var e = Util.getCookie("prodigyUsername");
-			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition version 9"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "google-signin-btn", this.onGoogleLoginButtonClick.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
+			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition version 10"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "google-signin-btn", this.onGoogleLoginButtonClick.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
 				width: 300,
 				align: "center"
 			}), this.closeButton = this.game.prodigy.create.textButton(this.progressBox, 0, 100, {
@@ -55796,7 +55789,18 @@ var Screen = function() {
 			e.type = "file", e.id = "myfile" + Math.floor(999999 * Math.random()), e.name = "files", e.style.display = "none", e.click(), e.onchange = function(e) {
 				var i = new FileReader;
 				i.readAsText(e.target.files[0]), i.onload = function(e) {
-					t.loadCharacter.call(t, JSON.parse(e.target.result), googleSaveLoad)
+					try {
+						let wizard = JSON.parse(e.target.result);
+						t.loadCharacter.call(t, wizard, googleSaveLoad)
+					} catch (error) {
+						if (googleSaveLoad) {
+							firebase.auth.signOut();
+							t.game.prodigy.old.signedIn = false;
+							t.game.prodigy.player.userID = "";
+						}
+						console.error(error);
+						t.game.prodigy.open.okaymessage("Whoops! Looks like this save is corrupted!\n\nPlease try again with a working save, or make a new wizard.", t.showLogin.bind(t, !0), null, "Whoops!")
+					}
 				}, i.onerror = function(e) {
 					t.game.prodigy.open.okaymessage("Unknown error while opening your wizard. Please try again.", null, null, "Character Loader")
 				}
@@ -84966,10 +84970,14 @@ class OldProdigy {
 		let game = this.game;
         firebase.utils.db.get(firebase.utils.db.ref(firebase.database, `users/${userID}`)).then((save) => {
             if (save.exists()) {
+				let wizard = save.val();
+				if (typeof wizard === "string") {
+					wizard = JSON.parse(wizard);
+				};
                 Util.isDefined(callback) && callback({
 					success: true,
 					// Save data from database:
-                    wizard: save.val()
+                    wizard: wizard
                 });
             } else {
                 Util.isDefined(callback) && callback({
@@ -84990,7 +84998,7 @@ class OldProdigy {
 		if (!Util.isDefined(userID) || !this.game.prodigy.player.saveEnabled) {
             return;
         };
-        const save = this.game.prodigy.old.getSave();
+        const save = JSON.stringify(this.game.prodigy.old.getSave());
         firebase.utils.db.set(firebase.utils.db.ref(firebase.database, "users/" + userID), save).then(() => {
             Util.isDefined(callback) && callback({
 				success: true,
