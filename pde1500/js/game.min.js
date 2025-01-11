@@ -55714,10 +55714,19 @@ var Screen = function() {
 					e.onGoogleAuthLoaded(!0, t)
 				})
 			})
-		}, e.prototype = Object.create(Screen.prototype), e.GOOGLE_AUTH_FAIL_DEFAULT = "Signing in with Google was unsuccessful", e.GOOGLE_AUTH_POPUP_BLOCKED = "Your browser is blocking popups. To sign in with Google, please allow popups and try again.", e.GOOGLE_AUTH_USE_BROWSER_INSTEAD = "Google sign-in only works in the browser version of Prodigy. Would you like to open Prodigy in the browser?", e.prototype.create = function () {
-			this.game.prodigy.network.logout(!0), this.game.prodigy.debug.setup(this.game);
+		},
+		e.prototype = Object.create(Screen.prototype),
+		e.GOOGLE_AUTH_FAIL_DEFAULT = "Signing in with Google was unsuccessful",
+		e.GOOGLE_AUTH_POPUP_BLOCKED = "Your browser is blocking popups. To sign in with Google, please allow popups and try again.",
+		e.GOOGLE_AUTH_USE_BROWSER_INSTEAD = "Google sign-in only works in the browser version of Prodigy. Would you like to open Prodigy in the browser?",
+		e.prototype.create = function () {
+			this.game.prodigy.network.logout(!0),
+			this.game.prodigy.debug.setup(this.game);
+			this.game.prodigy.old.getCurrentSession(this.onGoogleSignIn.bind(this));
 			try {
-				$("#first-loading-screen").remove()
+				setTimeout(()=>{
+					$("#first-loading-screen").remove()
+				}, 300)
 			} catch (e) {}
 			try {
 				Util.getUrlVariable("iosApp") && webkit.messageHandlers.setGameVisible.postMessage(0)
@@ -55750,20 +55759,34 @@ var Screen = function() {
 			this.game.prodigy.start("CharSelect")
 		}, e.prototype.onGoogleLoginButtonClick = function () {
 			this.authorizeWithGoogle();
-		}, e.prototype.authorizeWithGoogle = function () {
-			function googleCallback(data) {
-				if (data.success) {
-					// Successful Google sign-in:
-					this.game.prodigy.player.userID = data.userID;
-					this.game.prodigy.old.getCloudSave(data.userID, loadCallback.bind(this));
-					this.error.setText("Loading wizard data...")
-				} else {
-					// Unsuccessful Google sign-in:
-					this.showLogin(!1);
-					this.error.setText("Google login error: " + data.code);
-					this.closeButton.visible = !0;
-				}
+		}, e.prototype.onGoogleSignIn = function(data) {
+			if (data.success) {
+				// Successful Google sign-in:
+				this.game.prodigy.player.userID = data.userID;
+				this.game.prodigy.old.getCloudSave(data.userID, this.onGoogleSaveLoad.bind(this));
+				this.error.setText("Loading wizard data...")
+			} else {
+				// Unsuccessful Google sign-in:
+				this.showLogin(!1);
+				this.error.setText("Google login error: " + data.code);
+				this.closeButton.visible = !0;
 			}
+		}, e.prototype.onGoogleSaveLoad = function(data) {
+			//console.log(data);
+			if (data.success) {
+				// Successfully loaded the cloud save!
+				if (Util.isDefined(data.wizard)) {
+					this.game.prodigy.old.loadSave(data.wizard);
+					this.offlineMode();
+				}
+				else {
+					this.game.prodigy.open.confirm("It looks like this is your first time signing in with this account. Do you want to load a wizard?", this.openFileForCharacter.bind(this, true), this.game.prodigy.start.bind(this.game.prodigy, "CharCreate"), null, "Hey!")
+				}
+			} else {
+				// Didn't successfully load the cloud save :(
+				this.game.prodigy.start("CharCreate");
+			}
+		}, e.prototype.authorizeWithGoogle = function() {
 			function loadCallback(data) {
 				console.log(data);
 				if (data.success) {
@@ -55781,7 +55804,7 @@ var Screen = function() {
 				}
 			}
 			this.gotoLoginMode("Logging in with Google...");
-			this.game.prodigy.old.signInWithGoogle(googleCallback.bind(this));
+			this.game.prodigy.old.signInWithGoogle(this.onGoogleSignIn.bind(this));
 			
 		}, e.prototype.openFileForCharacter = function(googleSaveLoad) {
 			var e = document.createElement("input"),
@@ -84891,12 +84914,20 @@ Prodigy.NetworkHandlers.NetworkHandler = function(e) {
 */
 class OldProdigy {
 	constructor(game) {
+		// Link to the phaser game instance
 		this.game = game;
+		
+		// this.game.prodigy.old.signedIn
+		// Basically, if this is true that means the player is signed in with Google.
 		this.signedIn = false;
+		
+		// Technical thing, don't worry about it :D
+		this.googleAuthProvider = new firebase.utils.auth.GoogleAuthProvider();
+		
 		// Autosave every 30 seconds :)
 		this.saveInterval = setInterval(this.saveCharacter.bind(this), 30000);
-		this.googleAuthProvider = new firebase.utils.auth.GoogleAuthProvider();
 	}
+	// Returns the current player's wizard data. This is basically what gets saved whenever the player saves their game. 
 	getSave() {
 		let save = {
 			appearancedata: this.game.prodigy.player.appearance.data,
@@ -84916,6 +84947,7 @@ class OldProdigy {
 		};
 		return save
 	}
+	// This loads wizard data into the current player.
 	loadSave(save) {
 		try {
 			Util.isDefined(save.appearancedata) && (this.game.prodigy.player.appearance.data = save.appearancedata);
@@ -84928,16 +84960,16 @@ class OldProdigy {
 			Util.isDefined(save.tutorialdata) && (this.game.prodigy.player.tutorial.data = save.tutorialdata);
 			Util.isDefined(save.statedata) && (this.game.prodigy.player.state.data = save.statedata);
 			Util.isDefined(save.achievementsdata) && (this.game.prodigy.player.achievements.data = save.achievementsdata);
-			if (Util.isDefined(save.metadata))
-				this.game.prodigy.player.isMember = save.metadata.isMember
-			else
-				this.game.prodigy.player.isMember = !1;
+			if (Util.isDefined(save.metadata)) {
+				this.game.prodigy.player.isMember = Util.isDefined(save.metadata.isMember) ? save.metadata.isMember : true;
+			}
 			return true;
 		} catch (error) {
 			console.error(error);
 			return false;
 		};
 	}
+	// This opens the Google popup that allows players to log in.
 	signInWithGoogle(callback) {
         let credential, token, user, val;
         firebase.utils.auth.signInWithPopup(firebase.auth, this.googleAuthProvider)
@@ -84966,6 +84998,7 @@ class OldProdigy {
                 console.log(error.message);
             });
 	}
+	// This grabs the player's cloud save from the online database.
 	getCloudSave(userID, callback) {
 		let game = this.game;
         firebase.utils.db.get(firebase.utils.db.ref(firebase.database, `users/${userID}`)).then((save) => {
@@ -84993,6 +85026,7 @@ class OldProdigy {
             console.error(error)
         })
 	}
+	// This saves the wizard to the database (only applies if they're signed in with Google)
 	saveCharacter(callback) {
 		let userID = this.game.prodigy.player.userID;
 		if (!Util.isDefined(userID) || !this.game.prodigy.player.saveEnabled) {
@@ -85013,12 +85047,17 @@ class OldProdigy {
 			})
         });
 	}
+	// Resets the user's wizard data. This is ran whenever the player logs out.
 	resetWizard() {
         this.game.prodigy.player = new Player(this.game);
 	}
+	// This is a universal sign out function.
+	// If they are NOT signed in with Google, it'll reset their wizard and take them to the login page.
+	// If they ARE signed in with Google, it'll sign them out of their account, then do the same thing.
 	signOut() {
         var self = this;
         function completeSignOut() {
+			self.game.state.states[self.game.state.current].overlay.visible = true;
             firebase.auth.signOut().then(() => {
                 if (Util.isDefined(self.game.prodigy.audio.currentBgm)) {
                     self.game.prodigy.audio.currentBgm.destroy();
@@ -85046,6 +85085,7 @@ class OldProdigy {
             this.game.prodigy.start("Login");
         }
     }
+	// Deletes their account. Only used in the settings menu. DO NOT USE ANYWHERE ELSE (╯°□°）╯︵ ┻━┻
 	deleteAccount(userID, callback, errorCallback, reAuthCallback, reAuthComplete) {
         var self = this;
 		this.game.prodigy.player.saveEnabled = false;
@@ -85065,20 +85105,13 @@ class OldProdigy {
                 reAuthCallback();
             };
             setTimeout(() => {
-                firebase.utils.auth.reauthenticateWithPopup(self.auth.currentUser, self.googleAuthProvider).then(() => {
+                firebase.utils.auth.reauthenticateWithPopup(firebase.auth.currentUser, self.googleAuthProvider).then(() => {
                     Util.isDefined(reAuthComplete) && reAuthComplete();
                     deleteUser();
-                    self.sendAnalytics("delete-account-reauth-success", {
-                        uid: self.userID
-                    })
                 }).catch((error) => {
                     Util.log("Error occured while attempting to re-authenticate.", Util.ERROR);
                     console.error(error);
                     Util.isDefined(errorCallback) && errorCallback();
-                    self.sendAnalytics("delete-account-reauth-fail", {
-                        uid: self.userID,
-                        code: error.code
-                    })
                 });
             }, 3e3)
         };
@@ -85092,5 +85125,25 @@ class OldProdigy {
         firebase.utils.db.remove(firebase.utils.db.ref(firebase.database, "users/" + userID)).then(() => {
 			deleteUser()
         }).catch(handleDatabaseError)
+    }
+	// Checks if the player still has an active Google session.
+	getCurrentSession(callback) {
+        var self = this;
+        firebase.utils.auth.onAuthStateChanged(firebase.auth, (user) => {
+            if (user) {
+                if (!self.signedIn) {
+                    Util.log("Session restored.", Util.INFO)
+                    self.game.prodigy.player.userID = user.uid;
+                    self.signedIn = true;
+					callback({
+						success: true,
+						userID: user.uid
+					})
+                } else if (firebase.auth.currentUser == null) {
+                    self.game.prodigy.player.saveEnabled = false;
+                    self.signOut()
+                }
+            }
+        })
     }
 }
