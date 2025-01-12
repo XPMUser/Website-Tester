@@ -49037,8 +49037,8 @@ bot.reload();
 }, {
     opponent: {
         data: '{"level":69}',
-        appearance: '{"name":"Ralph Stormspoon", "gender":"male", "hairStyle":8,"hairColor":4,"skinColor":1,"eyeColor":8}',
-        equipment: '{"hat":23, "outfit":52, "weapon":86, "boots":18}'
+        appearance: '{"name":"Ralph Stormspoon", "gender":"male", "hairStyle":2,"hairColor":4,"skinColor":3,"eyeColor":3}',
+        equipment: '{"hat":23, "outfit":52, "weapon":86}'
     },
     title: "Requested Bot",
     description: "PeekoMeeko has asked for this bot.",
