@@ -49034,6 +49034,19 @@ bot.reload();
         type: "gold",
         N: 10000
     }]
+}, {
+    opponent: {
+        data: '{"level":69}',
+        appearance: '{"name":"Ralph Stormspoon", "gender":"male", "hairStyle":8,"hairColor":4,"skinColor":1,"eyeColor":8}',
+        equipment: '{"hat":23, "outfit":52, "weapon":86, "boots":18}'
+    },
+    title: "Requested Bot",
+    description: "PeekoMeeko has asked for this bot.",
+    pets: [],
+    drops: [{
+        type: "gold",
+        N: 500
+    }]
 }], Prodigy.Menu.Nicknamer = function(e, t, i, a) {
 	Prodigy.Control.Menu.call(this, e, t, 18, {
 		hideMenu: !0,
