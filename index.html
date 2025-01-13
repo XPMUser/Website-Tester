@@ -3,66 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Prodigy or Prodidows insider program</title>
+    <title>Prodigy Insider Program</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+        }
+
+        header {
+            background-color: #0066cc;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: #004d99;
+        }
+
+        .main-content {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #0066cc;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: #004d99;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        .icon {
+            font-size: 50px;
+            color: #0066cc;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
+
     <header>
-        <h1>Welcome to Old Prodigy/Prodidows insider!</h1>
-        <nav id="navbar">
+        <h1>Welcome to the Prodigy Insider Program</h1>
+        <nav>
             <a href="index.html">Home</a>
             <a href="play.html?mods=WalkSpeed">Play Now</a>
-            <a href="pde1500/index.html">Pde1500</a>
-            <a href="pde1700/?mods=WalkSpeed,FastGameSpeed,ImitationTitan">Pde1700</a>
-            <a href="pde/index.html">Pde</a>
+            <a href="pde1500/index.html">PDE1500</a>
+            <a href="pde1700/?mods=WalkSpeed,FastGameSpeed,ImitationTitan">PDE1700</a>
+            <a href="pde/index.html">PDE</a>
             <a href="oldprodigyde/?mods=FastGameSpeed">Play Another Version</a>
-            <a href="login.html" id="loginLink">Login</a>
-            <a href="signup.html" id="signupLink">Sign Up</a>
-            <span id="profileInfo" style="display:none;">
-                <a href="profile.html" id="profileLink"></a>
-                <a href="#" id="logoutLink">Logout</a>
-            </span>
         </nav>
     </header>
 
-    <main id="content">
+    <main class="main-content">
         <section>
             <h2>About This Site</h2>
-            <p>This is a simple website where you can test new Old Prodigy or Prodidows versions before live release.</p>
+            <p>This is your gateway to the latest Prodigy or Prodidows versions before the public release. Join now to test and experience early builds of the game!</p>
         </section>
+
         <section>
             <h2>Why Join?</h2>
-            <ul>
-                <li>Save your character automatically (coming soon)</li>
-            </ul>
+            <div>
+                <div class="icon">🎮</div>
+                <p>Get early access to upcoming features and game modes.</p>
+            </div>
+            <div>
+                <div class="icon">🔧</div>
+                <p>Be part of the testing team and help improve the game with feedback.</p>
+            </div>
+            <div>
+                <div class="icon">💾</div>
+                <p>Save your character progress and enjoy continuous updates. (Coming soon!)</p>
+            </div>
         </section>
+
         <section>
             <h2>Get Started</h2>
-            <p>If you don't have an account, <a href="signup.html">sign up here</a>. If you're already a member, <a href="login.html">log in</a> to access your account.</p>
+            <p>If you don't have an account, <a href="signup.html" class="cta-button">Sign Up Here</a></p>
+            <p>If you're already a member, <a href="login.html" class="cta-button">Login Now</a></p>
         </section>
     </main>
 
     <footer>
-        <p></p>
+        <p>&copy; 2025 Prodigy Insider Program. All rights reserved.</p>
+        <p><a href="contact.html">Contact Us</a></p>
     </footer>
 
-    <script>
-        // Check if the user is logged in
-        const currentUser = localStorage.getItem('loggedInUser');
-
-        if (currentUser) {
-            // Show profile info in the navbar
-            document.getElementById('loginLink').style.display = 'none';
-            document.getElementById('signupLink').style.display = 'none';
-            document.getElementById('profileInfo').style.display = 'inline';
-            document.getElementById('profileLink').textContent = currentUser;
-        }
-
-        // Logout functionality
-        document.getElementById('logoutLink').addEventListener('click', function() {
-            localStorage.removeItem('loggedInUser');
-            window.location.href = 'index.html';
-        });
-    </script>
 </body>
 </html>
