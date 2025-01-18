@@ -49038,10 +49038,10 @@ bot.reload();
     opponent: {
         data: '{"level":69}',
         appearance: '{"name":"Ralph Stormspoon", "gender":"male", "hairStyle":7,"hairColor":2,"skinColor":3,"eyeColor":3}',
-        equipment: '{"hat":2, "outfit":18, "weapon":57}'
+        equipment: '{"hat":2, "outfit":18, "weapon":57, "boots":10}'
     },
     title: "Requested Bot",
-    description: "PeekoMeeko has asked for this bot. He is still in beta.",
+    description: "PeekoMeeko has asked for this bot.",
     pets: [],
     drops: [{
         type: "gold",
@@ -84923,9 +84923,9 @@ Prodigy.NetworkHandlers.NetworkHandler = function(e) {
 /*
 	You're welcome, XPMUser ;)
 			
-	DABOSS WAS HERE ༼ つ ◕◡◕ ༽つ
-	
-	undefined
+	DABOSS WAS HERE ༼ つ ◕◡◕ ༽つ 
+
+	Thank you Daboss7173 for fixing Google OAuth's autosave problem.
 */
 class OldProdigy {
 	constructor(game) {
@@ -84939,7 +84939,7 @@ class OldProdigy {
 		// Technical thing, don't worry about it :D
 		this.googleAuthProvider = new firebase.utils.auth.GoogleAuthProvider();
 		
-		// Autosaves :)
+		// Autosaves like on the original Prodigy site :)
 		this.saveInterval = setInterval(this.saveCharacter.bind(this), 1000);
 	}
 	// Returns the current player's wizard data. This is basically what gets saved whenever the player saves their game. 
