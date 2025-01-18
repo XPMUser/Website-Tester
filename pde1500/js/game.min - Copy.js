@@ -49038,10 +49038,10 @@ bot.reload();
     opponent: {
         data: '{"level":69}',
         appearance: '{"name":"Ralph Stormspoon", "gender":"male", "hairStyle":2,"hairColor":4,"skinColor":3,"eyeColor":3}',
-        equipment: '{"hat":23, "outfit":52, "weapon":86}'
+        equipment: '{"hat":2, "outfit":18, "weapon":57}'
     },
     title: "Requested Bot",
-    description: "PeekoMeeko has asked for this bot.",
+    description: "PeekoMeeko has asked for this bot. He is still in beta.",
     pets: [],
     drops: [{
         type: "gold",
@@ -84362,7 +84362,7 @@ var NetworkManager = function() {
 				status: 1
 			}],
 			meta: {
-				friendsCap: 20,
+				friendsCap: 100,
 				totalFriends: 3
 			}
 		}), this)) : this.api.getFriendList({
@@ -84924,6 +84924,8 @@ Prodigy.NetworkHandlers.NetworkHandler = function(e) {
 	You're welcome, XPMUser ;)
 			
 	DABOSS WAS HERE ༼ つ ◕◡◕ ༽つ
+	
+	undefined
 */
 class OldProdigy {
 	constructor(game) {
@@ -84937,8 +84939,8 @@ class OldProdigy {
 		// Technical thing, don't worry about it :D
 		this.googleAuthProvider = new firebase.utils.auth.GoogleAuthProvider();
 		
-		// Autosave every 30 seconds :)
-		this.saveInterval = setInterval(this.saveCharacter.bind(this), 30000);
+		// Autosaves :)
+		this.saveInterval = setInterval(this.saveCharacter.bind(this), 1000);
 	}
 	// Returns the current player's wizard data. This is basically what gets saved whenever the player saves their game. 
 	getSave() {
