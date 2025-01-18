@@ -51,7 +51,7 @@ function ApiClient(e, t) {
 			root: void 0
 		},
 		d = {
-			dev: "https://xpmuser.github.io/prodidows/",
+			dev: "https://xpmuser.github.io/",
 			staging: "https://www.prodigygame.org/",
 			production: "https://www.prodigygame.com/"
 		},
@@ -69,8 +69,8 @@ function ApiClient(e, t) {
 		b = "game-tools-api/",
 		v = "assignment-api/",
 		w = "education-api/",
-		x = "worlds-api/";
-	switch ("") {
+		x = "prodidows/worlds-api/";
+	switch ("xpmuser.github.io") {
 		case "dev.prodigygame.org":
 		case "localhost":
 		case "xpmuser.github.io":
@@ -84,8 +84,13 @@ function ApiClient(e, t) {
 		case "xpmuser.github.io":
 			i("staging", l);
 			break;
-    case "https://prodigy200-2c7e4-default-rtdb.firebaseio.com":
+    case "https://triple-bird-410810-default-rtdb.firebaseio.com":
 		case "localhost":
+			i("production", l)
+		case "web.archive.org":
+			i("production", l)
+		case "archive.org":
+			i("production", l)
 		case "xpmuser.github.io":
 			i("production", l)
 	}
@@ -71268,6 +71273,10 @@ var Docks = function () {
 			post: " the Player",
 			member: !0,
 			fail: "You need to become a member to unlock!"
+		}, {
+			post: " the Trialmaster",
+			member: !0,
+			fail: "You need to become a member to unlock!"
 		}];
 		this.addNicknamer(360, 380, o), WalkableScreen.prototype.screenSetup.call(this)
 	}, e.prototype.createHealerNPC = function (e, t, a) {
@@ -75642,11 +75651,8 @@ var TechZone = function () {
 			fail: "You need to win the Ribbon from the real Robolympics to unlock!"
 		}, {
 			pre: "Techeater ",
-			req: [{
-				rtype: "pet",
-				ID: 77
-			}],
-			fail: "You need to catch or buy a Tech Gobbler to unlock!"
+			member: !0,
+			fail: "You need to become a member to unlock!"
 		}, {
 			post: " Techchaser",
 			member: !0,
@@ -75683,9 +75689,6 @@ TechZone.STORE = {
 	}, {
 		ID: 58,
 		type: "outfit"
-	}, {
-		ID: 77,
-		type: "pet"
 	}, {
 		ID: 79,
 		type: "hat"
