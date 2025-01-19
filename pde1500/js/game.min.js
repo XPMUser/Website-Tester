@@ -69,7 +69,7 @@ function ApiClient(e, t) {
 		b = "game-tools-api/",
 		v = "assignment-api/",
 		w = "education-api/",
-		x = "prodidows/worlds-api/";
+		x = "worlds-api/";
 	switch ("xpmuser.github.io") {
 		case "dev.prodigygame.org":
 		case "localhost":
@@ -46019,7 +46019,7 @@ bot.reload();
 		}
 	}
 }, {
-	name: "Lamplight Arena Academy",
+	name: "Lamplight Academy",
 	x: 400,
 	y: 100,
 	map: "btn-academy",
@@ -66710,7 +66710,7 @@ Arena.AUDIO = [{
 	tag: "Arena",
 	zoneName: "zone-academy",
 	atlas: "zone-academy",
-	fullName: "Lamplight Arena Academy",
+	fullName: "Lamplight Academy",
 	battle: {
 		screen: "bg-battle-academy"
 	},
@@ -70451,6 +70451,10 @@ var Volcano = function () {
 			fail: "You need to become a member to unlock!"
 			}, {
 			post: " the Firedancer",
+			member: !0,
+			fail: "You need to become a member to unlock!"
+			}, {
+			post: " the Chef",
 			member: !0,
 			fail: "You need to become a member to unlock!"
 			}];
@@ -77011,6 +77015,10 @@ var Dino = function () {
 			fail: "You need to complete the four main skeletons to unlock!"
 		}, {
 			post: "saurus",
+			member: !0,
+			fail: "You need to become a member to unlock!"
+		}, {
+			post: "saurus Rex",
 			member: !0,
 			fail: "You need to become a member to unlock!"
 		}];
