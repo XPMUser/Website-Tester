@@ -428,7 +428,7 @@ function ApiClient(e, t) {
 				token: o.uniqueKey,
 				event: e
 			};
-			return a("post", l.url.events + "v1/status", s, i, "trackEvent"), !0
+			return a("post", l.url.events + "world-list", s, i, "trackEvent"), !0
 		}
 		return !1
 	}, this.completeAssignment = function(e, t) {
