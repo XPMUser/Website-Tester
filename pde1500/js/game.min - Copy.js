@@ -114,7 +114,7 @@ function ApiClient(e, t) {
 			/^https:\/\//.test(y) && (u = !0);
 			var m = {
 				"force new connection": !0,
-				reconnection: !1,
+				reconnection: !0,
 				transports: ["websocket", "xhr-polling", "jsonp-polling", "htmlfile"],
 				secure: u,
 				query: "userId=" + c + "&worldId=" + e + "&userToken=" + g + "&zone=" + t
@@ -141,7 +141,7 @@ function ApiClient(e, t) {
 		return !!r(t, ["200"], "emit message") && !!o.socket && (o.socket.emit("message", e), !0)
 	}, this.getWorldList = function(e) {
 		var t = r(e, ["200", "400", "500", "503"], "get world list");
-		return !!t && (a("get", "game-api/" + "v2/worlds", {}, t, "getWorldList", {
+		return !!t && (a("get", "https://xpmuser.github.io/oldprodigy/assets/" + "", {}, t, "getWorldList", {
 			ignoreHeaders: !0
 		}), !0)
 	}, this.login = function(e, t, i) {
@@ -1774,7 +1774,8 @@ Util.capitalize = function(e) {
 			v: "1"
 		},
 		"npc-sprite-howard_cornelius": {
-			type: "atlas",
+			type: "localAtlas",
+			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/",
 			key: "npc-sprite-howard-cornelius",
 			v: "1"
 		},
@@ -10123,10 +10124,10 @@ Util.capitalize = function(e) {
 			type: "spritesheet",
 			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/player/normal/hats/",
 			url: "80.png",
-			x: 1,
-			y: 1,
-			w: 137,
-			h: 78
+			x: 102,
+			y: 54,
+			w: 75,
+			h: 70
 		},
 		"reduced-hat-1": {
 			type: "spritesheet",
@@ -10840,13 +10841,13 @@ Util.capitalize = function(e) {
 			h: 40
 		},
 		"reduced-hat-80": {
-                        type: "spritesheet",
-                        base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
-                        url: "0-1.png",
-			x: 0,
-			y: 0,
-			w: 0,
-			h: 0
+            type: "spritesheet",
+            base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/player/reduced/hats/",
+            url: "80.png",
+			x: 46,
+			y: 30,
+			w: 39,
+			h: 35
 		},
 		"normal-weapon-1": {
 			type: "spritesheet",
@@ -29942,7 +29943,7 @@ Util.capitalize = function(e) {
 	}, {
 		text: "Want to change your team? Open the Pet Menu from the Main Menu."
 	}, {
-		text: "Want a new look? Head to the Stylist in Lamplight Town or you can also edit your save file."
+		text: "Want a new look? Head to the Stylist in Lamplight Town or use the O, A, C, E menu."
 	}, {
 		text: "The latest and greatest equipment can be bought at the Item Shop in Lamplight Town."
 	}, {
@@ -29970,23 +29971,17 @@ Util.capitalize = function(e) {
 	}, {
 		text: "Want to change your equipment? Open up the Backpack from the Main Menu!"
 	}, {
-		text: "Save your game by using the save character button in the Other tab on the Settings Menu!"
-	}, {
-		text: "OAuths and more are all coming soon, but fake Multiplayer Mode's still broken in this version."
-	}, {
-  		text: "If you're an Xbox One user or an iPad user and you still want to continue using your saved save, use a different device."
-	}, {
-		text: "If your saved save file is on your iPad, you can put it in any drive app that keeps your files like your save files safe and available for another device."
+		text: "If you sign in with Google, your progess will be saved right away and automatically. :D"
 	}, {
 		text: "If you want to find bots (wizards) in my.ai, then search for the bot's name."
 	}, {
-		text: "If you want to be a member, click on the gear icon and then click on the member button."
+		text: "If you want to be a premium member, click on the gear icon and then click on the member button."
 	}, {
-		text: "Never gonna give you up Never gonna let you down Never gonna run around and desert you"
+		text: "Never gonna give you up! Never gonna let you down! Never gonna run around and desert you!"
 	}, {
-                text: "You'll be healed automatically after a battle!"
+        text: "You'll be healed automatically even after a battle!"
 	}, {
-                text: "Google Drive, iCloud Drive, & OneDrive are recommended to store your working save files."
+        text: "Google Drive, iCloud Drive, & OneDrive are recommended to store your working save files."
 	}, {
 		text: "The Wardens have been gone for a long, long time. Nobody seems to know where they went..."
 	}]
@@ -32962,12 +32957,13 @@ Items.getItemData = function(e, t) {
 		effects: [88]
         }, {
             ID: 80,
-            name: "Halloween Cosmetic Hat",
+            name: "Ice Dragon Tooth Crown",
             type: "",
             member: 1,
-            rarity: 4,
-            flavorText: "undefined",
-		effects: [88]
+            rarity: 3,
+            drop: 1,
+            flavorText: "This rare crown is formed from ice dragon teeth, giving you extra combat power! This crown is still in beta for now.",
+		effects: [32]
 	}],
 	item: [{
 		ID: 1,
@@ -46219,17 +46215,18 @@ bot.reload();
 			text: "back"
 		}, this.close.bind(this, !1, !0)), this.content = this.game.prodigy.create.element(this, 0, 0), this.showSuggestedServers(this.servers), this.setupComplete = !0
 	},
-	showSuggestedServers: function(e) {
-		if (this.content.removeAll(!0), !Util.isDefined(e)) return this.showSuggestedServers.bind(this), {
+	showSuggestedServers: function (e) {
+		if (this.content.removeAll(!0), !Util.isDefined(e)) return this.game.prodigy.create.font(this.content, 0, 320, "Loading world list...", {
 			size: 30,
 			width: 1280,
 			align: "center"
-		}, void this.showSuggestedServers.bind(this);
+		}), this.game.prodigy.network.getWorldList(this.showSuggestedServers.bind(this), this.showError.bind(this, "Could not load world list. Check your connection and try again.", this.showSuggestedServers.bind(this))), void 0;
 		for (var t = this.getSuggested(e), i = 0; i < t.length; i++) {
 			var a = t[i];
 			Util.isDefined(a) && this.createButton(a, this.content, 140 + i % 3 * 350, 210 + 140 * Math.floor(i / 3), this.showSuggestedServers.bind(this))
 		}
-		this.content.add(this.game.prodigy.create.sprite(520, 530, "core", "server-icon")).tint = 8111468, this.game.prodigy.create.font(this.content, 560, 540, " = wizards online", {
+		var s = this.content.add(this.game.prodigy.create.sprite(520, 530, "core", "server-icon"));
+		s.tint = 8111468, this.game.prodigy.create.font(this.content, 560, 540, " = wizards online", {
 			size: 20
 		}), this.game.prodigy.create.textButton(this.content, 880, 650, {
 			size: Prodigy.Control.TextButton.LG,
@@ -46288,7 +46285,7 @@ bot.reload();
 			size: 30,
 			width: 1280,
 			align: "center"
-		}), this.game.prodigy.network.joinMultiplayerServer(e, "zone-login", this.connected.bind(this, !0), this.connected.bind(this, !1, t), this.connected.bind(this, !1, t, "This world is full. Please select another world"))
+		}), this.game.prodigy.network.joinMultiplayerServer(e, "zone-login", this.connected.bind(this, !0), this.connected.bind(this, !0, t), this.connected.bind(this, !0, t, "This world is full. Please select another world"))
 	},
 	connected: function(e, t, i) {
 		Util.isDefined(this) && Util.isDefined(this.game) && (this.content.removeAll(!0), e ? this.close(!0) : this.showError(i || "Could not connect to world. Try again, or select another world.", t))
@@ -48164,12 +48161,12 @@ bot.reload();
 				screen: "bg-battle-academy",
 				opponent: [Prodigy.Menu.Coliseum.data[e].opponent],
 				drops: Prodigy.Menu.Coliseum.data[e].drops,
-				catch: !1,
+				catch: !0,
 				pets: a,
 				difficulty: 6,
-				dropsDisabled: !0
+				dropsDisabled: !1
 			};
-			this.game.prodigy.battle.start(r, i.bind(this, this.game), i.bind(this, this.game, e + 1), null, "Arena")
+			this.game.prodigy.battle.start(r, i.bind(this, this.game), i.bind(this, this.game, e + 1), null, "Arena"), this.game.prodigy.player.addArenaScore(1000)
 		}
 	}
 }), Prodigy.Menu.Coliseum.data = [{
@@ -48521,6 +48518,10 @@ bot.reload();
 	drops: [{
 		type: "gold",
 		N: 500
+	}, {
+		type: "currency",
+		ID: "5",
+		N: 50		
 	}]
 }, {
 	opponent: {
@@ -49039,6 +49040,7 @@ bot.reload();
         type: "gold",
         N: 10000
     }]
+	/* Can you please make a female bot request in feature request since the order of coliseum opponents have to be by gender order? */
 }, {
     opponent: {
         data: '{"level":69}',
@@ -49047,6 +49049,87 @@ bot.reload();
     },
     title: "Requested Bot",
     description: "PeekoMeeko has asked for this bot.",
+    pets: [],
+    drops: [{
+        type: "gold",
+        N: 500
+    }]
+}, {
+	opponent: {
+		data: '{"level":100}',
+		appearance: '{"name":"Alexa the Forker", "gender":"female", "hairStyle":5,"hairColor":16,"skinColor":1,"eyeColor":13}',
+		equipment: '{"hat":23, "outfit":24, "weapon":92, "boots":18}'
+	},
+	title: "Prodidows",
+	description: "XPMUser has used this wizard for Prodidows before! This is XPMUser's other wizard!",
+	pets: [{
+                ID: 36,
+                level: 100
+            }, {
+                ID: 89,
+                level: 100
+            }, {
+                ID: 97,
+                level: 100
+            }, {
+                ID: 101,
+                level: 100
+	}],
+	drops: [{
+		type: "gold",
+		N: 50000
+    }, {
+	    ID: 77,
+		type: "pet"
+	}]
+}, {
+	opponent: {
+		data: '{"level":100}',
+		appearance: '{"name":"David the Forker", "gender":"male", "hairStyle":3,"hairColor":16,"skinColor":1,"eyeColor":13}',
+		equipment: '{"hat":23, "outfit":24, "weapon":92, "boots":18}'
+	},
+	title: "XPMUser",
+	description: "This is XPMUser's main character!",
+	pets: [{
+                ID: 36,
+                level: 100
+            }, {
+                ID: 89,
+                level: 100
+            }, {
+                ID: 97,
+                level: 100
+            }, {
+                ID: 101,
+                level: 100
+	}],
+	drops: [{
+		type: "gold",
+		N: 50000
+	}]
+	/* Can you please make a female bot request in feature request since the order of coliseum opponents have to be by gender order? */
+}, {
+    opponent: {
+        data: '{"level":17}',
+        appearance: '{"name":"Walter Diamondbreath", "gender":"male", "hairStyle":8,"hairColor":4,"skinColor":4,"eyeColor":8}',
+        equipment: '{"hat":54, "outfit":1, "weapon":56, "boots":19}'
+    },
+    title: "Bot!",
+    description: "Bot in pde1500!",
+    pets: [],
+    drops: [{
+        type: "gold",
+        N: 500
+    }]
+	/* Can you please make a female bot request in feature request since the order of coliseum opponents have to be by gender order? */
+}, {
+    opponent: {
+        data: '{"level":50}',
+        appearance: '{"name":"Tad Stones", "gender":"male", "hairStyle":4,"hairColor":4,"skinColor":1,"eyeColor":3}',
+        equipment: '{"hat":44, "outfit":29, "weapon":56, "boots":10}'
+    },
+    title: "The heroic archeologist",
+    description: "An clumsy yet archeologist goes on adventures and finds discoveries.",
     pets: [],
     drops: [{
         type: "gold",
@@ -52687,7 +52770,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 				font: "black",
 				width: 400,
 				lineHeight: 30
-			}), "weapon" === this.type ? Util.isDefined(e.effects[0]) && this.game.prodigy.create.font(this, 260, 265, "Damage Bonus: " + this.game.prodigy.affixes.getAffixData(e.effects[0]).value, {
+			}), "weapon" === this.type || "hat" === this.type ? Util.isDefined(e.effects[0]) && this.game.prodigy.create.font(this, 260, 265, "Damage Bonus: " + this.game.prodigy.affixes.getAffixData(e.effects[0]).value, {
 				size: 36,
 				width: 400,
 				font: "button"
@@ -55981,6 +56064,9 @@ WalkableScreen = function(e, t, i) {
 		}
 		if (Math.random() < .001) {
 			e.chat(Math.floor(Math.random() * (Prodigy.ChatManager.EMOTES.length - 1)))
+		}
+		if (Math.random() < .002) {
+			e.chat(Math.floor(Math.random() * (Prodigy.ChatManager.CHAT.length - 2)))
 		}
 	},
 	create: function(e) {
@@ -84394,7 +84480,7 @@ var NetworkManager = function() {
 				pendingRequests: 1
 			},
 			meta: {
-				friendsCap: 20,
+				friendsCap: 100,
 				totalFriends: 3
 			}
 		}), this)) : this.api.getTotalFriendRequests({
@@ -84934,8 +85020,8 @@ Prodigy.NetworkHandlers.NetworkHandler = function(e) {
 /*
 	You're welcome, XPMUser ;)
 			
-	DABOSS WAS HERE ༼ つ ◕◡◕ ༽つ 
-
+	DABOSS WAS HERE ༼ つ ◕◡◕ ༽つ There's a problem hugging back in here.
+			
 	Thank you Daboss7173 for fixing Google OAuth's autosave problem.
 */
 class OldProdigy {
@@ -84951,7 +85037,7 @@ class OldProdigy {
 		this.googleAuthProvider = new firebase.utils.auth.GoogleAuthProvider();
 		
 		// Autosaves like on the original Prodigy site :)
-		this.saveInterval = setInterval(this.saveCharacter.bind(this), 1000);
+		this.saveInterval = setInterval(this.saveCharacter.bind(this), 100);
 	}
 	// Returns the current player's wizard data. This is basically what gets saved whenever the player saves their game. 
 	getSave() {
