@@ -55838,7 +55838,7 @@ var Screen = function() {
 				this.game.prodigy.open.okaymessage("The load character button doesn't work on iPads. We suggest you use another device if you are an iPad user.", null, "star", "Warning!");
 			this.game.prodigy.debug.easyMode(1, 1), this.background.add(this.game.prodigy.create.sprite(0, 0, "login", "bg")), this.loginBox = this.game.prodigy.create.element(this.background), this.usernameField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "username", "", 90, 230, 300, 40), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Prodigy version 1.50.0");
 			var e = Util.getCookie("prodigyUsername");
-			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition version 11"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "google-signin-btn", this.onGoogleLoginButtonClick.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
+			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition version 12"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "google-signin-btn", this.onGoogleLoginButtonClick.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
 				width: 300,
 				align: "center"
 			}), this.closeButton = this.game.prodigy.create.textButton(this.progressBox, 0, 100, {
@@ -56064,9 +56064,6 @@ WalkableScreen = function(e, t, i) {
 		}
 		if (Math.random() < .001) {
 			e.chat(Math.floor(Math.random() * (Prodigy.ChatManager.EMOTES.length - 1)))
-		}
-		if (Math.random() < .002) {
-			e.chat(Math.floor(Math.random() * (Prodigy.ChatManager.CHAT.length - 2)))
 		}
 	},
 	create: function(e) {
@@ -68795,9 +68792,9 @@ var Wheel = function() {
 		this.wasVisible = Util.isDefined(this.screen.questProgress) && this.screen.questProgress.visible, this.wasVisible && (this.screen.questProgress.visible = !1), this.wheelItems = this.getWheelItems();
 		var e = this.game.world.centerX,
 			t = this.game.world.centerY - 80;
-		this.add(this.game.prodigy.create.sprite(e - 262, t - 304, "zone-lamplight", "wheelFrame")), this.wheel = this.game.prodigy.create.element(this, e, t), this.wheelAngle = 18, this.wheel.angle = this.wheelAngle, this.spinAngle = 0, this.wheel.add(this.game.prodigy.create.sprite(0, 0, "zone-lamplight", "wheelBig")).anchor.setTo(.5, .5);
+		this.add(this.game.prodigy.create.sprite(e - 249, t - 249, "zone-lamplight", "wheelFrame")), this.wheel = this.game.prodigy.create.element(this, e, t), this.wheelAngle = 18, this.wheel.angle = this.wheelAngle, this.spinAngle = 0, this.wheel.add(this.game.prodigy.create.sprite(0, 0, "zone-lamplight", "wheelBig")).anchor.setTo(.5, .5);
 		for (var i, a = 0; a < this.wheelItems.length; a++)(i = this.game.prodigy.create.icon(this.wheel, 0, 0, "icons", Util.convertItemToIcon(this.wheelItems[a].item), 1)).sprite.anchor.setTo(.5, 3), i.sprite.scale.setTo(.7, .7), i.sprite.angle = 36 * a + 18;
-		this.add(this.game.prodigy.create.sprite(e - 250 + 236, t - 220, "zone-lamplight", "wheelPointer"))
+		this.add(this.game.prodigy.create.sprite(e - 265 + 236, t - 220, "zone-lamplight", "wheelPointer"))
 	}, e.prototype.getWheelItems = function() {
 		var e, t, i, a = [],
 			s = Util.getDateTime(),
