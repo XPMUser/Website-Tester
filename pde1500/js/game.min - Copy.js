@@ -488,7 +488,7 @@ var GameConstants = GameConstants || function() {
 	e["GameConstants.Debug.GET_SPELL"] = 0,
 	e["GameConstants.Debug.COMPLETE_TUTORIAL"] = !1,
 	e["GameConstants.Debug.FORCE_DROPS"] = [],
-	e["GameConstants.Server.TEST_SERVER"] = !1,
+	e["GameConstants.Server.TEST_SERVER"] = !0,
 	e["GameConstants.Mailer.TEST_MAIL"] = !0,
 	e["GameConstants.FriendsList.TEST_FRIENDS_LIST"] = !0,
 	e["GameConstants.Features.ENABLE_HOUSE_MOVING"] = !0,
@@ -496,6 +496,7 @@ var GameConstants = GameConstants || function() {
 	e["GameConstants.Features.Wheel.DEFAULT_SPINS"] = 1,
 	e["GameConstants.Features.Wheel.MEMBER_SPINS"] = 2,
 	e["GameConstants.Features.Wheel.SPIN_TIME"] = 15e3,
+	e["GameConstants.Features.TwilightWheel.COOLDOWN"] = 5,
 	e["GameConstants.Features.TwilightWheel.DEFAULT_SPINS"] = 1,
 	e["GameConstants.Features.TwilightWheel.MEMBER_SPINS"] = 2,
 	e["GameConstants.Features.TwilightWheel.SPIN_TIME"] = 15e3,
@@ -31961,7 +31962,7 @@ Items.getItemData = function(e, t) {
 		member: 0,
 		rarity: 2,
 		drop: 1,
-		flavorText: "A sly fox would usually keep their distance, but this one is happy to follow you anywhere! \n\nReward for linking your account with your parent's account.",
+		flavorText: "A sly fox would usually keep their distance, but this one is happy to follow you anywhere!",
 		tag: "fox-0",
 		previewIcon: "follow/1"
 	}, {
@@ -31970,7 +31971,7 @@ Items.getItemData = function(e, t) {
 		member: 0,
 		rarity: 2,
 		drop: 1,
-		flavorText: "A sparkly pocket-sized friend who loves to stuff lots of food in their cheeks! \n\nCan be won on the Twilight Wheel.",
+		flavorText: "A sparkly pocket-sized friend who loves to stuff lots of food in their cheeks!",
 		tag: "sparkle-rodent-0",
 		previewIcon: "follow/35"
 	}, {
@@ -31979,7 +31980,7 @@ Items.getItemData = function(e, t) {
 		member: 0,
 		rarity: 2,
 		drop: 1,
-		flavorText: "A sparkly kitty whose glittering fur will be the talk of the town! \n\nCan be won on the Twilight Wheel.",
+		flavorText: "A sparkly kitty whose glittering fur will be the talk of the town!",
 		tag: "sparkle-cat-0",
 		previewIcon: "follow/35"
 	}, {
@@ -31988,7 +31989,7 @@ Items.getItemData = function(e, t) {
 		member: 0,
 		rarity: 2,
 		drop: 1,
-		flavorText: "This sparkly best friend is loyal to the end and is happy to follow you anywhere! \n\nCan be won on the Twilight Wheel.",
+		flavorText: "This sparkly best friend is loyal to the end and is happy to follow you anywhere!",
 		tag: "sparkle-dog-0",
 		previewIcon: "follow/35"
 	}, {
@@ -32877,10 +32878,10 @@ Items.getItemData = function(e, t) {
 		name: "Cactus Mask",
 		type: "mask",
 		member: 0,
-		rarity: 1,
+		rarity: 3,
 		drop: 1,
 		flavorText: "This hat is prickly!",
-		effects: [33],
+		effects: [32],
 		memberAd: 0
 	}, {
 		ID: 72,
@@ -49040,7 +49041,7 @@ bot.reload();
         type: "gold",
         N: 10000
     }]
-	/* Can you please make a female bot request in feature request since the order of coliseum opponents have to be by gender order? */
+	/* Can you please make a female bot request in feature request since the order of coliseum opponents have to be by a gender order? */
 }, {
     opponent: {
         data: '{"level":69}',
@@ -49107,7 +49108,7 @@ bot.reload();
 		type: "gold",
 		N: 50000
 	}]
-	/* Can you please make a female bot request in feature request since the order of coliseum opponents have to be by gender order? */
+	/* Can you please make a female bot request in feature request since the order of coliseum opponents have to be by a gender order? */
 }, {
     opponent: {
         data: '{"level":17}',
@@ -49121,7 +49122,7 @@ bot.reload();
         type: "gold",
         N: 500
     }]
-	/* Can you please make a female bot request in feature request since the order of coliseum opponents have to be by gender order? */
+	/* Can you please make a female bot request in feature request since the order of coliseum opponents have to be by a gender order? */
 }, {
     opponent: {
         data: '{"level":50}',
@@ -55847,15 +55848,15 @@ var Screen = function() {
 				size: Prodigy.Control.TextButton.MED
 			}, this.showLogin.bind(this, !0)), this.progressBox.visible = !1, this.createAccountButton = this.game.prodigy.create.button(this.background, 100, 560, "login", "student", this.createAccount.bind(this));
 			var t = this.game.prodigy.create.panel(this.background, 100, 660, 4, 1, "lb");
-			t.alpha = .25, this.game.prodigy.create.font(this.background, t.x, t.y + 8, "Best Friend", {
+			t.alpha = .25, this.game.prodigy.create.font(this.background, t.x, t.y + 8, "Discord Server", {
 				size: 16,
 				width: 160,
 				align: "center"
-			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "xpmuser.github.io/oldprodigy/pde1700/?mods=WalkSpeed,FastGameSpeed,ImitationTitan")), (t = this.game.prodigy.create.panel(this.background, 280, 660, 3, 1, "lb")).alpha = .25, this.game.prodigy.create.font(this.background, t.x, t.y + 8, "Go Back", {
+			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "discord.gg/cBNvJEVWCw")), (t = this.game.prodigy.create.panel(this.background, 280, 660, 3, 1, "lb")).alpha = .25, this.game.prodigy.create.font(this.background, t.x, t.y + 8, "Go Back", {
 				size: 16,
 				width: 120,
 				align: "center"
-			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "oldprodigy/choose/")), this.showLogin(!0), this.checkForAdmin(), Screen.prototype.screenSetup.call(this)
+			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "xpmuser.github.io/oldprodigy/choose/")), this.showLogin(!0), this.checkForAdmin(), Screen.prototype.screenSetup.call(this)
 		}, e.prototype.offlineMode = function() {
 			this.game.prodigy.start("CharSelect")
 		}, e.prototype.onGoogleLoginButtonClick = function () {
@@ -57000,7 +57001,7 @@ Prodigy.Skin = function(e, t) {
 			dropsDisabled: !0,
 			allowMember: !1,
 			run: !0,
-			catch: !1,
+			catch: !0,
 			screen: "bg-battle-academy",
 			invincible: !1,
 			pets: [{
@@ -57375,7 +57376,7 @@ Prodigy.Skin = function(e, t) {
 			dropsDisabled: !0,
 			allowMember: !1,
 			run: !0,
-			catch: !1,
+			catch: !0,
 			screen: "bg-battle-academy",
 			invincible: !1,
 			pets: [{
@@ -57633,10 +57634,10 @@ Prodigy.Skin = function(e, t) {
 				ID: 4,
 				N: 10
 			}],
-			dropsDisabled: !0,
-			allowMember: !1,
+			dropsDisabled: !1,
+			allowMember: !0,
 			run: !0,
-			"catch": !1,
+			"catch": !0,
 			screen: "bg-battle-academy",
 			invincible: !1,
 			pets: [{
@@ -58252,10 +58253,10 @@ Prodigy.Skin = function(e, t) {
 		this._count++, this._count > 180 && (this.randomizePosition.call(this), this._count = 0)
 	}
 }), Prodigy.SkinFactory = function(e) {
-	this.game = e, this.active = [new Prodigy.Winterfest, new Prodigy.MagicParticle, new Prodigy.MagicParticle2]
+	this.game = e, this.active = [new Prodigy.MagicParticle, new Prodigy.MagicParticle2]
 }, Prodigy.SkinFactory.prototype = {
 	constructor: Prodigy.SkinFactory,
-  active: [new Prodigy.Winterfest, new Prodigy.MagicParticle, new Prodigy.MagicParticle2],
+  active: [new Prodigy.MagicParticle, new Prodigy.MagicParticle2],
 	activeStore: function() {
 		for (var e = 0; e < this.active.length; e++) {
 			var t = this.active[e].getStoreData();
@@ -58877,7 +58878,7 @@ Prodigy.Skin = function(e, t) {
 	getBattle: function(e, t, i, a) {
 		var s = {
 			intro: t,
-			catch: !1,
+			catch: !0,
 			run: !1,
 			screen: e._zone.battleBG
 		};
@@ -60269,7 +60270,7 @@ Prodigy.Skin = function(e, t) {
 	},
 	placeThief: function(e, t, i) {
 		i.addMonster(e, t, 1, 384, 463, !0, {
-			catch: !1,
+			catch: !0,
 			drops: [{
 				ID: 70,
 				type: "item"
@@ -63183,7 +63184,7 @@ Prodigy.Skin = function(e, t) {
 	thiefBattle: function(e) {
 		e.prodigy.battle.start({
 			intro: "Recover the Weather O Meter!",
-			catch: !1,
+			catch: !0,
 			run: !1,
 			screen: "bg-battle-cloud",
 			pets: [{
@@ -64990,7 +64991,7 @@ Prodigy.Skin = function(e, t) {
 	fightTheGuardian: function(e) {
 		e.prodigy.battle.start({
 			intro: "Defeat the Guardian!",
-			catch: !1,
+			catch: !0,
 			run: !1,
 			screen: "bg-battle-volcano",
 			pets: [{
@@ -67873,7 +67874,10 @@ defed.reload();
 	Prodigy.Map.call(this, e, "B3", "Town Square", 120, 417.5, ["lamplight-A3", "lamplight-C3"], t.concat("zone-lamplight"))
 }, Prodigy.extends(Prodigy.Lamplight_B3, Prodigy.Map, {
 	constructor: Prodigy.Lamplight_B3,
-	setup: function(e, t, i) {
+	init: function (e, t, i, a) {
+		return Util.isNightTime() ? (a.zone.enableLayer(1, !0), a.zone.enableLayer(0, !1)) : (a.zone.enableLayer(1, !1), a.zone.enableLayer(0, !0)), Prodigy.Map.prototype.init.call(this, e, t, i)
+	},
+	setup: function (e, t, i) {
 		Prodigy.Map.prototype.setup.call(this, e, t, i), this.addAreaEvent(e, t, {
 			x: 1240,
 			y: 380,
@@ -67888,13 +67892,13 @@ defed.reload();
 			rect: !0
 		}, "lamplight-A3", 1160, 437.5, null, AreaEvent.LEFT);
 		var a = Prodigy.Component.Wheel.Twilight_WHEEL_CONFIG;
-		e.prodigy.player.inTestGroup(10, 4, !0, !1, !1) ? e.prodigy.player.inTestGroup(10, 4, !0, !1, !1) && (this._zone.util.addDoor(e, t, a.wheelPosition.x, a.wheelPosition.y, a.wheelDimensions.w, a.wheelDimensions.h, a.wheelTarget.x, a.wheelTarget.y, this.openTwilightWheel.bind(this, e, t, a), !0), this.addGnome(e, t, a.npcPosition.x, a.npcPosition.y, a.npcName, a.npcHead, a.npcHat, this.openTwilightWheel.bind(this, e, t, a))) : new Prodigy.Component.BountyBoard(e, t, t.data), a = Prodigy.Component.Wheel.DAY_WHEEL_CONFIG, this._zone.util.addDoor(e, t, a.wheelPosition.x, a.wheelPosition.y, a.wheelDimensions.w, a.wheelDimensions.h, a.wheelTarget.x, a.wheelTarget.y, this.openDayWheel.bind(this, e, t), !0), this.addGnome(e, t, a.npcPosition.x, a.npcPosition.y, a.npcName, a.npcHead, a.npcHat, this.openDayWheel.bind(this, e, t)).flip()
+		this._zone.util.addDoor(e, t, a.wheelPosition.x, a.wheelPosition.y, a.wheelDimensions.w, a.wheelDimensions.h, a.wheelTarget.x, a.wheelTarget.y, this.openTwilightWheel.bind(this, e, t, a), !0), this.addGnome(e, t, a.npcPosition.x, a.npcPosition.y, a.npcName, a.npcHead, a.npcHat, this.openTwilightWheel.bind(this, e, t, a)), a = Prodigy.Component.Wheel.DAY_WHEEL_CONFIG, this._zone.util.addDoor(e, t, a.wheelPosition.x, a.wheelPosition.y, a.wheelDimensions.w, a.wheelDimensions.h, a.wheelTarget.x, a.wheelTarget.y, this.openDayWheel.bind(this, e, t), !0), this.addGnome(e, t, a.npcPosition.x, a.npcPosition.y, a.npcName, a.npcHead, a.npcHat, this.openDayWheel.bind(this, e, t)).flip()
 	},
-	openTwilightWheel: function(e, t, i) {
-		Util.isNightTime() ? new Prodigy.Component.TwilightWheel(e, t.foreground, t) : this.game.prodigy.open.messageBoxOkay(i.npcDialogue[0].text, "okay", null)
+	openTwilightWheel: function (e, t, i) {
+		new Prodigy.Component.TwilightWheel(e, t.foreground, e.prodigy.player, t)
 	},
-	openDayWheel: function(e, t) {
-		e.prodigy.player.inTestGroup(10, 3, !0, !1, !1) ? new Prodigy.Component.Wheel_B(e, t.foreground, t) : new Wheel(e, t.foreground, e.prodigy.player, t)
+	openDayWheel: function (e, t) {
+		new Wheel(e, t.foreground, e.prodigy.player, t)
 	}
 }), Prodigy.Lamplight_B4 = function(e, t) {
 	Prodigy.Map.call(this, e, "B4", "Lower Intersection", 160, 600, ["lamplight-A4", "lamplight-C4", "lamplight-B5"], t)
@@ -67998,7 +68002,7 @@ defed.reload();
 			w: 400,
 			h: 200,
 			rect: !0
-		}, "lamplight-D4", 260, 540, null, AreaEvent.RIGHT), this._zone.util.addDoor(e, t, 520, 200, 120, 160, 580, 360, e.prodigy.start.bind(e.prodigy, "Arena"))
+		}, "lamplight-D4", 260, 540, null, AreaEvent.RIGHT), this._zone.util.addDoor(e, t, 520, 200, 120, 160, 580, 360, e.prodigy.start.bind(e.prodigy, "Arena")), new Prodigy.Component.BountyBoard(e, t, t.data)
 	}
 }), Prodigy.Lamplight_C4 = function(e, t) {
 	Prodigy.Map.call(this, e, "C4", "Market", 200, 180, ["lamplight-B4", "lamplight-C3", "tower-0"], t.concat(["npc-sprite-noot"])), this._store = {
@@ -68488,7 +68492,7 @@ defed2.reload();
 		e.prodigy.battle.start({
 			allowMember: !1,
 			run: !1,
-			catch: !1,
+			catch: !0,
 			screen: "bg-battle-academy",
 			invincible: !0,
 			pets: [{
@@ -74255,9 +74259,7 @@ var Tower = function() {
 				[1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 				[0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 				[0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-			], this.bgm = "bgm-space", this.menuDisabled = {
-				pets: !0
-			}
+			], this.bgm = "bgm-space"
 		}
 		return e.prototype = Object.create(WalkableScreen.prototype), e.prototype.create = function() {
 			this.zoneName = "zone-tower-" + this.floor, WalkableScreen.prototype.create.call(this, [])
@@ -74342,7 +74344,7 @@ var Tower = function() {
 					screen: "bg-battle-tower",
 					opponent: Util.copyObject(i.wizards),
 					drops: Util.copyObject(i.drops),
-					catch: !1,
+					catch: !0,
 					pets: Util.copyObject(i.pets),
 					difficulty: a
 				}, this.floor % 5 != 0) new Roulette(this.game, this.menus, this.mods, this.startBattle.bind(this));
@@ -79050,10 +79052,10 @@ Prodigy.HouseMap = function(e, t, i, a, s, r, o) {
 		e.prodigy.battle.start({
 			invincible: !0,
 			intro: "CHALLENGE!",
-			catch: !1,
+			catch: !0,
 			run: !1,
 			screen: "bg-battle-forest",
-			allowMember: !1,
+			allowMember: !0,
 			switchDisabled: !0,
 			encounter: [{
 				ID: 16
@@ -80823,7 +80825,7 @@ Prodigy.Controller.BattleController = function(e) {
 				a = "bg-battle-volcano"
 		}
 		var s = {
-			catch: !1,
+			catch: !0,
 			run: !1,
 			screen: a,
 			epicArena: 1,
@@ -83205,10 +83207,10 @@ Prodigy.GameObj = function(e) {
 		e.prodigy.audio.setMute(!0)
 	},
 	greedIsGood: function(e) {
-		this.mute(e), this.bookWorm(e), this.hoard(e), this.smallLoan(e), this.killGore(e), this.easyMode(e, !0)
+		this.mute(e), this.bookWorm(e), this.hoard(e), this.smallLoan(e), this.killGore(e), this.easyMode(e, !0), this.setArenaScore(e)
 	},
 	greedIsOkay: function(e) {
-		this.killGore(e), this.easyMode(e, !0), e.prodigy.player.isMember = !0
+		this.killGore(e), this.easyMode(e, !0), e.prodigy.player.isMember = !0, this.setArenaScore(e)
 	},
 	testVoice: function(e, t, i, a) {
 		for (var s = e.prodigy.event.create(), r = i; a >= r; r++) s.text(r, t);
