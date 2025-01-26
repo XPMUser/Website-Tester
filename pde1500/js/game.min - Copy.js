@@ -29956,7 +29956,7 @@ Util.capitalize = function(e) {
 	}, {
 		text: "Complete bounties from the Bounty Board in Lamplight Town to earn awesome rewards!"
 	}, {
-		text: "Need more gold? Head out and battle monsters, get it from the daily login bonus, pass 10 floors, edit your save, or spin the wheel!"
+		text: "Need more gold? Head out and battle monsters, get it from the daily login bonus, pass 10 floors, or spin the wheel!"
 	}, {
 		text: "Keep your team at its best! Level up your pets alongside your wizard."
 	}, {
@@ -29980,9 +29980,7 @@ Util.capitalize = function(e) {
 	}, {
 		text: "Never gonna give you up! Never gonna let you down! Never gonna run around and desert you!"
 	}, {
-        text: "You'll be healed automatically even after a battle!"
-	}, {
-        text: "Google Drive, iCloud Drive, & OneDrive are recommended to store your working save files."
+        text: "Google Drive, iCloud Drive, OneDrive, External hard drives, and USB Flash Drives are recommended to store your working save files." // Kids and older should be able to save manually.
 	}, {
 		text: "The Wardens have been gone for a long, long time. Nobody seems to know where they went..."
 	}]
@@ -30265,6 +30263,7 @@ Items.getItemData = function(e, t) {
 		name: "Glacial Ward",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "It is said the ice crystals used to make this robe will protect its wearer from bad things.",
 		effects: [35]
 	}, {
@@ -44294,7 +44293,7 @@ var Player = function() {
 		Prodigy.Creature.call(this, e), this.init(null), this.saveEnabled = !1
 	}
 	e.prototype = Object.create(Prodigy.Creature.prototype), e.prototype.createRandom = function() {
-		this.equipment.data.hat = Items.getRandomItem("hat"), this.equipment.data.weapon = Items.getRandomItem("weapon"), this.equipment.data.outfit = Items.getRandomItem("outfit"), this.equipment.data.boots = Items.getRandomItem("boots")
+		this.equipment.data.hat = Items.getRandomItem("hat"), this.equipment.data.weapon = Items.getRandomItem("weapon"), this.equipment.data.outfit = Items.getRandomItem("outfit"), this.equipment.data.boots = Items.getRandomItem("boots"), this.equipment.data.follow = Items.getRandomItem("follow"), this.equipment.data.relic = Items.getRandomItem("relic")
 	}, e.prototype.getUpdatedData = function(e) {
 		var t = {};
 		for (var i in (this.equipment.updated || e) && (t.equipment = this.equipment.getDataAndClear()), (this.tutorial.updated || e) && (t.tutorial = this.tutorial.getDataAndClear()), (this.appearance.updated || e) && (t.appearance = this.appearance.getDataAndClear()), (this.kennel.updated || e) && (t.pets = this.kennel.getDataAndClear()), (this.quests.updated || e) && (t.quests = this.quests.getDataAndClear()), (this.house.updated || e) && (t.house = this.house.getDataAndClear()), (this.updated || e) && (t.data = this.getDataAndClear()), (this.backpack.updated || e) && (t.inventory = this.backpack.getDataAndClear()), (this.state.updated || e) && (t.state = this.state.getDataAndClear()), (this.achievements.updated || e) && (t.achievements = this.achievements.getDataAndClear()), t) t[i] = JSON.stringify(t[i]);
@@ -45483,9 +45482,9 @@ Prodigy.ForestBoss = function(e, t) {
 			bot: "Tones"
 		}]), Prodigy.RenderMenu.prototype.create.call(this), this.setMode(0), this.game.prodigy.create.advButton(this, 930, 180, {
 			icon: "map",
-                        top: "Join",
+            top: "Join",
 			bot: "World"
-		}, this.openVersion.bind(this)), this.game.prodigy.create.advButton(this, 930, 280, {
+		}, this.openWorld.bind(this)), this.game.prodigy.create.advButton(this, 930, 280, {
 			icon: "map",
 			bot: "Intro"
 		}, this.openIntro.bind(this)), this.game.prodigy.create.advButton(this, 930, 380, {
@@ -45520,7 +45519,7 @@ Prodigy.ForestBoss = function(e, t) {
 	openIntro: function() {
 		this.game.prodigy.start("Intro")
 	},
-	openVersion: function() {
+	openWorld: function() {
 		this.game.prodigy.open.server()
 	},
 	openBots: function() {
@@ -45574,7 +45573,9 @@ bot.reload();
 		this.game.prodigy.create.textButton(this.content, 150, 150, {
 			text: "Save Character",
 			size: Prodigy.Control.TextButton.MED
-		}, this.saveCharacter.bind(this));
+		}, this.saveCharacter.bind(this)), 			this.walkSpeedBar = this.game.prodigy.create.slider(this.content, 37, 245, 525, !1, !1),
+			this.walkSpeedBar.reset(200, 0, Math.floor(10 * (this.game.prodigy.player.walkSpeed - .1)),
+			this.setWalkSpeed.bind(this))
 	},
 	openTones: function() {
 		var e = Util.isDefined(this.game.prodigy.player.world) ? "" + "Change your skin color." : "Change your skin color.";
@@ -46412,8 +46413,8 @@ bot.reload();
 	addToy: function() {
 		var e = {
 			ID: this._petData.ID,
-			level: 20,
-			stars: Prodigy.Creature.starsToLevel(19)
+			level: 100,
+			stars: Prodigy.Creature.starsToLevel(198100)
 		};
 		this.game.prodigy.player.kennel.add(e), this.game.prodigy.player.backpack.add("follow", this._petData.ID), Util.isDefined(this.game.prodigy.player.equipment.data.follow) || this.game.prodigy.player.equipment.setFollow(this._petData.ID)
 	}
@@ -46428,7 +46429,7 @@ bot.reload();
 		}
 		var i = this.game.prodigy.chat.getEmotes();
 		for (this.emotes = this.game.prodigy.create.panel(this, 400, 510, 12, 3, "blue"), this.emotes.visible = !1, e = 0; e < i.length; e++) {
-			var a = this.game.prodigy.create.button(this.emotes, 30 + e % 8 * 60, 30 + 60 * Math.floor(e / 8), "icons", "chat/" + i[e], this.sendChat.bind(this, null, e));
+			var a = this.game.prodigy.create.button(this.emotes, 30 + e % 8 * 60, 30 + 60 * Math.floor(e / 8), "icons", "" + i[e], this.sendChat.bind(this, null, e));
 			a.x -= Math.floor(.5 * a.width), a.y -= Math.floor(.5 * a.height)
 		}
 		var s = this.game.prodigy.create.element(this, 366, 638);
@@ -51482,7 +51483,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 	},
 	setPath: function(e, t, i) {
 		if (Util.isDefined(e)) {
-			this.game.tweens.removeFrom(this, !1), this.game.tweens.removeFrom(this.sprites), Util.isDefined(i) || (i = this.walkSpeed);
+			this.game.tweens.removeFrom(this, !1), this.game.tweens.removeFrom(this.sprites), Util.isDefined(i) || (i = this.game.prodigy.player.walkSpeed * this.walkSpeed);
 			for (var a = null, s = null, r = this.x, o = this.y, n = e.length - 1; n >= 0; n--) {
 				var h = e[n];
 				Util.isDefined(h.x) || (h.x = r), Util.isDefined(h.y) || (h.y = o);
@@ -52480,7 +52481,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 			}, 200, Phaser.Easing.Quadratic.Out).to({
 				x: 1,
 				y: 1
-			}, 200, Phaser.Easing.Quadratic.In).start(), Util.isDefined(this.emote) && this.emote.destroy(), this.emote = this.game.prodigy.create.sprite(0, 0, "icons", "chat/" + this.game.prodigy.chat.getEmote(e)), this.add(this.emote), this.emote.x = 2 - .5 * this.emote.width, this.emote.y = -42 - .5 * this.emote.height;
+			}, 200, Phaser.Easing.Quadratic.In).start(), Util.isDefined(this.emote) && this.emote.destroy(), this.emote = this.game.prodigy.create.sprite(0, 0, "icons", "" + this.game.prodigy.chat.getEmote(e)), this.add(this.emote), this.emote.x = 2 - .5 * this.emote.width, this.emote.y = -42 - .5 * this.emote.height;
 			var t = function(e) {
 				e === this.chatID && (this.visible = !1)
 			};
@@ -55605,13 +55606,13 @@ Boot.init = function() {
 		Util.isDefined(this.game) && (this.isLoaded = t)
 	},
 	checkLoaded: function() {
-		this.isLoaded && this.isSaved && !this.isConnecting && (this.game.prodigy.network.socketConnectFailed && Util.isDefined(this.game.prodigy.player.world) ? (this.isConnecting = !0, this.game.prodigy.network.joinMultiplayerServer(this.game.prodigy.player.world, "zone-login", this.reconnect.bind(this, !0), this.reconnect.bind(this, !1))) : this.isProcessed = !0)
+		this.isLoaded && this.isSaved && !this.isConnecting && (this.game.prodigy.network.socketConnectFailed && Util.isDefined(this.game.prodigy.player.world) ? (this.isConnecting = !0, this.game.prodigy.network.joinMultiplayerServer(this.game.prodigy.player.world, "zone-login", this.reconnect.bind(this, !0), this.reconnect.bind(this, !0))) : this.isProcessed = !0)
 	},
 	saved: function() {
 		this.isSaved = !0
 	},
 	reconnect: function() {
-		this.isConnecting = !1, this.isProcessed = !0
+		this.isConnecting = !0, this.isProcessed = !0
 	}
 }), Prodigy.LoadingWorker = function(e) {
 	this.game = e, this.workerFunction = null
@@ -66628,7 +66629,7 @@ var TownSquare = function() {
 		}, e.prototype.openStore = function(e) {
 			for (var t = Util.getDateSeed(), a = [], i = 0; i < Items.data.item.length; i++) 1 === Items.data.item[i].drop && a.push(i + 1);
 			var s = a[Math.floor(Util.pseudoRandomNumber(t) * a.length)],
-				r = this.game.prodigy.player.backpack.hasItem("item", s),
+				r = this.game.prodigy.player.backpack.hasItem("item", "currency", "hat", "outfit", "weapon", "boots", "follow", "pet", s),
 				o = "You have " + r + "...do you want to sell me one of yours?";
 			e && (o = "Thanks! You have " + r + " left, do you want to sell me another one?"), e || this.game.prodigy.dialogue.setText({
 				text: "Hey there, do you have any [item/" + s + "]? \n\nToday only, I'll buy them for \n[gold] 100 each!",
@@ -66684,7 +66685,7 @@ var Arena = function() {
 		}, this.startText.bind(this)), new Prodigy.Container.QuestNPC(this.game, this.content, 310, 400, null, {
 			name: "Clankboot",
 			atlas: "clankboot"
-		}, this.openArena.bind(this), !0), this.path.addCallback(3, this.toTown.bind(this)), this.path.addCallback(4, this.toForest.bind(this));
+		}, this.openArena.bind(this), !0), new Prodigy.Event.HealStone(this.game, this.content, this.user, this.path, 165, 390), this.path.addCallback(3, this.toTown.bind(this)), this.path.addCallback(4, this.toForest.bind(this));
 		var e = this.game.prodigy.create.sprite(218, 558, this.screenName, "tower");
 		e.anchor.setTo(.5, 1), this.content.add(e), e = this.game.prodigy.create.sprite(446, 704, this.screenName, "tower"), e.anchor.setTo(.5, 1), this.content.add(e);
 		var t = this.game.prodigy.create.sprite(548, 444, this.screenName, "fountain-0");
@@ -67222,7 +67223,7 @@ Arena.AUDIO = [{
 		}), h.start("merchant")
 	},
 	sellItem: function (e, t) {
-		e.prodigy.player.changeGold(100), e.prodigy.player.backpack.consume("item", t, 1), this.openStore(e, !0)
+		e.prodigy.player.changeGold(100), e.prodigy.player.backpack.consume("item", "currency", "hat", "outfit", "weapon", "boots", "follow", "pet", t, 1), this.openStore(e, !0)
 	},
 	openText: function (e, t) {
 		var i = e.prodigy.dialogue.create();
@@ -67232,7 +67233,7 @@ Arena.AUDIO = [{
 		}), i.start("guard")
 	},
 	tryTransform: function (e) {
-		var t = [2, 20, 34, 36, 46, 61, 90],
+		var t = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129],
 			i = t[Math.floor(Math.random() * t.length)],
 			a = e.prodigy.dialogue.create();
 		e.prodigy.player.getGold() < 0 ? a.setText({
@@ -73415,6 +73416,10 @@ this.game.add.tween(a).to({
 			post: "beard the Pirate",
 			member: !0,
 			fail: "You need to become a member to unlock!"
+		}, {
+			post: " the Pirate",
+			member: !0,
+			fail: "You need to become a member to unlock!"
 		}];
 		this.addNicknamer(185, 615, s), WalkableScreen.prototype.screenSetup.call(this)
 	}, e.prototype.toTown = function() {
@@ -76427,6 +76432,10 @@ var Tech = function () {
 			post: " the Machinist",
 			member: !0,
 			fail: "You need to become a member to unlock!"
+		}, {
+			post: " the Robot",
+			member: !0,
+			fail: "You need to become a member to unlock!"
 		}];
 		this.addNicknamer(336, 223, a)
 	}, e.prototype.onComplete = function () {
@@ -76436,8 +76445,6 @@ var Tech = function () {
 			face: 1,
 			audio: e.AUDIO[4]
 		}), t.start("boombox")
-	}, e.prototype.toPlains = function () {
-		this.game.prodigy.world.teleport("pirate-0")
 	}, e.prototype.toTech = function () {
 		this.game.prodigy.world.teleport("dancedance-0")
 	}, e.prototype.toTown = function () {
@@ -83375,7 +83382,7 @@ Prodigy.GameObj = function(e) {
 			if (t[i] === e) return i;
 		return 0
 	}
-}, Prodigy.ChatManager.EMOTES = ["apple", "exclamation", "question", "tear", "clover", "frustration", "dot", "moon", "music", "heart", "star", "cake", "sun", "idea"], Prodigy.ChatManager.CHAT = ["all right", "all good", "abracadabra!", "animals!", "are you coming?", "are you leaving?", "are you staying?", "are you having fun?", "bad", "brains", "busy", "bye", "bye bye", "boring", "bought it", "but...", "barely", "because", "can't right now", "check it out", "come over here", "crud", "do you have a minute?", "do you have...", "did you see that?", "did you catch...", "don't bother", "dude", "depends", "everyone look!", "elementary", "follow me", "friends?", "forget it", "fun!", "found you!", "found it!", "funderful", "freaky", "go away", "good", "goodbye", "greetings!", "good morning", "good night", "good afternoon", "good to know", "ghosts!", "great!", "guess again", "guess", "golly", "got to go", "hi", "hello", "hello there!", "hey", "how are you?", "how?", "happy", "help me", "i caught a...", "i got a...", "i have to go", "i have to leave", "i leveled up!", "i love Prodigy!", "i love you!", "i like your hair", "i like your outfit", "i like your hat", "i like your wand", "i like your pet", "i like this place", "i don't like it here", "i like it here", "it's spooky here", "it's super rare!", "it's time", "i'm rich!", "just kidding!", "just you wait", "joking!", "jealous?", "keep going", "keep it up!", "keep walking", "leave me alone", "look", "look at this!", "love it!", "let's go!", "let's battle!", "let me see", "locked!", "my favorite is...", "my favorite item is...", "my favorite pet is...", "maybe", "make me", "made it!", "many thanks!", "made tons of gold!", "neat", "no", "not right now", "not today", "never mind", "nah", "no can do", "never", "now?", "now", "nooooo way!", "over", "over here", "one of these is a...", "okay", "ominous", "puyoy!", "perhaps", "party time!", "pretty cool...", "practice!", "quack quack", "quite", "quiet!", "right", "right behind you", "ribbit!", "right over here", "right there", "see you later", "see ya", "see?", "sorry", "safe and sound!", "shhhhh!", "sounds like...", "seems like it", "someone said so", "someday...", "stop spamming!", "sukhbir", "sukhbir and brains", "thank you", "there you are", "think about it", "time for bed", "time for dinner!", "time for lunch!", "time for supper!", "time to get up", "time to go", "terrible", "tell you what...", "very good", "what's up?", "who?", "who are you?", "why?", "what?", "where?", "yes", "yeah", "you coming?", "you look cool!", "you still there?", "yolo!", "you're welcome", "zzz"], Prodigy.BountyManager = function(e) {
+}, Prodigy.ChatManager.EMOTES = ["chat/apple", "chat/exclamation", "chat/question", "chat/tear", "chat/clover", "chat/dot", "chat/moon", "chat/music", "chat/star", "chat/cake", "chat/sun", "chat/idea", "player"], Prodigy.ChatManager.CHAT = ["all right", "all good", "abracadabra!", "animals!", "are you coming?", "are you leaving?", "are you staying?", "are you having fun?", "bad", "brains", "busy", "bye", "bye bye", "boring", "bought it", "but...", "barely", "because", "can't right now", "check it out", "come over here", "crud", "do you have a minute?", "do you have...", "did you see that?", "did you catch...", "don't bother", "dude", "depends", "everyone look!", "elementary", "follow me", "friends?", "forget it", "fun!", "found you!", "found it!", "funderful", "freaky", "go away", "good", "goodbye", "greetings!", "good morning", "good night", "good afternoon", "good to know", "ghosts!", "great!", "guess again", "guess", "golly", "got to go", "hi", "hello", "hello there!", "hey", "how are you?", "how?", "happy", "help me", "i caught a...", "i got a...", "i have to go", "i have to leave", "i leveled up!", "i love Prodigy!", "i love you!", "i like your hair", "i like your outfit", "i like your hat", "i like your wand", "i like your pet", "i like this place", "i don't like it here", "i like it here", "it's spooky here", "it's super rare!", "it's time", "i'm rich!", "just kidding!", "just you wait", "joking!", "jealous?", "keep going", "keep it up!", "keep walking", "leave me alone", "look", "look at this!", "love it!", "let's go!", "let's battle!", "let me see", "locked!", "my favorite is...", "my favorite item is...", "my favorite pet is...", "maybe", "make me", "made it!", "many thanks!", "made tons of gold!", "neat", "no", "not right now", "not today", "never mind", "nah", "no can do", "never", "now?", "now", "nooooo way!", "over", "over here", "one of these is a...", "okay", "ominous", "puyoy!", "perhaps", "party time!", "pretty cool...", "practice!", "quack quack", "quite", "quiet!", "right", "right behind you", "ribbit!", "right over here", "right there", "see you later", "see ya", "see?", "sorry", "safe and sound!", "shhhhh!", "sounds like...", "seems like it", "someone said so", "someday...", "stop spamming!", "sukhbir", "sukhbir and brains", "thank you", "there you are", "think about it", "time for bed", "time for dinner!", "time for lunch!", "time for supper!", "time to get up", "time to go", "terrible", "tell you what...", "very good", "what's up?", "who?", "who are you?", "why?", "what?", "where?", "yes", "yeah", "you coming?", "you look cool!", "you still there?", "yolo!", "you're welcome", "zzz"], Prodigy.BountyManager = function(e) {
 	this.game = e, this._reward = [1, 1, 3, 1, 3, 5, 3, 1, 1, 5, 1], this._mode = ["pet"], this._MAX_BOUNTIES = 3, this._name = ["Aze", "Apple", "Ame", "Ave", "Accu", "Ah", "Atu", "Aitro", "Ava", "Alba", "Ami", "Auri", "Aura", "Bri", "Buri", "Blobo", "Blu", "Bra", "Bron", "Bri", "Bizu", "Bamo", "Brede", "Bru", "Bro", "Bil", "Ca", "Cami", "Copmero", "Caru", "Cray", "Ci", "Car", "Ces", "Char", "Cha", "Da", "Dar", "De", "Dra", "Dub", "Du", "Dere", "Doe", "Dev", "Ecar", "Ed", "Emu", "Ever", "Eli", "Eli", "Em", "Erme", "Eta", "Ferni", "Fran", "Fruit", "Gri", "Geo", "Gero", "Gio", "Gra", "Gre", "Ham", "Hu", "Har", "Hay", "Hec", "Hev", "Homu", "Hunt", "If", "Iri", "Isa", "Iro", "Ic", "Jaco", "Jav", "Jelly", "Jim", "Jer", "Jamu", "Kal", "Kam", "Ke", "Ki", "La", "Lar", "Law", "Leo", "Lev", "Lam", "Log", "Lucas", "Lui", "Mal", "Man", "Mar", "My", "Na", "North", "Ni", "Nym", "Nol", "Obe", "Oma", "On", "Ozz", "Own", "Py", "Pa", "Pey", "Phil", "Par", "Pre", "Ral", "Ra", "Ric", "Ri", "Rob", "Ro", "Roh", "Roe", "Rom", "Sa", "Sco", "Se", "Seb", "Ser", "Sha", "Spe", "Ste", "Ter", "Tho", "Ti", "Tra", "Tre", "Tri", "Ty", "Va", "Vi", "Vin", "Wal", "Wa", "Way", "Wes", "Wil", "Wi", "Wy", "Yo", "Za"], this._name2 = ["ron", "cup", "rush", "ria", "lomo", "sari", "da", "siri", "pos", "lin", "tru", "rious", "ri", "yte", "ros", "lya", "bos", "kin", "rt", "zipher", "son", "bloor", "math", "buu", "steak", "flace", "tato", "ium", "iar", "lious", "lo", "lio", "tion", "til", "lite", "ser", "kar", "ton", "vous", "cas", "foth", "vicus", "lith", "lik", "vin", "lae", "frost", "ras", "masa", "roth", "tark", "pus", "cico", "isan", "chi", "gtre", "rth", "mith", "phith", "pott", "nibo", "finik", "nmy", "goroth", "bro", "tik", "ford", "tis", "ier", "lus", "ear", "ret", "los", "a", "lak", "como", "ios", "bo", "ini", "old", "esch", "erio", "tara", "moth", "an", "tus", "brak", "nid", "ious", "bu", "goth", "art", "si", "aki", "ikir", "oth", "sil", "cuo", "io", "so", "vus", "with", "cho", "rys", "ron", "rin", "ith", "mat", "ra", "thos", "ci", "tri", "ius", "kos", "sa", "igos", "yn", "ard", "cha", "led", "obo", "gear", "ule"], this._title = [" the Firemonger", " of the Void", " the Waterweaver", " the Earthshaker", " the Windcaller", " Burrowich", " the Digger", " the Therapist", " of Malakai", " Geronido", " Masterflash", " Meganoth", " Seratone", " the Goldwatch", " Passimore", " of the Gatewatch", " the Alchemical", " the Pacifier", " the Ultraverser", ", Chewer of Bones", " the Great", " Bergenwharph", " of Tsao", " of Ruples", " HwyLisco", ", Observer of Hew", ", Shade of Liu", ", Temp of Jude"]
 }, Prodigy.BountyManager.prototype = {
 	constructor: Prodigy.BountyManager,
@@ -84448,13 +84455,13 @@ var NetworkManager = function() {
 	}, e.prototype.getFriendsList = function(e, t) {
 		GameConstants.get("GameConstants.FriendsList.TEST_FRIENDS_LIST") ? (Util.log("Test get friend list", Util.DEV), this.game.time.events.add(1e3, e.bind(this, {
 			data: [{
-				userID: 5339281,
+				userID: 533,
 				status: 0
 			}, {
-				userID: 5339282,
+				userID: 53,
 				status: 1
 			}, {
-				userID: 5339279,
+				userID: 5339,
 				status: 1
 			}],
 			meta: {
@@ -84500,7 +84507,7 @@ var NetworkManager = function() {
 				userID: 15263772
 			}],
 			meta: {
-				friendsCap: 20,
+				friendsCap: 100,
 				totalFriends: 3
 			}
 		}), this)) : this.api.getFriendRequestList(e, t, {
@@ -85163,8 +85170,8 @@ class OldProdigy {
         this.game.prodigy.player = new Player(this.game);
 	}
 	// This is a universal sign out function.
-	// If they are NOT signed in with Google, it'll reset their wizard and take them to the login page.
-	// If they ARE signed in with Google, it'll sign them out of their account, then do the same thing.
+	// If they aren't signed in with Google, it'll reset their wizard and take them to the login page.
+	// If they are signed in with Google, it'll sign them out of their account, then do the same thing.
 	signOut() {
         var self = this;
         function completeSignOut() {
