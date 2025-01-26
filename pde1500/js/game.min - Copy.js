@@ -48967,7 +48967,7 @@ bot.reload();
 	opponent: {
 		data: '{"level":100}',
 		appearance: '{"name":"David of the Sky", "gender":"male", "hairStyle":3,"hairColor":16,"skinColor":1,"eyeColor":13}',
-		equipment: '{"hat":61, "outfit":52, "weapon":47, "boots":18}'
+		equipment: '{"hat":23, "outfit":52, "weapon":47, "boots":18}'
 	},
 	title: "XPMUser from Daboss7173's PDE",
 	description: "This is XPMUser's main character!",
@@ -54162,7 +54162,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 	}, {
 		stars: this.game.prodigy.player.getStars(),
 		arenaScore: l
-	}, 0, 30, this.loadWizardsComplete.bind(this, !0), this.loadWizardsComplete.bind(this, !1)), this.game.prodigy.create.button(this, 580, -5, "icons", "info", this.toggle.bind(this))), s && (this.game.prodigy.open.message("Each time you close the browser or get disconnected from an arena battle, your score goes down by [arena]50! \n\nBe a good sport and finish your battles!", null, "info", "You Deserted..."), this.game.prodigy.network.sendAnalytics("PVP ", "view-deserter-message", "Events"), this.game.prodigy.network.sendEvent("PVP", {
+	}, 0, 30, this.loadWizardsComplete.bind(this, !0), this.loadWizardsComplete.bind(this, !1)), this.game.prodigy.create.button(this, 580, -5, "icons", "player", this.toggle.bind(this))), s && (this.game.prodigy.open.message("Each time you close the browser or get disconnected from an arena battle, your score goes down by [arena]50! \n\nBe a good sport and finish your battles!", null, "info", "You Deserted..."), this.game.prodigy.network.sendAnalytics("PVP ", "view-deserter-message", "Events"), this.game.prodigy.network.sendEvent("PVP", {
 		type: "view-deserter-message",
 		classID: this.game.prodigy.player.getLatestClassID(),
 		grade: this.game.prodigy.player.grade
@@ -54230,7 +54230,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 			type: "try-match",
 			classID: this.game.prodigy.player.getLatestClassID(),
 			grade: this.game.prodigy.player.grade
-		}, !0), this.findChallenger(), this.message = this.game.prodigy.open.message("Searching for a good match based on your current arena ranking... please wait. \n\n(It could take up to a minute or more.) \n\nTime waiting: XTIMERX", this.closeMessage.bind(this, !0), null, "Finding Challenger")) : this.message = this.game.prodigy.open.message("Cannot take part in the arena in Offline Mode.")
+		}, !0), this.findChallenger(), this.message = this.game.prodigy.open.message("Searching for a good match based on your current arena ranking... please wait. \n\n(It could take up to a minute or more.) \n\nTime waiting: XTIMERX", this.closeMessage.bind(this, !0), null, "Finding Challenger")) : this.message = this.game.prodigy.world.teleport("arena-0")
 	},
 	findChallenger: function () {
 		if (Util.log("findChallenger retry"), Util.isDefined(this.game)) {
