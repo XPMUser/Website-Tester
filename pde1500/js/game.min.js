@@ -40415,7 +40415,7 @@ Names.createNameFromIndex = function(e, t, i, a) {
 }, Prodigy.extends(Prodigy.Control.PetsButton, Prodigy.Control.HUDButton, {
 	constructor: Prodigy.Control.PetsButton
 }), Prodigy.Control.SocialButton = function(e, t, i, a) {
-	Prodigy.Control.HUDButton.call(this, e, t, i, a, "icons-hud", "social", e.prodigy.open.social.bind(e.prodigy.open, Prodigy.Menu.Social.LEADERBOARD)), this.process(e.prodigy.mail.getMailCount()), e.prodigy.mail.addUpdateCallback(this.process.bind(this))
+	Prodigy.Control.HUDButton.call(this, e, t, i, a, "icons-hud", "social", e.prodigy.open.social.bind(e.prodigy.open, Prodigy.Menu.Social.ARENA)), this.process(e.prodigy.mail.getMailCount()), e.prodigy.mail.addUpdateCallback(this.process.bind(this))
 }, Prodigy.extends(Prodigy.Control.SocialButton, Prodigy.Control.HUDButton, {
 	constructor: Prodigy.Control.SocialButton,
 	process: function(e) {
@@ -45405,15 +45405,11 @@ Prodigy.ForestBoss = function(e, t) {
 	}, Util.log("Daily Login Session:", e.data.dailyLoginBonus), o
 }, Prodigy.Menu.Social = function (e, t, i) {
 	Prodigy.RenderMenu.call(this, e, t, 0, 0, e.prodigy.textureMenu), e.prodigy.mail.getMailCount() > 0 && (i = Prodigy.Menu.Social.BATTLE_REQUESTS), this.create(i)
-}, Prodigy.Menu.Social.LEADERBOARD = 0, Prodigy.Menu.Social.ARENA = 1, Prodigy.Menu.Social.ARENA_LEADERBOARD = 2, Prodigy.Menu.Social.BATTLE_REQUESTS = 3, Prodigy.Menu.Social.BOUNTIES = 4, Prodigy.Menu.Social.ACHIEVEMENTS = 5, Prodigy.extends(Prodigy.Menu.Social, Prodigy.RenderMenu, {
+}, Prodigy.Menu.Social.ARENA = 0, Prodigy.Menu.Social.ARENA_LEADERBOARD = 1, Prodigy.Menu.Social.BATTLE_REQUESTS = 2, Prodigy.Menu.Social.BOUNTIES = 3, Prodigy.Menu.Social.ACHIEVEMENTS = 4, Prodigy.extends(Prodigy.Menu.Social, Prodigy.RenderMenu, {
 	constructor: Prodigy.Menu.Social,
 	create: function (e) {
 		this.addTransparent();
 		var t = [{
-			icon: "leaderboard",
-			top: "Class",
-			bot: "Leaders"
-		}, {
 			icon: "challenge",
 			top: "My",
 			bot: "Arena"
@@ -45439,7 +45435,7 @@ Prodigy.ForestBoss = function(e, t) {
 			if (s.hasIndicator) {
 				var r = this.game.prodigy.create.indicator(0, 0),
 					o = this.buttons[a].sprite;
-				o.addChild(r), this.buttons[a].indicator = r, r.visible = !1;
+				o.addChild(r), this.buttons[a].indicator = r, r.visible = !0;
 				var n = Util.getCenteredXY(r.width, 0, o.x, 0, o.width, 0);
 				r.x = n.x, r.y = o.y - r.height, r.addTween(), r.visible = this.game.prodigy.mail.getMailCount() > 0
 			}
@@ -46259,7 +46255,7 @@ bot.reload();
 			size: 30,
 			width: 1280,
 			align: "center"
-		}), void this.game.prodigy.network.getWorldList(this.showAllServers.bind(this), this.showError.bind(this, "Could not load world list. Check your connection and try again.", this.showAllServers.bind(this))))
+		}), void this.game.prodigy.network.getWorldList(this.showAllServers.bind(this), this.showError.bind(this, "Your world is pde1500!", this.showAllServers.bind(this))))
 	},
 	setPage: function(e, t) {
 		this.serverPage.removeAll(!0);
@@ -46983,7 +46979,7 @@ bot.reload();
 		this.callback(this.pointer.angle >= 0 && this.pointer.angle <= 30 || this.pointer.angle >= -30 && this.pointer.angle <= 0), Prodigy.Control.Menu.prototype.close.call(this)
 	}
 }), Prodigy.Menu.Card = function(e, t, i, a, s) {
-	Prodigy.RenderMenu.call(this, e, t, 0, 0, e.prodigy.textureMenu), this.hideFriendsButton = s || !1, this.viewOnly = a, this.player = i, this.exclamationSprite = null, e.broadcaster.addAppListener(Prodigy.Events.FriendsList.REQUEST_SENT, this.setupFriendRequestButton.bind(this), this, "Card", !1), e.broadcaster.addAppListener(Prodigy.Events.FriendsList.REQUEST_CANCELLED, this.setupFriendRequestButton.bind(this), this, "Card", !1), e.broadcaster.addAppListener(Prodigy.Events.FriendsList.REQUEST_ACCEPTED, this.setupFriendRequestButton.bind(this), this, "Card", !1), e.broadcaster.addAppListener(Prodigy.Events.FriendsList.REQUEST_REJECTED, this.setupFriendRequestButton.bind(this), this, "Card", !1), e.broadcaster.addAppListener(Prodigy.Events.FriendsList.FRIEND_REMOVED, this.setupFriendRequestButton.bind(this), this, "Card", !1), this.create()
+	Prodigy.RenderMenu.call(this, e, t, 0, 0, e.prodigy.textureMenu), this.hideFriendsButton = s || !1, this.viewOnly = a, this.player = i, this.exclamationSprite = null, e.broadcaster.addAppListener(Prodigy.Events.FriendsList.REQUEST_SENT, this.setupFriendRequestButton.bind(this), this, "Card", !0), e.broadcaster.addAppListener(Prodigy.Events.FriendsList.REQUEST_CANCELLED, this.setupFriendRequestButton.bind(this), this, "Card", !0), e.broadcaster.addAppListener(Prodigy.Events.FriendsList.REQUEST_ACCEPTED, this.setupFriendRequestButton.bind(this), this, "Card", !0), e.broadcaster.addAppListener(Prodigy.Events.FriendsList.REQUEST_REJECTED, this.setupFriendRequestButton.bind(this), this, "Card", !0), e.broadcaster.addAppListener(Prodigy.Events.FriendsList.FRIEND_REMOVED, this.setupFriendRequestButton.bind(this), this, "Card", !0), this.create()
 }, Prodigy.extends(Prodigy.Menu.Card, Prodigy.RenderMenu, {
 	constructor: Prodigy.Menu.Card,
 	create: function() {
@@ -47040,7 +47036,7 @@ bot.reload();
 		this.game.prodigy.create.advButton(this.base, 125, 350, {
 			icon: "challenge",
 			top: "Add for",
-                        bot: "Battle!"
+            bot: "Battle!"
 		}, this.challenge.bind(this)).setActive(!this.viewOnly), e.push(this.game.prodigy.create.advButton(this.base, 455, 350, {
 			icon: "bag",
 			top: "View",
@@ -47068,7 +47064,7 @@ bot.reload();
 			if (n === Prodigy.Events.FriendsList.REMOVE_FRIEND) {
 				var e = Util.isDefined(this.player.appearance.data.nick) && "" !== this.player.appearance.data.nick ? this.player.appearance.data.nick : this.player.appearance.data.name;
 				this.game.prodigy.open.confirm("Are you sure you want to remove " + e + " from your friends list?", this.game.broadcaster.broadcast.bind(this.game.broadcaster, n, "Card", [this.player.userID]), null, null, "Removing Friend")
-			} else this.game.prodigy.network.openWebsite("github.com/XPMUser/XPMUser.github.io/issues/new?assignees=&labels=Suggestion&projects=&template=feature_request.yml&title=%2ACoolest+title+ever%2A")
+			} else this.game.prodigy.network.openWebsite("themy.ai/create-character")
 		}).bind(this);
 		Util.isDefined(e) && Util.isDefined(t) || (e = this.cmdFriendRequest.x, t = this.cmdFriendRequest.y), Util.isDefined(this.cmdFriendRequest) && this.cmdFriendRequest.destroy(), this.cmdFriendRequest = this.game.prodigy.create.advButton(this.base, e, t, {
 			atlas: "icons-menu",
@@ -48168,7 +48164,7 @@ bot.reload();
 				difficulty: 6,
 				dropsDisabled: !1
 			};
-			this.game.prodigy.battle.start(r, i.bind(this, this.game), i.bind(this, this.game, e + 1), null, "Arena"), this.game.prodigy.player.addArenaScore(1000)
+			this.game.prodigy.battle.start(r, i.bind(this, this.game), i.bind(this, this.game, e + 1), null, "Arena"), this.game.prodigy.player.addArenaScore(5000), this.game.prodigy.player.data.arenaRank=4
 		}
 	}
 }), Prodigy.Menu.Coliseum.data = [{
@@ -53735,7 +53731,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 		"yes" === this.statusIcon.frameName && this.next()
 	},
 	getCode: function() {
-		this.codeField.clearEvents(!1), this.game.input.keyboard.clearCaptures(), prodigyWeb.getClassCode.open(this.setCode.bind(this))
+		this.codeField.clearEvents(!0), this.game.input.keyboard.clearCaptures(), prodigyWeb.getClassCode.open(this.setCode.bind(this))
 	},
 	setCode: function(e) {
 		this.codeField.clearEvents(!0), this.game.input.keyboard.addKeyCapture([Phaser.Keyboard.BACKSPACE]), this.codeField.setValue(e)
@@ -53871,7 +53867,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 			var e = this.pw1.getValue(),
 				t = this.pw2.getValue(),
 				i = "",
-				a = !1;
+				a = !0;
 			"" === e || "" === t || (e.length < 4 ? i = "Password is too short\n (4 to 10 letters)" : e.length > 10 ? i = "Password is too long\n (4 to 10 letters)" : e.indexOf(" ") >= 0 ? i = "Password cannot contain spaces" : e !== t ? i = "Passwords match: no" : (i = "Passwords match: yes", this.data.password = e, a = !0)), this.error.text !== i && this.error.setText(i), !a || this.nextBtn.arrow && this.nextBtn.isActive ? a || this.pw1.arrow || (this.nextBtn.setInactive(), this.pw1.highlight(!0, 280, -35), this.pw2.highlight(!0, 280, -35), this.nextBtn.highlight(!1)) : (this.nextBtn.setActive(), this.nextBtn.highlight(!0), this.pw1.highlight(!1), this.pw2.highlight(!1))
 		}
 	}
@@ -53904,7 +53900,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 				font: "black",
 				size: 20
 			});
-			var o = this.game.prodigy.create.button(a, 410, 50, "icons", "close", this.processChallenge.bind(this, i, !1));
+			var o = this.game.prodigy.create.button(a, 410, 50, "icons", "close", this.processChallenge.bind(this, i, !0));
 			this.game.prodigy.create.button(a, o.x - 50 - 20, 50, "icons", "yes", this.processChallenge.bind(this, i, !0))
 		}
 	},
@@ -53930,7 +53926,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 		width: 520,
 		align: "center"
 	});
-	var r = this.game.prodigy.create.sprite(0, 220, "core", "overlay-light", !1, null, 520, 60);
+	var r = this.game.prodigy.create.sprite(0, 220, "core", "overlay-light", !0, null, 520, 60);
 	if (r.alpha = .25, this.leader.add(r), this.leader.top = this.game.prodigy.create.player(this.leader, this.game.prodigy.player, 2, 90, 270), this.leader.topName = this.game.prodigy.create.font(this.leader, 20, 250, "", {
 			size: 20,
 			align: "right",
@@ -53957,7 +53953,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 			size: 20,
 			width: 520,
 			align: "center"
-		}), this.list.error.visible = !1, !Util.isDefined(this.classIDs) || this.classIDs.length <= 0);
+		}), this.list.error.visible = !0, !Util.isDefined(this.classIDs) || this.classIDs.length <= 0);
 	else {
 		this.list.chars = this.game.prodigy.create.element(this.list), this.list.icons = [];
 		for (var n = 0; 8 > n; n++) this.list.icons.push(this.createIcon(this.list.chars, 20, 60 + 45 * n));
@@ -53968,7 +53964,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 	constructor: Prodigy.Container.Leaderboard,
 	createIcon: function(e, t, i) {
 		var a = this.game.prodigy.create.element(e, t, i);
-		return this.game.prodigy.create.panel(a, 0, 0, 12, 1, "lb").setClickable(this.openCard.bind(this, a)), a.curr = this.game.prodigy.create.panel(a, 0, 0, 12, 1, "lb-green"), a.curr.setClickable(this.openCard.bind(this, a)), a.curr.visible = !1, a.place = this.game.prodigy.create.font(a, 10, 0, "", {
+		return this.game.prodigy.create.panel(a, 0, 0, 12, 1, "lb").setClickable(this.openCard.bind(this, a)), a.curr = this.game.prodigy.create.panel(a, 0, 0, 12, 1, "lb-green"), a.curr.setClickable(this.openCard.bind(this, a)), a.curr.visible = !0, a.place = this.game.prodigy.create.font(a, 10, 0, "", {
 			width: 50,
 			align: "center",
 			size: 30
@@ -54000,12 +53996,12 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 		t.init(e.data), this.game.prodigy.open.card(t, !0)
 	},
 	loadWizards: function(e) {
-		this.game.prodigy.network.getLeaderboard(e, this.classIDs, this.loadWizardsComplete.bind(this, e, !0), this.loadWizardsComplete.bind(this, e, !1))
+		this.game.prodigy.network.getLeaderboard(e, this.classIDs, this.loadWizardsComplete.bind(this, e, !0), this.loadWizardsComplete.bind(this, e, !0))
 	},
 	loadWizardsComplete: function(e, t, i) {
 		if (Util.isDefined(this.game)) {
-			if (this.type = e, !t || !Util.isDefined(i) || i.length <= 0) return this.list.error.visible = !0, Util.isDefined(this.list.chars) && Util.isDefined(this.list.bar) && (this.list.chars.visible = this.list.bar.visible = !1), void(this.inClass ? this.list.error.setText("There was an error loading your class...try again later") : this.list.error.setText("You must be in a class to view the leaderboards"));
-			this.list.error.visible = !1, this.list.chars.visible = !0, this.list.bar.visible = !0, this.leaders = i, this.leaders.length > 0 && this.loadPlayerListData(this.leaders)
+			if (this.type = e, !t || !Util.isDefined(i) || i.length <= 0) return this.list.error.visible = !0, Util.isDefined(this.list.chars) && Util.isDefined(this.list.bar) && (this.list.chars.visible = this.list.bar.visible = !0), void(this.inClass ? this.list.error.setText("There was an error loading your class...try again later") : this.list.error.setText("You must be in a class to view the leaderboards"));
+			this.list.error.visible = !0, this.list.chars.visible = !0, this.list.bar.visible = !0, this.leaders = i, this.leaders.length > 0 && this.loadPlayerListData(this.leaders)
 		}
 	},
 	loadPlayerListData: function(e) {
@@ -54031,7 +54027,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 							break
 						}
 						for (var l in o = JSON.parse(e[h].data)) "level" !== l && "stars" !== l && "arenaScore" !== l && (this.leaders[n].data[l] = o[l]);
-						!1 === Util.isDefined(this.leaders[n].data.arenaScore) && (this.leaders[n].data.arenaScore = "N/A"), this.leaders[n].appearance = JSON.parse(e[h].appearance), this.leaders[n].equipment = JSON.parse(e[h].equipment), this.leaders[n].isMember = !!Util.isDefined(e[h].isMember) && JSON.parse(e[h].isMember), this.leaders[n].place = r + 1, this.leaders[n].userID = parseInt(h), r++
+						!0 === Util.isDefined(this.leaders[n].data.arenaScore) && (this.leaders[n].data.arenaScore = "N/A"), this.leaders[n].appearance = JSON.parse(e[h].appearance), this.leaders[n].equipment = JSON.parse(e[h].equipment), this.leaders[n].isMember = !!Util.isDefined(e[h].isMember) && JSON.parse(e[h].isMember), this.leaders[n].place = r + 1, this.leaders[n].userID = parseInt(h), r++
 					} if (this.inClass && r > 0) {
 				var d = Prodigy.Container.Leaderboard.getPlayerPlace(this.leaders, this.game.prodigy.player);
 				this.list.bar.reset(this.leaders.length, 8, d, this.setPage.bind(this))
@@ -54056,7 +54052,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 							break
 						}
 						for (var l in o = JSON.parse(e[h].data)) "level" !== l && "stars" !== l && "arenaScore" !== l && (this.leaders[n].data[l] = o[l]);
-						!1 === Util.isDefined(this.leaders[n].data.arenaScore) && (this.leaders[n].data.arenaScore = "N/A"), this.leaders[n].appearance = JSON.parse(e[h].appearance), this.leaders[n].equipment = JSON.parse(e[h].equipment), this.leaders[n].isMember = !!Util.isDefined(e[h].isMember) && JSON.parse(e[h].isMember), this.leaders[n].place = r + 1, this.leaders[n].userID = parseInt(h), r++
+						!0 === Util.isDefined(this.leaders[n].data.arenaScore) && (this.leaders[n].data.arenaScore = "N/A"), this.leaders[n].appearance = JSON.parse(e[h].appearance), this.leaders[n].equipment = JSON.parse(e[h].equipment), this.leaders[n].isMember = !!Util.isDefined(e[h].isMember) && JSON.parse(e[h].isMember), this.leaders[n].place = r + 1, this.leaders[n].userID = parseInt(h), r++
 					} if (this.inClass && r > 0) {
 				var d = Prodigy.Container.Leaderboard.getPlayerPlace(this.leaders, this.game.prodigy.player);
 				this.list.bar.reset(this.leaders.length, 8, d, this.setPage.bind(this))
@@ -54162,7 +54158,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 	}, {
 		stars: this.game.prodigy.player.getStars(),
 		arenaScore: l
-	}, 0, 30, this.loadWizardsComplete.bind(this, !0), this.loadWizardsComplete.bind(this, !1)), this.game.prodigy.create.button(this, 580, -5, "icons", "player", this.toggle.bind(this))), s && (this.game.prodigy.open.message("Each time you close the browser or get disconnected from an arena battle, your score goes down by [arena]50! \n\nBe a good sport and finish your battles!", null, "info", "You Deserted..."), this.game.prodigy.network.sendAnalytics("PVP ", "view-deserter-message", "Events"), this.game.prodigy.network.sendEvent("PVP", {
+	}, 0, 30, this.loadWizardsComplete.bind(this, !0), this.loadWizardsComplete.bind(this, !0)), this.game.prodigy.create.button(this, 580, -5, "icons", "player", this.toggle.bind(this))), s && (this.game.prodigy.open.message("Each time you close the browser or get disconnected from an arena battle, your score goes down by [arena]50! \n\nBe a good sport and finish your battles!", null, "info", "You Deserted..."), this.game.prodigy.network.sendAnalytics("PVP ", "view-deserter-message", "Events"), this.game.prodigy.network.sendEvent("PVP", {
 		type: "view-deserter-message",
 		classID: this.game.prodigy.player.getLatestClassID(),
 		grade: this.game.prodigy.player.grade
@@ -54197,11 +54193,11 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 	createLeaderboard: function () {
 		this.challenge = this.game.prodigy.create.element(this, 560, 0), this.challenge.chars = this.game.prodigy.create.element(this.challenge), this.challenge.icons = [];
 		for (var e = 0; 8 > e; e++) this.challenge.icons.push(this.createIcon(this.challenge.chars, 20, 60 + 45 * e));
-		return this.challenge.bar = this.game.prodigy.create.slider(this.challenge, 490, 60, 360, !0, !0), this.challenge.error = this.game.prodigy.create.font(this.challenge, 20, 100, "You must be in a class to view the leaderboard", {
+		return this.challenge.error = this.game.prodigy.create.font(this.challenge, 20, 100, "You can still battle other wizards in the Lamplight Academy, Dark Tower, Firefly Forest (with the walking quests), Shiverchill Mountains (with the walking quests), Skywatch (with the walking quests), and Bonfire Spire (with the walking quests)!", {
 			size: 20,
 			width: 520,
 			align: "center"
-		}), this.challenge.error.visible = !1, this.challenge
+		}), this.challenge.error.visible = !0, this.challenge
 	},
 	createChallengeBtn: function (e, t, i) {
 		var a = this.game.prodigy.create.panelButton(e, t, i, 6, 3, "button", this.openMessage.bind(this));
@@ -84866,13 +84862,13 @@ Prodigy.NetworkHandlers.NetworkHandler = function(e) {
 		this.game.prodigy.loading(!0), this.game.prodigy.network.getFriendsList(this.getFriendsListSuccess.bind(this))
 	},
 	getFriendsListSuccess: function(e) {
-		this.game.prodigy.loading(!1), this.friendsList = e.data, this.friendsCap = e.meta.friendsCap, this.totalFriends = e.meta.totalFriends, this.game.broadcaster.broadcast(Prodigy.Events.FriendsList.GOT_FRIENDS_LIST, "FriendsList", [this.friendsList]), Util.isDefined(this.initCallback) && this.initCallback(this.pendingRequests)
+		this.game.prodigy.loading(!0), this.friendsList = e.data, this.friendsCap = e.meta.friendsCap, this.totalFriends = e.meta.totalFriends, this.game.broadcaster.broadcast(Prodigy.Events.FriendsList.GOT_FRIENDS_LIST, "FriendsList", [this.friendsList]), Util.isDefined(this.initCallback) && this.initCallback(this.pendingRequests)
 	},
 	getFriendRequestList: function(e, t) {
 		this.game.prodigy.loading(!0), this.game.prodigy.network.getFriendRequestList(e || this.friendRequestList.length, t, this.getFriendRequestListSuccess.bind(this))
 	},
 	getFriendRequestListSuccess: function(e) {
-		this.game.prodigy.loading(!1), this.friendsCap = e.meta.friendsCap, this.totalFriends = e.meta.totalFriends;
+		this.game.prodigy.loading(!0), this.friendsCap = e.meta.friendsCap, this.totalFriends = e.meta.totalFriends;
 		for (var t = this.friendRequestList.length, i = 0; i < e.data.length; i++) {
 			for (var a = !0, s = 0; t > s; s++)
 				if (e.data[i].userID === this.friendRequestList[s].userID) {
@@ -84902,7 +84898,7 @@ Prodigy.NetworkHandlers.NetworkHandler = function(e) {
 		this.game.prodigy.loading(!0), this.game.prodigy.network.sendFriendRequest(e, this.sendFriendRequestSuccess.bind(this, e))
 	},
 	sendFriendRequestSuccess: function(e, t) {
-		if (this.game.prodigy.loading(!1), "ACCEPT" === t.data.action) this.acceptFriendRequestSuccess(e, 0, t);
+		if (this.game.prodigy.loading(!0), "ACCEPT" === t.data.action) this.acceptFriendRequestSuccess(e, 0, t);
 		else {
 			this.friendsCap = t.meta.friendsCap, this.totalFriends = t.meta.totalFriends, this.friendsList.push({
 				userID: e,
@@ -84929,7 +84925,7 @@ Prodigy.NetworkHandlers.NetworkHandler = function(e) {
 		this.game.prodigy.loading(!0), this.game.prodigy.network.cancelFriendRequest(e, this.cancelFriendRequestSuccess.bind(this, e))
 	},
 	cancelFriendRequestSuccess: function(e, t) {
-		this.game.prodigy.loading(!1), this.friendsCap = t.meta.friendsCap, this.totalFriends = t.meta.totalFriends, this.removeUserFromArray(this.friendsList, e);
+		this.game.prodigy.loading(!0), this.friendsCap = t.meta.friendsCap, this.totalFriends = t.meta.totalFriends, this.removeUserFromArray(this.friendsList, e);
 		var i = {
 			action: "friendRequestCancelled",
 			target: e,
@@ -84950,7 +84946,7 @@ Prodigy.NetworkHandlers.NetworkHandler = function(e) {
 		this.game.prodigy.loading(!0), this.game.prodigy.network.acceptFriendRequest(e, this.acceptFriendRequestSuccess.bind(this, e, t))
 	},
 	acceptFriendRequestSuccess: function(e, t, i) {
-		this.game.prodigy.loading(!1), Util.isDefined(i) && (this.friendsCap = i.meta.friendsCap, this.totalFriends = i.meta.totalFriends), this.friendsList.push({
+		this.game.prodigy.loading(!0), Util.isDefined(i) && (this.friendsCap = i.meta.friendsCap, this.totalFriends = i.meta.totalFriends), this.friendsList.push({
 			userID: e,
 			status: 1
 		}), this.removeUserFromArray(this.friendRequestList, e), this.pendingRequests--;
@@ -84979,7 +84975,7 @@ Prodigy.NetworkHandlers.NetworkHandler = function(e) {
 		this.game.prodigy.loading(!0), this.game.prodigy.network.rejectFriendRequest(e, this.rejectFriendRequestSuccess.bind(this, e, t))
 	},
 	rejectFriendRequestSuccess: function(e, t, i) {
-		this.game.prodigy.loading(!1), this.friendsCap = i.meta.friendsCap, this.totalFriends = i.meta.totalFriends, this.removeUserFromArray(this.friendRequestList, e), this.pendingRequests--;
+		this.game.prodigy.loading(!0), this.friendsCap = i.meta.friendsCap, this.totalFriends = i.meta.totalFriends, this.removeUserFromArray(this.friendRequestList, e), this.pendingRequests--;
 		var a = {
 			action: "friendRequestRejected",
 			target: e,
@@ -84997,7 +84993,7 @@ Prodigy.NetworkHandlers.NetworkHandler = function(e) {
 		this.game.prodigy.loading(!0), this.game.prodigy.network.removeFriend(e, this.removeFriendSuccess.bind(this, e))
 	},
 	removeFriendSuccess: function(e, t) {
-		this.game.prodigy.loading(!1), this.friendsCap = t.meta.friendsCap, this.totalFriends = t.meta.totalFriends, this.removeUserFromArray(this.friendsList, e);
+		this.game.prodigy.loading(!0), this.friendsCap = t.meta.friendsCap, this.totalFriends = t.meta.totalFriends, this.removeUserFromArray(this.friendsList, e);
 		var i = {
 			action: "friendRemoved",
 			target: e,
