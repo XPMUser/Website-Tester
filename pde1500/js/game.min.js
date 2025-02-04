@@ -46216,7 +46216,7 @@ bot.reload();
 		}, this.close.bind(this, !0)), this.showBtns([], []), this.game.prodigy.create.textButton(this, 50, 650, {
 			icon: "back",
 			text: "back"
-		}, this.close.bind(this, !1, !0)), this.content = this.game.prodigy.create.element(this, 0, 0), this.showSuggestedServers(this.servers), this.game.prodigy.create.font(this, 125, 60, "Pick the same world as your friends to play together!", {
+		}, this.close.bind(this, !0, !0)), this.content = this.game.prodigy.create.element(this, 0, 0), this.showSuggestedServers(this.servers), this.game.prodigy.create.font(this, 125, 60, "Pick the same world as your friends to play together!", {
 			size: 20
 		}), this.setupComplete = !0
 	},
@@ -46265,7 +46265,7 @@ bot.reload();
 			size: 30,
 			width: 1280,
 			align: "center"
-		}), this.game.prodigy.network.joinMultiplayerServer(e, "zone-login", this.connected.bind(this, !0), this.connected.bind(this, !1, t), this.connected.bind(this, !1, t, "This world is full. Please select another world"))
+		}), this.game.prodigy.network.joinMultiplayerServer(e, "zone-login", this.connected.bind(this, !0), this.connected.bind(this, !0, t), this.connected.bind(this, !1, t, "This world is full. Please select another world"))
 	},
 	connected: function(e, t, i) {
 		Util.isDefined(this) && Util.isDefined(this.game) && (this.content.removeAll(!0), e ? this.close(!0) : this.showError(i || "Could not connect to world. Try again, or select another world.", t))
@@ -46286,7 +46286,7 @@ bot.reload();
 			size: 30,
 			width: 1280,
 			align: "center"
-		}), this.game.prodigy.network.getWorldList(this.showAllServers.bind(this), this.showError.bind(this, "Could not load world list. Check your connection and try again.")), void 0;
+		}), this.showAllServers.bind(this)
 		for (var t = 0; t < e.length; t++) e[t].name = Prodigy.Menu.Server.getServerName(e[t].id);
 		e = e.sort(function(e, t) {
 			return e.name.localeCompare(t.name)
@@ -47116,7 +47116,7 @@ bot.reload();
 			}, this.complete.bind(this))
 		} catch (e) {
 			this.complete({
-				success: !1
+				success: !0
 			})
 		}
 	},
