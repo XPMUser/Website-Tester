@@ -27,15 +27,41 @@
             margin-top: 10px;
         }
 
-        nav a {
+        nav a, .dropdown {
             color: #fff;
             text-decoration: none;
             padding: 10px 15px;
             border-radius: 5px;
+            position: relative;
         }
 
-        nav a:hover {
+        nav a:hover, .dropdown:hover .dropbtn {
             background-color: #004d99;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #0066cc;
+            min-width: 150px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 10px;
+            display: block;
+            text-align: left;
+            text-decoration: none;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #004d99;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
 
         .main-content {
@@ -96,11 +122,17 @@
         <nav>
             <a href="index.html">Home</a>
             <a href="play.html?mods=WalkSpeed">Play Now</a>
-            <a href="pde1500/index.html?mods=WalkSpeed,FastGameSpeed,RebalancedBattles">PDE1500</a>
-            <a href="pde1700/?mods=WalkSpeed,FastGameSpeed,ImitationTitan">PDE1700</a>
-            <a href="pde/index.html">PDE</a>
-            <a href="oldprodigyde/?mods=FastGameSpeed">Play Another Version</a>
-            <a href="mods.html">Mods</a> <!-- Added Mods button -->
+            <div class="dropdown">
+                <span class="dropbtn">Versions ▼</span>
+                <div class="dropdown-content">
+                    <a href="pde1510/index.html">PDE 1.51.0</a>
+                    <a href="pde1500/index.html?mods=WalkSpeed,FastGameSpeed,RebalancedBattles">PDE1500</a>
+                    <a href="pde/index.html">PDE</a>
+                    <a href="pde1700/index.html?mods=WalkSpeed,FastGameSpeed,ImitationTitan">PDE1700</a>
+                    <a href="oldprodigyde/index.html?mods=FastGameSpeed">Old Prodigy DE</a>
+                </div>
+            </div>
+            <a href="mods.html">Mods</a>
         </nav>
     </header>
 
