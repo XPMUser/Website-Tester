@@ -49837,7 +49837,19 @@ bot.reload();
         type: "gold",
         N: 10000
     }]
-	/* Can you please make a female bot request in feature request since the order of coliseum opponents have to be by a gender order? */
+}, {
+    opponent: {
+        data: '{"level":69}',
+        appearance: '{"name":"Ralph Stormspoon", "gender":"male", "hairStyle":7,"hairColor":2,"skinColor":3,"eyeColor":3}',
+        equipment: '{"hat":2, "outfit":18, "weapon":57, "boots":10}'
+    },
+    title: "Requested Bot",
+    description: "PeekoMeeko has asked for this bot.",
+    pets: [],
+    drops: [{
+        type: "gold",
+        N: 500
+    }]
 }, {
     opponent: {
         data: '{"level":69}',
@@ -56890,7 +56902,7 @@ WalkableScreen = function(e, t, i) {
 		t || this.game.prodigy.skin.apply(this), Device.isTablet() || Device.iPadMini() || 1 == Util.getUrlVariable("iosApp") || !Util.isDefined(this.bgm) || (this.game.prodigy.audio.playBGM(this.bgm, !0, !0), this.game.prodigy.audio.resumeBGM()), Screen.prototype.screenSetup.call(this)
 	},
 	start: function() {
-		this.user.evtProc = !0, Screen.prototype.start.call(this)
+		this.user.evtProc = !1, Screen.prototype.start.call(this)
 	},
 	processPopups: function(e) {
 		var t = (this.game.prodigy.player.state.get("zone-house"), this.game.prodigy.player.state.get("zone-lamplight"));
