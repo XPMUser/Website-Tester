@@ -62969,7 +62969,7 @@ Prodigy.Skin = function(e, t) {
 		4: new Prodigy.Skywatch_Q4(this, t),
 		5: new Prodigy.Skywatch_Q5(this, t),
 		6: new Prodigy.Skywatch_Q6(this, t),
-		7: new Prodigy.Skywatch_Q8(this, t),
+		7: new Prodigy.Skywatch_Q7(this, t),
 		8: new Prodigy.Skywatch_Q8(this, t),
 		9: new Prodigy.Skywatch_Q9(this, t),
 		10: new Prodigy.Skywatch_Q10(this, t),
