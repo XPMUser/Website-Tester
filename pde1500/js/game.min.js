@@ -51,7 +51,7 @@ function ApiClient(e, t) {
 			root: void 0
 		},
 		d = {
-			dev: "https://xpmuser.github.io/",
+			dev: "http://xpmuser.github.io/",
 			staging: "https://www.prodigygame.org/",
 			production: "https://www.prodigygame.com/"
 		},
@@ -69,13 +69,12 @@ function ApiClient(e, t) {
 		b = "game-tools-api/",
 		v = "assignment-api/",
 		w = "education-api/",
-		x = "Old-Prodigy-Servers/worlds-api/";
+		x = "worlds-api/";
 	switch ("xpmuser.github.io") {
 		case "dev.prodigygame.org":
 		case "localhost":
-		case "web.archive.org":
-		case "archive.org":
 		case "xpmuser.github.io":
+		case "old-prodigy-servers.onrender.com":
 		default:
 			i("dev", l);
 			break;
@@ -83,8 +82,6 @@ function ApiClient(e, t) {
 		case "www.prodigygame.org":
 		case "prodigygame.org":
 		case "localhost":
-		case "web.archive.org":
-		case "archive.org":
 		case "xpmuser.github.io":
 			i("staging", l);
 			break;
@@ -94,6 +91,8 @@ function ApiClient(e, t) {
 		case "web.archive.org":
 			i("production", l)
 		case "archive.org":
+			i("production", l)
+		case "old-prodigy-servers.onrender.com":
 			i("production", l)
 		case "xpmuser.github.io":
 			i("production", l)
@@ -145,7 +144,7 @@ function ApiClient(e, t) {
 		return !!r(t, ["200"], "emit message") && !!o.socket && (o.socket.emit("message", e), !0)
 	}, this.getWorldList = function(e) {
 		var t = r(e, ["200", "400", "500", "503"], "get world list");
-		return !!t && (a("get", "https://xpmuser.github.io/Old-Prodigy-Servers/worlds-api/world-list", {}, t, "getWorldList", {
+		return !!t && (a("get", "https://xpmuser.github.io/oldprodigy/assets/" + "", {}, t, "getWorldList", {
 			ignoreHeaders: !0
 		}), !0)
 	}, this.login = function(e, t, i) {
@@ -432,7 +431,7 @@ function ApiClient(e, t) {
 				token: o.uniqueKey,
 				event: e
 			};
-			return a("post", l.url.events + "world-list", s, i, "trackEvent"), !0
+			return a("post", "https://xpmuser.github.io/oldprodigy/assets/" + "", s, i, "trackEvent"), !0
 		}
 		return !1
 	}, this.completeAssignment = function(e, t) {
@@ -492,7 +491,7 @@ var GameConstants = GameConstants || function() {
 	e["GameConstants.Debug.GET_SPELL"] = 0,
 	e["GameConstants.Debug.COMPLETE_TUTORIAL"] = !1,
 	e["GameConstants.Debug.FORCE_DROPS"] = [],
-	e["GameConstants.Server.TEST_SERVER"] = !1,
+	e["GameConstants.Server.TEST_SERVER"] = !0,
 	e["GameConstants.Mailer.TEST_MAIL"] = !0,
 	e["GameConstants.FriendsList.TEST_FRIENDS_LIST"] = !0,
 	e["GameConstants.Features.ENABLE_HOUSE_MOVING"] = !0,
@@ -45474,7 +45473,11 @@ Prodigy.ForestBoss = function(e, t) {
 			icon: "player",
 			top: "Skin",
 			bot: "Tones"
-		}]), Prodigy.RenderMenu.prototype.create.call(this), this.setMode(0), this.game.prodigy.create.advButton(this, 930, 280, {
+		}]), Prodigy.RenderMenu.prototype.create.call(this), this.setMode(0), this.game.prodigy.create.advButton(this, 930, 180, {
+			icon: "map",
+                        top: "Join",
+			bot: "World"
+		}, this.openWorld.bind(this)), this.game.prodigy.create.advButton(this, 930, 280, {
 			icon: "map",
 			bot: "Intro"
 		}, this.openIntro.bind(this)), this.game.prodigy.create.advButton(this, 930, 380, {
@@ -46209,63 +46212,88 @@ bot.reload();
 }, Prodigy.extends(Prodigy.Menu.Server, Prodigy.Control.Menu, {
 	constructor: Prodigy.Menu.Server,
 	menuSetup: function() {
-		Prodigy.Control.Menu.prototype.menuSetup.call(this), this.showFrame("map", "CHOOSE YOUR WORLD", []), this.game.prodigy.create.textButton(this, 930, 20, {
+		Prodigy.Control.Menu.prototype.menuSetup.call(this), this.showFrame("map", "CHOOSE YOUR WORLD", []), this.game.prodigy.create.font(this, 125, 60, 'Pick the same world as your friends to play together!', {
+			size: 20
+		}), this.game.prodigy.create.textButton(this, 930, 20, {
 			size: Prodigy.Control.TextButton.MED,
 			icon: "next",
-			text: "play offline"
-		}, this.close.bind(this, !0)), this.showBtns([], []), this.game.prodigy.create.textButton(this, 50, 650, {
+			text: "Fake MP"
+		}, this.close.bind(this, !0)), this.game.prodigy.create.textButton(this, 50, 650, {
 			icon: "back",
 			text: "back"
-		}, this.close.bind(this, !0, !0)), this.content = this.game.prodigy.create.element(this, 0, 0), this.showSuggestedServers(this.servers), this.game.prodigy.create.font(this, 125, 60, "Pick the same world as your friends to play together!", {
-			size: 20
-		}), this.setupComplete = !0
+		}, this.close.bind(this, !1, !0)), this.content = this.game.prodigy.create.element(this, 0, 0), this.showSuggestedServers(this.servers), this.setupComplete = !0
 	},
-	showSuggestedServers: function(e) {
+	showSuggestedServers: function (e) {
 		if (this.content.removeAll(!0), !Util.isDefined(e)) return this.game.prodigy.create.font(this.content, 0, 320, "Loading world list...", {
 			size: 30,
 			width: 1280,
 			align: "center"
-		}), this.game.prodigy.network.getWorldList(this.showSuggestedServers.bind(this), this.showError.bind(this, "Could not load world list. Check your connection and try again.")), void 0;
-		for (var t = this.getSuggested(this.game.prodigy.player.classIDs, e), i = 0; i < t.length; i++) {
+		}), this.game.prodigy.network.getWorldList(this.showSuggestedServers.bind(this), this.showError.bind(this, "Could not load world list. Check your connection and try again.", this.showSuggestedServers.bind(this))), void 0;
+		for (var t = this.getSuggested(e), i = 0; i < t.length; i++) {
 			var a = t[i];
 			Util.isDefined(a) && this.createButton(a, this.content, 140 + i % 3 * 350, 210 + 140 * Math.floor(i / 3), this.showSuggestedServers.bind(this))
 		}
-		this.game.prodigy.create.textButton(this.content, 880, 650, {
-			size: Prodigy.Control.TextButton.LG,
-			text: "more worlds",
-			icon: "map"
-		}, this.showAllServers.bind(this));
 		var s = this.content.add(this.game.prodigy.create.sprite(520, 530, "core", "server-icon"));
 		s.tint = 8111468, this.game.prodigy.create.font(this.content, 560, 540, " = wizards online", {
 			size: 20
-		})
+		}), this.game.prodigy.create.textButton(this.content, 880, 650, {
+			size: Prodigy.Control.TextButton.LG,
+			text: "more worlds",
+			icon: "map"
+		}, this.showAllServers.bind(this))
 	},
-	getSuggested: function(e, t) {
-		var i = [];
-		t = t.sort(function(e, t) {
+	getSuggested: function(e) {
+		if (e.length < 6) return e;
+		var t = [];
+		e = e.sort(function(e, t) {
 			return e.full - t.full
 		});
-		for (var a = 0; a < t.length; a++)
-			if (t[a].full > 75 && a > 4 || a === t.length - 1) {
-				i = [t[a - 3], t[a - 4], t[a - 5], t[a], t[a - 1], t[a - 2]];
+		for (var i = 5; i < e.length; i++)
+			if (e[i].full > 75 || i === e.length - 1) {
+				t = [e[i - 5], e[i - 4], e[i - 3], e[i - 2], e[i - 1], e[i]];
 				break
-			} if (Util.isDefined(e) && e.length > 0) {
-			t = t.sort(function(e, t) {
-				return e.id - t.id
-			});
-			for (var a = 0; a < e.length && 3 > a; a++) {
-				var s = e[a];
-				s = Math.floor(Util.pseudoRandomNumber(1341 * s) * t.length), Util.inArray(i, t[s]) || (i[a] = t[s])
-			}
-		}
-		return i
+			} return t
 	},
-	connect: function(e, t) {
-		this.content.removeAll(!0), this.game.prodigy.create.font(this.content, 0, 320, "Connecting to " + Prodigy.Menu.Server.getServerName(e) + "...", {
+	showAllServers: function(e) {
+		return this.content.removeAll(!0), Util.isDefined(e) ? (e = e.sort(function(e, t) {
+			return e.name.localeCompare(t.name)
+		}), this.serverPage = this.game.prodigy.create.element(this.content, 200, 180), this.scroll = this.game.prodigy.create.scrollBar(this.content, 60, 180, 345, this.setPage.bind(this, e)), this.scroll.setPages(1 + Math.floor((e.length - 1) / 9)), void this.game.prodigy.create.textButton(this.content, 880, 650, {
+			size: Prodigy.Control.TextButton.LG,
+			text: "my worlds",
+			icon: "star"
+		}, this.showSuggestedServers.bind(this))) : (this.game.prodigy.create.font(this.content, 0, 320, "Loading world list...", {
 			size: 30,
 			width: 1280,
 			align: "center"
-		}), this.game.prodigy.network.joinMultiplayerServer(e, "zone-login", this.connected.bind(this, !0), this.connected.bind(this, !0, t), this.connected.bind(this, !1, t, "This world is full. Please select another world"))
+		}), void this.game.prodigy.network.getWorldList(this.showAllServers.bind(this), this.showError.bind(this, "Your world is pde1500!", this.showAllServers.bind(this))))
+	},
+	setPage: function(e, t) {
+		this.serverPage.removeAll(!0);
+		for (var i = 0, a = 9 * t; 9 * t + 9 > a && a < e.length; a++) {
+			var s = e[a],
+				r = 15 + i % 3 * 350,
+				o = 120 * Math.floor(i / 3);
+			i++, this.createButton(s, this.serverPage, r, o, this.showAllServers.bind(this))
+		}
+	},
+	createButton: function(e, t, i, a, s) {
+		var r = this.game.prodigy.create.element(t, i, a),
+			o = r.add(this.game.prodigy.create.sprite(0, 0, "core-2", "store-panel"));
+		o.inputEnabled = !0, o.events.onInputDown.add(this.connect.bind(this, e, s), this), Util.isDefined(e.meta) && r.add(this.game.prodigy.create.sprite(0, 0, Items.getIconAtlas(e.meta), this.getServerIcon(e.meta))), this.game.prodigy.create.font(r, 85, -2, e.name);
+		for (var n = 0 == e.full ? 12364703 : e.full <= 80 ? 8111468 : e.full < 95 ? 15194464 : 14307665, h = 0; 5 > h; h++) r.add(this.game.prodigy.create.sprite(96 + 39 * h, 36, "core", "server-icon")).tint = e.full >= 20 * h ? n : 12364703;
+		return r
+	},
+	getServerIcon: function(e) {
+		return Util.convertItemToIcon(e)
+	},
+	connect: function(e, t) {
+		this.content.removeAll(!0);
+		var i = "Connecting to ";
+		i += Util.isDefined(e.name) ? e.name : "server", this.game.prodigy.create.font(this.content, 0, 320, i + "...", {
+			size: 30,
+			width: 1280,
+			align: "center"
+		}), this.game.prodigy.network.joinMultiplayerServer(e, "zone-login", this.connected.bind(this, !0), this.connected.bind(this, !0, t), this.connected.bind(this, !0, t, "This world is full. Please select another world"))
 	},
 	connected: function(e, t, i) {
 		Util.isDefined(this) && Util.isDefined(this.game) && (this.content.removeAll(!0), e ? this.close(!0) : this.showError(i || "Could not connect to world. Try again, or select another world.", t))
@@ -46281,827 +46309,10 @@ bot.reload();
 			icon: "back"
 		}, t)
 	},
-	showAllServers: function(e) {
-		if (this.content.removeAll(!0), !Util.isDefined(e)) return this.game.prodigy.create.font(this.content, 0, 320, "Loading world list...", {
-			size: 30,
-			width: 1280,
-			align: "center"
-		}), this.showAllServers.bind(this)
-		for (var t = 0; t < e.length; t++) e[t].name = Prodigy.Menu.Server.getServerName(e[t].id);
-		e = e.sort(function(e, t) {
-			return e.name.localeCompare(t.name)
-		}), this.serverPage = this.game.prodigy.create.element(this.content, 200, 180), this.scroll = this.game.prodigy.create.scrollBar(this.content, 60, 180, 345, this.setPage.bind(this, e)), this.scroll.setPages(1 + Math.floor((e.length - 1) / 9)), this.game.prodigy.create.textButton(this.content, 880, 650, {
-			size: Prodigy.Control.TextButton.LG,
-			text: "my worlds",
-			icon: "star"
-		}, this.showSuggestedServers.bind(this))
-	},
-	setPage: function(e, t) {
-		this.serverPage.removeAll(!0);
-		for (var i = 0, a = 9 * t; 9 * t + 9 > a && a < e.length; a++) {
-			var s = e[a],
-				r = 15 + i % 3 * 350,
-				n = 120 * Math.floor(i / 3);
-			i++, this.createButton(s, this.serverPage, r, n, this.showAllServers.bind(this))
-		}
-	},
-	createButton: function(e, t, i, a, s) {
-		var r = this.game.prodigy.create.element(t, i, a),
-			n = r.add(this.game.prodigy.create.sprite(0, 0, "core-2", "store-panel"));
-		n.inputEnabled = !0, n.events.onInputDown.add(this.connect.bind(this, e.id, s), this), r.add(this.game.prodigy.create.sprite(0, 0, Items.getIconAtlas(Prodigy.Menu.Server.NAMES[e.id - 1]), Prodigy.Menu.Server.getServerIcon(e.id))), this.game.prodigy.create.font(r, 85, -2, Prodigy.Menu.Server.getServerName(e.id));
-		for (var o = 0 == e.full ? 12364703 : e.full <= 80 ? 8111468 : e.full < 95 ? 15194464 : 14307665, h = 0; 5 > h; h++) {
-			var n = r.add(this.game.prodigy.create.sprite(96 + 39 * h, 36, "core", "server-icon"));
-			n.tint = e.full >= 20 * h ? o : 12364703
-		}
-		return r
-	},
 	close: function(e, t) {
 		Util.isDefined(this.callback) && this.callback(e, t), Prodigy.Control.Menu.prototype.close.call(this)
 	}
-}), Prodigy.Menu.Server.getServerName = function(e) {
-	return Prodigy.Menu.Server.NAMES[e - 1].name
-}, Prodigy.Menu.Server.getServerIcon = function(e) {
-	return Util.convertItemToIcon(Prodigy.Menu.Server.NAMES[e - 1])
-}, Prodigy.Menu.Server.NAMES = [{
-	name: "Fireplane",
-	tag: "fire"
-}, {
-	name: "Waterscape",
-	tag: "water"
-}, {
-	name: "Earthshire",
-	tag: "earth"
-}, {
-	name: "Airmeld",
-	tag: "air"
-}, {
-	name: "Icefields",
-	tag: "ice"
-}, {
-	name: "Astrallum",
-	tag: "wizard"
-}, {
-	name: "Cumulite",
-	tag: "zone-air"
-}, {
-	name: "Grassy Plains",
-	tag: "zone-earth"
-}, {
-	name: "Emberland",
-	tag: "zone-fire"
-}, {
-	name: "Coldshard",
-	tag: "zone-ice"
-}, {
-	name: "Riverdeep",
-	tag: "zone-water"
-}, {
-	name: "Animalia",
-	tag: "pet"
-}, {
-	name: "Prodigy",
-	tag: "trophyGold"
-}, {
-	name: "Silverdome",
-	tag: "trophySilver"
-}, {
-	name: "Culldeep",
-	tag: "trophyBronze"
-}, {
-	name: "Travellog",
-	tag: "map"
-}, {
-	name: "Illustrus",
-	tag: "leaderboard"
-}, {
-	name: "Estrial",
-	tag: "boss"
-}, {
-	name: "Champion",
-	tag: "award"
-}, {
-	name: "Escholus",
-	tag: "book"
-}, {
-	name: "Presentia",
-	tag: "gift"
-}, {
-	name: "Dragonfire",
-	type: "pet",
-	ID: 8
-}, {
-	name: "Unikind",
-	type: "pet",
-	ID: 35
-}, {
-	name: "Skyfall",
-	type: "pet",
-	ID: 56
-}, {
-	name: "Flamespace",
-	type: "pet",
-	ID: 63
-}, {
-	name: "Faerealm",
-	type: "pet",
-	ID: 61
-}, {
-	name: "Snowbaul",
-	type: "pet",
-	ID: 87
-}, {
-	name: "Treasureland",
-	type: "pet",
-	ID: 98
-}, {
-	name: "Robobit",
-	type: "pet",
-	ID: 113
-}, {
-	name: "Dynocore",
-	type: "pet",
-	ID: 111
-}, {
-	name: "Royalway",
-	type: "pet",
-	ID: 53
-}, {
-	name: "Flexor",
-	type: "pet",
-	ID: 47
-}, {
-	name: "Phoenick",
-	type: "pet",
-	ID: 48
-}, {
-	name: "Lunaris",
-	type: "pet",
-	ID: 20
-}, {
-	name: "Birdcage",
-	type: "pet",
-	ID: 4
-}, {
-	name: "Oceanus",
-	type: "pet",
-	ID: 101
-}, {
-	name: "Granite",
-	type: "pet",
-	ID: 80
-}, {
-	name: "Prehistoria",
-	type: "pet",
-	ID: 107
-}, {
-	name: "Squeekore",
-	type: "pet",
-	ID: 1
-}, {
-	name: "Leftfield",
-	type: "pet",
-	ID: 30
-}, {
-	name: "Furnace",
-	type: "pet",
-	ID: 34
-}, {
-	name: "Ghosttown",
-	type: "pet",
-	ID: 90
-}, {
-	name: "Amphibia",
-	type: "pet",
-	ID: 94
-}, {
-	name: "Cloudheart",
-	type: "pet",
-	ID: 3
-}, {
-	name: "Dracochus",
-	type: "pet",
-	ID: 7
-}, {
-	name: "The Hive",
-	type: "pet",
-	ID: 25
-}, {
-	name: "Heatwave",
-	type: "pet",
-	ID: 28
-}, {
-	name: "Razorfire",
-	type: "pet",
-	ID: 29
-}, {
-	name: "Gaia",
-	type: "pet",
-	ID: 32
-}, {
-	name: "Landlion",
-	type: "pet",
-	ID: 39
-}, {
-	name: "Slitherus",
-	type: "pet",
-	ID: 43
-}, {
-	name: "Wolfbreath",
-	type: "pet",
-	ID: 50
-}, {
-	name: "Grumpus",
-	type: "pet",
-	ID: 60
-}, {
-	name: "Garmlia",
-	type: "pet",
-	ID: 82
-}, {
-	name: "Shnowbahl",
-	type: "pet",
-	ID: 87
-}, {
-	name: "Frozone",
-	type: "pet",
-	ID: 88
-}, {
-	name: "Sealing",
-	type: "pet",
-	ID: 99
-}, {
-	name: "Deepsea",
-	type: "pet",
-	ID: 102
-}, {
-	name: "Cavernous",
-	type: "pet",
-	ID: 104
-}, {
-	name: "Sprocket",
-	type: "pet",
-	ID: 119
-}, {
-	name: "Arachnia",
-	type: "pet",
-	ID: 121
-}, {
-	name: "Skywing",
-	type: "item",
-	ID: 7
-}, {
-	name: "Diamondmine",
-	type: "item",
-	ID: 28
-}, {
-	name: "Frostwick",
-	type: "item",
-	ID: 27
-}, {
-	name: "Gemcraft",
-	type: "item",
-	ID: 20
-}, {
-	name: "Goldmire",
-	type: "item",
-	ID: 26
-}, {
-	name: "Solarus",
-	type: "item",
-	ID: 35
-}, {
-	name: "Cloudcall",
-	type: "item",
-	ID: 46
-}, {
-	name: "Farmland",
-	type: "item",
-	ID: 44
-}, {
-	name: "Doubloon",
-	type: "item",
-	ID: 55
-}, {
-	name: "Hatchery",
-	type: "item",
-	ID: 64
-}, {
-	name: "Plank",
-	type: "item",
-	ID: 51
-}, {
-	name: "Gearshop",
-	type: "item",
-	ID: 47
-}, {
-	name: "Mechanico",
-	type: "item",
-	ID: 53
-}, {
-	name: "Mandora",
-	type: "item",
-	ID: 24
-}, {
-	name: "Dracogem",
-	type: "item",
-	ID: 36
-}, {
-	name: "Borderland",
-	type: "item",
-	ID: 56
-}, {
-	name: "Voyatet",
-	type: "item",
-	ID: 57
-}, {
-	name: "Keystone",
-	type: "item",
-	ID: 59
-}, {
-	name: "Twilight",
-	type: "item",
-	ID: 30
-}, {
-	name: "Emerald",
-	type: "item",
-	ID: 21
-}, {
-	name: "Sapphire",
-	type: "item",
-	ID: 28
-}, {
-	name: "Ruby",
-	type: "item",
-	ID: 34
-}, {
-	name: "The Freezer",
-	type: "item",
-	ID: 32
-}, {
-	name: "Memoria",
-	type: "item",
-	ID: 31
-}, {
-	name: "Beachfront",
-	type: "item",
-	ID: 42
-}, {
-	name: "Monsteye",
-	type: "item",
-	ID: 48
-}, {
-	name: "Pyrestone",
-	type: "item",
-	ID: 71
-}, {
-	name: "Orchestret",
-	type: "item",
-	ID: 70
-}, {
-	name: "Salabrex",
-	type: "item",
-	ID: 76
-}, {
-	name: "Embervine",
-	type: "item",
-	ID: 33
-}, {
-	name: "Enchantric",
-	type: "weapon",
-	ID: 1
-}, {
-	name: "Spellbound",
-	type: "weapon",
-	ID: 4
-}, {
-	name: "Starlight",
-	type: "weapon",
-	ID: 2
-}, {
-	name: "Reptilia",
-	type: "weapon",
-	ID: 6
-}, {
-	name: "Moonsight",
-	type: "weapon",
-	ID: 7
-}, {
-	name: "The Pale",
-	type: "weapon",
-	ID: 16
-}, {
-	name: "Flowerseed",
-	type: "weapon",
-	ID: 15
-}, {
-	name: "Vinewood",
-	type: "weapon",
-	ID: 24
-}, {
-	name: "Treebark",
-	type: "weapon",
-	ID: 36
-}, {
-	name: "Felspore",
-	type: "weapon",
-	ID: 54
-}, {
-	name: "Pirate Bay",
-	type: "weapon",
-	ID: 65
-}, {
-	name: "Farflight",
-	type: "weapon",
-	ID: 67
-}, {
-	name: "Lamplight",
-	type: "weapon",
-	ID: 72
-}, {
-	name: "Felorb",
-	type: "weapon",
-	ID: 76
-}, {
-	name: "Drakken",
-	type: "weapon",
-	ID: 77
-}, {
-	name: "The Marshes",
-	type: "weapon",
-	ID: 78
-}, {
-	name: "Summerwind",
-	type: "weapon",
-	ID: 80
-}, {
-	name: "Combax",
-	type: "weapon",
-	ID: 75
-}, {
-	name: "The Mines",
-	type: "weapon",
-	ID: 74
-}, {
-	name: "Thralldax",
-	type: "weapon",
-	ID: 73
-}, {
-	name: "Zahlteck",
-	type: "weapon",
-	ID: 70
-}, {
-	name: "Crystahl",
-	type: "weapon",
-	ID: 68
-}, {
-	name: "Batwing",
-	type: "weapon",
-	ID: 53
-}, {
-	name: "Ferflock",
-	type: "weapon",
-	ID: 5
-}, {
-	name: "Phoenixurn",
-	type: "weapon",
-	ID: 9
-}, {
-	name: "Shardite",
-	type: "weapon",
-	ID: 13
-}, {
-	name: "Flora",
-	type: "weapon",
-	ID: 17
-}, {
-	name: "The Deep",
-	type: "weapon",
-	ID: 20
-}, {
-	name: "Cumulus",
-	type: "weapon",
-	ID: 23
-}, {
-	name: "Dreamsphere",
-	type: "weapon",
-	ID: 47
-}, {
-	name: "The Calm",
-	type: "weapon",
-	ID: 58
-}, {
-	name: "Ascension",
-	type: "weapon",
-	ID: 63
-}, {
-	name: "Sunfire",
-	type: "weapon",
-	ID: 56
-}, {
-	name: "Tinkertown",
-	type: "hat",
-	ID: 45
-}, {
-	name: "Emporia",
-	type: "hat",
-	ID: 6
-}, {
-	name: "Winterhall",
-	type: "hat",
-	ID: 27
-}, {
-	name: "Landlubber",
-	type: "hat",
-	ID: 39
-}, {
-	name: "Beastcore",
-	type: "hat",
-	ID: 32
-}, {
-	name: "Aviatrix",
-	type: "hat",
-	ID: 41
-}, {
-	name: "Robonight",
-	type: "hat",
-	ID: 46
-}, {
-	name: "Discotek",
-	type: "hat",
-	ID: 47
-}, {
-	name: "Hunterlands",
-	type: "hat",
-	ID: 63
-}, {
-	name: "Monstroville",
-	type: "hat",
-	ID: 62
-}, {
-	name: "Balleerie",
-	type: "hat",
-	ID: 60
-}, {
-	name: "Engauge",
-	type: "hat",
-	ID: 59
-}, {
-	name: "Promenade",
-	type: "hat",
-	ID: 26
-}, {
-	name: "Backbone",
-	type: "fossil",
-	ID: 1
-}, {
-	name: "Amberlamp",
-	type: "fossil",
-	ID: 5
-}, {
-	name: "Warclaw",
-	type: "fossil",
-	ID: 7
-}, {
-	name: "Stonemarr",
-	type: "fossil",
-	ID: 11
-}, {
-	name: "Preservus",
-	type: "fossil",
-	ID: 8
-}, {
-	name: "Skeletus",
-	type: "fossil",
-	ID: 6
-}, {
-	name: "Ocshell",
-	type: "fossil",
-	ID: 9
-}, {
-	name: "Tyranus",
-	type: "fossil",
-	ID: 13
-}, {
-	name: "Shipyard",
-	type: "dorm",
-	ID: 52
-}, {
-	name: "Timezone",
-	type: "dorm",
-	ID: 68
-}, {
-	name: "Keynote",
-	type: "dorm",
-	ID: 65
-}, {
-	name: "Soundview",
-	type: "dorm",
-	ID: 58
-}, {
-	name: "Breakbeat",
-	type: "dorm",
-	ID: 51
-}, {
-	name: "Flashfire",
-	type: "dorm",
-	ID: 42
-}, {
-	name: "Earthrone",
-	type: "dorm",
-	ID: 45
-}, {
-	name: "Aquaria",
-	type: "dorm",
-	ID: 34
-}, {
-	name: "Dynodig",
-	type: "dorm",
-	ID: 57
-}, {
-	name: "Steamtock",
-	type: "dorm",
-	ID: 66
-}, {
-	name: "Bonestorm",
-	type: "dorm",
-	ID: 55
-}, {
-	name: "The Helm",
-	type: "dorm",
-	ID: 59
-}, {
-	name: "Flamelands",
-	type: "dorm",
-	ID: 36
-}, {
-	name: "Icelands",
-	type: "dorm",
-	ID: 37
-}, {
-	name: "Woodlands",
-	type: "dorm",
-	ID: 38
-}, {
-	name: "Thunderplains",
-	type: "relic",
-	ID: 1
-}, {
-	name: "Creepwood",
-	type: "relic",
-	ID: 2
-}, {
-	name: "Volcanica",
-	type: "relic",
-	ID: 3
-}, {
-	name: "Chilly Town",
-	type: "relic",
-	ID: 4
-}, {
-	name: "Seaside",
-	type: "relic",
-	ID: 5
-}, {
-	name: "Lifeforce",
-	type: "relic",
-	ID: 7
-}, {
-	name: "Luckshrine",
-	type: "relic",
-	ID: 8
-}, {
-	name: "Lightshow",
-	type: "relic",
-	ID: 16
-}, {
-	name: "Stonehurst",
-	type: "relic",
-	ID: 17
-}, {
-	name: "Emolten",
-	type: "relic",
-	ID: 18
-}, {
-	name: "Whitefrost",
-	type: "relic",
-	ID: 19
-}, {
-	name: "Waterworld",
-	type: "relic",
-	ID: 20
-}, {
-	name: "Cloudpuff",
-	type: "relic",
-	ID: 21
-}, {
-	name: "Treesprite",
-	type: "relic",
-	ID: 22
-}, {
-	name: "Melty Plains",
-	type: "relic",
-	ID: 23
-}, {
-	name: "Snowday",
-	type: "relic",
-	ID: 24
-}, {
-	name: "Bubble Bay",
-	type: "relic",
-	ID: 25
-}, {
-	name: "Thunderstone",
-	type: "relic",
-	ID: 29
-}, {
-	name: "Earthstone",
-	type: "relic",
-	ID: 30
-}, {
-	name: "Firestone",
-	type: "relic",
-	ID: 31
-}, {
-	name: "Incantrik",
-	type: "outfit",
-	ID: 1
-}, {
-	name: "Celestial",
-	type: "outfit",
-	ID: 5
-}, {
-	name: "Powerthrone",
-	type: "outfit",
-	ID: 7
-}, {
-	name: "Grasslands",
-	type: "outfit",
-	ID: 29
-}, {
-	name: "Naturill",
-	type: "outfit",
-	ID: 31
-}, {
-	name: "Sleetwind",
-	type: "outfit",
-	ID: 33
-}, {
-	name: "Sandshore",
-	type: "outfit",
-	ID: 40
-}, {
-	name: "Danceclub",
-	type: "outfit",
-	ID: 42
-}, {
-	name: "Flamekeep",
-	type: "outfit",
-	ID: 34
-}, {
-	name: "Robox",
-	type: "outfit",
-	ID: 43
-}, {
-	name: "The Haunt",
-	type: "outfit",
-	ID: 46
-}, {
-	name: "Firestrike",
-	type: "outfit",
-	ID: 52
-}, {
-	name: "Raidsong",
-	type: "outfit",
-	ID: 53
-}, {
-	name: "King's Bounty",
-	type: "outfit",
-	ID: 54
-}, {
-	name: "Timechild",
-	type: "outfit",
-	ID: 41
-}, {
-	name: "Coalshrike",
-	type: "outfit",
-	ID: 8
-}, {
-	name: "Softwater",
-	type: "outfit",
-	ID: 9
-}, {
-	name: "Threadfire",
-	type: "outfit",
-	ID: 10
-}, {
-	name: "Cloudshore",
-	type: "outfit",
-	ID: 11
-}, {
-	name: "Forestedge",
-	type: "outfit",
-	ID: 12
-}], Prodigy.Menu.ToyUnlock = function(e, t) {
+}), Prodigy.Menu.ToyUnlock = function(e, t) {
 	Prodigy.RenderMenu.call(this, e, t, 0, 0, e.prodigy.textureMenu), this.create(), this.openPrompt()
 }, Prodigy.extends(Prodigy.Menu.ToyUnlock, Prodigy.RenderMenu, {
 	constructor: Prodigy.Menu.ToyUnlock,
@@ -69560,7 +68771,7 @@ defed2.reload();
 	npcHead: 2,
 	npcHat: 1,
 	npcDialogue: [{
-		text: "Please come back tomorrow between 4pm and 11pm to spin a copy of the Wheel of Wonder again for great prizes!",
+		text: "Please come back tomorrow to spin the copy of the Wheel of Wonder again for great prizes!",
 		anim: 2
 	}, {
 		text: "Hi there! Do you want to spin a copy of the Wheel of Wonder?",
@@ -69575,7 +68786,7 @@ defed2.reload();
 		text: "Fantastic! Want to spin again?",
 		anim: 4
 	}, {
-		text: "Please come back tomorrow between 4pm and 11pm to spin a copy of the Wheel of Wonder again for great prizes!",
+		text: "Please come back tomorrow to spin a copy of the Wheel of Wonder again for great prizes!",
 		anim: 2
 	}]
 }, WHEELDATA_A = {
