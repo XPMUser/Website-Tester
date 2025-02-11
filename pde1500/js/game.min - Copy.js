@@ -112,7 +112,7 @@ function ApiClient(e, t) {
 			var c = this.userID,
 				g = this.uniqueKey;
 			if (void 0 == c || void 0 == g) return Util.log("missing user id or token"), !1;
-			var u = !1,
+			var u = !0,
 				y = l.url.multiplayer;
 			/^https:\/\//.test(y) && (u = !0);
 			var m = {
@@ -431,7 +431,7 @@ function ApiClient(e, t) {
 				token: o.uniqueKey,
 				event: e
 			};
-			return a("post", "https://xpmuser.github.io/oldprodigy/assets/" + "", s, i, "trackEvent"), !0
+			return a("post", l.url.events + "world-list", s, i, "trackEvent"), !0
 		}
 		return !1
 	}, this.completeAssignment = function(e, t) {
@@ -481,8 +481,8 @@ var GameConstants = GameConstants || function() {
 	e["GameConstants.Build.KILL_GORE"] = !1,
 	e["GameConstants.Build.EASY_MODE"] = !0,
 	e["GameConstants.Build.MEMBERSHIP"] = !1,
-	e["GameConstants.Tower.MAX_FREE_MEMBER_FLOOR"] = 5,
-	e["GameConstants.Debug.DISABLE_DAILY_BONUS"] = !1,
+	e["GameConstants.Tower.MAX_FREE_MEMBER_FLOOR"] = 10,
+	e["GameConstants.Debug.DISABLE_DAILY_BONUS"] = !0,
 	e["GameConstants.Debug.ENABLE_MAP"] = !1,
 	e["GameConstants.Debug.AUTO_LOGIN"] = [],
 	e["GameConstants.Debug.GET_PET"] = [],
@@ -76421,6 +76421,11 @@ var Tech = function () {
 			name: "Boombox",
 			atlas: "boombox"
 		}, null, !1, this.onComplete.bind(this));
+		var p = this.game.prodigy.dialogue.create();
+		DinoDig.getNewFossils(this.game.prodigy.player.backpack).length > 0 && p.setText({
+			text: "Welcome to the Museum! Be sure to bring all your newly-discovered fossils.",
+			face: 0
+		});
 		var a = [{
 			pre: "Robo-",
 			req: [{
