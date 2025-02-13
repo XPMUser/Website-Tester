@@ -45452,7 +45452,7 @@ Prodigy.ForestBoss = function(e, t) {
 }, Prodigy.extends(Prodigy.Menu.SystemMenu, Prodigy.RenderMenu, {
 	constructor: Prodigy.Menu.SystemMenu,
 	create: function() {
-		this.addTransparent(), this.content = this.game.prodigy.create.element(this, 280, 260, 15, 8), this.createBaseSetup(26, 16, "stat", "Settings", [{
+		this.addTransparent(), this.createBaseSetup(26, 16, "stat", "Settings", [{
 			icon: "settings",
 			bot: "Sound"
 		}, {
@@ -45489,7 +45489,7 @@ Prodigy.ForestBoss = function(e, t) {
 		}, this.exitGame.bind(this))
 	},
 	clearContents: function() {
-		Util.isDefined(this.content) && this.content.destroy(), Util.isDefined(this.panel) && this.panel.destroy(), Util.isDefined(this.soundVolumeBar) && (this.soundVolumeBar.destroy(), this.soundVolumeBar = null), Util.isDefined(this.voiceVolumeBar) && (this.voiceVolumeBar.destroy(), this.voiceVolumeBar = null), Util.isDefined(this.bgmVolumeBar) && (this.bgmVolumeBar.destroy(), this.bgmVolumeBar = null), this.panel = this.game.prodigy.create.panel(this, 260, 260, 16, 8, "white"), this.content = this.game.prodigy.create.element(this, 280, 260, 15, 8)
+		Util.isDefined(this.content) && this.content.destroy(), Util.isDefined(this.panel) && this.panel.destroy(), Util.isDefined(this.soundVolumeBar) && (this.soundVolumeBar.destroy(), this.soundVolumeBar = null), Util.isDefined(this.voiceVolumeBar) && (this.voiceVolumeBar.destroy(), this.voiceVolumeBar = null), Util.isDefined(this.bgmVolumeBar) && (this.bgmVolumeBar.destroy(), this.bgmVolumeBar = null), this.content = this.game.prodigy.create.element(this, 280, 260, 15, 8)
 	},
 	setMode: function(e) {
 		switch (Prodigy.RenderMenu.prototype.setMode.call(this, e), this.clearContents(), e) {
@@ -45517,10 +45517,6 @@ Prodigy.ForestBoss = function(e, t) {
 	},
 	openWorld: function() {
 		this.game.prodigy.open.server()
-	},
-	openBots: function() {
-var bot = this.game.prodigy.create.player(this.content, new Player(this.game), 1, 640, 360); bot.forceOutfit(39); bot.showName(!0); bot.reload(bot.walk.bind(bot));
-bot.reload();
 	},
 	setSound: function(e) {
 		switch (e) {
@@ -45562,7 +45558,11 @@ bot.reload();
 		}, this.game.prodigy.graphics.setResolutionLarge.bind(this))
 	},
 	openOther: function() {
-		let e = "You are not currently signed in with Google.";
+		var z = Util.isDefined(this.game.prodigy.player.world) ? "Your world is: " + Prodigy.Menu.Server.getServerName(this.game.prodigy.player.world) : "Your world is: pde1500.";
+		this.game.prodigy.create.font(this.content, 0, -50, z, {
+			width: 600,
+			align: "center"
+		}); let e = "You are not currently signed in with Google.";
 		if (this.game.prodigy.old.signedIn) {
 			e = "You are currently signed in with Google.";
 			this.game.prodigy.create.font(this.content, 0, 45, `User ID: ${this.game.prodigy.player.userID}`, {
