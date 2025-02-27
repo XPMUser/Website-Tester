@@ -9,7 +9,6 @@
 		Fast Game Speed				Daboss7173
 		Rebalanced Battles			Daboss7173
 		Classic Faces				Daboss7173
-		Retro Mod				XPMuser and tonster
 	
 	Written by: Daboss7173
 	Github: https://github.com/Daboss7173/Daboss7173.github.io
@@ -427,9 +426,6 @@ class ModHandler {
 			}), this.game.prodigy.audio.playSFX(Prodigy.Controller.AudioController.SFX_PACKS.BATTLE, r);
 			var n = null;
 			o || 0 !== this.target.source.modifiers.ignoreElement || (this.game.prodigy.attacks.isStrong(this.atk.element, this.target.source.getElement()) ? n = "Powerful!" : this.game.prodigy.attacks.isWeak(this.atk.element, this.target.source.getElement()) && (n = "Weak...")), Util.isDefined(n) && (this.delayComplete = !0, this.game.prodigy.effects.characterText(n, this.target.x, this.source.y + 50, 1e3 + this.shieldTime))
-		}
-	}
-	initRetroMod() {
 		}
 	}
 	initClassicFaceMod() {
