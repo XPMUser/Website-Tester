@@ -2012,6 +2012,12 @@ Util.capitalize = function(e) {
 			key: "zone-pirate",
 			v: "1"
 		},
+		"zone-townsquare": {
+			type: "localAtlas",
+			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/",
+			key: "zone-townsquare",
+			v: "1"
+		},
 		"zone-academy": {
 			type: "localAtlas",
 			base: "https://xpmuser.github.io/oldprodigy/pdenot1.50.0/assets/images/",
@@ -50173,14 +50179,14 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 	subject: "Epic Spells can now be used multiple times!",
 	isOpened: !1,
 	image: "epic-attacks",
-	message: "You can learn Epic Spells from Tech Zone and/or buy Epics (pets) from the pet park to cast epic spells during battles!"
+	message: "You can buy Epics (pets) from the pet park to cast the epic spells during battles!"
 
 }, {
 	id: 2,
-	subject: "Tech Zone's now available!",
+	subject: "The real Multiplayer Mode is coming soon!",
 	isOpened: !1,
 	image: "after-hours",
-	message: "You can go there from Airship Landing or the Firefly Garden!"
+	message: "The actual Multiplayer Mode's under construction for now!"
 }, {
 	id: 3,
 	subject: "You can now catch pets in The Lost Island!",
@@ -55604,7 +55610,7 @@ var Boot = function() {
 }();
 Boot.init = function() {
 	var e = new Phaser.Game(1280, 720, Phaser.CANVAS, "game-container");
-	e.prodigy = new Prodigy.GameObj(e), e.state.add("Boot", Boot), e.state.add("Loading", Prodigy.Loading), e.state.add("PVPLoading", Prodigy.PVPLoading), e.state.add("TileScreen", TileScreen), e.state.add("Login", Login), e.state.add("Battle", Prodigy.Battle.Battle), e.state.add("PVP", PVP), e.state.add("Faint", Faint), e.state.add("CharSelect", Prodigy.CharSelect), e.state.add("CharCreate", Prodigy.CharCreate), e.state.add("Docks", Docks), e.state.add("Academy", Academy), e.state.add("Arena", Arena), e.state.add("Forest", Forest), e.state.add("Mountain", Mountain), e.state.add("Cloud", Cloud), e.state.add("Volcano", Volcano), e.state.add("Pirate", Pirate), e.state.add("Plains", Plains), e.state.add("Tree", Tree), e.state.add("Dorm", Dorm), e.state.add("Intro", Intro), e.state.add("Tower", Tower), e.state.add("TowerBase", TowerBase), e.state.add("Dino", Dino), e.state.add("Museum", Museum), e.state.add("Tech", Tech), e.state.add("TechZone", TechZone), e.state.add("DinoDig", DinoDig), e.state.add("DanceDance", DanceDance), e.state.add("Util_Gear", Prodigy.Util_Gear), Util.isDefined(window.checkForMods) ? checkForMods(e, window.location.search) : console.log("%c %c %c Found no mods to hook into. %c %c ", "background: #9bd", "background: #48a", "background: #16a; color: #FFF", "background: #48a", "background: #9bd"), e.state.start("Boot"), e.prodigy.player.changeCurrentHearts(99999999999999990)
+	e.prodigy = new Prodigy.GameObj(e), e.state.add("Boot", Boot), e.state.add("Loading", Prodigy.Loading), e.state.add("PVPLoading", Prodigy.PVPLoading), e.state.add("TileScreen", TileScreen), e.state.add("Login", Login), e.state.add("Battle", Prodigy.Battle.Battle), e.state.add("PVP", PVP), e.state.add("Faint", Faint), e.state.add("CharSelect", Prodigy.CharSelect), e.state.add("CharCreate", Prodigy.CharCreate), e.state.add("Docks", Docks), e.state.add("Academy", Academy), e.state.add("Arena", Arena), e.state.add("Forest", Forest), e.state.add("Mountain", Mountain), e.state.add("Cloud", Cloud), e.state.add("Volcano", Volcano), e.state.add("Pirate", Pirate), e.state.add("Plains", Plains), e.state.add("Tree", Tree), e.state.add("Dorm", Dorm), e.state.add("Intro", Intro), e.state.add("Tower", Tower), e.state.add("TowerBase", TowerBase), e.state.add("Dino", Dino), e.state.add("Museum", Museum), e.state.add("TownSquare", TownSquare), e.state.add("Tech", Tech), e.state.add("TechZone", TechZone), e.state.add("DinoDig", DinoDig), e.state.add("DanceDance", DanceDance), e.state.add("Util_Gear", Prodigy.Util_Gear), Util.isDefined(window.checkForMods) ? checkForMods(e, window.location.search) : console.log("%c %c %c Found no mods to hook into. %c %c ", "background: #9bd", "background: #48a", "background: #16a; color: #FFF", "background: #48a", "background: #9bd"), e.state.start("Boot"), e.prodigy.player.changeCurrentHearts(99999999999999990)
 }, Prodigy.Loading = function(e) {
 	Phaser.State.call(this), this.game = e
 }, Prodigy.extends(Prodigy.Loading, Phaser.State, {
@@ -55883,7 +55889,7 @@ var Screen = function() {
 				this.game.prodigy.open.okaymessage("The load character button doesn't work on iPads. We suggest you use another device if you are an iPad user.", null, "star", "Warning!");
 			this.game.prodigy.debug.easyMode(1, 1), this.background.add(this.game.prodigy.create.sprite(0, 0, "login", "bg")), this.loginBox = this.game.prodigy.create.element(this.background), this.usernameField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "username", "", 90, 230, 300, 40), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Prodigy version 1.50.0");
 			var e = Util.getCookie("prodigyUsername");
-			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition version 13"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "google-signin-btn", this.onGoogleLoginButtonClick.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
+			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition version 14"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "google-signin-btn", this.onGoogleLoginButtonClick.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
 				width: 300,
 				align: "center"
 			}), this.closeButton = this.game.prodigy.create.textButton(this.progressBox, 0, 100, {
@@ -55914,7 +55920,7 @@ var Screen = function() {
 			} else {
 				// Unsuccessful Google sign-in:
 				this.showLogin(!1);
-				this.error.setText("Google login error: " + data.code);
+				this.game.prodigy.open.message("Your account has been disabled, Please DM the admins/collaborators by asking why your account is disabled or make a blank issue about the question about your account being disabled.");
 				this.closeButton.visible = !0;
 			}
 		}, e.prototype.onGoogleSaveLoad = function(data) {
@@ -58869,6 +58875,9 @@ Prodigy.Skin = function(e, t) {
 				break;
 			case "create-1":
 				this.game.prodigy.start("CharSelect", s);
+				break;
+			case "town-0":
+				this.game.prodigy.start("TownSquare", s);
 				break;
 			default:
 				this.zones.house.teleport("house", t, i, a, s)
@@ -66649,24 +66658,24 @@ var TownSquare = function() {
 		return e.prototype = Object.create(WalkableScreen.prototype), e.prototype.create = function() {
 			WalkableScreen.prototype.create.call(this, [], "town-0")
 		}, e.prototype.screenSetup = function() {
-			WalkableScreen.prototype.screenSetup.call(this), new QuestNPC(this.game, this.content, 440, 290, null, {
+			WalkableScreen.prototype.screenSetup.call(this), new Prodigy.Container.QuestNPC(this.game, this.content, 440, 290, null, {
 				name: "M.Stache",
 				atlas: "stache"
 			}, this.openText.bind(this));
-			var e = new Prodigy.Sprite(this.game, 490, 250, this.screenName, "wheel");
+			var e = this.game.prodigy.create.sprite(this.game, 490, 250, this.screenName, "wheel");
 			e.anchor.setTo(.5, 1), this.content.add(e), e.inputEnabled = !0, e.events.onInputDown.add(this.openText, this), this.path.addCallback(3, this.toForest.bind(this)), this.path.addCallback(4, this.toAcademy.bind(this)), this.path.addCallback(5, this.toDocks.bind(this)), this.path.addCallback(6, this.toArena.bind(this));
-			var t = new Prodigy.Sprite(this.game, 819, 49, this.screenName, "door"),
+			var t = this.game.prodigy.create.sprite(this.game, 819, 49, this.screenName, "door"),
 				a = function() {
 					this.game.prodigy.open.stylist()
 				};
 			t.inputEnabled = !0, t.events.onInputDown.add(a.bind(this), this), t.alpha = .5, this.game.add.tween(t).to({
 				alpha: 0
 			}, 1500, Phaser.Easing.Linear.None, !0, 0, 1e4, !0), this.background.add(t);
-			var i = new QuestNPC(this.game, this.content, 970, 530, null, {
+			var i = new Prodigy.Container.QuestNPC(this.game, this.content, 970, 530, null, {
 				atlas: "merchant",
 				name: "Peddler"
 			}, this.openStore.bind(this));
-			i.setIndicator("store"), this.menuBar.addStore()
+			i.setIndicator("store")
 		}, e.prototype.toForest = function() {
 			this.game.prodigy.world.teleport("tutorial-D8", 1190, 260)
 		}, e.prototype.toDocks = function() {
@@ -66676,7 +66685,7 @@ var TownSquare = function() {
 		}, e.prototype.toAcademy = function() {
 			this.game.state.states.Academy.playerX = 313, this.game.state.states.Academy.playerY = 613, this.game.state.start("Academy")
 		}, e.prototype.openText = function() {
-			new Wheel(this.game, this.foreground, this.game.prodigy.player)
+			Prodigy.Component.DayWheel(this.game, this.foreground, this.game.prodigy.player)
 		}, e.prototype.openStore = function(e) {
 			for (var t = Util.getDateSeed(), a = [], i = 0; i < Items.data.item.length; i++) 1 === Items.data.item[i].drop && a.push(i + 1);
 			var s = a[Math.floor(Util.pseudoRandomNumber(t) * a.length)],
@@ -66785,7 +66794,7 @@ var Arena = function() {
 			callback: this.game.prodigy.open.membership.bind(this.game.prodigy.open)
 		})), this.game.prodigy.dialogue.start("npc-face-noot")
 	}, e.prototype.toTown = function() {
-		this.game.prodigy.world.teleport("lamplight-C3", 580, 360)
+		this.game.prodigy.world.teleport("lamplight-D4", 580, 360)
 	}, e.prototype.toForest = function() {
 		this.game.prodigy.world.teleport("forest-0", 580, 360)
 	}, e
@@ -66795,7 +66804,7 @@ Arena.AUDIO = [{
 	s: 0,
 	d: 1
 }], Arena.DATA = {
-	tag: "Arena",
+	tag: "arena-0",
 	zoneName: "zone-academy",
 	atlas: "zone-academy",
 	fullName: "Lamplight Academy",
@@ -67893,9 +67902,6 @@ defed.reload();
 	Prodigy.Map.call(this, e, "B3", "Town Square", 120, 417.5, ["lamplight-A3", "lamplight-C3"], t.concat("zone-lamplight"))
 }, Prodigy.extends(Prodigy.Lamplight_B3, Prodigy.Map, {
 	constructor: Prodigy.Lamplight_B3,
-	init: function (e, t, i, a) {
-		return Util.isNightTime() ? (a.zone.enableLayer(1, !0), a.zone.enableLayer(0, !1)) : (a.zone.enableLayer(1, !1), a.zone.enableLayer(0, !0)), Prodigy.Map.prototype.init.call(this, e, t, i)
-	},
 	setup: function (e, t, i) {
 		Prodigy.Map.prototype.setup.call(this, e, t, i), this.addAreaEvent(e, t, {
 			x: 1240,
@@ -68021,7 +68027,7 @@ defed.reload();
 			w: 400,
 			h: 200,
 			rect: !0
-		}, "lamplight-D4", 260, 540, null, AreaEvent.RIGHT), this._zone.util.addDoor(e, t, 520, 200, 120, 160, 580, 360, e.prodigy.start.bind(e.prodigy, "Arena")), new Prodigy.Component.BountyBoard(e, t, t.data)
+		}, "lamplight-D4", 260, 540, null, AreaEvent.RIGHT), this._zone.util.addDoor(e, t, 520, 200, 120, 160, 580, 360, e.prodigy.start.bind(e.prodigy, "TechZone")), new Prodigy.Component.BountyBoard(e, t, t.data)
 	}
 }), Prodigy.Lamplight_C4 = function(e, t) {
 	Prodigy.Map.call(this, e, "C4", "Market", 200, 180, ["lamplight-B4", "lamplight-C3", "tower-0"], t.concat(["npc-sprite-noot"])), this._store = {
@@ -68204,7 +68210,7 @@ defed.reload();
 			h: 180,
 			rect: !0
 		}, "lamplight-C3", 1000, 540, null, AreaEvent.LEFT);
-		var a = e.prodigy.start.bind(e.prodigy, "TechZone");
+		var a = e.prodigy.start.bind(e.prodigy, "Arena");
 		this._zone.util.addDoor(e, t, 400, 40, 120, 200, 460, 240, a); this._zone.util.addLamp(e, t, 2, 98), this._zone.util.addLamp(e, t, 242, 98), this._zone.util.addLamp(e, t, 2, 458), this._zone.util.addLamp(e, t, 2, 658), this._zone.util.addLamp(e, t, 280, 223), this._zone.util.addLamp(e, t, 1246, 223), this.addGnome(e, t, 495, 355, "Kip", 4, 2, this.npcClick.bind(this, e));
 var defed2 = this.game.prodigy.create.player(this.content, new Player(this.game), 1, 160, 320); defed2.forceOutfit(39); defed2.showName(!0);
 defed2.reload();
@@ -69709,7 +69715,7 @@ var Cloud = function() {
 			}],
 			fail: "You need to buy the Skywatch set to unlock!"
 		}, {
-			post: " the Skyfolk",
+			pre: "Super ",
 			req: [{
 				rtype: "quest",
 				zone: 3,
@@ -69740,13 +69746,6 @@ var Cloud = function() {
 	}, e.prototype.toCloud = function() {
 		this.game.state.states.Plains.playerX = 880, this.game.state.states.Plains.playerY = 370, this.game.state.start("Plains")
 	}, e.prototype.startText = function() {
-		var e = {
-			text: "Hey there! Want to hitch a ride back down?",
-			face: 0,
-			yes: this.toCloud.bind(this)
-		};
-		this.game.prodigy.dialogue.setText(e), this.game.prodigy.dialogue.start("cumulo")
-	}, e.prototype.startText2 = function() {
 		var e = {
 			text: "Hey there! Want to hitch a ride back down?",
 			face: 0,
@@ -75781,9 +75780,9 @@ var TechZone = function () {
 	}, e.prototype.toPlains = function () {
 		this.game.prodigy.world.teleport("pirate-0")
 	}, e.prototype.toTech = function () {
-		this.game.prodigy.world.teleport("lamplight-D4")
+		this.game.prodigy.world.teleport("cloud-1")
 	}, e.prototype.toTown = function () {
-		this.game.prodigy.world.teleport("cloud-1", 188, 560)
+		this.game.prodigy.world.teleport("lamplight-C3")
 	}, e
 }();
 TechZone.STORE = {
