@@ -46566,8 +46566,8 @@ Prodigy.ForestBoss = function(e, t) {
 }, Prodigy.extends(Prodigy.Menu.MessageBox, Prodigy.RenderMenu, {
 	constructor: Prodigy.Menu.MessageBox,
 	create: function() {
-		this.addTransparent(), this.base = this.game.prodigy.create.element(this, 340, 200), this.panel = this.game.prodigy.create.panel(this.base, 0, 0, 15, 8, "stat"), this.desc = this.game.prodigy.create.font(this.base, 60, 60, "", {
-			font: "black",
+		this.addTransparent(), this.base = this.game.prodigy.create.element(this, 340, 200), this.panel = this.game.prodigy.create.panel(this.base, 0, 0, 12, 6, ""), this.desc = this.game.prodigy.create.font(this.base, 60, 60, "", {
+			font: "general",
 			size: 20,
 			width: 480
 		}), this.title = this.game.prodigy.create.font(this.base, 10, 0, "", {
@@ -46581,14 +46581,14 @@ Prodigy.ForestBoss = function(e, t) {
 	},
 	setOkay: function(e, t) {
 		Util.isDefined(e) || (e = "okay");
-		var i = this.game.prodigy.create.textButton(this.base, 0, 250, {
+		var i = this.game.prodigy.create.textButton(this.base, 0, 230, {
 			icon: "",
 			text: e
 		}, this.close.bind(this, t));
 		i.x = Util.getCenteredXY(i.width, 0, 0, 0, this.panel.width, 0).x
 	},
 	setConfirm: function(e, t) {
-		Prodigy.Control.TextButton.createYesButton(this.game, this.base, 160, 250, this.close.bind(this, e)), Prodigy.Control.TextButton.createNoButton(this.game, this.base, 380, 250, this.close.bind(this, t))
+		Prodigy.Control.TextButton.createYesButton(this.game, this.base, 160, 230, this.close.bind(this, e)), Prodigy.Control.TextButton.createNoButton(this.game, this.base, 380, 230, this.close.bind(this, t))
 	},
 	setConfirmGeneric: function(e, t, i) {
 		Util.isDefined(e) || (e = {}), Util.isDefined(t) || (t = {});
@@ -48990,7 +48990,7 @@ Prodigy.ForestBoss = function(e, t) {
 }, {
 	opponent: {
 		data: '{"level":100}',
-		appearance: '{"name":"Alexa of the Sky", "gender":"female", "hairStyle":5,"hairColor":16,"skinColor":1,"eyeColor":13}',
+		appearance: '{"name":"Botanist Alexa", "gender":"female", "hairStyle":5,"hairColor":16,"skinColor":1,"eyeColor":13}',
 		equipment: '{"hat":23, "outfit":24, "weapon":47, "boots":18}'
 	},
 	title: "Prodidows' wizard in Daboss7173's PDE",
@@ -49006,7 +49006,7 @@ Prodigy.ForestBoss = function(e, t) {
 }, {
 	opponent: {
 		data: '{"level":100}',
-		appearance: '{"name":"David of the Sky", "gender":"male", "hairStyle":3,"hairColor":16,"skinColor":1,"eyeColor":13}',
+		appearance: '{"name":"Botanist David", "gender":"male", "hairStyle":3,"hairColor":16,"skinColor":1,"eyeColor":13}',
 		equipment: '{"hat":23, "outfit":52, "weapon":47, "boots":18}'
 	},
 	title: "XPMUser from Daboss7173's PDE",
@@ -49188,6 +49188,60 @@ Prodigy.ForestBoss = function(e, t) {
     drops: [{
         type: "gold",
         N: 500
+    }]
+	/* Can you please make a female bot request in feature request since the order of coliseum opponents have to be by a gender order? */
+}, {
+    opponent: {
+        data: '{"level":100}',
+        appearance: '{"name":"King of the Forest", "gender":"male", "hairStyle":4,"hairColor":4,"skinColor":3,"eyeColor":14}',
+        equipment: '{"hat":80, "outfit":38, "weapon":68, "boots":26}'
+    },
+    title: "Issac's character from Daboss7173's PDE",
+    description: "He's XPMUser/Ao28th28's high school friend.",
+    pets: [],
+    drops: [{
+        type: "gold",
+        N: 5000
+    }]
+	/* Can you please make a female bot request in feature request since the order of coliseum opponents have to be by a gender order? */
+}, {
+    opponent: {
+        data: '{"level":1}',
+        appearance: '{"name":"Daniel Redstrider", "gender":"male", "hairStyle":5,"hairColor":4,"skinColor":2,"eyeColor":3}',
+        equipment: '{"weapon":25}'
+    },
+    title: "Issac's character from XPMUser's pde1500",
+    description: "XPMUser introduced Issac to his pde1500. This is Issac's character from XPMUser's pde1500.",
+    pets: [],
+    drops: [{
+        type: "gold",
+        N: 5000
+    }]
+}, {
+    opponent: {
+        data: '{"level":81}',
+        appearance: '{"name":"Sierra Iceman", "gender":"female", "hairStyle":3,"hairColor":9,"skinColor":2,"eyeColor":11}',
+        equipment: '{"boots":20, "outfit":20, "hat":24, "weapon":23}'
+    },
+    title: "Bot from pde1500",
+    description: "This is a bot from pde1500.",
+    pets: [],
+    drops: [{
+        type: "gold",
+        N: 500
+    }]
+}, {
+    opponent: {
+        data: '{"level":60}',
+        appearance: '{"name":"Angel Dragondrifter", "gender":"male", "hairStyle":5,"hairColor":5,"skinColor":4,"eyeColor":4}',
+        equipment: '{"boots":18, "outfit":24, "hat":23, "weapon":92}'
+    },
+    title: "Issac's character from XPMUser's pde1500 as well",
+    description: "This is Issac's other character from XPMUser's pde1500.",
+    pets: [],
+    drops: [{
+        type: "gold",
+        N: 5000
     }]
 }], Prodigy.Menu.Nicknamer = function(e, t, i, a) {
 	Prodigy.Control.Menu.call(this, e, t, 18, {
@@ -50102,8 +50156,8 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 			t = 578;
 		this.form = this.game.prodigy.create.element(this, 120, 20);
 		var i = this.game.prodigy.create.element(this.form, 0, 0);
-		this.game.prodigy.create.panel(i, 0, 0, 26, 15, "stat");
-		i.add(new Phaser.TileSprite(this.game, 11, 149, e, 40, "core", "stat-top")), i.add(new Phaser.TileSprite(this.game, 11, 189, e, 280, "core", "stat-mid")), i.add(new Phaser.TileSprite(this.game, 11, 469, e, 40, "core", "stat-top2")), this.game.prodigy.create.panel(i, 40, 40, 24, 2, "banner"), this.game.prodigy.create.font(this.form, 0, 60, "Your Mail", {
+		this.game.prodigy.create.panel(i, 0, 0, 21, 12, "");
+		this.game.prodigy.create.panel(i, 40, 40, 19, 2, ""), this.game.prodigy.create.font(this.form, 0, 60, "Your Mail", {
 			size: 30,
 			width: e,
 			align: "center",
@@ -50229,19 +50283,19 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 	constructor: Prodigy.Menu.OpenMail,
 	create: function(e, t) {
 		this.addTransparent();
-		var i = 20,
+		var i = 16,
 			a = 949;
 		this.form = this.game.prodigy.create.element(this, 160, 20);
 		var s = this.game.prodigy.create.element(this.form, 0, 0);
 		this.game.prodigy.create.panel(s, 0, 0, 24, 17, "white"), this.game.prodigy.create.button(this.form, a - 18, -10, "icons", "close", this.close.bind(this));
-		var r = this.game.prodigy.create.panel(s, 80, 11, i, 2, "shine2");
-		this.game.prodigy.create.font(r, 20, 20, e.subject, {
+		var r = this.game.prodigy.create.panel(s, 80, 11, i, 2, "");
+		this.game.prodigy.create.font(r, 80, 30, e.subject, {
 			size: 30,
 			width: 40 * i - 40,
-			align: "center",
+			align: "right",
 			lineHeight: 38
 		});
-		var o = this.game.prodigy.create.panel(s, 55, r.y + 80 + 11, 17, 3, "panel-light");
+		var o = this.game.prodigy.create.panel(s, 55, r.y + 80 + 11, 17, 3, "");
 		this.game.prodigy.create.font(o, 20, 20, e.message, {
 			size: 20,
 			width: 50 * (Math.floor(19.2) - 2) - 5 - 40,
@@ -66689,7 +66743,7 @@ var TownSquare = function() {
 		}, e.prototype.openStore = function(e) {
 			for (var t = Util.getDateSeed(), a = [], i = 0; i < Items.data.item.length; i++) 1 === Items.data.item[i].drop && a.push(i + 1);
 			var s = a[Math.floor(Util.pseudoRandomNumber(t) * a.length)],
-				r = this.game.prodigy.player.backpack.hasItem("item", "currency", "hat", "outfit", "weapon", "boots", "follow", "pet", s),
+				r = this.game.prodigy.player.backpack.hasItem("item", s),
 				o = "You have " + r + "...do you want to sell me one of yours?";
 			e && (o = "Thanks! You have " + r + " left, do you want to sell me another one?"), e || this.game.prodigy.dialogue.setText({
 				text: "Hey there, do you have any [item/" + s + "]? \n\nToday only, I'll buy them for \n[gold] 100 each!",
@@ -76731,36 +76785,23 @@ var Dorm = function () {
 		WalkableScreen.call(this, e, {
 			fullName: "Your House",
 			zoneName: "zone-house",
-			atlas: "store-dorm"
+			atlas: "zone-house"
 		}), this.area = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0], [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0], [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0], [1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]
 	}
 	return e.prototype = Object.create(WalkableScreen.prototype), e.prototype.create = function () {
-		this.player = this.player || this.game.prodigy.player, this.zoneName = "store-dorm-" + this.player.userID;
+		this.player = this.player || this.game.prodigy.player, this.zoneName = "zone-house-" + this.player.userID;
 		var e = this.player.house.getBackground(),
 			t = Items.getItemData("dormbg", e);
 		this.playerX = t.x, this.playerY = t.y, WalkableScreen.prototype.create.call(this, [t.bg], "house-0")
 	}, e.prototype.screenSetup = function () {
 		this.disableBots = !0, WalkableScreen.prototype.screenSetup.call(this), this.bgID = this.player.house.getBackground();
 		var t = Items.getItemData("dormbg", this.bgID);
-		this.bg.loadTexture(t.bg), this.area = t.area, this.path = new Pathfinder(this.area), this.items = this.game.prodigy.create.element(this.background), this.player.userID === this.game.prodigy.player.userID && (1, [{
-	addHouseConfig: function(e) {
-		this.addMenu(e, 1), this.addMoveHouse(e, 1), this.addEditHouse(e, 1), this.addLockHouse(e, 1)
-	},
-	addMoveHouse: function(e, t) {
-		this.pages[e][t].push({
-			type: "MoveHouseButton"
-		})
-	},
-	addEditHouse: function(e, t) {
-		this.pages[e][t].push({
-			type: "EditHouseButton"
-		})
-	},
-	addLockHouse: function(e, t) {
-		this.pages[e][t].push({
-			type: "LockHouseButton"
-		})
-	}
+		this.bg.loadTexture(t.bg), this.area = t.area, this.path = new Pathfinder(this.area), this.items = this.game.prodigy.create.element(this.background), this.player.userID === this.game.prodigy.player.userID && this.menuBar.addMenu(1, [{
+			icon: "move",
+			callback: this.game.prodigy.open.dormStore.bind(this.game.prodigy.open, e.BG_STORE, this.move.bind(this))
+		}, {
+			icon: "edit",
+			callback: this.game.prodigy.open.dormEditor.bind(this.game.prodigy.open, this.updateItems.bind(this))
 		}]), this.updateItems()
 	}, e.prototype.move = function () {
 		this.bgID !== this.player.house.getBackground() && this.game.state.start("Dorm")
@@ -78035,7 +78076,7 @@ Dino.STORE = {
 		}]
 	}]
 }, Prodigy.House = function(e) {
-	Prodigy.Zone.call(this, e), this.game = e, this.util = new Prodigy.ZoneUtil(e, this), this.name = "House", this.ID = "house", this.bgID = 0, this.bgm = "bgm-tutorial", this.minLevel = 1, this.maxLevel = 4, this.battleBG = "bg-battle-mountain", this.onFaint = "house", this.questHub = "house", this.hasClickedLockButton = !1, this.screen = null, this.states = ["daily", "private", "hasClickedLockButton", "hasClickedHouseIcon", "hasClickedWorldMap", "hasClickedPlayerCardVisit", "lastInteractionDateMs", "houseMovingBreadcrumbs"];
+	Prodigy.Zone.call(this, e), this.assets = ["map"], this.game = e, this.util = new Prodigy.ZoneUtil(e, this), this.name = "House", this.ID = "house", this.bgID = "map", this.bgm = "bgm-tutorial", this.minLevel = 1, this.maxLevel = 4, this.battleBG = "bg-battle-mountain", this.onFaint = "house", this.questHub = "house", this.hasClickedLockButton = !1, this.screen = null, this.states = ["map", "daily", "private", "hasClickedLockButton", "hasClickedHouseIcon", "hasClickedWorldMap", "hasClickedPlayerCardVisit", "lastInteractionDateMs", "houseMovingBreadcrumbs"];
 	var t = {
 			suburbs: ["tileset-interior-general", "tileset-wall-collisions", "bgm-tutorial"],
 			coolCave: ["tileset-interior-icecave"],
@@ -78577,7 +78618,7 @@ Prodigy.HouseMap = function(e, t, i, a, s, r, o) {
 }, Prodigy.extends(Prodigy.HouseMap, Prodigy.Map, {
 	constructor: Prodigy.HouseMap,
 	setup: function(e, t, i) {
-		Prodigy.Map.prototype.setup.call(this, e, t, i), this.game = e, this.player = this._zone.player, this.ID = 1, this.above = e.prodigy.create.element(t.foreground), this.content = t.content, this.placed = [], this.loadItems(), this.createAreaEvents(e, t)
+		Prodigy.Map.prototype.setup.call(this, e, t, i), this.assets = ["map"], this.game = e, this.player = this._zone.player, this.ID = 1, this.above = e.prodigy.create.element(t.foreground), this.content = t.content, this.placed = [], this.loadItems(), this.createAreaEvents(e, t)
 	},
 	loadItems: function() {
 		for (var e = this.player.house.getSortedActive(), t = 0; t < e.length; t++) {
