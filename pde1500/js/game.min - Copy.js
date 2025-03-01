@@ -49233,7 +49233,7 @@ Prodigy.ForestBoss = function(e, t) {
 }, {
     opponent: {
         data: '{"level":60}',
-        appearance: '{"name":"Angel Dragondrifter", "gender":"male", "hairStyle":5,"hairColor":5,"skinColor":4,"eyeColor":4}',
+        appearance: '{"name":"Angel of the World", "gender":"male", "hairStyle":5,"hairColor":5,"skinColor":4,"eyeColor":4}',
         equipment: '{"boots":18, "outfit":24, "hat":23, "weapon":92}'
     },
     title: "Issac's character from XPMUser's pde1500 as well",
