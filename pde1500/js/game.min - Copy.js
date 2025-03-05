@@ -51,14 +51,14 @@ function ApiClient(e, t) {
 			root: void 0
 		},
 		d = {
-			dev: "http://xpmuser.github.io/",
+			dev: "https://toonigy.github.io/Prodidows-server/public/",
 			staging: "https://www.prodigygame.org/",
 			production: "https://www.prodigygame.com/"
 		},
 		p = {
-			dev: "https://multiplayer-dev.prodigygame.org/",
-			staging: "https://api.prodigygame.com/",
-			production: "https://multiplayer.prodigygame.com/"
+			dev: "https://prodidows-server.onrender.com/",
+			staging: "https://prodidows-server.onrender.com/",
+			production: "https://prodidows-server.onrender.com/"
 		},
 		c = "game-api/",
 		g = "leaderboard-api/",
@@ -70,7 +70,7 @@ function ApiClient(e, t) {
 		v = "assignment-api/",
 		w = "education-api/",
 		x = "worlds-api/";
-	switch ("xpmuser.github.io") {
+	switch ("toonigy.github.io/Prodidows-server/public/") {
 		case "dev.prodigygame.org":
 		case "localhost":
 		case "xpmuser.github.io":
@@ -97,7 +97,7 @@ function ApiClient(e, t) {
 		case "xpmuser.github.io":
 			i("production", l)
 	}
-	var D = "xpmuser.github.io";
+	var D = "toonigy.github.io/Prodidows-server/public/";
 	if (D.indexOf("env=dev") >= 0 ? i("dev", l) : D.indexOf("env=staging") >= 0 ? i("staging", l) : (D.indexOf("env=production") >= 0 || D.indexOf("env=prod") >= 0) && i("production", l), e)
 		for (var P = Object.keys(l), I = 0, k = P.length; k > I; ++I) void 0 !== e[P[I]] && (l[P[I]] = e[P[I]]);
 	if (n = l, h["500"] = function() {
@@ -106,8 +106,11 @@ function ApiClient(e, t) {
 			Util.log("The data you are attempting to access does not exist.")
 		}, t)
 		for (var C = Object.keys(t), I = 0, k = C.length; k > I; ++I) void 0 !== t[C[I]] && (h[C[I]] = t[C[I]]);
-	this.joinMultiplayerServer = function(e, t, i, a, s, n, h, d) {
-		var p = r(i, ["200", "503"], "Join multiplayer Server");
+// Ensure the multiplayer URL is set correctly
+l.url.multiplayer = "wss://prodidows-server.onrender.com/"; // Replace with your actual WebSocket URL
+
+this.joinMultiplayerServer = function(e, t, i, a, s, n, h, d) {
+    var p = r(i, ["200", "503"], "Join multiplayer Server");
 		if (p) {
 			var c = this.userID,
 				g = this.uniqueKey;
@@ -144,7 +147,7 @@ function ApiClient(e, t) {
 		return !!r(t, ["200"], "emit message") && !!o.socket && (o.socket.emit("message", e), !0)
 	}, this.getWorldList = function(e) {
 		var t = r(e, ["200", "400", "500", "503"], "get world list");
-		return !!t && (a("get", "https://xpmuser.github.io/oldprodigy/assets/" + "", {}, t, "getWorldList", {
+		return !!t && (a("get", "https://toonigy.github.io/Prodidows-server/public/worlds-api/world-list.json" + "", {}, t, "getWorldList", {
 			ignoreHeaders: !0
 		}), !0)
 	}, this.login = function(e, t, i) {
@@ -431,7 +434,7 @@ function ApiClient(e, t) {
 				token: o.uniqueKey,
 				event: e
 			};
-			return a("post", l.url.events + "world-list", s, i, "trackEvent"), !0
+			return a("post", l.url.events + "world-list.json", s, i, "trackEvent"), !0
 		}
 		return !1
 	}, this.completeAssignment = function(e, t) {
@@ -46246,8 +46249,8 @@ Prodigy.ForestBoss = function(e, t) {
 	Prodigy.Control.Menu.call(this, e, t, 11), this.callback = a, this.servers = i, this.setup()
 }, Prodigy.extends(Prodigy.Menu.Server, Prodigy.Control.Menu, {
 	constructor: Prodigy.Menu.Server,
-	menuSetup: function() {
-		Prodigy.Control.Menu.prototype.menuSetup.call(this), this.showFrame("map", "CHOOSE YOUR WORLD", []), this.game.prodigy.create.font(this, 125, 60, 'Pick the same world as your friends to play together!', {
+	menuSetup: function () {
+		Prodigy.Control.Menu.prototype.menuSetup.call(this), this.showFrame("map", "CHOOSE YOUR WORLD", []), this.game.prodigy.create.font(this, 125, 60, "Pick the same world as your friends to play together!", {
 			size: 20
 		}), this.game.prodigy.create.textButton(this, 930, 20, {
 			size: Prodigy.Control.TextButton.MED,
@@ -46258,7 +46261,7 @@ Prodigy.ForestBoss = function(e, t) {
 			text: "back"
 		}, this.close.bind(this, !1, !0)), this.content = this.game.prodigy.create.element(this, 0, 0), this.showSuggestedServers(this.servers), this.setupComplete = !0
 	},
-	showSuggestedServers: function (e) {
+	showSuggestedServers: function(e) {
 		if (this.content.removeAll(!0), !Util.isDefined(e)) return this.game.prodigy.create.font(this.content, 0, 320, "Loading world list...", {
 			size: 30,
 			width: 1280,
@@ -46280,7 +46283,7 @@ Prodigy.ForestBoss = function(e, t) {
 	getSuggested: function(e) {
 		if (e.length < 6) return e;
 		var t = [];
-		e = e.sort(function(e, t) {
+		e = e.sort(function (e, t) {
 			return e.full - t.full
 		});
 		for (var i = 5; i < e.length; i++)
@@ -46290,17 +46293,17 @@ Prodigy.ForestBoss = function(e, t) {
 			} return t
 	},
 	showAllServers: function(e) {
-		return this.content.removeAll(!0), Util.isDefined(e) ? (e = e.sort(function(e, t) {
+		return this.content.removeAll(!0), Util.isDefined(e) ? (e = e.sort(function (e, t) {
 			return e.name.localeCompare(t.name)
-		}), this.serverPage = this.game.prodigy.create.element(this.content, 200, 180), this.scroll = this.game.prodigy.create.scrollBar(this.content, 60, 180, 345, this.setPage.bind(this, e)), this.scroll.setPages(1 + Math.floor((e.length - 1) / 9)), void this.game.prodigy.create.textButton(this.content, 880, 650, {
+		}), this.serverPage = this.game.prodigy.create.element(this.content, 200, 180), this.scroll = this.game.prodigy.create.scrollBar(this.content, 60, 180, 345, this.setPage.bind(this, e)), this.scroll.setPages(1 + Math.floor((e.length - 1) / 9)), this.game.prodigy.create.textButton(this.content, 880, 650, {
 			size: Prodigy.Control.TextButton.LG,
 			text: "my worlds",
 			icon: "star"
-		}, this.showSuggestedServers.bind(this))) : (this.game.prodigy.create.font(this.content, 0, 320, "Loading world list...", {
+		}, this.showSuggestedServers.bind(this)), void 0) : (this.game.prodigy.create.font(this.content, 0, 320, "Loading world list...", {
 			size: 30,
 			width: 1280,
 			align: "center"
-		}), void this.game.prodigy.network.getWorldList(this.showAllServers.bind(this), this.showError.bind(this, "Your world is pde1500!", this.showAllServers.bind(this))))
+		}), this.game.prodigy.network.getWorldList(this.showAllServers.bind(this), this.showError.bind(this, "Could not load world list. Check your connection and try again.", this.showAllServers.bind(this))), void 0)
 	},
 	setPage: function(e, t) {
 		this.serverPage.removeAll(!0);
@@ -46315,7 +46318,10 @@ Prodigy.ForestBoss = function(e, t) {
 		var r = this.game.prodigy.create.element(t, i, a),
 			o = r.add(this.game.prodigy.create.sprite(0, 0, "core-2", "store-panel"));
 		o.inputEnabled = !0, o.events.onInputDown.add(this.connect.bind(this, e, s), this), Util.isDefined(e.meta) && r.add(this.game.prodigy.create.sprite(0, 0, Items.getIconAtlas(e.meta), this.getServerIcon(e.meta))), this.game.prodigy.create.font(r, 85, -2, e.name);
-		for (var n = 0 == e.full ? 12364703 : e.full <= 80 ? 8111468 : e.full < 95 ? 15194464 : 14307665, h = 0; 5 > h; h++) r.add(this.game.prodigy.create.sprite(96 + 39 * h, 36, "core", "server-icon")).tint = e.full >= 20 * h ? n : 12364703;
+		for (var n = 0 == e.full ? 12364703 : e.full <= 80 ? 8111468 : e.full < 95 ? 15194464 : 14307665, h = 0; 5 > h; h++) {
+			var l = r.add(this.game.prodigy.create.sprite(96 + 39 * h, 36, "core", "server-icon"));
+			l.tint = e.full >= 20 * h ? n : 12364703
+		}
 		return r
 	},
 	getServerIcon: function(e) {
@@ -46328,7 +46334,7 @@ Prodigy.ForestBoss = function(e, t) {
 			size: 30,
 			width: 1280,
 			align: "center"
-		}), this.game.prodigy.network.joinMultiplayerServer(e, "zone-login", this.connected.bind(this, !0), this.connected.bind(this, !0, t), this.connected.bind(this, !0, t, "This world is full. Please select another world"))
+		}), this.game.prodigy.network.joinMultiplayerServer(e, "zone-login", this.connected.bind(this, !0), this.connected.bind(this, !1, t), this.connected.bind(this, !1, t, "This world is full. Please select another world"))
 	},
 	connected: function(e, t, i) {
 		Util.isDefined(this) && Util.isDefined(this.game) && (this.content.removeAll(!0), e ? this.close(!0) : this.showError(i || "Could not connect to world. Try again, or select another world.", t))
