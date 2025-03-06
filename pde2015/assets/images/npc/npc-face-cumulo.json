@@ -1,0 +1,136 @@
+{
+    "frames": {
+        "face_0": {
+            "frame": {
+                "x": 2,
+                "y": 2,
+                "w": 200,
+                "h": 200
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 200,
+                "h": 200
+            },
+            "sourceSize": {
+                "w": 200,
+                "h": 200
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "face_1": {
+            "frame": {
+                "x": 204,
+                "y": 2,
+                "w": 200,
+                "h": 200
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 200,
+                "h": 200
+            },
+            "sourceSize": {
+                "w": 200,
+                "h": 200
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "face_2": {
+            "frame": {
+                "x": 406,
+                "y": 2,
+                "w": 200,
+                "h": 200
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 200,
+                "h": 200
+            },
+            "sourceSize": {
+                "w": 200,
+                "h": 200
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "face_3": {
+            "frame": {
+                "x": 608,
+                "y": 2,
+                "w": 200,
+                "h": 200
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 200,
+                "h": 200
+            },
+            "sourceSize": {
+                "w": 200,
+                "h": 200
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "face_4": {
+            "frame": {
+                "x": 810,
+                "y": 2,
+                "w": 200,
+                "h": 200
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 200,
+                "h": 200
+            },
+            "sourceSize": {
+                "w": 200,
+                "h": 200
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        }
+    },
+    "meta": {
+        "app": "http://www.codeandweb.com/texturepacker",
+        "version": "1.0",
+        "image": "npc-face-cumulo.png",
+        "format": "RGBA8888",
+        "size": {
+            "w": 1012,
+            "h": 204
+        },
+        "scale": "1",
+        "smartupdate": "$TexturePacker:SmartUpdate:bcc4804b76ce500ebff4a56c6c1890c1:59ce26c81a195a349be847c9c6fa133b:8d01b7c047f96dd64cd2047df57e8335$"
+    }
+}
