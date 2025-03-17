@@ -70,7 +70,7 @@ function ApiClient(e, t) {
 		v = "assignment-api/",
 		w = "education-api/",
 		x = "worlds-api/";
-	switch ("toonigy.github.io/Prodidows-server/public/") {
+	switch (window.location.host) {
 		case "dev.prodigygame.org":
 		case "localhost":
 		case "xpmuser.github.io":
@@ -82,6 +82,8 @@ function ApiClient(e, t) {
 		case "www.prodigygame.org":
 		case "prodigygame.org":
 		case "localhost":
+			i("production", l);
+			break;
 		case "xpmuser.github.io":
 			i("staging", l);
 			break;
@@ -97,7 +99,7 @@ function ApiClient(e, t) {
 		case "xpmuser.github.io":
 			i("production", l)
 	}
-	var D = "toonigy.github.io/Prodidows-server/public/";
+	var D = window.location.search;
 	if (D.indexOf("env=dev") >= 0 ? i("dev", l) : D.indexOf("env=staging") >= 0 ? i("staging", l) : (D.indexOf("env=production") >= 0 || D.indexOf("env=prod") >= 0) && i("production", l), e)
 		for (var P = Object.keys(l), I = 0, k = P.length; k > I; ++I) void 0 !== e[P[I]] && (l[P[I]] = e[P[I]]);
 	if (n = l, h["500"] = function() {
@@ -107,7 +109,7 @@ function ApiClient(e, t) {
 		}, t)
 		for (var C = Object.keys(t), I = 0, k = C.length; k > I; ++I) void 0 !== t[C[I]] && (h[C[I]] = t[C[I]]);
 // Ensure the multiplayer URL is set correctly
-l.url.multiplayer = "wss://prodidows-server.onrender.com/"; // Replace with your actual WebSocket URL
+l.url.multiplayer = "https://toonigy.github.io/Prodidows-server/public/"; // Replace with your actual WebSocket URL
 
 this.joinMultiplayerServer = function(e, t, i, a, s, n, h, d) {
     var p = r(i, ["200", "503"], "Join multiplayer Server");
@@ -40296,7 +40298,7 @@ Names.createNameFromIndex = function(e, t, i, a) {
 	if (t.length > 1)
 		for (var i = t[1].toLowerCase(), a = !1, s = 0; s < Names.LAST_NAMES.length; s++) - 1 != i.indexOf(Names.LAST_NAMES[s].toLowerCase()) && (a = !0);
 	return a
-}, Names.BOY_NAMES = ["Aaron", "Abdullah", "Abraham", "Adam", "Adrian", "Ahmad", "Ahmed", "Aidan", "Aiden", "Alan", "Albert", "Alejandro", "Alex", "Alexander", "Alexis", "Ali", "Alvin", "Andres", "Andrew", "Aneesh", "Angel", "Angelo", "Anthony", "Antonio", "Arthur", "Ashton", "Austin", "Ayden", "Benjamin", "Billy", "Blake", "Bobby", "Bort", "Braden", "Bradley", "Brady", "Brandon", "Brayden", "Brendan", "Brian", "Brody", "Bruce", "Bryan", "Bryce", "Bryson", "Buccaneer", "Caden", "Caleb", "Camden", "Cameron", "Captain", "Carl", "Carlos", "Carson", "Carter", "Cesar", "Charles", "Chase", "Christian", "Christopher", "Cody", "Colby", "Cole", "Colin", "Collin", "Colton", "Conner", "Connor", "Cooper", "Craig", "Cristian", "Dakota", "Dalton", "Damian", "Daniel", "Darien", "David", "Dennis", "Derek", "Devin", "Devon", "Diego", "Dominic", "Donald", "Donovan", "Douglas", "Dylan", "Edgar", "Eduardo", "Edward", "Edwin", "Eli", "Elias", "Elijah", "Emmanuel", "Eric", "Erick", "Erik", "Ethan", "Eugene", "Evan", "Fernando", "Francisco", "Frank", "Gabriel", "Gage", "Garrett", "Gary", "Gavin", "George", "Gerald", "Giovanni", "Grant", "Gregory", "Hammad", "Hamza", "Harold", "Hayden", "Hector", "Henry", "Howard", "Hunter", "Ian", "Ibrahim", "Isaac", "Isaiah", "Ivan", "Jack", "Jackson", "Jacob", "Jaden", "Jake", "Jalen", "James", "Jared", "Jason", "Javier", "Jayden", "Jeffrey", "Jeremiah", "Jeremy", "Jerry", "Jesse", "Jimothy", "Joe", "Joel", "John", "Johnathan", "Johnny", "Jonah", "Jonathan", "Jordan", "Jorge", "Jose", "Joseph", "Joshua", "Josiah", "Juan", "Julian", "Justin", "Kaden", "Kaleb", "Keith", "Kenneth", "Kevin", "Kian", "Kyle", "Landon", "Larry", "Lawrence", "Leonardo", "Levi", "Liam", "Logan", "Louis", "Lucas", "Luis", "Luke", "Malachi", "Malik", "Manuel", "Marco", "Marcus", "Mario", "Mark", "Martin", "Marvin", "Mason", "Matthew", "Max", "Maxwell", "Micah", "Michael", "Miguel", "Muhammad", "Nathan", "Nathaniel", "Nicholas", "Nicolas", "Noah", "Nolan", "Oliver", "Omar", "Oscar", "Owen", "Parker", "Patrick", "Paul", "Peter", "Peyton", "Philip", "Phillip", "Preston", "Ralph", "Raymond", "Ricardo", "Richard", "Riley", "Robert", "Roger", "Rohan", "Ronald", "Rory", "Roy", "Rupy", "Russell", "Ryan", "Samuel", "Scott", "Sean", "Sebastian", "Sergio", "Seth", "Shane", "Shawn", "Solomon", "Spencer", "Stephen", "Steve", "Steven", "Tanner", "Terry", "Thomas", "Timothy", "Travis", "Trenton", "Trevor", "Tristan", "Tyler", "Van", "Victor", "Vincent", "Walter", "Wasee", "Wayne", "Wesley", "William", "Wyatt", "Xavier", "Youssef", "Zachary", "Aaliyah", "Abby", "Abigail", "Addison", "Adriana", "Adrianna", "Alana", "Alexa", "Alexandra", "Alexandria", "Alexia", "Alexis", "Alice", "Alicia", "Allison", "Alondra", "Alyssa", "Amanda", "Amber", "Amelia", "Amy", "Ana", "Andrea", "Angel", "Angela", "Angelica", "Angelina", "Ann", "Anna", "Ariana", "Arianna", "Ashley", "Ashlyn", "Aubrey", "Audrey", "Autumn", "Ava", "Avery", "Bailey", "Barbara", "Betty", "Beverly", "Bianca", "Breanna", "Brenda", "Briana", "Brianna", "Brittany", "Brooke", "Brooklyn", "Caitlin", "Caitlyn", "Camila", "Carol", "Caroline", "Carolyn", "Cassandra", "Cassidy", "Catherine", "Charlotte", "Chelsea", "Cheryl", "Cheyenne", "Chloe", "Christina", "Christine", "Claire", "Courtney", "Crystal", "Cynthia", "Daisy", "Daniela", "Danielle", "Deborah", "Debra", "Delaney", "Denise", "Destiny", "Diana", "Diane", "Donna", "Doris", "Dorothy", "Elizabeth", "Ella", "Ellen", "Ellie", "Emily", "Emma", "Erica", "Erin", "Eva", "Evelyn", "Faith", "Fatima", "Felicia", "Frances", "Gabriela", "Gabriella", "Gabrielle", "Genesis", "Gianna", "Giselle", "Gloria", "Grace", "Gracie", "Hailey", "Haley", "Hannah", "Heather", "Helen", "Hope", "Isabel", "Isabella", "Isabelle", "Jacqueline", "Jada", "Jade", "Jana", "Jane", "Janet", "Janice", "Jasmin", "Jasmine", "Jayla", "Jazmin", "Jean", "Jenna", "Jennifer", "Jessica", "Jillian", "Joan", "Jocelyn", "Jordan", "Jordyn", "Joyce", "Judith", "Judy", "Julia", "Juliana", "Julie", "Kaitlyn", "Karen", "Kate", "Katelyn", "Katherine", "Kathleen", "Kathryn", "Kathy", "Katie", "Kayla", "Kaylee", "Kelly", "Kelsey", "Kendall", "Kennedy", "Kiara", "Kimberly", "Kira", "Kylee", "Kylie", "Laura", "Lauren", "Layla", "Leah", "Leslie", "Liliana", "Lillian", "Lilly", "Lily", "Linda", "Lindsey", "Lisa", "Lori", "Louise", "Lucy", "Luna", "Lydia", "Mackenzie", "Madeline", "Madelyn", "Madison", "Makayla", "Makenzie", "Margaret", "Maria", "Mariah", "Mariam", "Mariam", "Marie", "Marilyn", "Marissa", "Martha", "Mary", "Maya", "Mckenzie", "Megan", "Melanie", "Melissa", "Mia", "Michelle", "Mikayla", "Mildred", "Miranda", "Molly", "Morgan", "Mya", "Nancy", "Naomi", "Natalia", "Natalie", "Nevaeh", "Nichole", "Nicole", "Nur", "Olivia", "Paige", "Pamela", "Patricia", "Payton", "Peyton", "Rachel", "Reagan", "Rebecca", "Riley", "Rose", "Ruby", "Ruth", "Rylee", "Sabrina", "Sadie", "Salma", "Samantha", "Sandra", "Sara", "Sarah", "Savannah", "Serenity", "Sharon", "Shelby", "Shirley", "Sierra", "Skylar", "Sofia", "Sophia", "Sophie", "Stephanie", "Summer", "Susan", "Sydney", "Tammy", "Taylor", "Teresa", "Theresa", "Tiffany", "Trinity", "Valeria", "Valerie", "Vanessa", "Veronica", "Victoria", "Virginia", "Zoe", "Zoey"], Names.GIRL_NAMES = ["Aaliyah", "Abby", "Abigail", "Addison", "Adriana", "Adrianna", "Alana", "Alexa", "Alexandra", "Alexandria", "Alexia", "Alexis", "Alice", "Alicia", "Allison", "Alondra", "Alyssa", "Amanda", "Amber", "Amelia", "Amy", "Ana", "Andrea", "Angel", "Angela", "Angelica", "Angelina", "Ann", "Anna", "Ariana", "Arianna", "Ashley", "Ashlyn", "Aubrey", "Audrey", "Autumn", "Ava", "Avery", "Bailey", "Barbara", "Betty", "Beverly", "Bianca", "Breanna", "Brenda", "Briana", "Brianna", "Brittany", "Brooke", "Brooklyn", "Buccaneer", "Caitlin", "Caitlyn", "Camila", "Captain", "Carol", "Caroline", "Carolyn", "Cassandra", "Cassidy", "Catherine", "Charlotte", "Chelsea", "Cheryl", "Cheyenne", "Chloe", "Christina", "Christine", "Claire", "Courtney", "Crystal", "Cynthia", "Daisy", "Daniela", "Danielle", "Deborah", "Debra", "Delaney", "Denise", "Destiny", "Diana", "Diane", "Donna", "Doris", "Dorothy", "Elizabeth", "Ella", "Ellen", "Ellie", "Emily", "Emma", "Erica", "Erin", "Eva", "Evelyn", "Faith", "Fatima", "Felicia", "Frances", "Gabriela", "Gabriella", "Gabrielle", "Genesis", "Gianna", "Giselle", "Gloria", "Grace", "Gracie", "Hailey", "Haley", "Hannah", "Heather", "Helen", "Hope", "Isabel", "Isabella", "Isabelle", "Jacqueline", "Jada", "Jade", "Jana", "Jane", "Janet", "Janice", "Jasmin", "Jasmine", "Jayla", "Jazmin", "Jean", "Jenna", "Jennifer", "Jessica", "Jillian", "Joan", "Jocelyn", "Jordan", "Jordyn", "Joyce", "Judith", "Judy", "Julia", "Juliana", "Julie", "Kaitlyn", "Karen", "Kate", "Katelyn", "Katherine", "Kathleen", "Kathryn", "Kathy", "Katie", "Kayla", "Kaylee", "Kelly", "Kelsey", "Kendall", "Kennedy", "Kiara", "Kimberly", "Kira", "Kylee", "Kylie", "Laura", "Lauren", "Layla", "Leah", "Leslie", "Liliana", "Lillian", "Lilly", "Lily", "Linda", "Lindsey", "Lisa", "Lori", "Louise", "Lucy", "Luna", "Lydia", "Mackenzie", "Madeline", "Madelyn", "Madison", "Makayla", "Makenzie", "Margaret", "Maria", "Mariah", "Mariam", "Mariam", "Marie", "Marilyn", "Marissa", "Martha", "Mary", "Maya", "Mckenzie", "Megan", "Melanie", "Melissa", "Mia", "Michelle", "Mikayla", "Mildred", "Miranda", "Molly", "Morgan", "Mya", "Nancy", "Naomi", "Natalia", "Natalie", "Nevaeh", "Nichole", "Nicole", "Nur", "Olivia", "Paige", "Pamela", "Patricia", "Payton", "Peyton", "Rachel", "Reagan", "Rebecca", "Riley", "Rose", "Ruby", "Ruth", "Rylee", "Sabrina", "Sadie", "Salma", "Samantha", "Sandra", "Sara", "Sarah", "Savannah", "Serenity", "Sharon", "Shelby", "Shirley", "Sierra", "Skylar", "Sofia", "Sophia", "Sophie", "Stephanie", "Summer", "Susan", "Sydney", "Tammy", "Taylor", "Teresa", "Theresa", "Tiffany", "Trinity", "Valeria", "Valerie", "Vanessa", "Veronica", "Victoria", "Virginia", "Zoe", "Zoey", "Aaron", "Abdullah", "Abraham", "Adam", "Adrian", "Ahmad", "Ahmed", "Aidan", "Aiden", "Alan", "Albert", "Alejandro", "Alex", "Alexander", "Alexis", "Ali", "Alvin", "Andres", "Andrew", "Aneesh", "Angel", "Angelo", "Anthony", "Antonio", "Arthur", "Ashton", "Austin", "Ayden", "Benjamin", "Billy", "Blake", "Bobby", "Bort", "Braden", "Bradley", "Brady", "Brandon", "Brayden", "Brendan", "Brian", "Brody", "Bruce", "Bryan", "Bryce", "Bryson", "Caden", "Caleb", "Camden", "Cameron", "Carl", "Carlos", "Carson", "Carter", "Cesar", "Charles", "Chase", "Christian", "Christopher", "Cody", "Colby", "Cole", "Colin", "Collin", "Colton", "Conner", "Connor", "Cooper", "Craig", "Cristian", "Dakota", "Dalton", "Damian", "Daniel", "Darien", "David", "Dennis", "Derek", "Devin", "Devon", "Diego", "Dominic", "Donald", "Donovan", "Douglas", "Dylan", "Edgar", "Eduardo", "Edward", "Edwin", "Eli", "Elias", "Elijah", "Emmanuel", "Eric", "Erick", "Erik", "Ethan", "Eugene", "Evan", "Fernando", "Francisco", "Frank", "Gabriel", "Gage", "Garrett", "Gary", "Gavin", "George", "Gerald", "Giovanni", "Grant", "Gregory", "Hammad", "Hamza", "Harold", "Hayden", "Hector", "Henry", "Howard", "Hunter", "Ian", "Ibrahim", "Isaac", "Isaiah", "Ivan", "Jack", "Jackson", "Jacob", "Jaden", "Jake", "Jalen", "James", "Jared", "Jason", "Javier", "Jayden", "Jeffrey", "Jeremiah", "Jeremy", "Jerry", "Jesse", "Jimothy", "Joe", "Joel", "John", "Johnathan", "Johnny", "Jonah", "Jonathan", "Jordan", "Jorge", "Jose", "Joseph", "Joshua", "Josiah", "Juan", "Julian", "Justin", "Kaden", "Kaleb", "Keith", "Kenneth", "Kevin", "Kian", "Kyle", "Landon", "Larry", "Lawrence", "Leonardo", "Levi", "Liam", "Logan", "Louis", "Lucas", "Luis", "Luke", "Malachi", "Malik", "Manuel", "Marco", "Marcus", "Mario", "Mark", "Martin", "Marvin", "Mason", "Matthew", "Max", "Maxwell", "Micah", "Michael", "Miguel", "Muhammad", "Nathan", "Nathaniel", "Nicholas", "Nicolas", "Noah", "Nolan", "Oliver", "Omar", "Oscar", "Owen", "Parker", "Patrick", "Paul", "Peter", "Peyton", "Philip", "Phillip", "Preston", "Ralph", "Raymond", "Ricardo", "Richard", "Riley", "Robert", "Roger", "Rohan", "Ronald", "Rory", "Roy", "Rupy", "Russell", "Ryan", "Samuel", "Scott", "Sean", "Sebastian", "Sergio", "Seth", "Shane", "Shawn", "Solomon", "Spencer", "Stephen", "Steve", "Steven", "Tanner", "Terry", "Thomas", "Timothy", "Travis", "Trenton", "Trevor", "Tristan", "Tyler", "Van", "Victor", "Vincent", "Walter", "Wasee", "Wayne", "Wesley", "William", "Wyatt", "Xavier", "Youssef", "Zachary"], Names.FIRST_NAMES = [], Names.MIDDLE_NAMES = ["Air", "Animal", "Battle", "Blue", "Bronze", "Clear", "Cloud", "Coin", "Daring", "Dark", "Day", "Diamond", "Divine", "Dragon", "Dream", "Earth", "Fable", "Fairy", "Fall", "Fancy", "Far", "Fire", "Flame", "Fog", "Forge", "Frost", "Fruit", "Garden", "Gear", "Ghost", "Giant", "Glass", "Gold", "Golden", "Good", "Green", "Heavy", "Hero", "Ice", "Illusion", "Iron", "Land", "Leaf", "Legend", "Life", "Lightning", "Maelstrom", "Magic", "Metal", "Monster", "Moon", "Mountain", "Myth", "Near", "Night", "Ocean", "Plant", "Quake", "Rain", "Red", "River", "Ruby", "Silver", "Sleep", "Soft", "Spell", "Spring", "Star", "Storm", "Strong", "Summer", "Super", "Swift", "Thunder", "Water", "White", "Wild", "Wind", "Winter", "Wish", "Wonder", "Yellow"], Names.LAST_NAMES = ["Blade", "Boots", "Boy", "Breath", "Brother", "Caller", "Cast", "Caster", "Catcher", "Crafter", "Dancer", "Dreamer", "Drifter", "Ear", "Eyes", "Follower", "Foot", "Friend", "Gem", "Girl", "Giver", "Hand", "Heart", "Helper", "Hunter", "Leader", "Legs", "Lemon", "Light", "Man", "Mask", "Master", "Nose", "Ore", "Pants", "Petal", "Prism", "Ring", "Runner", "Seed", "Shade", "Shadow", "Shard", "stat", "Shirt", "Singer", "Sister", "Smith", "Song", "Spoon", "Staff", "Steel", "Strider", "Sword", "Tail", "Talon", "Tamer", "Thinker", "Torch", "Vault", "Voice", "Walker", "Wand", "Ward", "Whisper", "Winner", "Woman"], Prodigy.Control.Sprite = function(e, t, i, a, s, r, o, n, h) {
+}, Names.BOY_NAMES = ["Aaron", "Abdullah", "Abraham", "Adam", "Adrian", "Ahmad", "Ahmed", "Aidan", "Aiden", "Alan", "Albert", "Alejandro", "Alex", "Alexander", "Alexis", "Ali", "Alvin", "Andres", "Andrew", "Aneesh", "Angel", "Angelo", "Anthony", "Antonio", "Arthur", "Ashton", "Austin", "Ayden", "Benjamin", "Bill", "Billy", "Blake", "Bobby", "Boris", "Bort", "Botanist", "Braden", "Bradley", "Brady", "Brandon", "Brayden", "Brendan", "Brian", "Brody", "Bruce", "Bryan", "Bryce", "Bryson", "Buccaneer", "Caden", "Caleb", "Camden", "Cameron", "Captain", "Carl", "Carlos", "Carson", "Carter", "Cesar", "Charles", "Chase", "Christian", "Christopher", "Cody", "Colby", "Cole", "Colin", "Collin", "Colton", "Conner", "Connor", "Cooper", "Craig", "Cristian", "Dakota", "Dalton", "Damian", "Daniel", "Darien", "David", "Dennis", "Derek", "Devin", "Devon", "Diego", "Dimitri", "Dominic", "Donald", "Donovan", "Douglas", "Dylan", "Edgar", "Eduardo", "Edward", "Edwin", "Eli", "Elias", "Elijah", "Emmanuel", "Eric", "Erick", "Erik", "Ethan", "Eugene", "Evan", "Fernando", "Francisco", "Frank", "Gabriel", "Gage", "Garrett", "Gary", "Gavin", "George", "Gerald", "Giovanni", "Grant", "Gregory", "Hammad", "Hamza", "Harold", "Hayden", "Hector", "Henry", "Howard", "Hunter", "Ian", "Ibrahim", "Isaac", "Isaiah", "Ivan", "Jack", "Jackson", "Jacob", "Jaden", "Jake", "Jalen", "James", "Jared", "Jason", "Javier", "Jayden", "Jeffrey", "Jeremiah", "Jeremy", "Jerry", "Jesse", "Jimothy", "Joe", "Joel", "John", "Johnathan", "Johnny", "Jonah", "Jonathan", "Jordan", "Jorge", "Jose", "Joseph", "Joshua", "Josiah", "Juan", "Julian", "Justin", "Kaden", "Kaleb", "Keith", "Kenneth", "Kevin", "Kian", "Kyle", "Landon", "Larry", "Lawrence", "Leonardo", "Levi", "Liam", "Logan", "Louis", "Lucas", "Luis", "Luke", "Malachi", "Malik", "Manuel", "Marco", "Marcus", "Mario", "Mark", "Martin", "Marvin", "Mason", "Matthew", "Max", "Maxwell", "Micah", "Michael", "Miguel", "Muhammad", "Nathan", "Nathaniel", "Nicholas", "Nicolas", "Noah", "Nolan", "Oliver", "Omar", "Oscar", "Owen", "Parker", "Patrick", "Paul", "Peter", "Peyton", "Philip", "Phillip", "Preston", "Ralph", "Raymond", "Ricardo", "Richard", "Riley", "Robert", "Roger", "Rohan", "Ronald", "Rory", "Roy", "Rupy", "Russell", "Ryan", "Samuel", "Scott", "Sean", "Sebastian", "Sergio", "Seth", "Shane", "Shawn", "Shwan", "Solomon", "Spencer", "Stephen", "Steve", "Steven", "Tanner", "Terry", "Thomas", "Timothy", "Travis", "Trenton", "Trevor", "Tristan", "Tyler", "Van", "Victor", "Vincent", "Walter", "Wasee", "Wayne", "Wesley", "William", "Wyatt", "Xavier", "Youssef", "Zachary", "Aaliyah", "Abby", "Abigail", "Addison", "Adriana", "Adrianna", "Alana", "Alexa", "Alexandra", "Alexandria", "Alexia", "Alexis", "Alice", "Alicia", "Allison", "Alondra", "Alyssa", "Amanda", "Amber", "Amelia", "Amy", "Ana", "Andrea", "Angel", "Angela", "Angelica", "Angelina", "Ann", "Anna", "Ariana", "Arianna", "Ashley", "Ashlyn", "Aubrey", "Audrey", "Autumn", "Ava", "Avery", "Bailey", "Barbara", "Betty", "Beverly", "Bianca", "Breanna", "Brenda", "Briana", "Brianna", "Brittany", "Brooke", "Brooklyn", "Caitlin", "Caitlyn", "Camila", "Carol", "Caroline", "Carolyn", "Cassandra", "Cassidy", "Catherine", "Charlotte", "Chelsea", "Cheryl", "Cheyenne", "Chloe", "Christina", "Christine", "Claire", "Courtney", "Crystal", "Cynthia", "Daisy", "Daniela", "Danielle", "Deborah", "Debra", "Delaney", "Denise", "Destiny", "Diana", "Diane", "Donna", "Dora", "Doris", "Dorothy", "Elizabeth", "Ella", "Ellen", "Ellie", "Emily", "Emma", "Erica", "Erin", "Eva", "Evelyn", "Faith", "Fatima", "Felicia", "Frances", "Gabriela", "Gabriella", "Gabrielle", "Genesis", "Gianna", "Giselle", "Gloria", "Grace", "Gracie", "Hailey", "Haley", "Hannah", "Heather", "Helen", "Hope", "Isabel", "Isabella", "Isabelle", "Jacqueline", "Jada", "Jade", "Jana", "Jane", "Janet", "Janice", "Jasmin", "Jasmine", "Jayla", "Jazmin", "Jean", "Jenna", "Jennifer", "Jessica", "Jillian", "Joan", "Jocelyn", "Jordan", "Jordyn", "Joyce", "Judith", "Judy", "Julia", "Juliana", "Julie", "Kaitlyn", "Karen", "Kate", "Katelyn", "Katherine", "Kathleen", "Kathryn", "Kathy", "Katie", "Kayla", "Kaylee", "Kelly", "Kelsey", "Kendall", "Kennedy", "Kiara", "Kimberly", "Kira", "Kylee", "Kylie", "Laura", "Lauren", "Layla", "Leah", "Leslie", "Liliana", "Lillian", "Lilly", "Lily", "Linda", "Lindsey", "Lisa", "Lori", "Louise", "Lucy", "Luna", "Lydia", "Mackenzie", "Madeline", "Madelyn", "Madison", "Makayla", "Makenzie", "Margaret", "Maria", "Mariah", "Mariam", "Mariam", "Marie", "Marilyn", "Marissa", "Martha", "Mary", "Maya", "Mckenzie", "Megan", "Meiyagowa", "Melanie", "Melissa", "Mia", "Michelle", "Mikayla", "Mildred", "Miranda", "Molly", "Morgan", "Mya", "Nancy", "Naomi", "Natalia", "Natalie", "Nevaeh", "Nichole", "Nicole", "Nur", "Olivia", "Paige", "Pamela", "Patricia", "Payton", "Peppa", "Peyton", "Purvi", "Rachel", "Reagan", "Rebecca", "Riley", "Rose", "Ruby", "Ruth", "Rylee", "Sabrina", "Sadie", "Salma", "Samantha", "Sandra", "Sara", "Sarah", "Savannah", "Serenity", "Sharon", "Shelby", "Shirley", "Sierra", "Skylar", "Sofia", "Sophia", "Sophie", "Stephanie", "Summer", "Susan", "Sydney", "Tammy", "Taylor", "Teresa", "Theresa", "Tiffany", "Trinity", "Valeria", "Valerie", "Vanessa", "Veronica", "Victoria", "Virginia", "Zoe", "Zoey"], Names.GIRL_NAMES = ["Aaliyah", "Abby", "Abigail", "Addison", "Adriana", "Adrianna", "Alana", "Alexa", "Alexandra", "Alexandria", "Alexia", "Alexis", "Alice", "Alicia", "Allison", "Alondra", "Alyssa", "Amanda", "Amber", "Amelia", "Amy", "Ana", "Andrea", "Angel", "Angela", "Angelica", "Angelina", "Ann", "Anna", "Ariana", "Arianna", "Ashley", "Ashlyn", "Aubrey", "Audrey", "Autumn", "Ava", "Avery", "Bailey", "Barbara", "Betty", "Beverly", "Bianca", "Botanist", "Breanna", "Brenda", "Briana", "Brianna", "Brittany", "Brooke", "Brooklyn", "Buccaneer", "Caitlin", "Caitlyn", "Camila", "Captain", "Carol", "Caroline", "Carolyn", "Cassandra", "Cassidy", "Catherine", "Charlotte", "Chelsea", "Cheryl", "Cheyenne", "Chloe", "Christina", "Christine", "Claire", "Courtney", "Crystal", "Cynthia", "Daisy", "Daniela", "Danielle", "Deborah", "Debra", "Delaney", "Denise", "Destiny", "Diana", "Diane", "Donna", "Dora", "Doris", "Dorothy", "Elizabeth", "Ella", "Ellen", "Ellie", "Emily", "Emma", "Erica", "Erin", "Eva", "Evelyn", "Faith", "Fatima", "Felicia", "Frances", "Gabriela", "Gabriella", "Gabrielle", "Genesis", "Gianna", "Giselle", "Gloria", "Grace", "Gracie", "Hailey", "Haley", "Hannah", "Heather", "Helen", "Hope", "Isabel", "Isabella", "Isabelle", "Jacqueline", "Jada", "Jade", "Jana", "Jane", "Janet", "Janice", "Jasmin", "Jasmine", "Jayla", "Jazmin", "Jean", "Jenna", "Jennifer", "Jessica", "Jillian", "Joan", "Jocelyn", "Jordan", "Jordyn", "Joyce", "Judith", "Judy", "Julia", "Juliana", "Julie", "Kaitlyn", "Karen", "Kate", "Katelyn", "Katherine", "Kathleen", "Kathryn", "Kathy", "Katie", "Kayla", "Kaylee", "Kelly", "Kelsey", "Kendall", "Kennedy", "Kiara", "Kimberly", "Kira", "Kylee", "Kylie", "Laura", "Lauren", "Layla", "Leah", "Leslie", "Liliana", "Lillian", "Lilly", "Lily", "Linda", "Lindsey", "Lisa", "Lori", "Louise", "Lucy", "Luna", "Lydia", "Mackenzie", "Madeline", "Madelyn", "Madison", "Makayla", "Makenzie", "Margaret", "Maria", "Mariah", "Mariam", "Mariam", "Marie", "Marilyn", "Marissa", "Martha", "Mary", "Maya", "Mckenzie", "Megan", "Meiyagowa", "Melanie", "Melissa", "Mia", "Michelle", "Mikayla", "Mildred", "Miranda", "Molly", "Morgan", "Mya", "Nancy", "Naomi", "Natalia", "Natalie", "Nevaeh", "Nichole", "Nicole", "Nur", "Olivia", "Paige", "Pamela", "Patricia", "Payton", "Peppa", "Peyton", "Purvi", "Rachel", "Reagan", "Rebecca", "Riley", "Rose", "Ruby", "Ruth", "Rylee", "Sabrina", "Sadie", "Salma", "Samantha", "Sandra", "Sara", "Sarah", "Savannah", "Serenity", "Sharon", "Shelby", "Shirley", "Sierra", "Skylar", "Sofia", "Sophia", "Sophie", "Stephanie", "Summer", "Susan", "Sydney", "Tammy", "Taylor", "Teresa", "Theresa", "Tiffany", "Trinity", "Valeria", "Valerie", "Vanessa", "Veronica", "Victoria", "Virginia", "Zoe", "Zoey", "Aaron", "Abdullah", "Abraham", "Adam", "Adrian", "Ahmad", "Ahmed", "Aidan", "Aiden", "Alan", "Albert", "Alejandro", "Alex", "Alexander", "Alexis", "Ali", "Alvin", "Andres", "Andrew", "Aneesh", "Angel", "Angelo", "Anthony", "Antonio", "Arthur", "Ashton", "Austin", "Ayden", "Benjamin", "Bill", "Billy", "Blake", "Bobby", "Bort", "Boris", "Braden", "Bradley", "Brady", "Brandon", "Brayden", "Brendan", "Brian", "Brody", "Bruce", "Bryan", "Bryce", "Bryson", "Caden", "Caleb", "Camden", "Cameron", "Carl", "Carlos", "Carson", "Carter", "Cesar", "Charles", "Chase", "Christian", "Christopher", "Cody", "Colby", "Cole", "Colin", "Collin", "Colton", "Conner", "Connor", "Cooper", "Craig", "Cristian", "Dakota", "Dalton", "Damian", "Daniel", "Darien", "David", "Dennis", "Derek", "Devin", "Devon", "Diego", "Dimitri", "Dominic", "Donald", "Donovan", "Douglas", "Dylan", "Edgar", "Eduardo", "Edward", "Edwin", "Eli", "Elias", "Elijah", "Emmanuel", "Eric", "Erick", "Erik", "Ethan", "Eugene", "Evan", "Fernando", "Francisco", "Frank", "Gabriel", "Gage", "Garrett", "Gary", "Gavin", "George", "Gerald", "Giovanni", "Grant", "Gregory", "Hammad", "Hamza", "Harold", "Hayden", "Hector", "Henry", "Howard", "Hunter", "Ian", "Ibrahim", "Isaac", "Isaiah", "Ivan", "Jack", "Jackson", "Jacob", "Jaden", "Jake", "Jalen", "James", "Jared", "Jason", "Javier", "Jayden", "Jeffrey", "Jeremiah", "Jeremy", "Jerry", "Jesse", "Jimothy", "Joe", "Joel", "John", "Johnathan", "Johnny", "Jonah", "Jonathan", "Jordan", "Jorge", "Jose", "Joseph", "Joshua", "Josiah", "Juan", "Julian", "Justin", "Kaden", "Kaleb", "Keith", "Kenneth", "Kevin", "Kian", "Kyle", "Landon", "Larry", "Lawrence", "Leonardo", "Levi", "Liam", "Logan", "Louis", "Lucas", "Luis", "Luke", "Malachi", "Malik", "Manuel", "Marco", "Marcus", "Mario", "Mark", "Martin", "Marvin", "Mason", "Matthew", "Max", "Maxwell", "Micah", "Michael", "Miguel", "Muhammad", "Nathan", "Nathaniel", "Nicholas", "Nicolas", "Noah", "Nolan", "Oliver", "Omar", "Oscar", "Owen", "Parker", "Patrick", "Paul", "Peter", "Peyton", "Philip", "Phillip", "Preston", "Ralph", "Raymond", "Ricardo", "Richard", "Riley", "Robert", "Roger", "Rohan", "Ronald", "Rory", "Roy", "Rupy", "Russell", "Ryan", "Samuel", "Scott", "Sean", "Sebastian", "Sergio", "Seth", "Shane", "Shawn", "Shwan", "Solomon", "Spencer", "Stephen", "Steve", "Steven", "Tanner", "Terry", "Thomas", "Timothy", "Travis", "Trenton", "Trevor", "Tristan", "Tyler", "Van", "Victor", "Vincent", "Walter", "Wasee", "Wayne", "Wesley", "William", "Wyatt", "Xavier", "Youssef", "Zachary"], Names.MIDDLE_NAMES = ["Air", "Animal", "Battle", "Blue", "Bronze", "Clear", "Cloud", "Coin", "Daring", "Dark", "Day", "Diamond", "Divine", "Dragon", "Dream", "Earth", "Fable", "Fairy", "Fall", "Fancy", "Far", "Fire", "Flame", "Fog", "Forge", "Frost", "Fruit", "Garden", "Gear", "Ghost", "Giant", "Glass", "Gold", "Golden", "Good", "Green", "Heavy", "Hero", "Ice", "Illusion", "Iron", "Land", "Leaf", "Legend", "Life", "Lightning", "Maelstrom", "Magic", "Metal", "Monster", "Moon", "Mountain", "Myth", "Near", "Night", "Ocean", "Plant", "Quake", "Rain", "Red", "River", "Ruby", "Silver", "Sleep", "Soft", "Spell", "Spring", "Star", "Storm", "Strong", "Summer", "Super", "Swift", "Thunder", "Water", "White", "Wild", "Wind", "Winter", "Wish", "Wonder", "Yellow"], Names.LAST_NAMES = ["Blade", "Boots", "Boy", "Breath", "Brother", "Caller", "Cast", "Caster", "Catcher", "Crafter", "Dancer", "Dreamer", "Drifter", "Ear", "Eyes", "Follower", "Foot", "Friend", "Gem", "Girl", "Giver", "Hand", "Heart", "Helper", "Hunter", "Leader", "Legs", "Lemon", "Light", "Man", "Mask", "Master", "Nose", "Ore", "Pants", "Petal", "Prism", "Ring", "Runner", "Seed", "Shade", "Shadow", "Shard", "stat", "Shirt", "Singer", "Sister", "Smith", "Song", "Spoon", "Staff", "Steel", "Strider", "Sword", "Tail", "Talon", "Tamer", "Thinker", "Torch", "Vault", "Voice", "Walker", "Wand", "Ward", "Whisper", "Winner", "Woman"], Prodigy.Control.Sprite = function(e, t, i, a, s, r, o, n, h) {
 	this.forcedWidth = n, this.forcedHeight = h, this.onTextureLoaded = o, s = s || 0;
 	var l = !1;
 	e.prodigy.load.isFileLoaded(a) ? (Phaser.Sprite.call(this, e, t, i, a, s), this.checkSpriteDimension(), l = !0) : (Phaser.Sprite.call(this, e, t, i, "core", "empty"), this.checkSpriteDimension(), e.prodigy.load.assets(a, this.onSourceAssetLoaded.bind(this, e, t, i, a, s, r))), r && this.anchor.setTo(.5, 1), l && Util.isDefined(this.onTextureLoaded) && this.onTextureLoaded()
@@ -44640,36 +44642,6 @@ Player.LEVEL_CURVE = [{
 }, {
 	lvl: 52,
 	a: 36
-}, {
-	lvl: 53,
-	a: 6
-}, {
-	lvl: 54,
-	a: 12
-}, {
-	lvl: 55,
-	a: 18
-}, {
-	lvl: 56,
-	a: 24
-}, {
-	lvl: 57,
-	a: 30
-}, {
-	lvl: 101,
-	a: 37
-}, {
-	lvl: 102,
-	a: 38
-}, {
-	lvl: 103,
-	a: 39
-}, {
-	lvl: 104,
-	a: 40
-}, {
-	lvl: 105,
-	a: 41
 }];
 var Tutorial = function() {
 	function e() {
@@ -45458,7 +45430,7 @@ Prodigy.ForestBoss = function(e, t) {
 			top: "",
 			bot: "Bounties"
 		}];
-		this.createBaseSetup(30, 16, "shine", "AWARDS", t, !0);
+		this.createBaseSetup(30, 16, "stat", "AWARDS", t, !0);
 		var i = this.game.prodigy.create.element(this, 0, 0);
 		i.setRenderState(!0), i.add(new Phaser.TileSprite(this.game, 51, 220, 1178, 40, "core", "blue-top")), i.add(new Phaser.TileSprite(this.game, 51, 260, 1178, 340, "core", "blue-mid")), i.add(new Phaser.TileSprite(this.game, 51, 600, 1178, 40, "core", "blue-top2")), Prodigy.RenderMenu.prototype.create.call(this), this.setMode(e);
 		for (var a = 0; a < t.length; a++) {
@@ -54271,8 +54243,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 	}, {
 		stars: this.game.prodigy.player.getStars(),
 		arenaScore: l
-	}, 0, 30, this.loadWizardsComplete.bind(this, !0), this.loadWizardsComplete.bind(this, !0)), this.game.prodigy.create.button(this, 580, -5, "icons", "player", this.toggle.bind(this))), s && (this.game.prodigy.open.message("Each time you close the browser or get disconnected from an arena battle, your score goes down by [arena]50! \n\nBe a good sport and finish your battles!", null, "info", "You Deserted..."), this.game.prodigy.network.sendAnalytics("PVP ", "view-deserter-message", "Events"), this.game.prodigy.network.sendEvent("PVP", {
-		type: "view-deserter-message",
+	}, 0, 30, this.loadWizardsComplete.bind(this, !0), this.loadWizardsComplete.bind(this, !0)), this.game.prodigy.create.button(this, 580, -5, "icons", "player", this.toggle.bind(this))), s && (this.game.prodigy.network.sendEvent("PVP", {
 		classID: this.game.prodigy.player.getLatestClassID(),
 		grade: this.game.prodigy.player.grade
 	}, !0))
@@ -55947,9 +55918,9 @@ var Screen = function() {
 		}, e.prototype.screenSetup = function() {
 			if (this.game.device.iPad)
 				this.game.prodigy.open.okaymessage("The load character button doesn't work on iPads. We suggest you use another device if you are an iPad user.", null, "star", "Warning!");
-			this.game.prodigy.debug.easyMode(1, 1), this.background.add(this.game.prodigy.create.sprite(0, 0, "login", "bg")), this.loginBox = this.game.prodigy.create.element(this.background), this.usernameField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "username", "", 90, 230, 300, 40), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Prodigy version 1.50.0");
+			this.game.prodigy.debug.easyMode(0, 0), this.background.add(this.game.prodigy.create.sprite(0, 0, "login", "bg")), this.loginBox = this.game.prodigy.create.element(this.background), this.usernameField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "username", "", 90, 230, 300, 40), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Prodigy version 1.50.0");
 			var e = Util.getCookie("prodigyUsername");
-			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition version 14"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "google-signin-btn", this.onGoogleLoginButtonClick.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
+			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition version 16"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "google-signin-btn", this.onGoogleLoginButtonClick.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
 				width: 300,
 				align: "center"
 			}), this.closeButton = this.game.prodigy.create.textButton(this.progressBox, 0, 100, {
@@ -55962,7 +55933,7 @@ var Screen = function() {
 				size: 16,
 				width: 160,
 				align: "center"
-			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "discord.gg/cBNvJEVWCw")), (t = this.game.prodigy.create.panel(this.background, 280, 660, 3, 1, "lb")).alpha = .25, this.game.prodigy.create.font(this.background, t.x, t.y + 8, "Go Back", {
+			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "discord.gg/YESuU3jjmx")), (t = this.game.prodigy.create.panel(this.background, 280, 660, 3, 1, "lb")).alpha = .25, this.game.prodigy.create.font(this.background, t.x, t.y + 8, "Go Back", {
 				size: 16,
 				width: 120,
 				align: "center"
@@ -70492,6 +70463,9 @@ Cloud.STORE = {
 			type: "outfit",
 			N: 1,
 			ID: 5
+		}, {
+			type: "spell",
+			ID: 29
 		}]
 	}, {
 		coords: [110, 190],
@@ -70533,6 +70507,9 @@ Cloud.STORE = {
 			type: "weapon",
 			N: 1,
 			ID: 23
+		}, {
+			type: "spell",
+			ID: 30
 		}]
 	}, {
 		coords: [225, 150],
@@ -70553,7 +70530,7 @@ Cloud.STORE = {
 		}],
 		reward: [{
 			type: "spell",
-			ID: 29
+			ID: 38
 		}]
 	}]
 };
@@ -71319,6 +71296,9 @@ Volcano.STORE = {
 			type: "weapon",
 			N: 1,
 			ID: 18
+			}, {
+			type: "spell",
+			ID: 5
 			}]
 		}, {
 		coords: [110, 190],
@@ -71353,6 +71333,9 @@ Volcano.STORE = {
 			type: "outfit",
 			N: 1,
 			ID: 8
+			}, {
+			type: "spell",
+			ID: 6
 			}]
 		}, {
 		coords: [225, 150],
@@ -71373,7 +71356,7 @@ Volcano.STORE = {
 			}],
 		reward: [{
 			type: "spell",
-			ID: 5
+			ID: 41
 			}]
 		}]
 };
@@ -72563,6 +72546,9 @@ Forest.STORE = {
 			type: "weapon",
 			N: 1,
 			ID: 17
+		}, {
+			type: "spell",
+			ID: 17
 		}]
 	}, {
 		coords: [225, 240],
@@ -72598,6 +72584,9 @@ Forest.STORE = {
 			type: "outfit",
 			N: 1,
 			ID: 3
+		}, {
+			type: "spell",
+			ID: 18
 		}]
 	}, {
 		coords: [225, 150],
@@ -72618,7 +72607,7 @@ Forest.STORE = {
 		}],
 		reward: [{
 			type: "spell",
-			ID: 17
+			ID: 39
 		}]
 	}]
 };
@@ -73305,6 +73294,9 @@ Mountain.STORE = {
 			type: "outfit",
 			N: 1,
 			ID: 6
+		}, {
+			type: "spell",
+			ID: 23
 		}]
 	}, {
 		coords: [110, 110],
@@ -73379,6 +73371,9 @@ Mountain.STORE = {
 			type: "weapon",
 			N: 1,
 			ID: 13
+		}, {
+			type: "spell",
+			ID: 24
 		}]
 	}, {
 		coords: [225, 150],
@@ -73399,7 +73394,7 @@ Mountain.STORE = {
 		}],
 		reward: [{
 			type: "spell",
-			ID: 23
+			ID: 37
 		}]
 	}]
 };
@@ -74252,6 +74247,9 @@ Pirate.STORE = {
 			type: "weapon",
 			N: 1,
 			ID: 19
+		}, {
+			type: "spell",
+			ID: 11
 		}]
 	}, {
 		coords: [110, 190],
@@ -74284,6 +74282,9 @@ Pirate.STORE = {
 			type: "outfit",
 			N: 1,
 			ID: 4
+		}, {
+			type: "spell",
+			ID: 12
 		}]
 	}, {
 		coords: [225, 150],
@@ -74304,7 +74305,7 @@ Pirate.STORE = {
 		}],
 		reward: [{
 			type: "spell",
-			ID: 11
+			ID: 40
 		}]
 	}]
 };
@@ -79237,7 +79238,7 @@ Prodigy.Battle.Battle = function(e) {
 		return this.isRunning
 	},
 	create: function() {
-		this.game.prodigy.network.setZone(this), Screen.prototype.create.call(this), this.game.prodigy.player.saveEnabled = !1
+		this.game.prodigy.network.setZone(this), Screen.prototype.create.call(this), this.game.prodigy.player.saveEnabled = !0
 	},
 	screenSetup: function() {
 		this.bg = this.game.prodigy.create.sprite(0, 0, this.screenName), this.background.add(this.bg), this.heartsA = new Prodigy.Container.Hearts(this.game, this.background, 30, -200, null, !1, !1), this.heartsB = new Prodigy.Container.Hearts(this.game, this.background, 1250 - Prodigy.Container.Hearts.WIDTH, -200, null, !0, !1), this.teams = [], this.teams.push(new Team(this.game, this.content, this.teamA, !0, -200, 550, 250, 550, this.heartsA, !1)), this.teams.push(new Team(this.game, this.content, this.teamB, !1, 1480, 550, 1030, 550, this.heartsB, !0)), this.resetPotions.call(this), 1 != Util.getUrlVariable("iosApp") && this.game.prodigy.audio.playBGM("bgm-battle", !0), this.isRunning = !0, this.checkCombatMods(), Screen.prototype.screenSetup.call(this)
@@ -85232,14 +85233,7 @@ class OldProdigy {
             Util.isDefined(callback) && callback({
 				success: true,
                 wizard: save
-            })
-            Util.log("Progress saved.", Util.INFO);
-        }).catch((error) => {
-            Util.log("Save failed.", Util.ERROR);
-            console.error(error);
-			Util.isDefined(callback) && callback({
-				success: false
-			})
+            });
         });
 	}
 	// Resets the user's wizard data. This is ran whenever the player logs out.
