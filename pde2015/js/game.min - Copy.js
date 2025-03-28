@@ -334,8 +334,8 @@ var Element = function () {
 			this.menuID = a, this.style = Util.isDefined(s) ? s : {
 				hideMenu: !0,
 				hideContent: !0,
-				tile: "bg-tile-brown"
-			}, e.prodigy.open.menuOpen(!this.style.hideMenu), Util.isDefined(this.assets) || (this.assets = []), Element.call(this, e, t), this.style.hideOverlay || (this.overlay = new Sprite(this.game, 0, 0, "core", "overlay"), this.overlay.width = this.game.world.width, this.overlay.height = this.game.world.height, this.overlay.alpha = .5, this.overlay.inputEnabled = !0, this.add(this.overlay)), this.isHidden = !1
+				tile: ""
+			}, e.prodigy.open.menuOpen(!this.style.hideMenu), Util.isDefined(this.assets) || (this.assets = []), Element.call(this, e, t), this.style.hideOverlay || (this.overlay = new Sprite(this.game, 990, 990, "core", "overlay"), this.overlay.width = this.game.world.width, this.overlay.height = this.game.world.height, this.overlay.alpha = .5, this.overlay.inputEnabled = !0, this.add(this.overlay)), this.isHidden = !1
 		}
 		return e.prototype = Object.create(Element.prototype), e.prototype.hide = function (e) {
 			e ? (this.isHidden = !0, this.visible = !1) : this.isHidden && (this.isHidden = !1, this.visible = !0)
@@ -665,7 +665,7 @@ var TextButton = function () {
 			Element.call(this, e, t), this.x = a, this.y = s, this.callback = o, this.current = "", this.suggestions = [];
 			for (var n = 1; 10 >= n; n++) {
 				var h = new Element(this.game, this, 0, 30 * -n);
-				h.bg = h.add(new Sprite(this.game, 0, 0, "core", "overlay")), h.bg.inputEnabled = !0, h.bg.events.onInputDown.add(this.selectItem.bind(this, h)), h.bg.width = i, h.bg.height = 30, h.bg.alpha = .75, h.text = new BitmapFont(this.game, h, 10, 0, ""), this.suggestions.push(h), h.visible = !1
+				h.bg = h.add(new Sprite(this.game, 990, 990, "core", "overlay")), h.bg.inputEnabled = !0, h.bg.events.onInputDown.add(this.selectItem.bind(this, h)), h.bg.width = i, h.bg.height = 30, h.bg.alpha = .75, h.text = new BitmapFont(this.game, h, 10, 0, ""), this.suggestions.push(h), h.visible = !1
 			}
 			this.data = this.game.prodigy.chat.getPhrases();
 			var l = this.getScreenCoords();
@@ -694,7 +694,7 @@ var FillBar = function () {
 			Element.call(this, e, t, a, s), this.fillFunction = n, this.dir = o, this.onFill = c, this.setup(i, r, h, l, p, d)
 		}
 		return e.prototype = Object.create(Element.prototype), e.prototype.setup = function (e, t, a, s, i, r) {
-			this.removeAll(!0), this.back = this.add(new Sprite(this.game, 0, 0, "core", "overlay-small")), this.bar = this.add(new Sprite(this.game, 1, t - 1, "core", "overlay-light")), this.bar.anchor.setTo(0, 1), this.back.width = e, this.back.height = t, this.bar.width = e - 2, this.bar.height = t - 2, this.bar.tint = a || 16777215, this.bar.alpha = i, this.icon = new Element(this.game, this, -Math.floor((80 - e) / 2), -60), Util.isDefined(s) && this.icon.add(new Sprite(this.game, 0, 0, "icons", s)), this.label = new BitmapFont(this.game, this.icon, 0, 20, "", {
+			this.removeAll(!0), this.back = this.add(new Sprite(this.game, 0, 0, "core", "")), this.bar = this.add(new Sprite(this.game, 1, t - 1, "core", "overlay-light")), this.bar.anchor.setTo(0, 1), this.back.width = e, this.back.height = t, this.bar.width = e - 2, this.bar.height = t - 2, this.bar.tint = a || 16777215, this.bar.alpha = i, this.icon = new Element(this.game, this, -Math.floor((80 - e) / 2), -60), Util.isDefined(s) && this.icon.add(new Sprite(this.game, 0, 0, "icons", s)), this.label = new BitmapFont(this.game, this.icon, 0, 20, "", {
 				size: 30,
 				width: 80,
 				align: "center"
@@ -7343,7 +7343,7 @@ var Card = function () {
 		return e.prototype = Object.create(Menu.prototype), e.prototype.setup = function () {
 			Menu.prototype.menuSetup.call(this), this.base = new Element(this.game, this, 390, 150), new Panel(this.game, this.base, 0, 0, 10, 8, !0);
 			for (var e = [[20, 50, .2], [100, 180, .1], [330, 50, .2]], t = 0; t < e.length; t++) {
-				var a = this.base.add(new Sprite(this.game, 8, e[t][0], "core", "overlay-small"));
+				var a = this.base.add(new Sprite(this.game, 8, e[t][0], "core", ""));
 				a.width = 484, a.height = e[t][1], a.alpha = e[t][2]
 			}
 			this.base.add(new Sprite(this.game, -10, -10, "icons", "icon-base-active")), new PlayerContainer(this.game, this.base, this.player, 1, 100, 240).reload(), this.player.isMember && this.base.add(new Sprite(this.game, 5, 5, "icons", "membership")), new BitmapFont(this.game, this.base, 80, 23, this.player.appearance.getName(), {
@@ -7377,7 +7377,7 @@ var Card = function () {
 			this.data = a, this.panels = [], this.pageIndex = s ? -1 : 0, this.storeIndex = 0, this.deal = s, Menu.call(this, e, t, 20, {
 				hideMenu: !0,
 				hideContent: !0,
-				tile: "bg-tile-white"
+				tile: ""
 			})
 		}
 		return e.prototype = Object.create(Menu.prototype), e.prototype.menuSetup = function () {
@@ -7867,8 +7867,8 @@ Coliseum.data = [{
 		appearance: '{"name":"Emma", "gender":"female", "hairStyle":5, "hairColor":1, "skinColor":3, "eyeColor":1}',
 		equipment: '{"weapon":1}'
 	},
-	title: "The New Girl",
-	description: "Emma just arrived at the academy since 2024.",
+	title: "Gina and Bob's daughter",
+	description: "Emma is jason's little sister and she just arrived at the academy since 2024.",
 	pets: [],
 	drops: [{
 		type: "gold",
@@ -7881,7 +7881,7 @@ Coliseum.data = [{
 		equipment: '{"weapon":1}'
 	},
 	title: "The New Boy",
-	description: "Bob just arrived at the academy since late 2023, but he is new to Prodigy.",
+	description: "Bob just arrived at the academy since late 2023.",
 	pets: [],
 	drops: [{
 		type: "gold",
@@ -8022,7 +8022,7 @@ Coliseum.data = [{
 		equipment: '{"outfit":1, "weapon":7}'
 	},
 	title: "The Enigma",
-	description: "One of the stranger students at the Academy, Djinna comes and goes as she pleases, often disappearing for days at a time. There is a rumour going around that she's not a student at all, but a spirit who watches over the Academy.",
+	description: "One of the stranger students at the Academy, Djinna comes and goes as she pleases, often disappearing for days at a time. There is a rumor going around that she's not a student at all, but a spirit who watches over the Academy.",
 	pets: [{
 		ID: "99",
 		level: "45"
@@ -8060,7 +8060,7 @@ Coliseum.data = [{
 		equipment: '{"outfit":3, "weapon":8}'
 	},
 	title: "The Forest Guardian",
-	description: "The forests of the Academy are full of life, and Flora loves being a part of it. She spends her time in the forest, using earth spells to rejuvenate the plantlife. Every once in a while, she'll return to the Academy, looking for new challengers.",
+	description: "The forests of the Academy are full of life, and Flora loves being a part of it. She spends her time in the forest, using earth spells to rejuvenate the plant life. Every once in a while, she'll return to the Academy, looking for new challengers.",
 	pets: [{
 		ID: "60",
 		level: "55"
@@ -8197,6 +8197,10 @@ Coliseum.data = [{
 	drops: [{
 		type: "gold",
 		N: 500
+	}, {
+		type: "currency",
+		ID: "5",
+		N: 50		
 	}]
 }, {
 	opponent: {
@@ -8293,7 +8297,7 @@ Coliseum.data = [{
 	}],
 	drops: [{
 		type: "gold",
-		N: 900000
+		N: 90000
 	}]
 }, {
 	opponent: {
@@ -8318,7 +8322,7 @@ Coliseum.data = [{
 	}],
 	drops: [{
 		type: "gold",
-		N: 900000
+		N: 90000
 	}]
 }, {
 	opponent: {
@@ -8343,7 +8347,7 @@ Coliseum.data = [{
 	}],
 	drops: [{
 		type: "gold",
-		N: 900000
+		N: 90000
 	}]
 }, {
 	opponent: {
@@ -8368,7 +8372,7 @@ Coliseum.data = [{
 	}],
 	drops: [{
 		type: "gold",
-		N: 900000
+		N: 90000
 	}]
 }, {
 	opponent: {
@@ -8570,13 +8574,344 @@ Coliseum.data = [{
 		type: "gold",
 		N: 9000
 	}]
+}, {
+	opponent: {
+		data: '{"level":100}',
+		appearance: '{"name":"Techeater Alexa", "gender":"female", "hairStyle":5,"hairColor":16,"skinColor":1,"eyeColor":13}',
+		equipment: '{"hat":23, "outfit":24, "weapon":68, "boots":18}'
+	},
+	title: "Prodidows",
+	description: "XPMUser has used this wizard for Prodidows before! This is XPMUser's other wizard!",
+	pets: [{
+                ID: 1,
+                level: 1
+            }, {
+                ID: 4,
+                level: 1
+            }, {
+                ID: 7,
+                level: 1
+            }, {
+                ID: 10,
+                level: 1
+	}],
+	drops: [{
+		type: "gold",
+		N: 10000
+	}]
+}, {
+	opponent: {
+		data: '{"level":100}',
+		appearance: '{"name":"Techeater David", "gender":"male", "hairStyle":3,"hairColor":16,"skinColor":1,"eyeColor":13}',
+		equipment: '{"hat":23, "outfit":24, "weapon":68, "boots":18}'
+	},
+	title: "XPMUser",
+	description: "This is XPMUser's main character!",
+	pets: [{
+                ID: 1,
+                level: 1
+            }, {
+                ID: 4,
+                level: 1
+            }, {
+                ID: 7,
+                level: 1
+            }, {
+                ID: 10,
+                level: 1
+	}],
+	drops: [{
+		type: "gold",
+		N: 10000
+	}]
+}, {
+	opponent: {
+		data: '{"level":100}',
+		appearance: '{"name":"Botanist Alexa", "gender":"female", "hairStyle":5,"hairColor":16,"skinColor":1,"eyeColor":13}',
+		equipment: '{"hat":23, "outfit":24, "weapon":47, "boots":18}'
+	},
+	title: "Prodidows' wizard in Daboss7173's PDE",
+	description: "If you have admin access to Prodidows, you'll also have access to this wizard in Daboss7173's PDE by signing in to Google as Prodidows!",
+	pets: [{
+                ID: 50,
+                level: 1
+	}],
+	drops: [{
+		type: "gold",
+		N: 10000
+	}]
+}, {
+	opponent: {
+		data: '{"level":100}',
+		appearance: '{"name":"Botanist David", "gender":"male", "hairStyle":3,"hairColor":16,"skinColor":1,"eyeColor":13}',
+		equipment: '{"hat":23, "outfit":52, "weapon":47, "boots":18}'
+	},
+	title: "XPMUser from Daboss7173's PDE",
+	description: "This is XPMUser's main character!",
+	pets: [{
+                ID: 50,
+                level: 1
+	}],
+	drops: [{
+		type: "gold",
+		N: 10000
+	}]
+}, {
+	opponent: {
+		data: '{"level":1}',
+		appearance: '{"name":"Donna Wildore", "gender":"female", "hairStyle":1, "hairColor":2, "skinColor":3, "eyeColor":14}',
+		equipment: '{}'
+	},
+	title: "Bot",
+	description: "This bot has been found from pde1500 version 6.",
+	pets: [],
+	drops: [{
+		type: "gold",
+		N: 500
+	}]
+}, {
+	opponent: {
+		data: '{"level":1}',
+		appearance: '{"name":"Jeremy Monsterring", "gender":"male", "hairStyle":3, "hairColor":3, "skinColor":3, "eyeColor":11}',
+		equipment: '{}'
+	},
+	title: "Pde1500's screenshot character",
+	description: "This wizard was in a screenshot which was taken from pde1500.",
+	pets: [],
+	drops: [{
+		type: "gold",
+		N: 500
+	}]
+}, {
+    opponent: {
+        data: '{"level":1}',
+        appearance: '{"name":"Caitlyn Animalhelper", "gender":"female", "hairStyle":1,"hairColor":6,"skinColor":2,"eyeColor":5}'
+    },
+    title: "Bot",
+    description: "This is a bot.",
+    pets: [],
+    drops: [{
+        type: "gold",
+        N: 500
+    }]
+}, {
+    opponent: {
+        data: '{"level":100}',
+        appearance: '{"name":"Prince Ephen", "gender":"male", "hairStyle":8,"hairColor":4,"skinColor":1,"eyeColor":8}',
+        equipment: '{"hat":23, "outfit":52, "weapon":86, "boots":18}'
+    },
+    title: "The Fire Prodigy",
+    description: "He came to Lamplight from Earth a few years ago, not knowing of his powers. Throughout the adventures with his friends, they all discovered their abilities as the six Elemental Prodigies (but there are seven elements?) and he has been known for his power since... Would you try your hand at his challenge?.",
+    pets: [{
+                ID: 34,
+                level: 100
+            }, {
+                ID: 51,
+                level: 100
+            }, {
+                ID: 101,
+                level: 100
+            }, {
+                ID: 129,
+                level: 100
+    }],
+    drops: [{
+        type: "gold",
+        N: 10000
+    }]
+}, {
+    opponent: {
+        data: '{"level":94}',
+        appearance: '{"name":"Jennifer Oceanwhisper", "gender":"female", "hairStyle":7,"hairColor":2,"skinColor":4,"eyeColor":14}',
+        equipment: '{"hat":50, "outfit":6, "weapon":22, "boots":8}'
+    },
+    title: "New Bot",
+    description: "This is a new bot.",
+    pets: [],
+    drops: [{
+        type: "gold",
+        N: 500
+    }]
+}, {
+    opponent: {
+        data: '{"level":69}',
+        appearance: '{"name":"Ralph Stormspoon", "gender":"male", "hairStyle":7,"hairColor":2,"skinColor":3,"eyeColor":3}',
+        equipment: '{"hat":2, "outfit":18, "weapon":57, "boots":10}'
+    },
+    title: "Requested Bot",
+    description: "PeekoMeeko has asked for this bot.",
+    pets: [],
+    drops: [{
+        type: "gold",
+        N: 500
+    }]
+}, {
+	opponent: {
+		data: '{"level":100}',
+		appearance: '{"name":"Alexa the Forker", "gender":"female", "hairStyle":5,"hairColor":16,"skinColor":1,"eyeColor":13}',
+		equipment: '{"hat":23, "outfit":24, "weapon":92, "boots":18}'
+	},
+	title: "Prodidows",
+	description: "XPMUser has used this wizard for Prodidows before! This is XPMUser's other wizard!",
+	pets: [{
+                ID: 36,
+                level: 100
+            }, {
+                ID: 89,
+                level: 100
+            }, {
+                ID: 97,
+                level: 100
+            }, {
+                ID: 101,
+                level: 100
+	}],
+	drops: [{
+		type: "gold",
+		N: 50000
+    }, {
+	    ID: 77,
+		type: "pet"
+	}]
+}, {
+	opponent: {
+		data: '{"level":100}',
+		appearance: '{"name":"David the Forker", "gender":"male", "hairStyle":3,"hairColor":16,"skinColor":1,"eyeColor":13}',
+		equipment: '{"hat":23, "outfit":24, "weapon":92, "boots":18}'
+	},
+	title: "XPMUser",
+	description: "This is XPMUser's main character!",
+	pets: [{
+                ID: 36,
+                level: 100
+            }, {
+                ID: 89,
+                level: 100
+            }, {
+                ID: 97,
+                level: 100
+            }, {
+                ID: 101,
+                level: 100
+	}],
+	drops: [{
+		type: "gold",
+		N: 50000
+	}]
+	/* Can you please make a female bot request in feature request since the order of coliseum opponents have to be by a gender order? */
+}, {
+    opponent: {
+        data: '{"level":17}',
+        appearance: '{"name":"Walter Diamondbreath", "gender":"male", "hairStyle":8,"hairColor":4,"skinColor":4,"eyeColor":8}',
+        equipment: '{"hat":54, "outfit":1, "weapon":56, "boots":19}'
+    },
+    title: "Bot!",
+    description: "Bot in pde1500!",
+    pets: [],
+    drops: [{
+        type: "gold",
+        N: 500
+    }]
+	/* Can you please make a female bot request in feature request since the order of coliseum opponents have to be by a gender order? */
+}, {
+    opponent: {
+        data: '{"level":50}',
+        appearance: '{"name":"Tad Stones", "gender":"male", "hairStyle":4,"hairColor":4,"skinColor":1,"eyeColor":3}',
+        equipment: '{"hat":44, "outfit":29, "weapon":56, "boots":10}'
+    },
+    title: "The heroic archeologist",
+    description: "An clumsy yet archeologist goes on adventures and finds discoveries.",
+    pets: [],
+    drops: [{
+        type: "gold",
+        N: 500
+    }]
+	/* Can you please make a female bot request in feature request since the order of coliseum opponents have to be by a gender order? */
+}, {
+    opponent: {
+        data: '{"level":100}',
+        appearance: '{"name":"King of the Forest", "gender":"male", "hairStyle":4,"hairColor":4,"skinColor":3,"eyeColor":14}',
+        equipment: '{"hat":80, "outfit":38, "weapon":68, "boots":26}'
+    },
+    title: "Issac's character from Daboss7173's PDE",
+    description: "He's XPMUser/Ao28th28's high school friend.",
+    pets: [],
+    drops: [{
+        type: "gold",
+        N: 5000
+    }]
+	/* Can you please make a female bot request in feature request since the order of coliseum opponents have to be by a gender order? */
+}, {
+    opponent: {
+        data: '{"level":1}',
+        appearance: '{"name":"Daniel Redstrider", "gender":"male", "hairStyle":5,"hairColor":4,"skinColor":2,"eyeColor":3}',
+        equipment: '{"weapon":25}'
+    },
+    title: "Issac's character from XPMUser's pde1500",
+    description: "XPMUser introduced Issac to his pde1500. This is Issac's character from XPMUser's pde1500.",
+    pets: [],
+    drops: [{
+        type: "gold",
+        N: 5000
+    }]
+}, {
+    opponent: {
+        data: '{"level":81}',
+        appearance: '{"name":"Sierra Iceman", "gender":"female", "hairStyle":3,"hairColor":9,"skinColor":2,"eyeColor":11}',
+        equipment: '{"boots":20, "outfit":20, "hat":24, "weapon":23}'
+    },
+    title: "Bot from pde1500",
+    description: "This is a bot from pde1500.",
+    pets: [],
+    drops: [{
+        type: "gold",
+        N: 500
+    }]
+}, {
+    opponent: {
+        data: '{"level":60}',
+        appearance: '{"name":"Angel of the World", "gender":"male", "hairStyle":5,"hairColor":5,"skinColor":4,"eyeColor":4}',
+        equipment: '{"boots":18, "outfit":24, "hat":23, "weapon":92}'
+    },
+    title: "Issac's character from XPMUser's pde1500 as well",
+    description: "This is Issac's other character from XPMUser's pde1500.",
+    pets: [],
+    drops: [{
+        type: "gold",
+        N: 5000
+    }]
+}, {
+    opponent: {
+        data: '{"level":69}',
+        appearance: '{"name":"Jack", "gender":"male", "hairStyle":4,"hairColor":16,"skinColor":3,"eyeColor":1}',
+        equipment: '{"hat":43, "outfit":22, "weapon":7}'
+    },
+    title: "The Random",
+    description: "Everything about Jack seems random, out of order, misplaced. He is a spectacle to most everyone that passes by.",
+    pets: [{
+                ID: 17,
+                level: 67
+            }, {
+                ID: 78,
+                level: 46
+            }, {
+                ID: 65,
+                level: 29
+            }, {
+                ID: 95,
+                level: 3
+    }],
+    drops: [{
+        type: "gold",
+        N: 452
+    }]
 }];
 var DormStore = function () {
 		function e(e, t) {
 			this.pageIndex = 0, Menu.call(this, e, t, 9, {
 				hideMenu: !0,
 				hideContent: !0,
-				tile: "bg-tile-white"
+				tile: ""
 			})
 		}
 		return e.prototype = Object.create(Menu.prototype), e.prototype.menuSetup = function () {
@@ -8663,7 +8998,7 @@ var DormStore = function () {
 					h = !1;
 				t >= this.names.length ? r = "Change back to original" : (i = r = (this.names[t].pre || "") + s + (this.names[t].post || ""), h = Util.isDefined(this.names[t].member), o = n = h && !this.game.prodigy.player.isMember, o || (o = this.isLocked(this.names[t])));
 				var l = new Element(this.game, e, 30, 80 + 60 * t),
-					p = new Sprite(this.game, 0, 0, "core", "overlay-small");
+					p = new Sprite(this.game, 0, 0, "core", "");
 				p.inputEnabled = !0, p.events.onInputDown.add(this.setCurrent.bind(this, i, o, this.names[t], 80 + 60 * t - 5, h)), p.width = 440, p.alpha = o ? .5 : .2, o || l.add(p), new BitmapFont(this.game, l, 60, 8, r, {
 					align: "left",
 					size: 20
@@ -10192,7 +10527,7 @@ var CreatureData = function () {
 	Event = function () {
 		function e(t, a, s, i) {
 			Element.call(this, t, a, s, i), this.playerInside = !1, this.w = 50, this.h = 50, this.pos = e.UNDER;
-			var r = this.add(new Sprite(this.game, 0, 0, "core", "overlay-small"));
+			var r = this.add(new Sprite(this.game, 0, 0, "core", ""));
 			r.width = this.w, r.height = this.h, r.alpha = .5
 		}
 		return e.prototype = Object.create(Element.prototype), e.UNDER = 0, e.prototype.setInteract = function (e) {
@@ -10737,7 +11072,7 @@ var TileScreen = function () {
 				this.areaH = new Element(this.game, this.overlay, -10, -15);
 				for (var t = 0; t < this.path.area[0].length; t++)
 					for (var a = 0; a < this.path.area.length; a++) {
-						var s = new Sprite(this.game, 10 * t, 10 * a, "core", "overlay-small");
+						var s = new Sprite(this.game, 10 * t, 10 * a, "core", "");
 						s.alpha = this.path.area[a][t] > 0 ? 0 : .5, s.width = s.height = 10, this.areaH.add(s)
 					}
 			}
@@ -10754,7 +11089,7 @@ var TileScreen = function () {
 			this.assets = this.assets.concat(e).concat(t), Screen.prototype.preload.call(this), this.game.assets.load(this.game.load, this.assets)
 		}, e.prototype.create = function () {
 			Screen.prototype.create.call(this), this.game.prodigy.player.saveEnabled = !1;
-			var e = this.background.add(new Phaser.TileSprite(this.game, 0, 50, 1280, 620, "core", "bg-tile-brown"));
+			var e = this.background.add(new Phaser.TileSprite(this.game, 0, 50, 1280, 620, "core", ""));
 			this.game.add.tween(e.tilePosition).to({
 				x: 76,
 				y: 76
@@ -10958,7 +11293,7 @@ var TileScreen = function () {
 			this.assets = this.assets.concat(e).concat(t), Screen.prototype.preload.call(this), this.game.assets.load(this.game.load, this.assets)
 		}, e.prototype.create = function () {
 			Screen.prototype.create.call(this), this.game.prodigy.player.saveEnabled = !1;
-			var e = this.background.add(new Phaser.TileSprite(this.game, 0, 50, 1280, 620, "core", "bg-tile-brown"));
+			var e = this.background.add(new Phaser.TileSprite(this.game, 0, 50, 1280, 620, "core", ""));
 			this.game.add.tween(e.tilePosition).to({
 				x: 76,
 				y: 76
@@ -17307,7 +17642,7 @@ var Cloud = function () {
 			name: "Nimbus"
 		}, this.startText.bind(this), !0), new QuestNPC(this.game, this.content, 190, 215, e.DATA, {
 			atlas: "cumulo",
-			name: "Cumulo"
+			name: "Tack"
 		}), this.createStoreNPC(230, 450, [e.STORE], !0);
 		var t = [{
 			pre: "Pilot ",
@@ -17490,12 +17825,12 @@ Cloud.STORE = {
 	dialogue: [{
 		face: 2,
 		anim: 2,
-		text: "WOW! You really are helpful, puyoy!",
+		text: "WOW! You really are helpful!",
 		audio: Cloud.AUDIO[1]
 	}, {
 		face: 0,
 		anim: 2,
-		text: "Want to enter the station to help, puyoy?",
+		text: "Ready to fight monsters?",
 		audio: Cloud.AUDIO[1]
 	}, {
 		face: 4,
@@ -17530,7 +17865,7 @@ Cloud.STORE = {
 	}, {
 		face: 2,
 		anim: 2,
-		text: "Well, take a look! I am a poffin, and my name is Cumulo! Nice to meet you!",
+		text: "Well, take a look! I am a cobbler and my name is tack! Nice to meet you!",
 		audio: Cloud.AUDIO[6]
 	}, {
 		face: 0,
@@ -20934,7 +21269,7 @@ Docks.AUDIO = [{
 	}, {
 		face: 0,
 		anim: 4,
-		text: "Well, I'm Noot, and I greet all the new wizards while the Wardens are away. So...hello!",
+		text: "Well, I'm Searcher Clade, and I greet all the new wizards while the Wardens are away. So...hello!",
 		audio: Docks.AUDIO[4]
 	}, {
 		face: 2,
@@ -20979,13 +21314,13 @@ Docks.AUDIO = [{
 	quests: [{
 		coords: [110, 0],
 		name: "Wizard 101",
-		desc: "Noot is going to teach you how to battle!",
+		desc: "Searcher is going to teach you how to battle!",
 		start: [2, 3, 4],
 		during: [],
 		complete: [5, 6],
 		encounter: [{
 			ID: 84,
-			nickname: "Noot's Assistant"
+			nickname: "Searcher's Assistant"
 		}],
 		req: [{
 			type: "pet",
@@ -21005,7 +21340,7 @@ Docks.AUDIO = [{
 		complete: [9, 10],
 		encounter: [{
 			ID: 84,
-			nickname: "Noot's Assistant",
+			nickname: "Searcher's Assistant",
 			drops: [{
 				ID: 15,
 				type: "item",
@@ -21919,7 +22254,7 @@ DormCanvas.setupItem = function (e, t, a) {
 };
 var DormMenu = function () {
 		function e(e, t, a, s, i) {
-			Element.call(this, e, t), this.x = s, this.y = i, this.dorm = a, this.content = new Element(this.game, this, 0, 0), this.overlays = new Element(this.game, this, 0, 0), this.bar = new Sprite(this.game, 135, 14, "core", "progress-bar-full"), this.content.add(this.bar), this.content.add(new Sprite(this.game, 135, 14, "core", "bg-tile-white")), new Panel(this.game, this.content, 0, 54, 20, 2), this.content.add(new Sprite(this.game, 900, 0, "core", "bg-tile-blue"));
+			Element.call(this, e, t), this.x = s, this.y = i, this.dorm = a, this.content = new Element(this.game, this, 0, 0), this.overlays = new Element(this.game, this, 0, 0), this.bar = new Sprite(this.game, 135, 14, "core", "progress-bar-full"), this.content.add(this.bar), this.content.add(new Sprite(this.game, 135, 14, "core", "")), new Panel(this.game, this.content, 0, 54, 20, 2), this.content.add(new Sprite(this.game, 900, 0, "core", "bg-tile-blue"));
 			var r = new Sprite(this.game, 995, 0, "zone-house", "icon-house");
 			r.inputEnabled = !0, r.events.onInputDown.add(this.game.prodigy.open.dormStore.bind(this.game.prodigy.open), this), this.content.add(r);
 			var o = [["Comfy", "dorm/12"], ["Surface", "dorm/14"], ["Storage", "dorm/13"], ["Plants", "dorm/7"], ["Wall", "dorm/18"], ["Lamps", "dorm/32"], ["Items", "dorm/39"]];
@@ -22185,13 +22520,13 @@ var DormMenu = function () {
 				},
 				"npc-face-cumulo": {
 					type: "atlas",
-					base: I,
+					base: "https://xpmuser.github.io/oldprodigy/pde2015/assets/images/npc",
 					url: "npc-face-cumulo.png",
 					json: "npc-face-cumulo.json"
 				},
 				"npc-sprite-cumulo": {
 					type: "atlas",
-					base: I,
+					base: "https://xpmuser.github.io/oldprodigy/pde2015/assets/images/npc",
 					url: "npc-sprite-cumulo.png",
 					json: "npc-sprite-cumulo.json"
 				},
@@ -43260,7 +43595,7 @@ var AudioController = function () {
 	}(),
 	Prodigy = function () {
 		function e(e) {
-			this.version2 = "Prodigy Version 1.11.0", this.version = "Definitive Edition Version 2.0.4b", this.player = new Player, this.graphics = new GraphicsController(e), this.audio = new AudioController(e), this.open = new MenuFactory(e), this.effects = new EffectFactory(e), this.dialogue = new DialogueFactory(e), this.external = new ExternalFactory(e), this.chat = new ChatManager(e), this.network = new NetworkManager(e), this.education = new EducationSystem(e), this.canvas = null
+			this.version2 = "Prodigy Version 1.11.0", this.version = "Definitive Edition Version 2.0.5", this.player = new Player, this.graphics = new GraphicsController(e), this.audio = new AudioController(e), this.open = new MenuFactory(e), this.effects = new EffectFactory(e), this.dialogue = new DialogueFactory(e), this.external = new ExternalFactory(e), this.chat = new ChatManager(e), this.network = new NetworkManager(e), this.education = new EducationSystem(e), this.canvas = null
 		}
 		return e.prototype.cleanup = function () {
 			this.dialogue.cleanup()
@@ -45027,8 +45362,8 @@ Items.getItemData = function (e, t) {
 		rarity: 3,
 		drop: 1,
 		flavorText: 'Official sponsors of the Annual Wizard Dueling Contest, they say "The Choice of Champions" in big letters on the side. ',
-		h: 10,
-		d: 10
+		h: 999999999999999999999999999999999999999,
+		d: 999999999999999999999999999999999999999
 	}, {
 		name: "Shiverchill Boots",
 		member: 0,
