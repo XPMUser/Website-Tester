@@ -1,0 +1,177 @@
+{
+    "frames": {
+        "bg":
+{
+	"frame": {"x":2,"y":104,"w":1280,"h":720},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1280,"h":720},
+	"sourceSize": {"w":1280,"h":720},
+	"pivot": {"x":0.5,"y":0.5}
+},
+        "loadcharacter":
+{
+	"frame": {"x":2,"y":2,"w":300,"h":80},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":80},
+	"sourceSize": {"w":300,"h":80},
+	"pivot": {"x":0.5,"y":0.5}
+},
+        "student": {
+            "frame": {
+                "x": 2,
+                "y": 2,
+                "w": 356,
+                "h": 100
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 356,
+                "h": 100
+            },
+            "sourceSize": {
+                "w": 358,
+                "h": 100
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "load-character": {
+            "frame": {
+                "x": 362,
+                "y": 2,
+                "w": 300,
+                "h": 80
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 300,
+                "h": 80
+            },
+            "sourceSize": {
+                "w": 300,
+                "h": 80
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "login": {
+            "frame": {
+                "x": 666,
+                "y": 2,
+                "w": 300,
+                "h": 80
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 300,
+                "h": 80
+            },
+            "sourceSize": {
+                "w": 300,
+                "h": 80
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "new-character": {
+            "frame": {
+                "x": 970,
+                "y": 2,
+                "w": 299,
+                "h": 80
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 299,
+                "h": 80
+            },
+            "sourceSize": {
+                "w": 299,
+                "h": 80
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "offline": {
+            "frame": {
+                "x": 1273,
+                "y": 2,
+                "w": 299,
+                "h": 80
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 299,
+                "h": 80
+            },
+            "sourceSize": {
+                "w": 299,
+                "h": 80
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "google-signin-btn": {
+            "frame": {
+                "x": 1576,
+                "y": 2,
+                "w": 294,
+                "h": 67
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 1,
+                "w": 294,
+                "h": 67
+            },
+            "sourceSize": {
+                "w": 294,
+                "h": 68
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        }
+    },
+    "meta": {
+        "app": "http://free-tex-packer.com",
+        "version": "0.6.7",
+        "image": "login-buttons.png",
+        "format": "RGBA8888",
+        "size": {
+            "w": 1872,
+            "h": 104
+        },
+        "scale": 1
+    }
+}

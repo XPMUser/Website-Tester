@@ -1,0 +1,135 @@
+{
+    "frames": {
+        "bg": {
+            "frame": {
+                "x": 0,
+                "y": 0,
+                "w": 1282,
+                "h": 720
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 2,
+                "y": 0,
+                "w": 1282,
+                "h": 720
+            },
+            "sourceSize": {
+                "w": 1284,
+                "h": 720
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "google-signin-btn": {
+            "frame": {
+                "x": 0,
+                "y": 720,
+                "w": 294,
+                "h": 67
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 294,
+                "h": 67
+            },
+            "sourceSize": {
+                "w": 294,
+                "h": 67
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "loadcharacter": {
+            "frame": {
+                "x": 1282,
+                "y": 0,
+                "w": 300,
+                "h": 50
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 300,
+                "h": 50
+            },
+            "sourceSize": {
+                "w": 300,
+                "h": 50
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "offline": {
+            "frame": {
+                "x": 0,
+                "y": 787,
+                "w": 300,
+                "h": 50
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 300,
+                "h": 50
+            },
+            "sourceSize": {
+                "w": 300,
+                "h": 50
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "student": {
+            "frame": {
+                "x": 1282,
+                "y": 50,
+                "w": 300,
+                "h": 50
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 300,
+                "h": 50
+            },
+            "sourceSize": {
+                "w": 300,
+                "h": 50
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        }
+    },
+    "meta": {
+        "app": "http://free-tex-packer.com",
+        "version": "0.6.7",
+        "image": "general-login.png",
+        "format": "RGBA8888",
+        "size": {
+            "w": 1582,
+            "h": 837
+        },
+        "scale": 1
+    }
+}

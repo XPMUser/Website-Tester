@@ -26,10 +26,7 @@ var GameMods = {
 	}, {
 		id: "ClassicFaces",
 		patch: "initClassicFaceMod"
-	    }, {
- 	            id: "Mathless",
-                 patch: "initMathlessMod"
-         }]
+	}]
 };
 class ModHandler {
 	constructor(e) {
@@ -431,8 +428,6 @@ class ModHandler {
 			o || 0 !== this.target.source.modifiers.ignoreElement || (this.game.prodigy.attacks.isStrong(this.atk.element, this.target.source.getElement()) ? n = "Powerful!" : this.game.prodigy.attacks.isWeak(this.atk.element, this.target.source.getElement()) && (n = "Weak...")), Util.isDefined(n) && (this.delayComplete = !0, this.game.prodigy.effects.characterText(n, this.target.x, this.source.y + 50, 1e3 + this.shieldTime))
 		}
 	}
-        initMathlessMod() { this.game.prodigy.debug.disableEdu=1
-                 }
 	initClassicFaceMod() {
 		var assets = this.game.prodigy.assets._assets;
 		assets.heads.base = "https://xpmuser.github.io/oldprodigy/1-50-0/images/";

@@ -1,0 +1,497 @@
+{
+    "frames": {
+        "exit-button": {
+            "frame": {
+                "x": 942,
+                "y": 2,
+                "w": 50,
+                "h": 56
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 50,
+                "h": 56
+            },
+            "sourceSize": {
+                "w": 50,
+                "h": 56
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "gear-box": {
+            "frame": {
+                "x": 2,
+                "y": 572,
+                "w": 628,
+                "h": 152
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 628,
+                "h": 152
+            },
+            "sourceSize": {
+                "w": 628,
+                "h": 152
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "icons/2000-gold": {
+            "frame": {
+                "x": 774,
+                "y": 2,
+                "w": 166,
+                "h": 164
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 166,
+                "h": 164
+            },
+            "sourceSize": {
+                "w": 166,
+                "h": 164
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "icons/catch-more-pets": {
+            "frame": {
+                "x": 774,
+                "y": 168,
+                "w": 166,
+                "h": 164
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 166,
+                "h": 164
+            },
+            "sourceSize": {
+                "w": 166,
+                "h": 164
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "icons/climb-the-dark-tower": {
+            "frame": {
+                "x": 774,
+                "y": 334,
+                "w": 166,
+                "h": 164
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 166,
+                "h": 164
+            },
+            "sourceSize": {
+                "w": 166,
+                "h": 164
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "icons/cool-new-styles": {
+            "frame": {
+                "x": 774,
+                "y": 500,
+                "w": 166,
+                "h": 164
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 166,
+                "h": 164
+            },
+            "sourceSize": {
+                "w": 166,
+                "h": 164
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "icons/cute-and-cool-buddies": {
+            "frame": {
+                "x": 2,
+                "y": 748,
+                "w": 166,
+                "h": 164
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 166,
+                "h": 164
+            },
+            "sourceSize": {
+                "w": 166,
+                "h": 164
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "icons/friends-visit-house": {
+            "frame": {
+                "x": 2,
+                "y": 914,
+                "w": 166,
+                "h": 164
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 166,
+                "h": 164
+            },
+            "sourceSize": {
+                "w": 166,
+                "h": 164
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "icons/iconbox-TEST": {
+            "frame": {
+                "x": 170,
+                "y": 748,
+                "w": 166,
+                "h": 164
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 166,
+                "h": 164
+            },
+            "sourceSize": {
+                "w": 166,
+                "h": 164
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "icons/level-faster": {
+            "frame": {
+                "x": 170,
+                "y": 914,
+                "w": 166,
+                "h": 164
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 166,
+                "h": 164
+            },
+            "sourceSize": {
+                "w": 166,
+                "h": 164
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "icons/member-chests": {
+            "frame": {
+                "x": 338,
+                "y": 726,
+                "w": 166,
+                "h": 164
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 166,
+                "h": 164
+            },
+            "sourceSize": {
+                "w": 166,
+                "h": 164
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "icons/minigame-boosts": {
+            "frame": {
+                "x": 338,
+                "y": 892,
+                "w": 166,
+                "h": 164
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 166,
+                "h": 164
+            },
+            "sourceSize": {
+                "w": 166,
+                "h": 164
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "icons/more-gold": {
+            "frame": {
+                "x": 842,
+                "y": 748,
+                "w": 165,
+                "h": 164
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 165,
+                "h": 164
+            },
+            "sourceSize": {
+                "w": 165,
+                "h": 164
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "icons/more-spins": {
+            "frame": {
+                "x": 506,
+                "y": 748,
+                "w": 166,
+                "h": 164
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 166,
+                "h": 164
+            },
+            "sourceSize": {
+                "w": 166,
+                "h": 164
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "icons/new-house": {
+            "frame": {
+                "x": 842,
+                "y": 914,
+                "w": 165,
+                "h": 164
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 165,
+                "h": 164
+            },
+            "sourceSize": {
+                "w": 165,
+                "h": 164
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "icons/potions": {
+            "frame": {
+                "x": 506,
+                "y": 914,
+                "w": 166,
+                "h": 164
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 166,
+                "h": 164
+            },
+            "sourceSize": {
+                "w": 166,
+                "h": 164
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "icons/second-catch": {
+            "frame": {
+                "x": 674,
+                "y": 748,
+                "w": 166,
+                "h": 164
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 166,
+                "h": 164
+            },
+            "sourceSize": {
+                "w": 166,
+                "h": 164
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "icons/special-house-furniture": {
+            "frame": {
+                "x": 674,
+                "y": 914,
+                "w": 166,
+                "h": 164
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 166,
+                "h": 164
+            },
+            "sourceSize": {
+                "w": 166,
+                "h": 164
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "member-button": {
+            "frame": {
+                "x": 632,
+                "y": 666,
+                "w": 248,
+                "h": 80
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 248,
+                "h": 80
+            },
+            "sourceSize": {
+                "w": 248,
+                "h": 80
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "popup-box": {
+            "frame": {
+                "x": 2,
+                "y": 2,
+                "w": 770,
+                "h": 568
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 770,
+                "h": 568
+            },
+            "sourceSize": {
+                "w": 770,
+                "h": 568
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        }
+    },
+    "meta": {
+        "app": "undefined",
+        "credits": "prodigy education",
+        "version": "1.0",
+        "image": "popup-member-modular.png",
+        "format": "RGBA5555",
+        "size": {
+            "w": 1009,
+            "h": 1080
+        },
+        "scale": "1",
+        "smartupdate": "$TexturePacker:SmartUpdate:d31c1f5f57b9a77f671a464d49c1d78e:b6b29399a46f5dbbb5d63c2599e0bbff:7bdf3f39b28b2ad67d84155b8db6e03d$"
+    }
+}
