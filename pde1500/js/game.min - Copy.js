@@ -30066,6 +30066,8 @@ Util.capitalize = function(e) {
 	}, {
 		text: "Earn stars to level up...the strongest wizards are Level 100!"
 	}, {
+		text: "If you want to battle a new bot, you can click on the add for battle button."
+	}, {
 		text: "Need more gold? Head out and battle monsters, get it from the daily login bonus, pass 10 floors, or spin the wheel!"
 	}, {
 		text: "Keep your team at its best! Level up your pets alongside your wizard."
@@ -30087,8 +30089,6 @@ Util.capitalize = function(e) {
 		text: "If you want to find bots (wizards) in my.ai, then search for the bot's name."
 	}, {
 		text: "If you want to be a premium member, click on the gear icon and then click on the member button."
-	}, {
-		text: "Never gonna give you up! Never gonna let you down! Never gonna run around and desert you!"
 	}, {
                 text: "Google Drive, iCloud Drive, OneDrive, External hard drives, and USB Flash Drives are recommended to store your working save files." // Kids and older should be able to save manually.
 	}, {
