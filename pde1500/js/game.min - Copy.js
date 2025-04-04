@@ -116,7 +116,8 @@ function ApiClient(e, t) {
 	switch (window.location.host) {
 		case "dev.prodigygame.org":
 		case "localhost":
-		case "xpmuser.github.io":
+		case "healingmunch.github.io/XPMUser.github.io":
+		case "XPMUser.github.io":
 		case "old-prodigy-servers.onrender.com":
 		default:
 			i("dev", l);
@@ -127,7 +128,7 @@ function ApiClient(e, t) {
 		case "localhost":
 			i("production", l);
 			break;
-		case "xpmuser.github.io":
+		case "healingmunch.github.io/XPMUser.github.io":
 			i("staging", l);
 			break;
     case "https://triple-bird-410810-default-rtdb.firebaseio.com":
@@ -139,7 +140,9 @@ function ApiClient(e, t) {
 			i("production", l)
 		case "old-prodigy-servers.onrender.com":
 			i("production", l)
-		case "xpmuser.github.io":
+		case "healingmunch.github.io/XPMUser.github.io":
+			i("production", l)
+		case "XPMUser.github.io":
 			i("production", l)
 	}
 	var D = window.location.search;
@@ -1544,13 +1547,13 @@ Util.capitalize = function(e) {
 		},
 		core: {
 			type: "localAtlas",
-			base: "https://xpmuser.github.io/oldprodigy/pde1500/assets/v1/atlases/",
+			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pde1500/assets/v1/atlases/",
 			key: "general-core",
 			v: "3"
 		},
 		630: {
 			type: "localAtlas",
-			base: "https://xpmuser.github.io/oldprodigy/pde1500/assets/v1/atlases/",
+			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pde1500/assets/v1/atlases/",
 			key: "general-core",
 			v: "1"
 		},
@@ -1561,13 +1564,13 @@ Util.capitalize = function(e) {
 		},
 		heads: {
 			type: "localAtlas",
-			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/",
+			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/images/",
 			key: "general-head",
 			v: "1"
 		},
 		icons: {
 			type: "localAtlas",
-			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/",
+			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/images/",
 			key: "general-icons",
 			v: "42"
 		},
@@ -1594,13 +1597,13 @@ Util.capitalize = function(e) {
 		},
 		login: {
 			type: "localAtlas",
-			base: "https://xpmuser.github.io/oldprodigy/pdenot1.50.0/assets/images/",
+			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pdenot1.50.0/assets/images/",
 			key: "general-login",
 			v: "4"
 		},
 		map: {
 			type: "localAtlas",
-			base: "https://xpmuser.github.io/oldprodigy/pde1500/assets/images/",
+			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pde1500/assets/images/",
 			key: "general-map",
 			v: "6"
 		},
@@ -1816,7 +1819,7 @@ Util.capitalize = function(e) {
 		},
 		"npc-sprite-flora": {
 			type: "localAtlas",
-			base: "https://xpmuser.github.io/oldprodigy/pdenot1.50.0/assets/images/",
+			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pdenot1.50.0/assets/images/",
 			key: "npc-sprite-flora",
 			v: "3"
 		},
@@ -1832,7 +1835,7 @@ Util.capitalize = function(e) {
 		},
 		"npc-sprite-howard_cornelius": {
 			type: "localAtlas",
-			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/",
+			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/images/",
 			key: "npc-sprite-howard-cornelius",
 			v: "1"
 		},
@@ -1873,7 +1876,7 @@ Util.capitalize = function(e) {
 		},
 		"npc-sprite-noot": {
 			type: "localAtlas",
-			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/v1/atlases/",
+			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/v1/atlases/",
 			key: "npc-sprite-guard",
 			v: "1"
 		},
@@ -2034,13 +2037,13 @@ Util.capitalize = function(e) {
 		},
 		"zone-forest2": {
 			type: "localAtlas",
-			base: "https://xpmuser.github.io/oldprodigy/1-11-0/assets/images/zones/",
+			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/1-11-0/assets/images/zones/",
 			url: "zone-forest.png",
 			json: "zone-forest.json"
 		},
 		"zone-docks": {
 			type: "localAtlas",
-			base: "https://xpmuser.github.io/oldprodigy/prodigyde/assets/images/zones/",
+			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/prodigyde/assets/images/zones/",
 			url: "zone-docks.png",
 			json: "zone-docks.json"
 		},
@@ -2067,19 +2070,19 @@ Util.capitalize = function(e) {
 		},
 		"zone-townsquare": {
 			type: "localAtlas",
-			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/",
+			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/images/",
 			key: "zone-townsquare",
 			v: "1"
 		},
 		"zone-academy": {
 			type: "localAtlas",
-			base: "https://xpmuser.github.io/oldprodigy/pdenot1.50.0/assets/images/",
+			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pdenot1.50.0/assets/images/",
 			key: "zone-academy",
 			v: "1"
 		},
 		"zone-icecave": {
 			type: "localAtlas",
-			base: "https://xpmuser.github.io/oldprodigy/prodigyde/assets/images/zones/",
+			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/prodigyde/assets/images/zones/",
 			key: "zone-icecave",
 			v: "1"
 		},
@@ -2125,7 +2128,7 @@ Util.capitalize = function(e) {
 		},
 		"popup-member-modular": {
 			type: "localAtlas",
-			base: "https://xpmuser.github.io/oldprodigy/pde1500/assets/images/",
+			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pde1500/assets/images/",
 			key: "popup-member-modular",
 			v: "6"
 		},
@@ -2421,7 +2424,7 @@ Util.capitalize = function(e) {
 		},
 		"tileset-minecarts": {
 			type: "spritesheet",
-			base: "https://xpmuser.github.io/oldprodigy/pde1500/assets/v1/tilesets/",
+			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pde1500/assets/v1/tilesets/",
 			url: "tileset-minecarts/2/tileset-minecarts.png",
 			w: 40,
 			h: 40
@@ -2645,7 +2648,7 @@ Util.capitalize = function(e) {
 		},
 		"map-lamplight-b1": {
 			type: "json",
-			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/data/",
+			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/data/",
 			url: "map-lamplight-b1/1/map-lamplight-b1.json"
 		},
 		"map-lamplight-b2": {
@@ -2675,7 +2678,7 @@ Util.capitalize = function(e) {
 		},
 		"map-lamplight-c2": {
 			type: "json",
-			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/data/",
+			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/data/",
 			url: "map-lamplight-c2/1/map-lamplight-c2.json"
 		},
 		"map-lamplight-c3": {
@@ -2685,12 +2688,12 @@ Util.capitalize = function(e) {
 		},
 		"map-lamplight-c4": {
 			type: "json",
-			base: "https://xpmuser.github.io/oldprodigy/pde1500/assets/data/",
+			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pde1500/assets/data/",
 			url: "map-lamplight-c4/1/map-lamplight-c4.json"
 		},
 		"map-lamplight-d4": {
 			type: "json",
-			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/data/",
+			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/data/",
 			url: "map-lamplight-d4/2/map-lamplight-d4.json"
 		},
 		"map-lamplight-d5": {
@@ -2885,12 +2888,12 @@ Util.capitalize = function(e) {
 		},
 		"map-lamplight-c4-winterfest": {
 			type: "json",
-			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/data/",
+			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/data/",
 			url: "map-lamplight-c4-winterfest/1/map-lamplight-c4-winterfest.json"
 		},
 		"map-lamplight-d4-winterfest": {
 			type: "json",
-			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/data/",
+			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/data/",
 			url: "map-lamplight-d4-winterfest/1/map-lamplight-d4-winterfest.json"
 		},
 		"map-skywatch-a0": {
@@ -3420,19 +3423,19 @@ Util.capitalize = function(e) {
 		},
 		"bg-dorm-house": {
 			type: "localAtlas",
-			base: "https://xpmuser.github.io/oldprodigy/pde2015/assets/images/zones/",
+			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pde2015/assets/images/zones/",
 			key: "bg-dorm-house",
 			v: "4"
 		},
 		"bg-dorm-cave": {
 			type: "localAtlas",
-			base: "https://xpmuser.github.io/oldprodigy/pde2015/assets/images/zones/",
+			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pde2015/assets/images/zones/",
 			key: "bg-dorm-cave",
 			v: "4"
 		},
 		"bg-dorm-tree": {
 			type: "localAtlas",
-			base: "https://xpmuser.github.io/oldprodigy/pde2015/assets/images/zones/",
+			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pde2015/assets/images/zones/",
 			key: "bg-dorm-tree",
 			v: "4"
 		},
@@ -3498,7 +3501,7 @@ Util.capitalize = function(e) {
 		},
 		"login-bg-1": {
 			type: "localAtlas",
-			base: "https://xpmuser.github.io/oldprodigy/pdenot1.50.0/assets/images/",
+			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pdenot1.50.0/assets/images/",
 			key: "login-bg-1",
 			v: "4"
 		},
@@ -5295,13 +5298,13 @@ Util.capitalize = function(e) {
 		},
 		"monster-small-130": {
 			type: "sprite",
-			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/monsters/small/",
+			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/images/monsters/small/",
 			url: "130.png",
 			x: 45
 		},
 		"monster-normal-130": {
 			type: "spritesheet",
-			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/monsters/normal/",
+			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/images/monsters/normal/",
 			url: "130.png",
 			x: 45,
 			w: 82,
@@ -5309,7 +5312,7 @@ Util.capitalize = function(e) {
 		},
 		"monster-reduced-130": {
 			type: "spritesheet",
-			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/monsters/reduced/",
+			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/images/monsters/reduced/",
 			url: "130.png",
 			x: 22,
 			w: 45,
@@ -7874,7 +7877,7 @@ Util.capitalize = function(e) {
 		},
 		"normal-outfit-male-58": {
 			type: "spritesheet",
-			base: "https://xpmuser.github.io/oldprodigy/pde1221/assets/images/player/normal/male/outfit/",
+			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pde1221/assets/images/player/normal/male/outfit/",
 			url: "58.png",
 			x: 92,
 			y: 154,
@@ -7883,7 +7886,7 @@ Util.capitalize = function(e) {
 		},
 		"normal-outfit-male-59": {
 			type: "spritesheet",
-			base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+			base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
 			url: "0-1.png",
 			x: 92,
 			y: 154,
@@ -8207,7 +8210,7 @@ Util.capitalize = function(e) {
 		},
 		"reduced-outfit-male-38": {
 			type: "spritesheet",
-			base: "https://xpmuser.github.io/prodidows/1-10-0/images/outfits/male/reduced/",
+			base: "https://healingmunch.github.io/prodidows/1-10-0/images/outfits/male/reduced/",
 			url: "38.png",
 			x: 17,
 			y: 0,
@@ -8405,7 +8408,7 @@ Util.capitalize = function(e) {
 		},
 		"reduced-outfit-male-58": {
 			type: "spritesheet",
-			base: "https://xpmuser.github.io/oldprodigy/pde1221/assets/images/player/reduced/male/outfit/",
+			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pde1221/assets/images/player/reduced/male/outfit/",
 			url: "58.png",
 			x: 45,
 			y: 84,
@@ -8414,7 +8417,7 @@ Util.capitalize = function(e) {
 		},
 		"reduced-outfit-male-59": {
 			type: "spritesheet",
-			base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+			base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
             url: "0-1.png",
 			x: 45,
 			y: 84,
@@ -8927,7 +8930,7 @@ Util.capitalize = function(e) {
 		},
 		"normal-outfit-female-57": {
 			type: "spritesheet",
-			base: "https://xpmuser.github.io/prodidows/1-10-0/images/outfits/female/normal/",
+			base: "https://healingmunch.github.io/prodidows/1-10-0/images/outfits/female/normal/",
 			url: "57.png",
             x: 94,
             y: 156,
@@ -8936,7 +8939,7 @@ Util.capitalize = function(e) {
         },
         "normal-outfit-female-58": {
             type: "spritesheet",
-            base: "https://xpmuser.github.io/prodidows/1-22-4/assets/images/outfits/normal/female/",
+            base: "https://healingmunch.github.io/prodidows/1-22-4/assets/images/outfits/normal/female/",
             url: "58.png",
             x: 94,
             y: 156,
@@ -8945,7 +8948,7 @@ Util.capitalize = function(e) {
 		},
 		"normal-outfit-female-59": {
 			type: "spritesheet",
-			base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+			base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
             url: "0-1.png",
 			x: 91,
 			y: 140,
@@ -9458,7 +9461,7 @@ Util.capitalize = function(e) {
 		},
 		"reduced-outfit-female-57": {
 			type: "spritesheet",
-			base: "https://xpmuser.github.io/prodidows/1-10-0/images/outfits/female/reduced/",
+			base: "https://healingmunch.github.io/prodidows/1-10-0/images/outfits/female/reduced/",
 			url: "57.png",
 			x: 44,
 			y: 86,
@@ -9467,7 +9470,7 @@ Util.capitalize = function(e) {
         },
         "reduced-outfit-female-58": {
             type: "spritesheet",
-            base: "https://xpmuser.github.io/prodidows/1-22-4/assets/images/outfits/reduced/female/",
+            base: "https://healingmunch.github.io/prodidows/1-22-4/assets/images/outfits/reduced/female/",
             url: "58.png",
 			x: 45,
 			y: 86,
@@ -9476,7 +9479,7 @@ Util.capitalize = function(e) {
         },
         "reduced-outfit-female-59": {
             type: "spritesheet",
-            base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+            base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
             url: "0-1.png",
 			x: 45,
 			y: 86,
@@ -10205,7 +10208,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hat-77": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hats/normal/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hats/normal/",
                                 url: "77.png",
                                 x: 80,
                                 y: 25,
@@ -10214,7 +10217,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hat-78": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hats/normal/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hats/normal/",
                                 url: "78.png",
                                 x: 49,
                                 y: 39,
@@ -10223,7 +10226,7 @@ Util.capitalize = function(e) {
 		},
 		"normal-hat-79": {
 			type: "spritesheet",
-			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/player/normal/hats/",
+			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/images/player/normal/hats/",
 			url: "24.png",
 			x: 49,
 			y: 53,
@@ -10232,7 +10235,7 @@ Util.capitalize = function(e) {
 		},
 		"normal-hat-80": {
 			type: "spritesheet",
-			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/player/normal/hats/",
+			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/images/player/normal/hats/",
 			url: "80.png",
 			x: 102,
 			y: 54,
@@ -10925,7 +10928,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hat-77": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hats/reduced/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hats/reduced/",
                                 url: "77.png",
                                 x: 39,
                                 y: 23,
@@ -10934,7 +10937,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hat-78": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hats/reduced/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hats/reduced/",
                                 url: "78.png",
                                 x: 23,
                                 y: 29,
@@ -10943,7 +10946,7 @@ Util.capitalize = function(e) {
 		},
 		"reduced-hat-79": {
 			type: "spritesheet",
-			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/player/reduced/hats/",
+			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/images/player/reduced/hats/",
 			url: "24.png",
 			x: 21,
 			y: 35,
@@ -10952,7 +10955,7 @@ Util.capitalize = function(e) {
 		},
 		"reduced-hat-80": {
             type: "spritesheet",
-            base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/player/reduced/hats/",
+            base: "https://healingmunch.github.io/prodidows/1-50-0/assets/images/player/reduced/hats/",
             url: "80.png",
 			x: 46,
 			y: 30,
@@ -11780,7 +11783,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-weapon-92": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/assets/images/player/normal/weapons/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/assets/images/player/normal/weapons/",
                                 url: "92.png",
                                 x: 129,
                                 y: 142,
@@ -15101,7 +15104,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-24-1": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15110,7 +15113,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-24-2": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15119,7 +15122,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-24-3": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15128,7 +15131,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-24-4": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15137,7 +15140,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-24-5": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15146,7 +15149,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-24-6": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15155,7 +15158,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-24-7": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15164,7 +15167,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-24-8": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15173,7 +15176,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-24-9": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15182,7 +15185,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-24-10": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15191,7 +15194,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-24-11": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15200,7 +15203,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-24-12": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15209,7 +15212,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-24-13": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15218,7 +15221,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-24-14": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15227,7 +15230,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-24-15": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15236,7 +15239,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-24-16": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15245,7 +15248,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-undefined-undefined": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15254,7 +15257,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-female-24-1": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15263,7 +15266,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-female-24-2": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15272,7 +15275,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-female-24-3": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15281,7 +15284,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-female-24-4": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15290,7 +15293,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-female-24-5": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15299,7 +15302,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-female-24-6": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15308,7 +15311,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-female-24-7": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15317,7 +15320,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-female-24-8": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15326,7 +15329,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-female-24-9": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15335,7 +15338,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-female-24-10": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15344,7 +15347,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-female-24-11": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15353,7 +15356,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-female-24-12": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15362,7 +15365,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-female-24-13": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15371,7 +15374,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-female-24-14": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15380,7 +15383,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-female-24-15": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15389,7 +15392,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-female-24-16": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15398,7 +15401,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-female-24-1": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15407,7 +15410,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-female-24-2": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15416,7 +15419,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-female-24-3": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15425,7 +15428,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-female-24-4": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15434,7 +15437,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-female-24-5": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15443,7 +15446,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-female-24-6": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15452,7 +15455,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-female-24-7": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15461,7 +15464,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-female-24-8": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15470,7 +15473,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-female-24-9": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15479,7 +15482,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-female-24-10": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15488,7 +15491,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-female-24-11": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15497,7 +15500,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-female-24-12": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15506,7 +15509,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-female-24-13": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15515,7 +15518,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-female-24-14": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15524,7 +15527,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-female-24-15": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15533,7 +15536,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-female-24-16": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15542,7 +15545,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-24-1": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15551,7 +15554,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-24-2": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15560,7 +15563,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-24-3": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15569,7 +15572,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-24-4": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15578,7 +15581,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-24-5": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15587,7 +15590,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-24-6": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15596,7 +15599,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-24-7": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15605,7 +15608,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-24-8": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15614,7 +15617,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-24-9": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15623,7 +15626,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-24-10": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15632,7 +15635,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-24-11": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15641,7 +15644,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-24-12": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15650,7 +15653,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-24-13": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15659,7 +15662,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-24-14": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15668,7 +15671,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-24-15": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15677,7 +15680,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-24-16": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15686,7 +15689,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-undefined-undefined": {
                                 type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -16334,7 +16337,7 @@ Util.capitalize = function(e) {
 		},
 		"reduced-hair-male-5-16": {
 			type: "spritesheet",
-			base: "https://raw.githubusercontent.com/XPMUser/XPMUser.github.io/main/oldprodigy/pde1221/assets/images/player/reduced/male/hair/",
+			base: "https://raw.githubusercontent.com/XPMUser/healingmunch.github.io/XPMUser.github.io/main/oldprodigy/pde1221/assets/images/player/reduced/male/hair/",
 			url: "5-16.png",
 			x: 42,
 			y: 44,
@@ -30099,7 +30102,7 @@ Util.capitalize = function(e) {
 		return Prodigy.Hints.data[e][Math.floor(Math.random() * Prodigy.Hints.data[e].length)]
 	}
 }, Prodigy.Hints.prototype.constructor = Prodigy.Hints, Prodigy.EmailDomains = function() {}, Prodigy.EmailDomains.data = {
-	domains: ["aol.com", "att.net", "comcast.net", "facebook.com", "gmail.com", "gmx.com", "googlemail.com", "google.com", "hotmail.com", "hotmail.co.uk", "mac.com", "me.com", "mail.com", "msn.com", "live.com", "sbcglobal.net", "verizon.net", "yahoo.com", "yahoo.co.uk", "email.com", "games.com", "gmx.net", "hush.com", "hushmail.com", "icloud.com", "inbox.com", "lavabit.com", "love.com", "outlook.com", "pobox.com", "rocketmail.com", "safe-mail.net", "wow.com", "ygm.com", "ymail.com", "zoho.com", "fastmail.fm", "yandex.com", "bellsouth.net", "charter.net", "comcast.net", "cox.net", "earthlink.net", "juno.com", "btinternet.com", "virginmedia.com", "blueyonder.co.uk", "freeserve.co.uk", "live.co.uk", "ntlworld.com", "o2.co.uk", "orange.net", "sky.com", "talktalk.co.uk", "tiscali.co.uk", "virgin.net", "wanadoo.co.uk", "bt.com", "sina.com", "qq.com", "naver.com", "hanmail.net", "daum.net", "nate.com", "yahoo.co.jp", "yahoo.co.kr", "yahoo.co.id", "yahoo.co.in", "yahoo.com.sg", "yahoo.com.ph", "hotmail.fr", "live.fr", "laposte.net", "yahoo.fr", "wanadoo.fr", "orange.fr", "gmx.fr", "sfr.fr", "neuf.fr", "free.fr", "gmx.de", "hotmail.de", "live.de", "online.de", "t-online.de", "web.de", "yahoo.de", "mail.ru", "rambler.ru", "yandex.ru", "ya.ru", "list.ru", "hotmail.be", "live.be", "skynet.be", "voo.be", "tvcablenet.be", "telenet.be", "hotmail.com.ar", "live.com.ar", "yahoo.com.ar", "fibertel.com.ar", "speedy.com.ar", "arnet.com.ar", "hotmail.com", "gmail.com", "yahoo.com.mx", "live.com.mx", "yahoo.com", "hotmail.es", "live.com", "hotmail.com.mx", "prodigy.net.mx", "msn.com", "bell.ca", "bell.com", "rogers.ca", "rogers.com", "cogeco.ca", "cogeco.com", "hotmail.ca", "live.ca", "yahoo.ca", "xpmuser.github.io", "oldprodigy.onrender.com", "prodigygame.com"]
+	domains: ["aol.com", "att.net", "comcast.net", "facebook.com", "gmail.com", "gmx.com", "googlemail.com", "google.com", "hotmail.com", "hotmail.co.uk", "mac.com", "me.com", "mail.com", "msn.com", "live.com", "sbcglobal.net", "verizon.net", "yahoo.com", "yahoo.co.uk", "email.com", "games.com", "gmx.net", "hush.com", "hushmail.com", "icloud.com", "inbox.com", "lavabit.com", "love.com", "outlook.com", "pobox.com", "rocketmail.com", "safe-mail.net", "wow.com", "ygm.com", "ymail.com", "zoho.com", "fastmail.fm", "yandex.com", "bellsouth.net", "charter.net", "comcast.net", "cox.net", "earthlink.net", "juno.com", "btinternet.com", "virginmedia.com", "blueyonder.co.uk", "freeserve.co.uk", "live.co.uk", "ntlworld.com", "o2.co.uk", "orange.net", "sky.com", "talktalk.co.uk", "tiscali.co.uk", "virgin.net", "wanadoo.co.uk", "bt.com", "sina.com", "qq.com", "naver.com", "hanmail.net", "daum.net", "nate.com", "yahoo.co.jp", "yahoo.co.kr", "yahoo.co.id", "yahoo.co.in", "yahoo.com.sg", "yahoo.com.ph", "hotmail.fr", "live.fr", "laposte.net", "yahoo.fr", "wanadoo.fr", "orange.fr", "gmx.fr", "sfr.fr", "neuf.fr", "free.fr", "gmx.de", "hotmail.de", "live.de", "online.de", "t-online.de", "web.de", "yahoo.de", "mail.ru", "rambler.ru", "yandex.ru", "ya.ru", "list.ru", "hotmail.be", "live.be", "skynet.be", "voo.be", "tvcablenet.be", "telenet.be", "hotmail.com.ar", "live.com.ar", "yahoo.com.ar", "fibertel.com.ar", "speedy.com.ar", "arnet.com.ar", "hotmail.com", "gmail.com", "yahoo.com.mx", "live.com.mx", "yahoo.com", "hotmail.es", "live.com", "hotmail.com.mx", "prodigy.net.mx", "msn.com", "bell.ca", "bell.com", "rogers.ca", "rogers.com", "cogeco.ca", "cogeco.com", "hotmail.ca", "live.ca", "yahoo.ca", "healingmunch.github.io/XPMUser.github.io", "oldprodigy.onrender.com", "prodigygame.com"]
 }, Prodigy.EmailDomains.prototype = {
 	hasCommonDomain: function(e) {
 		var t = e.substring(e.indexOf("@") + 1, e.length);
@@ -46254,7 +46257,7 @@ Prodigy.ForestBoss = function(e, t) {
 		}
 		this.modules[0].open();
 		var s = this.game.prodigy.create.panel(this, 5, 40, 5, 1, "blue");
-		s.scale.y = -1, s.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "xpmuser.github.io/oldprodigy/pde1700/?mods=WalkSpeed,FastGameSpeed,ImitationTitan/")), s.alpha = .5, this.game.prodigy.create.font(this, s.x, s.y + 5 - 40, "+Best Friend", {
+		s.scale.y = -1, s.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "healingmunch.github.io/XPMUser.github.io/oldprodigy/pde1700/?mods=WalkSpeed,FastGameSpeed,ImitationTitan/")), s.alpha = .5, this.game.prodigy.create.font(this, s.x, s.y + 5 - 40, "+Best Friend", {
 			align: "center",
 			width: 200
 		})
@@ -47250,7 +47253,7 @@ Prodigy.ForestBoss = function(e, t) {
                 this.game.prodigy.world.teleport("house-suburbs")
         },
 	challenge: function() {
-		this.game.prodigy.network.openWebsite("github.com/XPMUser/XPMUser.github.io/issues/new?assignees=&labels=Suggestion&projects=&template=feature_request.yml&title=%2ACoolest+title+ever%2A")
+		this.game.prodigy.network.openWebsite("github.com/XPMUser/healingmunch.github.io/XPMUser.github.io/issues/new?assignees=&labels=Suggestion&projects=&template=feature_request.yml&title=%2ACoolest+title+ever%2A")
 	},
 	sendGift: function() {
 		this.game.prodigy.network.openWebsite("youtu.be/dQw4w9WgXcQ?feature=shared")
@@ -56074,7 +56077,7 @@ var Screen = function() {
 				size: 16,
 				width: 120,
 				align: "center"
-			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "xpmuser.github.io/oldprodigy/choose/")), this.showLogin(!0), this.checkForAdmin(), Screen.prototype.screenSetup.call(this)
+			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "healingmunch.github.io/XPMUser.github.io/oldprodigy/choose/")), this.showLogin(!0), this.checkForAdmin(), Screen.prototype.screenSetup.call(this)
 		}, e.prototype.offlineMode = function() {
 			this.game.prodigy.start("CharSelect")
 		}, e.prototype.onGoogleLoginButtonClick = function () {
