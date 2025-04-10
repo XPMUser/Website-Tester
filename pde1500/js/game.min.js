@@ -7436,7 +7436,7 @@ Util.capitalize = function(e) {
 		},
 		"normal-outfit-male-13": {
 			type: "spritesheet",
-			base: r,
+			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/images/player/normal/outfit/male/",
 			url: "13.png",
 			x: 91,
 			y: 155,
@@ -56080,16 +56080,20 @@ var Screen = function() {
 				text: "okay",
 				size: Prodigy.Control.TextButton.MED
 			}, this.showLogin.bind(this, !0)), this.progressBox.visible = !1, this.createAccountButton = this.game.prodigy.create.button(this.background, 100, 560, "login", "student", this.createAccount.bind(this));
-			var t = this.game.prodigy.create.panel(this.background, 100, 660, 4, 1, "lb");
-			t.alpha = .25, this.game.prodigy.create.font(this.background, t.x, t.y + 8, "Discord Server", {
-				size: 16,
-				width: 160,
-				align: "center"
-			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "discord.gg/8GhDgmgsRA")), (t = this.game.prodigy.create.panel(this.background, 280, 660, 3, 1, "lb")).alpha = .25, this.game.prodigy.create.font(this.background, t.x, t.y + 8, "Go Back", {
+			var t = this.game.prodigy.create.panel(this.background, 90, 660, 3, 1, "lb");
+			t.alpha = .25, this.game.prodigy.create.font(this.background, t.x, t.y + 8, "Discord", {
 				size: 16,
 				width: 120,
 				align: "center"
-			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "healingmunch.github.io/XPMUser.github.io/oldprodigy/choose/")), this.showLogin(!0), this.checkForAdmin(), Screen.prototype.screenSetup.call(this)
+			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "discord.gg/8GhDgmgsRA")), (t = this.game.prodigy.create.panel(this.background, 350, 660, 3, 1, "lb")).alpha = .25, this.game.prodigy.create.font(this.background, t.x, t.y + 8, "Go Back", {
+				size: 16,
+				width: 120,
+				align: "center"
+			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "healingmunch.github.io/XPMUser.github.io/oldprodigy/choose/")), (t = this.game.prodigy.create.panel(this.background, 220, 660, 3, 1, "lb")).alpha = .25, this.game.prodigy.create.font(this.background, t.x, t.y + 8, "Revolt", {
+				size: 16,
+				width: 120,
+				align: "center"
+			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "rvlt.gg/TPaTpmP9")), this.showLogin(!0), this.checkForAdmin(), Screen.prototype.screenSetup.call(this)
 		}, e.prototype.offlineMode = function() {
 			this.game.prodigy.start("CharSelect")
 		}, e.prototype.onGoogleLoginButtonClick = function () {
