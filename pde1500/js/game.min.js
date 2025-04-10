@@ -45595,7 +45595,13 @@ Prodigy.ForestBoss = function(e, t) {
 		}, this.toggleMember.bind(this)), this.game.prodigy.create.advButton(this, 930, 480, {
 			icon: "settings",
 			bot: "Log Out"
-		}, this.exitGame.bind(this))
+		}, this.exitGame.bind(this)), this.game.prodigy.create.advButton(this, 930, 580, {
+			icon: "settings",
+			bot: "Math On"
+		}, this.MathOn.bind(this)), this.game.prodigy.create.advButton(this, 830, 580, {
+			icon: "settings",
+			bot: "Math Off"
+		}, this.MathOff.bind(this))
 	},
 	clearContents: function() {
 		Util.isDefined(this.content) && this.content.destroy(), Util.isDefined(this.panel) && this.panel.destroy(), Util.isDefined(this.soundVolumeBar) && (this.soundVolumeBar.destroy(), this.soundVolumeBar = null), Util.isDefined(this.voiceVolumeBar) && (this.voiceVolumeBar.destroy(), this.voiceVolumeBar = null), Util.isDefined(this.bgmVolumeBar) && (this.bgmVolumeBar.destroy(), this.bgmVolumeBar = null), this.content = this.game.prodigy.create.element(this, 280, 260, 15, 8)
@@ -45769,6 +45775,12 @@ Prodigy.ForestBoss = function(e, t) {
 	},
 	toggleMember: function() {
 		!0 == this.game.prodigy.player.isMember ? (this.game.prodigy.player.isMember = !1, this.game.prodigy.open.okaymessage("You have deactivated Membership.", null, null, "No longer member!", "membership")) : (this.game.prodigy.player.isMember = !0, this.game.prodigy.open.okaymessage("You have unlocked Membership!", null, null, "You are member!", "membership"))
+	},
+	MathOn: function() {
+		this.game.prodigy.debug.easyMode(0,0)
+	},
+	MathOff: function() {
+		this.game.prodigy.debug.easyMode(1,1)
 	},
 	downloadForCharacter: function(e, t, i) {
 		var a = document.createElement("a"),
@@ -46131,7 +46143,7 @@ Prodigy.ForestBoss = function(e, t) {
 	y: 100,
 	map: "btn-academy",
 	target: "arena-0",
-	msg: "You can battle wizards there. It might remind you of Prodigy Academy from earlier than August 2014."
+	msg: "This is 2014-2015's Academy."
 }, {
 	name: "Clockwork Town",
 	x: 650,
