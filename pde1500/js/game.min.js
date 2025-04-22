@@ -63638,7 +63638,7 @@ Prodigy.Skin = function(e, t) {
 	Prodigy.Quest.call(this, e, t, 6, "Get the Key", {
 		type: "seq",
 		N: 1
-	}, ["skywatch-D1"], [23, 24], [], [1], [16, 17, 18], [], [1, 46], [{
+	}, ["skywatch-D1"], [23, 24], [], [1], [{
 		type: "gold",
 		N: 200
 	}, {
@@ -63732,7 +63732,7 @@ Prodigy.Skin = function(e, t) {
 	Prodigy.Quest.call(this, e, t, 8, "Trim the Vines", {
 		type: "seq",
 		N: 1
-	}, ["skywatch-B3"], [26, 27, 28], [], [1], [30], [], [1, 46], [{
+	}, ["skywatch-B3"], [26, 27, 28], [], [1], [{
 		type: "gold",
 		N: 200
 	}, {
