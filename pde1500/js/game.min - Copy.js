@@ -26451,14 +26451,9 @@ Util.capitalize = function(e) {
 			d: 4
 		}
 	}, {
-		text: "There's the healstone! When you're low on health, just click it to heal you and your pets!",
+		text: "Defeat 3 Saplettes to complete this quest!",
 		face: 2,
-		anim: 4,
-		audio: {
-			tag: "voice-10-22",
-			s: 0,
-			d: 5
-		}
+		anim: 4
 	}, {
 		text: "There are the Sprikes! In battle, monsters drop items, and some items are used for quests!",
 		face: 2,
@@ -60852,8 +60847,7 @@ Prodigy.Skin = function(e, t) {
 		12: new Prodigy.Shiverchill_Q12(this, []),
 		13: new Prodigy.Shiverchill_Q13(this, []),
 		14: new Prodigy.Shiverchill_Q14(this, []),
-		15: new Prodigy.Shiverchill_Q15(this, []),
-		16: new Prodigy.Shiverchill_Q16(this, [])
+		15: new Prodigy.Shiverchill_Q15(this, [])
 	}, this.store = {
 		name: "Snowday Sales",
 		items: [{
@@ -62339,21 +62333,22 @@ Prodigy.Skin = function(e, t) {
 			type: "key",
 			ID: 4
 		});
-		i.addCollect(e, t, 1, 640, 350, a)
 	}
 }), Prodigy.Shiverchill_Q16 = function (e, t) {
 	Prodigy.Quest.call(this, e, t, 16, "Head to the Gate", {
 		type: "seq",
-		N: 1
-	}, ["shiverchill-B1"], [38, 2, 39], [], [0], null, !1)
+		N: 2
+	}, ["shiverchill-B1"], [38, 2, 39], [], [0], null, !0)
 }, Prodigy.extends(Prodigy.Shiverchill_Q16, Prodigy.Quest, {
 	constructor: Prodigy.Shiverchill_Q16,
-	start: function (e, t, i) {
-		Prodigy.Quest.prototype.start.call(this), this.zone.isOnSequence(16, 0) && "B1" === i.getTag() && this.cutscene(e, t, i)
-	},
-	cutscene: function (e, t, i) {
-		var a = e.prodigy.event.create();
-		a.text(78, "noot"), a.text(79, "noot"), a.function(this.zone.completeSequence.bind(i._zone, 16, 0)), a.start()
+	setup: function(e, t, i) {
+		if (Prodigy.Quest.prototype.setup.call(this, e, t, i), this.zone.isOnSequence(16, 0) && "B1" === i.getTag()) {
+			var a = e.prodigy.event.create();
+			a.enableInput(!0), a.path(t.user, [{
+				x: 675,
+				y: 420
+			}]), a.delay(100), a.enableInput(!0), a.text(78, "noot"), a.text(79, "noot"), a.enableInput(!0), a.function(this.zone.completeSequence.bind(this.zone, 16, 0)), a.enableInput(!0), a.start()
+		}
 	}
 }), Prodigy.Skywatch = function(e) {
 	Prodigy.Zone.call(this, e), this.store = {
@@ -75938,6 +75933,22 @@ Arena.STORE = {
 		}, {
 			ID: 92,
 			type: "weapon"
+		}]
+	}, {
+		btn: {
+			icon: "star",
+			top: "More",
+			bot: "Extras"
+		},
+		icon: "emblem-rank5",
+		rank: 0,
+		top: "Other",
+		items: [{
+			ID: 79,
+			type: "hat"
+		}, {
+			ID: 58,
+			type: "outfit"
 		}]
 	}]
 }, Arena.AUDIO = [{
