@@ -46781,18 +46781,17 @@ Prodigy.ForestBoss = function(e, t) {
 	close: function(e) {
 		Util.isDefined(e) && e(), Prodigy.Control.Menu.prototype.close.call(this)
 	}
-}), Prodigy.Menu.AttackSelect = function(e, t, i, a, s, r, o, n, h, l, d, p, c) {
-	this.catchEnabled = !(Util.isDefined(r) && Util.isDefined(r.catch)) || r.catch, this.mods = r || {
-		run: !0,
-		potionMode: !0
-	}, this.spellCallback = n, this.runCallback = l, this.swapCallback = h, this.catchCallback = d, this.epicAttackCallback = p, this.source = i, this.target = s, this.team = a, this.switchMode = o, this.epicAttackMode = c, this.potionMode = !Util.isDefined(this.mods.potionMode) || !0 === this.mods.potionMode, Prodigy.Control.Menu.call(this, e, t, 3, {
+}), Prodigy.Menu.AttackSelect = function (e, t, i, a, s, r, o, n, h, l, d) {
+	this.catchEnabled = Util.isDefined(r) && Util.isDefined(r.catch) ? r.catch : !0, this.mods = r || {
+		run: !0
+	}, this.spellCallback = n, this.runCallback = l, this.swapCallback = h, this.catchCallback = d, this.source = i, this.target = s, this.team = a, this.switchMode = o, Prodigy.Control.Menu.call(this, e, t, 3, {
 		hideMenu: !0,
 		hideContent: !1,
 		hideOverlay: !0
 	}), this.setup()
 }, Prodigy.extends(Prodigy.Menu.AttackSelect, Prodigy.Control.Menu, {
 	constructor: Prodigy.Menu.AttackSelect,
-	menuSetup: function() {
+	menuSetup: function () {
 		Prodigy.Control.Menu.prototype.menuSetup.call(this), this.base = this.game.prodigy.create.element(this, 466, 230);
 		var e = this.base.add(this.game.prodigy.create.sprite(174, 174, "battle", "gear"));
 		e.anchor.setTo(.5, .5), this.game.add.tween(e).to({
@@ -46804,7 +46803,7 @@ Prodigy.ForestBoss = function(e, t) {
 			align: "center"
 		}), this.content = this.game.prodigy.create.element(this.base, 0, 0), this.switchMode ? this.openSwitch() : this.openMain()
 	},
-	openMain: function() {
+	openMain: function () {
 		this.openContent("actions");
 		var e = [];
 		e.push(this.game.prodigy.create.stackButton(this.content, 0, 0, [{
@@ -46814,15 +46813,7 @@ Prodigy.ForestBoss = function(e, t) {
 			x: -10,
 			y: -10
 		}], this.openAttacks.bind(this)));
-		var t = 0;
-		!0 === this.potionMode && (e.push(this.game.prodigy.create.stackButton(this.content, 0, 0, [{
-			tag: "icon-base"
-		}, {
-			tag: "epicAttack",
-			x: -10,
-			y: -10
-		}], this.openEpicAttacks.bind(this))), t = 1);
-		var i = !1;
+		var t = !1;
 		if (this.catchEnabled && this.source instanceof Prodigy.Container.PlayerContainer && this.target.source.canCatch(this.mods)) {
 			e.push(this.game.prodigy.create.stackButton(this.content, 0, 0, [{
 				tag: "icon-base"
@@ -46831,38 +46822,42 @@ Prodigy.ForestBoss = function(e, t) {
 				x: -10,
 				y: -10
 			}], this.openCatch.bind(this)));
-			var a = this.target.source.catchAttempt > 1,
-				s = this.target.source.getID(),
-				r = Monsters.getItemData(s);
-			this.game.prodigy.player.isMember || 1 !== this.target.source.catchAttempt && !r.member || e[1 + t].addImage("membership", 15, 15);
-			var o = 60 >= this.target.source.getCurrentHearts(this.game) && !a;
-			i = o;
-			var n = e[1 + t];
-			e[1 + t].enable(o)
+			var i = this.target.source.catchAttempt > 1,
+				a = this.target.source.getID(),
+				s = Monsters.getItemData(a);
+			this.game.prodigy.player.isMember || 1 !== this.target.source.catchAttempt && !s.member || e[1].addImage("membership", 15, 15);
+			var r = this.target.source.getCurrentHearts(this.game) <= 6 && !i;
+			t = r;
+			var o = e[1];
+			e[1].enable(r)
 		}
 		e.push(this.game.prodigy.create.stackButton(this.content, 0, 0, [{
+			tag: "icon-base"
+		}, {
+			tag: "run",
+			x: -10,
+			y: -10
+		}], this.openRun.bind(this))), e[e.length - 1].enable(this.mods.run), e.push(this.game.prodigy.create.stackButton(this.content, 0, 0, [{
 			tag: "icon-base"
 		}, {
 			tag: "team",
 			x: -10,
 			y: -10
 		}], this.openSwitch.bind(this)));
-		var h = e[e.length - 1];
-		e[e.length - 1].enable(!this.mods.switchDisabled), !0 === this.potionMode && (e.push(this.game.prodigy.create.stackButton(this.content, 0, 0, [{
-			tag: "icon-base"
-		}, {
-			tag: "potions",
-			x: -10,
-			y: -10
-		}], this.openPotions.bind(this))), e[e.length - 1].enable(this.game.prodigy.player.tutorial.getMenuValue(this.menuID, 2) >= 1)), this.arrangeChoices(e, e.length > 5 ? -Math.PI / 2 : 0);
-		var l = this.game.prodigy.player;
-		this.dialogue = this.game.prodigy.dialogue.create(), 1 > l.tutorial.getMenuValue(this.menuID, 2) ? (l.tutorial.setMenuValue(this.menuID, 2, 1), this.dialogue.setText(8), this.dialogue.start("noot", !0)) : 80 > this.source.source.getCurrentHearts(this.game) && this.team.length > 1 && 1 > l.tutorial.getMenuValue(this.menuID, 0) ? (l.tutorial.setMenuValue(this.menuID, 0, 1), this.dialogue.setText(9), this.dialogue.setText(10), this.dialogue.setText({
-			callback: Util.highlightAll.bind(Util, [h], !0)
-		}), this.dialogue.start("noot")) : i && 1 > l.tutorial.getMenuValue(this.menuID, 1) && l.getGold() >= 500 && !Util.isDefined(this.mods.catchOverrideMessage) && (l.tutorial.setMenuValue(this.menuID, 1, 1), this.dialogue.setText(11), this.dialogue.setText(12), this.dialogue.setText({
+		var n = e[e.length - 1];
+		e[e.length - 1].enable(!this.mods.switchDisabled), this.arrangeChoices(e);
+		var h = this.game.prodigy.player;
+		this.dialogue = this.game.prodigy.dialogue.create(), h.tutorial.getMenuValue(this.menuID, 2) < 1 ? (h.tutorial.setMenuValue(this.menuID, 2, 1), this.dialogue.setText(8), this.dialogue.start("noot", !0)) : this.source.source.getCurrentHearts(this.game) < 8 && this.team.length > 1 && h.tutorial.getMenuValue(this.menuID, 0) < 1 ? (h.tutorial.setMenuValue(this.menuID, 0, 1), this.dialogue.setText(9), this.dialogue.setText({
 			callback: Util.highlightAll.bind(Util, [n], !0)
-		}), this.dialogue.start("noot")), 2 > l.tutorial.getMenuValue(this.menuID, 2) && e[0].highlight(!0)
+		}), this.dialogue.setText(10), this.dialogue.setText({
+			callback: Util.highlightAll.bind(Util, [n], !1)
+		}), this.dialogue.start("noot")) : t && h.tutorial.getMenuValue(this.menuID, 1) < 1 && h.getGold() >= 500 && (h.tutorial.setMenuValue(this.menuID, 1, 1), this.dialogue.setText(11), this.dialogue.setText({
+			callback: Util.highlightAll.bind(Util, [o], !0)
+		}), this.dialogue.setText(12), this.dialogue.setText({
+			callback: Util.highlightAll.bind(Util, [o], !1)
+		}), this.dialogue.start("noot")), h.tutorial.getMenuValue(this.menuID, 2) < 2 && e[0].highlight(!0)
 	},
-	openElements: function() {
+	openElements: function () {
 		this.dialogue.close(!0), this.openContent("elements", this.openMain.bind(this));
 		for (var e = ["wizard", "fire", "water", "earth", "ice", "storm"], t = [], i = 0; i < e.length; i++) t.push(this.game.prodigy.create.stackButton(this.content, 0, 0, [{
 			tag: "icon-base"
@@ -46871,11 +46866,8 @@ Prodigy.ForestBoss = function(e, t) {
 		}], this.openAttacks.bind(this, e[i]))), t[i].enable(this.source.source.getAttacks(e[i]).length > 0);
 		this.arrangeChoices(t)
 	},
-	openCatch: function(e) {
-		if (Util.isDefined(this.mods.catchOverrideMessage)) return void this.game.prodigy.open.epicErrorMessage.call(this.game.prodigy.open, this.mods.catchOverrideMessage, {
-			showClose: !1
-		});
-		if (this.openContent("friends?"), e) {
+	openCatch: function (e) {
+		if (this.openContent("capture?"), e) {
 			var t = this.source.source.kennel.getPets().length,
 				i = this.target.source.getID(),
 				a = Monsters.getItemData(i);
@@ -46884,8 +46876,8 @@ Prodigy.ForestBoss = function(e, t) {
 			else if (!this.source.source.isMember && a.member) this.game.prodigy.open.membership(Prodigy.Menu.MemberAd.MEMBER_PETS);
 			else if (this.target.source.catchAttempt > 0 && !this.game.prodigy.player.isMember) this.game.prodigy.network.sendAnalytics("Catch-Pet-Second-Try"), this.game.prodigy.open.membership(Prodigy.Menu.MemberAd.CATCH);
 			else {
-				if (!(0 > this.game.prodigy.player.getGold())) return this.game.prodigy.player.changeGold(-0), this.game.prodigy.player.isMember && (t >= 10 && this.game.prodigy.network.sendAnalytics("Catch-More-Pets"), this.target.source.catchAttempt > 0 && this.game.prodigy.network.sendAnalytics("Catch-Pet-Second-Try")), void this.close(this.catchCallback);
-				this.game.prodigy.open.message("" + this.game.prodigy.player.getGold() + ".", null, "gold", "Uh oh!")
+				if (!(this.game.prodigy.player.getGold() < 500)) return this.game.prodigy.player.changeGold(-500), this.game.prodigy.player.isMember && (t >= 10 && this.game.prodigy.network.sendAnalytics("Catch-More-Pets"), this.target.source.catchAttempt > 0 && this.game.prodigy.network.sendAnalytics("Catch-Pet-Second-Try")), this.close(this.catchCallback), void 0;
+				this.game.prodigy.open.message("You need [gold]500 to catch this pet. You only have [gold]" + this.game.prodigy.player.getGold() + ".", null, "gold", "Uh oh!")
 			}
 			this.openMain()
 		} else {
@@ -46903,37 +46895,24 @@ Prodigy.ForestBoss = function(e, t) {
 			}], this.openMain.bind(this))), this.arrangeChoices(s)
 		}
 	},
-	openRun: function(e, t) {
-		this.opensaveCharacter.bind(this)
-			},
-	downloadForCharacter: function(e, t, i) {
-		var a = document.createElement("a"),
-			s = new Blob([e], {
-				type: i
-			});
-		return a.href = URL.createObjectURL(s), a.download = t, a.click(), !0
+	openRun: function () {
+		this.openContent("escape?");
+		var e = [];
+		e.push(this.game.prodigy.create.stackButton(this.content, 0, 0, [{
+			tag: "icon-base"
+		}, {
+			tag: "yes",
+			x: 15,
+			y: 15
+		}], this.close.bind(this, this.runCallback))), e.push(this.game.prodigy.create.stackButton(this.content, 0, 0, [{
+			tag: "icon-base"
+		}, {
+			tag: "close",
+			x: 15,
+			y: 15
+		}], this.openMain.bind(this))), this.arrangeChoices(e)
 	},
-	saveCharacter: function() {
-		var e = {
-			appearancedata: this.game.prodigy.player.appearance.data,
-			equipmentdata: this.game.prodigy.player.equipment.data,
-			kenneldata: this.game.prodigy.player.kennel.data,
-			data: this.game.prodigy.player.data,
-			questdata: this.game.prodigy.player.quests.data,
-			statedata: this.game.prodigy.player.state.data,
-			tutorialdata: this.game.prodigy.player.tutorial.data,
-			backpackdata: this.game.prodigy.player.backpack.data,
-			housedata: this.game.prodigy.player.house.data,
-			achievementsdata: this.game.prodigy.player.achievements.data,
-      userID: this.game.prodigy.player.userID,
-			metadata: {
-				isMember: this.game.prodigy.player.isMember
-			},
-			gameVersion: this.game.prodigy.version
-		};
-		this.downloadForCharacter(JSON.stringify(e), this.game.prodigy.player.appearance.data.name + ".json", "text/plain")
-	},
-	openSwitch: function() {
+	openSwitch: function () {
 		this.openContent("my team", this.switchMode ? null : this.openMain.bind(this));
 		for (var e = [], t = 0; t < this.team.length; t++) {
 			var i = this.team[t].source,
@@ -46942,31 +46921,21 @@ Prodigy.ForestBoss = function(e, t) {
 					tag: "icon-base"
 				}, {
 					tag: a
-				}], this.close.bind(this, this.swapCallback, t))), t < this.team.length / 2) {
-				e[t].addAt(this.game.prodigy.create.sprite(70, 0, "icons", "icon-data"), 0), this.game.prodigy.create.font(e[t], 110, 7, "" + i.getCurrentHearts(this.game), {
-					width: 70,
-					align: "center"
-				});
-				var s = this.game.prodigy.create.font(e[t], 90, 48, "Lvl. " + i.getLevel(), {
-					width: 90,
-					align: "center"
-				});
-				s.scale.set(.8, .8)
-			} else {
-				e[t].addAt(this.game.prodigy.create.sprite(10, 0, "icons", "icon-data"), 0).scale.x = -1, this.game.prodigy.create.font(e[t], -97, 7, "" + i.getCurrentHearts(this.game), {
-					width: 70,
-					align: "center"
-				});
-				var s = this.game.prodigy.create.font(e[t], -80, 48, "Lvl. " + i.getLevel(), {
-					width: 90,
-					align: "center"
-				});
-				s.scale.set(.8, .8)
+				}], this.close.bind(this, this.swapCallback, t))), t < this.team.length / 2) e[t].add(this.game.prodigy.create.sprite(70, 0, "icons", "icon-data")), this.game.prodigy.create.font(e[t], 130, 7, i.getCurrentHearts(this.game) + "\n" + i.getLevel(), {
+				lineHeight: 38
+			});
+			else {
+				var s = e[t].add(this.game.prodigy.create.sprite(10, 0, "icons", "icon-data"));
+				s.scale.x = -1, this.game.prodigy.create.font(e[t], -100, 7, i.getCurrentHearts(this.game) + "\n" + i.getLevel(), {
+					width: 50,
+					align: "right",
+					lineHeight: 38
+				})
 			}(i === this.source.source || i.isKnockedOut()) && e[t].enable(!1)
 		}
 		this.arrangeChoices(e)
 	},
-	openAttacks: function() {
+	openAttacks: function () {
 		this.dialogue.close(!0), this.openContent("spells", this.openMain.bind(this));
 		for (var e = this.source.source.getAttacks(), t = {
 				1: [0],
@@ -46974,9 +46943,8 @@ Prodigy.ForestBoss = function(e, t) {
 				3: [0, 0, 1],
 				4: [0, 0, 1, 1],
 				5: [0, 0, 0, 1, 1],
-				6: [0, 0, 1, 1, 1, 0],
-				7: [0, 0, 1, 1, 1, 0, 0],
-			}, i = [], a = Math.min(7, e.length), s = 0; a > s; s++) {
+				6: [0, 0, 1, 1, 1, 0]
+			}, i = [], a = Math.min(6, e.length), s = 0; a > s; s++) {
 			var r = s < e.length ? this.game.prodigy.attacks.getAttack(e[s]) : null,
 				o = this.close.bind(this, this.spellCallback, r);
 			i.push(this.game.prodigy.create.stackButton(this.content, 0, 0, [{
@@ -46985,60 +46953,15 @@ Prodigy.ForestBoss = function(e, t) {
 				tag: r.element
 			}], o));
 			var n = null;
-			0 === t[a][s] ? (n = i[s].add(this.game.prodigy.create.sprite(70, 0, "icons", "icon-data-2")), this.game.prodigy.create.font(i[s], 90, 7, r.name)) : ((n = i[s].add(this.game.prodigy.create.sprite(10, 0, "icons", "icon-data-2"))).scale.x = -1, this.game.prodigy.create.font(i[s], -260, 7, r.name, {
+			0 === t[a][s] ? (n = i[s].add(this.game.prodigy.create.sprite(70, 0, "icons", "icon-data-2")), this.game.prodigy.create.font(i[s], 90, 7, r.name)) : (n = i[s].add(this.game.prodigy.create.sprite(10, 0, "icons", "icon-data-2")), n.scale.x = -1, this.game.prodigy.create.font(i[s], -260, 7, r.name, {
 				width: 250,
 				align: "right"
 			})), n.inputEnabled = !0, n.events.onInputDown.add(o)
 		}
-		this.arrangeChoices(i), 2 > this.game.prodigy.player.tutorial.getMenuValue(this.menuID, 2) && i[0].highlight(!0, -100)
+		this.arrangeChoices(i), this.game.prodigy.player.tutorial.getMenuValue(this.menuID, 2) < 2 && i[0].highlight(!0, -100)
 	},
-	openEpicAttacks: function() {
-		this.dialogue.close(!0);
-		try {
-			this.game.prodigy.network.sendEvent("epicAttacks", {
-				action: "mainEpicAttackButtonClicked"
-			})
-		} catch (e) {}
-		{
-			this.openContent("epic spell", this.openMain.bind(this));
-			for (var t = [38, 39, 37, 40, 41, 16, 22], i = {
-					1: [0],
-					2: [0, 1],
-					3: [0, 0, 1],
-					4: [0, 0, 1, 1],
-					5: [0, 0, 0, 1, 1]
-				}, a = ["hex", "flora", "arc", "dive", "mag"], s = [125, 126, 127, 128, 129], r = [], o = Math.min(5, t.length), n = 0; o > n; n++) {
-				var h = n < t.length ? this.game.prodigy.attacks.getAttack(t[n]) : null;
-				r.push(this.game.prodigy.create.stackButton(this.content, 0, 0, [{
-					tag: "icon-base"
-				}, {
-					tag: "icon-" + a[n]
-				}], this.epicCallback.bind(this, s[n], h)));
-				var l = null;
-				0 === i[o][n] ? (l = r[n].add(this.game.prodigy.create.sprite(70, 0, "icons", "icon-data-2")), this.game.prodigy.create.font(r[n], 90, 7, h.name)) : ((l = r[n].add(this.game.prodigy.create.sprite(10, 0, "icons", "icon-data-2"))).scale.x = -1, this.game.prodigy.create.font(r[n], -260, 7, h.name, {
-					width: 250,
-					align: "right"
-				})), l.inputEnabled = !0, l.events.onInputDown.add(this.epicCallback.bind(this, s[n], h))
-			}
-			this.arrangeChoices(r)
-		}
-	},
-	epicCallback: function(e, t) {
-		try {
-			this.game.prodigy.network.sendEvent("epicAttacks", {
-				action: "attackButtonClicked",
-				petName: Monsters.data[e].name,
-				hasEpic: this.game.prodigy.player.kennel.hasPet(e) ? "yes" : "no"
-			})
-		} catch (i) {}
-		for (var a = !1, s = 125; 130 > s; s++) this.game.prodigy.player.kennel.hasPet(s) && (a = !0);
-		a && !this.game.prodigy.player.kennel.hasPet(e) && this.game.prodigy.network.sendAnalytics("other-epic-attack", "click-other", "Events"), this.game.prodigy.player.kennel.hasPet(e) ? this.close.call(this, this.epicAttackCallback, t) : this.game.prodigy.open.buyToy.call(this.game.prodigy.open, e, !1, "To do this POWERFUL Epic attack, you need this Epic!", "epic attacks!")
-	},
-	openPotions: function() {
-		"PVP" === this.game.state.current ? this.game.prodigy.open.potionPvpPopup.call(this.game.prodigy.open, this) : this.game.prodigy.open.battlePotionSelect.call(this.game.prodigy.open, this)
-	},
-	openAttacks2: function(e) {
-		this.openContent("spells", this.openAttacks.bind(this));
+	openAttacks2: function (e) {
+		this.openContent("spells", this.openElements.bind(this));
 		for (var t = this.source.source.getAttacks(e), i = [], a = 0; 6 > a; a++) {
 			var s = a < t.length ? this.game.prodigy.attacks.getAttack(t[a]) : null,
 				r = this.close.bind(this, this.spellCallback, s);
@@ -47048,7 +46971,7 @@ Prodigy.ForestBoss = function(e, t) {
 					tag: e
 				}], r)), a < t.length) {
 				var o = null;
-				0 === a || 1 === a || 5 === a ? (o = i[a].add(this.game.prodigy.create.sprite(70, 0, "icons", "icon-data-2")), this.game.prodigy.create.font(i[a], 90, 7, s.name)) : ((o = i[a].add(this.game.prodigy.create.sprite(10, 0, "icons", "icon-data-2"))).scale.x = -1, this.game.prodigy.create.font(i[a], -260, 7, s.name, {
+				0 === a || 1 === a || 5 === a ? (o = i[a].add(this.game.prodigy.create.sprite(70, 0, "icons", "icon-data-2")), this.game.prodigy.create.font(i[a], 90, 7, s.name)) : (o = i[a].add(this.game.prodigy.create.sprite(10, 0, "icons", "icon-data-2")), o.scale.x = -1, this.game.prodigy.create.font(i[a], -260, 7, s.name, {
 					width: 250,
 					align: "right"
 				})), o.inputEnabled = !0, o.events.onInputDown.add(r)
@@ -47056,22 +46979,19 @@ Prodigy.ForestBoss = function(e, t) {
 		}
 		this.arrangeChoices(i)
 	},
-	openContent: function(e, t) {
+	openContent: function (e, t) {
 		this.content.removeAll(!0), this.title.setText(e), Util.isDefined(t) && this.game.prodigy.create.button(this.content, 135, 189, "battle", "back-btn", t)
 	},
-	arrangeChoices: function(e, t) {
-		var i = 2 === e.length || 6 === e.length ? 0 : -Math.PI / 2;
-		i += t || 0;
-		for (var a = 2 * Math.PI / e.length, s = 0; s < e.length; s++) e[s].x = Math.floor(174 + 165 * Math.cos(i + a * s)) - 40, e[s].y = Math.floor(174 + 165 * Math.sin(i + a * s)) - 40
+	arrangeChoices: function (e, t) {
+		var i = 165,
+			a = 2 === e.length || 6 === e.length ? 0 : -Math.PI / 2;
+		a += t || 0;
+		for (var s = 2 * Math.PI / e.length, r = 174, o = 174, n = 0; n < e.length; n++) e[n].x = Math.floor(r + i * Math.cos(a + s * n)) - 40, e[n].y = Math.floor(o + i * Math.sin(a + s * n)) - 40
 	},
-	close: function(e, t) {
-		if (Util.isDefined(this.popups) && this.popups.length > 0) {
-			for (var i = 0; i < this.popups.length; i++) Util.isDefined(this.popups[i]) && this.popups[i].close.call(this.popups[i]);
-			this.popups = []
-		}
+	close: function (e, t) {
 		Util.isDefined(e) && e(t), Prodigy.Control.Menu.prototype.close.call(this)
 	}
-}), Prodigy.Menu.Catcher = function(e, t, i, a) {
+}), Prodigy.Menu.Catcher = function (e, t, i, a) {
 	this.callback = a, this.target = i, Prodigy.Control.Menu.call(this, e, t, 6, {
 		hideMenu: !0,
 		hideContent: !1,
@@ -47079,7 +46999,7 @@ Prodigy.ForestBoss = function(e, t) {
 	}), this.setup()
 }, Prodigy.extends(Prodigy.Menu.Catcher, Prodigy.Control.Menu, {
 	constructor: Prodigy.Menu.Catcher,
-	menuSetup: function() {
+	menuSetup: function () {
 		Prodigy.Control.Menu.prototype.menuSetup.call(this), this.base = this.game.prodigy.create.element(this, 466, 230);
 		var e = this.base.add(this.game.prodigy.create.sprite(174, 174, "battle", "gear"));
 		e.anchor.setTo(.5, .5), this.game.add.tween(e).to({
@@ -47097,15 +47017,17 @@ Prodigy.ForestBoss = function(e, t) {
 				y: -10
 			}], this.close.bind(this)),
 			a = this.game.prodigy.player;
-		if (1 > a.tutorial.getMenuValue(this.menuID, 0)) {
+		if (a.tutorial.getMenuValue(this.menuID, 0) < 1) {
 			a.tutorial.setMenuValue(this.menuID, 0, 1);
 			var s = this.game.prodigy.dialogue.create();
-			s.setText(13), s.setText({
+			s.setText({
 				callback: Util.highlightAll.bind(Util, [i], !0)
+			}), s.setText(13), s.setText({
+				callback: Util.highlightAll.bind(Util, [i], !1)
 			}), s.start("noot")
 		}
 	},
-	close: function() {
+	close: function () {
 		this.callback(this.pointer.angle >= 0 && this.pointer.angle <= 30 || this.pointer.angle >= -30 && this.pointer.angle <= 0), Prodigy.Control.Menu.prototype.close.call(this)
 	}
 }), Prodigy.Menu.Card = function(e, t, i, a, s) {
@@ -56936,7 +56858,7 @@ CutScene.getValue = function(e, t, i, a, s) {
 		this.showWizards(), this.showDialogue(), Screen.prototype.start.call(this)
 	},
 	offlineMode: function() {
-		this.game.prodigy.world.teleport("house-suburbs")
+		this.game.prodigy.world.teleport("intro-0")
 	},
 	showDialogue: function() {
 		this._dialogue = this.game.prodigy.dialogue.create(), this._dialogue.setText(49), this._dialogue.start("noot", !0, null, 0)
@@ -79810,8 +79732,8 @@ Prodigy.Battle.CombatManager = function(e) {
 	catch: function(e, t, i) {
 		return i ? (t.captured = !0, Util.isDefined(this.nickname) && (t.source.data.nickname = this.nickname), new Prodigy.Attack.CatchPet(this.game, e, t, this.background, this.content, null, this.onCatchPet.bind(this, t))) : (this.game.prodigy.audio.playSFX(Prodigy.Controller.AudioController.SFX_PACKS.BATTLE, "miss"), this.game.prodigy.effects.fadeFlyingImage(t.x, t.y - (t.height >> 1), "battle", "text-miss"), t.source.catchAttempt || (t.source.catchAttempt = 0), t.source.catchAttempt++, this.game.time.events.add(1500, this.playerTurn.bind(this), this), null)
 	},
-	runAway: function(e, t) {
-		this.game.prodigy.world.teleport("tech-0")
+	runAway: function () {
+		Math.random() < .75 * this.game.prodigy.affixes.getEscape() && this.battleScreen.mods.run ? (this.game.prodigy.effects.flashText("YOU RAN AWAY...", this.battleScreen.endBattle.bind(this.battleScreen, "run")), this.teams[0].runAway()) : (this.battleScreen.mods.run = !1, this.game.prodigy.effects.flashText("YOU COULDN'T RUN!"), this.teams[0].failRun(this.opponentTurn.bind(this)))
 	}
 }), Prodigy.PVPManager = function(e, t) {
 	this.game = e, this.battleScreen = t, this.attackSelectMenu = null, this.swapSelectMenu = null, this.forceSwitch = !1, this.currentAction = null, this.nextAction = null, this.content = t.content, this.menus = t.menus, this.background = t.background, this.teams = t.teams, this.teams[0].enableComboAnimations = !0, this.teams[0].movePlayerIn(null, this.teams[0].current), this.teams[1].enableComboAnimations = !0, this.teams[1].movePlayerIn(null, this.teams[1].current), this.turn = 0, this.waitingToSelect = !1, this.game.prodigy.effects.flashText("Player vs. Player!", this.playerTurn.bind(this))
