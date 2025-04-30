@@ -75871,6 +75871,9 @@ Arena.STORE = {
 		}, {
 			ID: 58,
 			type: "outfit"
+		}, {
+			ID: 59,
+			type: "outfit"
 		}]
 	}]
 }, Arena.AUDIO = [{
@@ -79733,7 +79736,7 @@ Prodigy.Battle.CombatManager = function(e) {
 		return i ? (t.captured = !0, Util.isDefined(this.nickname) && (t.source.data.nickname = this.nickname), new Prodigy.Attack.CatchPet(this.game, e, t, this.background, this.content, null, this.onCatchPet.bind(this, t))) : (this.game.prodigy.audio.playSFX(Prodigy.Controller.AudioController.SFX_PACKS.BATTLE, "miss"), this.game.prodigy.effects.fadeFlyingImage(t.x, t.y - (t.height >> 1), "battle", "text-miss"), t.source.catchAttempt || (t.source.catchAttempt = 0), t.source.catchAttempt++, this.game.time.events.add(1500, this.playerTurn.bind(this), this), null)
 	},
 	runAway: function () {
-		Math.random() < .75 * this.game.prodigy.affixes.getEscape() && this.battleScreen.mods.run ? (this.game.prodigy.effects.flashText("YOU RAN AWAY...", this.battleScreen.endBattle.bind(this.battleScreen, "run")), this.teams[0].runAway()) : (this.battleScreen.mods.run = !1, this.game.prodigy.effects.flashText("YOU COULDN'T RUN!"), this.teams[0].failRun(this.opponentTurn.bind(this)))
+		Math.random() < .75 * this.game.prodigy.affixes.getEscape() && this.battleScreen.mods.run ? (this.game.prodigy.effects.flashText("YOU RAN AWAY...", this.battleScreen.endBattle.bind(this.battleScreen, "run")), this.teams[0].runAway()) : (this.battleScreen.mods.run = !0, this.game.prodigy.effects.flashText("YOU COULDN'T RUN!"), this.teams[0].failRun(this.opponentTurn.bind(this)))
 	}
 }), Prodigy.PVPManager = function(e, t) {
 	this.game = e, this.battleScreen = t, this.attackSelectMenu = null, this.swapSelectMenu = null, this.forceSwitch = !1, this.currentAction = null, this.nextAction = null, this.content = t.content, this.menus = t.menus, this.background = t.background, this.teams = t.teams, this.teams[0].enableComboAnimations = !0, this.teams[0].movePlayerIn(null, this.teams[0].current), this.teams[1].enableComboAnimations = !0, this.teams[1].movePlayerIn(null, this.teams[1].current), this.turn = 0, this.waitingToSelect = !1, this.game.prodigy.effects.flashText("Player vs. Player!", this.playerTurn.bind(this))
