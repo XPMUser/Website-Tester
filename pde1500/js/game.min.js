@@ -200,7 +200,7 @@ return !!r(t, ["200"], "emit message") && !!o.socket && (
 
 	}, this.getWorldList = function(e) {
 		var t = r(e, ["200", "400", "500", "503"], "get world list");
-		return !!t && (a("get", "wss://localhost:8080/worlds-api/world-list" + "", {}, t, "getWorldList", {
+		return !!t && (a("get", "https://toonigy.github.io/Prodidows-server/public/worlds-api/world-list.json", {}, t, "getWorldList", {
 			ignoreHeaders: !0
 		}), !0)
 	}, this.login = function(e, t, i) {
@@ -487,7 +487,7 @@ return !!r(t, ["200"], "emit message") && !!o.socket && (
 				token: o.uniqueKey,
 				event: e
 			};
-			return a("post", l.url.events + "world-list", s, i, "trackEvent"), !0
+			return a("post", l.url.events + "world-list.json", s, i, "trackEvent"), !0
 		}
 		return !1
 	}, this.completeAssignment = function(e, t) {
@@ -71666,7 +71666,7 @@ Forest.STORE = {
 	}, {
 		face: 4,
 		anim: 2,
-		text: "And a W12-4RD, too? OH. MY. GOSH!",
+		text: "And a WIZARD, too? OH. MY. GOSH!",
 		audio: Forest.AUDIO[4]
 	}, {
 		face: 1,
