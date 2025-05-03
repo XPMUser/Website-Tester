@@ -45656,16 +45656,25 @@ Prodigy.ForestBoss = function(e, t) {
 		}), this.voiceVolumeBar = this.game.prodigy.create.slider(this.content, 37.5, 215, 525, !1, !1), this.voiceVolumeBar.reset(101, 1, Math.floor(100 * i), this.setSound.bind(this, 2)), this.game.prodigy.audio.setSFXVolume(e), this.game.prodigy.audio.setBGMVolume(t), this.game.prodigy.audio.setVoiceVolume(i)
 	},
 	openGraphics: function() {
-		this.game.prodigy.create.textButton(this.content, 150, 50, {
+		this.game.prodigy.create.textButton(this.content, 150, -25, {
 			text: "Small Screen",
 			size: Prodigy.Control.TextButton.MED
-		}, this.game.prodigy.graphics.setResolutionSmall.bind(this)), this.game.prodigy.create.textButton(this.content, 150, 125, {
+		}, this.game.prodigy.graphics.setResolutionSmall.bind(this)), this.game.prodigy.create.textButton(this.content, 150, 50, {
 			text: "Medium Screen",
 			size: Prodigy.Control.TextButton.MED
-		}, this.game.prodigy.graphics.setResolutionMedium.bind(this)), this.game.prodigy.create.textButton(this.content, 150, 200, {
+		}, this.game.prodigy.graphics.setResolutionMedium.bind(this)), this.game.prodigy.create.textButton(this.content, 150, 125, {
 			text: "Large Screen",
 			size: Prodigy.Control.TextButton.MED
-		}, this.game.prodigy.graphics.setResolutionLarge.bind(this))
+		}, this.game.prodigy.graphics.setResolutionLarge.bind(this)), this.game.prodigy.create.textButton(this.content, 150, 200, {
+			text: "Bigger Screen",
+			size: Prodigy.Control.TextButton.MED
+		}, this.game.prodigy.graphics.setResolutionExtraLarge.bind(this)), this.game.prodigy.create.textButton(this.content, 150, 275, {
+			text: "Huge Screen",
+			size: Prodigy.Control.TextButton.MED
+		}, this.game.prodigy.graphics.setResolutionGigantic.bind(this)), this.game.prodigy.create.textButton(this.content, 150, 350, {
+			text: "Giant Screen",
+			size: Prodigy.Control.TextButton.MED
+		}, this.game.prodigy.graphics.setResolutionExtraGigantic.bind(this))
 	},
 	openOther: function() {
 		var z = Util.isDefined(this.game.prodigy.player.world) ? "Your world is: " + Prodigy.Menu.Server.getServerName(this.game.prodigy.player.world) : "Your world is: pde1500";
@@ -45755,7 +45764,7 @@ Prodigy.ForestBoss = function(e, t) {
 			width: 600,
 			align: "center",
 		})
-		this.game.prodigy.create.font(this.content, 0, 155, "Daboss7173, NomadX2, FireProdigy", {
+		this.game.prodigy.create.font(this.content, 0, 155, "Daboss7173, NomadX2, FireProdigy, Prodidows", {
 			width: 600,
 			align: "center",
 		})
