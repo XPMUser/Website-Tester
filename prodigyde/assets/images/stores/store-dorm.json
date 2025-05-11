@@ -1,0 +1,160 @@
+{
+    "frames": {
+        "bg-cave": {
+            "frame": {
+                "x": 2,
+                "y": 2,
+                "w": 450,
+                "h": 253
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 450,
+                "h": 253
+            },
+            "sourceSize": {
+                "w": 450,
+                "h": 253
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "bg-house": {
+            "frame": {
+                "x": 454,
+                "y": 2,
+                "w": 450,
+                "h": 253
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 450,
+                "h": 253
+            },
+            "sourceSize": {
+                "w": 450,
+                "h": 253
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "book": {
+            "frame": {
+                "x": 454,
+                "y": 2,
+                "w": 450,
+                "h": 253
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 450,
+                "h": 253
+            },
+            "sourceSize": {
+                "w": 450,
+                "h": 253
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }  
+        },
+        "flip-left": {
+            "frame": {
+                "x": 454,
+                "y": 2,
+                "w": 450,
+                "h": 253
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 450,
+                "h": 253
+            },
+            "sourceSize": {
+                "w": 450,
+                "h": 253
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }  
+        },
+        "flip-right": {
+            "frame": {
+                "x": 454,
+                "y": 2,
+                "w": 450,
+                "h": 253
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 450,
+                "h": 253
+            },
+            "sourceSize": {
+                "w": 450,
+                "h": 253
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }          
+        },
+        "bg-tree": {
+            "frame": {
+                "x": 2,
+                "y": 257,
+                "w": 450,
+                "h": 253
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 450,
+                "h": 253
+            },
+            "sourceSize": {
+                "w": 450,
+                "h": 253
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        }
+    },
+    "meta": {
+        "app": "http://www.codeandweb.com/texturepacker",
+        "version": "1.0",
+        "image": "store-dorm.png",
+        "format": "RGBA8888",
+        "size": {
+            "w": 906,
+            "h": 512
+        },
+        "scale": "1",
+        "smartupdate": "$TexturePacker:SmartUpdate:88f54b7e2b45878288918daae2506f4c:aa6f4af1465b31154890b30f2a264b59:979c5e55662e9d6d7524da5da109b7b9$"
+    }
+}
