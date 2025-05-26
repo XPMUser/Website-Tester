@@ -49227,7 +49227,7 @@ Prodigy.ForestBoss = function(e, t) {
 		equipment: '{"hat":23, "outfit":24, "weapon":92, "boots":18}'
 	},
 	title: "Prodidows",
-	description: "XPMUser has used this wizard for Prodidows before! This is XPMUser's other wizard!",
+	description: "HealingMunch has used this wizard for Prodidows before! This is HealingMunch's other wizard!",
 	pets: [{
                 ID: 36,
                 level: 100
@@ -49254,8 +49254,8 @@ Prodigy.ForestBoss = function(e, t) {
 		appearance: '{"name":"David the Forker", "gender":"male", "hairStyle":3,"hairColor":16,"skinColor":1,"eyeColor":13}',
 		equipment: '{"hat":23, "outfit":24, "weapon":92, "boots":18}'
 	},
-	title: "XPMUser",
-	description: "This is XPMUser's main character!",
+	title: "HealingMunch",
+	description: "This is HealingMunch's main character!",
 	pets: [{
                 ID: 36,
                 level: 100
@@ -49273,7 +49273,22 @@ Prodigy.ForestBoss = function(e, t) {
 		type: "gold",
 		N: 50000
 	}]
-	/* Can you please make a female bot request in feature request since the order of coliseum opponents have to be by a gender order? */
+}, {
+    opponent: {
+        data: '{"level":100}',
+        appearance: '{"name":"Chef Ice", "gender":"female", "hairStyle":2,"hairColor":3,"skinColor":1,"eyeColor":12}',
+        equipment: '{"hat":23, "outfit":52, "weapon":47, "boots":18}'
+    },
+    title: "HealingMunch's another alt account from Daboss7173's PDE",
+    description: "She grinded the arena to be #1 on the arena leaderboards in Daboss7173's PDE.",
+	pets: [{
+                ID: 126,
+                level: 80
+	}],
+    drops: [{
+        type: "gold",
+        N: 10000
+    }]
 }, {
     opponent: {
         data: '{"level":17}',
@@ -56102,20 +56117,24 @@ var Screen = function() {
 				text: "okay",
 				size: Prodigy.Control.TextButton.MED
 			}, this.showLogin.bind(this, !0)), this.progressBox.visible = !1, this.createAccountButton = this.game.prodigy.create.button(this.background, 100, 560, "login", "student", this.createAccount.bind(this));
-			var t = this.game.prodigy.create.panel(this.background, 90, 660, 3, 1, "lb");
+			var t = this.game.prodigy.create.panel(this.background, 90, 670, 3, 1, "lb");
 			t.alpha = .25, this.game.prodigy.create.font(this.background, t.x, t.y + 8, "Discord", {
 				size: 16,
 				width: 120,
 				align: "center"
-			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "discord.gg/78CPsFrZne")), (t = this.game.prodigy.create.panel(this.background, 350, 660, 3, 1, "lb")).alpha = .25, this.game.prodigy.create.font(this.background, t.x, t.y + 8, "Go Back", {
+			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "discord.gg/khZUgBfqRN")), (t = this.game.prodigy.create.panel(this.background, 350, 670, 3, 1, "lb")).alpha = .25, this.game.prodigy.create.font(this.background, t.x, t.y + 8, "Go Back", {
 				size: 16,
 				width: 120,
 				align: "center"
-			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "healingmunch.github.io/XPMUser.github.io/oldprodigy/choose/")), (t = this.game.prodigy.create.panel(this.background, 220, 660, 3, 1, "lb")).alpha = .25, this.game.prodigy.create.font(this.background, t.x, t.y + 8, "Revolt", {
+			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "healingmunch.github.io/XPMUser.github.io/oldprodigy/choose/")), (t = this.game.prodigy.create.panel(this.background, 220, 670, 3, 1, "lb")).alpha = .25, this.game.prodigy.create.font(this.background, t.x, t.y + 8, "Revolt", {
 				size: 16,
 				width: 120,
 				align: "center"
-			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "rvlt.gg/TPaTpmP9")), this.showLogin(!0), this.checkForAdmin(), Screen.prototype.screenSetup.call(this)
+			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "rvlt.gg/TPaTpmP9")), (t = this.game.prodigy.create.panel(this.background, 90, 620, 3, 1, "lb")).alpha = .25, this.game.prodigy.create.font(this.background, t.x, t.y + 8, "Subscribe", {
+				size: 16,
+				width: 120,
+				align: "center"
+			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "www.youtube.com/@pde1500?sub_confirmation=1")), this.showLogin(!0), this.checkForAdmin(), Screen.prototype.screenSetup.call(this)
 		}, e.prototype.offlineMode = function() {
 			this.game.prodigy.start("CharSelect")
 		}, e.prototype.onGoogleLoginButtonClick = function () {
