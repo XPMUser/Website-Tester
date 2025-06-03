@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Prodigy Definitive Edition</title>
+
+        <meta charset="UTF-8" />
+        <meta content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+        
+	<meta name="description" content="Old Prodigy is back and better than ever! Click now and try the definitive Old Prodigy experience!">
+	
+        <link rel="stylesheet" href="./css/font-awesome.min.css">
+
+	<script>
+	! function() {
+        if (!window.location.href.includes("play/") && window.location.hostname !== "localhost")
+            return;
+		"use strict";
+		var SW = SW || {};
+		SW.Load = {};
+		const updateID = "0.12.0"
+		var prodigyWeb = {};
+		prodigyWeb.gameVersion = "1-50-0";
+		window.percentLoaded = 0;
+		SW.Load.scriptQueue = [];
+		SW.Load.loadScript = function(file, percent) {
+			var s = document.createElement("script");
+			s.src = file + "?v=" + updateID;
+			document.body.appendChild(s);
+			return s;
+		},
+		SW.Load.updateLoadBar = function(percent) {
+			window.percentLoaded -= 0
+			window.percentLoaded += percent
+			var a = window.percentLoaded
+			document.getElementById("ed-progress-bar").style.cssText = "width: " + a + "%"
+			if (window.percentLoaded >= 100) {
+				setTimeout(function() {
+					document.getElementById("game-loading-container-div").style.cssText = "display: none"
+				}, 1200)
+			}
+		},
+		SW.Load.loadScripts = function() {
+			if (SW.Load.scriptQueue.length > 0) {
+				var a = SW.Load.scriptQueue[0],
+					t = SW.Load.loadScript(a.src, a.percent);
+				t.onload = function() {
+					SW.Load.updateLoadBar(a.percent);
+					SW.Load.loadScripts();
+                    console.log("Script loaded: " + a.src);
+				};
+				t.onerror = function() {
+					SW.Load.toggleErrorScreen(!0);
+					SW.Load.setErrorScreenText(SW.Load.ERROR_TITLE_FAIL);
+				};
+				SW.Load.scriptQueue.splice(0, 1)
+			}
+		},
+		SW.Load.addScript = function(src, percent) {
+			SW.Load.scriptQueue.push({
+				src: src,
+				percent: percent
+			})
+		},
+		SW.Load.loadGame = function() {
+			SW.Load.addScript("./lib/lodash.min.js", 3);
+            SW.Load.addScript("./lib/backbone-min.js", 5);
+			SW.Load.addScript("./lib/phaser.min.js", 10);
+			SW.Load.addScript("./lib/jquery.min.js", 3);
+			SW.Load.addScript("./lib/easystar.min.js", 1);
+			SW.Load.addScript("./lib/socket.io.min.js", 2);
+			SW.Load.addScript("./lib/phaser-spine.min.js", 3);
+			SW.Load.addScript("https://code.prodigygame.com/lib/particle-storm.min.js", 2);
+			SW.Load.addScript("./lib/webfontloader.js", 1);
+            SW.Load.addScript("./edu/controls/js/controls.min.js", 15);
+            SW.Load.addScript("./edu/question-interface/js/question.min.js", 5);
+			SW.Load.addScript("./js/game.min.js", 15);
+			SW.Load.loadScripts();
+			document.addEventListener("contextmenu", function(e) {
+				e.preventDefault()
+			}, !1)
+			window.onresize = function() {
+				scroll(0, 0)
+			},
+			prodigyWeb.membershipFlow = {
+				open: function() {},
+				close: function() {}
+			}
+		},
+		SW.Load.setLoadingVisible = function(e) {
+			document.getElementById("game-loading-container-div").style.cssText = e ? "" : "display: none;"
+		},
+		SW.Load.ERROR_TITLE_DEFAULT = "Uh oh! We were unable to connect to the Prodigy servers.",
+		SW.Load.ERROR_TITLE_FAIL = "Uh oh! We were unable load the game files properly.",
+		SW.Load.ERROR_DESCRIPTION_DEFAULT = 'Please ensure that you are connected to the Internet, and try reloading the page.',
+		SW.Load.isErrorScreen = function() {
+			return "none" !== document.getElementById("error-div").style.display
+		},
+		SW.Load.toggleErrorScreen = function(e) {
+		document.getElementById("error-div").style.cssText = e ? "" : "display: none;",
+			document.getElementById("loading-div").style.cssText = e ? "display: none;" : ""
+		},
+		SW.Load.setErrorScreenText = function(e, t) {
+			var n = document.getElementById("error-div-title");
+			n.innerHTML = e || SW.Load.ERROR_TITLE_DEFAULT;
+			var o = document.getElementById("error-div-description");
+			o.innerHTML = t || SW.Load.ERROR_DESCRIPTION_DEFAULT
+		};
+		window.onload = function() {
+			SW.Load.loadGame();
+		};
+		window.updateLoadBar = SW.Load.updateLoadBar;
+        window.toggleErrorScreen = SW.Load.toggleErrorScreen;
+        window.setErrorScreenText = SW.Load.setErrorScreenText;
+	}();
+	</script>
+        <link rel="icon" type="image/png" href="./favicon.png">
+	<link rel="stylesheet" type="text/css" href="./css/main.css">
+	<style>
+        	html{
+        		height:100%;
+        		overflow:hidden;
+        	}
+
+            body{
+                margin:0;
+                background-color:#55B9A7;
+                height:100%;
+                padding:0 !important;
+            }
+
+            div{
+                user-select: none;
+            }
+
+            img{
+                user-select: none;
+            }
+
+            #game-container {
+            	height:100%;
+                min-height: 100px;
+            }
+
+            @media screen and ( min-height: 320px )
+            {
+                #game-container {
+                    min-height: 200px;
+                }
+            }
+            @media screen and ( min-height: 720px )
+            {
+                #game-container {
+                    min-height: 500px;
+                }
+            }
+
+            #game-wrapper {
+                height:100%;
+                position:relative;
+            }
+
+            input.game-input{
+                margin:0;
+                position:absolute;
+                top:0;
+                left:0;
+                padding:0px 10px;
+                border-radius:10px;
+                border: 1px solid #363636;
+                background-color:#fff5eb;
+                color:#363636;
+                text-align:left;
+
+            }
+            .head-bar{
+                height:45px;
+                width:100%;
+                position:fixed;
+            }
+
+            .head-content{
+                width:100%;
+                position:relative;
+                height:100%;
+            }
+
+            .full-nav-button{
+                border:1px solid #596ED9;
+                border-top:none;
+
+                font-weight:bold;
+                color:#f89825;
+                margin-top:0;
+                font-size:1.3em;
+                padding:10px 10px;
+                height:100%;
+                width:100%;
+                background-color: #6579DC;
+                color:white;
+
+            }
+
+            .full-nav-button:hover {
+                background:none;
+                background-color:#596ED9;
+                border:none;
+                color:#f2f2f2;
+                box-shadow: none;
+            }
+
+            .announcement {
+                margin-bottom: 0;
+                position: absolute;
+                width: 100%;
+            }
+
+            .announcement-close {
+                position:absolute;
+                right:20px;
+                top:10px;
+                color:#a94442;
+            }
+            .announcement-close:hover {
+                color:#c94442;
+                cursor:pointer;
+            }
+
+            .announcement .alert {
+                padding-right:50px;
+            }
+
+            iframe {
+            	display:none;
+            }
+
+            .game-page-overlay {
+                display: none;
+                position: static;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-color: white;
+            }
+
+            .iframe-ios-fix {
+                -webkit-overflow-scrolling: touch;
+                overflow-y: scroll;
+            }
+
+            #membership-flow.iframe-ios-fix iframe {
+                width: 0;
+                height: 0;
+                min-width: 100%;
+                min-height: 100%;
+            }
+
+            .game-page-overlay iframe {
+                display: block;
+                height: 100%;
+                width: 100%;
+                border: none;
+            }
+
+            .gone {
+                display:none;
+            }
+
+            #first-loading-screen {
+                height:100%;
+                width:100%;
+                background-color:#55B9A7;
+            }
+
+            .alert{
+                margin-top:0;
+                border-radius:0;
+                text-align:center;
+            }
+
+            .alert-warning {
+                background-color:#FCF8E3;
+                color: #8A6D3B;
+            }
+
+            .ios-install-prompt {
+                background-color:#F2F2F2;
+                width:100%;
+                height:70px;
+                position:absolute;
+                z-index:10;
+                padding:5px 10px;
+            }
+
+            .ios-install-prompt__wrapper {
+                margin: 0 auto;
+                height:100%;
+                width:50%;
+            }
+
+            .ios-install-prompt__close {
+                display:block;
+                position:relative;
+                float:left;
+                height:100%;
+                top:35%;
+                color:#848484;
+                padding-right:20px;
+                cursor:pointer;
+            }
+
+            .ios-install-prompt__icon {
+                display:block;
+                float:left;
+                height:63px;
+                margin-right:5px;
+            }
+
+            .ios-install-prompt__data {
+                display:block;
+                float:left;
+                line-height:1.3;
+                margin-top:3px;
+            }
+
+            .ios-install-prompt__title {
+                color:#444;
+                display:block;
+                font-size:12px;
+                font-weight:bold;
+            }
+
+            .ios-install-prompt__label {
+                color:#5e5e5e;
+                display:block;
+                font-size:10px;
+            }
+
+            .ios-install-prompt__star {
+                color:#FF9300;
+            }
+
+            .ios-install-prompt__link {
+                display:block;
+                position:relative;
+                float:right;
+                height:100%;
+                top:30%;
+                color:#1481FE;
+                padding-right:5px;
+                cursor:pointer;
+            }
+
+            .login-progress-outline {
+                position:absolute;
+                background-color:#000000;
+                border-radius:4px;
+            }
+
+            .login-progress-container {
+                position:absolute;
+                background-color:#FFFFFF;
+                border-radius:4px;
+            }
+
+            .login-progress-bar {
+                position:absolute;
+                background-color:#1CE59D;
+                background-image: linear-gradient(#6DFE7A, #0AC3A2);
+                border-radius:4px;
+                -webkit-transition: width 1.25s cubic-bezier(.23,1,.32,1);
+                -moz-transition: width 1.25s cubic-bezier(.23,1,.32,1);
+                transition: width 1.25s cubic-bezier(.23,1,.32,1);
+            }
+
+            .game-menu--hex {
+                z-index: 3;
+                position: fixed;
+                left: 10%;
+                width: 80%;
+                top: 10%;
+                height: 80%;
+                padding: 5% 5% 0 5%;
+                background-color:white;
+                border-radius:15px;
+                background: no-repeat right url("../images/game/hex/splash.jpg");
+                background-size: 100%;
+            }
+
+            .game-menu__close {
+                position:absolute;
+                top:0;
+                right:0;
+                top: -25px;
+                right: -25px;
+                height: 50px;
+                width: 50px;
+            }
+
+            .game-menu__container {
+                background-color:rgba(255,255,255,0.9);
+                padding: 10px;
+                border-radius:15px;
+            }
+
+            .game-menu__container--unlock {
+                background-color:rgba(255,255,255,0.9);
+                padding: 10px;
+                border-radius:15px;
+                box-shadow: 0 0 0 1px #595959, 0 0 0 5px #f6d6ab, 0 0 0 8px #d2aa71;
+                margin:10px 10px 25px 10px;
+            }
+
+            .game-border {
+                box-shadow: 0 0 0 1px #595959, 0 0 0 5px #f6d6ab, 0 0 0 8px #d2aa71;
+            }
+
+            #game-loading-container {
+                position:absolute;
+                width:100%;
+                height:100%;
+                z-index:0;
+                background-color:#55B9A7;
+            }
+
+            .game-loading {
+                width:80%;
+                height:100%;
+            }
+
+            .game-loading__ed {
+                display: block;
+                height: 150px;
+                margin-bottom: 22px;
+            }
+
+            .game-loading__font {
+                color: #fff;
+                text-align: center;
+                margin-top: 22 !important;
+            }
+
+            .ed-progress-outline {
+                height: 24px;
+                width: 100%;
+                background-color:#000000;
+                border-radius:4px;
+                display: flex;
+                align-items: center;
+                padding: 0px 1px;
+            }
+
+            .ed-progress-container {
+                height: 22px;
+                width: 100%;
+                background-color:#FFFFFF;
+                border-radius:4px;
+            }
+
+            .ed-progress-bar {
+                height: 22px;
+                width: 0%;
+                background-color:#1CE59D;
+                background-image: linear-gradient(#6DFE7A, #0AC3A2);
+                border-radius:4px;
+                -webkit-transition: width 1.25s cubic-bezier(.23,1,.32,1);
+                -moz-transition: width 1.25s cubic-bezier(.23,1,.32,1);
+                transition: width 1.25s cubic-bezier(.23,1,.32,1);
+            }
+
+            .game-announcement {
+                position:absolute;
+                z-index:10;
+            }
+
+        </style>
+    </head>
+
+
+<body>
+    <div id="game-loading-container-div" class="game-loading container" draggable="false">
+        <div id="loading-div" draggable="false">
+            <img class="game-loading__ed" draggable="false" src="https://cdn.prodigygame.com/assets/images/ed/@2x/ed-stars@2x.png" />
+            <!-- TODO: localize -->
+            <p class="game-loading__font" draggable="false">Loading Prodigy Game Files...</p>
+            <div id="ed-progress-outline" class="ed-progress-outline" draggable="false">
+                <div id="ed-progress-container" class="ed-progress-container" draggable="false">
+                    <div id="ed-progress-bar" class="ed-progress-bar" draggable="false"></div>
+                </div>
+            </div>
+        </div>
+        <div id="error-div" style="display: none;" draggable="false">
+            <img class="game-loading__ed" src="https://cdn.prodigygame.com/assets/images/ed/@2x/ed-sad@2x.png" draggable="false">
+            <h4 id="error-div-title" class="text-white text-center text-mt-md" draggable="false"></h4>
+            <p id="error-div-description" class="text-white text-center text-mt-md" draggable="false"></p>
+        </div>
+    </div>
+</div>
+    </div>
+    <div id="game-wrapper">
+        <div id='game-container'></div>
+        <div id='external-content'></div>
+        <div id='external-ui'></div>
+        <div id='notices'></div>
+        <div id='popups'>
+            <div id='dynamic-popups'></div>
+        </div>
+    </div>
+    <div id="membership-flow" class="game-page-overlay"></div>
+    <div id="game-page-overlay" class="game-page-overlay"></div>
+
+    </body>
+</html>

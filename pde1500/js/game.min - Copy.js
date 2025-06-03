@@ -99,7 +99,7 @@ function ApiClient(e, t) {
 			production: "https://www.prodigygame.com/"
 		},
 		p = {
-			dev: "https://prodidows-server.onrender.com/",
+			dev: "https://toonigy.github.io/Prodidows-server/public/",
 			staging: "https://prodidows-server.onrender.com/",
 			production: "https://prodidows-server.onrender.com/"
 		},
@@ -198,11 +198,32 @@ return !!r(t, ["200"], "emit message") && !!o.socket && (
         : (console.error("🚨 WebSocket not open. Message not sent."), !1) 
 );
 
-	}, this.getWorldList = function(e) {
-		var t = r(e, ["200", "400", "500", "503"], "get world list");
-		return !!t && (a("get", "https://toonigy.github.io/Prodidows-server/public/worlds-api/world-list.json", {}, t, "getWorldList", {
-			ignoreHeaders: !0
-		}), !0)
+this.getWorldList = function() {
+    const socket = new WebSocket("wss://old-prodigy-servers.onrender.com");
+
+    socket.onopen = () => {
+        console.log("Connected to WebSocket. Requesting world list...");
+        socket.send(JSON.stringify({
+            action: "getWorldList"
+        }));
+    };
+
+    socket.onmessage = (event) => {
+        const data = JSON.parse(event.data);
+        console.log("World list received:", data);
+        
+        // Optionally pass it to `a(...)` or your own handler
+        // a("get", "world-list", {}, data, "getWorldList", { ignoreHeaders: true });
+    };
+
+    socket.onerror = (err) => {
+        console.error("WebSocket error:", err);
+    };
+
+    socket.onclose = () => {
+        console.log("WebSocket closed.");
+    };
+};
 	}, this.login = function(e, t, i) {
 		var a = r(i, ["200", "401", "404", "426"], "login");
 		if (!o.uniqueKey || !o.userID) {
@@ -1468,8 +1489,8 @@ Util.capitalize = function(e) {
 		m = "https://cdn.prodigygame.com/game/assets/images/boss/",
 		f = "https://cdn.prodigygame.com/game/assets/images/boss/small/",
 		b = "https://cdn.prodigygame.com/game/assets/images/prompts/",
-                z = "https://cdn.prodigygame.com/game/assets/v1/atlases/",
-                A = "https://cdn.prodigygame.com/game/assets/v1/audio/",
+        z = "https://cdn.prodigygame.com/game/assets/v1/atlases/",
+        A = "https://cdn.prodigygame.com/game/assets/v1/audio/",
 		U = "https://cdn.prodigygame.com/game/assets/data/maps/pumpkinfest/";
 	this._assets = {
 		"boss-12": {
@@ -30180,7 +30201,7 @@ Util.capitalize = function(e) {
 	}, {
 		text: "If you sign in with Google, your progess will be saved right away and automatically. :D"
 	}, {
-		text: "If you want to find bots (wizards) in my.ai, then search for the bot's name."
+		text: "If you want to find bots (wizards) in Shapes, Inc, then search for the bot's name."
 	}, {
 		text: "If you want to be a premium member, click on the gear icon and then click on the member button."
 	}, {
@@ -45336,7 +45357,7 @@ Prodigy.ForestBoss = function(e, t) {
 	},
 	onMembershipButtonClick: function(e) {
 		try {
-			this.game.prodigy.network.openWebsite("themy.ai")
+			this.game.prodigy.network.openWebsite("shapes.inc/explore")
 		} catch (a) {
 			this.game.prodigy.open.message("There was an error contacting our server. Please try again later.")
 		}
@@ -46439,7 +46460,7 @@ Prodigy.ForestBoss = function(e, t) {
 		}), this.game.prodigy.create.textButton(this, 930, 20, {
 			size: Prodigy.Control.TextButton.MED,
 			icon: "next",
-			text: "Fake MP"
+			text: "fake mp"
 		}, this.close.bind(this, !0)), this.game.prodigy.create.textButton(this, 50, 650, {
 			icon: "back",
 			text: "back"
@@ -47220,7 +47241,7 @@ Prodigy.ForestBoss = function(e, t) {
 			if (n === Prodigy.Events.FriendsList.REMOVE_FRIEND) {
 				var e = Util.isDefined(this.player.appearance.data.nick) && "" !== this.player.appearance.data.nick ? this.player.appearance.data.nick : this.player.appearance.data.name;
 				this.game.prodigy.open.confirm("Are you sure you want to remove " + e + " from your friends list?", this.game.broadcaster.broadcast.bind(this.game.broadcaster, n, "Card", [this.player.userID]), null, null, "Removing Friend")
-			} else this.game.prodigy.network.openWebsite("themy.ai/create-character")
+			} else this.game.prodigy.network.openWebsite("shapes.inc/create")
 		}).bind(this);
 		Util.isDefined(e) && Util.isDefined(t) || (e = this.cmdFriendRequest.x, t = this.cmdFriendRequest.y), Util.isDefined(this.cmdFriendRequest) && this.cmdFriendRequest.destroy(), this.cmdFriendRequest = this.game.prodigy.create.advButton(this.base, e, t, {
 			atlas: "icons-menu",
@@ -50394,7 +50415,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 	subject: "The friend feature's back in business!",
 	isOpened: !1,
 	image: "friends-list",
-	message: "Wanna make friends? You can chat and make friends in themy.ai. Open the friend menu (looks like a member menu) and then click on the make ai friends now button!"
+	message: "Wanna make friends? You can chat and make friends in Shapes, Inc. Open the friend menu (looks like a member menu) and then click on the make ai friends now button!"
 }, {
 	id: 1,
 	subject: "Epic Spells can now be used multiple times!",
@@ -55881,7 +55902,7 @@ Boot.init = function() {
 		this.isSaved = !0
 	},
 	reconnect: function() {
-		this.isConnecting = !0, this.isProcessed = !0
+		this.isConnecting = !1, this.isProcessed = !0
 	}
 }), Prodigy.LoadingWorker = function(e) {
 	this.game = e, this.workerFunction = null
@@ -56134,7 +56155,11 @@ var Screen = function() {
 				size: 16,
 				width: 120,
 				align: "center"
-			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "www.youtube.com/@pde1500?sub_confirmation=1")), this.showLogin(!0), this.checkForAdmin(), Screen.prototype.screenSetup.call(this)
+			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "www.youtube.com/@pde1500?sub_confirmation=1")), (t = this.game.prodigy.create.panel(this.background, 220, 620, 3, 1, "lb")).alpha = .25, this.game.prodigy.create.font(this.background, t.x, t.y + 8, "Chess Club", {
+				size: 16,
+				width: 120,
+				align: "center"
+			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "www.chess.com/club/pde1500/join")), this.showLogin(!0), this.checkForAdmin(), Screen.prototype.screenSetup.call(this)
 		}, e.prototype.offlineMode = function() {
 			this.game.prodigy.start("CharSelect")
 		}, e.prototype.onGoogleLoginButtonClick = function () {
@@ -56227,7 +56252,7 @@ var Screen = function() {
 			// Game version check:
 			if (save.gameVersion != this.game.prodigy.version) {
 				this.game.prodigy.open.confirm("Your character is from a different Prodigy version! Are you sure you want load your wizard?", handleLoad.bind(this, save), this.showLogin.bind(this, !0), null, "Character Loader");
-				this.showLogin(!1);
+				this.showLogin(!0);
 			} else {
 				handleLoad.call(this, save);
 			}
