@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prodidows Insider Mod Menu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1e1e2f;
+      color: #fff;
+      padding: 20px;
+    }
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: #2d2d44;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    select, input[type="checkbox"] {
+      margin-bottom: 10px;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      background: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Prodidows Insider Mod Menu</h1>
+
+    <label for="version">Select Game Version:</label>
+    <select id="version">
+      <option value="pde1500">PDE1500</option>
+      <option value="pde2015">PDE2015</option>
+    </select>
+
+    <div id="mod-options">
+      <label><input type="checkbox" value="WalkSpeed"> Walk Speed</label>
+      <label><input type="checkbox" value="FastGameSpeed"> Fast Game Speed</label>
+      <label><input type="checkbox" value="RebalancedBattles"> Rebalanced Battles</label>
+      <label><input type="checkbox" value="ClassicFaces"> Classic Faces</label>
+    </div>
+
+    <button onclick="launchGame()">Go!</button>
+  </div>
+
+  <script>
+    const versionSelect = document.getElementById("version");
+    const modOptions = document.getElementById("mod-options");
+
+    // Update mod list if different versions are added later
+    versionSelect.addEventListener("change", () => {
+      const version = versionSelect.value;
+      if (version === "pde1500") {
+        modOptions.innerHTML = `
+          <label><input type="checkbox" value="WalkSpeed"> Walk Speed</label>
+          <label><input type="checkbox" value="FastGameSpeed"> Fast Game Speed</label>
+          <label><input type="checkbox" value="RebalancedBattles"> Rebalanced Battles</label>
+          <label><input type="checkbox" value="ClassicFaces"> Classic Faces</label>
+        `;
+      } else if (version === "pde2015") {
+        modOptions.innerHTML = `
+          <label><input type="checkbox" value="FutureMod1"> Future Mod 1</label>
+          <label><input type="checkbox" value="FutureMod2"> Future Mod 2</label>
+        `;
+      }
+    });
+
+    function launchGame() {
+      const version = versionSelect.value;
+      const checkboxes = modOptions.querySelectorAll("input[type='checkbox']");
+      let mods = [];
+
+      checkboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+          mods.push(checkbox.value);
+        }
+      });
+
+      const modString = mods.length ? `?mods=${mods.join(",")}` : "";
+      const url = `https://healingmunch.github.io/Website-Tester/${version}/${modString}`;
+      window.open(url, "_blank");
+    }
+  </script>
+</body>
+</html>
