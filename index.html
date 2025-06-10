@@ -179,8 +179,25 @@
 
     <section>
       <h2>Get Started</h2>
-      <a href="signup.html" class="cta-button">Sign Up Here</a>
-      <a href="login.html" class="cta-button">Login Now</a>
+<section>
+  <h2>Feeling Lucky?</h2>
+  <button class="cta-button" onclick="pickRandomVersion()">Pick For Me</button>
+</section>
+
+<script>
+  function pickRandomVersion() {
+    const versions = [
+      "pde1.51.0/index.html",
+      "pde1252/index.html",
+      "pde1500/?mods=WalkSpeed,FastGameSpeed,ClassicFaces",
+      "pde/index.html",
+      "pde1700/index.html?mods=WalkSpeed,FastGameSpeed,ImitationTitan",
+      "pde2015/index.html?mods=WalkSpeed,FastGameSpeed"
+    ];
+    const random = versions[Math.floor(Math.random() * versions.length)];
+    window.location.href = random;
+  }
+</script>
     </section>
   </main>
 
