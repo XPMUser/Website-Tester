@@ -29,6 +29,7 @@ socket.onclose = function () {
 };
 
 // Function to update the world list in the UI
+
 function updateWorldList(servers) {
     const worldListContainer = document.getElementById("world-list.json"); // Adjust this based on your HTML
     if (!worldListContainer) return;
@@ -11897,15 +11898,24 @@ Util.capitalize = function(e) {
 			y: 128,
 			w: 61,
 			h: 61
-                        },
-                        "normal-weapon-92": {
-                                type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/assets/images/player/normal/weapons/",
-                                url: "92.png",
-                                x: 129,
-                                y: 142,
-                                w: 60,
-                                h: 60
+        },
+        "normal-weapon-92": {
+            type: "spritesheet",
+            base: "https://healingmunch.github.io/prodidows/1-10-0/assets/images/player/normal/weapons/",
+            url: "92.png",
+            x: 129,
+            y: 142,
+            w: 60,
+            h: 60
+        },
+        "normal-weapon-93": {
+            type: "spritesheet",
+            base: "https://healingmunch.github.io/prodidows/1-10-0/assets/images/player/normal/weapons/",
+            url: "92.png",
+            x: 129,
+            y: 142,
+            w: 60,
+            h: 60
 		},
 		"normal-hair-male-1-1": {
 			type: "spritesheet",
@@ -31656,6 +31666,14 @@ Items.getItemData = function(e, t) {
 		flavorText: "Credits to Daboss7173 for this wand in different colors.",
 		effects: [87],
 		memberAd: 0
+	}, {
+		ID: 93,
+		name: "Administrator's Booster Hammer",
+		member: 1,
+		rarity: 4,
+		flavorText: "This wand is not recommended for real Multiplayer Battles.",
+		effects: [89],
+		memberAd: 0
 	}],
 	boots: [{
 		ID: 1,
@@ -49304,11 +49322,27 @@ Prodigy.ForestBoss = function(e, t) {
     description: "She grinded the arena to be #1 on the arena leaderboards in Daboss7173's PDE.",
 	pets: [{
                 ID: 126,
-                level: 80
+                level: 100
 	}],
     drops: [{
         type: "gold",
         N: 10000
+    }]
+}, {
+    opponent: {
+        data: '{"level":100}',
+        appearance: '{"name":"Pilot Bobby", "gender":"male", "hairStyle":4,"hairColor":1,"skinColor":1,"eyeColor":10}',
+        equipment: '{"hat":62, "outfit":53, "weapon":78, "boots":26}'
+    },
+    title: "HealingMunch's Mohawk College account from Daboss7173's PDE",
+    description: "He is also HealingMunch's alt account from Daboss7173's PDE.",
+	pets: [{
+                ID: 126,
+                level: 100
+	}],
+    drops: [{
+        type: "gold",
+        N: 1000
     }]
 }, {
     opponent: {
@@ -84030,11 +84064,8 @@ Prodigy.GameObj = function(e) {
 	type: "hearts",
 	value: 50000
 }, {
-	type: "hearts",
-	value: 9999999999999999999999999999999999999999999999999999999999999999999990
-}, {
 	type: "damage",
-	value: 9999999999999999999999999999999999999999999999999999999999999999999990
+	value: 500
 }, {
 	type: "gold",
 	value: 5000
