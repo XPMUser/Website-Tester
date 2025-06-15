@@ -1,12 +1,12 @@
 name: Feature request
-description: You have a cool new idea or an already fully baked mod you would like to be featured!
+description: You can request a feature here.
 title: "*Coolest title ever*"
 labels: Suggestion
 body:
   - type: textarea
     attributes:
       label: What would you like to add?
-      description: Here you can go into detail about what you want to add. You don't have to be specific enough, but I recommend you do so in order to make me tell what it is you want to change.
+      description: Here you can go into detail about what you want to add. Try to be as specific as you can so that I can tell what it is you want to change. (Stop asking me to add new versions that I can't fix, I'll do that in my own time. No asking for apis (game servers like multiplayer mode) or any oauths yet.) If you're gonna ask for bots, you can provide a picture of a bot's player card here, in the comment section or on Instagram with a link.
       placeholder: Make a wizard do the dab because it's so trendy and would never be outdated ever.
     validations:
       required: true
@@ -21,7 +21,7 @@ body:
     attributes:
       label: Any additional context (optional)
       description: Any other important context you may have for making this issue.
-      placeholder: Accidental tiktok dance.
+      placeholder: Accidental YouTube Shorts dance.
     validations:
       required: false
   - type: dropdown
@@ -29,10 +29,14 @@ body:
       label: Type of suggestion
       description: Select which type of feature request you're submitting.
       options:
-        - A new Prodigy Definitive Edition (open-source), Prodigy Ultimate Edition, and/or Prodidows feature
-        - New modpack
+        - New Prodigy Definitive Edition or Ultimate Edition feature
+        - New modpacks in 2015-2017's versions (modified or not)
+        - Something super awesome from a fork you play
+        - Something super awesome from daboss7173.github.io/oldprodigy.onrender.com
         - Something you made by yourself
-        - A new Prodigy, Definitive Edition, Ultimate Edition, and/or Prodidows version
+        - A new Prodigy version (2015-2017)
+        - A new Definitive Edition or Ultimate Edition version (Modified versions of 2015-2017)
+        - New bot (battle or friend)
         - Other
     validations:
       required: true
@@ -40,8 +44,15 @@ body:
     attributes:
       label: I agree to the following
       options:
-        - label: By checking this box, I confirm that this issue's valid.
+        - label: By checking this box, I confirm that this issue isn't about adding a new Prodigy version from August 17, 2017, later, or earlier than March 2015.
           required: true
-        - label: By checking this box, I confirm that I haven't already made an issue about the topic being presented in this issue.
+        - label: By checking this box, I confirm that there are no open issues about this suggestion.
           required: true
-        - label: By checking this box, I confirm that this issue template is being used to suggest a feature, not report a bug, and that if I want to make a bug report, I should not be using this issue template.
+        - label: By checking this box, I confirm that this issue template is being used to suggest a feature, not report a bug.
+          required: true
+        - label: By checking this box, I confirm that I'm not asking for any apis (servers and the real multiplayer mode).
+          required: true
+        - label: By checking this box, I confirm that this issue isn't about adding modified versions of later than 2017 or earlier than March 2015's Prodigy versions.
+          required: true
+        - label: By checking this box, I confirm that I'm asking for something for only my site (https://healingmunch.github.io/XPMUser.github.io).
+          required: true
