@@ -117,7 +117,7 @@ function ApiClient(e, t) {
 	switch (window.location.host) {
 		case "dev.prodigygame.org":
 		case "localhost":
-		case "healingmunch.github.io/XPMUser.github.io":
+		case "xpmuser.github.io":
 		case "XPMUser.github.io":
 		case "old-prodigy-servers.onrender.com":
 		default:
@@ -129,7 +129,7 @@ function ApiClient(e, t) {
 		case "localhost":
 			i("production", l);
 			break;
-		case "healingmunch.github.io/XPMUser.github.io":
+		case "xpmuser.github.io":
 			i("staging", l);
 			break;
     case "https://triple-bird-410810-default-rtdb.firebaseio.com":
@@ -141,7 +141,7 @@ function ApiClient(e, t) {
 			i("production", l)
 		case "old-prodigy-servers.onrender.com":
 			i("production", l)
-		case "healingmunch.github.io/XPMUser.github.io":
+		case "xpmuser.github.io":
 			i("production", l)
 		case "XPMUser.github.io":
 			i("production", l)
@@ -1577,13 +1577,13 @@ Util.capitalize = function(e) {
 		},
 		core: {
 			type: "localAtlas",
-			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pde1500/assets/v1/atlases/",
+			base: "https://xpmuser.github.io/oldprodigy/pde1500/assets/v1/atlases/",
 			key: "general-core",
 			v: "3"
 		},
 		630: {
 			type: "localAtlas",
-			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pde1500/assets/v1/atlases/",
+			base: "https://xpmuser.github.io/oldprodigy/pde1500/assets/v1/atlases/",
 			key: "general-core",
 			v: "1"
 		},
@@ -1594,13 +1594,13 @@ Util.capitalize = function(e) {
 		},
 		heads: {
 			type: "localAtlas",
-			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/images/",
+			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/",
 			key: "general-head",
 			v: "1"
 		},
 		icons: {
 			type: "localAtlas",
-			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/images/",
+			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/",
 			key: "general-icons",
 			v: "42"
 		},
@@ -1627,13 +1627,13 @@ Util.capitalize = function(e) {
 		},
 		login: {
 			type: "localAtlas",
-			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pdenot1.50.0/assets/images/",
+			base: "https://xpmuser.github.io/oldprodigy/pdenot1.50.0/assets/images/",
 			key: "general-login",
 			v: "4"
 		},
 		map: {
 			type: "localAtlas",
-			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pde1500/assets/images/",
+			base: "https://xpmuser.github.io/oldprodigy/pde1500/assets/images/",
 			key: "general-map",
 			v: "6"
 		},
@@ -1889,7 +1889,7 @@ Util.capitalize = function(e) {
 		},
 		"npc-sprite-flora": {
 			type: "localAtlas",
-			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pdenot1.50.0/assets/images/",
+			base: "https://xpmuser.github.io/oldprodigy/pdenot1.50.0/assets/images/",
 			key: "npc-sprite-flora",
 			v: "3"
 		},
@@ -1907,7 +1907,7 @@ Util.capitalize = function(e) {
 		},
 		"npc-sprite-howard_cornelius": {
 			type: "localAtlas",
-			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/images/",
+			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/",
 			key: "npc-sprite-howard-cornelius",
 			v: "1"
 		},
@@ -1955,7 +1955,7 @@ Util.capitalize = function(e) {
 		},
 		"npc-sprite-noot": {
 			type: "localAtlas",
-			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/v1/atlases/",
+			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/v1/atlases/",
 			key: "npc-sprite-guard",
 			v: "1"
 		},
@@ -2134,13 +2134,13 @@ Util.capitalize = function(e) {
 		},
 		"zone-forest2": {
 			type: "localAtlas",
-			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/1-11-0/assets/images/zones/",
+			base: "https://xpmuser.github.io/oldprodigy/1-11-0/assets/images/zones/",
 			url: "zone-forest.png",
 			json: "zone-forest.json"
 		},
 		"zone-docks": {
 			type: "localAtlas",
-			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/prodigyde/assets/images/zones/",
+			base: "https://xpmuser.github.io/oldprodigy/prodigyde/assets/images/zones/",
 			url: "zone-docks.png",
 			json: "zone-docks.json"
 		},
@@ -2170,19 +2170,19 @@ Util.capitalize = function(e) {
 		},
 		"zone-townsquare": {
 			type: "localAtlas",
-			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/images/",
+			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/",
 			key: "zone-townsquare",
 			v: "1"
 		},
 		"zone-academy": {
 			type: "localAtlas",
-			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pdenot1.50.0/assets/images/",
+			base: "https://xpmuser.github.io/oldprodigy/pdenot1.50.0/assets/images/",
 			key: "zone-academy",
 			v: "1"
 		},
 		"zone-icecave": {
 			type: "localAtlas",
-			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/prodigyde/assets/images/zones/",
+			base: "https://xpmuser.github.io/oldprodigy/prodigyde/assets/images/zones/",
 			key: "zone-icecave",
 			v: "1"
 		},
@@ -2236,7 +2236,7 @@ Util.capitalize = function(e) {
 		},
 		"popup-member-modular": {
 			type: "localAtlas",
-			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pde1500/assets/images/",
+			base: "https://xpmuser.github.io/oldprodigy/pde1500/assets/images/",
 			key: "popup-member-modular",
 			v: "6"
 		},
@@ -2538,7 +2538,7 @@ Util.capitalize = function(e) {
 		},
 		"tileset-minecarts": {
 			type: "spritesheet",
-			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pde1500/assets/v1/tilesets/",
+			base: "https://xpmuser.github.io/oldprodigy/pde1500/assets/v1/tilesets/",
 			url: "tileset-minecarts/2/tileset-minecarts.png",
 			w: 40,
 			h: 40
@@ -2762,7 +2762,7 @@ Util.capitalize = function(e) {
 		},
 		"map-lamplight-b1": {
 			type: "json",
-			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/data/",
+			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/data/",
 			url: "map-lamplight-b1/1/map-lamplight-b1.json"
 		},
 		"map-lamplight-b2": {
@@ -2792,7 +2792,7 @@ Util.capitalize = function(e) {
 		},
 		"map-lamplight-c2": {
 			type: "json",
-			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/data/",
+			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/data/",
 			url: "map-lamplight-c2/1/map-lamplight-c2.json"
 		},
 		"map-lamplight-c3": {
@@ -2802,12 +2802,12 @@ Util.capitalize = function(e) {
 		},
 		"map-lamplight-c4": {
 			type: "json",
-			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pde1500/assets/data/",
+			base: "https://xpmuser.github.io/oldprodigy/pde1500/assets/data/",
 			url: "map-lamplight-c4/1/map-lamplight-c4.json"
 		},
 		"map-lamplight-d4": {
 			type: "json",
-			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/data/",
+			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/data/",
 			url: "map-lamplight-d4/2/map-lamplight-d4.json"
 		},
 		"map-lamplight-d5": {
@@ -3002,12 +3002,12 @@ Util.capitalize = function(e) {
 		},
 		"map-lamplight-c4-winterfest": {
 			type: "json",
-			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/data/",
+			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/data/",
 			url: "map-lamplight-c4-winterfest/1/map-lamplight-c4-winterfest.json"
 		},
 		"map-lamplight-d4-winterfest": {
 			type: "json",
-			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/data/",
+			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/data/",
 			url: "map-lamplight-d4-winterfest/1/map-lamplight-d4-winterfest.json"
 		},
 		"map-skywatch-a0": {
@@ -3537,19 +3537,19 @@ Util.capitalize = function(e) {
 		},
 		"bg-dorm-house": {
 			type: "localAtlas",
-			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pde2015/assets/images/zones/",
+			base: "https://xpmuser.github.io/oldprodigy/pde2015/assets/images/zones/",
 			key: "bg-dorm-house",
 			v: "4"
 		},
 		"bg-dorm-cave": {
 			type: "localAtlas",
-			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pde2015/assets/images/zones/",
+			base: "https://xpmuser.github.io/oldprodigy/pde2015/assets/images/zones/",
 			key: "bg-dorm-cave",
 			v: "4"
 		},
 		"bg-dorm-tree": {
 			type: "localAtlas",
-			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pde2015/assets/images/zones/",
+			base: "https://xpmuser.github.io/oldprodigy/pde2015/assets/images/zones/",
 			key: "bg-dorm-tree",
 			v: "4"
 		},
@@ -3615,7 +3615,7 @@ Util.capitalize = function(e) {
 		},
 		"login-bg-1": {
 			type: "localAtlas",
-			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pdenot1.50.0/assets/images/",
+			base: "https://xpmuser.github.io/oldprodigy/pdenot1.50.0/assets/images/",
 			key: "login-bg-1",
 			v: "4"
 		},
@@ -4309,13 +4309,13 @@ Util.capitalize = function(e) {
 		},
 		"bgm-battle": {
 			type: "bgm",
-                        base: "https://healingmunch.github.io/Website-Tester/pde1500/assets/audio/bgm/",
+                        base: "https://xpmuser.github.io/Website-Tester/pde1500/assets/audio/bgm/",
 			url: "bgm-battle.ogg",
                         v: 2
 		},
 		"bgm-intro": {
 			type: "bgm",
-			base: "https://healingmunch.github.io/Website-Tester/pde1500/assets/audio/bgm/",
+			base: "https://xpmuser.github.io/Website-Tester/pde1500/assets/audio/bgm/",
 			url: "bgm-intro.ogg",
                         v: 2
 		},
@@ -5416,13 +5416,13 @@ Util.capitalize = function(e) {
 		},
 		"monster-small-130": {
 			type: "sprite",
-			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/images/monsters/small/",
+			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/monsters/small/",
 			url: "130.png",
 			x: 45
 		},
 		"monster-normal-130": {
 			type: "spritesheet",
-			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/images/monsters/normal/",
+			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/monsters/normal/",
 			url: "130.png",
 			x: 45,
 			w: 82,
@@ -5430,7 +5430,7 @@ Util.capitalize = function(e) {
 		},
 		"monster-reduced-130": {
 			type: "spritesheet",
-			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/images/monsters/reduced/",
+			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/monsters/reduced/",
 			url: "130.png",
 			x: 22,
 			w: 45,
@@ -7554,7 +7554,7 @@ Util.capitalize = function(e) {
 		},
 		"normal-outfit-male-13": {
 			type: "spritesheet",
-			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/images/player/normal/outfit/male/",
+			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/player/normal/outfit/male/",
 			url: "13.png",
 			x: 91,
 			y: 155,
@@ -7995,7 +7995,7 @@ Util.capitalize = function(e) {
 		},
 		"normal-outfit-male-58": {
 			type: "spritesheet",
-			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pde1221/assets/images/player/normal/male/outfit/",
+			base: "https://xpmuser.github.io/oldprodigy/pde1221/assets/images/player/normal/male/outfit/",
 			url: "58.png",
 			x: 92,
 			y: 154,
@@ -8004,7 +8004,7 @@ Util.capitalize = function(e) {
 		},
 		"normal-outfit-male-59": {
 			type: "spritesheet",
-			base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+			base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
 			url: "0-1.png",
 			x: 92,
 			y: 154,
@@ -8085,7 +8085,7 @@ Util.capitalize = function(e) {
 		},
 		"reduced-outfit-male-13": {
 			type: "spritesheet",
-			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/images/player/reduced/outfit/male/",
+			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/player/reduced/outfit/male/",
 			url: "13.png",
 			x: 43,
 			y: 85,
@@ -8328,7 +8328,7 @@ Util.capitalize = function(e) {
 		},
 		"reduced-outfit-male-38": {
 			type: "spritesheet",
-			base: "https://healingmunch.github.io/prodidows/1-10-0/images/outfits/male/reduced/",
+			base: "https://xpmuser.github.io/prodidows/1-10-0/images/outfits/male/reduced/",
 			url: "38.png",
 			x: 17,
 			y: 0,
@@ -8526,7 +8526,7 @@ Util.capitalize = function(e) {
 		},
 		"reduced-outfit-male-58": {
 			type: "spritesheet",
-			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pde1221/assets/images/player/reduced/male/outfit/",
+			base: "https://xpmuser.github.io/oldprodigy/pde1221/assets/images/player/reduced/male/outfit/",
 			url: "58.png",
 			x: 45,
 			y: 84,
@@ -8535,7 +8535,7 @@ Util.capitalize = function(e) {
 		},
 		"reduced-outfit-male-59": {
 			type: "spritesheet",
-			base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+			base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
             url: "0-1.png",
 			x: 45,
 			y: 84,
@@ -9048,7 +9048,7 @@ Util.capitalize = function(e) {
 		},
 		"normal-outfit-female-57": {
 			type: "spritesheet",
-			base: "https://healingmunch.github.io/prodidows/1-10-0/images/outfits/female/normal/",
+			base: "https://xpmuser.github.io/prodidows/1-10-0/images/outfits/female/normal/",
 			url: "57.png",
             x: 94,
             y: 156,
@@ -9057,7 +9057,7 @@ Util.capitalize = function(e) {
         },
         "normal-outfit-female-58": {
             type: "spritesheet",
-            base: "https://healingmunch.github.io/prodidows/1-22-4/assets/images/outfits/normal/female/",
+            base: "https://xpmuser.github.io/prodidows/1-22-4/assets/images/outfits/normal/female/",
             url: "58.png",
             x: 94,
             y: 156,
@@ -9066,7 +9066,7 @@ Util.capitalize = function(e) {
 		},
 		"normal-outfit-female-59": {
 			type: "spritesheet",
-			base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+			base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
             url: "0-1.png",
 			x: 91,
 			y: 140,
@@ -9579,7 +9579,7 @@ Util.capitalize = function(e) {
 		},
 		"reduced-outfit-female-57": {
 			type: "spritesheet",
-			base: "https://healingmunch.github.io/prodidows/1-10-0/images/outfits/female/reduced/",
+			base: "https://xpmuser.github.io/prodidows/1-10-0/images/outfits/female/reduced/",
 			url: "57.png",
 			x: 44,
 			y: 86,
@@ -9588,7 +9588,7 @@ Util.capitalize = function(e) {
         },
         "reduced-outfit-female-58": {
             type: "spritesheet",
-            base: "https://healingmunch.github.io/prodidows/1-22-4/assets/images/outfits/reduced/female/",
+            base: "https://xpmuser.github.io/prodidows/1-22-4/assets/images/outfits/reduced/female/",
             url: "58.png",
 			x: 45,
 			y: 86,
@@ -9597,7 +9597,7 @@ Util.capitalize = function(e) {
         },
         "reduced-outfit-female-59": {
             type: "spritesheet",
-            base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+            base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
             url: "0-1.png",
 			x: 45,
 			y: 86,
@@ -10326,7 +10326,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hat-77": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hats/normal/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hats/normal/",
                                 url: "77.png",
                                 x: 80,
                                 y: 25,
@@ -10335,7 +10335,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hat-78": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hats/normal/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hats/normal/",
                                 url: "78.png",
                                 x: 49,
                                 y: 39,
@@ -10344,7 +10344,7 @@ Util.capitalize = function(e) {
 		},
 		"normal-hat-79": {
 			type: "spritesheet",
-			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/images/player/normal/hats/",
+			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/player/normal/hats/",
 			url: "24.png",
 			x: 49,
 			y: 53,
@@ -10353,7 +10353,7 @@ Util.capitalize = function(e) {
 		},
 		"normal-hat-80": {
 			type: "spritesheet",
-			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/images/player/normal/hats/",
+			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/player/normal/hats/",
 			url: "80.png",
 			x: 102,
 			y: 54,
@@ -11046,7 +11046,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hat-77": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hats/reduced/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hats/reduced/",
                                 url: "77.png",
                                 x: 39,
                                 y: 23,
@@ -11055,7 +11055,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hat-78": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hats/reduced/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hats/reduced/",
                                 url: "78.png",
                                 x: 23,
                                 y: 29,
@@ -11064,7 +11064,7 @@ Util.capitalize = function(e) {
 		},
 		"reduced-hat-79": {
 			type: "spritesheet",
-			base: "https://healingmunch.github.io/prodidows/1-50-0/assets/images/player/reduced/hats/",
+			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/player/reduced/hats/",
 			url: "24.png",
 			x: 21,
 			y: 35,
@@ -11073,7 +11073,7 @@ Util.capitalize = function(e) {
 		},
 		"reduced-hat-80": {
             type: "spritesheet",
-            base: "https://healingmunch.github.io/prodidows/1-50-0/assets/images/player/reduced/hats/",
+            base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/player/reduced/hats/",
             url: "80.png",
 			x: 46,
 			y: 30,
@@ -11901,7 +11901,7 @@ Util.capitalize = function(e) {
         },
         "normal-weapon-92": {
             type: "spritesheet",
-            base: "https://healingmunch.github.io/prodidows/1-10-0/assets/images/player/normal/weapons/",
+            base: "https://xpmuser.github.io/prodidows/1-10-0/assets/images/player/normal/weapons/",
             url: "92.png",
             x: 129,
             y: 142,
@@ -11910,7 +11910,7 @@ Util.capitalize = function(e) {
         },
         "normal-weapon-93": {
             type: "spritesheet",
-            base: "https://healingmunch.github.io/prodidows/1-10-0/assets/images/player/normal/weapons/",
+            base: "https://xpmuser.github.io/prodidows/1-10-0/assets/images/player/normal/weapons/",
             url: "92.png",
             x: 129,
             y: 142,
@@ -15231,7 +15231,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-24-1": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15240,7 +15240,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-24-2": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15249,7 +15249,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-24-3": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15258,7 +15258,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-24-4": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15267,7 +15267,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-24-5": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15276,7 +15276,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-24-6": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15285,7 +15285,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-24-7": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15294,7 +15294,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-24-8": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15303,7 +15303,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-24-9": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15312,7 +15312,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-24-10": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15321,7 +15321,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-24-11": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15330,7 +15330,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-24-12": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15339,7 +15339,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-24-13": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15348,7 +15348,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-24-14": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15357,7 +15357,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-24-15": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15366,7 +15366,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-24-16": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15375,7 +15375,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-male-undefined-undefined": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15384,7 +15384,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-female-24-1": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15393,7 +15393,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-female-24-2": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15402,7 +15402,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-female-24-3": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15411,7 +15411,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-female-24-4": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15420,7 +15420,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-female-24-5": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15429,7 +15429,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-female-24-6": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15438,7 +15438,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-female-24-7": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15447,7 +15447,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-female-24-8": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15456,7 +15456,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-female-24-9": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15465,7 +15465,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-female-24-10": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15474,7 +15474,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-female-24-11": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15483,7 +15483,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-female-24-12": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15492,7 +15492,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-female-24-13": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15501,7 +15501,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-female-24-14": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15510,7 +15510,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-female-24-15": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15519,7 +15519,7 @@ Util.capitalize = function(e) {
                         },
                         "normal-hair-female-24-16": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15528,7 +15528,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-female-24-1": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15537,7 +15537,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-female-24-2": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15546,7 +15546,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-female-24-3": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15555,7 +15555,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-female-24-4": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15564,7 +15564,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-female-24-5": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15573,7 +15573,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-female-24-6": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15582,7 +15582,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-female-24-7": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15591,7 +15591,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-female-24-8": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15600,7 +15600,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-female-24-9": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15609,7 +15609,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-female-24-10": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15618,7 +15618,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-female-24-11": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15627,7 +15627,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-female-24-12": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15636,7 +15636,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-female-24-13": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15645,7 +15645,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-female-24-14": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15654,7 +15654,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-female-24-15": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15663,7 +15663,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-female-24-16": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15672,7 +15672,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-24-1": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15681,7 +15681,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-24-2": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15690,7 +15690,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-24-3": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15699,7 +15699,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-24-4": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15708,7 +15708,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-24-5": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15717,7 +15717,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-24-6": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15726,7 +15726,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-24-7": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15735,7 +15735,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-24-8": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15744,7 +15744,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-24-9": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15753,7 +15753,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-24-10": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15762,7 +15762,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-24-11": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15771,7 +15771,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-24-12": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15780,7 +15780,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-24-13": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15789,7 +15789,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-24-14": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15798,7 +15798,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-24-15": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15807,7 +15807,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-24-16": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -15816,7 +15816,7 @@ Util.capitalize = function(e) {
                         },
                         "reduced-hair-male-undefined-undefined": {
                                 type: "spritesheet",
-                                base: "https://healingmunch.github.io/prodidows/1-10-0/images/hair/",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
                                 x: 88,
                                 y: 74,
@@ -16464,7 +16464,7 @@ Util.capitalize = function(e) {
 		},
 		"reduced-hair-male-5-16": {
 			type: "spritesheet",
-			base: "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pde1221/assets/images/player/reduced/male/hair/",
+			base: "https://xpmuser.github.io/oldprodigy/pde1221/assets/images/player/reduced/male/hair/",
 			url: "5-16.png",
 			x: 42,
 			y: 44,
@@ -30224,7 +30224,7 @@ Util.capitalize = function(e) {
 		return Prodigy.Hints.data[e][Math.floor(Math.random() * Prodigy.Hints.data[e].length)]
 	}
 }, Prodigy.Hints.prototype.constructor = Prodigy.Hints, Prodigy.EmailDomains = function() {}, Prodigy.EmailDomains.data = {
-	domains: ["aol.com", "att.net", "comcast.net", "facebook.com", "gmail.com", "gmx.com", "googlemail.com", "google.com", "hotmail.com", "hotmail.co.uk", "mac.com", "me.com", "mail.com", "msn.com", "live.com", "sbcglobal.net", "verizon.net", "yahoo.com", "yahoo.co.uk", "email.com", "games.com", "gmx.net", "hush.com", "hushmail.com", "icloud.com", "inbox.com", "lavabit.com", "love.com", "outlook.com", "pobox.com", "rocketmail.com", "safe-mail.net", "wow.com", "ygm.com", "ymail.com", "zoho.com", "fastmail.fm", "yandex.com", "bellsouth.net", "charter.net", "comcast.net", "cox.net", "earthlink.net", "juno.com", "btinternet.com", "virginmedia.com", "blueyonder.co.uk", "freeserve.co.uk", "live.co.uk", "ntlworld.com", "o2.co.uk", "orange.net", "sky.com", "talktalk.co.uk", "tiscali.co.uk", "virgin.net", "wanadoo.co.uk", "bt.com", "sina.com", "qq.com", "naver.com", "hanmail.net", "daum.net", "nate.com", "yahoo.co.jp", "yahoo.co.kr", "yahoo.co.id", "yahoo.co.in", "yahoo.com.sg", "yahoo.com.ph", "hotmail.fr", "live.fr", "laposte.net", "yahoo.fr", "wanadoo.fr", "orange.fr", "gmx.fr", "sfr.fr", "neuf.fr", "free.fr", "gmx.de", "hotmail.de", "live.de", "online.de", "t-online.de", "web.de", "yahoo.de", "mail.ru", "rambler.ru", "yandex.ru", "ya.ru", "list.ru", "hotmail.be", "live.be", "skynet.be", "voo.be", "tvcablenet.be", "telenet.be", "hotmail.com.ar", "live.com.ar", "yahoo.com.ar", "fibertel.com.ar", "speedy.com.ar", "arnet.com.ar", "hotmail.com", "gmail.com", "yahoo.com.mx", "live.com.mx", "yahoo.com", "hotmail.es", "live.com", "hotmail.com.mx", "prodigy.net.mx", "msn.com", "bell.ca", "bell.com", "rogers.ca", "rogers.com", "cogeco.ca", "cogeco.com", "hotmail.ca", "live.ca", "yahoo.ca", "healingmunch.github.io/XPMUser.github.io", "oldprodigy.onrender.com", "prodigygame.com"]
+	domains: ["aol.com", "att.net", "comcast.net", "facebook.com", "gmail.com", "gmx.com", "googlemail.com", "google.com", "hotmail.com", "hotmail.co.uk", "mac.com", "me.com", "mail.com", "msn.com", "live.com", "sbcglobal.net", "verizon.net", "yahoo.com", "yahoo.co.uk", "email.com", "games.com", "gmx.net", "hush.com", "hushmail.com", "icloud.com", "inbox.com", "lavabit.com", "love.com", "outlook.com", "pobox.com", "rocketmail.com", "safe-mail.net", "wow.com", "ygm.com", "ymail.com", "zoho.com", "fastmail.fm", "yandex.com", "bellsouth.net", "charter.net", "comcast.net", "cox.net", "earthlink.net", "juno.com", "btinternet.com", "virginmedia.com", "blueyonder.co.uk", "freeserve.co.uk", "live.co.uk", "ntlworld.com", "o2.co.uk", "orange.net", "sky.com", "talktalk.co.uk", "tiscali.co.uk", "virgin.net", "wanadoo.co.uk", "bt.com", "sina.com", "qq.com", "naver.com", "hanmail.net", "daum.net", "nate.com", "yahoo.co.jp", "yahoo.co.kr", "yahoo.co.id", "yahoo.co.in", "yahoo.com.sg", "yahoo.com.ph", "hotmail.fr", "live.fr", "laposte.net", "yahoo.fr", "wanadoo.fr", "orange.fr", "gmx.fr", "sfr.fr", "neuf.fr", "free.fr", "gmx.de", "hotmail.de", "live.de", "online.de", "t-online.de", "web.de", "yahoo.de", "mail.ru", "rambler.ru", "yandex.ru", "ya.ru", "list.ru", "hotmail.be", "live.be", "skynet.be", "voo.be", "tvcablenet.be", "telenet.be", "hotmail.com.ar", "live.com.ar", "yahoo.com.ar", "fibertel.com.ar", "speedy.com.ar", "arnet.com.ar", "hotmail.com", "gmail.com", "yahoo.com.mx", "live.com.mx", "yahoo.com", "hotmail.es", "live.com", "hotmail.com.mx", "prodigy.net.mx", "msn.com", "bell.ca", "bell.com", "rogers.ca", "rogers.com", "cogeco.ca", "cogeco.com", "hotmail.ca", "live.ca", "yahoo.ca", "xpmuser.github.io", "oldprodigy.onrender.com", "prodigygame.com"]
 }, Prodigy.EmailDomains.prototype = {
 	hasCommonDomain: function(e) {
 		var t = e.substring(e.indexOf("@") + 1, e.length);
@@ -45900,14 +45900,14 @@ Prodigy.ForestBoss = function(e, t) {
 			align: "center",
 		})
 		this.game.prodigy.create.font(this.content, 0, 155, "Daboss7173, NomadX2, FireProdigy, Prodidows, steadydelusionreview, Craftersshaft", {
+			width: 610,
+			align: "center",
+		})
+		this.game.prodigy.create.font(this.content, 0, 230, "Original Game By:", {
 			width: 600,
 			align: "center",
 		})
-		this.game.prodigy.create.font(this.content, 0, 220, "Original Game By:", {
-			width: 600,
-			align: "center",
-		})
-		this.game.prodigy.create.font(this.content, 0, 245, "Prodigy Education a.k.a. SMARTeacher", {
+		this.game.prodigy.create.font(this.content, 0, 255, "Prodigy Education a.k.a. SMARTeacher", {
 			width: 600,
 			align: "center",
 		})
@@ -46233,6 +46233,7 @@ Prodigy.ForestBoss = function(e, t) {
 	x: 720,
 	y: 20,
 	map: "btn-bonfire",
+	icon: "zone-fire",
 	target: "volcano-0",
 	msg: "Chef Mugs is in need of a wizard just like you! Learn fire spells and defeat a powerful boss!",
 	iconX: 1004,
@@ -46249,6 +46250,7 @@ Prodigy.ForestBoss = function(e, t) {
 	x: 80,
 	y: 50,
 	map: "btn-shiverchill",
+	icon: "zone-ice",
 	target: "mountain-0",
 	msg: "Bok & Slip are in need of a wizard just like you! Learn ice spells and defeat a powerful boss!",
 	iconX: 1004,
@@ -46265,6 +46267,7 @@ Prodigy.ForestBoss = function(e, t) {
 	x: 807,
 	y: 91,
 	map: "btn-skywatch",
+	icon: "zone-cloud",
 	target: "cloud-0",
 	msg: "Cumulo is in need of a wizard just like you! Learn storm spells and defeat a powerful boss!",
 	iconX: 1004,
@@ -46346,7 +46349,7 @@ Prodigy.ForestBoss = function(e, t) {
 	x: 100,
 	y: 340,
 	map: "btn-portal",
-	target: "arena-0",
+	target: "town-2",
 	msg: "Feel like challenging the best of the best? Defeat powerful wizards in duels and earn great rewards!"
 }], Prodigy.Menu.Character = function(e, t, i) {
 	this.player = i, Prodigy.RenderMenu.call(this, e, t, 0, 0, e.prodigy.textureMenu), this.create()
@@ -46408,7 +46411,7 @@ Prodigy.ForestBoss = function(e, t) {
 		}
 		this.modules[0].open();
 		var s = this.game.prodigy.create.panel(this, 5, 40, 5, 1, "blue");
-		s.scale.y = -1, s.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "healingmunch.github.io/XPMUser.github.io/oldprodigy/pde1700/?mods=WalkSpeed,FastGameSpeed,ImitationTitan/")), s.alpha = .5, this.game.prodigy.create.font(this, s.x, s.y + 5 - 40, "+Best Friend", {
+		s.scale.y = -1, s.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "xpmuser.github.io/oldprodigy/pde1700/?mods=WalkSpeed,FastGameSpeed,ImitationTitan/")), s.alpha = .5, this.game.prodigy.create.font(this, s.x, s.y + 5 - 40, "+Best Friend", {
 			align: "center",
 			width: 200
 		})
@@ -47326,7 +47329,7 @@ Prodigy.ForestBoss = function(e, t) {
                 this.game.prodigy.world.teleport("house-suburbs")
         },
 	challenge: function() {
-		this.game.prodigy.network.openWebsite("github.com/XPMUser/healingmunch.github.io/XPMUser.github.io/issues/new?assignees=&labels=Suggestion&projects=&template=feature_request.yml&title=%2ACoolest+title+ever%2A")
+		this.game.prodigy.network.openWebsite("github.com/XPMUser/xpmuser.github.io/issues/new?assignees=&labels=Suggestion&projects=&template=feature_request.yml&title=%2ACoolest+title+ever%2A")
 	},
 	sendGift: function() {
 		this.game.prodigy.network.openWebsite("youtu.be/dQw4w9WgXcQ?feature=shared")
@@ -54554,7 +54557,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 			type: "try-match",
 			classID: this.game.prodigy.player.getLatestClassID(),
 			grade: this.game.prodigy.player.grade
-		}, !0), this.findChallenger(), this.message = this.game.prodigy.open.message("Searching for a good match based on your current arena ranking... please wait. \n\n(It could take up to a minute or more.) \n\nTime waiting: XTIMERX", this.closeMessage.bind(this, !0), null, "Finding Challenger")) : this.message = this.game.prodigy.world.teleport("arena-0")
+		}, !0), this.findChallenger(), this.message = this.game.prodigy.open.message("Searching for a good match based on your current arena ranking... please wait. \n\n(It could take up to a minute or more.) \n\nTime waiting: XTIMERX", this.closeMessage.bind(this, !0), null, "Finding Challenger")) : this.message = this.game.prodigy.world.teleport("town-2")
 	},
 	findChallenger: function () {
 		if (Util.log("findChallenger retry"), Util.isDefined(this.game)) {
@@ -55885,7 +55888,7 @@ var Boot = function() {
 }();
 Boot.init = function() {
 	var e = new Phaser.Game(1280, 720, Phaser.CANVAS, "game-container");
-	e.prodigy = new Prodigy.GameObj(e), e.state.add("Boot", Boot), e.state.add("Loading", Prodigy.Loading), e.state.add("PVPLoading", Prodigy.PVPLoading), e.state.add("TileScreen", TileScreen), e.state.add("Login", Login), e.state.add("Battle", Prodigy.Battle.Battle), e.state.add("PVP", PVP), e.state.add("Faint", Faint), e.state.add("CharSelect", Prodigy.CharSelect), e.state.add("CharCreate", Prodigy.CharCreate), e.state.add("Docks", Docks), e.state.add("Academy", Academy), e.state.add("Arena", Arena), e.state.add("Forest", Forest), e.state.add("Mountain", Mountain), e.state.add("Cloud", Cloud), e.state.add("Volcano", Volcano), e.state.add("Pirate", Pirate), e.state.add("Plains", Plains), e.state.add("Tree", Tree), e.state.add("Dorm", Dorm), e.state.add("Intro", Intro), e.state.add("Tower", Tower), e.state.add("TowerBase", TowerBase), e.state.add("Dino", Dino), e.state.add("Museum", Museum), e.state.add("TownSquare", TownSquare), e.state.add("Tech", Tech), e.state.add("DinoDig", DinoDig), e.state.add("DanceDance", DanceDance), e.state.add("Util_Gear", Prodigy.Util_Gear), Util.isDefined(window.checkForMods) ? checkForMods(e, window.location.search) : console.log("%c %c %c Found no mods to hook into. %c %c ", "background: #9bd", "background: #48a", "background: #16a; color: #FFF", "background: #48a", "background: #9bd"), e.state.start("Boot"), e.prodigy.player.changeCurrentHearts(99999999999999990)
+	e.prodigy = new Prodigy.GameObj(e), e.state.add("Boot", Boot), e.state.add("Loading", Prodigy.Loading), e.state.add("PVPLoading", Prodigy.PVPLoading), e.state.add("TileScreen", TileScreen), e.state.add("Login", Login), e.state.add("Battle", Prodigy.Battle.Battle), e.state.add("PVP", PVP), e.state.add("Faint", Faint), e.state.add("CharSelect", Prodigy.CharSelect), e.state.add("CharCreate", Prodigy.CharCreate), e.state.add("Docks", Docks), e.state.add("Academy", Academy), e.state.add("Arena", Arena), e.state.add("Forest", Forest), e.state.add("Mountain", Mountain), e.state.add("Cloud", Cloud), e.state.add("Volcano", Volcano), e.state.add("Pirate", Pirate), e.state.add("Plains", Plains), e.state.add("TechZone", TechZone), e.state.add("Tree", Tree), e.state.add("Dorm", Dorm), e.state.add("Intro", Intro), e.state.add("Tower", Tower), e.state.add("TowerBase", TowerBase), e.state.add("Dino", Dino), e.state.add("Museum", Museum), e.state.add("TownSquare", TownSquare), e.state.add("Tech", Tech), e.state.add("DinoDig", DinoDig), e.state.add("DanceDance", DanceDance), e.state.add("Util_Gear", Prodigy.Util_Gear), Util.isDefined(window.checkForMods) ? checkForMods(e, window.location.search) : console.log("%c %c %c Found no mods to hook into. %c %c ", "background: #9bd", "background: #48a", "background: #16a; color: #FFF", "background: #48a", "background: #9bd"), e.state.start("Boot"), e.prodigy.player.changeCurrentHearts(99999999999999990)
 }, Prodigy.Loading = function(e) {
 	Phaser.State.call(this), this.game = e
 }, Prodigy.extends(Prodigy.Loading, Phaser.State, {
@@ -56181,7 +56184,7 @@ var Screen = function() {
 				size: 16,
 				width: 120,
 				align: "center"
-			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "healingmunch.github.io/XPMUser.github.io/oldprodigy/choose/")), (t = this.game.prodigy.create.panel(this.background, 220, 670, 3, 1, "lb")).alpha = .25, this.game.prodigy.create.font(this.background, t.x, t.y + 8, "Revolt", {
+			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "xpmuser.github.io/oldprodigy/choose/")), (t = this.game.prodigy.create.panel(this.background, 220, 670, 3, 1, "lb")).alpha = .25, this.game.prodigy.create.font(this.background, t.x, t.y + 8, "Revolt", {
 				size: 16,
 				width: 120,
 				align: "center"
@@ -59118,6 +59121,9 @@ Prodigy.Skin = function(e, t) {
 			case "tech-0":
 				this.game.prodigy.start("Tech", s);
 				break;
+			case "techzone-0":
+				this.game.prodigy.start("TechZone", s);
+				break;
 			case "forest-0":
 				this.game.prodigy.start("Forest", s);
 				break;
@@ -59135,9 +59141,6 @@ Prodigy.Skin = function(e, t) {
 				break;
 			case "tree-0":
 				this.game.prodigy.start("Tree", s);
-				break;
-			case "arena-0":
-				this.game.prodigy.start("Arena", s);
 				break;
 			case "intro-0":
 				this.game.prodigy.start("Intro", s);
@@ -66801,7 +66804,7 @@ var Tree = function () {
 		}, e
 	}();
 Tree.DATA = {
-	tag: "Tree",
+	tag: "tree-0",
 	zoneName: "dungeon-tree",
 	fullName: "The Walking Room",
 	start: "entrance",
@@ -66834,7 +66837,7 @@ Tree.DATA = {
 };
 var TownSquare = function() {
 		function e(t) {
-			WalkableScreen.call(this, t, e.DATA), this.assets = ["npc-sprite-stache", "npc-sprite-merchant"], this.area = [
+			WalkableScreen.call(this, t, e.DATA), this.assets = ["npc-sprite-stache", "npc-sprite-merchant", "zone-townsquare"], this.area = [
 				[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 				[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 				[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -66877,7 +66880,7 @@ var TownSquare = function() {
 			WalkableScreen.prototype.create.call(this, [], "town-0")
 		}, e.prototype.screenSetup = function() {
 			WalkableScreen.prototype.screenSetup.call(this), new Prodigy.Container.QuestNPC(this.game, this.content, 440, 290, null, {
-				name: "M.Stache",
+				name: "M. Stache",
 				atlas: "stache"
 			}, this.openText.bind(this));
 			var e = this.game.prodigy.create.sprite(this.game, 490, 250, this.screenName, "wheel");
@@ -66897,13 +66900,13 @@ var TownSquare = function() {
 		}, e.prototype.toForest = function() {
 			this.game.prodigy.world.teleport("tutorial-D8", 1190, 260)
 		}, e.prototype.toDocks = function() {
-			this.game.state.states.Docks.playerX = 575, this.game.state.states.Docks.playerY = 185, this.game.state.start("Docks")
+			this.game.state.states.Docks.playerX = 575, this.game.state.states.Docks.playerY = 185, this.game.prodigy.world.teleport("docks-0")
 		}, e.prototype.toArena = function() {
-			this.game.state.states.Arena.playerX = 640, this.game.state.states.Arena.playerY = 390, this.game.state.start("Arena")
+			this.game.state.states.Arena.playerX = 640, this.game.state.states.Arena.playerY = 390, this.game.prodigy.world.teleport("town-2")
 		}, e.prototype.toAcademy = function() {
-			this.game.state.states.Academy.playerX = 313, this.game.state.states.Academy.playerY = 613, this.game.state.start("Academy")
+			this.game.state.states.Academy.playerX = 313, this.game.state.states.Academy.playerY = 613, this.game.prodigy.world.teleport("academy-0")
 		}, e.prototype.openText = function() {
-			Prodigy.Component.DayWheel(this.game, this.foreground, this.game.prodigy.player)
+			TownSquare(this.game, this.foreground, this.game.prodigy.player)
 		}, e.prototype.openStore = function(e) {
 			for (var t = Util.getDateSeed(), a = [], i = 0; i < Items.data.item.length; i++) 1 === Items.data.item[i].drop && a.push(i + 1);
 			var s = a[Math.floor(Util.pseudoRandomNumber(t) * a.length)],
@@ -66948,7 +66951,20 @@ TownSquare.AUDIO = [{
 	tag: "TownSquare",
 	zoneName: "zone-townsquare",
 	atlas: "zone-townsquare",
-	fullName: "Lamplight Square"
+	fullName: "Lamplight Square",
+	dialogue: [{
+		text: "Hello there! Do you want to spin the Wheel of Wonder?",
+		anim: 4
+	}, {
+		text: "Let's spin that wheel!",
+		anim: 4
+	}, {
+		text: "Sorry, you'll have to come back tomorrow to spin again!",
+		anim: 1
+	}, {
+		text: "Fantastic! Want to spin again?",
+		anim: 4
+	}]
 };
 var Academy = function() {
 	function e(t) {
@@ -69486,7 +69502,7 @@ var Plains = function () {
 	}, e.prototype.toVolcano = function () {
 		this.game.prodigy.world.teleport("volcano-0", 1190, 590)
 	}, e.prototype.toTech = function () {
-		this.game.prodigy.world.teleport("arena-0", 890, 260)
+		this.game.prodigy.world.teleport("techzone-0", 890, 260)
 	}, e.prototype.toClouds = function () {
 		this.game.state.states.Cloud.playerX = 1065, this.game.state.states.Cloud.playerY = 277, this.game.state.start("Cloud")
 	}, e.prototype.startText = function () {
@@ -75629,12 +75645,687 @@ TowerBase.AUDIO = [{
 		audio: Tower.AUDIO[0]
 	}]
 };
-var Arena = function () {
+var TechZone = function () {
 	function e(t) {
-		WalkableScreen.call(this, t, e.DATA), this.assets = ["npc-sprite-stache", "npc-sprite-merchant", "tileset-core"], this.area = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0], [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0], [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0], [1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]], this.playerX = 890, this.playerY = 260, this.bgm = "bgm-intro"
+		WalkableScreen.call(this, t, e.DATA), this.assets = ["npc-sprite-stache", "npc-sprite-merchant", "tileset-core"], this.area = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]], this.playerX = 890, this.playerY = 260, this.bgm = "bgm-intro"
 	}
 	return e.prototype = Object.create(WalkableScreen.prototype), e.prototype.create = function () {
-		WalkableScreen.prototype.create.call(this, [], "arena-0")
+		WalkableScreen.prototype.create.call(this, [], "techzone-0")
+	}, e.prototype.screenSetup = function () {
+		WalkableScreen.prototype.screenSetup.call(this), this.path.addCallback(3, this.toTown.bind(this)), this.createStoreNPC(670, 250, e.STORE), this.digBtn = this.game.prodigy.create.element(this.content, 1010, 280);
+		var t = this.digBtn.add(this.game.prodigy.create.sprite(40, 40, "icons", "star2"));
+		t.anchor.setTo(.5, .5), t.inputEnabled = !0, t.angle = -20, t.events.onInputDown.add(this.toTech, this), this.digBtn.add(this.game.prodigy.create.sprite(0, 10, "icons", "item/47")), this.game.add.tween(t).to({
+			angle: 20
+		}, 1e3, Phaser.Easing.Quadratic.InOut, !0, 0, Number.MAX_VALUE, !0);
+		var i = this.game.prodigy.create.sprite(437, 462, this.screenName, "m1");
+		i.anchor.setTo(.5, 1), this.content.add(i), new Prodigy.Container.QuestNPC(this.game, this.content, 210, 360, e.DATA, {
+			name: "M. Stache",
+			atlas: "stache"
+		});
+		var a = [{
+			pre: "Technician ",
+			req: [{
+				rtype: "item",
+				type: "outfit",
+				ID: 43
+			}, {
+				rtype: "item",
+				type: "hat",
+				ID: 46
+			}],
+			fail: "You need to buy the Robot set to unlock!"
+		}, {
+			post: " the Techfolk",
+			req: [{
+				rtype: "item",
+				type: "item",
+				ID: 65
+			}],
+			fail: "You need to win the Ribbon from the real Robolympics to unlock!"
+		}, {
+			pre: "Techeater ",
+			req: [{
+				rtype: "pet",
+				ID: 77
+			}],
+			fail: "You need to catch or buy a Tech Gobbler to unlock!"
+		}, {
+			post: " Techchaser",
+			member: !0,
+			fail: "You need to become a member to unlock!"
+		}, {
+			post: " the Technician",
+			member: !0,
+			fail: "You need to become a member to unlock!"
+		}, {
+			post: " the Developer",
+			member: !0,
+			fail: "You need to become a member to unlock!"
+		}];
+		this.addNicknamer(336, 223, a)
+	}, e.prototype.toPlains = function () {
+		this.game.prodigy.world.teleport("pirate-0")
+	}, e.prototype.toTech = function () {
+		this.game.prodigy.world.teleport("lamplight-D4")
+	}, e.prototype.toTown = function () {
+		this.game.prodigy.world.teleport("cloud-1", 188, 560)
+	}, e
+}();
+TechZone.STORE = {
+	name: "The Tech Store",
+	items: [{
+		ID: 76,
+		type: "hat"
+	}, {
+		ID: 77,
+		type: "hat"
+	}, {
+		ID: 78,
+		type: "hat"
+	}, {
+		ID: 58,
+		type: "outfit"
+	}, {
+		ID: 77,
+		type: "pet"
+	}, {
+		ID: 79,
+		type: "hat"
+	}]
+}, TechZone.AUDIO = [{
+	tag: "voice-4",
+	s: 0,
+	d: 2
+}, {
+	tag: "voice-4",
+	s: 2,
+	d: 1
+}, {
+	tag: "voice-4",
+	s: 3,
+	d: 1
+}, {
+	tag: "voice-4",
+	s: 4,
+	d: 2
+}, {
+	tag: "voice-4",
+	s: 6,
+	d: 1
+}], TechZone.DATA = {
+	ID: 10,
+	tag: "techzone-0",
+	zoneName: "zone-tech",
+	atlas: "zone-tech",
+	fullName: "Tech Zone",
+	npc: "Cumulo",
+	icon: "zone-air",
+	battle: {
+		screen: "bg-battle-tech",
+		encounter: [{
+			ID: 4
+		}, {
+			ID: 5
+		}, {
+			ID: 6
+		}, {
+			ID: 13
+		}, {
+			ID: 14
+		}, {
+			ID: 15
+		}, {
+			ID: 18
+		}, {
+			ID: 19
+		}, {
+			ID: 20
+		}, {
+			ID: 21
+		}, {
+			ID: 22
+		}, {
+			ID: 41
+		}, {
+			ID: 42
+		}, {
+			ID: 43
+		}, {
+			ID: 44
+		}, {
+			ID: 56
+		}, {
+			ID: 57
+		}, {
+			ID: 72
+		}, {
+			ID: 73
+		}, {
+			ID: 74
+		}, {
+			ID: 77
+		}, {
+			ID: 84
+		}, {
+			ID: 85
+		}, {
+			ID: 86
+		}, {
+			ID: 90
+		}, {
+			ID: 91
+		}]
+	},
+	dialogue: [{
+		face: 2,
+		anim: 2,
+		text: "A good job. You are a model W12-4RD.",
+		audio: TechZone.AUDIO[1]
+	}, {
+		face: 0,
+		anim: 2,
+		text: "Set your automators to maximum accomplishment? (are you ready?)",
+		audio: TechZone.AUDIO[1]
+	}, {
+		face: 4,
+		anim: 4,
+		text: "Greetings, coggle. Are you here to enter the Robolympics?",
+		audio: TechZone.AUDIO[0]
+	}, {
+		face: 4,
+		anim: 4,
+		text: "If so, what kind of robot are you?",
+		audio: TechZone.AUDIO[0]
+	}, {
+		face: 4,
+		anim: 0,
+		text: "...",
+		audio: TechZone.AUDIO[1]
+	}, {
+		face: 4,
+		anim: 0,
+		text: "You're a wizard, you say? Interesting. I though they stopped making the W12-4RD model coggle. You're a relic!",
+		audio: TechZone.AUDIO[1]
+	}, {
+		face: 4,
+		anim: 0,
+		text: "Whatever you are, welcome to the TECH CITY!",
+		audio: TechZone.AUDIO[1]
+	}, {
+		face: 4,
+		anim: 0,
+		text: "You look confused, W12-4RD. No matter. Defeat some coggles for me, and I will explain everything.",
+		audio: TechZone.AUDIO[1]
+	}, {
+		face: 4,
+		anim: 0,
+		text: "You are strong for a W12-4RD. Strong enough for the Robolympics.",
+		audio: TechZone.AUDIO[1]
+	}, {
+		face: 4,
+		anim: 0,
+		text: "I used to run the Wheel of Wonder service, but not anymore. Wheeler took over for me.",
+		audio: TechZone.AUDIO[1]
+	}, {
+		face: 4,
+		anim: 0,
+		text: "Well, since you helped me out, I will only charge you one LAK.",
+		audio: TechZone.AUDIO[1]
+	}, {
+		face: 4,
+		anim: 0,
+		text: "You do not have even ONE LAK? Very well. Defeat some ???, they often carry them.",
+		audio: TechZone.AUDIO[1]
+	}, {
+		face: 4,
+		anim: 0,
+		text: "You are now officially in the Tech Zone, the greatest competition for robots on the island!",
+		audio: TechZone.AUDIO[1]
+	}, {
+		face: 4,
+		anim: 0,
+		text: "The coggles (robots) live here in the TECH CITY, and hold the tournament every year. And the strongest coggle wins the GRAND PRIZE!",
+		audio: TechZone.AUDIO[1]
+	}, {
+		face: 4,
+		anim: 0,
+		text: "You will have many challenges to face. The first starts now - defeat whatever you face.",
+		audio: TechZone.AUDIO[1]
+	}],
+	quests: [{
+		coords: [110, 0],
+		name: "They Are Coming",
+		desc: "The Skywatch is under attack! Defeat the incoming hobs!",
+		start: [2, 3, 4],
+		during: [],
+		complete: [0],
+		encounter: [{
+			ID: 84
+		}],
+		req: [{
+			type: "pet",
+			ID: 84,
+			N: 2
+		}],
+		reward: [{
+			type: "gold",
+			N: 250
+		}]
+	}, {
+		coords: [0, 75],
+		name: "The Sky is Falling!",
+		desc: "Look for spare parts to repair the station. Luminites should carry them.",
+		start: [5],
+		during: [],
+		complete: [0],
+		encounter: [{
+			ID: 20,
+			drops: [{
+				ID: 49,
+				type: "item",
+				R: 1
+			}]
+		}],
+		req: [{
+			type: "item",
+			ID: 49,
+			N: 3
+		}],
+		reward: [{
+			type: "gold",
+			N: 250
+		}]
+	}, {
+		coords: [110, 110],
+		name: "Tech TRIALS",
+		desc: "Defeat cloud nibblers for Cumulo to pass the first trial.",
+		start: [6, 7, 8, 9, 10, 11, 12],
+		during: [],
+		complete: [13],
+		encounter: [{
+			ID: 56,
+			R: 1
+		}],
+		req: [{
+			type: "pet",
+			ID: 56,
+			N: 3
+		}],
+		reward: [{
+			type: "spell",
+			ID: 37
+		}]
+	}, {
+		coords: [225, 60],
+		name: "Vandals and Thieves",
+		desc: "Cumulo needs you to track down the hobs that stole the parts to the station.",
+		start: [14, 15, 16],
+		during: [],
+		complete: [0],
+		encounter: [{
+			ID: 84,
+			nickname: "Part-carrying hob",
+			R: 1,
+			drops: [{
+				ID: 47,
+				type: "item",
+				R: 1
+			}]
+		}, {
+			ID: 84
+		}, {
+			ID: 20
+		}],
+		req: [{
+			type: "item",
+			ID: 47,
+			N: 3
+		}],
+		reward: [{
+			type: "boots",
+			N: 1,
+			ID: 25
+		}]
+	}, {
+		coords: [335, 0],
+		name: "Wrench in the Gears",
+		desc: "You'll need a wrench to fix the station. Defeat cloud neeks and take their tools.",
+		start: [17],
+		during: [],
+		complete: [0],
+		encounter: [{
+			ID: 72,
+			R: .75,
+			drops: [{
+				ID: 53,
+				type: "item",
+				R: .25
+			}]
+		}, {
+			ID: 84,
+			R: .25
+		}],
+		req: [{
+			type: "item",
+			ID: 53,
+			N: 1
+		}],
+		reward: [{
+			type: "gold",
+			N: 250
+		}]
+	}, {
+		coords: [450, 75],
+		name: "Head Hob",
+		desc: "Defeat the leader of the hobs and take back the power source.",
+		start: [18, 19],
+		during: [],
+		complete: [13],
+		pets: [{
+			ID: 85,
+			nickname: "Hob Leader"
+		}, {
+			ID: 84,
+			nickname: "Grunt Hob"
+		}, {
+			ID: 84,
+			nickname: "Grunt Hob"
+		}],
+		req: [{
+			type: "boss",
+			N: 1
+		}],
+		reward: [{
+			type: "spell",
+			ID: 38
+		}]
+	}, {
+		coords: [335, 110],
+		name: "The Birds",
+		desc: "Cumulo needs you to go defeat birds, 'cause they're messin' up the place!",
+		start: [14, 20, 21],
+		during: [],
+		complete: [0],
+		encounter: [{
+			ID: 13,
+			R: 5
+		}, {
+			ID: 4,
+			R: 1
+		}],
+		req: [{
+			type: "pet",
+			ID: 13,
+			N: 5
+		}, {
+			type: "pet",
+			ID: 4,
+			N: 2
+		}],
+		reward: [{
+			type: "gold",
+			N: 250
+		}]
+	}, {
+		coords: [335, 190],
+		name: "Bird is the Word",
+		desc: "According to Cumulo, squawks are the worst. Go defeat them!",
+		start: [22],
+		during: [],
+		complete: [0],
+		encounter: [{
+			ID: 18,
+			R: 4
+		}, {
+			ID: 72,
+			R: 2
+		}, {
+			ID: 85,
+			R: 1
+		}],
+		req: [{
+			type: "pet",
+			ID: 18,
+			N: 6
+		}],
+		reward: [{
+			type: "gold",
+			N: 250
+		}]
+	}, {
+		coords: [450, 225],
+		name: "Big Bird",
+		desc: "All your bird-challenging has caught the attention of the bird leader!",
+		start: [23],
+		during: [],
+		complete: [13],
+		encounter: [{
+			ID: 42,
+			R: 1,
+			nickname: "Big Bird"
+		}, {
+			ID: 41,
+			R: 9
+		}],
+		req: [{
+			type: "pet",
+			ID: 42,
+			N: 1
+		}],
+		reward: [{
+			type: "spell",
+			ID: 39
+		}]
+	}, {
+		coords: [335, 300],
+		name: "I Have the Power!",
+		desc: "To build a lightning rod, first you need to collect a green feather from an evolotus.",
+		start: [24, 25],
+		during: [],
+		complete: [0],
+		encounter: [{
+			ID: 43,
+			R: 2,
+			drops: [{
+				ID: 10,
+				type: "item",
+				R: .15
+			}]
+		}, {
+			ID: 72,
+			R: 1
+		}, {
+			ID: 84,
+			R: 1
+		}],
+		req: [{
+			type: "item",
+			ID: 10,
+			N: 1
+		}],
+		reward: [{
+			type: "hat",
+			N: 1,
+			ID: 8
+		}]
+	}, {
+		coords: [225, 240],
+		name: "Rod! Rod! Rod!",
+		desc: "Defeat monsters that have hands in order to collect a steel rod.",
+		start: [26],
+		during: [],
+		complete: [0],
+		encounter: [{
+			ID: 84,
+			R: 1,
+			drops: [{
+				ID: 52,
+				type: "item",
+				R: .2
+			}]
+		}, {
+			ID: 85,
+			R: 1,
+			drops: [{
+				ID: 52,
+				type: "item",
+				R: .25
+			}]
+		}, {
+			ID: 72,
+			R: 1,
+			drops: [{
+				ID: 52,
+				type: "item",
+				R: .2
+			}]
+		}, {
+			ID: 14,
+			R: 1
+		}, {
+			ID: 41,
+			R: 1
+		}],
+		req: [{
+			type: "item",
+			ID: 52,
+			N: 1
+		}],
+		reward: [{
+			type: "gold",
+			N: 250
+		}]
+	}, {
+		coords: [110, 300],
+		name: "Popular Mechanic",
+		desc: "Look for Mechanic Lumiot and defeat him.",
+		start: [27, 28],
+		during: [],
+		complete: [13],
+		encounter: [{
+			ID: 21,
+			nickname: "Mechanic Lumiot",
+			R: 1
+		}, {
+			ID: 20,
+			R: 3
+		}, {
+			ID: 13,
+			R: 3
+		}, {
+			ID: 56,
+			R: 3
+		}, {
+			ID: 41,
+			R: 3
+		}],
+		req: [{
+			type: "pet",
+			ID: 21,
+			N: 1
+		}],
+		reward: [{
+			type: "spell",
+			ID: 40
+		}]
+	}, {
+		coords: [0, 225],
+		name: "Who's in Charge?",
+		desc: "Find and defeat a cloaker, and collect its charge stone.",
+		start: [29, 30, 31],
+		during: [],
+		complete: [0],
+		encounter: [{
+			ID: 90,
+			R: 1,
+			drops: [{
+				ID: 54,
+				type: "item",
+				R: 1
+			}]
+		}, {
+			ID: 56,
+			R: 3
+		}, {
+			ID: 5,
+			R: 1
+		}, {
+			ID: 85,
+			R: 3
+		}, {
+			ID: 4,
+			R: 3
+		}],
+		req: [{
+			type: "item",
+			ID: 54,
+			N: 1
+		}],
+		reward: [{
+			type: "outfit",
+			N: 1,
+			ID: 5
+		}]
+	}, {
+		coords: [110, 190],
+		name: "Stormy Weather",
+		desc: "Defeat different storm monsters to charge the stone.",
+		start: [32],
+		during: [],
+		complete: [0],
+		encounter: [{
+			ID: 15,
+			R: 3
+		}, {
+			ID: 21,
+			R: 3
+		}, {
+			ID: 57,
+			R: 3
+		}],
+		req: [{
+			type: "pet",
+			ID: 21,
+			N: 2
+		}, {
+			type: "pet",
+			ID: 57,
+			N: 3
+		}],
+		reward: [{
+			type: "weapon",
+			N: 1,
+			ID: 23
+		}]
+	}, {
+		coords: [225, 150],
+		name: "King of the Hill",
+		desc: "Defeat The Forest Guardian and complete the last trial!",
+		start: [33, 34],
+		during: [35],
+		complete: [13, 36, 37, 38],
+		boss: {
+			ID: 6,
+			element: "wizard",
+			attacks: [31, 32, 33, 34, 35, 36],
+			name: "Forest Guardian"
+		},
+		req: [{
+			type: "boss",
+			N: 1
+		}],
+		reward: [{
+			type: "spell",
+			ID: 41
+		}]
+	}]
+};
+var Arena = function () {
+	function e(t) {
+		WalkableScreen.call(this, t, e.DATA), this.assets = ["npc-sprite-clankboot", "npc-sprite-merchant", "tileset-core"], this.area = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0], [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0], [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0], [1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]], this.playerX = 890, this.playerY = 260, this.bgm = "bgm-intro"
+	}
+	return e.prototype = Object.create(WalkableScreen.prototype), e.prototype.create = function () {
+		WalkableScreen.prototype.create.call(this, [], "town-2")
 	}, e.prototype.screenSetup = function () {
 		WalkableScreen.prototype.screenSetup.call(this), this.path.addCallback(3, this.toTown.bind(this)), this.createStoreNPC(944, 376, e.STORE), this.digBtn = this.game.prodigy.create.element(this.content, 1110, 280);
 		var t = this.digBtn.add(this.game.prodigy.create.sprite(40, 40, "icons", "star2"));
@@ -75643,9 +76334,9 @@ var Arena = function () {
 		}, 1e3, Phaser.Easing.Quadratic.InOut, !0, 0, Number.MAX_VALUE, !0);
 		var i = this.game.prodigy.create.sprite(437, 462, this.screenName, "vase");
 		i.anchor.setTo(.5, 1), this.content.add(i), new Prodigy.Container.QuestNPC(this.game, this.content, 310, 400, e.DATA, {
-			name: "M. Stache",
-			atlas: "stache"
-		}, this.openArena.bind(this));
+			name: "Clankboot",
+			atlas: "clankboot"
+		}, this.openArena.bind(this), !0);
 		var a = [{
 			pre: "Duelist ",
 			member: !0,
@@ -75676,7 +76367,7 @@ var Arena = function () {
 		var t = e.DATA.dialogue[0];
 		t.yes = this.game.prodigy.open.arena.bind(this.game.prodigy.open);
 		var i = this.game.prodigy.dialogue.create();
-		i.setText(t), i.start("stache")
+		i.setText(t), i.start("clankboot")
 	}, e.prototype.toPlains = function () {
 		this.game.prodigy.world.teleport("pirate-0")
 	}, e.prototype.toTech = function () {
@@ -75991,28 +76682,12 @@ Arena.STORE = {
 		}]
 	}]
 }, Arena.AUDIO = [{
-	tag: "voice-4",
+	tag: "voice-3",
 	s: 0,
-	d: 2
-}, {
-	tag: "voice-4",
-	s: 2,
-	d: 1
-}, {
-	tag: "voice-4",
-	s: 3,
-	d: 1
-}, {
-	tag: "voice-4",
-	s: 4,
-	d: 2
-}, {
-	tag: "voice-4",
-	s: 6,
 	d: 1
 }], Arena.DATA = {
 	ID: 10,
-	tag: "arena-0",
+	tag: "town-2",
 	zoneName: "zone-arena",
 	atlas: "zone-arena",
 	fullName: "Coliseum",
@@ -76075,8 +76750,8 @@ Arena.STORE = {
 		}]
 	},
 	dialogue: [{
-		face: 2,
-		anim: 2,
+		face: 0,
+		anim: 4,
 		text: "Do you want to train in the arena?",
 		audio: Arena.AUDIO[0]
 	}, {
