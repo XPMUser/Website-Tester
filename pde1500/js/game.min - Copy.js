@@ -1,89 +1,57 @@
-const socket = new WebSocket("wss://old-prodigy-servers.onrender.com/");
-
-socket.onopen = function () {
-    console.log("✅ Connected to WebSocket server.");
-    
-    // Request the world list when connected
-    socket.send(JSON.stringify({ action: "getWorldList" }));
-};
-
-socket.onmessage = function (event) {
-    console.log("🌍 World list received:", event.data); 
-    
-    try {
-        const data = JSON.parse(event.data);
-        if (data.action === "worldList") {
-            updateWorldList(data.servers);
-        }
-    } catch (error) {
-        console.error("🚨 Error parsing WebSocket message:", error);
-    }
-};
-
-socket.onerror = function (error) {
-    console.error("❌ WebSocket Error:", error);
-};
-
-socket.onclose = function () {
-    console.log("🔌 WebSocket connection closed.");
-};
-
-// Function to update the world list in the UI
-
-function updateWorldList(servers) {
-    const worldListContainer = document.getElementById("world-list.json"); // Adjust this based on your HTML
-    if (!worldListContainer) return;
-
-    worldListContainer.innerHTML = ""; // Clear the existing list
-    servers.forEach(server => {
-        const worldItem = document.createElement("div");
-        worldItem.className = "world-item";
-        worldItem.innerHTML = `<strong>${server.name}</strong> (${server.status}) - ${server.players} players`;
-        worldListContainer.appendChild(worldItem);
-    });
-}
 function Util() {}
 
 function Device() {}
 
 function ApiClient(e, t) {
 	function i(e, t) {
-		var i = d[e];
-		t.root = i + c, t.url.leaderboard = i + g, t.url.account = i + u, t.url.multiplayer = p[e], t.url.matchmaking = i + y, t.url.mailer = i + f, t.url.friend = i + m, t.url.events = i + x, t.url.gameTools = i + b, t.url.assignments = i + v, t.url.education = i + w
+		var i = g[e];
+		t.root = i + y
 	}
 
 	function a(e, t, i, a, s, r) {
-		void 0 === i && (i = {}), void 0 === r && (r = {}), i["auth-key"] = o.uniqueKey, i.token = o.uniqueKey;
-		var n = {
+		void 0 === i && (i = {}), void 0 === r && (r = {}), i["auth-key"] = l.uniqueKey, i.token = l.uniqueKey;
+		var o = {
 			url: t,
 			data: i,
 			timeout: 3e4,
 			type: e,
 			success: a["200"],
-			crossDomain: !0
+			crossDomain: !0,
+			error: function (e) {
+				"Service Unavailable" === e.responseText && (e.status = 503), void 0 !== a[e.status] ? a[e.status](s, e.status) : l.generic_ajax_error(s, e.status)
+			}
 		};
-		r.ignoreHeaders && (n.headers = null), $.ajax(n)
+		r.ignoreHeaders && (o.headers = null), $.ajax(o)
 	}
 
 	function s(e, t, i, s) {
-		a("post", l.root + l.version + e, t, i, s)
+		"/status" === e ? a("get", c.root + e.substr(1), t, i, s) : a("get", c.root + c.version + e, t, i, s)
 	}
 
-	function r(e, t, i) {
-		for (var a = $.extend({}, h), s = Object.keys(e), r = 0, o = s.length; o > r; ++r) a[s[r]] = e[s[r]];
-		return void 0 !== t ? function e(t, i, a) {
-			for (var s = 0, r = i.length; r > s; ++s)
-				if (void 0 === t[i[s]]) return Util.log("Missing method for " + a + " statusCode: " + i[s], Util.ERROR), !1;
-			return t
-		}(a, t, i) : void 0
+	function r(e, t, i, s) {
+		a("post", c.root + c.version + e, t, i, s)
 	}
-	var o = this,
-		n = {},
-		h = {};
-	this.generic_ajax_error = function() {}, this.uniqueKey = void 0, this.userID = void 0, this.socket = void 0, this.clientVersion = e.clientVersion;
-	var l = {
+
+	function o(e, t, i) {
+		for (var a = 0, s = t.length; s > a; ++a)
+			if (void 0 === e[t[a]]) return Util.log("Missing method for " + i + " statusCode: " + t[a], Util.ERROR), !1;
+		return e
+	}
+
+	function n(e, t, i) {
+		for (var a = $.extend({}, p), s = Object.keys(e), r = 0, n = s.length; n > r; ++r) a[s[r]] = e[s[r]];
+		return void 0 !== t ? o(a, t, i) : void 0
+	}
+
+	function h(e) {
+		return "[object Array]" !== Object.prototype.toString.call(e) && (e = [e]), JSON.stringify(e)
+	}
+	var l = this,
+		d = {},
+		p = {};
+	this.generic_ajax_error = function () {}, this.uniqueKey = void 0, this.userID = void 0, this.socket = void 0, this.clientVersion = e.clientVersion;
+	var c = {
 			version: "v1",
-			version: "v4",
 			autoping: !0,
 			url: {
 				leaderboard: void 0,
@@ -94,27 +62,30 @@ function ApiClient(e, t) {
 			ajax_timeout: 3e4,
 			root: void 0
 		},
-		d = {
-			dev: "https://toonigy.github.io/Prodidows-server/public/",
+		g = {
+			dev: "/",
 			staging: "https://www.prodigygame.org/",
 			production: "https://www.prodigygame.com/"
 		},
-		p = {
-			dev: "https://toonigy.github.io/Prodidows-server/public/",
-			staging: "https://prodidows-server.onrender.com/",
-			production: "https://prodidows-server.onrender.com/"
+		u = {
+			dev: "https://multiplayer-dev.prodigygame.org/",
+			staging: "https://multiplayer.prodigygame.org/",
+			production: "https://multiplayer.prodigygame.com/"
 		},
-		c = "game-api/",
-		g = "leaderboard-api/",
-		u = "account-api/",
-		y = "matchmaking-api/",
-		m = "friend-api/",
-		f = "game-mailer-api/",
-		b = "game-tools-api/",
-		v = "assignment-api/",
-		w = "education-api/",
-		x = "worlds-api/";
+		y = "game-api/",
+		m = "leaderboard-api/",
+		f = "account-api/",
+		b = "matchmaking-api/",
+		v = "friend-api/",
+		w = "game-mailer-api/",
+		P = "game-tools-api/",
+		x = "assignment-api/",
+		D = "education-api/",
+		I = "events-api/";
 	switch (window.location.host) {
+	case "dev.prodigygame.org":
+		i("dev", c);
+		break;
 		case "dev.prodigygame.org":
 		case "localhost":
 		case "xpmuser.github.io":
@@ -146,85 +117,62 @@ function ApiClient(e, t) {
 		case "XPMUser.github.io":
 			i("production", l)
 	}
-	var D = window.location.search;
-	if (D.indexOf("env=dev") >= 0 ? i("dev", l) : D.indexOf("env=staging") >= 0 ? i("staging", l) : (D.indexOf("env=production") >= 0 || D.indexOf("env=prod") >= 0) && i("production", l), e)
-		for (var P = Object.keys(l), I = 0, k = P.length; k > I; ++I) void 0 !== e[P[I]] && (l[P[I]] = e[P[I]]);
-	if (n = l, h["500"] = function() {
+	var k = window.location.search;
+	if (k.indexOf("env=dev") >= 0 ? i("dev", c) : k.indexOf("env=staging") >= 0 ? i("staging", c) : (k.indexOf("env=production") >= 0 || k.indexOf("env=prod") >= 0) && i("production", c), e)
+		for (var C = Object.keys(c), T = 0, _ = C.length; _ > T; ++T) void 0 !== e[C[T]] && (c[C[T]] = e[C[T]]);
+	if (d = c, p["500"] = function () {
 			Util.log("Something happened with the webservice...", Util.ERROR)
-		}, h["404"] = function() {
+		}, p["404"] = function () {
 			Util.log("The data you are attempting to access does not exist.")
 		}, t)
-		for (var C = Object.keys(t), I = 0, k = C.length; k > I; ++I) void 0 !== t[C[I]] && (h[C[I]] = t[C[I]]);
-// Ensure the multiplayer URL is set correctly
-l.url.multiplayer = "https://toonigy.github.io/Prodidows-server/public/"; // Replace with your actual WebSocket URL
-
-this.joinMultiplayerServer = function(e, t, i, a, s, n, h, d) {
-    var p = r(i, ["200", "503"], "Join multiplayer Server");
-		if (p) {
-			var c = this.userID,
+		for (var E = Object.keys(t), T = 0, _ = E.length; _ > T; ++T) void 0 !== t[E[T]] && (p[E[T]] = t[E[T]]);
+	this.joinMultiplayerServer = function (e, t, i, a, s, r, o, h) {
+		var d = n(i, ["200", "503"], "Join multiplayer Server");
+		if (d) {
+			var p = this.userID,
 				g = this.uniqueKey;
-			if (void 0 == c || void 0 == g) return Util.log("missing user id or token"), !1;
-			var u = !0,
-				y = l.url.multiplayer;
+			if (void 0 == p || void 0 == g) return Util.log("missing user id or token"), !1;
+			var u = !1,
+				y = c.url.multiplayer;
 			/^https:\/\//.test(y) && (u = !0);
-var m = {
-    "force new connection": true, // Ensures a fresh connection every time
-    reconnection: true, // Enables automatic reconnection if disconnected
-    transports: ["websocket", "xhr-polling", "jsonp-polling", "htmlfile"], // Transport fallback options
-    secure: u, // Determines if a secure connection is needed (based on `u`)
-    query: `userId=${c}&worldId=${e}&userToken=${g}&zone=${t}` // Passes user data for connection
-};
-			o.socket = io.connect(l.url.multiplayer, m), o.socket.on("connect", function() {
+			var m = {
+				"force new connection": !0,
+				reconnection: !1,
+				transports: ["websocket", "xhr-polling", "jsonp-polling", "htmlfile"],
+				secure: u,
+				query: "userId=" + p + "&worldId=" + e + "&userToken=" + g + "&zone=" + t
+			};
+			l.socket = io.connect(c.url.multiplayer, m), l.socket.on("connect", function () {
 				Util.log("client connected")
-			}), o.socket.on("connect", p["200"]), o.socket.on("connect_error", function(e) {
+			}), l.socket.on("connect", d["200"]), l.socket.on("connect_error", function (e) {
 				Util.log("connect_error"), Util.log(e, Util.ERROR)
-			}), o.socket.on("error", function(e) {
-				e && Util.log(e, Util.ERROR), e.code && p[e.code] && p[e.code]()
-			}), o.socket.on("connect_error", p["503"]), o.socket.on("message", function(e) {
+			}), l.socket.on("error", function (e) {
+				e && Util.log(e, Util.ERROR), e.code && d[e.code] && d[e.code]()
+			}), l.socket.on("connect_error", d["503"]), l.socket.on("message", function (e) {
 				a(e)
-			}), o.socket.on("playerJoined", function(e) {
-				Util.log("player Joined - playerId: " + e), h(e)
-			}), o.socket.on("playerLeft", function(e) {
-				Util.log("player Left - playerId: " + e), d(e)
-			}), o.socket.on("playerList", function(e) {
+			}), l.socket.on("playerJoined", function (e) {
+				Util.log("player Joined - playerId: " + e), o(e)
+			}), l.socket.on("playerLeft", function (e) {
+				Util.log("player Left - playerId: " + e), h(e)
+			}), l.socket.on("playerList", function (e) {
 				Util.log("player list received"), s(e)
-			}), o.socket.on("disconnect", function() {
-				Util.log("Disconnected from multiplayer server"), n()
+			}), l.socket.on("disconnect", function () {
+				Util.log("Disconnected from multiplayer server"), r()
 			})
 		}
-	}, this.emitMessage = function(e, t) {
-return !!r(t, ["200"], "emit message") && !!o.socket && ( 
-    o.socket.readyState === WebSocket.OPEN 
-        ? (o.socket.send(JSON.stringify({ action: "message", data: e })), !0) 
-        : (console.error("🚨 WebSocket not open. Message not sent."), !1) 
-);
-
-this.getWorldList = function() {
-    const socket = new WebSocket("wss://old-prodigy-servers.onrender.com");
-
-    socket.onopen = () => {
-        console.log("Connected to WebSocket. Requesting world list...");
-        socket.send(JSON.stringify({
-            action: "getWorldList"
-        }));
-    };
-
-    socket.onmessage = (event) => {
-        const data = JSON.parse(event.data);
-        console.log("World list received:", data);
-        
-        // Optionally pass it to `a(...)` or your own handler
-        // a("get", "world-list", {}, data, "getWorldList", { ignoreHeaders: true });
-    };
-
-    socket.onerror = (err) => {
-        console.error("WebSocket error:", err);
-    };
-
-    socket.onclose = () => {
-        console.log("WebSocket closed.");
-    };
-};
+	}, this.emitMessage = function (e, t) {
+		var i = n(t, ["200"], "emit message");
+		return i && l.socket ? (l.socket.emit("message", e), !0) : !1
+	}, this.getWorldList = function (e) {
+		var t = n(e, ["200", "400", "500", "503"], "get world list");
+		if (t) {
+			var i = "v2/worlds",
+				s = c.root + i;
+			return a("get", s, {}, t, "getWorldList", {
+				ignoreHeaders: !0
+			}), !0
+		}
+		return !1
 	}, this.login = function(e, t, i) {
 		var a = r(i, ["200", "401", "404", "426"], "login");
 		if (!o.uniqueKey || !o.userID) {
@@ -328,52 +276,89 @@ this.getWorldList = function() {
 	}, this.saveAnswer = function(e, t) {
 		var i = r(t, ["200"], "save answer");
 		return !!i && (a("post", l.root + "v1/users/" + o.userID + "/answers", e, i, "saveAnswer"), !0)
-	}, this.getLeaderboard = function(e, t, i, s) {
-		var o = r(s, ["200"], "get leaderboard");
-		return !!o && (a("get", l.url.leaderboard + "class/" + e, {
-			sort: t,
-			limit: i
-		}, o, "leaderboard", {
-			ignoreHeaders: !0
-		}), !0)
-	}, this.getPvpLeaderboard = function(e, t, i, s, n) {
-		var h = r(n, ["200"], "get pvp leaderboard");
-		return !!h && (a("get", l.url.leaderboard + "pvp/" + e.min + "/" + e.max, {
-			page: i || 0,
-			limit: s || 30,
-			player_score: t.arenaScore,
-			player_stars: t.stars,
-			userID: o.userID
-		}, h, "leaderboard", {
-			ignoreHeaders: !0
-		}), !0)
-	}, this.reopenMail = function(e, t, i) {
-		var s = r(i, ["200"], "get mail details"),
-			n = {
-				userID: o.userID,
+	}, this.getLeaderboard = function (e, t, i, s) {
+		var r = n(s, ["200"], "get leaderboard");
+		if (r) {
+			var o = c.url.leaderboard;
+			return a("get", l.url.leaderboard + o + "class/" + e, {
+				sort: t,
+				limit: i
+			}, r, "leaderboard", {
+				ignoreHeaders: !0
+			}), !0
+		}
+		return !1
+	}, this.getLeaderboard = function (e, t, i, s) {
+		var r = n(s, ["200"], "get leaderboard");
+		if (r) {
+			var o = c.url.leaderboard;
+			return a("get", l.url.leaderboard + o + "class/" + e, {
+				sort: t,
+				limit: i
+			}, r, "leaderboard", {
+				ignoreHeaders: !0
+			}), !0
+		}
+		return !1
+	}, this.getPvpLeaderboard = function (e, t, i, s, r) {
+		var o = n(r, ["200"], "get pvp leaderboard");
+		if (o) {
+			var h = c.url.leaderboard;
+			return a("get", l.url.leaderboard + h + "pvp/" + e.min + "/" + e.max, {
+				page: i || 0,
+				limit: s || 30,
+				player_score: t.arenaScore,
+				player_stars: t.stars,
+				userID: l.userID
+			}, o, "leaderboard", {
+				ignoreHeaders: !0
+			}), !0
+		}
+		return !1
+	}, this.reopenMail = function (e, t, i) {
+		var s = n(i, ["200"], "get mail details"),
+			r = {
+				userID: l.userID,
 				type: t
 			};
-		return !!s && (a("get", l.url.mailer + "v1/mail/" + e, n, s, "getMail"), !0)
-	}, this.openMail = function(e, t, i) {
-		var s = r(i, ["200"], "Mark mail as read"),
-			n = {
-				rawData: t,
-				userID: o.userID
-			};
-		return !!s && (a("post", l.url.mailer + "v1/mail/" + e, n, s, "openMail"), !0)
-	}, this.getAllMail = function(e, t, i, a) {}, this.deleteMail = function(e, t) {}, this.getTotalMail = function(e, t) {}, this.getUser = function(e, t, i) {
-		var s = l.root + "v1/characters/" + e;
-		3 === arguments.length ? s += "?fields=" + t.join(",") : i = t;
-		var o = r(i, ["200"], "getUserData");
-		return !!o && (a("get", s, {}, o, "getUser", {
-			ignoreHeaders: !0
-		}), !0)
-	}, this.getUserInfo = function(e, t) {
-		var i, s = r(t, ["200", "401", "404"], "User Info");
 		if (s) {
-			return a("get", l.root + "v1/user/" + e, {
-				sessionToken: o.uniqueKey
-			}, s, "getUserInfo", {
+			var o = c.url.mailer + "v1/mail/" + e;
+			return a("get", o, r, s, "getMail"), !0
+		}
+		return !1
+	}, this.openMail = function (e, t, i) {
+		var s = n(i, ["200"], "Mark mail as read"),
+			r = {
+				rawData: t,
+				userID: l.userID
+			};
+		if (s) {
+			var o = c.url.mailer + "v1/mail/" + e;
+			return a("post", o, r, s, "openMail"), !0
+		}
+		return !1
+	}, this.getAllMail = function (e, t, i, s) {
+		// Wow I removed a function to clean up logs
+	}, this.deleteMail = function (e, t) {
+		// Wow I removed a function to clean up logs
+	}, this.getTotalMail = function (e, t) {
+		// Wow I removed a function to clean up logs
+	}, this.getUser = function (e, t, i) {
+		var s = c.root + "v1/characters/" + e;
+		3 === arguments.length ? s += "?fields=" + t.join(",") : i = t;
+		var r = n(i, ["200"], "getUserData");
+		return r ? (a("get", s, {}, r, "getUser", {
+			ignoreHeaders: !0
+		}), !0) : !1
+	}, this.getUserInfo = function (e, t) {
+		var i = n(t, ["200", "401", "404"], "User Info");
+		if (i) {
+			var s = "v1/user/" + e,
+				r = c.root + s,
+				o = {
+					sessionToken: l.uniqueKey
+				};
+			return a("get", r, o, i, "getUserInfo", {
 				ignoreHeaders: !0
 			}), !0
 		}
@@ -501,15 +486,16 @@ this.getWorldList = function() {
 		return ["debug", "info", "notice", "warning", "error", "critical", "alert", "emergency"].indexOf(e = e.toLowerCase()) >= 0 && (i.message && (i.attr_message = i.message), i.message = t, s("/log/" + e, i, {
 			200: function() {}
 		}, "log"), !0)
-	}, this.track = function(e, t) {
-		var i = r(t, ["200"], "trackEvent");
+	}, this.track = function (e, t) {
+		var i = n(t, ["200"], "trackEvent");
 		if (i) {
 			var s = {
-				userID: o.userID,
-				token: o.uniqueKey,
-				event: e
-			};
-			return a("post", l.url.events + "world-list.json", s, i, "trackEvent"), !0
+					userID: l.userID,
+					token: l.uniqueKey,
+					event: e
+				},
+				r = c.url.events + "v1/game-event";
+			return a("post", r, s, i, "trackEvent"), !0
 		}
 		return !1
 	}, this.completeAssignment = function(e, t) {
@@ -46476,7 +46462,7 @@ Prodigy.ForestBoss = function(e, t) {
 }, Prodigy.extends(Prodigy.Menu.Server, Prodigy.Control.Menu, {
 	constructor: Prodigy.Menu.Server,
 	menuSetup: function () {
-		Prodigy.Control.Menu.prototype.menuSetup.call(this), this.showFrame("map", "CHOOSE YOUR WORLD", []), this.game.prodigy.create.font(this, 125, 60, "Pick the same world as your friends to play together!", {
+		Prodigy.Control.Menu.prototype.menuSetup.call(this), this.showFrame("map", "The real Multiplayer Mode's coming soon.", []), this.game.prodigy.create.font(this, 125, 60, "Click on the Fake MP or the Back button to continue playing.", {
 			size: 20
 		}), this.game.prodigy.create.textButton(this, 930, 20, {
 			size: Prodigy.Control.TextButton.MED,
@@ -49434,10 +49420,23 @@ Prodigy.ForestBoss = function(e, t) {
     opponent: {
         data: '{"level":60}',
         appearance: '{"name":"Angel of the World", "gender":"male", "hairStyle":5,"hairColor":5,"skinColor":4,"eyeColor":4}',
-        equipment: '{"boots":18, "outfit":24, "hat":23, "weapon":92}'
+        equipment: '{"boots":10, "outfit":25, "hat":2, "weapon":20}'
     },
     title: "Issac's character from XPMUser's pde1500 as well",
     description: "This is Issac's other character from XPMUser's pde1500.",
+    pets: [],
+    drops: [{
+        type: "gold",
+        N: 5000
+    }]
+}, {
+    opponent: {
+        data: '{"level":16}',
+        appearance: '{"name":"Christian Rainore", "gender":"female", "hairStyle":5,"hairColor":5,"skinColor":4,"eyeColor":4}',
+        equipment: '{"boots":18, "outfit":24, "hat":23, "weapon":92}'
+    },
+    title: "Pde1500 bot",
+    description: "This is a bot from pde1500",
     pets: [],
     drops: [{
         type: "gold",
@@ -56167,7 +56166,7 @@ var Screen = function() {
 				this.game.prodigy.open.okaymessage("The load character button doesn't work on iPads. We suggest you use another device if you are an iPad user.", null, "star", "Warning!");
 			this.game.prodigy.debug.easyMode(1, 1), this.background.add(this.game.prodigy.create.sprite(0, 0, "login", "bg")), this.loginBox = this.game.prodigy.create.element(this.background), this.usernameField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "username", "", 90, 230, 300, 40), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Prodigy version 1.50.0");
 			var e = Util.getCookie("prodigyUsername");
-			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition version 22"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "google-signin-btn", this.onGoogleLoginButtonClick.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
+			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition version 23"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "google-signin-btn", this.onGoogleLoginButtonClick.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
 				width: 300,
 				align: "center"
 			}), this.closeButton = this.game.prodigy.create.textButton(this.progressBox, 0, 100, {
@@ -56312,7 +56311,7 @@ var Screen = function() {
 			this.game.prodigy.network.login(this.username, this.password, this.game.prodigy.player, this.onError.bind(this, NetworkManager.LOGIN), this.loadSkills.bind(this))
 		}, e.prototype.loadSkills = function(e) {
 			this.game.prodigy.player.username = this.username, (e = e || {}).username = this.username, e.password = this.password, this.error.setText("Loading skills..."), this.game.prodigy.network.loadSkills(this.game.prodigy.player.userID, this.game.prodigy.player.classIDs, this.loginSuccess.bind(this), this.onError.bind(this, NetworkManager.SKILLS))
-		}, e.prototype.loginSuccess = function(e) {
+		}, e.prototype.loginSuccess = function (e) {
 			this.game.prodigy.education.init(e), this.error.setText("Loading worlds..."), this.game.prodigy.network.getWorldList(this.openPlayer.bind(this), this.openPlayer.bind(this, null))
 		}, e.prototype.openPlayer = function(e) {
 			var t = !this.game.prodigy.player.data.school,
@@ -82551,7 +82550,7 @@ Prodigy.Controller.BattleController = function(e) {
 	createAccount: function(e, t) {
 		this.menus.push(new Prodigy.Menu.AccountCreate(this.game, this.menuLayer, e, t))
 	},
-	server: function(e, t) {
+	server: function (e, t) {
 		this.menus.push(new Prodigy.Menu.Server(this.game, this.menuLayer, e, t))
 	},
 	houseEditorHUD: function(e, t, i, a, s) {
@@ -85217,9 +85216,9 @@ var NetworkManager = function() {
 			409: s,
 			500: s
 		})
-	}, e.prototype.canUseMP = function() {
+	}, e.prototype.canUseMP = function () {
 		return this.loggedIn && this.socketConnected && Util.isDefined(this.zone)
-	}, e.prototype.getWorldList = function(e, t) {
+	}, e.prototype.getWorldList = function (e, t) {
 		this.api.getWorldList({
 			200: e,
 			400: t,
