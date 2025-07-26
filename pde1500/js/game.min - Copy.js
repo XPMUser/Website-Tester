@@ -30168,6 +30168,8 @@ Util.capitalize = function(e) {
 	}, {
 		text: "Earn stars to level up...the strongest wizards are Level 100!"
 	}, {
+		text: "Thanks for 100 subscribers!"
+	}, {
 		text: "If you want to battle a new bot, you can click on the add for battle button."
 	}, {
 		text: "Need more gold? Head out and battle monsters, get it from the daily login bonus, pass 10 floors, or spin the wheel!"
