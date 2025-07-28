@@ -5,15 +5,15 @@
     <title>Prodigy Definitive Edition</title>
         <meta charset="UTF-8" />
 <meta content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <meta name="description" content="Old Prodigy is back and better than ever! Click now and try an open source version of the definitive Old Prodigy experience!"/>
-    <script src="https://xpmuser.github.io/js/jquery.min.js"></script>
+    <meta name="description" content="The legendary math game Prodigy is now legendary again, and no longer a math game!"/>
+        <script src="https://xpmuser.github.io/js/jquery.min.js"></script>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <link rel="icon" type="image/png" href="https://xpmuser.github.io/pde1500/pde1500.png">
-    <link rel="stylesheet" href="https://xpmuser.github.io/oldprodigy/pde1500/edu/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="https://web.archive.org/web/20150910093225im_/https://www.prodigygame.com/Includes/Images/favicon.gif">
+    <link rel="stylesheet" href="./edu/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic' rel='stylesheet' type='text/css'>
+</script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,300,400,500,600,700' rel='stylesheet' type='text/css'>
-	<script>
-
+    	<script>
 </script>
     <style>
         html {
@@ -138,13 +138,14 @@
         
         #first-loading-screen {
             background-image: url("https://xpmuser.github.io/oldprodigy/pde1500/assets/images/Login-Loader.png");
-			background-attachment: fixed;
-			background-repeat: no-repeat;
-			background-size: cover;
-			background-position: center center;
-			margin: auto;
-			height: 100%;
-			background-color: #627CDE;
+			text: "Starting Old Prodigy";
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+		margin: auto;
+		height: 100%;
+		background-color: #627CDE;
         }
         
         .alert {
@@ -551,30 +552,28 @@
     </div>
 
     <div id="membership-flow"></div>
+
 	
 	<!-- This basically loads all of the Firebase stuff we're gonna need for Google auth and autosaving. -->
 	<script type="module">
 	  
 		// Make sure to periodically check for updates, and make sure the Firebase SDKs are up-to-date :)
 		import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js'
-
 		// Add Firebase products that you want to use
 		import { getAuth, GoogleAuthProvider, getIdToken, onAuthStateChanged, reauthenticateWithPopup, signInWithPopup } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js'
 		import { getDatabase, child, get, ref, remove, set } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js'
 		
 		// Your web app's Firebase configuration
 		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-		const firebaseConfig = {
-		  apiKey: "AIzaSyCLTCdWLmOfE_QrR13Z15VjRn2gTh4BvPo",
-		  authDomain: "triple-bird-410810.firebaseapp.com",
-		  databaseURL: "https://triple-bird-410810-default-rtdb.firebaseio.com",
-		  projectId: "triple-bird-410810",
-		  storageBucket: "triple-bird-410810.appspot.com",
-		  messagingSenderId: "220442635630",
-		  appId: "1:220442635630:web:87ea71a698d7195c3d657f",
-		  measurementId: "G-3LYT0H9SXG"
+const firebaseConfig = {
+  apiKey: "AIzaSyAYZOpvS-3iTET-H35l93R-u2ZrgIf6l9c",
+  authDomain: "pde1510-a94ff.firebaseapp.com",
+  projectId: "pde1510-a94ff",
+  storageBucket: "pde1510-a94ff.firebasestorage.app",
+  messagingSenderId: "408360121519",
+  appId: "1:408360121519:web:de7e10cf491de6ec77505a",
+  measurementId: "G-ZJCGHPCVV6"
 		};
-
 		// Initialize Firebase
 		const app = initializeApp(firebaseConfig);
 		
@@ -602,20 +601,21 @@
     <script src="https://cdn.prodigygame.com/assets/scripts/app/build/public.min.js"></script>
     <script src="https://xpmuser.github.io/oldprodigy/1-50-0/js/lodash.min.js"></script>
     <script src="https://xpmuser.github.io/prodigy-classic/game-helpers.min.js"></script>
-    <script src="https://xpmuser.github.io/prodigy-classic/phaser.min.js"></script>
-    <script src='./lib/socket.io.min.js'></script>
-    <script src="https://xpmuser.github.io/oldprodigy/pde1500/edu/controls/js/controls.min.js"></script>
-    <script src="https://xpmuser.github.io/oldprodigy/pde1500/edu/question-interface/js/question.min.js"></script>
+    <script src="https://xpmuser.github.io/oldprodigy/1-50-0/js/phaser.min.js"></script>
+    <script src='https://xpmuser.github.io/prodigy-classic/socket.io-1.3.5.js'></script>
+    <script src="./edu/controls/js/controls.min.js"></script>
+    <script src="./edu/question-interface/js/question.min.js"></script>
     <script src="https://xpmuser.github.io/prodigy-classic/game.js"></script>
-    <script src='https://cdn.prodigygame.com/education/skills/prod/b47b674f96/curricula.json'></script>
+    <script src='https://s3.amazonaws.com/prodigy-assets/education/skills/prod/f08de16886/curricula.json'></script>
     <script src="https://code.prodigygame.com/lib/particle-storm.min.js"></script>
-    <script src="https://cdn.prodigygame.com/education/skills/prod/b47b674f96/skillTrees.json"></script>
+    <script src="https://s3.amazonaws.com/prodigy-assets/education/skills/prod/f08de16886/skillTrees.json"></script>
     <script src="https://xpmuser.github.io/oldprodigy/1-50-0/js/phaser-spine.min.js"></script>
     <script src="https://xpmuser.github.io/oldprodigy/1-50-0/js/easystar-0.4.4.min.js"></script>
     <script src="https://xpmuser.github.io/prodigy-classic/easystar-0.2.0.min.js"></script>
-    <script src="./js/mod-handler.js"></script>
+    <script src="https://xpmuser.github.io/oldprodigy/pde1500/js/mod-handler.js"></script>
     <script src="./js/game.min.js"></script>
-    <script src="./lib/webfontloader.js"></script>
+    <script src="https://www.googletagmanager.com/gtm.js?id=GTM-T7TSN5K"></script>
+    <script src="https://accounts.google.com/gsi/client?onload=onGooglePlatformLoad" async defer></script>
     <script type="text/javascript">
         var prodigyWeb = {};
         prodigyWeb.country = undefined;
@@ -683,4 +683,45 @@
             }
         }
     </script>
+</body>
+    <div id="game-loading-container-div" class="game-loading container">
+        <div id="loading-div">
+            <img class="game-loading__ed" src="https://xpmuser.github.io/favicon.png" />
+            <!-- TODO: localize -->
+            <p class="game-loading__font">Starting Old Prodigy</p>
+            <div id="ed-progress-outline" class="ed-progress-outline">
+                <div id="ed-progress-container" class="ed-progress-container">
+                    <div id="ed-progress-bar" class="ed-progress-bar"></div>
+                </div>
+            </div>
+        </div>
+        <div id="error-div" style="display: none;">
+            <img class="game-loading__ed" src="https://xpmuser.github.io/favicon.png">
+            <h4 id="error-div-title" class="text-white text-center text-mt-md"></h4>
+            <p id="error-div-description" class="text-white text-center text-mt-md"></p>
+        </div>
+    </div>
+</div>
+    </div>
+    <div id="game-wrapper">
+        <div id='game-container'></div>
+        <div id='external-content'></div>
+        <div id='external-ui'></div>
+        <div id='notices'></div>
+        <div id='popups'>
+            <div id='dynamic-popups'></div>
+        </div>
+    </div>
+    <div id="membership-flow" class="game-page-overlay"></div>
+    <div id="game-page-overlay" class="game-page-overlay"></div>
+
+<div class="g_id_signin"
+     data-type="standard"
+     data-shape="rectangular"
+     data-theme="filled_blue"
+     data-text="signin_with"
+     data-size="large"
+     data-logo_alignment="left">
+</div>
+    </body>
 </html>
