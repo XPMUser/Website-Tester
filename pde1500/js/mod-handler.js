@@ -320,7 +320,7 @@ class ModHandler {
 				if (Util.isDefined(h))
 					for (var f = h.getAll(), y = 0, v = h.getTweens(); y < f.length; y++) v[y].delay = f[y].baseDelay / g, v[y].duration = v[y].frames.length * f[y].baseDelay * f[y].baseDuration / g
 			}
-		}, window.setGameSpeed(3), setTimeout((() => {
+		}, window.setGameSpeed(20), setTimeout((() => {
 			this.info('Use "setGameSpeed(speed)" to change the game speed at anytime.')
 		}), 1e3)
 	}
@@ -503,3 +503,4 @@ function checkForMods(e, t) {
 	i > 0 ? ModHooks.log("Applied (" + i + ") mods to the game") : ModHooks.log("No mods have been applied")
 
 }
+
