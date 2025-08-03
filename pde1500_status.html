@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDE1500 Server Status</title>
+    <!-- Tailwind CSS CDN for modern, clean styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font declarations to match your existing site */
+        @font-face {
+            font-family: "BrianneTod";
+            src: url("BrianneTod.ttf") format("truetype");
+        }
+
+        @font-face {
+            font-family: "Pipe Dream";
+            src: url("Pipe Dream.otf") format("opentype");
+        }
+
+        body {
+            font-family: "BrianneTod", "Pipe Dream", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        header {
+            background-color: #0066cc;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        nav a,
+        .dropdown .dropbtn {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        /* Highlight the active page */
+        nav a[href="pde1500_status.html"] {
+            background-color: #004d99;
+            font-weight: bold;
+        }
+
+        nav a:hover,
+        .dropdown:hover .dropbtn {
+            background-color: #004d99;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #0066cc;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #fff;
+            padding: 10px 15px;
+            display: block;
+            text-decoration: none;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #004d99;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        main {
+            padding: 50px 20px;
+            max-width: 1200px; /* Increased max-width for the dashboard */
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h2 {
+            color: #0066cc;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Tailwind overrides for card styling */
+        .status-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 24px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .status-card:hover {
+            transform: translateY(-5px);
+        }
+
+        @media (min-width: 768px) {
+            .status-card {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to the Old Prodigy/Prodidows Insider Program</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Versions ▼</button>
+                <div class="dropdown-content">
+                    <a href="pde1.51.0/index.html">PDE 1.51.0</a>
+                    <a href="pde1252/index.html">PDE 1.25.2</a>
+                    <a href="pde1500/?mods=WalkSpeed,FastGameSpeed,ClassicFaces">PDE1500</a>
+                    <a href="pde/index.html">PDE</a>
+                    <a href="pde1700/index.html?mods=WalkSpeed,FastGameSpeed,ImitationTitan">PDE1700</a>
+                    <a href="prodigyde/index.html?mods=WalkSpeed,FastGameSpeed">ProdigyDE</a>
+                    <a href="pde2015/index.html?mods=WalkSpeed,FastGameSpeed">PDE2015</a>
+                    <a href="oldprodigyde/index.html?mods=FastGameSpeed">Old Prodigy DE</a>
+                </div>
+            </div>
+            <a href="mods.html">Mods</a>
+            <a href="prodidows.html">Prodidows</a>
+            <a href="pde1500_status.html">PDE1500 Server Status</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2 class="text-3xl font-extrabold mb-8 text-center">PDE1500 Server Status</h2>
+        
+        <!-- Server status cards will be rendered here by JavaScript -->
+        <div id="status-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div id="loading" class="col-span-full text-center text-lg text-gray-500 animate-pulse">
+                Connecting to server...
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p><a href="contact.html">Contact Us</a></p>
+    </footer>
+
+    <script>
+        // Use a self-invoking function to prevent global scope pollution.
+        (function() {
+            const statusContainer = document.getElementById('status-container');
+            // IMPORTANT: Replace this placeholder with your actual WebSocket URL for the server status
+            // Example: const websocketUrl = 'wss://your-pde1500-server.com/status';
+            const websocketUrl = 'wss://prodidows-server.onrender.com/world-list';
+            let ws;
+            let reconnectAttempts = 0;
+            const maxReconnectAttempts = 10;
+            const reconnectDelayBase = 3000;
+
+            // Function to render a single server card based on live data.
+            const renderServerCard = (server) => {
+                const statusColor = server.full > 0 ? "bg-green-500" : "bg-gray-400";
+                const statusText = server.full > 0 ? "Online" : "Offline";
+                const playersText = `${server.full || 0}/${server.maxConnections || 100}`;
+                const playersColor = server.full > 0 ? "text-green-600" : "text-gray-400";
+                
+                // Card HTML using Tailwind for styling
+                const cardHtml = `
+                    <div class="status-card">
+                        <!-- Server Info -->
+                        <div class="flex items-center mb-4 md:mb-0">
+                            <span class="inline-block h-4 w-4 rounded-full ${statusColor} mr-3"></span>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800">${server.name}</h3>
+                                <p class="text-sm text-gray-500">${server.path}</p>
+                            </div>
+                        </div>
+
+                        <!-- Server Status & Players -->
+                        <div class="flex flex-col md:flex-row md:items-center md:space-x-8 space-y-4 md:space-y-0 w-full md:w-auto">
+                            <!-- Status -->
+                            <div class="flex flex-col items-start md:items-center">
+                                <span class="text-xs font-semibold uppercase text-gray-500">Status</span>
+                                <span class="text-lg font-semibold text-gray-900">${statusText}</span>
+                            </div>
+
+                            <!-- Players -->
+                            <div class="flex flex-col items-start md:items-center">
+                                <span class="text-xs font-semibold uppercase text-gray-500">Players</span>
+                                <span class="text-lg font-semibold ${playersColor}">${playersText}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                return cardHtml;
+            };
+
+            // Main function to establish the WebSocket connection and handle messages.
+            const initWebSocket = () => {
+                ws = new WebSocket(websocketUrl);
+
+                ws.onopen = () => {
+                    console.log("WebSocket connection established.");
+                    reconnectAttempts = 0; // Reset reconnect attempts on success.
+                    statusContainer.innerHTML = `
+                        <div class="col-span-full text-center text-lg text-gray-500">
+                            Fetching server data...
+                        </div>
+                    `;
+                };
+
+                ws.onmessage = (event) => {
+                    try {
+                        const data = JSON.parse(event.data);
+                        console.log("Received data:", data);
+
+                        // We expect the message type to be "worlds" from the server.
+                        if (data.type === 'worlds' && data.servers) {
+                            // Clear existing cards.
+                            statusContainer.innerHTML = '';
+                            if (data.servers.length > 0) {
+                                // Render a card for each server received.
+                                data.servers.forEach(server => {
+                                    statusContainer.innerHTML += renderServerCard(server);
+                                });
+                            } else {
+                                statusContainer.innerHTML = `
+                                    <div class="col-span-full text-center text-lg text-gray-500">
+                                        No active servers found.
+                                    </div>
+                                `;
+                            }
+                        }
+                    } catch (error) {
+                        console.error("Failed to parse JSON message:", error);
+                    }
+                };
+
+                ws.onerror = (error) => {
+                    console.error("WebSocket error:", error);
+                    statusContainer.innerHTML = `
+                        <div class="col-span-full text-center text-lg text-red-500">
+                            Connection failed. Please check the server status.
+                        </div>
+                    `;
+                };
+
+                ws.onclose = () => {
+                    console.log("WebSocket connection closed. Attempting to reconnect...");
+                    statusContainer.innerHTML = `
+                        <div class="col-span-full text-center text-lg text-red-500">
+                            Connection lost. Attempting to reconnect...
+                        </div>
+                    `;
+
+                    // Implemented exponential backoff for reconnects.
+                    if (reconnectAttempts < maxReconnectAttempts) {
+                        reconnectAttempts++;
+                        const delay = reconnectDelayBase * Math.pow(2, reconnectAttempts);
+                        setTimeout(initWebSocket, delay);
+                    } else {
+                        statusContainer.innerHTML = `
+                            <div class="col-span-full text-center text-lg text-red-500">
+                                Could not reconnect to the server. Please refresh the page.
+                            </div>
+                        `;
+                    }
+                };
+            };
+
+            // Run the initialization function to start the WebSocket connection.
+            document.addEventListener('DOMContentLoaded', initWebSocket);
+        })();
+    </script>
+
+</body>
+</html>
